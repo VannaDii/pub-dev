@@ -2,7 +2,7 @@
 ///
 /// This import offers an [Earth] implementation supporting search and basic
 /// geo-coding implementations for distance, and proximal matching.
-library geography;
+library earth;
 
 import 'src/base.dart';
 import 'src/extensions.dart';

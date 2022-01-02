@@ -2,7 +2,7 @@
 ///
 /// This import doesn't offer much. Use this if you want to work with the basic
 /// data structures on your own, with little to no implementation support.
-library geography;
+library basic;
 
 export 'src/base.dart';
 export 'src/extensions.dart';
