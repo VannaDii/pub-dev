@@ -2,25 +2,19 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: configure
-      run: ./configure
-    
-    - name: Setup Dart SDK
-      # You may pin to the exact commit or the version.
-      # uses: dart-lang/setup-dart@6a218f2413a3e78e9087f638a238f6b40893203d
-      uses: dart-lang/setup-dart@v1.3
-      
-    - name: Run make
-      run: make
+      - uses: actions/checkout@v2
+
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@v1.3
+
+      - name: Run make
+        run: make
