@@ -9,3 +9,4 @@ If you find them useful, enjoy!
 ## Packages
 
 - [Geography](./geography)
+  - ¯\\_(ツ)_/¯ Because I'm too cheap to pay for a geo-coding service, and I only needed City-level resolution.
