@@ -16,5 +16,6 @@ jobs:
       - name: Setup Dart SDK
         uses: dart-lang/setup-dart@v1.3
 
-      - name: Run make
+      - name: Build Geography
+        working-directory: geography
         run: make
