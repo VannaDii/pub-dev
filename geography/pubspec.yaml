@@ -1,7 +1,7 @@
 name: geography
 description: A library of geography and its metadata.
 version: 1.0.0
-homepage: https://dart.dicatania.me
+homepage: https://pub-dev.dicatania.me/geography/
 publish_to: none
 
 environment:
