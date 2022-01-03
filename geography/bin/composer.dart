@@ -194,7 +194,7 @@ import '${basePath}base.dart';
       ..writeln(_fileHeader("countries", '../'))
       ..writeln(countryCodeMap.entries
           .map<String>((e) =>
-              "import '${path.relative(e.value, from: countriesDir)}' show ${e.key};")
+              "import '${path.relative(e.value, from: countriesDir)}' show ${e.key};\nexport '${path.relative(e.value, from: countriesDir)}';\n")
           .join('\n'))
       ..writeln('')
       ..writeln("/// A list of all known countries on earth and their metadata")

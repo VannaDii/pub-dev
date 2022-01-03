@@ -23,17 +23,9 @@ abstract class GeoObject extends Equatable {
 @immutable
 abstract class GeoCoords extends GeoObject {
   const GeoCoords({
-    required this.id,
-    required this.name,
     required this.longitude,
     required this.latitude,
   });
-
-  /// The unique identifier for this data, like `1`
-  final int id;
-
-  /// The human name of this data, like `Afghanistan`
-  final String name;
 
   /// The longitude coordinate for this data, like `33.00000000`
   final double longitude;
@@ -42,7 +34,39 @@ abstract class GeoCoords extends GeoObject {
   final double latitude;
 
   @override
-  List<Object?> get props => [id, name, longitude, latitude];
+  List<Object?> get props => [longitude, latitude];
+
+  @override
+  Map<String, dynamic> toJson() =>
+      <String, dynamic>{"longitude": longitude, "latitude": latitude};
+}
+
+/// The base class for all `geography` data types having a name and id, and
+/// addressable by the `longitude` and `latitude` system
+@immutable
+abstract class GeoLocation extends GeoCoords {
+  const GeoLocation({
+    required this.id,
+    required this.name,
+    required double latitude,
+    required double longitude,
+  }) : super(latitude: latitude, longitude: longitude);
+
+  /// The unique identifier for this data, like `1`
+  final int id;
+
+  /// The human name of this data, like `Afghanistan`
+  final String name;
+
+  @override
+  List<Object?> get props => [...super.props, id, name];
+
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        ...super.toJson(),
+        "id": id,
+        "name": name,
+      };
 }
 
 /// Represents a physical city, the most precise level for this library
@@ -58,7 +82,7 @@ abstract class GeoCoords extends GeoObject {
 /// ```
 @immutable
 @JsonSerializable()
-class City extends GeoCoords {
+class City extends GeoLocation {
   const City(
       {required int id,
       required String name,
@@ -101,7 +125,7 @@ class City extends GeoCoords {
 /// ```
 @immutable
 @JsonSerializable()
-class Region extends GeoCoords {
+class Region extends GeoLocation {
   const Region({
     required int id,
     required String name,
@@ -170,7 +194,7 @@ class Region extends GeoCoords {
 /// ```
 @immutable
 @JsonSerializable()
-class Country extends GeoCoords {
+class Country extends GeoLocation {
   const Country({
     required int id,
     required String name,
@@ -204,7 +228,7 @@ class Country extends GeoCoords {
   /// You can find this as a [City] by like:
   ///
   /// ```dart
-  /// var matches = Earth.afghanistan.search(Earth.afghanistan.capital);
+  /// var matches = Earth().afghanistan.search(Earth().afghanistan.capital);
   /// print(matches.first.toJson());
   /// ```
   final String? capital;

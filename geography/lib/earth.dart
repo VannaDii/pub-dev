@@ -8,6 +8,8 @@ import 'src/base.dart';
 import 'src/extensions.dart';
 import 'src/countries/all.dart' as data;
 
+export 'src/extensions.dart';
+
 /// A singleton providing search and proximity functions for geographical data about earth.
 class Earth {
   Earth._privateConstructor();
@@ -22,7 +24,7 @@ class Earth {
   /// Finds the [GeoCoords] ([City], or [Region]) with a name containing the [value]
   ///
   /// Returns: A combination pf [City], [Region], and [Country], where the name matches [value], as [GeoCoords]
-  Iterable<GeoCoords> search(String value) {
+  Iterable<GeoLocation> search(String value) {
     var valueLowered = value.toLowerCase();
     return [
       ...countries.where((c) => c.name.toLowerCase().contains(valueLowered)),

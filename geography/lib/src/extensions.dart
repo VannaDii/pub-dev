@@ -4,6 +4,9 @@ import 'package:collection/collection.dart';
 
 import 'base.dart';
 
+const double EQUATOR_RADIUS = 6378137.0;
+_deg2rad(double v) => v * math.pi / 180;
+
 /// Extension methods for interacting with [List] of [GeoCoords] and derivative type instances.
 extension ListGeoCoordsExtensions<T extends GeoCoords> on List<T> {
   /// Find the element geographically closest to the [target]
@@ -24,11 +27,25 @@ extension ListGeoCoordsExtensions<T extends GeoCoords> on List<T> {
 extension GeoCoordsExtensions<T extends GeoCoords> on T {
   /// Measures the distance between `this` instance and the provided [location]
   ///
-  /// Returns: The distance between the two coordinates as a [double]
+  /// Returns: The distance between the two coordinates in meters as a [double]
+  ///
+  /// Note: This is a primitive Haversine implementation. For more accuracy or
+  /// advanced options, consider using [pub.dev/latlng](https://pub.dev/packages/latlng)
+  /// or adopting the code from it's GitHub source [dart-latlong](https://github.com/MikeMitterer/dart-latlong)
   double distanceFrom(T location) {
-    var a = longitude - location.longitude;
-    var b = latitude - location.latitude;
-    return math.sqrt(a * a + b * b);
+    var l1LatRad = _deg2rad(latitude);
+    var l1LonRad = _deg2rad(longitude);
+    var l2LatRad = _deg2rad(location.latitude);
+    var l2LonRad = _deg2rad(location.longitude);
+    final sinDLat = math.sin((l2LatRad - l1LatRad) / 2);
+    final sinDLng = math.sin((l2LonRad - l1LonRad) / 2);
+
+    // Sides
+    final a = sinDLat * sinDLat +
+        sinDLng * sinDLng * math.cos(l1LatRad) * math.cos(l2LatRad);
+    final c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a));
+
+    return EQUATOR_RADIUS * c;
   }
 }
 
@@ -42,7 +59,7 @@ extension RegionExtensions on Region {
   /// Finds the [City] instances with a name containing the [value]
   ///
   /// Returns: A iterable [City] of matches.
-  Iterable<GeoCoords> search(String value, {String? prefix}) {
+  Iterable<GeoLocation> search(String value, {String? prefix}) {
     var loweredName = [prefix, name.toLowerCase()].whereNotNull().join(', ');
     var valueLowered = value.toLowerCase();
     return cities.where((s) => "$loweredName, ${s.name.toLowerCase()}"
@@ -76,7 +93,7 @@ extension CountryExtensions on Country {
   /// Finds the [GeoCoords] ([City], or [Region]) with a name containing the [value]
   ///
   /// Returns: A combination pf [City], [Region], where the name matches [value], as [GeoCoords]
-  Iterable<GeoCoords> search(String value) {
+  Iterable<GeoLocation> search(String value) {
     var loweredName = name.toLowerCase();
     var valueLowered = value.toLowerCase();
     return [
