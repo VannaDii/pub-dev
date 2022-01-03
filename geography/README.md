@@ -81,7 +81,24 @@ void main() {
 
 ### Measure distance between places
 
-I should provide some example code?
+```dart
+import 'package:geography/earth.dart';
+
+main() {
+  var a = Earth().search("Texas, Austin").first;
+  var s = Earth().search("Texas, San Antonio").first;
+  var d = a.distanceFrom(s);
+
+  print("> From ${a.name} to ${s.name} is $d");
+
+  /**
+   * Prints:
+   *
+   * > From Austin to San Antonio is 118570.24358116832
+   * Exited
+   */
+}
+```
 
 ---
 
