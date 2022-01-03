@@ -50,7 +50,7 @@ const Country taiwan = Country(id: 216, name: "Taiwan", longitude: 121.0,
                       City(id: 109013, name: "Hualien City", longitude: 121.60444, latitude: 23.97694)
                     ]),
             Region(id: 3412, longitude: 120.3014353, latitude: 22.6272784,
-                    name: "Kaohsiung", type: "special municipality	", stateCode: "KHH",
+                    name: "Kaohsiung", type: "special municipality", stateCode: "KHH",
                     cities: [
                       City(id: 109016, name: "Kaohsiung", longitude: 120.31333, latitude: 22.61626)
                     ]),
@@ -83,7 +83,7 @@ const Country taiwan = Country(id: 216, name: "Taiwan", longitude: 121.0,
                       City(id: 109041, name: "Zhongxing New Village", longitude: 120.68516, latitude: 23.95908)
                     ]),
             Region(id: 4966, longitude: 121.3645947, latitude: 24.9875278,
-                    name: "New Taipei", type: "special municipality	", stateCode: "NWT",
+                    name: "New Taipei", type: "special municipality", stateCode: "NWT",
                     cities: []),
             Region(id: 3403, longitude: 119.5793157, latitude: 23.5711899,
                     name: "Penghu", type: "county", stateCode: "PEN",
@@ -99,19 +99,19 @@ const Country taiwan = Country(id: 216, name: "Taiwan", longitude: 121.0,
                       City(id: 109025, name: "Pingtung", longitude: 120.61444, latitude: 22.49555)
                     ]),
             Region(id: 3406, longitude: 120.6736482, latitude: 24.1477358,
-                    name: "Taichung", type: "special municipality	", stateCode: "TXG",
+                    name: "Taichung", type: "special municipality", stateCode: "TXG",
                     cities: [
                       City(id: 109028, name: "Taichung", longitude: 120.6839, latitude: 24.1469),
                       City(id: 109029, name: "Taichung City", longitude: 120.67297, latitude: 24.15472)
                     ]),
             Region(id: 3421, longitude: 120.2270277, latitude: 22.9997281,
-                    name: "Tainan", type: "special municipality	", stateCode: "TNN",
+                    name: "Tainan", type: "special municipality", stateCode: "TNN",
                     cities: [
                       City(id: 109030, name: "Tainan", longitude: 120.21333, latitude: 22.99083),
                       City(id: 109039, name: "Yujing", longitude: 120.46138, latitude: 23.12493)
                     ]),
             Region(id: 3422, longitude: 121.5654177, latitude: 25.0329694,
-                    name: "Taipei", type: "special municipality	", stateCode: "TPE",
+                    name: "Taipei", type: "special municipality", stateCode: "TPE",
                     cities: [
                       City(id: 109002, name: "Banqiao", longitude: 121.46719, latitude: 25.01427),
                       City(id: 109015, name: "Jiufen", longitude: 121.84424, latitude: 25.10957),
@@ -125,7 +125,7 @@ const Country taiwan = Country(id: 216, name: "Taiwan", longitude: 121.0,
                       City(id: 109034, name: "Taitung City", longitude: 121.1444, latitude: 22.7583)
                     ]),
             Region(id: 3419, longitude: 121.3009798, latitude: 24.9936281,
-                    name: "Taoyuan", type: "special municipality	", stateCode: "TAO",
+                    name: "Taoyuan", type: "special municipality", stateCode: "TAO",
                     cities: [
                       City(id: 109006, name: "Daxi", longitude: 121.29043, latitude: 24.88373),
                       City(id: 109035, name: "Taoyuan", longitude: 121.24611, latitude: 24.895),

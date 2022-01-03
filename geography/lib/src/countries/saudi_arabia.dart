@@ -320,7 +320,7 @@ const Country saudiArabia = Country(id: 194, name: "Saudi Arabia", longitude: 45
                       City(id: 102846, name: "At Tūbī", longitude: 49.99167, latitude: 26.55778),
                       City(id: 102851, name: "Dammam", longitude: 50.10326, latitude: 26.43442),
                       City(id: 102852, name: "Dhahran", longitude: 50.11396, latitude: 26.28864),
-                      City(id: 148564, name: "Ha'il ", longitude: 41.68333333, latitude: 27.51666667),
+                      City(id: 148564, name: "Ha'il", longitude: 41.68333333, latitude: 27.51666667),
                       City(id: 102857, name: "Hafar Al-Batin", longitude: 45.97077, latitude: 28.43279),
                       City(id: 148565, name: "Haradh", longitude: 49.06527778, latitude: 24.14555556),
                       City(id: 148566, name: "Jubbah", longitude: 40.9416, latitude: 28.0062),

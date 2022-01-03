@@ -23,7 +23,7 @@ class Composer {
           return numVal ?? 0;
         }
       default:
-        return value;
+        return value is String ? value.trim() : value;
     }
   }
 

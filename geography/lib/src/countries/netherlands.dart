@@ -1819,7 +1819,7 @@ const Country netherlands = Country(id: 156, name: "Netherlands", longitude: 5.7
                     tzName: "Central European Time", zoneName: "Europe/Amsterdam")
           ],
           translations: {
-            "kr": "네덜란드 ",
+            "kr": "네덜란드",
             "br": "Holanda",
             "pt": "Países Baixos",
             "nl": "Nederland",

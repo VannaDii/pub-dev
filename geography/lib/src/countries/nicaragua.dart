@@ -167,7 +167,7 @@ const Country nicaragua = Country(id: 159, name: "Nicaragua", longitude: -85.0,
                       City(id: 77284, name: "Terrabona", longitude: -85.96474, latitude: 12.73028)
                     ]),
             Region(id: 951, longitude: -83.9320806, latitude: 13.8394456,
-                    name: "North Caribbean Coast", type: "autonomous region	", stateCode: "AN",
+                    name: "North Caribbean Coast", type: "autonomous region", stateCode: "AN",
                     cities: [
                       City(id: 77161, name: "Bonanza", longitude: -84.59103, latitude: 14.02885),
                       City(id: 77248, name: "Prinzapolka", longitude: -83.56452, latitude: 13.40708),
@@ -177,7 +177,7 @@ const Country nicaragua = Country(id: 159, name: "Nicaragua", longitude: -85.0,
                       City(id: 77295, name: "Waspán", longitude: -83.9717, latitude: 14.74189)
                     ]),
             Region(id: 4964, longitude: -86.5370039, latitude: 13.7657061,
-                    name: "Nueva Segovia	", type: "department", stateCode: "NS",
+                    name: "Nueva Segovia", type: "department", stateCode: "NS",
                     cities: [
                       City(id: 149132, name: "Ciudad Antigua", longitude: -86.3118983, latitude: 13.6392903),
                       City(id: 149133, name: "Dipilto", longitude: -86.5136606, latitude: 13.7222552),
@@ -226,7 +226,7 @@ const Country nicaragua = Country(id: 159, name: "Nicaragua", longitude: -85.0,
                       City(id: 77289, name: "Tola", longitude: -85.93891, latitude: 11.43927)
                     ]),
             Region(id: 952, longitude: -84.1012861, latitude: 12.1918502,
-                    name: "South Caribbean Coast", type: "autonomous region	", stateCode: "AS",
+                    name: "South Caribbean Coast", type: "autonomous region", stateCode: "AS",
                     cities: [
                       City(id: 77158, name: "Bluefields", longitude: -83.76353, latitude: 12.01366),
                       City(id: 77160, name: "Bocana de Paiwas", longitude: -85.12269, latitude: 12.78571),
