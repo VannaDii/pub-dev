@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇷 Turkey`, and its 81 states
 const Country turkey = Country(id: 225, name: "Turkey", longitude: 35.0,
           latitude: 39.0, capital: "Ankara",
           currency: "TRY", currencySymbol: "₺",

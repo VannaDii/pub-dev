@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇭 Bahrain`, and its 5 states
 const Country bahrain = Country(id: 18, name: "Bahrain", longitude: 50.55,
           latitude: 26.0, capital: "Manama",
           currency: "BHD", currencySymbol: ".د.ب",

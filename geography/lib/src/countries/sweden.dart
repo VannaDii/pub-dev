@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇪 Sweden`, and its 20 states
 const Country sweden = Country(id: 213, name: "Sweden", longitude: 15.0,
           latitude: 62.0, capital: "Stockholm",
           currency: "SEK", currencySymbol: "kr",

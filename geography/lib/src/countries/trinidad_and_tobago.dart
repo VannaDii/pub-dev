@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇹 Trinidad And Tobago`, and its 16 states
 const Country trinidadAndTobago = Country(id: 223, name: "Trinidad And Tobago", longitude: -61.0,
           latitude: 11.0, capital: "Port of Spain",
           currency: "TTD", currencySymbol: "\$",

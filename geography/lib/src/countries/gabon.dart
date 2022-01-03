@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇦 Gabon`, and its 9 states
 const Country gabon = Country(id: 79, name: "Gabon", longitude: 11.75,
           latitude: -1.0, capital: "Libreville",
           currency: "XAF", currencySymbol: "FCFA",

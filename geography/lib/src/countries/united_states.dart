@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇺🇸 United States`, and its 66 states
 const Country unitedStates = Country(id: 233, name: "United States", longitude: -97.0,
           latitude: 38.0, capital: "Washington",
           currency: "USD", currencySymbol: "\$",

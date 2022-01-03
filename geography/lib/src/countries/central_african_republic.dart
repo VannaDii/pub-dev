@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇫 Central African Republic`, and its 17 states
 const Country centralAfricanRepublic = Country(id: 42, name: "Central African Republic", longitude: 21.0,
           latitude: 7.0, capital: "Bangui",
           currency: "XAF", currencySymbol: "FCFA",

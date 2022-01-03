@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇾 Syria`, and its 14 states
 const Country syria = Country(id: 215, name: "Syria", longitude: 38.0,
           latitude: 35.0, capital: "Damascus",
           currency: "SYP", currencySymbol: "LS",

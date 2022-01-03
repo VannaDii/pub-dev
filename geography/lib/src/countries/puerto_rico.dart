@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇵🇷 Puerto Rico`, and its 0 states
 const Country puertoRico = Country(id: 178, name: "Puerto Rico", longitude: -66.5,
           latitude: 18.25, capital: "San Juan",
           currency: "USD", currencySymbol: "\$",

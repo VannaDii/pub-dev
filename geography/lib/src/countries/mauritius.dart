@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇺 Mauritius`, and its 17 states
 const Country mauritius = Country(id: 140, name: "Mauritius", longitude: 57.55,
           latitude: -20.28333333, capital: "Port Louis",
           currency: "MUR", currencySymbol: "₨",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇻🇳 Vietnam`, and its 63 states
 const Country vietnam = Country(id: 240, name: "Vietnam", longitude: 107.83333333,
           latitude: 16.16666666, capital: "Hanoi",
           currency: "VND", currencySymbol: "₫",

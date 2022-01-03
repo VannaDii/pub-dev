@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇭 Switzerland`, and its 26 states
 const Country switzerland = Country(id: 214, name: "Switzerland", longitude: 8.0,
           latitude: 47.0, capital: "Bern",
           currency: "CHF", currencySymbol: "CHf",

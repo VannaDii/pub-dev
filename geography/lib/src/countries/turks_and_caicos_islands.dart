@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇨 Turks And Caicos Islands`, and its 0 states
 const Country turksAndCaicosIslands = Country(id: 227, name: "Turks And Caicos Islands", longitude: -71.58333333,
           latitude: 21.75, capital: "Cockburn Town",
           currency: "USD", currencySymbol: "\$",

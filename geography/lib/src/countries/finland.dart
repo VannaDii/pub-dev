@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇫🇮 Finland`, and its 21 states
 const Country finland = Country(id: 74, name: "Finland", longitude: 26.0,
           latitude: 64.0, capital: "Helsinki",
           currency: "EUR", currencySymbol: "€",

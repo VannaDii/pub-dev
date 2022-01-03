@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇽 Aland Islands`, and its 0 states
 const Country alandIslands = Country(id: 2, name: "Aland Islands", longitude: 19.9,
           latitude: 60.116667, capital: "Mariehamn",
           currency: "EUR", currencySymbol: "€",

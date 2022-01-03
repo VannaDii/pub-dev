@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇻 Cape Verde`, and its 23 states
 const Country capeVerde = Country(id: 40, name: "Cape Verde", longitude: -24.0,
           latitude: 16.0, capital: "Praia",
           currency: "CVE", currencySymbol: "\$",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇾 Cyprus`, and its 6 states
 const Country cyprus = Country(id: 57, name: "Cyprus", longitude: 33.0,
           latitude: 35.0, capital: "Nicosia",
           currency: "EUR", currencySymbol: "€",

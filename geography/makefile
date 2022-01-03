@@ -7,6 +7,6 @@ lib_name=$(shell basename $$(pwd))
 
 all:
 	dart pub get
-	dart run build_runner build --delete-conflicting-outputs
 	dart run :composer
 	dart run build_runner build --delete-conflicting-outputs
+	dartdoc

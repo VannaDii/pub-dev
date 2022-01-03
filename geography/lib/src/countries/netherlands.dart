@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇳🇱 Netherlands`, and its 15 states
 const Country netherlands = Country(id: 156, name: "Netherlands", longitude: 5.75,
           latitude: 52.5, capital: "Amsterdam",
           currency: "EUR", currencySymbol: "€",

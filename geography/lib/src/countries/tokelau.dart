@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇰 Tokelau`, and its 0 states
 const Country tokelau = Country(id: 221, name: "Tokelau", longitude: -172.0,
           latitude: -9.0, capital: "",
           currency: "NZD", currencySymbol: "\$",

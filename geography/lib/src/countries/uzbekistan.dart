@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇺🇿 Uzbekistan`, and its 14 states
 const Country uzbekistan = Country(id: 236, name: "Uzbekistan", longitude: 64.0,
           latitude: 41.0, capital: "Tashkent",
           currency: "UZS", currencySymbol: "лв",

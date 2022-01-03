@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇫 Afghanistan`, and its 33 states
 const Country afghanistan = Country(id: 1, name: "Afghanistan", longitude: 65.0,
           latitude: 33.0, capital: "Kabul",
           currency: "AFN", currencySymbol: "؋",

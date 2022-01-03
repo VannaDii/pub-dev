@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇫🇲 Micronesia`, and its 4 states
 const Country micronesia = Country(id: 143, name: "Micronesia", longitude: 158.25,
           latitude: 6.91666666, capital: "Palikir",
           currency: "USD", currencySymbol: "\$",

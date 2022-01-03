@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇴 Bolivia`, and its 9 states
 const Country bolivia = Country(id: 27, name: "Bolivia", longitude: -65.0,
           latitude: -17.0, capital: "Sucre",
           currency: "BOB", currencySymbol: "Bs.",

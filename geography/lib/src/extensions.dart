@@ -4,6 +4,7 @@ import 'package:collection/collection.dart';
 
 import 'base.dart';
 
+/// Extension methods for interacting with [List] of [GeoCoords] and derivative type instances.
 extension ListGeoCoordsExtensions<T extends GeoCoords> on List<T> {
   /// Find the element geographically closest to the [target]
   ///
@@ -19,6 +20,7 @@ extension ListGeoCoordsExtensions<T extends GeoCoords> on List<T> {
   }
 }
 
+/// Extension methods for interacting with [GeoCoords] instances.
 extension GeoCoordsExtensions<T extends GeoCoords> on T {
   /// Measures the distance between `this` instance and the provided [location]
   ///
@@ -30,6 +32,7 @@ extension GeoCoordsExtensions<T extends GeoCoords> on T {
   }
 }
 
+/// Extension methods for interacting with [Region] instances.
 extension RegionExtensions on Region {
   /// Finds the [City] in this [Region] nearest to the [target].
   ///
@@ -48,6 +51,7 @@ extension RegionExtensions on Region {
   }
 }
 
+/// Extension methods for interacting with [Country] instances.
 extension CountryExtensions on Country {
   /// Finds the [Region] in this [Country] nearest to the [target].
   ///

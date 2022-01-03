@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇾 Belarus`, and its 7 states
 const Country belarus = Country(id: 21, name: "Belarus", longitude: 28.0,
           latitude: 53.0, capital: "Minsk",
           currency: "BYN", currencySymbol: "Br",

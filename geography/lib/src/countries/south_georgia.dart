@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇸 South Georgia`, and its 0 states
 const Country southGeorgia = Country(id: 205, name: "South Georgia", longitude: -37.0,
           latitude: -54.5, capital: "Grytviken",
           currency: "GBP", currencySymbol: "£",

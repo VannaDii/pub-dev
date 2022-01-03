@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇼 Botswana`, and its 10 states
 const Country botswana = Country(id: 29, name: "Botswana", longitude: 24.0,
           latitude: -22.0, capital: "Gaborone",
           currency: "BWP", currencySymbol: "P",

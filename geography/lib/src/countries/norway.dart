@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇳🇴 Norway`, and its 21 states
 const Country norway = Country(id: 165, name: "Norway", longitude: 10.0,
           latitude: 62.0, capital: "Oslo",
           currency: "NOK", currencySymbol: "kr",

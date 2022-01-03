@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇻🇪 Venezuela`, and its 25 states
 const Country venezuela = Country(id: 239, name: "Venezuela", longitude: -66.0,
           latitude: 8.0, capital: "Caracas",
           currency: "VEF", currencySymbol: "Bs",

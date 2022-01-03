@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇻🇦 Vatican City State (Holy See)`, and its 0 states
 const Country vaticanCityStateHolySee = Country(id: 238, name: "Vatican City State (Holy See)", longitude: 12.45,
           latitude: 41.9, capital: "Vatican City",
           currency: "EUR", currencySymbol: "€",

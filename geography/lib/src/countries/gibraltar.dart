@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇮 Gibraltar`, and its 0 states
 const Country gibraltar = Country(id: 84, name: "Gibraltar", longitude: -5.35,
           latitude: 36.13333333, capital: "Gibraltar",
           currency: "GIP", currencySymbol: "£",

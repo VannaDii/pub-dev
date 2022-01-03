@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇱 East Timor`, and its 12 states
 const Country eastTimor = Country(id: 63, name: "East Timor", longitude: 125.91666666,
           latitude: -8.83333333, capital: "Dili",
           currency: "USD", currencySymbol: "\$",

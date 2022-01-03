@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇵🇦 Panama`, and its 13 states
 const Country panama = Country(id: 170, name: "Panama", longitude: -80.0,
           latitude: 9.0, capital: "Panama City",
           currency: "PAB", currencySymbol: "B/.",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇭 Thailand`, and its 78 states
 const Country thailand = Country(id: 219, name: "Thailand", longitude: 100.0,
           latitude: 15.0, capital: "Bangkok",
           currency: "THB", currencySymbol: "฿",

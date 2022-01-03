@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇱 Greenland`, and its 0 states
 const Country greenland = Country(id: 86, name: "Greenland", longitude: -40.0,
           latitude: 72.0, capital: "Nuuk",
           currency: "DKK", currencySymbol: "Kr.",

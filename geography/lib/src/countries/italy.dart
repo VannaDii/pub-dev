@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇮🇹 Italy`, and its 128 states
 const Country italy = Country(id: 107, name: "Italy", longitude: 12.83333333,
           latitude: 42.83333333, capital: "Rome",
           currency: "EUR", currencySymbol: "€",

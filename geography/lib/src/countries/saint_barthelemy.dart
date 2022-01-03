@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇱 Saint-Barthelemy`, and its 0 states
 const Country saintBarthelemy = Country(id: 189, name: "Saint-Barthelemy", longitude: -63.41666666,
           latitude: 18.5, capital: "Gustavia",
           currency: "EUR", currencySymbol: "€",

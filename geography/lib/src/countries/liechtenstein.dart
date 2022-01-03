@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇱🇮 Liechtenstein`, and its 11 states
 const Country liechtenstein = Country(id: 125, name: "Liechtenstein", longitude: 9.53333333,
           latitude: 47.26666666, capital: "Vaduz",
           currency: "CHF", currencySymbol: "CHf",

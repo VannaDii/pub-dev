@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇫🇰 Falkland Islands`, and its 0 states
 const Country falklandIslands = Country(id: 71, name: "Falkland Islands", longitude: -59.0,
           latitude: -51.75, capital: "Stanley",
           currency: "FKP", currencySymbol: "£",

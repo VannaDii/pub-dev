@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇱 Albania`, and its 47 states
 const Country albania = Country(id: 3, name: "Albania", longitude: 20.0,
           latitude: 41.0, capital: "Tirana",
           currency: "ALL", currencySymbol: "Lek",

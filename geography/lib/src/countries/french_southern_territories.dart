@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇫 French Southern Territories`, and its 0 states
 const Country frenchSouthernTerritories = Country(id: 78, name: "French Southern Territories", longitude: 69.167,
           latitude: -49.25, capital: "Port-aux-Francais",
           currency: "EUR", currencySymbol: "€",

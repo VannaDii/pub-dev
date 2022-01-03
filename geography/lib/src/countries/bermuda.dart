@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇲 Bermuda`, and its 11 states
 const Country bermuda = Country(id: 25, name: "Bermuda", longitude: -64.75,
           latitude: 32.33333333, capital: "Hamilton",
           currency: "BMD", currencySymbol: "\$",

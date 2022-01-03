@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇵🇫 French Polynesia`, and its 0 states
 const Country frenchPolynesia = Country(id: 77, name: "French Polynesia", longitude: -140.0,
           latitude: -15.0, capital: "Papeete",
           currency: "XPF", currencySymbol: "₣",

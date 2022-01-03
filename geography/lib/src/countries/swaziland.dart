@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇿 Swaziland`, and its 4 states
 const Country swaziland = Country(id: 212, name: "Swaziland", longitude: 31.5,
           latitude: -26.5, capital: "Mbabane",
           currency: "SZL", currencySymbol: "E",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇴 Tonga`, and its 5 states
 const Country tonga = Country(id: 222, name: "Tonga", longitude: -175.0,
           latitude: -20.0, capital: "Nuku'alofa",
           currency: "TOP", currencySymbol: "\$",

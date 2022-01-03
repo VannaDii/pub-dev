@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇲 Armenia`, and its 11 states
 const Country armenia = Country(id: 12, name: "Armenia", longitude: 45.0,
           latitude: 40.0, capital: "Yerevan",
           currency: "AMD", currencySymbol: "֏",

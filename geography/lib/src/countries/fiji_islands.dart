@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇫🇯 Fiji Islands`, and its 19 states
 const Country fijiIslands = Country(id: 73, name: "Fiji Islands", longitude: 175.0,
           latitude: -18.0, capital: "Suva",
           currency: "FJD", currencySymbol: "FJ\$",

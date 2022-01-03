@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇱🇨 Saint Lucia`, and its 12 states
 const Country saintLucia = Country(id: 186, name: "Saint Lucia", longitude: -60.96666666,
           latitude: 13.88333333, capital: "Castries",
           currency: "XCD", currencySymbol: "\$",

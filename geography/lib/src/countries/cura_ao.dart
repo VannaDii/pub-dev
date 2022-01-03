@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇼 Curaçao`, and its 0 states
 const Country curaao = Country(id: 249, name: "Curaçao", longitude: -68.933333,
           latitude: 12.116667, capital: "Willemstad",
           currency: "ANG", currencySymbol: "ƒ",

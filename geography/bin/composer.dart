@@ -175,6 +175,8 @@ import '${basePath}base.dart';
               var writer = file.openWrite(mode: FileMode.writeOnly)
                 ..writeln(_fileHeader("geographies in ${country.name}", '../'))
                 ..writeln(
+                    "/// The country of `${country.emoji} ${country.name}`, and its ${country.states.length} states")
+                ..writeln(
                     "const Country $countryCodeName = ${_sourceCodeFor(country, tabs: 1).trim()};");
               await writer.flush();
               await writer.close();
@@ -195,6 +197,7 @@ import '${basePath}base.dart';
               "import '${path.relative(e.value, from: countriesDir)}' show ${e.key};")
           .join('\n'))
       ..writeln('')
+      ..writeln("/// A list of all known countries on earth and their metadata")
       ..writeln(
           "const List<Country> countries = [\n${countryCodeMap.keys.map((e) => e.indent(1)).join(",\n")}\n];");
     await writer.flush();

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇳 China`, and its 34 states
 const Country china = Country(id: 45, name: "China", longitude: 105.0,
           latitude: 35.0, capital: "Beijing",
           currency: "CNY", currencySymbol: "¥",

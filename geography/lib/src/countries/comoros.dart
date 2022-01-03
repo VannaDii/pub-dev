@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇰🇲 Comoros`, and its 3 states
 const Country comoros = Country(id: 49, name: "Comoros", longitude: 44.25,
           latitude: -12.16666666, capital: "Moroni",
           currency: "KMF", currencySymbol: "CF",

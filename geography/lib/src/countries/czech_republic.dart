@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇿 Czech Republic`, and its 90 states
 const Country czechRepublic = Country(id: 58, name: "Czech Republic", longitude: 15.5,
           latitude: 49.75, capital: "Prague",
           currency: "CZK", currencySymbol: "Kč",

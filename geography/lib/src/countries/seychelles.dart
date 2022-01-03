@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇨 Seychelles`, and its 24 states
 const Country seychelles = Country(id: 197, name: "Seychelles", longitude: 55.66666666,
           latitude: -4.58333333, capital: "Victoria",
           currency: "SCR", currencySymbol: "SRe",

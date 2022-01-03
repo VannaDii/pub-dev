@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇰🇮 Kiribati`, and its 3 states
 const Country kiribati = Country(id: 114, name: "Kiribati", longitude: 173.0,
           latitude: 1.41666666, capital: "Tarawa",
           currency: "AUD", currencySymbol: "\$",

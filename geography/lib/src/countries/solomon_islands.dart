@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇧 Solomon Islands`, and its 10 states
 const Country solomonIslands = Country(id: 202, name: "Solomon Islands", longitude: 159.0,
           latitude: -8.0, capital: "Honiara",
           currency: "SBD", currencySymbol: "Si\$",

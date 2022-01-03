@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇰🇷 South Korea`, and its 17 states
 const Country southKorea = Country(id: 116, name: "South Korea", longitude: 127.5,
           latitude: 37.0, capital: "Seoul",
           currency: "KRW", currencySymbol: "₩",

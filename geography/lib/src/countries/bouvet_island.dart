@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇻 Bouvet Island`, and its 0 states
 const Country bouvetIsland = Country(id: 30, name: "Bouvet Island", longitude: 3.4,
           latitude: -54.43333333, capital: "",
           currency: "NOK", currencySymbol: "kr",

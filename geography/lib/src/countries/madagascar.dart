@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇬 Madagascar`, and its 6 states
 const Country madagascar = Country(id: 130, name: "Madagascar", longitude: 47.0,
           latitude: -20.0, capital: "Antananarivo",
           currency: "MGA", currencySymbol: "Ar",

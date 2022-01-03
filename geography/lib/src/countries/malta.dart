@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇹 Malta`, and its 67 states
 const Country malta = Country(id: 135, name: "Malta", longitude: 14.58333333,
           latitude: 35.83333333, capital: "Valletta",
           currency: "EUR", currencySymbol: "€",

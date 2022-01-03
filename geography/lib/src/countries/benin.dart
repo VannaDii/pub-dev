@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇯 Benin`, and its 12 states
 const Country benin = Country(id: 24, name: "Benin", longitude: 2.25,
           latitude: 9.5, capital: "Porto-Novo",
           currency: "XOF", currencySymbol: "CFA",

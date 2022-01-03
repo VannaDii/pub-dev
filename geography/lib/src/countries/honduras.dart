@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇭🇳 Honduras`, and its 18 states
 const Country honduras = Country(id: 97, name: "Honduras", longitude: -86.5,
           latitude: 15.0, capital: "Tegucigalpa",
           currency: "HNL", currencySymbol: "L",

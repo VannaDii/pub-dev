@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇴🇲 Oman`, and its 13 states
 const Country oman = Country(id: 166, name: "Oman", longitude: 57.0,
           latitude: 21.0, capital: "Muscat",
           currency: "OMR", currencySymbol: ".ع.ر",

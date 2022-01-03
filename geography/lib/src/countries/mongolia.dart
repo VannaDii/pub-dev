@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇳 Mongolia`, and its 21 states
 const Country mongolia = Country(id: 146, name: "Mongolia", longitude: 105.0,
           latitude: 46.0, capital: "Ulan Bator",
           currency: "MNT", currencySymbol: "₮",

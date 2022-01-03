@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇳🇬 Nigeria`, and its 37 states
 const Country nigeria = Country(id: 161, name: "Nigeria", longitude: 8.0,
           latitude: 10.0, capital: "Abuja",
           currency: "NGN", currencySymbol: "₦",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇴 Colombia`, and its 33 states
 const Country colombia = Country(id: 48, name: "Colombia", longitude: -72.0,
           latitude: 4.0, capital: "Bogota",
           currency: "COP", currencySymbol: "\$",

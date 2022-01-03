@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇯🇵 Japan`, and its 47 states
 const Country japan = Country(id: 109, name: "Japan", longitude: 138.0,
           latitude: 36.0, capital: "Tokyo",
           currency: "JPY", currencySymbol: "¥",

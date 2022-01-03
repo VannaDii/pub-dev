@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇲 Myanmar`, and its 15 states
 const Country myanmar = Country(id: 151, name: "Myanmar", longitude: 98.0,
           latitude: 22.0, capital: "Nay Pyi Taw",
           currency: "MMK", currencySymbol: "K",

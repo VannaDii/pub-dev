@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇬 Antigua And Barbuda`, and its 8 states
 const Country antiguaAndBarbuda = Country(id: 10, name: "Antigua And Barbuda", longitude: -61.8,
           latitude: 17.05, capital: "St. John's",
           currency: "XCD", currencySymbol: "\$",

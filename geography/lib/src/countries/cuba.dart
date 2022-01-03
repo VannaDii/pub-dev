@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇺 Cuba`, and its 16 states
 const Country cuba = Country(id: 56, name: "Cuba", longitude: -80.0,
           latitude: 21.5, capital: "Havana",
           currency: "CUP", currencySymbol: "\$",

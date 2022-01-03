@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇭🇺 Hungary`, and its 42 states
 const Country hungary = Country(id: 99, name: "Hungary", longitude: 20.0,
           latitude: 47.0, capital: "Budapest",
           currency: "HUF", currencySymbol: "Ft",

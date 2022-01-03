@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇶🇦 Qatar`, and its 8 states
 const Country qatar = Country(id: 179, name: "Qatar", longitude: 51.25,
           latitude: 25.5, capital: "Doha",
           currency: "QAR", currencySymbol: "ق.ر",

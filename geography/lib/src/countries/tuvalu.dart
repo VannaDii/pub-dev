@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇻 Tuvalu`, and its 8 states
 const Country tuvalu = Country(id: 228, name: "Tuvalu", longitude: 178.0,
           latitude: -8.0, capital: "Funafuti",
           currency: "AUD", currencySymbol: "\$",

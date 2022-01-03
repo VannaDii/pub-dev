@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇮🇷 Iran`, and its 31 states
 const Country iran = Country(id: 103, name: "Iran", longitude: 53.0,
           latitude: 32.0, capital: "Tehran",
           currency: "IRR", currencySymbol: "﷼",

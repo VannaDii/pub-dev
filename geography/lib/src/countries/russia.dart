@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇷🇺 Russia`, and its 84 states
 const Country russia = Country(id: 182, name: "Russia", longitude: 100.0,
           latitude: 60.0, capital: "Moscow",
           currency: "RUB", currencySymbol: "₽",

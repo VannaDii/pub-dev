@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇭 Marshall Islands`, and its 2 states
 const Country marshallIslands = Country(id: 137, name: "Marshall Islands", longitude: 168.0,
           latitude: 9.0, capital: "Majuro",
           currency: "USD", currencySymbol: "\$",

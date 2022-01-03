@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇾🇹 Mayotte`, and its 0 states
 const Country mayotte = Country(id: 141, name: "Mayotte", longitude: 45.16666666,
           latitude: -12.83333333, capital: "Mamoudzou",
           currency: "EUR", currencySymbol: "€",

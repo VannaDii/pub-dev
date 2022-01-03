@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇦 Bosnia and Herzegovina`, and its 13 states
 const Country bosniaandHerzegovina = Country(id: 28, name: "Bosnia and Herzegovina", longitude: 18.0,
           latitude: 44.0, capital: "Sarajevo",
           currency: "BAM", currencySymbol: "KM",

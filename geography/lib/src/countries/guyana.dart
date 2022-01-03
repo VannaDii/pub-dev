@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇾 Guyana`, and its 10 states
 const Country guyana = Country(id: 94, name: "Guyana", longitude: -59.0,
           latitude: 5.0, capital: "Georgetown",
           currency: "GYD", currencySymbol: "\$",

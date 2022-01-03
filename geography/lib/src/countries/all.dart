@@ -6,506 +6,507 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
-import 'aland_islands.dart' show alandIslands;
-import 'albania.dart' show albania;
 import 'afghanistan.dart' show afghanistan;
+import 'aland_islands.dart' show alandIslands;
 import 'algeria.dart' show algeria;
 import 'american_samoa.dart' show americanSamoa;
+import 'albania.dart' show albania;
 import 'andorra.dart' show andorra;
-import 'angola.dart' show angola;
+import 'antarctica.dart' show antarctica;
 import 'anguilla.dart' show anguilla;
 import 'antigua_and_barbuda.dart' show antiguaAndBarbuda;
-import 'antarctica.dart' show antarctica;
 import 'argentina.dart' show argentina;
 import 'aruba.dart' show aruba;
-import 'australia.dart' show australia;
+import 'angola.dart' show angola;
 import 'armenia.dart' show armenia;
 import 'austria.dart' show austria;
-import 'bahamas_the.dart' show bahamasThe;
+import 'australia.dart' show australia;
 import 'azerbaijan.dart' show azerbaijan;
 import 'bahrain.dart' show bahrain;
-import 'bangladesh.dart' show bangladesh;
-import 'barbados.dart' show barbados;
+import 'bahamas_the.dart' show bahamasThe;
 import 'belarus.dart' show belarus;
 import 'belize.dart' show belize;
+import 'bangladesh.dart' show bangladesh;
+import 'barbados.dart' show barbados;
 import 'belgium.dart' show belgium;
 import 'bermuda.dart' show bermuda;
 import 'benin.dart' show benin;
 import 'bhutan.dart' show bhutan;
 import 'bolivia.dart' show bolivia;
-import 'bonaire_sint_eustatius_and_saba.dart' show bonaireSintEustatiusandSaba;
-import 'bosnia_and_herzegovina.dart' show bosniaandHerzegovina;
-import 'botswana.dart' show botswana;
 import 'bouvet_island.dart' show bouvetIsland;
-import 'brunei.dart' show brunei;
+import 'bonaire_sint_eustatius_and_saba.dart' show bonaireSintEustatiusandSaba;
+import 'botswana.dart' show botswana;
+import 'bosnia_and_herzegovina.dart' show bosniaandHerzegovina;
 import 'british_indian_ocean_territory.dart' show britishIndianOceanTerritory;
 import 'bulgaria.dart' show bulgaria;
+import 'brunei.dart' show brunei;
 import 'brazil.dart' show brazil;
 import 'burkina_faso.dart' show burkinaFaso;
-import 'burundi.dart' show burundi;
 import 'cambodia.dart' show cambodia;
+import 'burundi.dart' show burundi;
 import 'cameroon.dart' show cameroon;
+import 'cape_verde.dart' show capeVerde;
+import 'central_african_republic.dart' show centralAfricanRepublic;
 import 'canada.dart' show canada;
 import 'cayman_islands.dart' show caymanIslands;
-import 'central_african_republic.dart' show centralAfricanRepublic;
-import 'cape_verde.dart' show capeVerde;
-import 'chile.dart' show chile;
 import 'chad.dart' show chad;
-import 'china.dart' show china;
-import 'christmas_island.dart' show christmasIsland;
+import 'chile.dart' show chile;
 import 'cocos_keeling_islands.dart' show cocosKeelingIslands;
+import 'christmas_island.dart' show christmasIsland;
+import 'china.dart' show china;
 import 'colombia.dart' show colombia;
 import 'comoros.dart' show comoros;
 import 'congo.dart' show congo;
 import 'cook_islands.dart' show cookIslands;
-import 'cote_d_ivoire_ivory_coast_.dart' show coteDIvoireIvoryCoast;
-import 'croatia.dart' show croatia;
-import 'cuba.dart' show cuba;
 import 'costa_rica.dart' show costaRica;
 import 'cyprus.dart' show cyprus;
+import 'croatia.dart' show croatia;
+import 'cuba.dart' show cuba;
+import 'cote_d_ivoire_ivory_coast_.dart' show coteDIvoireIvoryCoast;
 import 'cura_ao.dart' show curaao;
 import 'czech_republic.dart' show czechRepublic;
 import 'djibouti.dart' show djibouti;
-import 'democratic_republic_of_the_congo.dart' show democraticRepublicoftheCongo;
 import 'denmark.dart' show denmark;
-import 'dominica.dart' show dominica;
+import 'democratic_republic_of_the_congo.dart' show democraticRepublicoftheCongo;
 import 'dominican_republic.dart' show dominicanRepublic;
+import 'dominica.dart' show dominica;
 import 'east_timor.dart' show eastTimor;
 import 'ecuador.dart' show ecuador;
 import 'egypt.dart' show egypt;
-import 'eritrea.dart' show eritrea;
 import 'el_salvador.dart' show elSalvador;
-import 'ethiopia.dart' show ethiopia;
-import 'estonia.dart' show estonia;
 import 'equatorial_guinea.dart' show equatorialGuinea;
-import 'falkland_islands.dart' show falklandIslands;
+import 'ethiopia.dart' show ethiopia;
+import 'eritrea.dart' show eritrea;
+import 'estonia.dart' show estonia;
 import 'faroe_islands.dart' show faroeIslands;
 import 'fiji_islands.dart' show fijiIslands;
+import 'falkland_islands.dart' show falklandIslands;
 import 'finland.dart' show finland;
 import 'french_polynesia.dart' show frenchPolynesia;
-import 'french_guiana.dart' show frenchGuiana;
 import 'french_southern_territories.dart' show frenchSouthernTerritories;
-import 'gabon.dart' show gabon;
-import 'georgia.dart' show georgia;
-import 'gambia_the.dart' show gambiaThe;
-import 'gibraltar.dart' show gibraltar;
+import 'french_guiana.dart' show frenchGuiana;
 import 'france.dart' show france;
+import 'gabon.dart' show gabon;
+import 'gambia_the.dart' show gambiaThe;
 import 'ghana.dart' show ghana;
+import 'georgia.dart' show georgia;
 import 'greece.dart' show greece;
-import 'germany.dart' show germany;
+import 'gibraltar.dart' show gibraltar;
 import 'greenland.dart' show greenland;
-import 'guadeloupe.dart' show guadeloupe;
+import 'germany.dart' show germany;
 import 'grenada.dart' show grenada;
-import 'guam.dart' show guam;
-import 'guernsey_and_alderney.dart' show guernseyandAlderney;
+import 'guadeloupe.dart' show guadeloupe;
 import 'guatemala.dart' show guatemala;
 import 'guinea.dart' show guinea;
+import 'guam.dart' show guam;
 import 'guinea_bissau.dart' show guineaBissau;
 import 'guyana.dart' show guyana;
-import 'haiti.dart' show haiti;
+import 'guernsey_and_alderney.dart' show guernseyandAlderney;
 import 'heard_island_and_mcdonald_islands.dart' show heardIslandandMcDonaldIslands;
+import 'haiti.dart' show haiti;
 import 'honduras.dart' show honduras;
 import 'iceland.dart' show iceland;
 import 'hong_kong_s_a_r_.dart' show hongKongSAR;
-import 'iraq.dart' show iraq;
 import 'hungary.dart' show hungary;
-import 'iran.dart' show iran;
 import 'india.dart' show india;
-import 'ireland.dart' show ireland;
-import 'israel.dart' show israel;
 import 'indonesia.dart' show indonesia;
-import 'jordan.dart' show jordan;
-import 'jersey.dart' show jersey;
-import 'japan.dart' show japan;
-import 'italy.dart' show italy;
-import 'kiribati.dart' show kiribati;
-import 'kuwait.dart' show kuwait;
-import 'kosovo.dart' show kosovo;
+import 'ireland.dart' show ireland;
+import 'iran.dart' show iran;
+import 'israel.dart' show israel;
 import 'jamaica.dart' show jamaica;
-import 'laos.dart' show laos;
-import 'kazakhstan.dart' show kazakhstan;
+import 'iraq.dart' show iraq;
+import 'jersey.dart' show jersey;
+import 'italy.dart' show italy;
 import 'kenya.dart' show kenya;
-import 'latvia.dart' show latvia;
-import 'lebanon.dart' show lebanon;
+import 'japan.dart' show japan;
+import 'jordan.dart' show jordan;
+import 'kiribati.dart' show kiribati;
+import 'kazakhstan.dart' show kazakhstan;
+import 'kosovo.dart' show kosovo;
 import 'kyrgyzstan.dart' show kyrgyzstan;
+import 'lebanon.dart' show lebanon;
+import 'kuwait.dart' show kuwait;
+import 'latvia.dart' show latvia;
+import 'laos.dart' show laos;
 import 'lesotho.dart' show lesotho;
 import 'libya.dart' show libya;
-import 'liberia.dart' show liberia;
 import 'liechtenstein.dart' show liechtenstein;
 import 'lithuania.dart' show lithuania;
-import 'luxembourg.dart' show luxembourg;
-import 'macau_s_a_r_.dart' show macauSAR;
-import 'macedonia.dart' show macedonia;
 import 'madagascar.dart' show madagascar;
+import 'liberia.dart' show liberia;
+import 'macau_s_a_r_.dart' show macauSAR;
+import 'luxembourg.dart' show luxembourg;
+import 'macedonia.dart' show macedonia;
 import 'malawi.dart' show malawi;
 import 'malaysia.dart' show malaysia;
-import 'mali.dart' show mali;
-import 'maldives.dart' show maldives;
-import 'marshall_islands.dart' show marshallIslands;
 import 'malta.dart' show malta;
+import 'maldives.dart' show maldives;
+import 'man_isle_of_.dart' show manIsleof;
+import 'marshall_islands.dart' show marshallIslands;
+import 'mali.dart' show mali;
 import 'martinique.dart' show martinique;
 import 'mauritania.dart' show mauritania;
-import 'man_isle_of_.dart' show manIsleof;
 import 'mauritius.dart' show mauritius;
 import 'mayotte.dart' show mayotte;
-import 'micronesia.dart' show micronesia;
-import 'moldova.dart' show moldova;
-import 'montserrat.dart' show montserrat;
-import 'morocco.dart' show morocco;
-import 'montenegro.dart' show montenegro;
-import 'mexico.dart' show mexico;
 import 'monaco.dart' show monaco;
+import 'moldova.dart' show moldova;
+import 'micronesia.dart' show micronesia;
 import 'mongolia.dart' show mongolia;
-import 'myanmar.dart' show myanmar;
+import 'morocco.dart' show morocco;
+import 'montserrat.dart' show montserrat;
+import 'mexico.dart' show mexico;
+import 'montenegro.dart' show montenegro;
 import 'mozambique.dart' show mozambique;
 import 'namibia.dart' show namibia;
 import 'nauru.dart' show nauru;
-import 'nepal.dart' show nepal;
+import 'myanmar.dart' show myanmar;
 import 'new_caledonia.dart' show newCaledonia;
+import 'nepal.dart' show nepal;
 import 'netherlands.dart' show netherlands;
-import 'nicaragua.dart' show nicaragua;
+import 'niger.dart' show niger;
 import 'new_zealand.dart' show newZealand;
 import 'nigeria.dart' show nigeria;
-import 'niger.dart' show niger;
+import 'nicaragua.dart' show nicaragua;
 import 'niue.dart' show niue;
-import 'norfolk_island.dart' show norfolkIsland;
 import 'north_korea.dart' show northKorea;
-import 'northern_mariana_islands.dart' show northernMarianaIslands;
-import 'oman.dart' show oman;
+import 'norfolk_island.dart' show norfolkIsland;
 import 'norway.dart' show norway;
+import 'northern_mariana_islands.dart' show northernMarianaIslands;
 import 'pakistan.dart' show pakistan;
+import 'oman.dart' show oman;
 import 'palau.dart' show palau;
-import 'panama.dart' show panama;
 import 'palestinian_territory_occupied.dart' show palestinianTerritoryOccupied;
-import 'paraguay.dart' show paraguay;
 import 'papua_new_guinea.dart' show papuanewGuinea;
+import 'panama.dart' show panama;
 import 'peru.dart' show peru;
-import 'pitcairn_island.dart' show pitcairnIsland;
-import 'poland.dart' show poland;
-import 'puerto_rico.dart' show puertoRico;
-import 'portugal.dart' show portugal;
-import 'qatar.dart' show qatar;
+import 'paraguay.dart' show paraguay;
 import 'philippines.dart' show philippines;
+import 'qatar.dart' show qatar;
+import 'poland.dart' show poland;
+import 'pitcairn_island.dart' show pitcairnIsland;
+import 'portugal.dart' show portugal;
 import 'reunion.dart' show reunion;
-import 'rwanda.dart' show rwanda;
-import 'saint_helena.dart' show saintHelena;
-import 'saint_kitts_and_nevis.dart' show saintKittsAndNevis;
+import 'puerto_rico.dart' show puertoRico;
 import 'romania.dart' show romania;
+import 'saint_helena.dart' show saintHelena;
+import 'rwanda.dart' show rwanda;
+import 'saint_lucia.dart' show saintLucia;
 import 'russia.dart' show russia;
-import 'saint_vincent_and_the_grenadines.dart' show saintVincentAndTheGrenadines;
+import 'saint_kitts_and_nevis.dart' show saintKittsAndNevis;
 import 'saint_pierre_and_miquelon.dart' show saintPierreandMiquelon;
 import 'saint_barthelemy.dart' show saintBarthelemy;
-import 'saint_martin_french_part_.dart' show saintMartinFrenchpart;
-import 'saint_lucia.dart' show saintLucia;
 import 'samoa.dart' show samoa;
-import 'san_marino.dart' show sanMarino;
-import 'senegal.dart' show senegal;
+import 'saint_vincent_and_the_grenadines.dart' show saintVincentAndTheGrenadines;
 import 'saudi_arabia.dart' show saudiArabia;
-import 'seychelles.dart' show seychelles;
-import 'serbia.dart' show serbia;
 import 'sao_tome_and_principe.dart' show saoTomeandPrincipe;
-import 'sierra_leone.dart' show sierraLeone;
-import 'singapore.dart' show singapore;
+import 'saint_martin_french_part_.dart' show saintMartinFrenchpart;
+import 'senegal.dart' show senegal;
+import 'san_marino.dart' show sanMarino;
+import 'seychelles.dart' show seychelles;
 import 'sint_maarten_dutch_part_.dart' show sintMaartenDutchpart;
-import 'slovenia.dart' show slovenia;
+import 'serbia.dart' show serbia;
 import 'slovakia.dart' show slovakia;
-import 'solomon_islands.dart' show solomonIslands;
+import 'slovenia.dart' show slovenia;
+import 'sierra_leone.dart' show sierraLeone;
 import 'somalia.dart' show somalia;
+import 'singapore.dart' show singapore;
 import 'south_africa.dart' show southAfrica;
-import 'south_korea.dart' show southKorea;
+import 'solomon_islands.dart' show solomonIslands;
 import 'south_georgia.dart' show southGeorgia;
-import 'south_sudan.dart' show southSudan;
-import 'spain.dart' show spain;
-import 'sri_lanka.dart' show sriLanka;
-import 'svalbard_and_jan_mayen_islands.dart' show svalbardAndJanMayenIslands;
-import 'suriname.dart' show suriname;
+import 'south_korea.dart' show southKorea;
 import 'sudan.dart' show sudan;
-import 'sweden.dart' show sweden;
+import 'sri_lanka.dart' show sriLanka;
+import 'south_sudan.dart' show southSudan;
+import 'suriname.dart' show suriname;
 import 'swaziland.dart' show swaziland;
+import 'spain.dart' show spain;
+import 'sweden.dart' show sweden;
+import 'svalbard_and_jan_mayen_islands.dart' show svalbardAndJanMayenIslands;
 import 'syria.dart' show syria;
 import 'switzerland.dart' show switzerland;
-import 'taiwan.dart' show taiwan;
 import 'tajikistan.dart' show tajikistan;
-import 'tanzania.dart' show tanzania;
+import 'taiwan.dart' show taiwan;
 import 'togo.dart' show togo;
 import 'tokelau.dart' show tokelau;
-import 'tonga.dart' show tonga;
 import 'thailand.dart' show thailand;
+import 'tanzania.dart' show tanzania;
 import 'trinidad_and_tobago.dart' show trinidadAndTobago;
+import 'tonga.dart' show tonga;
 import 'turkey.dart' show turkey;
 import 'tunisia.dart' show tunisia;
-import 'turks_and_caicos_islands.dart' show turksAndCaicosIslands;
 import 'turkmenistan.dart' show turkmenistan;
+import 'turks_and_caicos_islands.dart' show turksAndCaicosIslands;
 import 'tuvalu.dart' show tuvalu;
-import 'uganda.dart' show uganda;
-import 'united_arab_emirates.dart' show unitedArabEmirates;
 import 'ukraine.dart' show ukraine;
+import 'united_arab_emirates.dart' show unitedArabEmirates;
+import 'uganda.dart' show uganda;
 import 'united_states_minor_outlying_islands.dart' show unitedStatesMinorOutlyingIslands;
-import 'vanuatu.dart' show vanuatu;
 import 'uruguay.dart' show uruguay;
 import 'united_kingdom.dart' show unitedKingdom;
 import 'uzbekistan.dart' show uzbekistan;
-import 'venezuela.dart' show venezuela;
+import 'vanuatu.dart' show vanuatu;
 import 'united_states.dart' show unitedStates;
+import 'venezuela.dart' show venezuela;
 import 'vatican_city_state_holy_see_.dart' show vaticanCityStateHolySee;
 import 'vietnam.dart' show vietnam;
 import 'virgin_islands_british_.dart' show virginIslandsBritish;
 import 'wallis_and_futuna_islands.dart' show wallisAndFutunaIslands;
-import 'virgin_islands_us_.dart' show virginIslandsUS;
-import 'yemen.dart' show yemen;
 import 'western_sahara.dart' show westernSahara;
-import 'zimbabwe.dart' show zimbabwe;
+import 'virgin_islands_us_.dart' show virginIslandsUS;
 import 'zambia.dart' show zambia;
+import 'yemen.dart' show yemen;
+import 'zimbabwe.dart' show zimbabwe;
 
+/// A list of all known countries on earth and their metadata
 const List<Country> countries = [
-  alandIslands,
-  albania,
   afghanistan,
+  alandIslands,
   algeria,
   americanSamoa,
+  albania,
   andorra,
-  angola,
+  antarctica,
   anguilla,
   antiguaAndBarbuda,
-  antarctica,
   argentina,
   aruba,
-  australia,
+  angola,
   armenia,
   austria,
-  bahamasThe,
+  australia,
   azerbaijan,
   bahrain,
-  bangladesh,
-  barbados,
+  bahamasThe,
   belarus,
   belize,
+  bangladesh,
+  barbados,
   belgium,
   bermuda,
   benin,
   bhutan,
   bolivia,
-  bonaireSintEustatiusandSaba,
-  bosniaandHerzegovina,
-  botswana,
   bouvetIsland,
-  brunei,
+  bonaireSintEustatiusandSaba,
+  botswana,
+  bosniaandHerzegovina,
   britishIndianOceanTerritory,
   bulgaria,
+  brunei,
   brazil,
   burkinaFaso,
-  burundi,
   cambodia,
+  burundi,
   cameroon,
+  capeVerde,
+  centralAfricanRepublic,
   canada,
   caymanIslands,
-  centralAfricanRepublic,
-  capeVerde,
-  chile,
   chad,
-  china,
-  christmasIsland,
+  chile,
   cocosKeelingIslands,
+  christmasIsland,
+  china,
   colombia,
   comoros,
   congo,
   cookIslands,
-  coteDIvoireIvoryCoast,
-  croatia,
-  cuba,
   costaRica,
   cyprus,
+  croatia,
+  cuba,
+  coteDIvoireIvoryCoast,
   curaao,
   czechRepublic,
   djibouti,
-  democraticRepublicoftheCongo,
   denmark,
-  dominica,
+  democraticRepublicoftheCongo,
   dominicanRepublic,
+  dominica,
   eastTimor,
   ecuador,
   egypt,
-  eritrea,
   elSalvador,
-  ethiopia,
-  estonia,
   equatorialGuinea,
-  falklandIslands,
+  ethiopia,
+  eritrea,
+  estonia,
   faroeIslands,
   fijiIslands,
+  falklandIslands,
   finland,
   frenchPolynesia,
-  frenchGuiana,
   frenchSouthernTerritories,
-  gabon,
-  georgia,
-  gambiaThe,
-  gibraltar,
+  frenchGuiana,
   france,
+  gabon,
+  gambiaThe,
   ghana,
+  georgia,
   greece,
-  germany,
+  gibraltar,
   greenland,
-  guadeloupe,
+  germany,
   grenada,
-  guam,
-  guernseyandAlderney,
+  guadeloupe,
   guatemala,
   guinea,
+  guam,
   guineaBissau,
   guyana,
-  haiti,
+  guernseyandAlderney,
   heardIslandandMcDonaldIslands,
+  haiti,
   honduras,
   iceland,
   hongKongSAR,
-  iraq,
   hungary,
-  iran,
   india,
-  ireland,
-  israel,
   indonesia,
-  jordan,
-  jersey,
-  japan,
-  italy,
-  kiribati,
-  kuwait,
-  kosovo,
+  ireland,
+  iran,
+  israel,
   jamaica,
-  laos,
-  kazakhstan,
+  iraq,
+  jersey,
+  italy,
   kenya,
-  latvia,
-  lebanon,
+  japan,
+  jordan,
+  kiribati,
+  kazakhstan,
+  kosovo,
   kyrgyzstan,
+  lebanon,
+  kuwait,
+  latvia,
+  laos,
   lesotho,
   libya,
-  liberia,
   liechtenstein,
   lithuania,
-  luxembourg,
-  macauSAR,
-  macedonia,
   madagascar,
+  liberia,
+  macauSAR,
+  luxembourg,
+  macedonia,
   malawi,
   malaysia,
-  mali,
-  maldives,
-  marshallIslands,
   malta,
+  maldives,
+  manIsleof,
+  marshallIslands,
+  mali,
   martinique,
   mauritania,
-  manIsleof,
   mauritius,
   mayotte,
-  micronesia,
-  moldova,
-  montserrat,
-  morocco,
-  montenegro,
-  mexico,
   monaco,
+  moldova,
+  micronesia,
   mongolia,
-  myanmar,
+  morocco,
+  montserrat,
+  mexico,
+  montenegro,
   mozambique,
   namibia,
   nauru,
-  nepal,
+  myanmar,
   newCaledonia,
+  nepal,
   netherlands,
-  nicaragua,
+  niger,
   newZealand,
   nigeria,
-  niger,
+  nicaragua,
   niue,
-  norfolkIsland,
   northKorea,
-  northernMarianaIslands,
-  oman,
+  norfolkIsland,
   norway,
+  northernMarianaIslands,
   pakistan,
+  oman,
   palau,
-  panama,
   palestinianTerritoryOccupied,
-  paraguay,
   papuanewGuinea,
+  panama,
   peru,
-  pitcairnIsland,
-  poland,
-  puertoRico,
-  portugal,
-  qatar,
+  paraguay,
   philippines,
+  qatar,
+  poland,
+  pitcairnIsland,
+  portugal,
   reunion,
-  rwanda,
-  saintHelena,
-  saintKittsAndNevis,
+  puertoRico,
   romania,
+  saintHelena,
+  rwanda,
+  saintLucia,
   russia,
-  saintVincentAndTheGrenadines,
+  saintKittsAndNevis,
   saintPierreandMiquelon,
   saintBarthelemy,
-  saintMartinFrenchpart,
-  saintLucia,
   samoa,
-  sanMarino,
-  senegal,
+  saintVincentAndTheGrenadines,
   saudiArabia,
-  seychelles,
-  serbia,
   saoTomeandPrincipe,
-  sierraLeone,
-  singapore,
+  saintMartinFrenchpart,
+  senegal,
+  sanMarino,
+  seychelles,
   sintMaartenDutchpart,
-  slovenia,
+  serbia,
   slovakia,
-  solomonIslands,
+  slovenia,
+  sierraLeone,
   somalia,
+  singapore,
   southAfrica,
-  southKorea,
+  solomonIslands,
   southGeorgia,
-  southSudan,
-  spain,
-  sriLanka,
-  svalbardAndJanMayenIslands,
-  suriname,
+  southKorea,
   sudan,
-  sweden,
+  sriLanka,
+  southSudan,
+  suriname,
   swaziland,
+  spain,
+  sweden,
+  svalbardAndJanMayenIslands,
   syria,
   switzerland,
-  taiwan,
   tajikistan,
-  tanzania,
+  taiwan,
   togo,
   tokelau,
-  tonga,
   thailand,
+  tanzania,
   trinidadAndTobago,
+  tonga,
   turkey,
   tunisia,
-  turksAndCaicosIslands,
   turkmenistan,
+  turksAndCaicosIslands,
   tuvalu,
-  uganda,
-  unitedArabEmirates,
   ukraine,
+  unitedArabEmirates,
+  uganda,
   unitedStatesMinorOutlyingIslands,
-  vanuatu,
   uruguay,
   unitedKingdom,
   uzbekistan,
-  venezuela,
+  vanuatu,
   unitedStates,
+  venezuela,
   vaticanCityStateHolySee,
   vietnam,
   virginIslandsBritish,
   wallisAndFutunaIslands,
-  virginIslandsUS,
-  yemen,
   westernSahara,
-  zimbabwe,
-  zambia
+  virginIslandsUS,
+  zambia,
+  yemen,
+  zimbabwe
 ];

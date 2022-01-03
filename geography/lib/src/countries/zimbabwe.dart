@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇿🇼 Zimbabwe`, and its 10 states
 const Country zimbabwe = Country(id: 247, name: "Zimbabwe", longitude: 30.0,
           latitude: -20.0, capital: "Harare",
           currency: "ZWL", currencySymbol: "\$",

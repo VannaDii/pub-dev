@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇷 Mauritania`, and its 15 states
 const Country mauritania = Country(id: 139, name: "Mauritania", longitude: -12.0,
           latitude: 20.0, capital: "Nouakchott",
           currency: "MRO", currencySymbol: "MRU",

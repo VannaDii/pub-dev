@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇽🇰 Kosovo`, and its 7 states
 const Country kosovo = Country(id: 248, name: "Kosovo", longitude: 20.3403035,
           latitude: 42.5612909, capital: "Pristina",
           currency: "EUR", currencySymbol: "€",

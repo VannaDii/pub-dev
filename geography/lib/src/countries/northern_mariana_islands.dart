@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇵 Northern Mariana Islands`, and its 0 states
 const Country northernMarianaIslands = Country(id: 164, name: "Northern Mariana Islands", longitude: 145.75,
           latitude: 15.2, capital: "Saipan",
           currency: "USD", currencySymbol: "\$",

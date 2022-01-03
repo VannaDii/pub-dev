@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇩🇲 Dominica`, and its 10 states
 const Country dominica = Country(id: 61, name: "Dominica", longitude: -61.33333333,
           latitude: 15.41666666, capital: "Roseau",
           currency: "XCD", currencySymbol: "\$",

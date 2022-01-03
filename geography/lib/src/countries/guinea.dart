@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇳 Guinea`, and its 40 states
 const Country guinea = Country(id: 92, name: "Guinea", longitude: -10.0,
           latitude: 11.0, capital: "Conakry",
           currency: "GNF", currencySymbol: "FG",

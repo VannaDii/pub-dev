@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇻 El Salvador`, and its 14 states
 const Country elSalvador = Country(id: 66, name: "El Salvador", longitude: -88.91666666,
           latitude: 13.83333333, capital: "San Salvador",
           currency: "USD", currencySymbol: "\$",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇰🇬 Kyrgyzstan`, and its 9 states
 const Country kyrgyzstan = Country(id: 118, name: "Kyrgyzstan", longitude: 75.0,
           latitude: 41.0, capital: "Bishkek",
           currency: "KGS", currencySymbol: "лв",

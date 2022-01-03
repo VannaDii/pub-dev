@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇪 Georgia`, and its 14 states
 const Country georgia = Country(id: 81, name: "Georgia", longitude: 43.5,
           latitude: 42.0, capital: "Tbilisi",
           currency: "GEL", currencySymbol: "ლ",

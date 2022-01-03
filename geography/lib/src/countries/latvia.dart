@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇱🇻 Latvia`, and its 118 states
 const Country latvia = Country(id: 120, name: "Latvia", longitude: 25.0,
           latitude: 57.0, capital: "Riga",
           currency: "EUR", currencySymbol: "€",

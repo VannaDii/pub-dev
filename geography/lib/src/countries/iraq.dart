@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇮🇶 Iraq`, and its 18 states
 const Country iraq = Country(id: 104, name: "Iraq", longitude: 44.0,
           latitude: 33.0, capital: "Baghdad",
           currency: "IQD", currencySymbol: "د.ع",

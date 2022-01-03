@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇺🇲 United States Minor Outlying Islands`, and its 0 states
 const Country unitedStatesMinorOutlyingIslands = Country(id: 234, name: "United States Minor Outlying Islands", longitude: 0.0,
           latitude: 0.0, capital: "",
           currency: "USD", currencySymbol: "\$",

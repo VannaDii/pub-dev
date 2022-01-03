@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇪🇸 Spain`, and its 28 states
 const Country spain = Country(id: 207, name: "Spain", longitude: -4.0,
           latitude: 40.0, capital: "Madrid",
           currency: "EUR", currencySymbol: "€",

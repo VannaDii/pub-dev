@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇸 South Sudan`, and its 10 states
 const Country southSudan = Country(id: 206, name: "South Sudan", longitude: 30.0,
           latitude: 7.0, capital: "Juba",
           currency: "SSP", currencySymbol: "£",

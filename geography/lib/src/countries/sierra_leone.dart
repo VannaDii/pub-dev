@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇱 Sierra Leone`, and its 4 states
 const Country sierraLeone = Country(id: 198, name: "Sierra Leone", longitude: -11.5,
           latitude: 8.5, capital: "Freetown",
           currency: "SLL", currencySymbol: "Le",

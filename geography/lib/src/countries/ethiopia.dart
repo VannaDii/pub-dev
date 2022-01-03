@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇪🇹 Ethiopia`, and its 11 states
 const Country ethiopia = Country(id: 70, name: "Ethiopia", longitude: 38.0,
           latitude: 8.0, capital: "Addis Ababa",
           currency: "ETB", currencySymbol: "Nkf",

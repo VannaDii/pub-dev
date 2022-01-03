@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇩 Grenada`, and its 7 states
 const Country grenada = Country(id: 87, name: "Grenada", longitude: -61.66666666,
           latitude: 12.11666666, capital: "St. George's",
           currency: "XCD", currencySymbol: "\$",

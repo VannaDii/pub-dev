@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇷 Suriname`, and its 10 states
 const Country suriname = Country(id: 210, name: "Suriname", longitude: -56.0,
           latitude: 4.0, capital: "Paramaribo",
           currency: "SRD", currencySymbol: "\$",

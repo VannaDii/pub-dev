@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇰 Macedonia`, and its 84 states
 const Country macedonia = Country(id: 129, name: "Macedonia", longitude: 22.0,
           latitude: 41.83333333, capital: "Skopje",
           currency: "MKD", currencySymbol: "ден",

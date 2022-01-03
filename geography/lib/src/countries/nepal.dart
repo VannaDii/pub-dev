@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇳🇵 Nepal`, and its 19 states
 const Country nepal = Country(id: 154, name: "Nepal", longitude: 84.0,
           latitude: 28.0, capital: "Kathmandu",
           currency: "NPR", currencySymbol: "₨",

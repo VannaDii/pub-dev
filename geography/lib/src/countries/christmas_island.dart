@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇽 Christmas Island`, and its 0 states
 const Country christmasIsland = Country(id: 46, name: "Christmas Island", longitude: 105.66666666,
           latitude: -10.5, capital: "Flying Fish Cove",
           currency: "AUD", currencySymbol: "\$",

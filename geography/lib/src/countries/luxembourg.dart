@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇱🇺 Luxembourg`, and its 15 states
 const Country luxembourg = Country(id: 127, name: "Luxembourg", longitude: 6.16666666,
           latitude: 49.75, capital: "Luxembourg",
           currency: "EUR", currencySymbol: "€",

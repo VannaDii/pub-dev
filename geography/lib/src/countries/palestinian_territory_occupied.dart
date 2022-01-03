@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇵🇸 Palestinian Territory Occupied`, and its 0 states
 const Country palestinianTerritoryOccupied = Country(id: 169, name: "Palestinian Territory Occupied", longitude: 35.2,
           latitude: 31.9, capital: "East Jerusalem",
           currency: "ILS", currencySymbol: "₪",

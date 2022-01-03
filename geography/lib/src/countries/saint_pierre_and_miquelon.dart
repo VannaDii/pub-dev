@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇵🇲 Saint Pierre and Miquelon`, and its 0 states
 const Country saintPierreandMiquelon = Country(id: 187, name: "Saint Pierre and Miquelon", longitude: -56.33333333,
           latitude: 46.83333333, capital: "Saint-Pierre",
           currency: "EUR", currencySymbol: "€",

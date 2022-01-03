@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇶 Martinique`, and its 0 states
 const Country martinique = Country(id: 138, name: "Martinique", longitude: -61.0,
           latitude: 14.666667, capital: "Fort-de-France",
           currency: "EUR", currencySymbol: "€",

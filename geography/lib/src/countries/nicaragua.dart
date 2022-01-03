@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇳🇮 Nicaragua`, and its 17 states
 const Country nicaragua = Country(id: 159, name: "Nicaragua", longitude: -85.0,
           latitude: 13.0, capital: "Managua",
           currency: "NIO", currencySymbol: "C\$",

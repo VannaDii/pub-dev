@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇱🇹 Lithuania`, and its 69 states
 const Country lithuania = Country(id: 126, name: "Lithuania", longitude: 24.0,
           latitude: 56.0, capital: "Vilnius",
           currency: "EUR", currencySymbol: "€",

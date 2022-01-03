@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇭🇲 Heard Island and McDonald Islands`, and its 0 states
 const Country heardIslandandMcDonaldIslands = Country(id: 96, name: "Heard Island and McDonald Islands", longitude: 72.51666666,
           latitude: -53.1, capital: "",
           currency: "AUD", currencySymbol: "\$",

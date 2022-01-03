@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇴 Macau S.A.R.`, and its 0 states
 const Country macauSAR = Country(id: 128, name: "Macau S.A.R.", longitude: 113.55,
           latitude: 22.16666666, capital: "Macao",
           currency: "MOP", currencySymbol: "\$",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇮🇱 Israel`, and its 6 states
 const Country israel = Country(id: 106, name: "Israel", longitude: 34.75,
           latitude: 31.5, capital: "Jerusalem",
           currency: "ILS", currencySymbol: "₪",

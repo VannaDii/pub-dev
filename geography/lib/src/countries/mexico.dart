@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇽 Mexico`, and its 32 states
 const Country mexico = Country(id: 142, name: "Mexico", longitude: -102.0,
           latitude: 23.0, capital: "Mexico City",
           currency: "MXN", currencySymbol: "\$",

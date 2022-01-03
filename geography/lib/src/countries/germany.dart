@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇩🇪 Germany`, and its 16 states
 const Country germany = Country(id: 82, name: "Germany", longitude: 9.0,
           latitude: 51.0, capital: "Berlin",
           currency: "EUR", currencySymbol: "€",

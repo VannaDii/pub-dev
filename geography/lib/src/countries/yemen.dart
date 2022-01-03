@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇾🇪 Yemen`, and its 21 states
 const Country yemen = Country(id: 245, name: "Yemen", longitude: 48.0,
           latitude: 15.0, capital: "Sanaa",
           currency: "YER", currencySymbol: "﷼",

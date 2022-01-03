@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇩 Andorra`, and its 7 states
 const Country andorra = Country(id: 6, name: "Andorra", longitude: 1.5,
           latitude: 42.5, capital: "Andorra la Vella",
           currency: "EUR", currencySymbol: "€",

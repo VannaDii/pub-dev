@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇿 Azerbaijan`, and its 75 states
 const Country azerbaijan = Country(id: 16, name: "Azerbaijan", longitude: 47.5,
           latitude: 40.5, capital: "Baku",
           currency: "AZN", currencySymbol: "m",

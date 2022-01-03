@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇼🇫 Wallis And Futuna Islands`, and its 0 states
 const Country wallisAndFutunaIslands = Country(id: 243, name: "Wallis And Futuna Islands", longitude: -176.2,
           latitude: -13.3, capital: "Mata Utu",
           currency: "XPF", currencySymbol: "₣",

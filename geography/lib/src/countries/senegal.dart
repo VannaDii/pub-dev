@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇳 Senegal`, and its 14 states
 const Country senegal = Country(id: 195, name: "Senegal", longitude: -14.0,
           latitude: 14.0, capital: "Dakar",
           currency: "XOF", currencySymbol: "CFA",

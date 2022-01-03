@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇩 Moldova`, and its 36 states
 const Country moldova = Country(id: 144, name: "Moldova", longitude: 29.0,
           latitude: 47.0, capital: "Chisinau",
           currency: "MDL", currencySymbol: "L",

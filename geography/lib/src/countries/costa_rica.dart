@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇷 Costa Rica`, and its 7 states
 const Country costaRica = Country(id: 53, name: "Costa Rica", longitude: -84.0,
           latitude: 10.0, capital: "San Jose",
           currency: "CRC", currencySymbol: "₡",

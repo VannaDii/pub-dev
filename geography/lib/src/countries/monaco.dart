@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇨 Monaco`, and its 3 states
 const Country monaco = Country(id: 145, name: "Monaco", longitude: 7.4,
           latitude: 43.73333333, capital: "Monaco",
           currency: "EUR", currencySymbol: "€",

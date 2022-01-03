@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇿 Belize`, and its 6 states
 const Country belize = Country(id: 23, name: "Belize", longitude: -88.75,
           latitude: 17.25, capital: "Belmopan",
           currency: "BZD", currencySymbol: "\$",

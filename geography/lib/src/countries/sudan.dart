@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇩 Sudan`, and its 18 states
 const Country sudan = Country(id: 209, name: "Sudan", longitude: 30.0,
           latitude: 15.0, capital: "Khartoum",
           currency: "SDG", currencySymbol: ".س.ج",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇮 Cote D'Ivoire (Ivory Coast)`, and its 31 states
 const Country coteDIvoireIvoryCoast = Country(id: 54, name: "Cote D'Ivoire (Ivory Coast)", longitude: -5.0,
           latitude: 8.0, capital: "Yamoussoukro",
           currency: "XOF", currencySymbol: "CFA",

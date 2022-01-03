@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇺🇾 Uruguay`, and its 19 states
 const Country uruguay = Country(id: 235, name: "Uruguay", longitude: -56.0,
           latitude: -33.0, capital: "Montevideo",
           currency: "UYU", currencySymbol: "\$",

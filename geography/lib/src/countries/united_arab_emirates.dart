@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇪 United Arab Emirates`, and its 7 states
 const Country unitedArabEmirates = Country(id: 231, name: "United Arab Emirates", longitude: 54.0,
           latitude: 24.0, capital: "Abu Dhabi",
           currency: "AED", currencySymbol: "إ.د",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇷 Argentina`, and its 24 states
 const Country argentina = Country(id: 11, name: "Argentina", longitude: -64.0,
           latitude: -34.0, capital: "Buenos Aires",
           currency: "ARS", currencySymbol: "\$",

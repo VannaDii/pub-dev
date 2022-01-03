@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇫 Saint-Martin (French part)`, and its 0 states
 const Country saintMartinFrenchpart = Country(id: 190, name: "Saint-Martin (French part)", longitude: -63.95,
           latitude: 18.08333333, capital: "Marigot",
           currency: "EUR", currencySymbol: "€",

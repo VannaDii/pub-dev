@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇲 Turkmenistan`, and its 6 states
 const Country turkmenistan = Country(id: 226, name: "Turkmenistan", longitude: 60.0,
           latitude: 40.0, capital: "Ashgabat",
           currency: "TMT", currencySymbol: "T",

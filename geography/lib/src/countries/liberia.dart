@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇱🇷 Liberia`, and its 15 states
 const Country liberia = Country(id: 123, name: "Liberia", longitude: -9.5,
           latitude: 6.5, capital: "Monrovia",
           currency: "LRD", currencySymbol: "\$",

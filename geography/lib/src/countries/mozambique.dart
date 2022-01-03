@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇿 Mozambique`, and its 11 states
 const Country mozambique = Country(id: 150, name: "Mozambique", longitude: 35.0,
           latitude: -18.25, capital: "Maputo",
           currency: "MZN", currencySymbol: "MT",

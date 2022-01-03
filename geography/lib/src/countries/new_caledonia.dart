@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇳🇨 New Caledonia`, and its 0 states
 const Country newCaledonia = Country(id: 157, name: "New Caledonia", longitude: 165.5,
           latitude: -21.5, capital: "Noumea",
           currency: "XPF", currencySymbol: "₣",

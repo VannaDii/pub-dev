@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇵🇰 Pakistan`, and its 8 states
 const Country pakistan = Country(id: 167, name: "Pakistan", longitude: 70.0,
           latitude: 30.0, capital: "Islamabad",
           currency: "PKR", currencySymbol: "₨",

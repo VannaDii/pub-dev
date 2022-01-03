@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇹 Bhutan`, and its 19 states
 const Country bhutan = Country(id: 26, name: "Bhutan", longitude: 90.5,
           latitude: 27.5, capital: "Thimphu",
           currency: "BTN", currencySymbol: "Nu.",

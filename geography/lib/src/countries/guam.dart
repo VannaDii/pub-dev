@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇺 Guam`, and its 0 states
 const Country guam = Country(id: 89, name: "Guam", longitude: 144.78333333,
           latitude: 13.46666666, capital: "Hagatna",
           currency: "USD", currencySymbol: "\$",

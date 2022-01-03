@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇮 Slovenia`, and its 211 states
 const Country slovenia = Country(id: 201, name: "Slovenia", longitude: 14.81666666,
           latitude: 46.11666666, capital: "Ljubljana",
           currency: "EUR", currencySymbol: "€",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇪 Montenegro`, and its 22 states
 const Country montenegro = Country(id: 147, name: "Montenegro", longitude: 19.3,
           latitude: 42.5, capital: "Podgorica",
           currency: "EUR", currencySymbol: "€",

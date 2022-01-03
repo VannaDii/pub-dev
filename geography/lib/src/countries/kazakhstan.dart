@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇰🇿 Kazakhstan`, and its 17 states
 const Country kazakhstan = Country(id: 112, name: "Kazakhstan", longitude: 68.0,
           latitude: 48.0, capital: "Astana",
           currency: "KZT", currencySymbol: "лв",

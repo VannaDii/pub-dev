@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇵🇹 Portugal`, and its 20 states
 const Country portugal = Country(id: 177, name: "Portugal", longitude: -8.0,
           latitude: 39.5, capital: "Lisbon",
           currency: "EUR", currencySymbol: "€",

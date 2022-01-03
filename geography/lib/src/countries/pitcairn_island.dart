@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇵🇳 Pitcairn Island`, and its 0 states
 const Country pitcairnIsland = Country(id: 175, name: "Pitcairn Island", longitude: -130.1,
           latitude: -25.06666666, capital: "Adamstown",
           currency: "NZD", currencySymbol: "\$",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇩🇿 Algeria`, and its 58 states
 const Country algeria = Country(id: 4, name: "Algeria", longitude: 3.0,
           latitude: 28.0, capital: "Algiers",
           currency: "DZD", currencySymbol: "دج",

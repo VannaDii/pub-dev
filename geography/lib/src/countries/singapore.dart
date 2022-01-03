@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇬 Singapore`, and its 5 states
 const Country singapore = Country(id: 199, name: "Singapore", longitude: 103.8,
           latitude: 1.36666666, capital: "Singapur",
           currency: "SGD", currencySymbol: "\$",

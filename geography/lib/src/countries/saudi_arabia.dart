@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇦 Saudi Arabia`, and its 13 states
 const Country saudiArabia = Country(id: 194, name: "Saudi Arabia", longitude: 45.0,
           latitude: 25.0, capital: "Riyadh",
           currency: "SAR", currencySymbol: "﷼",

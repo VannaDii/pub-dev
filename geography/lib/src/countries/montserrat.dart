@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇸 Montserrat`, and its 0 states
 const Country montserrat = Country(id: 148, name: "Montserrat", longitude: -62.2,
           latitude: 16.75, capital: "Plymouth",
           currency: "XCD", currencySymbol: "\$",

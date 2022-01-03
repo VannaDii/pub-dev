@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇩 Chad`, and its 23 states
 const Country chad = Country(id: 43, name: "Chad", longitude: 19.0,
           latitude: 15.0, capital: "N'Djamena",
           currency: "XAF", currencySymbol: "FCFA",

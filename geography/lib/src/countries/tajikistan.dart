@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇯 Tajikistan`, and its 4 states
 const Country tajikistan = Country(id: 217, name: "Tajikistan", longitude: 71.0,
           latitude: 39.0, capital: "Dushanbe",
           currency: "TJS", currencySymbol: "SM",

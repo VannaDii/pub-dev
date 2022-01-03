@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇦 Canada`, and its 13 states
 const Country canada = Country(id: 39, name: "Canada", longitude: -95.0,
           latitude: 60.0, capital: "Ottawa",
           currency: "CAD", currencySymbol: "\$",

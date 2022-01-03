@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇾 Malaysia`, and its 16 states
 const Country malaysia = Country(id: 132, name: "Malaysia", longitude: 112.5,
           latitude: 2.5, capital: "Kuala Lumpur",
           currency: "MYR", currencySymbol: "RM",

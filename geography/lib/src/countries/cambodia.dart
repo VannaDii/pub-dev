@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇰🇭 Cambodia`, and its 23 states
 const Country cambodia = Country(id: 37, name: "Cambodia", longitude: 105.0,
           latitude: 13.0, capital: "Phnom Penh",
           currency: "KHR", currencySymbol: "KHR",

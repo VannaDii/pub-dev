@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇫 French Guiana`, and its 0 states
 const Country frenchGuiana = Country(id: 76, name: "French Guiana", longitude: -53.0,
           latitude: 4.0, capital: "Cayenne",
           currency: "EUR", currencySymbol: "€",

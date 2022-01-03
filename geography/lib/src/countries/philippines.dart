@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇵🇭 Philippines`, and its 97 states
 const Country philippines = Country(id: 174, name: "Philippines", longitude: 122.0,
           latitude: 13.0, capital: "Manila",
           currency: "PHP", currencySymbol: "₱",

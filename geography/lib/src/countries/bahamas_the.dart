@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇸 Bahamas The`, and its 42 states
 const Country bahamasThe = Country(id: 17, name: "Bahamas The", longitude: -76.0,
           latitude: 24.25, capital: "Nassau",
           currency: "BSD", currencySymbol: "B\$",

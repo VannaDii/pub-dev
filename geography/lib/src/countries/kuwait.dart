@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇰🇼 Kuwait`, and its 6 states
 const Country kuwait = Country(id: 117, name: "Kuwait", longitude: 45.75,
           latitude: 29.5, capital: "Kuwait City",
           currency: "KWD", currencySymbol: "ك.د",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇬 Congo`, and its 12 states
 const Country congo = Country(id: 50, name: "Congo", longitude: 15.0,
           latitude: -1.0, capital: "Brazzaville",
           currency: "XAF", currencySymbol: "FC",

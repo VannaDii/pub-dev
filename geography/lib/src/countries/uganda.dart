@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇺🇬 Uganda`, and its 125 states
 const Country uganda = Country(id: 229, name: "Uganda", longitude: 32.0,
           latitude: 1.0, capital: "Kampala",
           currency: "UGX", currencySymbol: "USh",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇷🇼 Rwanda`, and its 5 states
 const Country rwanda = Country(id: 183, name: "Rwanda", longitude: 30.0,
           latitude: -2.0, capital: "Kigali",
           currency: "RWF", currencySymbol: "FRw",

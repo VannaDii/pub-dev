@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇪🇷 Eritrea`, and its 6 states
 const Country eritrea = Country(id: 68, name: "Eritrea", longitude: 39.0,
           latitude: 15.0, capital: "Asmara",
           currency: "ERN", currencySymbol: "Nfk",

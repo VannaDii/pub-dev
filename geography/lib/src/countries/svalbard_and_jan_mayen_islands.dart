@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇯 Svalbard And Jan Mayen Islands`, and its 0 states
 const Country svalbardAndJanMayenIslands = Country(id: 211, name: "Svalbard And Jan Mayen Islands", longitude: 20.0,
           latitude: 78.0, capital: "Longyearbyen",
           currency: "NOK", currencySymbol: "kr",

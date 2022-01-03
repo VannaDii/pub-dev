@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇱🇰 Sri Lanka`, and its 33 states
 const Country sriLanka = Country(id: 208, name: "Sri Lanka", longitude: 81.0,
           latitude: 7.0, capital: "Colombo",
           currency: "LKR", currencySymbol: "Rs",

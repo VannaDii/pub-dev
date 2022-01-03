@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇳 Tunisia`, and its 23 states
 const Country tunisia = Country(id: 224, name: "Tunisia", longitude: 9.0,
           latitude: 34.0, capital: "Tunis",
           currency: "TND", currencySymbol: "ت.د",

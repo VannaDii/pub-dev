@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇷 Greece`, and its 38 states
 const Country greece = Country(id: 85, name: "Greece", longitude: 22.0,
           latitude: 39.0, capital: "Athens",
           currency: "EUR", currencySymbol: "€",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇳🇺 Niue`, and its 0 states
 const Country niue = Country(id: 162, name: "Niue", longitude: -169.86666666,
           latitude: -19.03333333, capital: "Alofi",
           currency: "NZD", currencySymbol: "\$",

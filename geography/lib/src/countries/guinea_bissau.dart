@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇼 Guinea-Bissau`, and its 11 states
 const Country guineaBissau = Country(id: 93, name: "Guinea-Bissau", longitude: -15.0,
           latitude: 12.0, capital: "Bissau",
           currency: "XOF", currencySymbol: "CFA",

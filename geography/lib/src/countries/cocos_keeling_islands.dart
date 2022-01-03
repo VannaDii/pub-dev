@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇨 Cocos (Keeling) Islands`, and its 0 states
 const Country cocosKeelingIslands = Country(id: 47, name: "Cocos (Keeling) Islands", longitude: 96.83333333,
           latitude: -12.5, capital: "West Island",
           currency: "AUD", currencySymbol: "\$",

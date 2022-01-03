@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇫 Burkina Faso`, and its 57 states
 const Country burkinaFaso = Country(id: 35, name: "Burkina Faso", longitude: -2.0,
           latitude: 13.0, capital: "Ouagadougou",
           currency: "XOF", currencySymbol: "CFA",

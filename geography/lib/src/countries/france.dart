@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇫🇷 France`, and its 42 states
 const Country france = Country(id: 75, name: "France", longitude: 2.0,
           latitude: 46.0, capital: "Paris",
           currency: "EUR", currencySymbol: "€",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇷🇴 Romania`, and its 42 states
 const Country romania = Country(id: 181, name: "Romania", longitude: 25.0,
           latitude: 46.0, capital: "Bucharest",
           currency: "RON", currencySymbol: "lei",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇭 Saint Helena`, and its 0 states
 const Country saintHelena = Country(id: 184, name: "Saint Helena", longitude: -5.7,
           latitude: -15.95, capital: "Jamestown",
           currency: "SHP", currencySymbol: "£",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇻🇬 Virgin Islands (British)`, and its 0 states
 const Country virginIslandsBritish = Country(id: 241, name: "Virgin Islands (British)", longitude: -64.62305,
           latitude: 18.431383, capital: "Road Town",
           currency: "USD", currencySymbol: "\$",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇩🇯 Djibouti`, and its 6 states
 const Country djibouti = Country(id: 60, name: "Djibouti", longitude: 43.0,
           latitude: 11.5, capital: "Djibouti",
           currency: "DJF", currencySymbol: "Fdj",

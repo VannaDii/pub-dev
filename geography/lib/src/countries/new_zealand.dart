@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇳🇿 New Zealand`, and its 17 states
 const Country newZealand = Country(id: 158, name: "New Zealand", longitude: 174.0,
           latitude: -41.0, capital: "Wellington",
           currency: "NZD", currencySymbol: "\$",

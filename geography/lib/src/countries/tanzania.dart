@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇿 Tanzania`, and its 31 states
 const Country tanzania = Country(id: 218, name: "Tanzania", longitude: 35.0,
           latitude: -6.0, capital: "Dodoma",
           currency: "TZS", currencySymbol: "TSh",

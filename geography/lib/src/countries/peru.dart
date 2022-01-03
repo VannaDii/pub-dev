@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇵🇪 Peru`, and its 25 states
 const Country peru = Country(id: 173, name: "Peru", longitude: -76.0,
           latitude: -10.0, capital: "Lima",
           currency: "PEN", currencySymbol: "S/.",

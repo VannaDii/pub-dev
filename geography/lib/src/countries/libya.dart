@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇱🇾 Libya`, and its 21 states
 const Country libya = Country(id: 124, name: "Libya", longitude: 17.0,
           latitude: 25.0, capital: "Tripolis",
           currency: "LYD", currencySymbol: "د.ل",

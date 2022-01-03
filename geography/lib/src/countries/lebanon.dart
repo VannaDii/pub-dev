@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇱🇧 Lebanon`, and its 8 states
 const Country lebanon = Country(id: 121, name: "Lebanon", longitude: 35.83333333,
           latitude: 33.83333333, capital: "Beirut",
           currency: "LBP", currencySymbol: "£",

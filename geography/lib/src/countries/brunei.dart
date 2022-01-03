@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇳 Brunei`, and its 4 states
 const Country brunei = Country(id: 33, name: "Brunei", longitude: 114.66666666,
           latitude: 4.5, capital: "Bandar Seri Begawan",
           currency: "BND", currencySymbol: "B\$",

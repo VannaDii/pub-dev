@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇰🇵 North Korea`, and its 11 states
 const Country northKorea = Country(id: 115, name: "North Korea", longitude: 127.0,
           latitude: 40.0, capital: "Pyongyang",
           currency: "KPW", currencySymbol: "₩",

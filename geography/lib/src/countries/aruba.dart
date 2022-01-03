@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇼 Aruba`, and its 0 states
 const Country aruba = Country(id: 13, name: "Aruba", longitude: -69.96666666,
           latitude: 12.5, capital: "Oranjestad",
           currency: "AWG", currencySymbol: "ƒ",

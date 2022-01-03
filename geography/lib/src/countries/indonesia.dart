@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇮🇩 Indonesia`, and its 34 states
 const Country indonesia = Country(id: 102, name: "Indonesia", longitude: 120.0,
           latitude: -5.0, capital: "Jakarta",
           currency: "IDR", currencySymbol: "Rp",

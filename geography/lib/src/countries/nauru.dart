@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇳🇷 Nauru`, and its 14 states
 const Country nauru = Country(id: 153, name: "Nauru", longitude: 166.91666666,
           latitude: -0.53333333, capital: "Yaren",
           currency: "AUD", currencySymbol: "\$",

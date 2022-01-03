@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇿🇦 South Africa`, and its 9 states
 const Country southAfrica = Country(id: 204, name: "South Africa", longitude: 24.0,
           latitude: -29.0, capital: "Pretoria",
           currency: "ZAR", currencySymbol: "R",

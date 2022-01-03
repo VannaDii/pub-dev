@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇩 Democratic Republic of the Congo`, and its 26 states
 const Country democraticRepublicoftheCongo = Country(id: 51, name: "Democratic Republic of the Congo", longitude: 25.0,
           latitude: 0.0, capital: "Kinshasa",
           currency: "CDF", currencySymbol: "FC",

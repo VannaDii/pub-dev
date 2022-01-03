@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇬 Togo`, and its 5 states
 const Country togo = Country(id: 220, name: "Togo", longitude: 1.16666666,
           latitude: 8.0, capital: "Lome",
           currency: "XOF", currencySymbol: "CFA",

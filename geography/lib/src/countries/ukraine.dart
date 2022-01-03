@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇺🇦 Ukraine`, and its 25 states
 const Country ukraine = Country(id: 230, name: "Ukraine", longitude: 32.0,
           latitude: 49.0, capital: "Kiev",
           currency: "UAH", currencySymbol: "₴",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇸 American Samoa`, and its 0 states
 const Country americanSamoa = Country(id: 5, name: "American Samoa", longitude: -170.0,
           latitude: -14.33333333, capital: "Pago Pago",
           currency: "USD", currencySymbol: "\$",

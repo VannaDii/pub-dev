@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇻🇨 Saint Vincent And The Grenadines`, and its 6 states
 const Country saintVincentAndTheGrenadines = Country(id: 188, name: "Saint Vincent And The Grenadines", longitude: -61.2,
           latitude: 13.25, capital: "Kingstown",
           currency: "XCD", currencySymbol: "\$",

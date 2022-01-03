@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇮🇸 Iceland`, and its 8 states
 const Country iceland = Country(id: 100, name: "Iceland", longitude: -18.0,
           latitude: 65.0, capital: "Reykjavik",
           currency: "ISK", currencySymbol: "kr",

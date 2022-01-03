@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇵🇱 Poland`, and its 16 states
 const Country poland = Country(id: 176, name: "Poland", longitude: 20.0,
           latitude: 52.0, capital: "Warsaw",
           currency: "PLN", currencySymbol: "zł",

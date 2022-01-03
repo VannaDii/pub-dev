@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇬 Guernsey and Alderney`, and its 0 states
 const Country guernseyandAlderney = Country(id: 91, name: "Guernsey and Alderney", longitude: -2.58333333,
           latitude: 49.46666666, capital: "St Peter Port",
           currency: "GBP", currencySymbol: "£",

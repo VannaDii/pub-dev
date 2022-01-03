@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇰🇾 Cayman Islands`, and its 0 states
 const Country caymanIslands = Country(id: 41, name: "Cayman Islands", longitude: -80.5,
           latitude: 19.5, capital: "George Town",
           currency: "KYD", currencySymbol: "\$",

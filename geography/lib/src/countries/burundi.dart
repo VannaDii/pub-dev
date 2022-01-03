@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇮 Burundi`, and its 18 states
 const Country burundi = Country(id: 36, name: "Burundi", longitude: 30.0,
           latitude: -3.5, capital: "Bujumbura",
           currency: "BIF", currencySymbol: "FBu",

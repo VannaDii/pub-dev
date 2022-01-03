@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇱🇦 Laos`, and its 19 states
 const Country laos = Country(id: 119, name: "Laos", longitude: 105.0,
           latitude: 18.0, capital: "Vientiane",
           currency: "LAK", currencySymbol: "₭",

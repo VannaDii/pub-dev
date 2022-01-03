@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇻🇺 Vanuatu`, and its 6 states
 const Country vanuatu = Country(id: 237, name: "Vanuatu", longitude: 167.0,
           latitude: -16.0, capital: "Port Vila",
           currency: "VUV", currencySymbol: "VT",

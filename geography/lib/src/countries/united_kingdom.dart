@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇧 United Kingdom`, and its 247 states
 const Country unitedKingdom = Country(id: 232, name: "United Kingdom", longitude: -2.0,
           latitude: 54.0, capital: "London",
           currency: "GBP", currencySymbol: "£",

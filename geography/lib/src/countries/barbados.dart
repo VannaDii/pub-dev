@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇧 Barbados`, and its 11 states
 const Country barbados = Country(id: 20, name: "Barbados", longitude: -59.53333333,
           latitude: 13.16666666, capital: "Bridgetown",
           currency: "BBD", currencySymbol: "Bds\$",

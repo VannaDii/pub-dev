@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇱 Mali`, and its 11 states
 const Country mali = Country(id: 134, name: "Mali", longitude: -4.0,
           latitude: 17.0, capital: "Bamako",
           currency: "XOF", currencySymbol: "CFA",

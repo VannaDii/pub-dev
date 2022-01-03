@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇼 Malawi`, and its 30 states
 const Country malawi = Country(id: 131, name: "Malawi", longitude: 34.0,
           latitude: -13.5, capital: "Lilongwe",
           currency: "MWK", currencySymbol: "MK",

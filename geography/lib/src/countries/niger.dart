@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇳🇪 Niger`, and its 7 states
 const Country niger = Country(id: 160, name: "Niger", longitude: 8.0,
           latitude: 16.0, capital: "Niamey",
           currency: "XOF", currencySymbol: "CFA",

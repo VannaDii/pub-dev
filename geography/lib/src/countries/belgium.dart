@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇪 Belgium`, and its 13 states
 const Country belgium = Country(id: 22, name: "Belgium", longitude: 4.0,
           latitude: 50.83333333, capital: "Brussels",
           currency: "EUR", currencySymbol: "€",

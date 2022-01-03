@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇪🇪 Estonia`, and its 15 states
 const Country estonia = Country(id: 69, name: "Estonia", longitude: 26.0,
           latitude: 59.0, capital: "Tallinn",
           currency: "EUR", currencySymbol: "€",

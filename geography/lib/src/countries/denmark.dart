@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇩🇰 Denmark`, and its 5 states
 const Country denmark = Country(id: 59, name: "Denmark", longitude: 10.0,
           latitude: 56.0, capital: "Copenhagen",
           currency: "DKK", currencySymbol: "Kr.",

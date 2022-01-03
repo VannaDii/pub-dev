@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇷 Brazil`, and its 27 states
 const Country brazil = Country(id: 31, name: "Brazil", longitude: -55.0,
           latitude: -10.0, capital: "Brasilia",
           currency: "BRL", currencySymbol: "R\$",

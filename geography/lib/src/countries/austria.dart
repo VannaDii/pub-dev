@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇹 Austria`, and its 9 states
 const Country austria = Country(id: 15, name: "Austria", longitude: 13.33333333,
           latitude: 47.33333333, capital: "Vienna",
           currency: "EUR", currencySymbol: "€",

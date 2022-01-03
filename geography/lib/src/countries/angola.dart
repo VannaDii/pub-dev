@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇴 Angola`, and its 17 states
 const Country angola = Country(id: 7, name: "Angola", longitude: 18.5,
           latitude: -12.5, capital: "Luanda",
           currency: "AOA", currencySymbol: "Kz",

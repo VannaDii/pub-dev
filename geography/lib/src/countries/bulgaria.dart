@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇬 Bulgaria`, and its 28 states
 const Country bulgaria = Country(id: 34, name: "Bulgaria", longitude: 25.0,
           latitude: 43.0, capital: "Sofia",
           currency: "BGN", currencySymbol: "Лв.",

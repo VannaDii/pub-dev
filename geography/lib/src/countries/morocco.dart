@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇦 Morocco`, and its 87 states
 const Country morocco = Country(id: 149, name: "Morocco", longitude: -5.0,
           latitude: 32.0, capital: "Rabat",
           currency: "MAD", currencySymbol: "DH",

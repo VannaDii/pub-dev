@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇺 Australia`, and its 8 states
 const Country australia = Country(id: 14, name: "Australia", longitude: 133.0,
           latitude: -27.0, capital: "Canberra",
           currency: "AUD", currencySymbol: "\$",

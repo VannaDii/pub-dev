@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇮 Anguilla`, and its 0 states
 const Country anguilla = Country(id: 8, name: "Anguilla", longitude: -63.16666666,
           latitude: 18.25, capital: "The Valley",
           currency: "XCD", currencySymbol: "\$",

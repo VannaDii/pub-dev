@@ -4,6 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'base.g.dart';
 
+/// The base class for all `geography` data types
 abstract class GeoObject extends Equatable {
   const GeoObject();
 
@@ -13,9 +14,12 @@ abstract class GeoObject extends Equatable {
   @override
   List<Object?> get props => [];
 
+  /// Converts this instance to a JSON formatted representation
   Map<String, dynamic> toJson();
 }
 
+/// The base class for all `geography` data types addressable by the `longitude`
+/// and `latitude` system
 @immutable
 abstract class GeoCoords extends GeoObject {
   const GeoCoords({
@@ -25,14 +29,33 @@ abstract class GeoCoords extends GeoObject {
     required this.latitude,
   });
 
+  /// The unique identifier for this data, like `1`
   final int id;
+
+  /// The human name of this data, like `Afghanistan`
   final String name;
-  final double longitude, latitude;
+
+  /// The longitude coordinate for this data, like `33.00000000`
+  final double longitude;
+
+  /// The longitude coordinate for this data, like `65.00000000`
+  final double latitude;
 
   @override
   List<Object?> get props => [id, name, longitude, latitude];
 }
 
+/// Represents a physical city, the most precise level for this library
+///
+/// In JSON format, the instance for `Ashkāsham` might look like:
+/// ```
+/// {
+///   "id": 52,
+///   "name": "Ashkāsham",
+///   "latitude": 36.68333000,
+///   "longitude": 71.53333000
+/// }
+/// ```
 @immutable
 @JsonSerializable()
 class City extends GeoCoords {
@@ -46,12 +69,36 @@ class City extends GeoCoords {
   @override
   List<Object?> get props => [...super.props];
 
+  /// Creates a new [City] from JSON.
   factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);
 
   @override
   Map<String, dynamic> toJson() => _$CityToJson(this);
 }
 
+/// Represents a physical region, the middle precision level for this library
+///
+/// In JSON format, the instance for `Badakhshan` might look like:
+/// ```json
+/// {
+///   "id": 3901,
+///   "name": "Badakhshan",
+///   "state_code": "BDS",
+///   "latitude": 36.73477250,
+///   "longitude": 70.81199530,
+///   "type": null,
+///   "cities": [
+///     // ...
+///     {
+///       "id": 68,
+///       "name": "Fayzabad",
+///       "latitude": 37.11664000,
+///       "longitude": 70.58002000
+///     },
+///     // ...
+///   ]
+/// }
+/// ```
 @immutable
 @JsonSerializable()
 class Region extends GeoCoords {
@@ -65,21 +112,62 @@ class Region extends GeoCoords {
     required double latitude,
   }) : super(id: id, name: name, latitude: latitude, longitude: longitude);
 
+  /// If set, the type of region, otherwise `null`. When set, the value might
+  /// look like: `province`, `municipality`, `autonomous region`, etc.
   final String? type;
+
+  /// A list of [City] instances located in this [Region]
   final List<City> cities;
 
+  /// The short code for this state, often used in mailing addresses,
+  /// like `BDS` for `Badakhshan`
   @JsonKey(name: 'state_code')
   final String stateCode;
 
   @override
   List<Object?> get props => [...super.props, type, stateCode, cities];
 
+  /// Creates a new [Region] from JSON.
   factory Region.fromJson(Map<String, dynamic> json) => _$RegionFromJson(json);
 
   @override
   Map<String, dynamic> toJson() => _$RegionToJson(this);
 }
 
+/// Represents a physical country, the least precision level for this library
+///
+/// In JSON format, the instance for `Afghanistan` might look like:
+/// ```json
+/// {
+///   "id": 1,
+///   "name": "Afghanistan",
+///   "iso3": "AFG",
+///   "iso2": "AF",
+///   "numeric_code": "004",
+///   "phone_code": "93",
+///   "capital": "Kabul",
+///   "currency": "AFN",
+///   "currency_symbol": "؋",
+///   "tld": ".af",
+///   "native": "افغانستان",
+///   "region": "Asia",
+///   "subregion": "Southern Asia",
+///   "timezones": [
+///     // ... all known timezones for this country
+///   ],
+///   "translations": {
+///     "kr": "아프가니스탄"
+///     // ... country name in additional languages
+///   },
+///   "latitude": 33.00000000,
+///   "longitude": 65.00000000,
+///   "emoji": "🇦🇫",
+///   "emojiU": "U+1F1E6 U+1F1EB",
+///   "states": [
+///     // ... all known states in this country
+///   ]
+/// }
+/// ```
 @immutable
 @JsonSerializable()
 class Country extends GeoCoords {
@@ -106,28 +194,79 @@ class Country extends GeoCoords {
     required double latitude,
   }) : super(id: id, name: name, latitude: latitude, longitude: longitude);
 
-  final String? iso3,
-      iso2,
-      capital,
-      currency,
-      tld,
-      native,
-      region,
-      subregion,
-      emoji,
-      emojiU;
+  /// The three-digit ISO code for this country, like `AFG` for `Afghanistan`
+  final String? iso3;
 
+  /// The two-digit ISO code for this country, like `AF` for `Afghanistan`
+  final String? iso2;
+
+  /// The capital of this country, like `Kabul` for `Afghanistan`
+  /// You can find this as a [City] by like:
+  ///
+  /// ```dart
+  /// var matches = Earth.afghanistan.search(Earth.afghanistan.capital);
+  /// print(matches.first.toJson());
+  /// ```
+  final String? capital;
+
+  /// The currency abbreviation for this country, like `AFN` for `Afghanistan`
+  final String? currency;
+
+  /// The top-level-domain for this country, like `.af` for `Afghanistan`
+  final String? tld;
+
+  /// This country's name in its native language, like `افغانستان` for `Afghanistan`
+  final String? native;
+
+  /// This country's region, often continent, like `Asia` for `Afghanistan`
+  final String? region;
+
+  /// This country's subregion, like `Southern Asia` for `Afghanistan`
+  final String? subregion;
+
+  /// This country's flag as an emoji, like `🇦🇫` for `Afghanistan`
+  final String? emoji;
+
+  /// This country's flag as emoji unicode characters, like `U+1F1E6 U+1F1EB` for `Afghanistan`
+  final String? emojiU;
+
+  /// This country's three-digit numeric code as defined in ISO 3166-1, like `004` for `Afghanistan`
   @JsonKey(name: 'numeric_code')
   final String numericCode;
 
+  /// The phone number prefix for this country, like `93` for `Afghanistan`
   @JsonKey(name: 'phone_code')
   final String phoneCode;
 
+  /// The currency symbol for this country, like `؋` for `Afghanistan`
   @JsonKey(name: 'currency_symbol')
   final String currencySymbol;
 
+  /// A [List] of [Region] instances, representing states for this country
   final List<Region> states;
+
+  /// A [List] of [Timezone] instances, representing the timezones used in this country
   final List<Timezone> timezones;
+
+  /// A map of two-digit ISO language codes, and translated names of this country
+  ///
+  /// In JSON format, for `Afghanistan`, this might look like:
+  /// ```json
+  /// {
+  ///   "kr": "아프가니스탄",
+  ///   "br": "Afeganistão",
+  ///   "pt": "Afeganistão",
+  ///   "nl": "Afghanistan",
+  ///   "hr": "Afganistan",
+  ///   "fa": "افغانستان",
+  ///   "de": "Afghanistan",
+  ///   "es": "Afganistán",
+  ///   "fr": "Afghanistan",
+  ///   "ja": "アフガニスタン",
+  ///   "it": "Afghanistan",
+  ///   "cn": "阿富汗"
+  /// }
+  /// ```
   final Map<String, String> translations;
 
   @override
@@ -151,6 +290,7 @@ class Country extends GeoCoords {
         translations
       ];
 
+  /// Creates a new [Country] from JSON.
   factory Country.fromJson(Map<String, dynamic> json) =>
       _$CountryFromJson(json);
 
@@ -158,6 +298,18 @@ class Country extends GeoCoords {
   Map<String, dynamic> toJson() => _$CountryToJson(this);
 }
 
+/// A named timezone with numeric offset and descriptive metadata
+///
+/// In JSON format, the instance for `Afghanistan` might look like:
+/// ```json
+/// {
+///    "zoneName": "Asia\/Kabul",
+///    "gmtOffset": 16200,
+///    "gmtOffsetName": "UTC+04:30",
+///    "abbreviation": "AFT",
+///    "tzName": "Afghanistan Time"
+/// }
+/// ```
 @immutable
 @JsonSerializable()
 class Timezone extends GeoObject {
@@ -168,8 +320,25 @@ class Timezone extends GeoObject {
       required this.tzName,
       required this.zoneName});
 
+  /// The numeric offset in seconds from GMT
+  ///
+  /// ```dart
+  /// // For `Asia/Kabul`, this is the same as (16200 / 60) / 60 = 4.5
+  /// double offsetHours = (timezone.gmtOffset / 60) / 60;
+  /// ```
   final int gmtOffset;
-  final String zoneName, gmtOffsetName, abbreviation, tzName;
+
+  /// The name of the timezone, like `Asia/Kabul`
+  final String zoneName;
+
+  /// The name of the offset value, like `UTC+04:30`
+  final String gmtOffsetName;
+
+  /// The timezone common abbreviation, like `AFT` for `Asia/Kabul`
+  final String abbreviation;
+
+  /// The timezone common full name, like `Afghanistan Time`
+  final String tzName;
 
   @override
   List<Object?> get props =>

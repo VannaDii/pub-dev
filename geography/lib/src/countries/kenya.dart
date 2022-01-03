@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇰🇪 Kenya`, and its 54 states
 const Country kenya = Country(id: 113, name: "Kenya", longitude: 38.0,
           latitude: 1.0, capital: "Nairobi",
           currency: "KES", currencySymbol: "KSh",

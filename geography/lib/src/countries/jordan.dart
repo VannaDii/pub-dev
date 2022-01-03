@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇯🇴 Jordan`, and its 12 states
 const Country jordan = Country(id: 111, name: "Jordan", longitude: 36.0,
           latitude: 31.0, capital: "Amman",
           currency: "JOD", currencySymbol: "ا.د",

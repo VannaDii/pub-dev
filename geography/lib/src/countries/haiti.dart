@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇭🇹 Haiti`, and its 10 states
 const Country haiti = Country(id: 95, name: "Haiti", longitude: -72.41666666,
           latitude: 19.0, capital: "Port-au-Prince",
           currency: "HTG", currencySymbol: "G",

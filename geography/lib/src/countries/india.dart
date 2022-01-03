@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇮🇳 India`, and its 36 states
 const Country india = Country(id: 101, name: "India", longitude: 77.0,
           latitude: 20.0, capital: "New Delhi",
           currency: "INR", currencySymbol: "₹",

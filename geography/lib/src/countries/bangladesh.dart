@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇩 Bangladesh`, and its 70 states
 const Country bangladesh = Country(id: 19, name: "Bangladesh", longitude: 90.0,
           latitude: 24.0, capital: "Dhaka",
           currency: "BDT", currencySymbol: "৳",

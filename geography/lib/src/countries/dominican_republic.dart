@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇩🇴 Dominican Republic`, and its 31 states
 const Country dominicanRepublic = Country(id: 62, name: "Dominican Republic", longitude: -70.66666666,
           latitude: 19.0, capital: "Santo Domingo",
           currency: "DOP", currencySymbol: "\$",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇵🇾 Paraguay`, and its 17 states
 const Country paraguay = Country(id: 172, name: "Paraguay", longitude: -58.0,
           latitude: -23.0, capital: "Asuncion",
           currency: "PYG", currencySymbol: "₲",

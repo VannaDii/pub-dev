@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇰 Cook Islands`, and its 0 states
 const Country cookIslands = Country(id: 52, name: "Cook Islands", longitude: -159.76666666,
           latitude: -21.23333333, capital: "Avarua",
           currency: "NZD", currencySymbol: "\$",

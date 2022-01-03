@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇨🇲 Cameroon`, and its 10 states
 const Country cameroon = Country(id: 38, name: "Cameroon", longitude: 12.0,
           latitude: 6.0, capital: "Yaounde",
           currency: "XAF", currencySymbol: "FCFA",

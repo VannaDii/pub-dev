@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇵🇬 Papua new Guinea`, and its 21 states
 const Country papuanewGuinea = Country(id: 171, name: "Papua new Guinea", longitude: 147.0,
           latitude: -6.0, capital: "Port Moresby",
           currency: "PGK", currencySymbol: "K",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇴 Somalia`, and its 16 states
 const Country somalia = Country(id: 203, name: "Somalia", longitude: 49.0,
           latitude: 10.0, capital: "Mogadishu",
           currency: "SOS", currencySymbol: "Sh.so.",

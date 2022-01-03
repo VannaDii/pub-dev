@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇳🇦 Namibia`, and its 14 states
 const Country namibia = Country(id: 152, name: "Namibia", longitude: 17.0,
           latitude: -22.0, capital: "Windhoek",
           currency: "NAD", currencySymbol: "\$",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇽 Sint Maarten (Dutch part)`, and its 0 states
 const Country sintMaartenDutchpart = Country(id: 250, name: "Sint Maarten (Dutch part)", longitude: -63.05,
           latitude: 18.033333, capital: "Philipsburg",
           currency: "ANG", currencySymbol: "ƒ",

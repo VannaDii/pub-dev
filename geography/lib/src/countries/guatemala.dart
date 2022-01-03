@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇹 Guatemala`, and its 21 states
 const Country guatemala = Country(id: 90, name: "Guatemala", longitude: -90.25,
           latitude: 15.5, capital: "Guatemala City",
           currency: "GTQ", currencySymbol: "Q",

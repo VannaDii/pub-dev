@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇪🇭 Western Sahara`, and its 0 states
 const Country westernSahara = Country(id: 244, name: "Western Sahara", longitude: -13.0,
           latitude: 24.5, capital: "El-Aaiun",
           currency: "MAD", currencySymbol: "MAD",

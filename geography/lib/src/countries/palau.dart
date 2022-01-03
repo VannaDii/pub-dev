@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇵🇼 Palau`, and its 16 states
 const Country palau = Country(id: 168, name: "Palau", longitude: 134.5,
           latitude: 7.5, capital: "Melekeok",
           currency: "USD", currencySymbol: "\$",

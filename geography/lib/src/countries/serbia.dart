@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇷🇸 Serbia`, and its 26 states
 const Country serbia = Country(id: 196, name: "Serbia", longitude: 21.0,
           latitude: 44.0, capital: "Belgrade",
           currency: "RSD", currencySymbol: "din",

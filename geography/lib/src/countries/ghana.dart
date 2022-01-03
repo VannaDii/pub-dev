@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇭 Ghana`, and its 16 states
 const Country ghana = Country(id: 83, name: "Ghana", longitude: -2.0,
           latitude: 8.0, capital: "Accra",
           currency: "GHS", currencySymbol: "GH₵",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇶 Equatorial Guinea`, and its 9 states
 const Country equatorialGuinea = Country(id: 67, name: "Equatorial Guinea", longitude: 10.0,
           latitude: 2.0, capital: "Malabo",
           currency: "XAF", currencySymbol: "FCFA",

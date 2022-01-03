@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇱🇸 Lesotho`, and its 10 states
 const Country lesotho = Country(id: 122, name: "Lesotho", longitude: 28.5,
           latitude: -29.5, capital: "Maseru",
           currency: "LSL", currencySymbol: "L",

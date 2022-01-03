@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇲🇻 Maldives`, and its 26 states
 const Country maldives = Country(id: 133, name: "Maldives", longitude: 73.0,
           latitude: 3.25, capital: "Male",
           currency: "MVR", currencySymbol: "Rf",

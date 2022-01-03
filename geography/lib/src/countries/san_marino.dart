@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇲 San Marino`, and its 9 states
 const Country sanMarino = Country(id: 192, name: "San Marino", longitude: 12.41666666,
           latitude: 43.76666666, capital: "San Marino",
           currency: "EUR", currencySymbol: "€",

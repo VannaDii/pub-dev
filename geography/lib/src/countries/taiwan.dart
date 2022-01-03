@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇹🇼 Taiwan`, and its 22 states
 const Country taiwan = Country(id: 216, name: "Taiwan", longitude: 121.0,
           latitude: 23.5, capital: "Taipei",
           currency: "TWD", currencySymbol: "\$",

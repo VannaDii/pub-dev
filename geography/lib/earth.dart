@@ -8,6 +8,7 @@ import 'src/base.dart';
 import 'src/extensions.dart';
 import 'src/countries/all.dart' as data;
 
+/// A singleton providing search and proximity functions for geographical data about earth.
 class Earth {
   Earth._privateConstructor();
 

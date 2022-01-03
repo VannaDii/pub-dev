@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇦🇶 Antarctica`, and its 0 states
 const Country antarctica = Country(id: 9, name: "Antarctica", longitude: 4.48,
           latitude: -74.65, capital: "",
           currency: "AAD", currencySymbol: "\$",

@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇼🇸 Samoa`, and its 11 states
 const Country samoa = Country(id: 191, name: "Samoa", longitude: -172.33333333,
           latitude: -13.58333333, capital: "Apia",
           currency: "WST", currencySymbol: "SAT",

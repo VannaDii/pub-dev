@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇫🇴 Faroe Islands`, and its 0 states
 const Country faroeIslands = Country(id: 72, name: "Faroe Islands", longitude: -7.0,
           latitude: 62.0, capital: "Torshavn",
           currency: "DKK", currencySymbol: "Kr.",

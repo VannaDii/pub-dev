@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇧🇶 Bonaire, Sint Eustatius and Saba`, and its 0 states
 const Country bonaireSintEustatiusandSaba = Country(id: 155, name: "Bonaire, Sint Eustatius and Saba", longitude: -68.266667,
           latitude: 12.15, capital: "Kralendijk",
           currency: "USD", currencySymbol: "\$",

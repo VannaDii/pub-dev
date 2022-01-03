@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇹 Sao Tome and Principe`, and its 2 states
 const Country saoTomeandPrincipe = Country(id: 193, name: "Sao Tome and Principe", longitude: 7.0,
           latitude: 1.0, capital: "Sao Tome",
           currency: "STD", currencySymbol: "Db",

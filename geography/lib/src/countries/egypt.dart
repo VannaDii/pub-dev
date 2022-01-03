@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇪🇬 Egypt`, and its 26 states
 const Country egypt = Country(id: 65, name: "Egypt", longitude: 30.0,
           latitude: 27.0, capital: "Cairo",
           currency: "EGP", currencySymbol: "ج.م",

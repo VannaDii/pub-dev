@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇪🇨 Ecuador`, and its 23 states
 const Country ecuador = Country(id: 64, name: "Ecuador", longitude: -77.5,
           latitude: -2.0, capital: "Quito",
           currency: "USD", currencySymbol: "\$",

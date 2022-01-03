@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇸🇰 Slovakia`, and its 8 states
 const Country slovakia = Country(id: 200, name: "Slovakia", longitude: 19.5,
           latitude: 48.66666666, capital: "Bratislava",
           currency: "EUR", currencySymbol: "€",

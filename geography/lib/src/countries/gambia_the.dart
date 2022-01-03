@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇬🇲 Gambia The`, and its 6 states
 const Country gambiaThe = Country(id: 80, name: "Gambia The", longitude: -16.56666666,
           latitude: 13.46666666, capital: "Banjul",
           currency: "GMD", currencySymbol: "D",

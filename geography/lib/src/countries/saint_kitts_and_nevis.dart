@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇰🇳 Saint Kitts And Nevis`, and its 15 states
 const Country saintKittsAndNevis = Country(id: 185, name: "Saint Kitts And Nevis", longitude: -62.75,
           latitude: 17.33333333, capital: "Basseterre",
           currency: "XCD", currencySymbol: "\$",

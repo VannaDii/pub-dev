@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇭🇰 Hong Kong S.A.R.`, and its 18 states
 const Country hongKongSAR = Country(id: 98, name: "Hong Kong S.A.R.", longitude: 114.16666666,
           latitude: 22.25, capital: "Hong Kong",
           currency: "HKD", currencySymbol: "\$",

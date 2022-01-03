@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇭🇷 Croatia`, and its 20 states
 const Country croatia = Country(id: 55, name: "Croatia", longitude: 15.5,
           latitude: 45.16666666, capital: "Zagreb",
           currency: "HRK", currencySymbol: "kn",

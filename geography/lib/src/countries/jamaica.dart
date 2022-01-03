@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇯🇲 Jamaica`, and its 14 states
 const Country jamaica = Country(id: 108, name: "Jamaica", longitude: -77.5,
           latitude: 18.25, capital: "Kingston",
           currency: "JMD", currencySymbol: "J\$",

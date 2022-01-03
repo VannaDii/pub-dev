@@ -6,6 +6,7 @@ import '../base.dart';
 // ignore: slash_for_doc_comments
 /** BEGIN AUTO_GENERATED CODE **/
 
+/// The country of `🇮🇪 Ireland`, and its 29 states
 const Country ireland = Country(id: 105, name: "Ireland", longitude: -8.0,
           latitude: 53.0, capital: "Dublin",
           currency: "EUR", currencySymbol: "€",
