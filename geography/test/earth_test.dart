@@ -1,13 +1,7 @@
 import 'package:test/test.dart';
 import 'package:geography/earth.dart';
 
-class TestCoords extends GeoCoords {
-  const TestCoords(double lat, double long)
-      : super(latitude: lat, longitude: long);
-
-  static TestCoords get austin => TestCoords(30.26715, -97.74306);
-  static TestCoords get notAustin => TestCoords(30.28, -97.76);
-}
+import 'shared.dart';
 
 void main() {
   group('Earth Tests', () {
@@ -38,7 +32,7 @@ void main() {
     });
 
     test('Earth Locates City Hierarchy Out-of-Bounds', () {
-      var atx = Earth().findClosestCity(TestCoords.notAustin);
+      var atx = Earth().findClosestCity(TestCoords.outsideAustin);
       expect(atx, isNotNull);
       expect(atx, isA<City>());
 

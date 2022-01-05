@@ -10,7 +10,7 @@ deps: clean
 
 tests: clean deps generate
 	dart pub global activate coverage
-	dart run test --coverage="coverage"
+	dart run test --coverage="coverage" --chain-stack-traces
 	dart pub global run coverage:format_coverage --packages=.packages --report-on=lib --lcov -o ./coverage/lcov.info -i ./coverage
 	genhtml -o ./coverage/report ./coverage/lcov.info
 
