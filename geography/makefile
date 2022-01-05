@@ -8,7 +8,7 @@ lib_name=$(shell basename $$(pwd))
 deps: clean
 	dart pub get
 
-test: clean deps
+tests: clean deps
 	dart pub global activate coverage
 	dart run test --coverage="coverage"
 
@@ -21,5 +21,5 @@ clean:
 	rm -rf .dart_tool doc .packages pubspec.lock
 	rm -rf lib/src/countries
 
-doc:
+docs:
 	dartdoc

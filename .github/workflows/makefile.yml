@@ -23,7 +23,7 @@ jobs:
 
       - name: Run Tests
         working-directory: geography
-        run: make test
+        run: make tests
 
       - name: Build Geography
         working-directory: geography
