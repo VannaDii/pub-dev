@@ -1,10 +1,9 @@
 /// Access to known geographies in Monaco and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
-
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
+import 'monaco_states.dart';
 
 /// The country of `🇲🇨 Monaco`, and its 3 states
 const Country monaco = Country(id: 145, name: "Monaco", longitude: 7.4,
@@ -16,15 +15,9 @@ const Country monaco = Country(id: 145, name: "Monaco", longitude: 7.4,
           phoneCode: "377", region: "Europe",
           subregion: "Western Europe", tld: ".mc",
           states: [
-            Region(id: 4917, longitude: 7.4137276, latitude: 43.7327465,
-                    name: "La Colle", type: null, stateCode: "CL",
-                    cities: []),
-            Region(id: 4918, longitude: 7.419906, latitude: 43.7350665,
-                    name: "La Condamine", type: null, stateCode: "CO",
-                    cities: []),
-            Region(id: 4919, longitude: 7.4153383, latitude: 43.7364927,
-                    name: "Moneghetti", type: null, stateCode: "MG",
-                    cities: [])
+            monacoLaColle,
+            monacoLaCondamine,
+            monacoMoneghetti
           ],
           timezones: [
             Timezone(abbreviation: "CET", gmtOffset: 3600, gmtOffsetName: "UTC+01:00",

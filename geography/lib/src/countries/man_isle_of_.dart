@@ -1,13 +1,12 @@
 /// Access to known geographies in Man (Isle of) and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇮🇲 Man (Isle of)`, and its 0 states
-const Country manIsleof = Country(id: 136, name: "Man (Isle of)", longitude: -4.5,
+const Country manIsleOof = Country(id: 136, name: "Man (Isle of)", longitude: -4.5,
           latitude: 54.25, capital: "Douglas, Isle of Man",
           currency: "GBP", currencySymbol: "£",
           emoji: "🇮🇲", emojiU: "U+1F1EE U+1F1F2",

@@ -1,10 +1,9 @@
 /// Access to known geographies in Zimbabwe and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
-
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
+import 'zimbabwe_states.dart';
 
 /// The country of `🇿🇼 Zimbabwe`, and its 10 states
 const Country zimbabwe = Country(id: 247, name: "Zimbabwe", longitude: 30.0,
@@ -16,155 +15,16 @@ const Country zimbabwe = Country(id: 247, name: "Zimbabwe", longitude: 30.0,
           phoneCode: "263", region: "Africa",
           subregion: "Eastern Africa", tld: ".zw",
           states: [
-            Region(id: 1956, longitude: 28.5331038, latitude: -20.1489505,
-                    name: "Bulawayo Province", type: null, stateCode: "BU",
-                    cities: [
-                      City(id: 131411, name: "Bulawayo", longitude: 28.58333, latitude: -20.15)
-                    ]),
-            Region(id: 1958, longitude: 31.0492259, latitude: -17.8216288,
-                    name: "Harare Province", type: null, stateCode: "HA",
-                    cities: [
-                      City(id: 131425, name: "Chitungwiza", longitude: 31.07555, latitude: -18.01274),
-                      City(id: 131431, name: "Epworth", longitude: 31.1475, latitude: -17.89),
-                      City(id: 131443, name: "Harare", longitude: 31.05337, latitude: -17.82772)
-                    ]),
-            Region(id: 1959, longitude: 32.174605, latitude: -18.9216386,
-                    name: "Manicaland", type: null, stateCode: "MA",
-                    cities: [
-                      City(id: 131410, name: "Buhera District", longitude: 31.93156, latitude: -19.45658),
-                      City(id: 131417, name: "Chimanimani", longitude: 32.86667, latitude: -19.8),
-                      City(id: 131418, name: "Chimanimani District", longitude: 32.73338, latitude: -19.78295),
-                      City(id: 131420, name: "Chipinge", longitude: 32.62365, latitude: -20.18833),
-                      City(id: 131421, name: "Chipinge District", longitude: 32.4311, latitude: -20.54959),
-                      City(id: 131430, name: "Dorowa Mining Lease", longitude: 31.75, latitude: -19.06667),
-                      City(id: 131444, name: "Headlands", longitude: 32.0515, latitude: -18.27733),
-                      City(id: 131464, name: "Makoni District", longitude: 32.1465, latitude: -18.3355),
-                      City(id: 131480, name: "Mutare", longitude: 32.67086, latitude: -18.9707),
-                      City(id: 131481, name: "Mutare District", longitude: 32.44327, latitude: -19.25512),
-                      City(id: 131482, name: "Mutasa District", longitude: 32.74547, latitude: -18.66283),
-                      City(id: 131489, name: "Nyanga", longitude: 32.75, latitude: -18.21667),
-                      City(id: 131490, name: "Nyanga District", longitude: 32.76561, latitude: -17.92951),
-                      City(id: 131491, name: "Nyazura", longitude: 32.16796, latitude: -18.70587),
-                      City(id: 131492, name: "Odzi", longitude: 32.40557, latitude: -18.96167),
-                      City(id: 131493, name: "Penhalonga", longitude: 32.69781, latitude: -18.89112),
-                      City(id: 131497, name: "Rusape", longitude: 32.12843, latitude: -18.52785)
-                    ]),
-            Region(id: 1955, longitude: 31.0793705, latitude: -16.7644295,
-                    name: "Mashonaland Central Province", type: null, stateCode: "MC",
-                    cities: [
-                      City(id: 131405, name: "Bindura", longitude: 31.33056, latitude: -17.30192),
-                      City(id: 131406, name: "Bindura District", longitude: 31.303, latitude: -17.2123),
-                      City(id: 131412, name: "Centenary", longitude: 31.11462, latitude: -16.72289),
-                      City(id: 131413, name: "Centenary District", longitude: 31.16667, latitude: -16.41667),
-                      City(id: 131428, name: "Concession", longitude: 30.95, latitude: -17.38333),
-                      City(id: 131434, name: "Glendale", longitude: 31.06718, latitude: -17.35514),
-                      City(id: 131437, name: "Guruve District", longitude: 30.60607, latitude: -16.37206),
-                      City(id: 131472, name: "Mazowe", longitude: 30.97388, latitude: -17.50404),
-                      City(id: 131473, name: "Mazowe District", longitude: 30.93231, latitude: -17.2808),
-                      City(id: 131476, name: "Mount Darwin", longitude: 31.58381, latitude: -16.77251),
-                      City(id: 131485, name: "Mvurwi", longitude: 30.85, latitude: -17.03333),
-                      City(id: 131498, name: "Rushinga District", longitude: 32.31434, latitude: -16.60792),
-                      City(id: 131500, name: "Shamva", longitude: 31.57561, latitude: -17.31159),
-                      City(id: 131501, name: "Shamva District", longitude: 31.64146, latitude: -17.12366)
-                    ]),
-            Region(id: 1951, longitude: 31.2626366, latitude: -18.5871642,
-                    name: "Mashonaland East Province", type: null, stateCode: "ME",
-                    cities: [
-                      City(id: 131401, name: "Beatrice", longitude: 30.8473, latitude: -18.25283),
-                      City(id: 131426, name: "Chivhu", longitude: 30.89218, latitude: -19.02112),
-                      City(id: 131436, name: "Goromonzi District", longitude: 31.36372, latitude: -17.80695),
-                      City(id: 131462, name: "Macheke", longitude: 31.84933, latitude: -18.13901),
-                      City(id: 131466, name: "Marondera", longitude: 31.55193, latitude: -18.18527),
-                      City(id: 131467, name: "Marondera District", longitude: 31.51252, latitude: -18.29214),
-                      City(id: 131477, name: "Mudzi District", longitude: 32.65279, latitude: -17.04711),
-                      City(id: 131478, name: "Murehwa", longitude: 31.784, latitude: -17.64322),
-                      City(id: 131479, name: "Murehwa District", longitude: 31.83083, latitude: -17.80057),
-                      City(id: 131483, name: "Mutoko", longitude: 32.22677, latitude: -17.39699),
-                      City(id: 131499, name: "Ruwa", longitude: 31.24472, latitude: -17.88972)
-                    ]),
-            Region(id: 1953, longitude: 29.7889248, latitude: -17.4851029,
-                    name: "Mashonaland West Province", type: null, stateCode: "MW",
-                    cities: [
-                      City(id: 131400, name: "Banket", longitude: 30.4, latitude: -17.38333),
-                      City(id: 131414, name: "Chakari", longitude: 29.89246, latitude: -18.06294),
-                      City(id: 131415, name: "Chegutu", longitude: 30.14074, latitude: -18.13021),
-                      City(id: 131416, name: "Chegutu District", longitude: 30.40046, latitude: -18.13097),
-                      City(id: 131419, name: "Chinhoyi", longitude: 30.2, latitude: -17.36667),
-                      City(id: 131424, name: "Chirundu", longitude: 28.85, latitude: -16.03333),
-                      City(id: 131445, name: "Hurungwe District", longitude: 29.5858, latitude: -16.41301),
-                      City(id: 131451, name: "Kadoma", longitude: 29.91534, latitude: -18.33328),
-                      City(id: 131452, name: "Kadoma District", longitude: 29.82831, latitude: -18.34049),
-                      City(id: 131454, name: "Kariba", longitude: 28.8, latitude: -16.51667),
-                      City(id: 131455, name: "Kariba District", longitude: 28.65983, latitude: -16.91011),
-                      City(id: 131456, name: "Karoi", longitude: 29.69247, latitude: -16.80993),
-                      City(id: 131463, name: "Makonde District", longitude: 30.08333, latitude: -17.16667),
-                      City(id: 131475, name: "Mhangura", longitude: 30.16828, latitude: -16.89387),
-                      City(id: 131488, name: "Norton", longitude: 30.7, latitude: -17.88333),
-                      City(id: 131495, name: "Raffingora", longitude: 30.43333, latitude: -17.03333)
-                    ]),
-            Region(id: 1960, longitude: 31.2626366, latitude: -20.6241509,
-                    name: "Masvingo Province", type: null, stateCode: "MV",
-                    cities: [
-                      City(id: 131404, name: "Bikita District", longitude: 31.93156, latitude: -20.13752),
-                      City(id: 131422, name: "Chiredzi", longitude: 31.66667, latitude: -21.05),
-                      City(id: 131423, name: "Chiredzi District", longitude: 31.77039, latitude: -21.28585),
-                      City(id: 131427, name: "Chivi District", longitude: 30.58333, latitude: -20.5),
-                      City(id: 131438, name: "Gutu District", longitude: 31.25059, latitude: -19.60884),
-                      City(id: 131468, name: "Mashava", longitude: 30.48225, latitude: -20.03665),
-                      City(id: 131469, name: "Masvingo", longitude: 30.82766, latitude: -20.06373),
-                      City(id: 131470, name: "Masvingo District", longitude: 30.90008, latitude: -20.31481),
-                      City(id: 131486, name: "Mwenezi District", longitude: 30.70668, latitude: -21.35838),
-                      City(id: 131507, name: "Zvishavane", longitude: 30.06648, latitude: -20.32674)
-                    ]),
-            Region(id: 1954, longitude: 27.5495846, latitude: -18.5331566,
-                    name: "Matabeleland North Province", type: null, stateCode: "MN",
-                    cities: [
-                      City(id: 131407, name: "Binga", longitude: 27.34139, latitude: -17.62027),
-                      City(id: 131408, name: "Binga District", longitude: 27.70088, latitude: -17.8046),
-                      City(id: 131409, name: "Bubi District", longitude: 28.67998, latitude: -19.52508),
-                      City(id: 131429, name: "Dete", longitude: 26.86667, latitude: -18.61667),
-                      City(id: 131446, name: "Hwange", longitude: 26.49877, latitude: -18.36446),
-                      City(id: 131447, name: "Hwange District", longitude: 26.5, latitude: -18.75),
-                      City(id: 131450, name: "Inyati", longitude: 28.84687, latitude: -19.67563),
-                      City(id: 131453, name: "Kamativi Mine", longitude: 27.05729, latitude: -18.31563),
-                      City(id: 131460, name: "Lupane", longitude: 27.80696, latitude: -18.93149),
-                      City(id: 131461, name: "Lupane District", longitude: 27.99098, latitude: -18.83608),
-                      City(id: 131487, name: "Nkayi District", longitude: 28.71221, latitude: -18.92472),
-                      City(id: 131506, name: "Victoria Falls", longitude: 25.83066, latitude: -17.93285)
-                    ]),
-            Region(id: 1952, longitude: 29.0459927, latitude: -21.052337,
-                    name: "Matabeleland South Province", type: null, stateCode: "MS",
-                    cities: [
-                      City(id: 131402, name: "Beitbridge", longitude: 30.0, latitude: -22.21667),
-                      City(id: 131403, name: "Beitbridge District", longitude: 30.07409, latitude: -21.89829),
-                      City(id: 131432, name: "Esigodini", longitude: 28.92261, latitude: -20.28979),
-                      City(id: 131433, name: "Filabusi", longitude: 29.28502, latitude: -20.53333),
-                      City(id: 131439, name: "Gwanda", longitude: 29.00698, latitude: -20.93622),
-                      City(id: 131440, name: "Gwanda District", longitude: 29.17557, latitude: -21.20929),
-                      City(id: 131448, name: "Insiza", longitude: 29.2, latitude: -19.78333),
-                      City(id: 131449, name: "Insiza District", longitude: 29.47392, latitude: -20.26431),
-                      City(id: 131465, name: "Mangwe District", longitude: 27.98292, latitude: -20.95545),
-                      City(id: 131471, name: "Matobo", longitude: 28.49463, latitude: -20.95545),
-                      City(id: 131494, name: "Plumtree", longitude: 27.81667, latitude: -20.48333),
-                      City(id: 131505, name: "Umzingwane District", longitude: 28.94994, latitude: -20.34704)
-                    ]),
-            Region(id: 1957, longitude: 29.6035495, latitude: -19.0552009,
-                    name: "Midlands Province", type: null, stateCode: "MI",
-                    cities: [
-                      City(id: 131435, name: "Gokwe", longitude: 28.9349, latitude: -18.20476),
-                      City(id: 131441, name: "Gweru", longitude: 29.81667, latitude: -19.45),
-                      City(id: 131442, name: "Gweru District", longitude: 29.64495, latitude: -19.45665),
-                      City(id: 131457, name: "Kwekwe", longitude: 29.81486, latitude: -18.92809),
-                      City(id: 131458, name: "Kwekwe District", longitude: 29.5, latitude: -18.75),
-                      City(id: 131459, name: "Lalapanzi", longitude: 30.17768, latitude: -19.33225),
-                      City(id: 131474, name: "Mberengwa District", longitude: 30.00962, latitude: -20.72579),
-                      City(id: 131484, name: "Mvuma", longitude: 30.52828, latitude: -19.27924),
-                      City(id: 131496, name: "Redcliff", longitude: 29.78333, latitude: -19.03333),
-                      City(id: 131502, name: "Shangani", longitude: 29.36667, latitude: -19.78333),
-                      City(id: 131503, name: "Shurugwi", longitude: 30.00589, latitude: -19.67016),
-                      City(id: 131504, name: "Shurugwi District", longitude: 30.16667, latitude: -19.75),
-                      City(id: 131508, name: "Zvishavane District", longitude: 30.07514, latitude: -20.30345)
-                    ])
+            zimbabweBulawayoProvince,
+            zimbabweHarareProvince,
+            zimbabweManicaland,
+            zimbabweMashonalandCentralProvince,
+            zimbabweMashonalandEastProvince,
+            zimbabweMashonalandWestProvince,
+            zimbabweMasvingoProvince,
+            zimbabweMatabelelandNorthProvince,
+            zimbabweMatabelelandSouthProvince,
+            zimbabweMidlandsProvince
           ],
           timezones: [
             Timezone(abbreviation: "CAT", gmtOffset: 7200, gmtOffsetName: "UTC+02:00",

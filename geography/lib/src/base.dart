@@ -69,6 +69,20 @@ abstract class GeoLocation extends GeoCoords {
       };
 }
 
+@immutable
+abstract class GeoLocationNode extends GeoLocation {
+  const GeoLocationNode(
+      {required int id,
+      required this.parentId,
+      required String name,
+      required double latitude,
+      required double longitude})
+      : super(id: id, name: name, latitude: latitude, longitude: longitude);
+
+  @JsonKey(defaultValue: 0)
+  final int parentId;
+}
+
 /// Represents a physical city, the most precise level for this library
 ///
 /// In JSON format, the instance for `Ashkāsham` might look like:
@@ -82,13 +96,19 @@ abstract class GeoLocation extends GeoCoords {
 /// ```
 @immutable
 @JsonSerializable()
-class City extends GeoLocation {
+class City extends GeoLocationNode {
   const City(
       {required int id,
+      required int parentId,
       required String name,
       required double longitude,
       required double latitude})
-      : super(id: id, name: name, latitude: latitude, longitude: longitude);
+      : super(
+            id: id,
+            parentId: parentId,
+            name: name,
+            latitude: latitude,
+            longitude: longitude);
 
   @override
   List<Object?> get props => [...super.props];
@@ -125,16 +145,22 @@ class City extends GeoLocation {
 /// ```
 @immutable
 @JsonSerializable()
-class Region extends GeoLocation {
+class Region extends GeoLocationNode {
   const Region({
     required int id,
+    required int parentId,
     required String name,
     required this.type,
     required this.stateCode,
     required this.cities,
     required double longitude,
     required double latitude,
-  }) : super(id: id, name: name, latitude: latitude, longitude: longitude);
+  }) : super(
+            id: id,
+            parentId: parentId,
+            name: name,
+            latitude: latitude,
+            longitude: longitude);
 
   /// If set, the type of region, otherwise `null`. When set, the value might
   /// look like: `province`, `municipality`, `autonomous region`, etc.

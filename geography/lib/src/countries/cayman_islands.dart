@@ -1,10 +1,9 @@
 /// Access to known geographies in Cayman Islands and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇰🇾 Cayman Islands`, and its 0 states
 const Country caymanIslands = Country(id: 41, name: "Cayman Islands", longitude: -80.5,

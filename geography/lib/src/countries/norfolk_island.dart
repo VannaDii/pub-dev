@@ -1,10 +1,9 @@
 /// Access to known geographies in Norfolk Island and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇳🇫 Norfolk Island`, and its 0 states
 const Country norfolkIsland = Country(id: 163, name: "Norfolk Island", longitude: 167.95,

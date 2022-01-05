@@ -1,10 +1,9 @@
 /// Access to known geographies in Greenland and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇬🇱 Greenland`, and its 0 states
 const Country greenland = Country(id: 86, name: "Greenland", longitude: -40.0,

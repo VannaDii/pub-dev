@@ -1,10 +1,9 @@
 /// Access to known geographies in Puerto Rico and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇵🇷 Puerto Rico`, and its 0 states
 const Country puertoRico = Country(id: 178, name: "Puerto Rico", longitude: -66.5,

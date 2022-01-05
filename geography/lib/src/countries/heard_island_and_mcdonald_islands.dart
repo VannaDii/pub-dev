@@ -1,13 +1,12 @@
 /// Access to known geographies in Heard Island and McDonald Islands and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇭🇲 Heard Island and McDonald Islands`, and its 0 states
-const Country heardIslandandMcDonaldIslands = Country(id: 96, name: "Heard Island and McDonald Islands", longitude: 72.51666666,
+const Country heardIslandAandMcDonaldIslands = Country(id: 96, name: "Heard Island and McDonald Islands", longitude: 72.51666666,
           latitude: -53.1, capital: "",
           currency: "AUD", currencySymbol: "\$",
           emoji: "🇭🇲", emojiU: "U+1F1ED U+1F1F2",

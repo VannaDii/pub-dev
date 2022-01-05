@@ -1,10 +1,9 @@
 /// Access to known geographies in Faroe Islands and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇫🇴 Faroe Islands`, and its 0 states
 const Country faroeIslands = Country(id: 72, name: "Faroe Islands", longitude: -7.0,

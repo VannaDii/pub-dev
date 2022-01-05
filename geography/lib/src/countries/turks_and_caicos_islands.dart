@@ -1,10 +1,9 @@
 /// Access to known geographies in Turks And Caicos Islands and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇹🇨 Turks And Caicos Islands`, and its 0 states
 const Country turksAndCaicosIslands = Country(id: 227, name: "Turks And Caicos Islands", longitude: -71.58333333,

@@ -1,10 +1,9 @@
 /// Access to known geographies in Uzbekistan and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
-
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
+import 'uzbekistan_states.dart';
 
 /// The country of `🇺🇿 Uzbekistan`, and its 14 states
 const Country uzbekistan = Country(id: 236, name: "Uzbekistan", longitude: 64.0,
@@ -16,197 +15,20 @@ const Country uzbekistan = Country(id: 236, name: "Uzbekistan", longitude: 64.0,
           phoneCode: "998", region: "Asia",
           subregion: "Central Asia", tld: ".uz",
           states: [
-            Region(id: 2540, longitude: 72.236379, latitude: 40.7685941,
-                    name: "Andijan Region", type: null, stateCode: "AN",
-                    cities: [
-                      City(id: 129894, name: "Andijon", longitude: 72.34424, latitude: 40.78206),
-                      City(id: 129895, name: "Andijon Tumani", longitude: 72.41667, latitude: 40.8),
-                      City(id: 129897, name: "Asaka", longitude: 72.23868, latitude: 40.64153),
-                      City(id: 129898, name: "Asaka Tumani", longitude: 72.25, latitude: 40.66667),
-                      City(id: 129899, name: "Baliqchi Tumani", longitude: 72.0, latitude: 40.86667),
-                      City(id: 129908, name: "Bo‘z Tumani", longitude: 71.91667, latitude: 40.66667),
-                      City(id: 129910, name: "Buloqboshi Tumani", longitude: 72.46667, latitude: 40.61667),
-                      City(id: 129937, name: "Izboskan Tumani", longitude: 72.25, latitude: 40.91667),
-                      City(id: 129938, name: "Jalolkuduk Tumani", longitude: 72.66667, latitude: 40.75),
-                      City(id: 129946, name: "Khŭjaobod Tumani", longitude: 72.58333, latitude: 40.66667),
-                      City(id: 129956, name: "Marhamat", longitude: 72.31388, latitude: 40.48048),
-                      City(id: 129957, name: "Marhamat Tumani", longitude: 72.31667, latitude: 40.5),
-                      City(id: 129971, name: "Oltinkŭl Tumani", longitude: 72.16667, latitude: 40.8),
-                      City(id: 129973, name: "Pakhtaobod Tumani", longitude: 72.5, latitude: 40.93333),
-                      City(id: 129976, name: "Paxtaobod", longitude: 72.49687, latitude: 40.92936),
-                      City(id: 129987, name: "Qo‘rg‘ontepa", longitude: 72.76177, latitude: 40.73192),
-                      City(id: 129990, name: "Qŭrghontepa Tumani", longitude: 72.83333, latitude: 40.75),
-                      City(id: 129996, name: "Shahrikhon Tumani", longitude: 72.06667, latitude: 40.71667),
-                      City(id: 129998, name: "Shahrixon", longitude: 72.05706, latitude: 40.71331),
-                      City(id: 130012, name: "Ulug‘nor Tumani", longitude: 71.7, latitude: 40.75),
-                      City(id: 130018, name: "Xo‘jaobod", longitude: 72.56002, latitude: 40.66886)
-                    ]),
-            Region(id: 2541, longitude: 63.2032151, latitude: 40.2504162,
-                    name: "Bukhara Region", type: null, stateCode: "BU",
-                    cities: [
-                      City(id: 129909, name: "Bukhara", longitude: 64.42861, latitude: 39.77472),
-                      City(id: 129925, name: "Galaosiyo", longitude: 64.44833, latitude: 39.85778),
-                      City(id: 129926, name: "Gazli", longitude: 63.45, latitude: 40.13333),
-                      City(id: 129927, name: "Ghijduwon", longitude: 64.68333, latitude: 40.1),
-                      City(id: 129942, name: "Karakul’", longitude: 63.83333, latitude: 39.53333),
-                      City(id: 129950, name: "Kogon", longitude: 64.55167, latitude: 39.72278),
-                      City(id: 129968, name: "Olot", longitude: 63.80333, latitude: 39.415),
-                      City(id: 129978, name: "Peshku Tumani", longitude: 63.83333, latitude: 40.41667),
-                      City(id: 129984, name: "Qorako’l", longitude: 63.85389, latitude: 39.49944),
-                      City(id: 129985, name: "Qorovulbozor", longitude: 64.79361, latitude: 39.50056),
-                      City(id: 129993, name: "Romiton", longitude: 64.37944, latitude: 39.92944),
-                      City(id: 129999, name: "Shofirkon", longitude: 64.50139, latitude: 40.12),
-                      City(id: 130016, name: "Wobkent", longitude: 64.515, latitude: 40.03028),
-                      City(id: 130017, name: "Wobkent Tumani", longitude: 64.5, latitude: 40.0)
-                    ]),
-            Region(id: 2538, longitude: 71.2874209, latitude: 40.4568081,
-                    name: "Fergana Region", type: null, stateCode: "FA",
-                    cities: [
-                      City(id: 129903, name: "Beshariq", longitude: 70.61028, latitude: 40.43583),
-                      City(id: 129923, name: "Fergana", longitude: 71.78432, latitude: 40.38421),
-                      City(id: 129932, name: "Hamza", longitude: 71.50534, latitude: 40.42762),
-                      City(id: 129948, name: "Kirguli", longitude: 71.76721, latitude: 40.43553),
-                      City(id: 129955, name: "Marg‘ilon", longitude: 71.72463, latitude: 40.47237),
-                      City(id: 129969, name: "Oltiariq", longitude: 71.47417, latitude: 40.39194),
-                      City(id: 129986, name: "Qo‘qon", longitude: 70.9425, latitude: 40.52861),
-                      City(id: 129988, name: "Quva", longitude: 72.07292, latitude: 40.52204),
-                      City(id: 129989, name: "Quvasoy", longitude: 71.98026, latitude: 40.29721),
-                      City(id: 129992, name: "Rishton", longitude: 71.28472, latitude: 40.35667),
-                      City(id: 130000, name: "Shohimardon", longitude: 71.80512, latitude: 39.98322),
-                      City(id: 130004, name: "So‘x Tumani", longitude: 71.09417, latitude: 40.04417),
-                      City(id: 130008, name: "Toshloq", longitude: 71.76778, latitude: 40.47722),
-                      City(id: 130019, name: "Yangi Marg‘ilon", longitude: 71.71889, latitude: 40.42722),
-                      City(id: 130025, name: "Yaypan", longitude: 70.81556, latitude: 40.37583)
-                    ]),
-            Region(id: 2545, longitude: 67.5708536, latitude: 40.4706415,
-                    name: "Jizzakh Region", type: null, stateCode: "JI",
-                    cities: [
-                      City(id: 129919, name: "Dashtobod", longitude: 68.49444, latitude: 40.12694),
-                      City(id: 129922, name: "Dŭstlik", longitude: 68.03583, latitude: 40.52472),
-                      City(id: 129924, name: "Gagarin", longitude: 68.17222, latitude: 40.66194),
-                      City(id: 129939, name: "Jizzax", longitude: 67.84222, latitude: 40.11583),
-                      City(id: 129975, name: "Paxtakor", longitude: 67.95444, latitude: 40.31528),
-                      City(id: 130027, name: "Zomin", longitude: 68.39583, latitude: 39.96056)
-                    ]),
-            Region(id: 2548, longitude: 59.4457988, latitude: 43.8041334,
-                    name: "Karakalpakstan", type: null, stateCode: "QR",
-                    cities: [
-                      City(id: 129902, name: "Beruniy", longitude: 60.7525, latitude: 41.69111),
-                      City(id: 129944, name: "Kegeyli Shahar", longitude: 59.60778, latitude: 42.77667),
-                      City(id: 129947, name: "Khŭjayli", longitude: 59.46005, latitude: 42.40043),
-                      City(id: 129954, name: "Manghit", longitude: 60.05972, latitude: 42.11556),
-                      City(id: 129959, name: "Mŭynoq", longitude: 59.02139, latitude: 43.76833),
-                      City(id: 129963, name: "Novyy Turtkul’", longitude: 61.01667, latitude: 41.55),
-                      City(id: 129964, name: "Nukus", longitude: 59.61028, latitude: 42.45306),
-                      City(id: 129970, name: "Oltinko‘l", longitude: 58.90372, latitude: 43.06874)
-                    ]),
-            Region(id: 2537, longitude: 71.097317, latitude: 41.0510037,
-                    name: "Namangan Region", type: null, stateCode: "NG",
-                    cities: [
-                      City(id: 129917, name: "Chortoq", longitude: 71.82372, latitude: 41.06924),
-                      City(id: 129918, name: "Chust", longitude: 71.23791, latitude: 41.00329),
-                      City(id: 129933, name: "Haqqulobod", longitude: 72.11667, latitude: 40.91667),
-                      City(id: 129952, name: "Kosonsoy", longitude: 71.54738, latitude: 41.24944),
-                      City(id: 129960, name: "Namangan", longitude: 71.67257, latitude: 40.9983),
-                      City(id: 129980, name: "Pop", longitude: 71.10889, latitude: 40.87361),
-                      City(id: 130009, name: "To‘rqao‘rg‘on", longitude: 71.51162, latitude: 40.99984),
-                      City(id: 130007, name: "Toshbuloq", longitude: 71.57819, latitude: 40.91617),
-                      City(id: 130011, name: "Uchqŭrghon Shahri", longitude: 72.07915, latitude: 41.11371),
-                      City(id: 130015, name: "Uychi", longitude: 71.92331, latitude: 41.08073),
-                      City(id: 130021, name: "Yangiqo‘rg‘on", longitude: 71.72385, latitude: 41.19474)
-                    ]),
-            Region(id: 2542, longitude: 64.6337685, latitude: 42.6988575,
-                    name: "Navoiy Region", type: null, stateCode: "NW",
-                    cities: [
-                      City(id: 129961, name: "Navoiy", longitude: 65.37917, latitude: 40.08444),
-                      City(id: 129965, name: "Nurota", longitude: 65.68861, latitude: 40.56139),
-                      City(id: 129983, name: "Qiziltepa", longitude: 64.85, latitude: 40.03306),
-                      City(id: 130022, name: "Yangirabot", longitude: 65.96095, latitude: 40.02539)
-                    ]),
-            Region(id: 2543, longitude: 66.0463534, latitude: 38.8986231,
-                    name: "Qashqadaryo Region", type: null, stateCode: "QA",
-                    cities: [
-                      City(id: 129904, name: "Beshkent", longitude: 65.65306, latitude: 38.82139),
-                      City(id: 129916, name: "Chiroqchi", longitude: 66.57222, latitude: 39.03361),
-                      City(id: 129931, name: "G‘uzor", longitude: 66.24806, latitude: 38.62083),
-                      City(id: 129949, name: "Kitob", longitude: 66.83318, latitude: 39.08425),
-                      City(id: 129951, name: "Koson", longitude: 65.585, latitude: 39.0375),
-                      City(id: 129958, name: "Muborak", longitude: 65.15278, latitude: 39.25528),
-                      City(id: 129962, name: "Nishon Tumani", longitude: 65.67512, latitude: 38.69395),
-                      City(id: 129981, name: "Qarshi", longitude: 65.78905, latitude: 38.86056),
-                      City(id: 129997, name: "Shahrisabz", longitude: 66.83417, latitude: 39.05778)
-                    ]),
-            Region(id: 2544, longitude: 66.9749731, latitude: 39.627012,
-                    name: "Samarqand Region", type: null, stateCode: "SA",
-                    cities: [
-                      City(id: 129911, name: "Bulung’ur", longitude: 67.27139, latitude: 39.76472),
-                      City(id: 129912, name: "Charxin", longitude: 66.76861, latitude: 39.69667),
-                      City(id: 129913, name: "Chelak", longitude: 66.86111, latitude: 39.92028),
-                      City(id: 129920, name: "Daxbet", longitude: 66.9125, latitude: 39.76389),
-                      City(id: 129935, name: "Ishtixon", longitude: 66.48611, latitude: 39.96639),
-                      City(id: 129940, name: "Jomboy", longitude: 67.09333, latitude: 39.69889),
-                      City(id: 129941, name: "Juma", longitude: 66.66417, latitude: 39.71611),
-                      City(id: 129943, name: "Kattaqo‘rg‘on", longitude: 66.25611, latitude: 39.89889),
-                      City(id: 129972, name: "Oqtosh", longitude: 65.92528, latitude: 39.92139),
-                      City(id: 129977, name: "Payshanba", longitude: 66.23694, latitude: 40.00778),
-                      City(id: 129995, name: "Samarkand", longitude: 66.95972, latitude: 39.65417),
-                      City(id: 130014, name: "Urgut", longitude: 67.24306, latitude: 39.40222)
-                    ]),
-            Region(id: 2547, longitude: 68.7154975, latitude: 40.3863808,
-                    name: "Sirdaryo Region", type: null, stateCode: "SI",
-                    cities: [
-                      City(id: 129928, name: "Guliston", longitude: 68.78417, latitude: 40.48972),
-                      City(id: 130003, name: "Sirdaryo", longitude: 68.66167, latitude: 40.84361),
-                      City(id: 130023, name: "Yangiyer", longitude: 68.8225, latitude: 40.275)
-                    ]),
-            Region(id: 2546, longitude: 67.5708536, latitude: 37.9409005,
-                    name: "Surxondaryo Region", type: null, stateCode: "SU",
-                    cities: [
-                      City(id: 129906, name: "Boysun", longitude: 67.20664, latitude: 38.20835),
-                      City(id: 129921, name: "Denov", longitude: 67.89886, latitude: 38.26746),
-                      City(id: 130002, name: "Sho‘rchi", longitude: 67.7875, latitude: 37.99944),
-                      City(id: 130006, name: "Tirmiz", longitude: 67.27833, latitude: 37.22417)
-                    ]),
-            Region(id: 2536, longitude: 69.2400734, latitude: 41.2994958,
-                    name: "Tashkent", type: null, stateCode: "TK",
-                    cities: [
-                      City(id: 129901, name: "Bektemir", longitude: 69.33417, latitude: 41.20972),
-                      City(id: 130005, name: "Tashkent", longitude: 69.21627, latitude: 41.26465)
-                    ]),
-            Region(id: 2549, longitude: 69.8597406, latitude: 41.2213234,
-                    name: "Tashkent Region", type: null, stateCode: "TO",
-                    cities: [
-                      City(id: 129896, name: "Angren", longitude: 70.14361, latitude: 41.01667),
-                      City(id: 129900, name: "Bekobod", longitude: 69.26972, latitude: 40.22083),
-                      City(id: 129907, name: "Bo‘ka", longitude: 69.19417, latitude: 40.81108),
-                      City(id: 129914, name: "Chinoz", longitude: 68.76128, latitude: 40.93633),
-                      City(id: 129915, name: "Chirchiq", longitude: 69.58222, latitude: 41.46889),
-                      City(id: 129930, name: "G‘azalkent", longitude: 69.77083, latitude: 41.55806),
-                      City(id: 129936, name: "Iskandar", longitude: 69.70083, latitude: 41.55389),
-                      City(id: 129953, name: "Kyzyldzhar", longitude: 70.01667, latitude: 41.56667),
-                      City(id: 129966, name: "Ohangaron", longitude: 69.63833, latitude: 40.90639),
-                      City(id: 129967, name: "Olmaliq", longitude: 69.59833, latitude: 40.84472),
-                      City(id: 129974, name: "Parkent", longitude: 69.67639, latitude: 41.29444),
-                      City(id: 129979, name: "Piskent", longitude: 69.35056, latitude: 40.89722),
-                      City(id: 129982, name: "Qibray", longitude: 69.465, latitude: 41.38972),
-                      City(id: 129994, name: "Salor", longitude: 69.38167, latitude: 41.37222),
-                      City(id: 130010, name: "Tŭytepa", longitude: 69.36253, latitude: 41.0321),
-                      City(id: 130028, name: "Ŭrtaowul", longitude: 69.14528, latitude: 41.18667),
-                      City(id: 130020, name: "Yangiobod", longitude: 70.09406, latitude: 41.11919),
-                      City(id: 130024, name: "Yangiyŭl", longitude: 69.0471, latitude: 41.11202),
-                      City(id: 130026, name: "Zafar", longitude: 68.9, latitude: 40.98333)
-                    ]),
-            Region(id: 2539, longitude: 60.8566686, latitude: 41.3565336,
-                    name: "Xorazm Region", type: null, stateCode: "XO",
-                    cities: [
-                      City(id: 129905, name: "Boghot Tumani", longitude: 60.85327, latitude: 41.31495),
-                      City(id: 129929, name: "Gurlan", longitude: 60.39194, latitude: 41.84472),
-                      City(id: 129934, name: "Hazorasp", longitude: 61.07417, latitude: 41.31944),
-                      City(id: 129945, name: "Khiwa", longitude: 60.36389, latitude: 41.37833),
-                      City(id: 129991, name: "Qŭshkŭpir", longitude: 60.34556, latitude: 41.535),
-                      City(id: 130001, name: "Showot", longitude: 60.3025, latitude: 41.65583),
-                      City(id: 130013, name: "Urganch", longitude: 60.63333, latitude: 41.55)
-                    ])
+            uzbekistanAndijanRegion,
+            uzbekistanBukharaRegion,
+            uzbekistanFerganaRegion,
+            uzbekistanJizzakhRegion,
+            uzbekistanKarakalpakstan,
+            uzbekistanNamanganRegion,
+            uzbekistanNavoiyRegion,
+            uzbekistanQashqadaryoRegion,
+            uzbekistanSamarqandRegion,
+            uzbekistanSirdaryoRegion,
+            uzbekistanSurxondaryoRegion,
+            uzbekistanTashkent,
+            uzbekistanTashkentRegion,
+            uzbekistanXorazmRegion
           ],
           timezones: [
             Timezone(abbreviation: "UZT", gmtOffset: 18000, gmtOffsetName: "UTC+05:00",

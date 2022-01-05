@@ -1,10 +1,9 @@
 /// Access to known geographies in Reunion and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇷🇪 Reunion`, and its 0 states
 const Country reunion = Country(id: 180, name: "Reunion", longitude: 55.5,

@@ -3,12 +3,14 @@ import 'dart:math' as math;
 import 'package:collection/collection.dart';
 
 import 'base.dart';
+import 'countries/all_states.dart' as allStates;
+import 'countries/all_countries.dart' as allCountries;
 
 const double EQUATOR_RADIUS = 6378137.0;
 _deg2rad(double v) => v * math.pi / 180;
 
 /// Extension methods for interacting with [List] of [GeoCoords] and derivative type instances.
-extension ListGeoCoordsExtensions<T extends GeoCoords> on List<T> {
+extension ListGeoCoordsExtensions<T extends GeoCoords> on Iterable<T> {
   /// Find the element geographically closest to the [target]
   ///
   /// Returns: The geographically closest [T], or null if the list is empty
@@ -49,6 +51,18 @@ extension GeoCoordsExtensions<T extends GeoCoords> on T {
   }
 }
 
+extension CityExtensions on City {
+  /// The [Region] parenting this [City] instance.
+  ///
+  /// While this is an extension method, it acts against a dictionary by key.
+  Region get state => allStates.states[parentId]!;
+
+  /// The qualified name (including parent names), separated by ` ,`
+  ///
+  /// For example: `United States, Texas, Austin`
+  String get nameQualified => [state.nameQualified, name].join(', ');
+}
+
 /// Extension methods for interacting with [Region] instances.
 extension RegionExtensions on Region {
   /// Finds the [City] in this [Region] nearest to the [target].
@@ -66,6 +80,16 @@ extension RegionExtensions on Region {
         .toLowerCase()
         .contains(valueLowered));
   }
+
+  /// The [Country] parenting this [Region] instance.
+  ///
+  /// While this is an extension method, it acts against a dictionary by key.
+  Country get country => allCountries.countries[parentId]!;
+
+  /// The qualified name (including parent names), separated by ` ,`
+  ///
+  /// For example: `United States, Texas`
+  String get nameQualified => [country.name, name].join(', ');
 }
 
 /// Extension methods for interacting with [Country] instances.

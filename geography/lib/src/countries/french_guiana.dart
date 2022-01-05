@@ -1,10 +1,9 @@
 /// Access to known geographies in French Guiana and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇬🇫 French Guiana`, and its 0 states
 const Country frenchGuiana = Country(id: 76, name: "French Guiana", longitude: -53.0,

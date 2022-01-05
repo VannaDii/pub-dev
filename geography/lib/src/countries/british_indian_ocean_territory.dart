@@ -1,10 +1,9 @@
 /// Access to known geographies in British Indian Ocean Territory and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇮🇴 British Indian Ocean Territory`, and its 0 states
 const Country britishIndianOceanTerritory = Country(id: 32, name: "British Indian Ocean Territory", longitude: 71.5,

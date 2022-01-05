@@ -1,13 +1,12 @@
 /// Access to known geographies in Bonaire, Sint Eustatius and Saba and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇧🇶 Bonaire, Sint Eustatius and Saba`, and its 0 states
-const Country bonaireSintEustatiusandSaba = Country(id: 155, name: "Bonaire, Sint Eustatius and Saba", longitude: -68.266667,
+const Country bonaireSintEustatiusAandSaba = Country(id: 155, name: "Bonaire, Sint Eustatius and Saba", longitude: -68.266667,
           latitude: 12.15, capital: "Kralendijk",
           currency: "USD", currencySymbol: "\$",
           emoji: "🇧🇶", emojiU: "U+1F1E7 U+1F1F6",

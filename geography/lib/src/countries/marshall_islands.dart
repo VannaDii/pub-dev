@@ -1,10 +1,9 @@
 /// Access to known geographies in Marshall Islands and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
-
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
+import 'marshall_islands_states.dart';
 
 /// The country of `🇲🇭 Marshall Islands`, and its 2 states
 const Country marshallIslands = Country(id: 137, name: "Marshall Islands", longitude: 168.0,
@@ -16,12 +15,8 @@ const Country marshallIslands = Country(id: 137, name: "Marshall Islands", longi
           phoneCode: "692", region: "Oceania",
           subregion: "Micronesia", tld: ".mh",
           states: [
-            Region(id: 2574, longitude: 164.8867956, latitude: 8.136146,
-                    name: "Ralik Chain", type: null, stateCode: "L",
-                    cities: []),
-            Region(id: 2573, longitude: 170.5500937, latitude: 10.2763276,
-                    name: "Ratak Chain", type: null, stateCode: "T",
-                    cities: [])
+            marshallIslandsRalikChain,
+            marshallIslandsRatakChain
           ],
           timezones: [
             Timezone(abbreviation: "MHT", gmtOffset: 43200, gmtOffsetName: "UTC+12:00",

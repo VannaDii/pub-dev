@@ -6,7 +6,7 @@ library earth;
 
 import 'src/base.dart';
 import 'src/extensions.dart';
-import 'src/countries/all.dart' as data;
+import 'src/countries/all_countries.dart' as data;
 
 export 'src/extensions.dart';
 
@@ -19,7 +19,7 @@ class Earth {
   factory Earth() => _instance;
 
   /// Gets all known countries on earth
-  List<Country> get countries => data.countries;
+  Iterable<Country> get countries => data.countries.values;
 
   /// Finds the [GeoCoords] ([City], or [Region]) with a name containing the [value]
   ///

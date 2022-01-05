@@ -1,10 +1,9 @@
 /// Access to known geographies in Saint Helena and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇸🇭 Saint Helena`, and its 0 states
 const Country saintHelena = Country(id: 184, name: "Saint Helena", longitude: -5.7,

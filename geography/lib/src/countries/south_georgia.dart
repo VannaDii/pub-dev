@@ -1,10 +1,9 @@
 /// Access to known geographies in South Georgia and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇬🇸 South Georgia`, and its 0 states
 const Country southGeorgia = Country(id: 205, name: "South Georgia", longitude: -37.0,

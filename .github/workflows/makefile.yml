@@ -4,7 +4,8 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+    types:
+      - closed
 
 jobs:
   build:
@@ -16,6 +17,18 @@ jobs:
       - name: Setup Dart SDK
         uses: dart-lang/setup-dart@v1.3
 
+      - name: Install Dependencies
+        working-directory: geography
+        run: make deps
+
+      - name: Ru Tests
+        working-directory: geography
+        run: make test
+
       - name: Build Geography
         working-directory: geography
-        run: make
+        run: make all
+
+      - name: Document Geography
+        working-directory: geography
+        run: make docs

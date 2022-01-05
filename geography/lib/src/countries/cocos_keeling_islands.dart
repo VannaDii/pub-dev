@@ -1,10 +1,9 @@
 /// Access to known geographies in Cocos (Keeling) Islands and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇨🇨 Cocos (Keeling) Islands`, and its 0 states
 const Country cocosKeelingIslands = Country(id: 47, name: "Cocos (Keeling) Islands", longitude: 96.83333333,

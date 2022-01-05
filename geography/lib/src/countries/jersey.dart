@@ -1,10 +1,9 @@
 /// Access to known geographies in Jersey and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇯🇪 Jersey`, and its 0 states
 const Country jersey = Country(id: 110, name: "Jersey", longitude: -2.16666666,

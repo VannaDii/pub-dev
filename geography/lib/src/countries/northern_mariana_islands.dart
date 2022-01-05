@@ -1,10 +1,9 @@
 /// Access to known geographies in Northern Mariana Islands and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇲🇵 Northern Mariana Islands`, and its 0 states
 const Country northernMarianaIslands = Country(id: 164, name: "Northern Mariana Islands", longitude: 145.75,

@@ -1,10 +1,9 @@
 /// Access to known geographies in Guadeloupe and their meta data.
-library geography;
+///
+/// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-// ignore: slash_for_doc_comments
-/** BEGIN AUTO_GENERATED CODE **/
 
 /// The country of `🇬🇵 Guadeloupe`, and its 0 states
 const Country guadeloupe = Country(id: 88, name: "Guadeloupe", longitude: -61.583333,
