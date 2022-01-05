@@ -18,7 +18,7 @@ If you're looking to use basic locations from the coordinates provided by a devi
 
 ## Features
 
-### Search places by name
+### Search places by name and proximity
 
 ```dart
 import 'package:geography/earth.dart';
@@ -47,24 +47,22 @@ void main() {
 ### Find the named place nearest to coordinates
 
 ```dart
-import 'package:geography/geography.dart';
+import 'package:geography/basic.dart';
 
 /// Our own derived class to mark coordinates
 class GeoLocation extends GeoCoords {
   GeoLocation(double lat, double long) : super(latitude: lat, longitude: long);
 
-  static GeoLocation get texas => GeoLocation(31.9685988, -99.9018131);
-
   static GeoLocation get austin => GeoLocation(30.26715, -97.74306);
 }
 
 void main() {
-  const u = unitedStates;
-  var t = u.states.findClosestTo(GeoLocation.texas)!;
-  var a = t.cities.findClosestTo(GeoLocation.austin)!;
+  var a = unitedStatesTexas.cities.findClosestTo(GeoLocation.austin)!;
+  var t = a.state; // Expected to be `Texas`
+  var u = t.country; // Expected to be `United States`
   print("> ${u.name} @ ${u.latitude}° ${u.longitude}°");
-  print("> ${u.name}, ${t.name} @ ${t.latitude}° ${t.longitude}°");
-  print("> ${u.name}, ${t.name}, ${a.name} @ ${a.latitude}° ${a.longitude}°");
+  print("> ${t.nameQualified} @ ${t.latitude}° ${t.longitude}°");
+  print("> ${a.nameQualified} @ ${a.latitude}° ${a.longitude}°");
 
   /**
    * Prints:
@@ -89,12 +87,12 @@ main() {
   var s = Earth().search("Texas, San Antonio").first;
   var d = a.distanceFrom(s);
 
-  print("> From ${a.name} to ${s.name} is $d");
+  print("> From ${a.name} to ${s.name} is ${d.toStringAsFixed(2)} meters");
 
   /**
    * Prints:
    *
-   * > From Austin to San Antonio is 118570.24358116832
+   * > From Austin to San Antonio is 118570.24 meters
    * Exited
    */
 }

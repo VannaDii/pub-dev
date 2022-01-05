@@ -10,7 +10,7 @@ main() {
   /**
    * Prints:
    *
-   * > From Austin to San Antonio is 118570.24358116832 meters
+   * > From Austin to San Antonio is 118570.24 meters
    * Exited
    */
 }
