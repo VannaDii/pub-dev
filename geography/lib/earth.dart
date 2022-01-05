@@ -8,6 +8,7 @@ import 'src/base.dart';
 import 'src/extensions.dart';
 import 'src/countries/all_countries.dart' as data;
 
+export 'src/base.dart';
 export 'src/extensions.dart';
 
 /// A singleton providing search and proximity functions for geographical data about earth.

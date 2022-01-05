@@ -7,6 +7,7 @@ import 'countries/all_states.dart' as _all_states;
 import 'countries/all_countries.dart' as _all_countries;
 
 const double _kEquatorRadius = 6378137.0;
+
 _deg2rad(double v) => v * math.pi / 180;
 
 /// Extension methods for interacting with [List] of [GeoCoords] and derivative type instances.
@@ -17,9 +18,10 @@ extension ListGeoCoordsExtensions<T extends GeoCoords> on Iterable<T> {
   T? findClosestTo(GeoCoords target) {
     return isEmpty
         ? null
-        : reduce((p, c) {
-            var distP = target.distanceFrom(p);
-            var distC = target.distanceFrom(c);
+        : fold(null, (p, c) {
+            if (p == null) return c;
+            var distP = target.distanceTo(p);
+            var distC = target.distanceTo(c);
             return distP > distC ? c : p;
           });
   }
@@ -32,22 +34,26 @@ extension GeoCoordsExtensions<T extends GeoCoords> on T {
   /// Returns: The distance between the two coordinates in meters as a [double]
   ///
   /// Note: This is a primitive Haversine implementation. For more accuracy or
-  /// advanced options, consider using [pub.dev/latlng](https://pub.dev/packages/latlng)
+  /// advanced options, consider using [latlong2](https://pub.dev/packages/latlong2)
   /// or adopting the code from it's GitHub source [dart-latlong](https://github.com/MikeMitterer/dart-latlong)
-  double distanceFrom(T location) {
+  double metersTo(T location) {
     var l1LatRad = _deg2rad(latitude);
     var l1LonRad = _deg2rad(longitude);
     var l2LatRad = _deg2rad(location.latitude);
     var l2LonRad = _deg2rad(location.longitude);
     final sinDLat = math.sin((l2LatRad - l1LatRad) / 2);
     final sinDLng = math.sin((l2LonRad - l1LonRad) / 2);
-
-    // Sides
     final a = sinDLat * sinDLat +
         sinDLng * sinDLng * math.cos(l1LatRad) * math.cos(l2LatRad);
     final c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a));
 
     return _kEquatorRadius * c;
+  }
+
+  double distanceTo(T location) {
+    var a = location.longitude - longitude;
+    var b = location.latitude - latitude;
+    return math.sqrt(a * a + b * b);
   }
 }
 

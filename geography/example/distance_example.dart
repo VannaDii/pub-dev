@@ -3,7 +3,7 @@ import 'package:geography/earth.dart';
 main() {
   var a = Earth().search("Texas, Austin").first;
   var s = Earth().search("Texas, San Antonio").first;
-  var d = a.distanceFrom(s);
+  var d = a.metersTo(s);
 
   print("> From ${a.name} to ${s.name} is ${d.toStringAsFixed(2)} meters");
 
