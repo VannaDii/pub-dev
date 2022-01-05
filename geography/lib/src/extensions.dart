@@ -3,10 +3,10 @@ import 'dart:math' as math;
 import 'package:collection/collection.dart';
 
 import 'base.dart';
-import 'countries/all_states.dart' as allStates;
-import 'countries/all_countries.dart' as allCountries;
+import 'countries/all_states.dart' as _all_states;
+import 'countries/all_countries.dart' as _all_countries;
 
-const double EQUATOR_RADIUS = 6378137.0;
+const double _kEquatorRadius = 6378137.0;
 _deg2rad(double v) => v * math.pi / 180;
 
 /// Extension methods for interacting with [List] of [GeoCoords] and derivative type instances.
@@ -47,7 +47,7 @@ extension GeoCoordsExtensions<T extends GeoCoords> on T {
         sinDLng * sinDLng * math.cos(l1LatRad) * math.cos(l2LatRad);
     final c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a));
 
-    return EQUATOR_RADIUS * c;
+    return _kEquatorRadius * c;
   }
 }
 
@@ -55,7 +55,7 @@ extension CityExtensions on City {
   /// The [Region] parenting this [City] instance.
   ///
   /// While this is an extension method, it acts against a dictionary by key.
-  Region get state => allStates.states[parentId]!;
+  Region get state => _all_states.states[parentId]!;
 
   /// The qualified name (including parent names), separated by ` ,`
   ///
@@ -84,7 +84,7 @@ extension RegionExtensions on Region {
   /// The [Country] parenting this [Region] instance.
   ///
   /// While this is an extension method, it acts against a dictionary by key.
-  Country get country => allCountries.countries[parentId]!;
+  Country get country => _all_countries.countries[parentId]!;
 
   /// The qualified name (including parent names), separated by ` ,`
   ///
