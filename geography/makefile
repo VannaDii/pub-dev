@@ -10,7 +10,7 @@ deps: clean
 
 test: clean deps
 	dart pub global activate coverage
-	dart pub run test --coverage="coverage"
+	dart run test --coverage="coverage"
 
 all: clean deps test
 	dart run build_runner build --delete-conflicting-outputs

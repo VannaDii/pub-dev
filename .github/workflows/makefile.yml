@@ -21,7 +21,7 @@ jobs:
         working-directory: geography
         run: make deps
 
-      - name: Ru Tests
+      - name: Run Tests
         working-directory: geography
         run: make test
 
