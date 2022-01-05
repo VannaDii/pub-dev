@@ -3,8 +3,9 @@
 .packages
 
 # Conventional directory for build outputs.
-build/
-doc/
+coverage
+build
+doc
 
 # Omit committing pubspec.lock for library packages; see
 # https://dart.dev/guides/libraries/private-files#pubspeclock.

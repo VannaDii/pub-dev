@@ -369,6 +369,10 @@ typedef Finisher = void Function({int? progress, int? total, String? status});
 typedef FinishAppender = void Function({int? progress, String? status});
 
 Finisher printAction(String message) {
+  if (aBeQuiet) {
+    return ({int? progress, int? total, String? status}) {};
+  }
+
   var paddedMessage = message.padRight(40, '.');
   stdout.write(paddedMessage);
   return ({int? progress, int? total, String? status}) {
@@ -446,6 +450,8 @@ extension StringExtensions<E> on String {
   }
 }
 
-main() async {
+late final bool aBeQuiet;
+main(List<String> args) async {
+  aBeQuiet = args.contains("-q");
   await Composer.compose();
 }

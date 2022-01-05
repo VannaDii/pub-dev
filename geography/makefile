@@ -14,7 +14,7 @@ test: clean deps
 
 all: clean deps test
 	dart run build_runner build --delete-conflicting-outputs
-	dart run :composer
+	dart run :composer -q
 	dart run build_runner build --delete-conflicting-outputs
 
 clean:
