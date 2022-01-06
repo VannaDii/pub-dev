@@ -7,8 +7,9 @@ lib_name=$(shell basename $$(pwd))
 
 deps: clean
 	dart pub get
+	dart run build_runner build --delete-conflicting-outputs
 
-tests: clean deps
+tests: deps
 	dart pub global activate coverage
 	dart run test --coverage="coverage" --chain-stack-traces
 	dart pub global run coverage:format_coverage --packages=.packages --report-on=lib --lcov -o ./coverage/lcov.info -i ./coverage
@@ -17,11 +18,9 @@ tests: clean deps
 generate:
 	dart run :composer
 
-all: clean deps tests
-	dart run build_runner build --delete-conflicting-outputs
+all: tests
 	dart fix --apply
 	dart format . >/dev/null
-	dart run build_runner build --delete-conflicting-outputs
 
 clean:
 	rm -rf .dart_tool doc .packages pubspec.lock
