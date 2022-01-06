@@ -15,7 +15,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: dart-lang/setup-dart@v1.3
       - uses: hrishikesh-kadam/setup-lcov@v1
-      - uses: RatakondalaArun/pub.dev-cd@v1.0.0
 
       - name: 👷 Build Geography
         working-directory: geography
