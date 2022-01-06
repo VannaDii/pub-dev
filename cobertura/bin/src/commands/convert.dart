@@ -3,7 +3,8 @@ import 'dart:io';
 import 'package:yaml/yaml.dart';
 import 'package:path/path.dart';
 import 'package:args/command_runner.dart';
-import 'package:cobertura/cobertura.dart';
+
+import '../cobertura.dart';
 
 class ConvertCommand extends Command {
   @override

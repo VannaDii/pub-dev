@@ -1,7 +1,7 @@
 import 'package:args/command_runner.dart';
 
-import 'commands/show.dart';
-import 'commands/convert.dart';
+import 'src/commands/show.dart';
+import 'src/commands/convert.dart';
 
 void main(List<String> args) {
   CommandRunner("cobertura",
