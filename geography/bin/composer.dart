@@ -453,5 +453,6 @@ extension StringExtensions<E> on String {
 late final bool aBeQuiet;
 main(List<String> args) async {
   aBeQuiet = args.contains("-q");
+  if (aBeQuiet) print('Quietly running composer...');
   await Composer.compose();
 }
