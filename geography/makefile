@@ -15,8 +15,9 @@ tests: clean deps generate
 	genhtml -o ./coverage/report ./coverage/lcov.info
 
 generate:
-	# dart run :composer -q
-	# dart run build_runner build --delete-conflicting-outputs
+	dart run :composer -q
+	dart format . >/dev/null
+	dart run build_runner build --delete-conflicting-outputs
 
 all: clean deps test
 	dart run build_runner build --delete-conflicting-outputs
