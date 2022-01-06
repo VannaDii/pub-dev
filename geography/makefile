@@ -22,8 +22,7 @@ all: clean deps test
 	dart run build_runner build --delete-conflicting-outputs
 
 clean:
-	# rm -rf .dart_tool doc .packages pubspec.lock
-	# rm -rf lib/src/countries
+	rm -rf .dart_tool doc .packages pubspec.lock
 
 docs:
 	dartdoc
