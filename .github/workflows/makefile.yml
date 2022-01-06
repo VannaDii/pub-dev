@@ -44,7 +44,7 @@ jobs:
           package_path: geography
 
       - name: 🚀 Publish cobertura
-        uses: RatakondalaArun/pub.dev-cd@v1
+        uses: RatakondalaArun/pub.dev-cd@v1.0.0
         with:
           creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
           package_path: cobertura
