@@ -8,18 +8,19 @@ lib_name=$(shell basename $$(pwd))
 deps: clean
 	dart pub get
 
-tests: clean deps generate
+tests: clean deps
 	dart pub global activate coverage
 	dart run test --coverage="coverage" --chain-stack-traces
 	dart pub global run coverage:format_coverage --packages=.packages --report-on=lib --lcov -o ./coverage/lcov.info -i ./coverage
 	genhtml -o ./coverage/report ./coverage/lcov.info
 
 generate:
-	dart run :composer -q
-	dart format . >/dev/null
-	dart run build_runner build --delete-conflicting-outputs
+	dart run :composer
 
-all: clean deps test
+all: clean deps tests
+	dart run build_runner build --delete-conflicting-outputs
+	dart fix --apply
+	dart format . >/dev/null
 	dart run build_runner build --delete-conflicting-outputs
 
 clean:
