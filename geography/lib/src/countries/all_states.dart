@@ -4,7 +4,6 @@
 
 import '../base.dart';
 
-
 import 'marshall_islands_states.dart' show marshallIslandsRalikChain;
 export 'marshall_islands_states.dart';
 
@@ -74,22 +73,27 @@ export 'bermuda_states.dart';
 import 'bermuda_states.dart' show bermudaWarwickParish;
 export 'bermuda_states.dart';
 
-import 'sao_tome_and_principe_states.dart' show saoTomeAandPrincipePrincipeProvince;
+import 'sao_tome_and_principe_states.dart'
+    show saoTomeAandPrincipePrincipeProvince;
 export 'sao_tome_and_principe_states.dart';
 
-import 'sao_tome_and_principe_states.dart' show saoTomeAandPrincipeSaoTomeProvince;
+import 'sao_tome_and_principe_states.dart'
+    show saoTomeAandPrincipeSaoTomeProvince;
 export 'sao_tome_and_principe_states.dart';
 
-import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotCentralAandWesternDistrict;
+import 'hong_kong_sdotadotrdot_states.dart'
+    show hongKongSDotADotRDotCentralAandWesternDistrict;
 export 'hong_kong_sdotadotrdot_states.dart';
 
 import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotEastern;
 export 'hong_kong_sdotadotrdot_states.dart';
 
-import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotIslandsDistrict;
+import 'hong_kong_sdotadotrdot_states.dart'
+    show hongKongSDotADotRDotIslandsDistrict;
 export 'hong_kong_sdotadotrdot_states.dart';
 
-import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotKowloonCity;
+import 'hong_kong_sdotadotrdot_states.dart'
+    show hongKongSDotADotRDotKowloonCity;
 export 'hong_kong_sdotadotrdot_states.dart';
 
 import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotKwaiTsing;
@@ -101,7 +105,8 @@ export 'hong_kong_sdotadotrdot_states.dart';
 import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotNorth;
 export 'hong_kong_sdotadotrdot_states.dart';
 
-import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotSaiKungDistrict;
+import 'hong_kong_sdotadotrdot_states.dart'
+    show hongKongSDotADotRDotSaiKungDistrict;
 export 'hong_kong_sdotadotrdot_states.dart';
 
 import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotShaTin;
@@ -113,10 +118,12 @@ export 'hong_kong_sdotadotrdot_states.dart';
 import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotSouthern;
 export 'hong_kong_sdotadotrdot_states.dart';
 
-import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotTaiPoDistrict;
+import 'hong_kong_sdotadotrdot_states.dart'
+    show hongKongSDotADotRDotTaiPoDistrict;
 export 'hong_kong_sdotadotrdot_states.dart';
 
-import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotTsuenWanDistrict;
+import 'hong_kong_sdotadotrdot_states.dart'
+    show hongKongSDotADotRDotTsuenWanDistrict;
 export 'hong_kong_sdotadotrdot_states.dart';
 
 import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotTuenMun;
@@ -128,25 +135,32 @@ export 'hong_kong_sdotadotrdot_states.dart';
 import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotWongTaiSin;
 export 'hong_kong_sdotadotrdot_states.dart';
 
-import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotYauTsimMong;
+import 'hong_kong_sdotadotrdot_states.dart'
+    show hongKongSDotADotRDotYauTsimMong;
 export 'hong_kong_sdotadotrdot_states.dart';
 
-import 'hong_kong_sdotadotrdot_states.dart' show hongKongSDotADotRDotYuenLongDistrict;
+import 'hong_kong_sdotadotrdot_states.dart'
+    show hongKongSDotADotRDotYuenLongDistrict;
 export 'hong_kong_sdotadotrdot_states.dart';
 
-import 'singapore_states.dart' show singaporeCentralSingaporeCommunityDevelopmentCouncil;
+import 'singapore_states.dart'
+    show singaporeCentralSingaporeCommunityDevelopmentCouncil;
 export 'singapore_states.dart';
 
-import 'singapore_states.dart' show singaporeNorthEastCommunityDevelopmentCouncil;
+import 'singapore_states.dart'
+    show singaporeNorthEastCommunityDevelopmentCouncil;
 export 'singapore_states.dart';
 
-import 'singapore_states.dart' show singaporeNorthWestCommunityDevelopmentCouncil;
+import 'singapore_states.dart'
+    show singaporeNorthWestCommunityDevelopmentCouncil;
 export 'singapore_states.dart';
 
-import 'singapore_states.dart' show singaporeSouthEastCommunityDevelopmentCouncil;
+import 'singapore_states.dart'
+    show singaporeSouthEastCommunityDevelopmentCouncil;
 export 'singapore_states.dart';
 
-import 'singapore_states.dart' show singaporeSouthWestCommunityDevelopmentCouncil;
+import 'singapore_states.dart'
+    show singaporeSouthWestCommunityDevelopmentCouncil;
 export 'singapore_states.dart';
 
 import 'south_sudan_states.dart' show southSudanCentralEquatoria;
@@ -260,6 +274,30 @@ export 'grenada_states.dart';
 import 'grenada_states.dart' show grenadaSaintPatrickParish;
 export 'grenada_states.dart';
 
+import 'saint_vincent_and_the_grenadines_states.dart'
+    show saintVincentAndTheGrenadinesCharlotteParish;
+export 'saint_vincent_and_the_grenadines_states.dart';
+
+import 'saint_vincent_and_the_grenadines_states.dart'
+    show saintVincentAndTheGrenadinesGrenadinesParish;
+export 'saint_vincent_and_the_grenadines_states.dart';
+
+import 'saint_vincent_and_the_grenadines_states.dart'
+    show saintVincentAndTheGrenadinesSaintAndrewParish;
+export 'saint_vincent_and_the_grenadines_states.dart';
+
+import 'saint_vincent_and_the_grenadines_states.dart'
+    show saintVincentAndTheGrenadinesSaintDavidParish;
+export 'saint_vincent_and_the_grenadines_states.dart';
+
+import 'saint_vincent_and_the_grenadines_states.dart'
+    show saintVincentAndTheGrenadinesSaintGeorgeParish;
+export 'saint_vincent_and_the_grenadines_states.dart';
+
+import 'saint_vincent_and_the_grenadines_states.dart'
+    show saintVincentAndTheGrenadinesSaintPatrickParish;
+export 'saint_vincent_and_the_grenadines_states.dart';
+
 import 'madagascar_states.dart' show madagascarAntananarivoProvince;
 export 'madagascar_states.dart';
 
@@ -277,24 +315,6 @@ export 'madagascar_states.dart';
 
 import 'madagascar_states.dart' show madagascarToliaraProvince;
 export 'madagascar_states.dart';
-
-import 'saint_vincent_and_the_grenadines_states.dart' show saintVincentAndTheGrenadinesCharlotteParish;
-export 'saint_vincent_and_the_grenadines_states.dart';
-
-import 'saint_vincent_and_the_grenadines_states.dart' show saintVincentAndTheGrenadinesGrenadinesParish;
-export 'saint_vincent_and_the_grenadines_states.dart';
-
-import 'saint_vincent_and_the_grenadines_states.dart' show saintVincentAndTheGrenadinesSaintAndrewParish;
-export 'saint_vincent_and_the_grenadines_states.dart';
-
-import 'saint_vincent_and_the_grenadines_states.dart' show saintVincentAndTheGrenadinesSaintDavidParish;
-export 'saint_vincent_and_the_grenadines_states.dart';
-
-import 'saint_vincent_and_the_grenadines_states.dart' show saintVincentAndTheGrenadinesSaintGeorgeParish;
-export 'saint_vincent_and_the_grenadines_states.dart';
-
-import 'saint_vincent_and_the_grenadines_states.dart' show saintVincentAndTheGrenadinesSaintPatrickParish;
-export 'saint_vincent_and_the_grenadines_states.dart';
 
 import 'rwanda_states.dart' show rwandaEasternProvince;
 export 'rwanda_states.dart';
@@ -392,7 +412,8 @@ export 'antigua_and_barbuda_states.dart';
 import 'antigua_and_barbuda_states.dart' show antiguaAndBarbudaRedonda;
 export 'antigua_and_barbuda_states.dart';
 
-import 'antigua_and_barbuda_states.dart' show antiguaAndBarbudaSaintGeorgeParish;
+import 'antigua_and_barbuda_states.dart'
+    show antiguaAndBarbudaSaintGeorgeParish;
 export 'antigua_and_barbuda_states.dart';
 
 import 'antigua_and_barbuda_states.dart' show antiguaAndBarbudaSaintJohnParish;
@@ -407,7 +428,8 @@ export 'antigua_and_barbuda_states.dart';
 import 'antigua_and_barbuda_states.dart' show antiguaAndBarbudaSaintPeterParish;
 export 'antigua_and_barbuda_states.dart';
 
-import 'antigua_and_barbuda_states.dart' show antiguaAndBarbudaSaintPhilipParish;
+import 'antigua_and_barbuda_states.dart'
+    show antiguaAndBarbudaSaintPhilipParish;
 export 'antigua_and_barbuda_states.dart';
 
 import 'tuvalu_states.dart' show tuvaluFunafuti;
@@ -455,7 +477,8 @@ export 'solomon_islands_states.dart';
 import 'solomon_islands_states.dart' show solomonIslandsMalaitaProvince;
 export 'solomon_islands_states.dart';
 
-import 'solomon_islands_states.dart' show solomonIslandsRennellAandBellonaProvince;
+import 'solomon_islands_states.dart'
+    show solomonIslandsRennellAandBellonaProvince;
 export 'solomon_islands_states.dart';
 
 import 'solomon_islands_states.dart' show solomonIslandsTemotuProvince;
@@ -548,6 +571,18 @@ export 'togo_states.dart';
 import 'togo_states.dart' show togoSavanesRegion;
 export 'togo_states.dart';
 
+import 'swaziland_states.dart' show swazilandHhohhoDistrict;
+export 'swaziland_states.dart';
+
+import 'swaziland_states.dart' show swazilandLubomboDistrict;
+export 'swaziland_states.dart';
+
+import 'swaziland_states.dart' show swazilandManziniDistrict;
+export 'swaziland_states.dart';
+
+import 'swaziland_states.dart' show swazilandShiselweniDistrict;
+export 'swaziland_states.dart';
+
 import 'qatar_states.dart' show qatarAlDaayen;
 export 'qatar_states.dart';
 
@@ -571,18 +606,6 @@ export 'qatar_states.dart';
 
 import 'qatar_states.dart' show qatarUmmSalalMunicipality;
 export 'qatar_states.dart';
-
-import 'swaziland_states.dart' show swazilandHhohhoDistrict;
-export 'swaziland_states.dart';
-
-import 'swaziland_states.dart' show swazilandLubomboDistrict;
-export 'swaziland_states.dart';
-
-import 'swaziland_states.dart' show swazilandManziniDistrict;
-export 'swaziland_states.dart';
-
-import 'swaziland_states.dart' show swazilandShiselweniDistrict;
-export 'swaziland_states.dart';
 
 import 'nauru_states.dart' show nauruAiwoDistrict;
 export 'nauru_states.dart';
@@ -935,49 +958,62 @@ export 'congo_states.dart';
 import 'congo_states.dart' show congoSanghaDepartment;
 export 'congo_states.dart';
 
-import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisChristChurchNicholaTownParish;
+import 'saint_kitts_and_nevis_states.dart'
+    show saintKittsAndNevisChristChurchNicholaTownParish;
 export 'saint_kitts_and_nevis_states.dart';
 
 import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisNevis;
 export 'saint_kitts_and_nevis_states.dart';
 
-import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisSaintAnneSandyPointParish;
+import 'saint_kitts_and_nevis_states.dart'
+    show saintKittsAndNevisSaintAnneSandyPointParish;
 export 'saint_kitts_and_nevis_states.dart';
 
-import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisSaintGeorgeGingerlandParish;
+import 'saint_kitts_and_nevis_states.dart'
+    show saintKittsAndNevisSaintGeorgeGingerlandParish;
 export 'saint_kitts_and_nevis_states.dart';
 
-import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisSaintJamesWindwardParish;
+import 'saint_kitts_and_nevis_states.dart'
+    show saintKittsAndNevisSaintJamesWindwardParish;
 export 'saint_kitts_and_nevis_states.dart';
 
-import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisSaintJohnCapisterreParish;
+import 'saint_kitts_and_nevis_states.dart'
+    show saintKittsAndNevisSaintJohnCapisterreParish;
 export 'saint_kitts_and_nevis_states.dart';
 
-import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisSaintJohnFigtreeParish;
+import 'saint_kitts_and_nevis_states.dart'
+    show saintKittsAndNevisSaintJohnFigtreeParish;
 export 'saint_kitts_and_nevis_states.dart';
 
 import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisSaintKitts;
 export 'saint_kitts_and_nevis_states.dart';
 
-import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisSaintMaryCayonParish;
+import 'saint_kitts_and_nevis_states.dart'
+    show saintKittsAndNevisSaintMaryCayonParish;
 export 'saint_kitts_and_nevis_states.dart';
 
-import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisSaintPaulCapisterreParish;
+import 'saint_kitts_and_nevis_states.dart'
+    show saintKittsAndNevisSaintPaulCapisterreParish;
 export 'saint_kitts_and_nevis_states.dart';
 
-import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisSaintPaulCharlestownParish;
+import 'saint_kitts_and_nevis_states.dart'
+    show saintKittsAndNevisSaintPaulCharlestownParish;
 export 'saint_kitts_and_nevis_states.dart';
 
-import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisSaintPeterBasseterreParish;
+import 'saint_kitts_and_nevis_states.dart'
+    show saintKittsAndNevisSaintPeterBasseterreParish;
 export 'saint_kitts_and_nevis_states.dart';
 
-import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisSaintThomasLowlandParish;
+import 'saint_kitts_and_nevis_states.dart'
+    show saintKittsAndNevisSaintThomasLowlandParish;
 export 'saint_kitts_and_nevis_states.dart';
 
-import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisSaintThomasMiddleIslandParish;
+import 'saint_kitts_and_nevis_states.dart'
+    show saintKittsAndNevisSaintThomasMiddleIslandParish;
 export 'saint_kitts_and_nevis_states.dart';
 
-import 'saint_kitts_and_nevis_states.dart' show saintKittsAndNevisTrinityPalmettoPointParish;
+import 'saint_kitts_and_nevis_states.dart'
+    show saintKittsAndNevisTrinityPalmettoPointParish;
 export 'saint_kitts_and_nevis_states.dart';
 
 import 'samoa_states.dart' show samoaAana;
@@ -1166,10 +1202,12 @@ export 'seychelles_states.dart';
 import 'seychelles_states.dart' show seychellesTakamaka;
 export 'seychelles_states.dart';
 
-import 'tajikistan_states.dart' show tajikistanDdistrictsOofRepublicanSubordination;
+import 'tajikistan_states.dart'
+    show tajikistanDdistrictsOofRepublicanSubordination;
 export 'tajikistan_states.dart';
 
-import 'tajikistan_states.dart' show tajikistanGornoHypBadakhshanAutonomousProvince;
+import 'tajikistan_states.dart'
+    show tajikistanGornoHypBadakhshanAutonomousProvince;
 export 'tajikistan_states.dart';
 
 import 'tajikistan_states.dart' show tajikistanKhatlonProvince;
@@ -1178,7 +1216,8 @@ export 'tajikistan_states.dart';
 import 'tajikistan_states.dart' show tajikistanSughdProvince;
 export 'tajikistan_states.dart';
 
-import 'united_arab_emirates_states.dart' show unitedArabEmiratesAbuDhabiEmirate;
+import 'united_arab_emirates_states.dart'
+    show unitedArabEmiratesAbuDhabiEmirate;
 export 'united_arab_emirates_states.dart';
 
 import 'united_arab_emirates_states.dart' show unitedArabEmiratesAjmanEmirate;
@@ -1190,13 +1229,15 @@ export 'united_arab_emirates_states.dart';
 import 'united_arab_emirates_states.dart' show unitedArabEmiratesFujairah;
 export 'united_arab_emirates_states.dart';
 
-import 'united_arab_emirates_states.dart' show unitedArabEmiratesRasAalHypKhaimah;
+import 'united_arab_emirates_states.dart'
+    show unitedArabEmiratesRasAalHypKhaimah;
 export 'united_arab_emirates_states.dart';
 
 import 'united_arab_emirates_states.dart' show unitedArabEmiratesSharjahEmirate;
 export 'united_arab_emirates_states.dart';
 
-import 'united_arab_emirates_states.dart' show unitedArabEmiratesUmmAalHypQuwain;
+import 'united_arab_emirates_states.dart'
+    show unitedArabEmiratesUmmAalHypQuwain;
 export 'united_arab_emirates_states.dart';
 
 import 'palau_states.dart' show palauAimeliik;
@@ -1505,16 +1546,19 @@ export 'trinidad_and_tobago_states.dart';
 import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoChaguanas;
 export 'trinidad_and_tobago_states.dart';
 
-import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoCouvaHypTabaquiteHypTalparoRegionalCorporation;
+import 'trinidad_and_tobago_states.dart'
+    show trinidadAndTobagoCouvaHypTabaquiteHypTalparoRegionalCorporation;
 export 'trinidad_and_tobago_states.dart';
 
-import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoDiegoMartinRegionalCorporation;
+import 'trinidad_and_tobago_states.dart'
+    show trinidadAndTobagoDiegoMartinRegionalCorporation;
 export 'trinidad_and_tobago_states.dart';
 
 import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoEasternTobago;
 export 'trinidad_and_tobago_states.dart';
 
-import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoPenalHypDebeRegionalCorporation;
+import 'trinidad_and_tobago_states.dart'
+    show trinidadAndTobagoPenalHypDebeRegionalCorporation;
 export 'trinidad_and_tobago_states.dart';
 
 import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoPointFortin;
@@ -1523,25 +1567,31 @@ export 'trinidad_and_tobago_states.dart';
 import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoPortOofSpain;
 export 'trinidad_and_tobago_states.dart';
 
-import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoPrincesTownRegionalCorporation;
+import 'trinidad_and_tobago_states.dart'
+    show trinidadAndTobagoPrincesTownRegionalCorporation;
 export 'trinidad_and_tobago_states.dart';
 
-import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoRioClaroHypMayaroRegionalCorporation;
+import 'trinidad_and_tobago_states.dart'
+    show trinidadAndTobagoRioClaroHypMayaroRegionalCorporation;
 export 'trinidad_and_tobago_states.dart';
 
 import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoSanFernando;
 export 'trinidad_and_tobago_states.dart';
 
-import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoSanJuanHypLaventilleRegionalCorporation;
+import 'trinidad_and_tobago_states.dart'
+    show trinidadAndTobagoSanJuanHypLaventilleRegionalCorporation;
 export 'trinidad_and_tobago_states.dart';
 
-import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoSangreGrandeRegionalCorporation;
+import 'trinidad_and_tobago_states.dart'
+    show trinidadAndTobagoSangreGrandeRegionalCorporation;
 export 'trinidad_and_tobago_states.dart';
 
-import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoSipariaRegionalCorporation;
+import 'trinidad_and_tobago_states.dart'
+    show trinidadAndTobagoSipariaRegionalCorporation;
 export 'trinidad_and_tobago_states.dart';
 
-import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoTunapunaHypPiarcoRegionalCorporation;
+import 'trinidad_and_tobago_states.dart'
+    show trinidadAndTobagoTunapunaHypPiarcoRegionalCorporation;
 export 'trinidad_and_tobago_states.dart';
 
 import 'trinidad_and_tobago_states.dart' show trinidadAndTobagoWesternTobago;
@@ -2066,55 +2116,71 @@ export 'botswana_states.dart';
 import 'botswana_states.dart' show botswanaSouthernDistrict;
 export 'botswana_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicBaminguiHypBangoranPrefecture;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicBaminguiHypBangoranPrefecture;
 export 'central_african_republic_states.dart';
 
 import 'central_african_republic_states.dart' show centralAfricanRepublicBangui;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicBasseHypKottoPrefecture;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicBasseHypKottoPrefecture;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicHautHypMbomouPrefecture;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicHautHypMbomouPrefecture;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicHauteHypKottoPrefecture;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicHauteHypKottoPrefecture;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicKemoPrefecture;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicKemoPrefecture;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicLobayePrefecture;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicLobayePrefecture;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicMambereHypKadei;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicMambereHypKadei;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicMbomouPrefecture;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicMbomouPrefecture;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicNanaHypGrebiziEconomicPrefecture;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicNanaHypGrebiziEconomicPrefecture;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicNanaHypMamberePrefecture;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicNanaHypMamberePrefecture;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicOmbellaHypMPokoPrefecture;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicOmbellaHypMPokoPrefecture;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicOuakaPrefecture;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicOuakaPrefecture;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicOuhamPrefecture;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicOuhamPrefecture;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicOuhamHypPendePrefecture;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicOuhamHypPendePrefecture;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicSanghaHypMbaere;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicSanghaHypMbaere;
 export 'central_african_republic_states.dart';
 
-import 'central_african_republic_states.dart' show centralAfricanRepublicVakagaPrefecture;
+import 'central_african_republic_states.dart'
+    show centralAfricanRepublicVakagaPrefecture;
 export 'central_african_republic_states.dart';
 
 import 'somalia_states.dart' show somaliaAwdalRegion;
@@ -3287,7 +3353,8 @@ export 'ethiopia_states.dart';
 import 'ethiopia_states.dart' show ethiopiaSomaliRegion;
 export 'ethiopia_states.dart';
 
-import 'ethiopia_states.dart' show ethiopiaSouthernNationsNationalitiesAandPeoplesRegion;
+import 'ethiopia_states.dart'
+    show ethiopiaSouthernNationsNationalitiesAandPeoplesRegion;
 export 'ethiopia_states.dart';
 
 import 'ethiopia_states.dart' show ethiopiaTigrayRegion;
@@ -3368,82 +3435,108 @@ export 'slovakia_states.dart';
 import 'slovakia_states.dart' show slovakiaZilinaRegion;
 export 'slovakia_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoBasHypUele;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoBasHypUele;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoEquateur;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoEquateur;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoHautHypKatanga;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoHautHypKatanga;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoHautHypLomami;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoHautHypLomami;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoHautHypUele;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoHautHypUele;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoIturi;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoIturi;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoKasai;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoKasai;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoKasaiCentral;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoKasaiCentral;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoKasaiOriental;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoKasaiOriental;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoKinshasa;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoKinshasa;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoKongoCentral;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoKongoCentral;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoKwango;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoKwango;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoKwilu;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoKwilu;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoLomami;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoLomami;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoLualaba;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoLualaba;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoMaiHypNdombe;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoMaiHypNdombe;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoManiema;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoManiema;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoMongala;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoMongala;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoNordHypKivu;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoNordHypKivu;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoNordHypUbangi;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoNordHypUbangi;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoSankuru;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoSankuru;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoSudHypKivu;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoSudHypKivu;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoSudHypUbangi;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoSudHypUbangi;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoTanganyika;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoTanganyika;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoTshopo;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoTshopo;
 export 'democratic_republic_of_the_congo_states.dart';
 
-import 'democratic_republic_of_the_congo_states.dart' show democraticRepublicOofTtheCongoTshuapa;
+import 'democratic_republic_of_the_congo_states.dart'
+    show democraticRepublicOofTtheCongoTshuapa;
 export 'democratic_republic_of_the_congo_states.dart';
 
 import 'uzbekistan_states.dart' show uzbekistanAndijanRegion;
@@ -3722,7 +3815,8 @@ export 'papua_new_guinea_states.dart';
 import 'papua_new_guinea_states.dart' show papuaNnewGuineaEastNewBritain;
 export 'papua_new_guinea_states.dart';
 
-import 'papua_new_guinea_states.dart' show papuaNnewGuineaEasternHighlandsProvince;
+import 'papua_new_guinea_states.dart'
+    show papuaNnewGuineaEasternHighlandsProvince;
 export 'papua_new_guinea_states.dart';
 
 import 'papua_new_guinea_states.dart' show papuaNnewGuineaEngaProvince;
@@ -3761,13 +3855,16 @@ export 'papua_new_guinea_states.dart';
 import 'papua_new_guinea_states.dart' show papuaNnewGuineaSandaunProvince;
 export 'papua_new_guinea_states.dart';
 
-import 'papua_new_guinea_states.dart' show papuaNnewGuineaSouthernHighlandsProvince;
+import 'papua_new_guinea_states.dart'
+    show papuaNnewGuineaSouthernHighlandsProvince;
 export 'papua_new_guinea_states.dart';
 
-import 'papua_new_guinea_states.dart' show papuaNnewGuineaWestNewBritainProvince;
+import 'papua_new_guinea_states.dart'
+    show papuaNnewGuineaWestNewBritainProvince;
 export 'papua_new_guinea_states.dart';
 
-import 'papua_new_guinea_states.dart' show papuaNnewGuineaWesternHighlandsProvince;
+import 'papua_new_guinea_states.dart'
+    show papuaNnewGuineaWesternHighlandsProvince;
 export 'papua_new_guinea_states.dart';
 
 import 'papua_new_guinea_states.dart' show papuaNnewGuineaWesternProvince;
@@ -4217,7 +4314,8 @@ export 'nicaragua_states.dart';
 import 'nicaragua_states.dart' show nicaraguaMatagalpaDdepartment;
 export 'nicaragua_states.dart';
 
-import 'nicaragua_states.dart' show nicaraguaNorthCaribbeanCoastAautonomousRregion;
+import 'nicaragua_states.dart'
+    show nicaraguaNorthCaribbeanCoastAautonomousRregion;
 export 'nicaragua_states.dart';
 
 import 'nicaragua_states.dart' show nicaraguaNuevaSegoviaDdepartment;
@@ -4229,7 +4327,8 @@ export 'nicaragua_states.dart';
 import 'nicaragua_states.dart' show nicaraguaRivasDdepartment;
 export 'nicaragua_states.dart';
 
-import 'nicaragua_states.dart' show nicaraguaSouthCaribbeanCoastAautonomousRregion;
+import 'nicaragua_states.dart'
+    show nicaraguaSouthCaribbeanCoastAautonomousRregion;
 export 'nicaragua_states.dart';
 
 import 'ecuador_states.dart' show ecuadorAzuayProvince;
@@ -4403,7 +4502,8 @@ export 'moldova_states.dart';
 import 'moldova_states.dart' show moldovaTelenestiDistrict;
 export 'moldova_states.dart';
 
-import 'moldova_states.dart' show moldovaTransnistriaAautonomousTterritorialUunit;
+import 'moldova_states.dart'
+    show moldovaTransnistriaAautonomousTterritorialUunit;
 export 'moldova_states.dart';
 
 import 'moldova_states.dart' show moldovaUngheniDistrict;
@@ -4460,97 +4560,128 @@ export 'new_zealand_states.dart';
 import 'new_zealand_states.dart' show newZealandWestCoastRegion;
 export 'new_zealand_states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastAbidjan;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastAbidjan;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastAgneby;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastAgneby;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastBafingRegion;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastBafingRegion;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastBasHypSassandraDistrict;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastBasHypSassandraDistrict;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastBasHypSassandraRegion;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastBasHypSassandraRegion;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastComoeDistrict;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastComoeDistrict;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastDengueleDistrict;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastDengueleDistrict;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastDengueleRegion;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastDengueleRegion;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastDixHypHuitMontagnes;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastDixHypHuitMontagnes;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastFromager;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastFromager;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastGohHypDjibouaDistrict;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastGohHypDjibouaDistrict;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastHautHypSassandra;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastHautHypSassandra;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastLacsDistrict;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastLacsDistrict;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastLacsRegion;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastLacsRegion;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastLagunesDistrict;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastLagunesDistrict;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastLagunesRregion;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastLagunesRregion;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastMarahoueRegion;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastMarahoueRegion;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastMontagnesDistrict;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastMontagnesDistrict;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastMoyenHypCavally;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastMoyenHypCavally;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastMoyenHypComoe;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastMoyenHypComoe;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastNziHypComoe;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastNziHypComoe;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastSassandraHypMarahoueDistrict;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastSassandraHypMarahoueDistrict;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastSavanesRegion;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastSavanesRegion;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastSudHypBandama;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastSudHypBandama;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastSudHypComoe;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastSudHypComoe;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastValleeDduBandamaDistrict;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastValleeDduBandamaDistrict;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastValleeDduBandamaRegion;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastValleeDduBandamaRegion;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastWorobaDistrict;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastWorobaDistrict;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastWorodougou;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastWorodougou;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastYamoussoukro;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastYamoussoukro;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
-import 'cote_d_ivoire_ivory_coast__states.dart' show coteDIvoireIvoryCoastZanzanRegion;
+import 'cote_d_ivoire_ivory_coast__states.dart'
+    show coteDIvoireIvoryCoastZanzanRegion;
 export 'cote_d_ivoire_ivory_coast__states.dart';
 
 import 'south_africa_states.dart' show southAfricaEasternCape;
@@ -4676,43 +4807,55 @@ export 'cuba_states.dart';
 import 'cuba_states.dart' show cubaVillaClaraProvince;
 export 'cuba_states.dart';
 
-import 'bosnia_and_herzegovina_states.dart' show bosniaAandHerzegovinaBosnianPodrinjeCanton;
+import 'bosnia_and_herzegovina_states.dart'
+    show bosniaAandHerzegovinaBosnianPodrinjeCanton;
 export 'bosnia_and_herzegovina_states.dart';
 
-import 'bosnia_and_herzegovina_states.dart' show bosniaAandHerzegovinaBrckoDistrict;
+import 'bosnia_and_herzegovina_states.dart'
+    show bosniaAandHerzegovinaBrckoDistrict;
 export 'bosnia_and_herzegovina_states.dart';
 
 import 'bosnia_and_herzegovina_states.dart' show bosniaAandHerzegovinaCanton10;
 export 'bosnia_and_herzegovina_states.dart';
 
-import 'bosnia_and_herzegovina_states.dart' show bosniaAandHerzegovinaCentralBosniaCanton;
+import 'bosnia_and_herzegovina_states.dart'
+    show bosniaAandHerzegovinaCentralBosniaCanton;
 export 'bosnia_and_herzegovina_states.dart';
 
-import 'bosnia_and_herzegovina_states.dart' show bosniaAandHerzegovinaFederationOofBosniaAandHerzegovina;
+import 'bosnia_and_herzegovina_states.dart'
+    show bosniaAandHerzegovinaFederationOofBosniaAandHerzegovina;
 export 'bosnia_and_herzegovina_states.dart';
 
-import 'bosnia_and_herzegovina_states.dart' show bosniaAandHerzegovinaHerzegovinaHypNeretvaCanton;
+import 'bosnia_and_herzegovina_states.dart'
+    show bosniaAandHerzegovinaHerzegovinaHypNeretvaCanton;
 export 'bosnia_and_herzegovina_states.dart';
 
-import 'bosnia_and_herzegovina_states.dart' show bosniaAandHerzegovinaPosavinaCanton;
+import 'bosnia_and_herzegovina_states.dart'
+    show bosniaAandHerzegovinaPosavinaCanton;
 export 'bosnia_and_herzegovina_states.dart';
 
-import 'bosnia_and_herzegovina_states.dart' show bosniaAandHerzegovinaRepublikaSrpska;
+import 'bosnia_and_herzegovina_states.dart'
+    show bosniaAandHerzegovinaRepublikaSrpska;
 export 'bosnia_and_herzegovina_states.dart';
 
-import 'bosnia_and_herzegovina_states.dart' show bosniaAandHerzegovinaSarajevoCanton;
+import 'bosnia_and_herzegovina_states.dart'
+    show bosniaAandHerzegovinaSarajevoCanton;
 export 'bosnia_and_herzegovina_states.dart';
 
-import 'bosnia_and_herzegovina_states.dart' show bosniaAandHerzegovinaTuzlaCanton;
+import 'bosnia_and_herzegovina_states.dart'
+    show bosniaAandHerzegovinaTuzlaCanton;
 export 'bosnia_and_herzegovina_states.dart';
 
-import 'bosnia_and_herzegovina_states.dart' show bosniaAandHerzegovinaUnaHypSanaCanton;
+import 'bosnia_and_herzegovina_states.dart'
+    show bosniaAandHerzegovinaUnaHypSanaCanton;
 export 'bosnia_and_herzegovina_states.dart';
 
-import 'bosnia_and_herzegovina_states.dart' show bosniaAandHerzegovinaWestHerzegovinaCanton;
+import 'bosnia_and_herzegovina_states.dart'
+    show bosniaAandHerzegovinaWestHerzegovinaCanton;
 export 'bosnia_and_herzegovina_states.dart';
 
-import 'bosnia_and_herzegovina_states.dart' show bosniaAandHerzegovinaZenicaHypDobojCanton;
+import 'bosnia_and_herzegovina_states.dart'
+    show bosniaAandHerzegovinaZenicaHypDobojCanton;
 export 'bosnia_and_herzegovina_states.dart';
 
 import 'afghanistan_states.dart' show afghanistanBadakhshan;
@@ -6080,13 +6223,15 @@ export 'dominican_republic_states.dart';
 import 'dominican_republic_states.dart' show dominicanRepublicHatoMayorProvince;
 export 'dominican_republic_states.dart';
 
-import 'dominican_republic_states.dart' show dominicanRepublicHermanasMirabalProvince;
+import 'dominican_republic_states.dart'
+    show dominicanRepublicHermanasMirabalProvince;
 export 'dominican_republic_states.dart';
 
 import 'dominican_republic_states.dart' show dominicanRepublicIndependencia;
 export 'dominican_republic_states.dart';
 
-import 'dominican_republic_states.dart' show dominicanRepublicLaAltagraciaProvince;
+import 'dominican_republic_states.dart'
+    show dominicanRepublicLaAltagraciaProvince;
 export 'dominican_republic_states.dart';
 
 import 'dominican_republic_states.dart' show dominicanRepublicLaRomanaProvince;
@@ -6095,52 +6240,64 @@ export 'dominican_republic_states.dart';
 import 'dominican_republic_states.dart' show dominicanRepublicLaVegaProvince;
 export 'dominican_republic_states.dart';
 
-import 'dominican_republic_states.dart' show dominicanRepublicMariaTrinidadSanchezProvince;
+import 'dominican_republic_states.dart'
+    show dominicanRepublicMariaTrinidadSanchezProvince;
 export 'dominican_republic_states.dart';
 
-import 'dominican_republic_states.dart' show dominicanRepublicMonsenorNouelProvince;
+import 'dominican_republic_states.dart'
+    show dominicanRepublicMonsenorNouelProvince;
 export 'dominican_republic_states.dart';
 
-import 'dominican_republic_states.dart' show dominicanRepublicMonteCristiProvince;
+import 'dominican_republic_states.dart'
+    show dominicanRepublicMonteCristiProvince;
 export 'dominican_republic_states.dart';
 
-import 'dominican_republic_states.dart' show dominicanRepublicMontePlataProvince;
+import 'dominican_republic_states.dart'
+    show dominicanRepublicMontePlataProvince;
 export 'dominican_republic_states.dart';
 
-import 'dominican_republic_states.dart' show dominicanRepublicPedernalesProvince;
+import 'dominican_republic_states.dart'
+    show dominicanRepublicPedernalesProvince;
 export 'dominican_republic_states.dart';
 
 import 'dominican_republic_states.dart' show dominicanRepublicPeraviaProvince;
 export 'dominican_republic_states.dart';
 
-import 'dominican_republic_states.dart' show dominicanRepublicPuertoPlataProvince;
+import 'dominican_republic_states.dart'
+    show dominicanRepublicPuertoPlataProvince;
 export 'dominican_republic_states.dart';
 
 import 'dominican_republic_states.dart' show dominicanRepublicSamanaProvince;
 export 'dominican_republic_states.dart';
 
-import 'dominican_republic_states.dart' show dominicanRepublicSanCristobalProvince;
+import 'dominican_republic_states.dart'
+    show dominicanRepublicSanCristobalProvince;
 export 'dominican_republic_states.dart';
 
-import 'dominican_republic_states.dart' show dominicanRepublicSanJoseDdeOcoaProvince;
+import 'dominican_republic_states.dart'
+    show dominicanRepublicSanJoseDdeOcoaProvince;
 export 'dominican_republic_states.dart';
 
 import 'dominican_republic_states.dart' show dominicanRepublicSanJuanProvince;
 export 'dominican_republic_states.dart';
 
-import 'dominican_republic_states.dart' show dominicanRepublicSanPedroDdeMacoris;
+import 'dominican_republic_states.dart'
+    show dominicanRepublicSanPedroDdeMacoris;
 export 'dominican_republic_states.dart';
 
-import 'dominican_republic_states.dart' show dominicanRepublicSanchezRamirezProvince;
+import 'dominican_republic_states.dart'
+    show dominicanRepublicSanchezRamirezProvince;
 export 'dominican_republic_states.dart';
 
 import 'dominican_republic_states.dart' show dominicanRepublicSantiagoProvince;
 export 'dominican_republic_states.dart';
 
-import 'dominican_republic_states.dart' show dominicanRepublicSantiagoRodriguezProvince;
+import 'dominican_republic_states.dart'
+    show dominicanRepublicSantiagoRodriguezProvince;
 export 'dominican_republic_states.dart';
 
-import 'dominican_republic_states.dart' show dominicanRepublicSantoDomingoProvince;
+import 'dominican_republic_states.dart'
+    show dominicanRepublicSantoDomingoProvince;
 export 'dominican_republic_states.dart';
 
 import 'dominican_republic_states.dart' show dominicanRepublicValverdeProvince;
@@ -8501,7 +8658,8 @@ export 'latvia_states.dart';
 import 'nigeria_states.dart' show nigeriaAbiaSstate;
 export 'nigeria_states.dart';
 
-import 'nigeria_states.dart' show nigeriaAbujaFederalCapitalTerritoryCcapitalTterritory;
+import 'nigeria_states.dart'
+    show nigeriaAbujaFederalCapitalTerritoryCcapitalTterritory;
 export 'nigeria_states.dart';
 
 import 'nigeria_states.dart' show nigeriaAdamawaSstate;
@@ -11141,16 +11299,19 @@ export 'slovenia_states.dart';
 import 'slovenia_states.dart' show sloveniaSvetaAnaMunicipality;
 export 'slovenia_states.dart';
 
-import 'slovenia_states.dart' show sloveniaSvetaTrojicaVvSlovenskihGoricahMunicipality;
+import 'slovenia_states.dart'
+    show sloveniaSvetaTrojicaVvSlovenskihGoricahMunicipality;
 export 'slovenia_states.dart';
 
-import 'slovenia_states.dart' show sloveniaSvetiAndrazVvSlovenskihGoricahMunicipality;
+import 'slovenia_states.dart'
+    show sloveniaSvetiAndrazVvSlovenskihGoricahMunicipality;
 export 'slovenia_states.dart';
 
 import 'slovenia_states.dart' show sloveniaSvetiJurijOobScavniciMunicipality;
 export 'slovenia_states.dart';
 
-import 'slovenia_states.dart' show sloveniaSvetiJurijVvSlovenskihGoricahMunicipality;
+import 'slovenia_states.dart'
+    show sloveniaSvetiJurijVvSlovenskihGoricahMunicipality;
 export 'slovenia_states.dart';
 
 import 'slovenia_states.dart' show sloveniaSvetiTomazMunicipality;
@@ -13076,7 +13237,8 @@ export 'philippines_states.dart';
 import 'philippines_states.dart' show philippinesAurora;
 export 'philippines_states.dart';
 
-import 'philippines_states.dart' show philippinesAutonomousRegionIinMuslimMindanao;
+import 'philippines_states.dart'
+    show philippinesAutonomousRegionIinMuslimMindanao;
 export 'philippines_states.dart';
 
 import 'philippines_states.dart' show philippinesBasilan;
@@ -13367,10 +13529,12 @@ export 'united_kingdom_states.dart';
 import 'united_kingdom_states.dart' show unitedKingdomArgyllAandBute;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomArmaghCityAandDistrictCouncil;
+import 'united_kingdom_states.dart'
+    show unitedKingdomArmaghCityAandDistrictCouncil;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomArmaghBanbridgeAandCraigavon;
+import 'united_kingdom_states.dart'
+    show unitedKingdomArmaghBanbridgeAandCraigavon;
 export 'united_kingdom_states.dart';
 
 import 'united_kingdom_states.dart' show unitedKingdomAscensionIsland;
@@ -13445,7 +13609,8 @@ export 'united_kingdom_states.dart';
 import 'united_kingdom_states.dart' show unitedKingdomCarmarthenshire;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomCarrickfergusBoroughCouncil;
+import 'united_kingdom_states.dart'
+    show unitedKingdomCarrickfergusBoroughCouncil;
 export 'united_kingdom_states.dart';
 
 import 'united_kingdom_states.dart' show unitedKingdomCastlereagh;
@@ -13580,7 +13745,8 @@ export 'united_kingdom_states.dart';
 import 'united_kingdom_states.dart' show unitedKingdomDundee;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomDungannonAandSouthTyroneBoroughCouncil;
+import 'united_kingdom_states.dart'
+    show unitedKingdomDungannonAandSouthTyroneBoroughCouncil;
 export 'united_kingdom_states.dart';
 
 import 'united_kingdom_states.dart' show unitedKingdomEastAyrshire;
@@ -13700,7 +13866,8 @@ export 'united_kingdom_states.dart';
 import 'united_kingdom_states.dart' show unitedKingdomLiverpool;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofBarkingAandDagenham;
+import 'united_kingdom_states.dart'
+    show unitedKingdomLondonBoroughOofBarkingAandDagenham;
 export 'united_kingdom_states.dart';
 
 import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofBarnet;
@@ -13730,7 +13897,8 @@ export 'united_kingdom_states.dart';
 import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofHackney;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofHammersmithAandFulham;
+import 'united_kingdom_states.dart'
+    show unitedKingdomLondonBoroughOofHammersmithAandFulham;
 export 'united_kingdom_states.dart';
 
 import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofHaringey;
@@ -13742,7 +13910,8 @@ export 'united_kingdom_states.dart';
 import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofHavering;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofHillingdon;
+import 'united_kingdom_states.dart'
+    show unitedKingdomLondonBoroughOofHillingdon;
 export 'united_kingdom_states.dart';
 
 import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofHounslow;
@@ -13766,7 +13935,8 @@ export 'united_kingdom_states.dart';
 import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofRedbridge;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofRichmondUuponThames;
+import 'united_kingdom_states.dart'
+    show unitedKingdomLondonBoroughOofRichmondUuponThames;
 export 'united_kingdom_states.dart';
 
 import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofSouthwark;
@@ -13775,16 +13945,20 @@ export 'united_kingdom_states.dart';
 import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofSutton;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofTowerHamlets;
+import 'united_kingdom_states.dart'
+    show unitedKingdomLondonBoroughOofTowerHamlets;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofWalthamForest;
+import 'united_kingdom_states.dart'
+    show unitedKingdomLondonBoroughOofWalthamForest;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomLondonBoroughOofWandsworth;
+import 'united_kingdom_states.dart'
+    show unitedKingdomLondonBoroughOofWandsworth;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomMagherafeltDistrictCouncil;
+import 'united_kingdom_states.dart'
+    show unitedKingdomMagherafeltDistrictCouncil;
 export 'united_kingdom_states.dart';
 
 import 'united_kingdom_states.dart' show unitedKingdomManchester;
@@ -13793,10 +13967,12 @@ export 'united_kingdom_states.dart';
 import 'united_kingdom_states.dart' show unitedKingdomMedway;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomMerthyrTydfilCountyBorough;
+import 'united_kingdom_states.dart'
+    show unitedKingdomMerthyrTydfilCountyBorough;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomMetropolitanBoroughOofWigan;
+import 'united_kingdom_states.dart'
+    show unitedKingdomMetropolitanBoroughOofWigan;
 export 'united_kingdom_states.dart';
 
 import 'united_kingdom_states.dart' show unitedKingdomMidAandEastAntrim;
@@ -13823,7 +13999,8 @@ export 'united_kingdom_states.dart';
 import 'united_kingdom_states.dart' show unitedKingdomMoyleDistrictCouncil;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomNeathPortTalbotCountyBorough;
+import 'united_kingdom_states.dart'
+    show unitedKingdomNeathPortTalbotCountyBorough;
 export 'united_kingdom_states.dart';
 
 import 'united_kingdom_states.dart' show unitedKingdomNewcastleUuponTyne;
@@ -13832,13 +14009,15 @@ export 'united_kingdom_states.dart';
 import 'united_kingdom_states.dart' show unitedKingdomNewport;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomNewryAandMourneDistrictCouncil;
+import 'united_kingdom_states.dart'
+    show unitedKingdomNewryAandMourneDistrictCouncil;
 export 'united_kingdom_states.dart';
 
 import 'united_kingdom_states.dart' show unitedKingdomNewryMourneAandDown;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomNewtownabbeyBoroughCouncil;
+import 'united_kingdom_states.dart'
+    show unitedKingdomNewtownabbeyBoroughCouncil;
 export 'united_kingdom_states.dart';
 
 import 'united_kingdom_states.dart' show unitedKingdomNorfolk;
@@ -13928,10 +14107,12 @@ export 'united_kingdom_states.dart';
 import 'united_kingdom_states.dart' show unitedKingdomRoyalBoroughOofGreenwich;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomRoyalBoroughOofKensingtonAandChelsea;
+import 'united_kingdom_states.dart'
+    show unitedKingdomRoyalBoroughOofKensingtonAandChelsea;
 export 'united_kingdom_states.dart';
 
-import 'united_kingdom_states.dart' show unitedKingdomRoyalBoroughOofKingstonUuponThames;
+import 'united_kingdom_states.dart'
+    show unitedKingdomRoyalBoroughOofKingstonUuponThames;
 export 'united_kingdom_states.dart';
 
 import 'united_kingdom_states.dart' show unitedKingdomRutland;
@@ -14114,22 +14295,29 @@ export 'italy_states.dart';
 import 'italy_states.dart' show italyLazioRregion;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyLiberoCconsorzioCcomunaleDdiAgrigentoFfreeMmunicipalCconsortium;
+import 'italy_states.dart'
+    show italyLiberoCconsorzioCcomunaleDdiAgrigentoFfreeMmunicipalCconsortium;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyLiberoCconsorzioCcomunaleDdiCaltanissettaFfreeMmunicipalCconsortium;
+import 'italy_states.dart'
+    show
+        italyLiberoCconsorzioCcomunaleDdiCaltanissettaFfreeMmunicipalCconsortium;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyLiberoCconsorzioCcomunaleDdiEnnaFfreeMmunicipalCconsortium;
+import 'italy_states.dart'
+    show italyLiberoCconsorzioCcomunaleDdiEnnaFfreeMmunicipalCconsortium;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyLiberoCconsorzioCcomunaleDdiRagusaFfreeMmunicipalCconsortium;
+import 'italy_states.dart'
+    show italyLiberoCconsorzioCcomunaleDdiRagusaFfreeMmunicipalCconsortium;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyLiberoCconsorzioCcomunaleDdiSiracusaFfreeMmunicipalCconsortium;
+import 'italy_states.dart'
+    show italyLiberoCconsorzioCcomunaleDdiSiracusaFfreeMmunicipalCconsortium;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyLiberoCconsorzioCcomunaleDdiTrapaniFfreeMmunicipalCconsortium;
+import 'italy_states.dart'
+    show italyLiberoCconsorzioCcomunaleDdiTrapaniFfreeMmunicipalCconsortium;
 export 'italy_states.dart';
 
 import 'italy_states.dart' show italyLiguriaRregion;
@@ -14144,34 +14332,41 @@ export 'italy_states.dart';
 import 'italy_states.dart' show italyMetropolitanCityOofBariMmetropolitanCcity;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyMetropolitanCityOofBolognaMmetropolitanCcity;
+import 'italy_states.dart'
+    show italyMetropolitanCityOofBolognaMmetropolitanCcity;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyMetropolitanCityOofCagliariMmetropolitanCcity;
+import 'italy_states.dart'
+    show italyMetropolitanCityOofCagliariMmetropolitanCcity;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyMetropolitanCityOofCataniaMmetropolitanCcity;
+import 'italy_states.dart'
+    show italyMetropolitanCityOofCataniaMmetropolitanCcity;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyMetropolitanCityOofFlorenceMmetropolitanCcity;
+import 'italy_states.dart'
+    show italyMetropolitanCityOofFlorenceMmetropolitanCcity;
 export 'italy_states.dart';
 
 import 'italy_states.dart' show italyMetropolitanCityOofGenoaMmetropolitanCcity;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyMetropolitanCityOofMessinaMmetropolitanCcity;
+import 'italy_states.dart'
+    show italyMetropolitanCityOofMessinaMmetropolitanCcity;
 export 'italy_states.dart';
 
 import 'italy_states.dart' show italyMetropolitanCityOofMilanMmetropolitanCcity;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyMetropolitanCityOofNaplesMmetropolitanCcity;
+import 'italy_states.dart'
+    show italyMetropolitanCityOofNaplesMmetropolitanCcity;
 export 'italy_states.dart';
 
 import 'italy_states.dart' show italyMetropolitanCityOofPalermoPprovince;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyMetropolitanCityOofReggioCalabriaMmetropolitanCcity;
+import 'italy_states.dart'
+    show italyMetropolitanCityOofReggioCalabriaMmetropolitanCcity;
 export 'italy_states.dart';
 
 import 'italy_states.dart' show italyMetropolitanCityOofRomeMmetropolitanCcity;
@@ -14180,7 +14375,8 @@ export 'italy_states.dart';
 import 'italy_states.dart' show italyMetropolitanCityOofTurinMmetropolitanCcity;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyMetropolitanCityOofVeniceMmetropolitanCcity;
+import 'italy_states.dart'
+    show italyMetropolitanCityOofVeniceMmetropolitanCcity;
 export 'italy_states.dart';
 
 import 'italy_states.dart' show italyMoliseRregion;
@@ -14207,7 +14403,8 @@ export 'italy_states.dart';
 import 'italy_states.dart' show italyProvinceOofAvellinoPprovince;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyProvinceOofBarlettaHypAndriaHypTraniPprovince;
+import 'italy_states.dart'
+    show italyProvinceOofBarlettaHypAndriaHypTraniPprovince;
 export 'italy_states.dart';
 
 import 'italy_states.dart' show italyProvinceOofBellunoPprovince;
@@ -14270,7 +14467,8 @@ export 'italy_states.dart';
 import 'italy_states.dart' show italyProvinceOofFrosinonePprovince;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyProvinceOofGoriziaDdecentralizedRregionalEentity;
+import 'italy_states.dart'
+    show italyProvinceOofGoriziaDdecentralizedRregionalEentity;
 export 'italy_states.dart';
 
 import 'italy_states.dart' show italyProvinceOofGrossetoPprovince;
@@ -14336,7 +14534,8 @@ export 'italy_states.dart';
 import 'italy_states.dart' show italyProvinceOofOgliastraPprovince;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyProvinceOofOlbiaHypTempioMmetropolitanCcity;
+import 'italy_states.dart'
+    show italyProvinceOofOlbiaHypTempioMmetropolitanCcity;
 export 'italy_states.dart';
 
 import 'italy_states.dart' show italyProvinceOofOristanoPprovince;
@@ -14366,7 +14565,8 @@ export 'italy_states.dart';
 import 'italy_states.dart' show italyProvinceOofPistoiaPprovince;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyProvinceOofPordenoneDdecentralizedRregionalEentity;
+import 'italy_states.dart'
+    show italyProvinceOofPordenoneDdecentralizedRregionalEentity;
 export 'italy_states.dart';
 
 import 'italy_states.dart' show italyProvinceOofPotenzaPprovince;
@@ -14417,16 +14617,19 @@ export 'italy_states.dart';
 import 'italy_states.dart' show italyProvinceOofTrevisoPprovince;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyProvinceOofTriesteDdecentralizedRregionalEentity;
+import 'italy_states.dart'
+    show italyProvinceOofTriesteDdecentralizedRregionalEentity;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyProvinceOofUdineDdecentralizedRregionalEentity;
+import 'italy_states.dart'
+    show italyProvinceOofUdineDdecentralizedRregionalEentity;
 export 'italy_states.dart';
 
 import 'italy_states.dart' show italyProvinceOofVaresePprovince;
 export 'italy_states.dart';
 
-import 'italy_states.dart' show italyProvinceOofVerbanoHypCusioHypOssolaPprovince;
+import 'italy_states.dart'
+    show italyProvinceOofVerbanoHypCusioHypOssolaPprovince;
 export 'italy_states.dart';
 
 import 'italy_states.dart' show italyProvinceOofVercelliPprovince;
@@ -14636,7 +14839,8 @@ export 'united_states_states.dart';
 import 'united_states_states.dart' show unitedStatesTexas;
 export 'united_states_states.dart';
 
-import 'united_states_states.dart' show unitedStatesUnitedStatesMinorOutlyingIslands;
+import 'united_states_states.dart'
+    show unitedStatesUnitedStatesMinorOutlyingIslands;
 export 'united_states_states.dart';
 
 import 'united_states_states.dart' show unitedStatesUnitedStatesVirginIslands;
@@ -14665,7 +14869,6 @@ export 'united_states_states.dart';
 
 import 'united_states_states.dart' show unitedStatesWyoming;
 export 'united_states_states.dart';
-
 
 /// A map of all states and their metadata
 const Map<int, Region> states = {
@@ -16430,7 +16633,8 @@ const Map<int, Region> states = {
   1756: italyFriuliVeneziaGiuliaAautonomousRregion,
   1678: italyLazioRregion,
   1727: italyLiberoCconsorzioCcomunaleDdiAgrigentoFfreeMmunicipalCconsortium,
-  1718: italyLiberoCconsorzioCcomunaleDdiCaltanissettaFfreeMmunicipalCconsortium,
+  1718:
+      italyLiberoCconsorzioCcomunaleDdiCaltanissettaFfreeMmunicipalCconsortium,
   1723: italyLiberoCconsorzioCcomunaleDdiEnnaFfreeMmunicipalCconsortium,
   1729: italyLiberoCconsorzioCcomunaleDdiRagusaFfreeMmunicipalCconsortium,
   1667: italyLiberoCconsorzioCcomunaleDdiSiracusaFfreeMmunicipalCconsortium,

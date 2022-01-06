@@ -4,7 +4,6 @@
 
 import '../base.dart';
 
-
 import 'aland_islands.dart' show alandIslands;
 export 'aland_islands.dart';
 
@@ -29,26 +28,26 @@ export 'british_indian_ocean_territory.dart';
 import 'cayman_islands.dart' show caymanIslands;
 export 'cayman_islands.dart';
 
-import 'christmas_island.dart' show christmasIsland;
-export 'christmas_island.dart';
-
 import 'cocos_keeling_islands.dart' show cocosKeelingIslands;
 export 'cocos_keeling_islands.dart';
+
+import 'christmas_island.dart' show christmasIsland;
+export 'christmas_island.dart';
 
 import 'cook_islands.dart' show cookIslands;
 export 'cook_islands.dart';
 
-import 'faroe_islands.dart' show faroeIslands;
-export 'faroe_islands.dart';
-
 import 'falkland_islands.dart' show falklandIslands;
 export 'falkland_islands.dart';
 
-import 'french_polynesia.dart' show frenchPolynesia;
-export 'french_polynesia.dart';
+import 'faroe_islands.dart' show faroeIslands;
+export 'faroe_islands.dart';
 
 import 'french_guiana.dart' show frenchGuiana;
 export 'french_guiana.dart';
+
+import 'french_polynesia.dart' show frenchPolynesia;
+export 'french_polynesia.dart';
 
 import 'french_southern_territories.dart' show frenchSouthernTerritories;
 export 'french_southern_territories.dart';
@@ -59,16 +58,17 @@ export 'gibraltar.dart';
 import 'greenland.dart' show greenland;
 export 'greenland.dart';
 
-import 'guadeloupe.dart' show guadeloupe;
-export 'guadeloupe.dart';
-
 import 'guernsey_and_alderney.dart' show guernseyAandAlderney;
 export 'guernsey_and_alderney.dart';
 
 import 'guam.dart' show guam;
 export 'guam.dart';
 
-import 'heard_island_and_mcdonald_islands.dart' show heardIslandAandMcDonaldIslands;
+import 'guadeloupe.dart' show guadeloupe;
+export 'guadeloupe.dart';
+
+import 'heard_island_and_mcdonald_islands.dart'
+    show heardIslandAandMcDonaldIslands;
 export 'heard_island_and_mcdonald_islands.dart';
 
 import 'jersey.dart' show jersey;
@@ -77,14 +77,14 @@ export 'jersey.dart';
 import 'macau_sdotadotrdot.dart' show macauSDotADotRDot;
 export 'macau_sdotadotrdot.dart';
 
+import 'man_isle_of_.dart' show manIsleOof;
+export 'man_isle_of_.dart';
+
 import 'martinique.dart' show martinique;
 export 'martinique.dart';
 
 import 'mayotte.dart' show mayotte;
 export 'mayotte.dart';
-
-import 'man_isle_of_.dart' show manIsleOof;
-export 'man_isle_of_.dart';
 
 import 'montserrat.dart' show montserrat;
 export 'montserrat.dart';
@@ -107,11 +107,11 @@ export 'northern_mariana_islands.dart';
 import 'palestinian_territory_occupied.dart' show palestinianTerritoryOccupied;
 export 'palestinian_territory_occupied.dart';
 
-import 'puerto_rico.dart' show puertoRico;
-export 'puerto_rico.dart';
-
 import 'pitcairn_island.dart' show pitcairnIsland;
 export 'pitcairn_island.dart';
+
+import 'puerto_rico.dart' show puertoRico;
+export 'puerto_rico.dart';
 
 import 'reunion.dart' show reunion;
 export 'reunion.dart';
@@ -140,7 +140,8 @@ export 'tokelau.dart';
 import 'turks_and_caicos_islands.dart' show turksAndCaicosIslands;
 export 'turks_and_caicos_islands.dart';
 
-import 'united_states_minor_outlying_islands.dart' show unitedStatesMinorOutlyingIslands;
+import 'united_states_minor_outlying_islands.dart'
+    show unitedStatesMinorOutlyingIslands;
 export 'united_states_minor_outlying_islands.dart';
 
 import 'vatican_city_state_holy_see_.dart' show vaticanCityStateHolySee;
@@ -149,20 +150,20 @@ export 'vatican_city_state_holy_see_.dart';
 import 'virgin_islands_us_.dart' show virginIslandsUS;
 export 'virgin_islands_us_.dart';
 
-import 'western_sahara.dart' show westernSahara;
-export 'western_sahara.dart';
-
 import 'virgin_islands_british_.dart' show virginIslandsBritish;
 export 'virgin_islands_british_.dart';
+
+import 'western_sahara.dart' show westernSahara;
+export 'western_sahara.dart';
 
 import 'wallis_and_futuna_islands.dart' show wallisAndFutunaIslands;
 export 'wallis_and_futuna_islands.dart';
 
-import 'curacao.dart' show curacao;
-export 'curacao.dart';
-
 import 'sint_maarten_dutch_part_.dart' show sintMaartenDutchPpart;
 export 'sint_maarten_dutch_part_.dart';
+
+import 'curacao.dart' show curacao;
+export 'curacao.dart';
 
 import 'marshall_islands.dart' show marshallIslands;
 export 'marshall_islands.dart';
@@ -203,11 +204,12 @@ export 'vanuatu.dart';
 import 'grenada.dart' show grenada;
 export 'grenada.dart';
 
+import 'saint_vincent_and_the_grenadines.dart'
+    show saintVincentAndTheGrenadines;
+export 'saint_vincent_and_the_grenadines.dart';
+
 import 'madagascar.dart' show madagascar;
 export 'madagascar.dart';
-
-import 'saint_vincent_and_the_grenadines.dart' show saintVincentAndTheGrenadines;
-export 'saint_vincent_and_the_grenadines.dart';
 
 import 'rwanda.dart' show rwanda;
 export 'rwanda.dart';
@@ -245,11 +247,11 @@ export 'kiribati.dart';
 import 'togo.dart' show togo;
 export 'togo.dart';
 
-import 'qatar.dart' show qatar;
-export 'qatar.dart';
-
 import 'swaziland.dart' show swaziland;
 export 'swaziland.dart';
+
+import 'qatar.dart' show qatar;
+export 'qatar.dart';
 
 import 'nauru.dart' show nauru;
 export 'nauru.dart';
@@ -281,11 +283,11 @@ export 'dominica.dart';
 import 'lebanon.dart' show lebanon;
 export 'lebanon.dart';
 
-import 'equatorial_guinea.dart' show equatorialGuinea;
-export 'equatorial_guinea.dart';
-
 import 'congo.dart' show congo;
 export 'congo.dart';
+
+import 'equatorial_guinea.dart' show equatorialGuinea;
+export 'equatorial_guinea.dart';
 
 import 'saint_kitts_and_nevis.dart' show saintKittsAndNevis;
 export 'saint_kitts_and_nevis.dart';
@@ -461,7 +463,8 @@ export 'mauritius.dart';
 import 'slovakia.dart' show slovakia;
 export 'slovakia.dart';
 
-import 'democratic_republic_of_the_congo.dart' show democraticRepublicOofTtheCongo;
+import 'democratic_republic_of_the_congo.dart'
+    show democraticRepublicOofTtheCongo;
 export 'democratic_republic_of_the_congo.dart';
 
 import 'uzbekistan.dart' show uzbekistan;
@@ -754,7 +757,6 @@ export 'italy.dart';
 
 import 'united_states.dart' show unitedStates;
 export 'united_states.dart';
-
 
 /// A map of all countries and their metadata
 const Map<int, Country> countries = {
