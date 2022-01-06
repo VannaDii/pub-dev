@@ -10,7 +10,7 @@ const _endOfRecordLcov = 'end_of_record';
 
 _isEor(String data) => data == _endOfRecordLcov;
 
-AnalysisResult _parseLcov({required String filePath}) {
+AnalysisResult parseLcov({required String filePath}) {
   File file = File(filePath);
   if (!file.existsSync()) throw FileSystemException("File not found", filePath);
 
@@ -218,7 +218,7 @@ void transform({
   required String inputFilePath,
   required String outputFilePath,
 }) {
-  var results = _parseLcov(filePath: inputFilePath);
+  var results = parseLcov(filePath: inputFilePath);
   _writeCobertura(
       results: results,
       name: name,

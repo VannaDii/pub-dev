@@ -5,10 +5,6 @@ import 'shared.dart';
 
 void main() {
   group('Basic Tests', () {
-    setUp(() {
-      // Additional setup goes here.
-    });
-
     test('Calculates Distance Between Points As Expected', () {
       var atx = unitedStatesTexas.cities.findClosestTo(TestCoords.austin)!;
       expect(atx, isNotNull);

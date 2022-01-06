@@ -5,10 +5,6 @@ import 'shared.dart';
 
 void main() {
   group('Earth Tests', () {
-    setUp(() {
-      // Additional setup goes here.
-    });
-
     test('Earth Singleton Works As Expected', () {
       expect(Earth(), isNotNull);
     });

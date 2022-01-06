@@ -141,6 +141,18 @@ class Record {
   final FuncsData functions;
   final BranchesData branches;
 
+  double get coverage =>
+      statements > 0 ? (hits / statements) : statements.toDouble();
+
+  double get gap =>
+      statements > 0 ? (misses / statements) : statements.toDouble();
+
+  int get misses => statements - hits;
+
+  int get hits => lines.hit + branches.hit + functions.hit;
+
+  int get statements => lines.found + branches.found + functions.found;
+
   factory Record.empty() {
     return Record(
       file: '',

@@ -7,15 +7,6 @@ part 'base.g.dart';
 /// The base class for all `geography` data types
 abstract class GeoObject extends Equatable {
   const GeoObject();
-
-  @override
-  bool? get stringify => true;
-
-  @override
-  List<Object?> get props => [];
-
-  /// Converts this instance to a JSON formatted representation
-  Map<String, dynamic> toJson();
 }
 
 /// The base class for all `geography` data types addressable by the `longitude`
@@ -35,10 +26,6 @@ abstract class GeoCoords extends GeoObject {
 
   @override
   List<Object?> get props => [longitude, latitude];
-
-  @override
-  Map<String, dynamic> toJson() =>
-      <String, dynamic>{"longitude": longitude, "latitude": latitude};
 }
 
 /// The base class for all `geography` data types having a name and id, and
@@ -60,13 +47,6 @@ abstract class GeoLocation extends GeoCoords {
 
   @override
   List<Object?> get props => [...super.props, id, name];
-
-  @override
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        ...super.toJson(),
-        "id": id,
-        "name": name,
-      };
 }
 
 @immutable
@@ -116,7 +96,6 @@ class City extends GeoLocationNode {
   /// Creates a new [City] from JSON.
   factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);
 
-  @override
   Map<String, dynamic> toJson() => _$CityToJson(this);
 }
 
@@ -180,7 +159,6 @@ class Region extends GeoLocationNode {
   /// Creates a new [Region] from JSON.
   factory Region.fromJson(Map<String, dynamic> json) => _$RegionFromJson(json);
 
-  @override
   Map<String, dynamic> toJson() => _$RegionToJson(this);
 }
 
@@ -344,7 +322,6 @@ class Country extends GeoLocation {
   factory Country.fromJson(Map<String, dynamic> json) =>
       _$CountryFromJson(json);
 
-  @override
   Map<String, dynamic> toJson() => _$CountryToJson(this);
 }
 
@@ -397,6 +374,5 @@ class Timezone extends GeoObject {
   factory Timezone.fromJson(Map<String, dynamic> json) =>
       _$TimezoneFromJson(json);
 
-  @override
   Map<String, dynamic> toJson() => _$TimezoneToJson(this);
 }
