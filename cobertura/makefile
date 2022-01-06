@@ -9,7 +9,6 @@ deps: clean
 	dart pub get
 
 all: clean deps
-	dart run build_runner build --delete-conflicting-outputs
 
 clean:
 	rm -rf .dart_tool doc .packages pubspec.lock
