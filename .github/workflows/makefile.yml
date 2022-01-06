@@ -13,12 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Setup Dart SDK
-        uses: dart-lang/setup-dart@v1.3
-
-      - name: Setup LCOV
-        uses: hrishikesh-kadam/setup-lcov@v1
+      - uses: dart-lang/setup-dart@v1.3
+      - uses: hrishikesh-kadam/setup-lcov@v1
 
       - name: Build Geography
         working-directory: geography
@@ -33,12 +29,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Setup Dart SDK
-        uses: dart-lang/setup-dart@v1.3
-
-      - name: Setup LCOV
-        uses: hrishikesh-kadam/setup-lcov@v1
+      - uses: dart-lang/setup-dart@v1.3
+      - uses: hrishikesh-kadam/setup-lcov@v1
 
       - name: Build Cobertura
         working-directory: cobertura

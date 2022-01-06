@@ -8,7 +8,7 @@ lib_name=$(shell basename $$(pwd))
 deps: clean
 	dart pub get
 
-all: clean deps test
+all: clean deps
 	dart run build_runner build --delete-conflicting-outputs
 
 clean:
