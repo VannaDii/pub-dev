@@ -57,17 +57,49 @@ extension GeoCoordsExtensions<T extends GeoCoords> on T {
   }
 }
 
+/// Extension methods for interacting with [GeoLocationNode] instances.
+extension GeoLocationNodeExtensions on GeoLocationNode {
+  /// The qualified name (including parent names), separated by ` ,`
+  ///
+  /// For example, If the underlying instance is a:
+  ///
+  /// [Country] => `United States`
+  ///
+  /// [Region] => `United States, Texas`
+  ///
+  /// [City] => `United States, Texas, Austin`
+  String get nameQualified => this is City
+      ? [(this as City).state.nameQualified, name].join(', ')
+      : this is Region
+          ? [(this as Region).country.nameQualified, name].join(', ')
+          : this is Country
+              ? (this as Country).name
+              : name;
+
+  /// The flag emoji for this node. This will walk the nodes to [Country] for
+  /// the [Country.emoji] flag. If the node is a custom node that can't be
+  /// walked, this returns `null`.
+  ///
+  /// For example, If the underlying instance is a:
+  ///
+  /// [City] => `this.state.country.emoji`
+  ///
+  /// [Region] => `this.country.emoji`
+  ///
+  /// [Country] => `this.emoji`
+  String? get emoji => this is City
+      ? (this as City).state.country.emoji
+      : this is Region
+          ? (this as Region).country.emoji
+          : null;
+}
+
 /// Extension methods for interacting with [City] instances.
 extension CityExtensions on City {
   /// The [Region] parenting this [City] instance.
   ///
   /// While this is an extension method, it acts against a dictionary by key.
   Region get state => _all_states.states[parentId]!;
-
-  /// The qualified name (including parent names), separated by ` ,`
-  ///
-  /// For example: `United States, Texas, Austin`
-  String get nameQualified => [state.nameQualified, name].join(', ');
 }
 
 /// Extension methods for interacting with [Region] instances.
@@ -92,11 +124,6 @@ extension RegionExtensions on Region {
   ///
   /// While this is an extension method, it acts against a dictionary by key.
   Country get country => _all_countries.countries[parentId]!;
-
-  /// The qualified name (including parent names), separated by ` ,`
-  ///
-  /// For example: `United States, Texas`
-  String get nameQualified => [country.name, name].join(', ');
 }
 
 /// Extension methods for interacting with [Country] instances.
@@ -147,9 +174,4 @@ extension CountryExtensions on Country {
             ?.name ??
         code;
   }
-
-  /// The same as [name]
-  ///
-  /// For example: `United States`
-  String get nameQualified => name;
 }

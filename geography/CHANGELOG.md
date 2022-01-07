@@ -1,3 +1,8 @@
+## 1.1.3
+
+- Adds `nameQualified` and `emoji` extensions for `GeoLocationNode`
+
+
 ## 1.1.2
 
 - Downgrades `path` for flutter compatibility

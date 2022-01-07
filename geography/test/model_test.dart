@@ -8,6 +8,36 @@ import 'shared.dart';
 
 void main() {
   group('Model Tests', () {
+    test('GeoLocationNode Finds Emoji As Expected', () {
+      var emoji = Earth().findClosestCountry(TestCoords.austin)!.emoji;
+      var atx = Earth().findClosestCity(TestCoords.austin)!;
+      var tex = atx.state;
+      var usa = tex.country;
+
+      expect(atx.emoji, equals(emoji));
+      expect(tex.emoji, equals(emoji));
+      expect(usa.emoji, equals(emoji));
+    });
+
+    test('GeoLocationNode Produces Qualified Name As Expected', () {
+      var atx = Earth().findClosestCity(TestCoords.austin)!;
+      var tex = atx.state;
+      var usa = tex.country;
+      var parts = [usa.name, tex.name, atx.name];
+
+      expect(atx.nameQualified, equals(parts.join(', ')));
+      expect(tex.nameQualified, equals(parts.getRange(0, 2).join(', ')));
+      expect(usa.nameQualified, equals(parts[0]));
+    });
+
+    test('Foreign GeoLocationNode Handles Name And Emoji As Expected', () {
+      const fakeName = 'Fake Austin';
+      var node = TestCoords.austin.asNode(name: fakeName);
+
+      expect(node.emoji, isNull);
+      expect(node.nameQualified, equals(fakeName));
+    });
+
     test('(De)serializes GeoLocationNode As Expected', () {
       var austin = Earth().findClosestCity(TestCoords.austin)!;
       var city = GeoLocationNode(
