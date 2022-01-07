@@ -1,4 +1,4 @@
-name: 🎯 Dart Packages
+name: 🎯 Build & Pub
 
 on:
   push:
