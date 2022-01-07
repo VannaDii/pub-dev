@@ -274,6 +274,24 @@ export 'grenada_states.dart';
 import 'grenada_states.dart' show grenadaSaintPatrickParish;
 export 'grenada_states.dart';
 
+import 'madagascar_states.dart' show madagascarAntananarivoProvince;
+export 'madagascar_states.dart';
+
+import 'madagascar_states.dart' show madagascarAntsirananaProvince;
+export 'madagascar_states.dart';
+
+import 'madagascar_states.dart' show madagascarFianarantsoaProvince;
+export 'madagascar_states.dart';
+
+import 'madagascar_states.dart' show madagascarMahajangaProvince;
+export 'madagascar_states.dart';
+
+import 'madagascar_states.dart' show madagascarToamasinaProvince;
+export 'madagascar_states.dart';
+
+import 'madagascar_states.dart' show madagascarToliaraProvince;
+export 'madagascar_states.dart';
+
 import 'saint_vincent_and_the_grenadines_states.dart'
     show saintVincentAndTheGrenadinesCharlotteParish;
 export 'saint_vincent_and_the_grenadines_states.dart';
@@ -297,24 +315,6 @@ export 'saint_vincent_and_the_grenadines_states.dart';
 import 'saint_vincent_and_the_grenadines_states.dart'
     show saintVincentAndTheGrenadinesSaintPatrickParish;
 export 'saint_vincent_and_the_grenadines_states.dart';
-
-import 'madagascar_states.dart' show madagascarAntananarivoProvince;
-export 'madagascar_states.dart';
-
-import 'madagascar_states.dart' show madagascarAntsirananaProvince;
-export 'madagascar_states.dart';
-
-import 'madagascar_states.dart' show madagascarFianarantsoaProvince;
-export 'madagascar_states.dart';
-
-import 'madagascar_states.dart' show madagascarMahajangaProvince;
-export 'madagascar_states.dart';
-
-import 'madagascar_states.dart' show madagascarToamasinaProvince;
-export 'madagascar_states.dart';
-
-import 'madagascar_states.dart' show madagascarToliaraProvince;
-export 'madagascar_states.dart';
 
 import 'rwanda_states.dart' show rwandaEasternProvince;
 export 'rwanda_states.dart';
@@ -571,18 +571,6 @@ export 'togo_states.dart';
 import 'togo_states.dart' show togoSavanesRegion;
 export 'togo_states.dart';
 
-import 'swaziland_states.dart' show swazilandHhohhoDistrict;
-export 'swaziland_states.dart';
-
-import 'swaziland_states.dart' show swazilandLubomboDistrict;
-export 'swaziland_states.dart';
-
-import 'swaziland_states.dart' show swazilandManziniDistrict;
-export 'swaziland_states.dart';
-
-import 'swaziland_states.dart' show swazilandShiselweniDistrict;
-export 'swaziland_states.dart';
-
 import 'qatar_states.dart' show qatarAlDaayen;
 export 'qatar_states.dart';
 
@@ -606,6 +594,18 @@ export 'qatar_states.dart';
 
 import 'qatar_states.dart' show qatarUmmSalalMunicipality;
 export 'qatar_states.dart';
+
+import 'swaziland_states.dart' show swazilandHhohhoDistrict;
+export 'swaziland_states.dart';
+
+import 'swaziland_states.dart' show swazilandLubomboDistrict;
+export 'swaziland_states.dart';
+
+import 'swaziland_states.dart' show swazilandManziniDistrict;
+export 'swaziland_states.dart';
+
+import 'swaziland_states.dart' show swazilandShiselweniDistrict;
+export 'swaziland_states.dart';
 
 import 'nauru_states.dart' show nauruAiwoDistrict;
 export 'nauru_states.dart';
@@ -1882,6 +1882,24 @@ export 'cape_verde_states.dart';
 import 'cape_verde_states.dart' show capeVerdeTarrafalDdeSaoNicolau;
 export 'cape_verde_states.dart';
 
+import 'gambia_the_states.dart' show gambiaTheBanjul;
+export 'gambia_the_states.dart';
+
+import 'gambia_the_states.dart' show gambiaTheCentralRiverDivision;
+export 'gambia_the_states.dart';
+
+import 'gambia_the_states.dart' show gambiaTheLowerRiverDivision;
+export 'gambia_the_states.dart';
+
+import 'gambia_the_states.dart' show gambiaTheNorthBankDivision;
+export 'gambia_the_states.dart';
+
+import 'gambia_the_states.dart' show gambiaTheUpperRiverDivision;
+export 'gambia_the_states.dart';
+
+import 'gambia_the_states.dart' show gambiaTheWestCoastDivision;
+export 'gambia_the_states.dart';
+
 import 'east_timor_states.dart' show eastTimorAileuMmunicipality;
 export 'east_timor_states.dart';
 
@@ -1917,24 +1935,6 @@ export 'east_timor_states.dart';
 
 import 'east_timor_states.dart' show eastTimorViquequeMunicipality;
 export 'east_timor_states.dart';
-
-import 'gambia_the_states.dart' show gambiaTheBanjul;
-export 'gambia_the_states.dart';
-
-import 'gambia_the_states.dart' show gambiaTheCentralRiverDivision;
-export 'gambia_the_states.dart';
-
-import 'gambia_the_states.dart' show gambiaTheLowerRiverDivision;
-export 'gambia_the_states.dart';
-
-import 'gambia_the_states.dart' show gambiaTheNorthBankDivision;
-export 'gambia_the_states.dart';
-
-import 'gambia_the_states.dart' show gambiaTheUpperRiverDivision;
-export 'gambia_the_states.dart';
-
-import 'gambia_the_states.dart' show gambiaTheWestCoastDivision;
-export 'gambia_the_states.dart';
 
 import 'maldives_states.dart' show maldivesAdduAtoll;
 export 'maldives_states.dart';

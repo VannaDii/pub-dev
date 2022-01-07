@@ -2,9 +2,25 @@ import 'dart:convert';
 
 import 'package:test/test.dart';
 import 'package:geography/basic.dart';
+import 'package:geography/earth.dart';
+
+import 'shared.dart';
 
 void main() {
   group('Model Tests', () {
+    test('(De)serializes GeoLocationNode As Expected', () {
+      var austin = Earth().findClosestCity(TestCoords.austin)!;
+      var city = GeoLocationNode(
+          id: austin.id,
+          name: austin.name,
+          latitude: austin.latitude,
+          longitude: austin.longitude);
+      var json = jsonEncode(city.toJson());
+      var node = GeoLocationNode.fromJson(jsonDecode(json));
+
+      expect(node, isNotNull);
+    });
+
     test('(De)serializes Countries As Expected', () {
       for (var country in countries.values) {
         var json = <String, dynamic>{};

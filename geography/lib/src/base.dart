@@ -66,7 +66,7 @@ class GeoLocationNode extends GeoLocation {
 
   /// Creates a new [GeoLocationNode] from JSON.
   factory GeoLocationNode.fromJson(Map<String, dynamic> json) {
-    String typeName = json['__type'];
+    String typeName = json['__type'] ?? 'none';
     switch (typeName) {
       case 'City':
         return City.fromJson(json);

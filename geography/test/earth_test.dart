@@ -69,7 +69,14 @@ void main() {
       var usa = Earth().findClosestCountry(TestCoords.austin);
       expect(usa, isNotNull);
       expect(usa, isA<Country>());
+      expect(usa?.name, isNotNull);
+      expect(usa?.name, isA<String>());
       expect(usa?.name, equals("United States"));
+
+      expect(usa?.nameQualified, isNotNull);
+      expect(usa?.nameQualified, isA<String>());
+      expect(usa?.nameQualified, equals(usa?.name));
+      expect(usa?.nameQualified, equals("United States"));
     });
   });
 }
