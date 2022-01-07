@@ -22,10 +22,10 @@ class Earth {
   /// Gets all known countries on earth
   Iterable<Country> get countries => data.countries.values;
 
-  /// Finds the [GeoCoords] ([City], or [Region]) with a name containing the [value]
+  /// Finds the [GeoLocationNode] ([City], or [Region]) with a name containing the [value]
   ///
   /// Returns: A combination pf [City], [Region], and [Country], where the name matches [value], as [GeoCoords]
-  Iterable<GeoLocation> search(String value) {
+  Iterable<GeoLocationNode> search(String value) {
     var valueLowered = value.toLowerCase();
     return [
       ...countries.where((c) => c.name.toLowerCase().contains(valueLowered)),
@@ -35,26 +35,26 @@ class Earth {
 
   /// Finds the [Region] in this [Country] nearest to the [target].
   ///
-  /// Returns: The [Region], if found, otherwise `null`
+  /// Returns: A [Region], if found, otherwise `null`
   Region? findClosestRegion(GeoCoords target) =>
       findClosestCountry(target)?.states.findClosestTo(target);
 
   /// Finds the [City] in this [Country] nearest to the [target].
   ///
-  /// Returns: The [City], if found, otherwise `null`
+  /// Returns: A [City], if found, otherwise `null`
   City? findClosestCity(GeoCoords target) =>
       findClosestRegion(target)?.findClosestCity(target);
 
-  /// Finds the [GeoCoords] ([City], [Region], or [Country]) instance closest to the provided [target]
+  /// Finds the [Country] instance closest to the provided [target]
   ///
-  /// Returns: A [City] when possible, otherwise a [Region] or a [Country], whichever is more specific.
+  /// Returns: A [Country], if found, otherwise `null`
   Country? findClosestCountry(GeoCoords target) =>
       countries.findClosestTo(target);
 
-  /// Finds the [GeoCoords] ([City], [Region], or [Country]) instance closest to the provided [target]
+  /// Finds the [GeoLocationNode] ([City], [Region], or [Country]) instance closest to the provided [target]
   ///
   /// Returns: A [City] when possible, otherwise a [Region] or a [Country], whichever is more specific.
-  GeoCoords? findClosest(GeoCoords target) {
+  GeoLocationNode? findClosest(GeoCoords target) {
     var country = countries.findClosestTo(target);
     if (country == null) return null;
 

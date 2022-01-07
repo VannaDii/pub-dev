@@ -1,3 +1,11 @@
+## 1.0.3
+
+- Standardize on GeoLocationNode for exposure
+- Fixes some bad documentation
+- Adds some missing documentation
+- Ensures custom usage of GeoLocationNode in implementation models
+  - See: `usage_test.dart` for more
+
 ## 1.0.2
 
 - Documentation updates

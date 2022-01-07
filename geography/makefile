@@ -7,9 +7,11 @@ lib_name=$(shell basename $$(pwd))
 
 deps: clean
 	dart pub get
+
+runner:
 	dart run build_runner build --delete-conflicting-outputs
 
-tests: deps
+tests: deps runner
 	dart pub global activate coverage
 	dart run test --coverage="coverage" --chain-stack-traces
 	dart pub global run coverage:format_coverage --packages=.packages --report-on=lib --lcov -o ./coverage/lcov.info -i ./coverage

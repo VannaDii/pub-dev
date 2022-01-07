@@ -80,7 +80,7 @@ extension RegionExtensions on Region {
   /// Finds the [City] instances with a name containing the [value]
   ///
   /// Returns: A iterable [City] of matches.
-  Iterable<GeoLocation> search(String value, {String? prefix}) {
+  Iterable<GeoLocationNode> search(String value, {String? prefix}) {
     var loweredName = [prefix, name.toLowerCase()].whereNotNull().join(', ');
     var valueLowered = value.toLowerCase();
     return cities.where((s) => "$loweredName, ${s.name.toLowerCase()}"
@@ -112,19 +112,19 @@ extension CountryExtensions on Country {
   City? findClosestCity(GeoCoords target) =>
       states.findClosestTo(target)?.findClosestCity(target);
 
-  /// Finds the [GeoCoords] ([City], [Region], or [Country]) instance closest to the provided [target]
+  /// Finds the [GeoLocationNode] ([City], [Region], or [Country]) instance closest to the provided [target]
   ///
   /// Returns: A [City] when possible, otherwise a [Region] or a [Country], whichever is more specific.
-  GeoCoords? findClosest(GeoCoords target) {
+  GeoLocationNode? findClosest(GeoCoords target) {
     var region = states.findClosestTo(target);
     if (region == null) return this;
     return region.findClosestCity(target) ?? region;
   }
 
-  /// Finds the [GeoCoords] ([City], or [Region]) with a name containing the [value]
+  /// Finds the [GeoLocationNode] ([City], or [Region]) with a name containing the [value]
   ///
-  /// Returns: A combination pf [City], [Region], where the name matches [value], as [GeoCoords]
-  Iterable<GeoLocation> search(String value) {
+  /// Returns: A combination pf [City], [Region], where the name matches [value], as [GeoLocationNode]
+  Iterable<GeoLocationNode> search(String value) {
     var loweredName = name.toLowerCase();
     var valueLowered = value.toLowerCase();
     return [
@@ -137,9 +137,9 @@ extension CountryExtensions on Country {
     ];
   }
 
-  /// Resolves a state code to its name
+  /// Resolves a [Region.stateCode] to its [name]
   ///
-  /// Returns: state name, if found, otherwise the provided code
+  /// Returns: state [name], if found, otherwise the provided [code]
   String stateCodeToName({required String code}) {
     var codeLowered = code.toLowerCase();
     return states
@@ -147,4 +147,9 @@ extension CountryExtensions on Country {
             ?.name ??
         code;
   }
+
+  /// The same as [name]
+  ///
+  /// For example: `United States`
+  String get nameQualified => name;
 }

@@ -51,17 +51,34 @@ abstract class GeoLocation extends GeoCoords {
 
 /// The base class for all hierarchical `geography` data types
 @immutable
-abstract class GeoLocationNode extends GeoLocation {
-  const GeoLocationNode(
-      {required int id,
-      required this.parentId,
-      required String name,
-      required double latitude,
-      required double longitude})
-      : super(id: id, name: name, latitude: latitude, longitude: longitude);
+@JsonSerializable()
+class GeoLocationNode extends GeoLocation {
+  const GeoLocationNode({
+    required int id,
+    required String name,
+    required double latitude,
+    required double longitude,
+    this.parentId = -1,
+  }) : super(id: id, name: name, latitude: latitude, longitude: longitude);
 
-  @JsonKey(defaultValue: 0)
+  @JsonKey(defaultValue: -1)
   final int parentId;
+
+  /// Creates a new [GeoLocationNode] from JSON.
+  factory GeoLocationNode.fromJson(Map<String, dynamic> json) {
+    String typeName = json['__type'];
+    switch (typeName) {
+      case 'City':
+        return City.fromJson(json);
+      case 'Region':
+        return Region.fromJson(json);
+      case 'Country':
+        return Country.fromJson(json);
+    }
+    return _$GeoLocationNodeFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() => _$GeoLocationNodeToJson(this);
 }
 
 /// Represents a physical city, the most precise level for this library
@@ -97,7 +114,11 @@ class City extends GeoLocationNode {
   /// Creates a new [City] from JSON.
   factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CityToJson(this);
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        '__type': runtimeType.toString(),
+        ..._$CityToJson(this)
+      };
 }
 
 /// Represents a physical region, the middle precision level for this library
@@ -160,7 +181,11 @@ class Region extends GeoLocationNode {
   /// Creates a new [Region] from JSON.
   factory Region.fromJson(Map<String, dynamic> json) => _$RegionFromJson(json);
 
-  Map<String, dynamic> toJson() => _$RegionToJson(this);
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        '__type': runtimeType.toString(),
+        ..._$RegionToJson(this)
+      };
 }
 
 /// Represents a physical country, the least precision level for this library
@@ -199,7 +224,7 @@ class Region extends GeoLocationNode {
 /// ```
 @immutable
 @JsonSerializable()
-class Country extends GeoLocation {
+class Country extends GeoLocationNode {
   const Country({
     required int id,
     required String name,
@@ -323,7 +348,11 @@ class Country extends GeoLocation {
   factory Country.fromJson(Map<String, dynamic> json) =>
       _$CountryFromJson(json);
 
-  Map<String, dynamic> toJson() => _$CountryToJson(this);
+  @override
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        '__type': runtimeType.toString(),
+        ..._$CountryToJson(this)
+      };
 }
 
 /// A named timezone with numeric offset and descriptive metadata
