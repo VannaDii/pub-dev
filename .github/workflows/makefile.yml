@@ -8,7 +8,29 @@ on:
       - closed
 
 jobs:
+  # JOB to run change detection
+  changes:
+    name: 🕵️ Detect Changes
+    runs-on: ubuntu-latest
+    # Set job outputs to values from filter step
+    outputs:
+      geography: ${{ steps.filter.outputs.geography }}
+      cobertura: ${{ steps.filter.outputs.cobertura }}
+    steps:
+      # For pull requests it's not necessary to checkout the code
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            geography:
+              - 'geography/**'
+            cobertura:
+              - 'cobertura/**'
+
   geography:
+    name: 🌍 Geography
+    needs: changes
+    if: ${{ needs.changes.outputs.geography == 'true' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -27,6 +49,9 @@ jobs:
           package_path: geography
 
   cobertura:
+    name: ⛱ Cobertura
+    needs: changes
+    if: ${{ needs.changes.outputs.cobertura == 'true' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -43,4 +68,3 @@ jobs:
         with:
           creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
           package_path: cobertura
-
