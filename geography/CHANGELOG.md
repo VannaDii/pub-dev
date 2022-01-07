@@ -1,3 +1,7 @@
+## 1.1.0
+
+- Version bump to maybe help `pub get`
+
 ## 1.0.3
 
 - Standardize on GeoLocationNode for exposure
