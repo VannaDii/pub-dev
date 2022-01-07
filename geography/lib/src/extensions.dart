@@ -57,6 +57,7 @@ extension GeoCoordsExtensions<T extends GeoCoords> on T {
   }
 }
 
+/// Extension methods for interacting with [City] instances.
 extension CityExtensions on City {
   /// The [Region] parenting this [City] instance.
   ///

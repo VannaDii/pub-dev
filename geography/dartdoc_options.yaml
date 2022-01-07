@@ -1,0 +1,6 @@
+dartdoc:
+  examplePathPrefix: "example"
+  nodoc: ["lib/src/countries/*.dart"]
+  ignore:
+    - ambiguous-doc-reference
+    - ambiguous-reexport

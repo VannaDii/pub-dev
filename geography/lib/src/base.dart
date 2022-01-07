@@ -49,6 +49,7 @@ abstract class GeoLocation extends GeoCoords {
   List<Object?> get props => [...super.props, id, name];
 }
 
+/// The base class for all hierarchical `geography` data types
 @immutable
 abstract class GeoLocationNode extends GeoLocation {
   const GeoLocationNode(
