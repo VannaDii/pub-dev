@@ -1,6 +1,5 @@
 name: geography
-description: -|
-  A library of geographical entities, their metadata, and relationships. Provides a basic, and an earth, library with methods for finding the nearest entity and measuring distances.
+description: A library of geographical entities, their metadata, and relationships. Provides a basic, and an earth, library with methods for finding the nearest entity and measuring distances.
 version: 1.0.2
 homepage: https://pub-dev.dicatania.me/geography/
 repository: https://github.com/GioCirque/pub-dev
