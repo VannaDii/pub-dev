@@ -80,10 +80,10 @@ class DockerCommand extends DfatCommand {
   Future<bool> _buildDockerImage(String rootDir, String imageName) async {
     final dfatDir = pathFromRoot(KnownPaths.dfat, rootDir);
     final dockerDir = path.relative(dfatDir, from: rootDir);
-    logger.printLine("   🧱 Building ${imageName.green()} image =>");
+    logger.printBlock("🧱 Building ${imageName.green()} image", '   ');
     final dockerArgs = [
       'build',
-      //'-q',
+      '-q',
       '--rm',
       '--build-arg',
       'SOURCE_PATH=$rootDir',
