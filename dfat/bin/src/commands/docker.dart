@@ -105,7 +105,7 @@ class DockerCommand extends DfatCommand {
     });
 
     final exitCode = await result.exitCode;
-    logger.printFixed("  🧱 Building ${imageName.green()} image");
+    logger.printFixed("   🧱 Building ${imageName.green()} image");
     if (exitCode == 0) {
       logger.printDone();
     } else {
