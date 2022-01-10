@@ -16,6 +16,7 @@ jobs:
     outputs:
       geography: ${{ steps.filter.outputs.geography }}
       cobertura: ${{ steps.filter.outputs.cobertura }}
+      dfat: ${{ steps.filter.outputs.dfat }}
     steps:
       - uses: actions/checkout@v2
       - uses: dorny/paths-filter@v2
@@ -26,6 +27,8 @@ jobs:
               - 'geography/**'
             cobertura:
               - 'cobertura/**'
+            dfat:
+              - 'dfat/**'
 
   geography:
     name: 🌍 Geography
@@ -68,3 +71,24 @@ jobs:
         with:
           creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
           package_path: cobertura
+
+  dfat:
+    name: 🤖 dfat
+    needs: changes
+    if: ${{ needs.changes.outputs.dfat == 'true' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dart-lang/setup-dart@v1.3
+      - uses: hrishikesh-kadam/setup-lcov@v1
+
+      - name: 👷 Build dfat
+        working-directory: dfat
+        run: make all
+
+      - name: 🚀 Publish dfat
+        uses: RatakondalaArun/pub.dev-cd@v1.0.0
+        with:
+          creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
+          package_path: dfat

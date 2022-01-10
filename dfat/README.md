@@ -1,2 +1,13 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+# dfat
+
+Operations and utilities for the DFAT (Dart, Flutter, AWS, Terraform) solution templates.
+
+## Installation
+
+```shell
+dart pub global activate dfat
+```
+
+## Operation
+
+[Check out the examples](example/example.md)
