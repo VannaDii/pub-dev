@@ -1,3 +1,7 @@
+## 1.0.2
+
+- Minor bug fixes (output format)
+
 ## 1.0.1
 
 - Updates readme
