@@ -17,8 +17,6 @@ class DockerCommand extends DfatCommand {
   @override
   String get category => 'Granular';
 
-  final String pti = '     ';
-
   DockerCommand(Logger logger)
       : super(logger: logger, tools: DfatCommand.isInDocker ? [] : ['docker']) {
     var workDir = Directory.current.path;
@@ -96,6 +94,7 @@ class DockerCommand extends DfatCommand {
       '.'
     ];
 
+    final String pti = '      ';
     final result =
         await Process.start('docker', dockerArgs, workingDirectory: dockerDir)
             .then((p) {

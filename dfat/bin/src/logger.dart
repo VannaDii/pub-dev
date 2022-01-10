@@ -64,7 +64,8 @@ class Logger {
 
   void printPassThru(String message, [String indent = '']) {
     if (message.isEmpty) return;
-    print(indent + message.trim().split('\n').join('\n$indent'));
+    print(indent +
+        message.trim().split('\n').map((s) => s.trim()).join('\n$indent'));
   }
 
   void Function(bool success) printBlock(String message, [String indent = '']) {
