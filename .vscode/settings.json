@@ -8,6 +8,7 @@
     "Arun",
     "Ashkāsham",
     "Badakhshan",
+    "birthdate",
     "BRDA",
     "canonicalize",
     "cobertura",
@@ -41,12 +42,14 @@
     "pubspec",
     "pycobertura",
     "Ratakondala",
+    "slugified",
     "Stmts",
     "tfvars",
     "USERPROFILE",
     "WORKDIR",
     "writeln",
     "zipball",
+    "zoneinfo",
     "افغانستان",
     "گامبیا"
   ]

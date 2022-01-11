@@ -4,7 +4,7 @@ const iacLambdaSchema = r"""{
   "$id": "https://example.com/object1639752244.json",
   "title": "Root",
   "type": "object",
-  "required": ["handler", "runtime", "memory", "timeout", "routes", "description", "environment"],
+  "required": ["handler", "runtime", "memory", "timeout", "routes", "description", "environment", "anonymous"],
   "properties": {
     "description": {
       "$id": "#root/description",
@@ -25,7 +25,7 @@ const iacLambdaSchema = r"""{
       "description": "The runtime used for executing the function.",
       "title": "Runtime",
       "type": "string",
-      "examples": [
+      "enum": [
         "nodejs10.x",
         "nodejs12.x",
         "nodejs14.x",
@@ -62,6 +62,13 @@ const iacLambdaSchema = r"""{
       "type": "integer",
       "minimum": 0,
       "maximum": 900
+    },
+    "anonymous": {
+      "$id": "#root/anonymous",
+      "description": "Whether or not the function requires authentication.",
+      "title": "Anonymous",
+      "type": "boolean",
+      "default": false
     },
     "routes": {
       "$id": "#root/routes",

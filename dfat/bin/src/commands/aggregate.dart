@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:tint/tint.dart';
 import 'package:path/path.dart' as path;
+import 'package:collection/collection.dart';
 
 import 'base.dart';
 import '../logger.dart';
@@ -46,10 +47,7 @@ class AggregateCommand extends DfatCommand {
     final args = argResults!;
     final String rootDir = getFinalDir(args['root']);
     final String distDir = getFinalDir(args['dist']);
-    final tfVarsMap = <String, dynamic>{
-      "shared_config": <String, dynamic>{},
-      "lambda_configs": <String, dynamic>{},
-    };
+    final String iacDir = pathFromRoot(KnownPaths.iac, rootDir);
 
     if (!Directory(rootDir).existsSync()) throw ArgumentError.notNull('input');
     if (Directory(distDir).existsSync()) {
@@ -68,20 +66,40 @@ class AggregateCommand extends DfatCommand {
       logger.printDone();
     }
 
+    final iacFiles = findFiles(rootDir, matcher: iacJsonMatcher).toList();
+    final sharedIacFile =
+        iacFiles.firstWhereOrNull((f) => f.path.contains('/shared/'));
+    final Map<String, dynamic> sharedIaC = sharedIacFile != null
+        ? jsonDecode(sharedIacFile.readAsStringSync())
+        : <String, dynamic>{};
+    if (sharedIacFile != null) {
+      iacFiles.remove(sharedIacFile);
+      sharedIaC.remove(r"$schema");
+    }
+
+    final tfVarsMap = <String, dynamic>{
+      ...sharedIaC,
+      "lambda_configs": <String, dynamic>{},
+    };
     logger.printFixed("   🔩 Merging IaC definitions");
-    for (var jsonFile in findFiles(rootDir, matcher: iacJsonMatcher)) {
+    for (var jsonFile in iacFiles) {
       final isLambda = jsonFile.path.contains('/lambdas/');
+      if (!isLambda) continue; // We're only here for lambda configs
+
       final name = path.basename(jsonFile.parent.path);
       Map<String, dynamic> iac = jsonDecode(jsonFile.readAsStringSync());
       iac.remove(r"$schema");
-      if (isLambda) {
-        tfVarsMap['lambda_configs'][name] = iac;
-      } else {
-        tfVarsMap['shared_config'] = iac;
-      }
+      tfVarsMap['lambda_configs'][name] = iac;
     }
     File(path.join(distDir, 'iac.auto.tfvars.json'))
         .writeAsStringSync(jsonEncode(tfVarsMap));
+
+    // If there's an IaC directory, put a copy there for convenience.
+    if (Directory(iacDir).existsSync()) {
+      File(path.join(iacDir, 'iac.auto.tfvars.json'))
+          .writeAsStringSync(jsonEncode(tfVarsMap));
+    }
+
     logger.printDone();
 
     logger.printFixed("   📝 Noting IaC Hash");

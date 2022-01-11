@@ -1,3 +1,9 @@
+## 1.0.4
+
+- Schema updates
+- Minor aggregate enhancements
+- Adds cognito support
+
 ## 1.0.3
 
 - Minor bug fixes (output format)
