@@ -1,3 +1,8 @@
+## 1.0.6
+
+- Fix un-fixed run script 🤦
+  - And, that's when you know you're done for the day!
+
 ## 1.0.5
 
 - Fix run script dfat reference
