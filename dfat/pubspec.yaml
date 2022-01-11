@@ -1,6 +1,6 @@
 name: dfat
 description: Operations and utilities for the DFAT (Dart, Flutter, AWS, Terraform) solution templates.
-version: 1.0.4
+version: 1.0.5
 homepage: https://pub-dev.dicatania.me/dfat/
 repository: https://github.com/GioCirque/pub-dev
 issue_tracker: https://github.com/GioCirque/pub-dev/issues

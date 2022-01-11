@@ -1,3 +1,7 @@
+## 1.0.5
+
+- Fix run script dfat reference
+
 ## 1.0.4
 
 - Schema updates
