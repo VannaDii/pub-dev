@@ -42,11 +42,6 @@ class CheckCommand extends DfatRepairCommand {
       String knownPath = '';
       switch (kp) {
         case KnownPaths.dfat:
-          {
-            canMake = true;
-            knownPath = pathFromRoot(kp, rootDir, create);
-          }
-          break;
         case KnownPaths.schemas:
           {
             canMake = true;
@@ -54,8 +49,9 @@ class CheckCommand extends DfatRepairCommand {
           }
           break;
         case KnownPaths.iac:
-        case KnownPaths.lambdas:
         case KnownPaths.shared:
+        case KnownPaths.assets:
+        case KnownPaths.lambdas:
           knownPath = pathFromRoot(kp, rootDir, false);
           break;
       }

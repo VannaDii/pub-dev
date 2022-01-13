@@ -7,6 +7,7 @@ import 'package:collection/collection.dart';
 
 import 'base.dart';
 import '../logger.dart';
+import '../extensions.dart';
 
 class AggregateCommand extends DfatCommand {
   @override
@@ -40,6 +41,94 @@ class AggregateCommand extends DfatCommand {
       );
   }
 
+  Map<String, dynamic>? _getNamedProvider(
+      Map<String, dynamic> config, String name) {
+    final provider = config.takeOr<Map<String, dynamic>>(name);
+    if (provider != null) {
+      final name = provider.takeOr<String>('name');
+      final type = provider.takeOr<String>('type');
+      final issuer = provider.takeOr<String>("issuer");
+      final scopes = provider.takeOr<List<dynamic>>("scopes");
+      final mapping = provider.takeOr<Map<String, dynamic>>('mapping');
+      if (scopes != null) {
+        provider['authorize_scopes'] =
+            scopes.join(type == 'Facebook' ? ', ' : ' ');
+      }
+      if (issuer != null) {
+        provider['oidc_issuer'] = issuer;
+      }
+      return {
+        'name': name,
+        'type': type,
+        'mapping': mapping,
+        'details': provider,
+      };
+    }
+    return null;
+  }
+
+  Iterable<Map<String, dynamic>>? _getProviderSet(
+      Map<String, dynamic> config, String name) sync* {
+    final providers = config
+        .takeOr<List<dynamic>>(name)
+        ?.map((e) => e as Map<String, dynamic>)
+        .toList();
+    if (providers != null && providers.isNotEmpty) {
+      for (var provider in providers) {
+        final name = provider.takeOr<String>('name');
+        final type = provider.takeOr<String>('type');
+        final issuer = provider.takeOr<String>("issuer");
+        final metaDataUrl = provider.takeOr('metadata_url');
+        final scopes = provider.takeOr<List<dynamic>>("scopes");
+        final signout = provider.takeOr<String>('idp_sign_out_url');
+        final mapping = provider.takeOr<Map<String, dynamic>>('mapping');
+        if (scopes != null) {
+          provider['authorize_scopes'] = scopes.join(' ');
+        }
+        if (issuer != null) {
+          provider['oidc_issuer'] = issuer;
+        }
+        if (metaDataUrl != null) {
+          provider['MetadataURL'] = metaDataUrl;
+        }
+        if (signout != null) {
+          provider['IDPSignout'] = signout;
+        }
+        yield {
+          'name': name,
+          'type': type,
+          'mapping': mapping,
+          'details': provider,
+        };
+      }
+    }
+  }
+
+  Map<String, dynamic> _transformSharedIaC(Map<String, dynamic> sharedIaC) {
+    List<dynamic> providers = [];
+    List<String> setProviders = ['oidc', 'saml'];
+    List<String> namedProviders = ['facebook', 'google', 'amazon', 'apple'];
+    sharedIaC.remove(r"$schema");
+    final cognito = sharedIaC.takeOr<Map<String, dynamic>>('cognito');
+    if (cognito != null) {
+      sharedIaC["cognito_css_path"] = cognito.takeOr<String>('css_path');
+      sharedIaC["cognito_logo_path"] = cognito.takeOr<String>('logo_path');
+      final idPs = cognito.takeOr<Map<String, dynamic>>('identity_providers');
+      if (idPs != null) {
+        for (var name in namedProviders) {
+          final provider = _getNamedProvider(idPs, name);
+          if (provider != null) providers.add(provider);
+        }
+        for (var name in setProviders) {
+          final providerSet = _getProviderSet(idPs, name);
+          if (providerSet != null) providers.addAll(providerSet.toList());
+        }
+        sharedIaC['identity_providers'] = providers;
+      }
+    }
+    return sharedIaC;
+  }
+
   @override
   bool run() {
     logger.header("Aggregate");
@@ -69,12 +158,12 @@ class AggregateCommand extends DfatCommand {
     final iacFiles = findFiles(rootDir, matcher: iacJsonMatcher).toList();
     final sharedIacFile =
         iacFiles.firstWhereOrNull((f) => f.path.contains('/shared/'));
-    final Map<String, dynamic> sharedIaC = sharedIacFile != null
+    Map<String, dynamic> sharedIaC = sharedIacFile != null
         ? jsonDecode(sharedIacFile.readAsStringSync())
         : <String, dynamic>{};
     if (sharedIacFile != null) {
       iacFiles.remove(sharedIacFile);
-      sharedIaC.remove(r"$schema");
+      sharedIaC = _transformSharedIaC(sharedIaC);
     }
 
     final tfVarsMap = <String, dynamic>{

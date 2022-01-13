@@ -1,4 +1,4 @@
-name: 🎯 Build & Pub
+name: 🎯 Pub-Dev
 
 on:
   push:

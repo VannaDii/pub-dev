@@ -1,3 +1,8 @@
+## 1.0.7
+
+- Extends schema to support IDP configuration
+  - Social login via AWS Cognito User Pool
+
 ## 1.0.6
 
 - Fix un-fixed run script 🤦

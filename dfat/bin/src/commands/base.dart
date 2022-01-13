@@ -10,14 +10,15 @@ import '../assets/all.dart' as assets;
 
 typedef ProcessFinalizer = void Function();
 
-enum KnownPaths { dfat, iac, lambdas, schemas, shared }
+enum KnownPaths { dfat, iac, lambdas, schemas, shared, assets }
 
 const Map<KnownPaths, String> relativePathRoots = {
   KnownPaths.dfat: './.dfat',
   KnownPaths.iac: './iac',
   KnownPaths.lambdas: './lambdas',
   KnownPaths.schemas: './.dfat/schemas',
-  KnownPaths.shared: './shared'
+  KnownPaths.shared: './shared',
+  KnownPaths.assets: './shared/assets'
 };
 
 abstract class DfatRepairCommand extends DfatCommand {
@@ -158,7 +159,9 @@ abstract class DfatCommand extends Command<bool> {
     logger.printFixed('$indent🧼 Cleaning ${lambdaName.green()}');
 
     try {
-      final targets = ['.dist', '.dart_tool', '.packages', 'pubspec.lock'];
+      final targets = [
+        '.dist', /* '.dart_tool', '.packages', 'pubspec.lock' */
+      ];
       for (var target in targets) {
         deleteIfExists(path.join(dirPath, target));
       }
