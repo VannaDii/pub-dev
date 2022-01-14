@@ -1,0 +1,39 @@
+import 'dart:io';
+
+import 'package:path/path.dart' as path;
+
+import '../logger.dart';
+import 'tasks/all.dart';
+
+class ValidateCommand extends DfatCommand {
+  @override
+  final name = "validate";
+
+  @override
+  final description =
+      "Validates your solution state and settings for deployment readiness.";
+
+  @override
+  String get category => 'General';
+
+  @override
+  List<TaskCommand> get sequence => [ValidateJsonTask(this, logger)];
+
+  ValidateCommand(Logger logger) : super(logger: logger, tools: []) {
+    var workDir = Directory.current.path;
+
+    argParser.addOption(
+      'root',
+      abbr: 'r',
+      defaultsTo: path.relative(workDir, from: workDir),
+      help: "The root path to process. Should be your workspace root.",
+    );
+  }
+
+  @override
+  Future<bool> run() async {
+    final footer = logger.header("Validate");
+    final result = await runSequence();
+    return footer(result);
+  }
+}

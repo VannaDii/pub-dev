@@ -1,0 +1,58 @@
+import 'dart:io';
+
+import 'package:tint/tint.dart';
+import 'package:path/path.dart' as path;
+
+import 'base.dart';
+
+class DockerRunTask extends TaskCommand {
+  DockerRunTask(DfatCommand parent, Logger logger)
+      : super(
+            parent,
+            logger,
+            TaskRequirements(files: [
+              AssetRequirement(Assets.dockerAmznL2),
+              AssetRequirement(Assets.dockerRunScript)
+            ]));
+
+  static String taskName = 'docker-run';
+
+  @override
+  String get name => DockerRunTask.taskName;
+
+  @override
+  String get description => 'Runs a build inside a docker container.';
+
+  final inRs = '   ';
+
+  @override
+  Future<bool> run() async {
+    final blockCloser = logger.header('Docker Run');
+    final rootDir = Directory.current.path;
+    final imageName = "${path.basename(rootDir)}-builder";
+
+    bool hasImage = Utils.dockerImageExists(imageName);
+    logger.printFixed(
+        "🚢 Using docker image ${imageName.green()}", inRs)(hasImage);
+
+    final args = [
+      'run',
+      '--rm',
+      '--name',
+      imageName,
+      '-v',
+      '$rootDir:/home/code',
+      '-v',
+      '$userDir:/home/user',
+      '-e',
+      'CI=false',
+      '-it',
+      imageName
+    ];
+    final process = await Process.start('docker', args,
+        workingDirectory: rootDir, mode: ProcessStartMode.inheritStdio);
+    final result = await process.exitCode == 0;
+
+    return blockCloser(result);
+  }
+}

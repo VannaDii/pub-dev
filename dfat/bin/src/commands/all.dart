@@ -5,3 +5,4 @@ export 'docker.dart';
 export 'install.dart';
 export 'lambda.dart';
 export 'shared.dart';
+export 'validate.dart';

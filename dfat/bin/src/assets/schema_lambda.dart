@@ -1,6 +1,6 @@
 const iacLambdaSchema = r"""{
   "definitions": {},
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "$id": "https://example.com/object1639752244.json",
   "title": "Root",
   "type": "object",

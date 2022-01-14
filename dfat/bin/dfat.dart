@@ -15,6 +15,7 @@ void main(List<String> args) async {
       ..addCommand(LambdaCommand(logger))
       ..addCommand(DockerCommand(logger))
       ..addCommand(InstallCommand(logger))
+      ..addCommand(ValidateCommand(logger))
       ..addCommand(AggregateCommand(logger));
     await runner.run(args);
   } on UsageException catch (e) {

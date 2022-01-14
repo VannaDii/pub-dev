@@ -12,11 +12,14 @@ executables:
   dfat:
 
 dependencies:
+  meta: ^1.7.0
   path: ^1.8.1
   args: ^2.3.0
   tint: ^2.0.0
   archive: ^3.1.8
+  equatable: ^2.0.3
   collection: ^1.15.0
+  json_schema2: ^2.0.1
   json_annotation: ^4.4.0
 
 dev_dependencies:

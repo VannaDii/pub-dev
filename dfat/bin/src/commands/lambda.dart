@@ -5,6 +5,7 @@ import 'package:archive/archive_io.dart';
 import 'package:tint/tint.dart';
 import 'package:path/path.dart' as path;
 
+import '../utils.dart';
 import 'base.dart';
 import '../logger.dart';
 
@@ -49,7 +50,7 @@ class LambdaCommand extends DfatCommand {
     return handleProcessResult(result, logger, '          ', () {
       final outputFile = File('.dist/$outputName');
       if (outputFile.existsSync()) {
-        chmod('+x', '.dist/$outputName');
+        Utils.chmod('+x', '.dist/$outputName');
       }
     });
   }

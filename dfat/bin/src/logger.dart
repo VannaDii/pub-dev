@@ -1,6 +1,10 @@
 import 'dart:io';
 
+import 'package:tint/tint.dart';
+
 import 'log_pipe.dart';
+
+typedef MatchedClosure = T Function<T>(T result);
 
 class Logger {
   final _ansiPattern = RegExp([
@@ -41,20 +45,33 @@ class Logger {
     printRaw("$tag\n");
   }
 
-  void header([String? tag]) {
-    printRaw("🤖 Processing '$tag'\n");
+  MatchedClosure header([String? tag]) {
+    printRaw("\n🤖 Processing ${(tag ?? '').green()}\n");
+    return <T>(result) {
+      footer(tag);
+      return result;
+    };
   }
 
   void footer([String? tag]) {
-    printRaw("🏁 Finished '$tag'\n\n");
+    printRaw("🏁 Finished ${(tag ?? '').green()}\n");
   }
 
-  void printFixed(String message) {
+  bool Function(bool success, [String? reason]) printFixed(String message,
+      [String indent = '']) {
     final visLen = message.replaceAll(_ansiPattern, '').length;
-    printRaw("$message${_getPad(visLen)}");
+    printRaw("$indent$message${_getPad(visLen + indent.length)}");
+    return (bool success, [String? reason]) {
+      if (success) {
+        printDone();
+      } else {
+        printFailed(reason);
+      }
+      return success;
+    };
   }
 
-  void printLine(String message) {
+  void printLine([String message = '']) {
     stdout.write("$message\n");
   }
 
@@ -68,7 +85,7 @@ class Logger {
         message.trim().split('\n').map((s) => s.trim()).join('\n$indent'));
   }
 
-  void Function(bool success) printBlock(String message, [String indent = '']) {
+  bool Function(bool success) printBlock(String message, [String indent = '']) {
     print("$indent${message.trim()} =>");
     return (bool success) {
       printFixed("$indent${message.trim()}");
@@ -77,6 +94,7 @@ class Logger {
       } else {
         printFailed();
       }
+      return success;
     };
   }
 

@@ -1,10 +1,8 @@
 import 'dart:io';
 
-import 'package:tint/tint.dart';
 import 'package:path/path.dart' as path;
 
-import 'base.dart';
-import '../logger.dart';
+import 'tasks/all.dart';
 
 class DockerCommand extends DfatCommand {
   @override
@@ -16,6 +14,11 @@ class DockerCommand extends DfatCommand {
 
   @override
   String get category => 'Granular';
+
+  @override
+  List<TaskCommand> get sequence =>
+      _sequence ?? [DockerBuildTask(this, logger), DockerRunTask(this, logger)];
+  List<TaskCommand>? _sequence;
 
   DockerCommand(Logger logger)
       : super(logger: logger, tools: DfatCommand.isInDocker ? [] : ['docker']) {
@@ -49,119 +52,28 @@ class DockerCommand extends DfatCommand {
       );
   }
 
-  String? get _userDir =>
-      Platform.environment['HOME'] ?? Platform.environment['USERPROFILE'];
-
-  bool _hasDockerImage(String imageName) {
-    logger.printFixed("   🔎 Checking for image ${imageName.green()}");
-    final dockerArgs = [
-      'image',
-      'ls',
-      imageName,
-      '--format',
-      '"{{.Repository}}"'
-    ];
-    final result = Process.runSync('docker', dockerArgs);
-
-    final hasImage = (result.exitCode == 0) &&
-        (result.stdout.toString().trim().replaceAll("\"", "") == imageName);
-
-    if (hasImage) {
-      logger.printDone();
-    } else {
-      logger.printFailed();
-    }
-
-    return hasImage;
-  }
-
-  Future<bool> _buildDockerImage(String rootDir, String imageName) async {
-    final dfatDir = pathFromRoot(KnownPaths.dfat, rootDir);
-    final dockerDir = path.relative(dfatDir, from: rootDir);
-    logger.printBlock("🧱 Building ${imageName.green()} image", '   ');
-    final dockerArgs = [
-      'build',
-      '-q',
-      '--rm',
-      '--build-arg',
-      'SOURCE_PATH=$rootDir',
-      '--build-arg',
-      'USER_HOME=$_userDir',
-      '-t',
-      imageName,
-      '-f',
-      'Dockerfile.dfat.al2',
-      '.'
-    ];
-
-    final String pti = '      ';
-    final result =
-        await Process.start('docker', dockerArgs, workingDirectory: dockerDir)
-            .then((p) {
-      p.stdout.pipe(logger.getPipeOut(pti));
-      p.stderr.pipe(logger.getPipeErr(pti));
-      return p;
-    });
-
-    final exitCode = await result.exitCode;
-    logger.printFixed("   🧱 Building ${imageName.green()} image");
-    if (exitCode == 0) {
-      logger.printDone();
-    } else {
-      logger.printFailed();
-    }
-
-    return (exitCode == 0);
-  }
-
-  Future<Process> _runInDocker(String rootDir, String imageName) {
-    logger.printFixed("   🚢 Using docker image ${imageName.green()}");
-    logger.printDone();
-
-    final args = [
-      'run',
-      '--rm',
-      '--name',
-      imageName,
-      '-v',
-      '$rootDir:/home/code',
-      '-v',
-      '$_userDir:/home/user',
-      '-e',
-      'CI=false',
-      '-it',
-      imageName
-    ];
-    return Process.start('docker', args,
-        workingDirectory: rootDir, mode: ProcessStartMode.inheritStdio);
-  }
-
   @override
   Future<bool> run() async {
-    logger.header("Docker");
-
     final args = argResults!;
-    final bool canRun = !args['build-only'];
     final bool useForce = args['force'];
+    final bool buildOnly = args['build-only'];
     final String rootDir = getFinalDir(args['root']);
     final String imageNameFallback = "${path.basename(rootDir)}-builder";
     final String imageName = args['name'] ?? imageNameFallback;
 
-    bool proceed = _hasDockerImage(imageName);
-    if (!proceed || useForce) {
-      proceed = await _buildDockerImage(rootDir, imageName);
+    _sequence = [];
+    bool hasImage = Utils.dockerImageExists(imageName);
+    if (!hasImage || buildOnly || useForce) {
+      _sequence!.add(DockerBuildTask(this, logger));
     }
-    proceed = proceed && canRun;
-
-    final Future<Process>? builder =
-        proceed ? _runInDocker(rootDir, imageName) : null;
-
-    logger.footer("Docker");
-
-    if (builder != null) {
-      return await builder.then((p) => p.exitCode).then((v) => v) == 0;
+    if (!buildOnly) {
+      _sequence!.add(DockerRunTask(this, logger));
     }
+    bool result = await runSequence({
+      DockerRunTask.taskName: {'name': imageName},
+      DockerBuildTask.taskName: {'name': imageName},
+    });
 
-    return !canRun;
+    return result;
   }
 }
