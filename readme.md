@@ -1,6 +1,6 @@
 # Pub-Dev
 
-[![🎯 Pub-Dev](https://github.com/GioCirque/pub-dev/actions/workflows/makefile.yml/badge.svg)](https://github.com/GioCirque/pub-dev/actions/workflows/makefile.yml)
+![CI](https://github.com/GioCirque/pub-dev/actions/workflows/makefile_build.yml/badge.svg) ![CD](https://github.com/GioCirque/pub-dev/actions/workflows/makefile_deploy.yml/badge.svg)
 
 This project is a mono-repo (of sorts) for the packages I've created along the way. Most of them were born for my own needs, some may be just amusing ideas I had once.
 
