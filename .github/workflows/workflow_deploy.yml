@@ -1,0 +1,52 @@
+name: 🎯 CD
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  geography:
+    name: 🌍 Geography
+    needs: changes
+    if: ${{ github.ref_type == 'tag' && endsWith(github.ref_name, '-geography') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: dart-lang/setup-dart@v1
+
+      - name: 🚀 Publish geography
+        uses: RatakondalaArun/pub.dev-cd@v1.0.0
+        with:
+          creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
+          package_path: geography
+
+  cobertura:
+    name: ⛱ Cobertura
+    needs: changes
+    if: ${{ github.ref_type == 'tag' && endsWith(github.ref_name, '-cobertura') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: dart-lang/setup-dart@v1
+
+      - name: 🚀 Publish cobertura
+        uses: RatakondalaArun/pub.dev-cd@v1.0.0
+        with:
+          creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
+          package_path: cobertura
+
+  dfat:
+    name: 🤖 dfat
+    needs: changes
+    if: ${{ github.ref_type == 'tag' && endsWith(github.ref_name, '-dfat') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: dart-lang/setup-dart@v1
+
+      - name: 🚀 Publish dfat
+        uses: RatakondalaArun/pub.dev-cd@v1.0.0
+        with:
+          creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
+          package_path: dfat

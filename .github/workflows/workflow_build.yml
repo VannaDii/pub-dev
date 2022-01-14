@@ -1,4 +1,4 @@
-name: 🎯 Pub-Dev
+name: 🎯 CI
 
 on:
   push:
@@ -22,13 +22,7 @@ jobs:
       - uses: dorny/paths-filter@v2
         id: filter
         with:
-          filters: |
-            geography:
-              - 'geography/**'
-            cobertura:
-              - 'cobertura/**'
-            dfat:
-              - 'dfat/**'
+          filters: .github/build_path_filters.yaml
 
   geography:
     name: 🌍 Geography
@@ -38,18 +32,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: dart-lang/setup-dart@v1.3
+      - uses: dart-lang/setup-dart@v1
       - uses: hrishikesh-kadam/setup-lcov@v1
 
       - name: 👷 Build Geography
         working-directory: geography
         run: make all
-
-      - name: 🚀 Publish geography
-        uses: RatakondalaArun/pub.dev-cd@v1.0.0
-        with:
-          creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
-          package_path: geography
 
   cobertura:
     name: ⛱ Cobertura
@@ -59,18 +47,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: dart-lang/setup-dart@v1.3
+      - uses: dart-lang/setup-dart@v1
       - uses: hrishikesh-kadam/setup-lcov@v1
 
       - name: 👷 Build Cobertura
         working-directory: cobertura
         run: make all
-
-      - name: 🚀 Publish cobertura
-        uses: RatakondalaArun/pub.dev-cd@v1.0.0
-        with:
-          creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
-          package_path: cobertura
 
   dfat:
     name: 🤖 dfat
@@ -80,15 +62,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: dart-lang/setup-dart@v1.3
+      - uses: dart-lang/setup-dart@v1
       - uses: hrishikesh-kadam/setup-lcov@v1
 
       - name: 👷 Build dfat
         working-directory: dfat
         run: make all
-
-      - name: 🚀 Publish dfat
-        uses: RatakondalaArun/pub.dev-cd@v1.0.0
-        with:
-          creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
-          package_path: dfat

@@ -1,0 +1,6 @@
+geography:
+  - "geography/**"
+cobertura:
+  - "cobertura/**"
+dfat:
+  - "dfat/**"
