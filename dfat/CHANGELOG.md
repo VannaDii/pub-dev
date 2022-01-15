@@ -2,6 +2,8 @@
 
 - Extends schema to support IDP configuration
   - Social login via AWS Cognito User Pool
+- Adds extensive IaC schema validation
+- Adds API route cross-checks to help ensure deployment
 
 ## 1.0.6
 
