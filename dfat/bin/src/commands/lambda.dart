@@ -1,13 +1,8 @@
-import 'dart:convert';
 import 'dart:io';
 
-import 'package:archive/archive_io.dart';
-import 'package:tint/tint.dart';
 import 'package:path/path.dart' as path;
 
-import '../utils.dart';
-import 'base.dart';
-import '../logger.dart';
+import 'tasks/all.dart';
 
 class LambdaCommand extends DfatCommand {
   @override
@@ -30,59 +25,13 @@ class LambdaCommand extends DfatCommand {
     );
   }
 
-  String _getIaCValue(String lambdaDir, String key) {
-    return (jsonDecode(
-            File(path.join(lambdaDir, 'iac.json')).readAsStringSync())
-        as Map<String, dynamic>)[key];
-  }
-
-  bool _compileLambda(String lambdaDir) {
-    final lambdaName = path.basename(lambdaDir);
-    logger.printFixed('     💪 Compiling ${lambdaName.green()}');
-
-    final distPath = path.join(lambdaDir, '.dist');
-    if (!Directory(distPath).existsSync()) Directory(distPath).createSync();
-
-    final outputName = _getIaCValue(lambdaDir, 'handler');
-    final args = ['compile', 'exe', 'main.dart', '-o', '.dist/$outputName'];
-    final result = Process.runSync('dart', args, workingDirectory: lambdaDir);
-
-    return handleProcessResult(result, logger, '          ', () {
-      final outputFile = File('.dist/$outputName');
-      if (outputFile.existsSync()) {
-        Utils.chmod('+x', '.dist/$outputName');
-      }
-    });
-  }
-
-  bool _packLambda(String lambdaDir) {
-    final lambdaName = path.basename(lambdaDir);
-    final outputName = 'lambda_$lambdaName.zip';
-    final inputName = path.join(lambdaDir, '.dist/bootstrap');
-    final outZipPath = path.join(lambdaDir, '.dist', outputName);
-    logger.printFixed('     📦 Packing ${lambdaName.green()}');
-
-    try {
-      ZipFileEncoder()
-        ..create(outZipPath)
-        ..addFile(File(inputName))
-        ..close();
-    } catch (_) {
-      logger.printFailed();
-      return false;
-    }
-
-    logger.printDone();
-    return true;
-  }
-
   @override
-  bool run() {
-    logger.header("Lambdas");
+  Future<bool> run() async {
+    final footer = logger.header("Lambdas");
 
     bool result = true;
     final args = argResults!;
-    final String rootDir = getFinalDir(args['root']);
+    final String rootDir = Utils.getFinalDir(args['root']);
 
     logger.printFixed('   🔎 Finding lambdas');
     final String lambdasPath = path.join(rootDir, 'lambdas');
@@ -93,24 +42,35 @@ class LambdaCommand extends DfatCommand {
         .toList(growable: false);
     logger.printDone();
 
-    final indent = '     ';
+    useSequence([
+      CleanDirTask(this, logger),
+      PubGetTask(this, logger),
+      DartCompileTask(this, logger),
+      ZipArchiveTask(this, logger)
+    ]);
+
+    final ind = '   ';
+    final subInd = ind + ind;
     for (var lambdaDir in lambdaRoots) {
       var lambdaName = path.basename(lambdaDir);
       final closer =
-          logger.printBlock("ƛ Handling ${lambdaName.green()}", '   ');
-      try {
-        if (result) result = cleanDir(lambdaDir, logger, indent);
-        if (result) result = pubGet(lambdaDir, logger, indent);
-        if (result) result = _compileLambda(lambdaDir);
-        if (result) result = _packLambda(lambdaDir);
-        closer(true);
-      } catch (_) {
-        closer(false);
-      }
+          logger.printBlock("ƛ  Handling ${lambdaName.green()}", ind);
+      final outputName = Utils.getIaCValue(lambdaDir, 'handler');
+      final zipInput = path.join(lambdaDir, '.dist', outputName);
+      final zipOutput = path.join(lambdaDir, '.dist', 'lambda_$lambdaName.zip');
+      result = await runSequence({
+        CleanDirTask.taskName: {'target': lambdaDir, 'indent': subInd},
+        PubGetTask.taskName: {'target': lambdaDir, 'indent': subInd},
+        DartCompileTask.taskName: {'target': lambdaDir, 'indent': subInd},
+        ZipArchiveTask.taskName: {
+          'input': zipInput,
+          'output': zipOutput,
+          'indent': subInd
+        },
+      });
+      closer(result);
     }
 
-    logger.footer("Lambdas");
-
-    return result;
+    return footer(result);
   }
 }

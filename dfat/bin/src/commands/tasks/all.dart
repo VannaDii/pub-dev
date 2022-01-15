@@ -1,6 +1,14 @@
 export 'base.dart';
+export 'build_runner_build.dart';
+export 'build_runner_clean.dart';
 export 'check_fs.dart';
 export 'check_tools.dart';
+export 'clean_dir.dart';
+export 'dart_compile.dart';
 export 'docker_build.dart';
 export 'docker_run.dart';
+export 'install_dfat_files.dart';
+export 'pub_get.dart';
+export 'update_schemas.dart';
 export 'validate_json.dart';
+export 'zip_archive.dart';

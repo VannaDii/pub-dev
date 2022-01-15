@@ -6,13 +6,19 @@ import 'package:json_schema2/json_schema2.dart';
 import 'package:path/path.dart' as path;
 
 import 'enums.dart';
+import 'logger.dart';
+
 export 'enums.dart';
+export 'logger.dart';
 
 /// A handler to convert [data] from a [File] into [T]
 typedef FileParser<T> = T Function(Uint8List data);
 
 /// A handler to create a file at [path] with content
 typedef FileCreator = bool Function({File file});
+
+/// A callback for external process finalization
+typedef ProcessFinalizer = void Function(int code);
 
 /// Common utility functions shared by all tasks and commands
 class Utils {
@@ -118,6 +124,84 @@ class Utils {
   static bool isCommand(String command) {
     return Process.runSync('command', ['-v', command]).exitCode == 0;
   }
+
+  /// Gets the git hash from [dirPath], if it's a repo, otherwise `null`.
+  static String? getGitHash([String? dirPath]) {
+    final gitPath =
+        path.normalize(path.join(dirPath ?? Directory.current.path, '.git'));
+    final isGitPath = Directory(gitPath).existsSync();
+    final hasGitTool = Utils.isCommand('git');
+    if (!isGitPath || !hasGitTool) return null;
+
+    final result = Process.runSync('git', ['rev-parse', '--short', 'HEAD'],
+        workingDirectory: dirPath);
+    if (result.exitCode != 0) {
+      throw FileSystemException(result.stderr.toString(), dirPath);
+    }
+
+    return result.stdout.toString().trim();
+  }
+
+  /// Returns the result of [path.normalize], as an absolute path from [Directory.current].
+  static String getFinalDir(String dirPath) {
+    var finalPath = dirPath;
+    if (!path.isAbsolute(finalPath)) finalPath = path.absolute(finalPath);
+    if (finalPath.endsWith('/.')) {
+      finalPath = finalPath.substring(0, finalPath.length - 2);
+    }
+    return path.normalize(finalPath);
+  }
+
+  static bool handleProcessResult(
+    ProcessResult result,
+    Logger logger, [
+    String indent = '',
+    ProcessFinalizer? finalizer,
+  ]) {
+    if (result.exitCode == 0) {
+      logger.printDone();
+    } else {
+      logger.printFailed('code ${result.exitCode}');
+
+      String logs = result.stderr.toString();
+      if (logs.isEmpty) logs = result.stdout.toString();
+      logger.printPassThru(logs, indent);
+    }
+
+    if (finalizer != null) finalizer(result.exitCode);
+
+    return result.exitCode == 0;
+  }
+
+  /// Deletes a [FileSystemEntity] by [entityPath], only if it exists.
+  /// If [entityPath] is a directory, it is deleted recursively.
+  /// Returns `true` if the [entityPath] doesn't exist or was deleted,
+  /// otherwise `false`.
+  static bool deleteIfExists(String entityPath) {
+    try {
+      if (FileSystemEntity.isDirectorySync(entityPath)) {
+        final dir = Directory(entityPath);
+        if (dir.existsSync()) dir.deleteSync(recursive: true);
+      } else {
+        final file = File(entityPath);
+        if (file.existsSync()) file.deleteSync();
+      }
+    } on FileSystemException catch (_) {
+      return false;
+    }
+    return true;
+  }
+
+  static String? getIaCValue(String targetDir, String key) {
+    final targetFile = File(path.join(targetDir, 'iac.json'));
+    if (!targetFile.existsSync()) {
+      throw FileSystemException('File not found', targetFile.path);
+    }
+
+    final jsonData = targetFile.readAsStringSync();
+    final Map<String, dynamic> iacMap = jsonDecode(jsonData);
+    return iacMap.containsKey(key) ? iacMap[key] : null;
+  }
 }
 
 /// Basic file type parsers
@@ -133,6 +217,8 @@ class FileParsers {
   }
 }
 
+/// Well known regular expressions
 class RegExps {
+  /// The pattern `^.*/iac.json$`
   static final RegExp fileIaCJson = RegExp(r'^.*/iac.json$');
 }

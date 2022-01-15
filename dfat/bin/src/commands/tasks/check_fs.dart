@@ -22,7 +22,6 @@ class CheckFSTask extends TaskCommand {
   @override
   Future<bool> run() async {
     final bool fix = args['fix'];
-    final blockCloser = logger.header('File System Check');
     final List<FileRequirement> fsPaths = parent.globalFsPaths;
 
     List<bool> results = [];
@@ -41,6 +40,6 @@ class CheckFSTask extends TaskCommand {
     }
 
     final result = results.every((r) => r);
-    return blockCloser(result);
+    return result;
   }
 }

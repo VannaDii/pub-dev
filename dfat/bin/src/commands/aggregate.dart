@@ -5,9 +5,8 @@ import 'package:tint/tint.dart';
 import 'package:path/path.dart' as path;
 import 'package:collection/collection.dart';
 
-import 'base.dart';
-import '../logger.dart';
 import '../extensions.dart';
+import 'tasks/all.dart';
 
 class AggregateCommand extends DfatCommand {
   @override
@@ -130,13 +129,13 @@ class AggregateCommand extends DfatCommand {
   }
 
   @override
-  bool run() {
+  Future<bool> run() async {
     logger.header("Aggregate");
 
     final args = argResults!;
-    final String rootDir = getFinalDir(args['root']);
-    final String distDir = getFinalDir(args['dist']);
-    final String iacDir = pathFromRoot(KnownPaths.iac, rootDir);
+    final String rootDir = Utils.getFinalDir(args['root']);
+    final String distDir = Utils.getFinalDir(args['dist']);
+    final String iacDir = Utils.pathFromRoot(KnownPaths.iac, rootDir);
 
     if (!Directory(rootDir).existsSync()) throw ArgumentError.notNull('input');
     if (Directory(distDir).existsSync()) {
@@ -145,7 +144,8 @@ class AggregateCommand extends DfatCommand {
     Directory(distDir).createSync(recursive: true);
 
     final zips =
-        findFiles(rootDir, subPath: 'lambdas', matcher: _lambdaZipMatcher);
+        await Utils.findFiles(subPath: 'lambdas', matcher: _lambdaZipMatcher)
+            .toList();
     logger.printLine(
         "   📥 Received ${zips.map((e) => path.basename(e.path).green()).join(', ')}");
 
@@ -155,7 +155,8 @@ class AggregateCommand extends DfatCommand {
       logger.printDone();
     }
 
-    final iacFiles = findFiles(rootDir, matcher: iacJsonMatcher).toList();
+    final iacFiles =
+        await Utils.findFiles(matcher: RegExps.fileIaCJson).toList();
     final sharedIacFile =
         iacFiles.firstWhereOrNull((f) => f.path.contains('/shared/'));
     Map<String, dynamic> sharedIaC = sharedIacFile != null
@@ -191,9 +192,13 @@ class AggregateCommand extends DfatCommand {
 
     logger.printDone();
 
-    logger.printFixed("   📝 Noting IaC Hash");
-    File(path.join(distDir, 'iac.hash')).writeAsStringSync(getGitHash(rootDir));
-    logger.printDone();
+    final gitCloser = logger.printFixed("   📝 Noting IaC Hash");
+    final gitHash = Utils.getGitHash(rootDir);
+    final gitResult = gitHash != null;
+    if (gitResult) {
+      File(path.join(distDir, 'iac.hash')).writeAsStringSync(gitHash);
+    }
+    gitCloser(gitResult);
 
     logger.footer("Aggregate");
 

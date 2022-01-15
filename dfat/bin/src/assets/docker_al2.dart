@@ -28,5 +28,5 @@ VOLUME [ "/home/code", "/home/user" ]
 
 WORKDIR "${SOURCE_PATH}"
 
-ENTRYPOINT [ "/run.sh"]
+ENTRYPOINT ["/run.sh"]
 """;

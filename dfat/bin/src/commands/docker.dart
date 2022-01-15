@@ -21,7 +21,7 @@ class DockerCommand extends DfatCommand {
   List<TaskCommand>? _sequence;
 
   DockerCommand(Logger logger)
-      : super(logger: logger, tools: DfatCommand.isInDocker ? [] : ['docker']) {
+      : super(logger: logger, tools: Utils.isInDocker ? [] : ['docker']) {
     var workDir = Directory.current.path;
     var imageName = "${path.basename(workDir)}-builder";
 
@@ -57,7 +57,7 @@ class DockerCommand extends DfatCommand {
     final args = argResults!;
     final bool useForce = args['force'];
     final bool buildOnly = args['build-only'];
-    final String rootDir = getFinalDir(args['root']);
+    final String rootDir = Utils.getFinalDir(args['root']);
     final String imageNameFallback = "${path.basename(rootDir)}-builder";
     final String imageName = args['name'] ?? imageNameFallback;
 

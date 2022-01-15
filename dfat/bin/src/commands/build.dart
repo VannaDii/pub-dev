@@ -1,7 +1,6 @@
 import 'package:args/args.dart';
 
-import 'base.dart';
-import '../logger.dart';
+import 'tasks/all.dart';
 
 class BuildCommand extends DfatCommand {
   @override
@@ -24,8 +23,8 @@ class BuildCommand extends DfatCommand {
   Future<bool> run() async {
     final runner = super.runner!;
     final dockerSeq = ['docker'];
-    final buildSeq = ['check', 'shared', 'lambda', 'aggregate'];
-    final execSeq = (DfatCommand.isInDocker ? buildSeq : dockerSeq);
+    final buildSeq = ['check', 'validate', 'shared', 'lambda', 'aggregate'];
+    final execSeq = (Utils.isInDocker ? buildSeq : dockerSeq);
 
     final baseArgs = (argResults?.arguments ?? []).where((a) => a != name);
     for (var step in execSeq) {

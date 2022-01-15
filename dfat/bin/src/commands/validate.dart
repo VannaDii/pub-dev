@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:path/path.dart' as path;
 
-import '../logger.dart';
 import 'tasks/all.dart';
 
 class ValidateCommand extends DfatCommand {
@@ -15,9 +14,6 @@ class ValidateCommand extends DfatCommand {
 
   @override
   String get category => 'General';
-
-  @override
-  List<TaskCommand> get sequence => [ValidateJsonTask(this, logger)];
 
   ValidateCommand(Logger logger) : super(logger: logger, tools: []) {
     var workDir = Directory.current.path;
@@ -33,6 +29,7 @@ class ValidateCommand extends DfatCommand {
   @override
   Future<bool> run() async {
     final footer = logger.header("Validate");
+    useSequence([ValidateJsonTask(this, logger)]);
     final result = await runSequence();
     return footer(result);
   }

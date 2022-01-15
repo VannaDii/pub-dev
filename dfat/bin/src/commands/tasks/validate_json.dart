@@ -1,4 +1,3 @@
-import 'package:tint/tint.dart';
 import 'package:path/path.dart' as path;
 import 'package:json_schema2/json_schema2.dart';
 
@@ -22,11 +21,9 @@ class ValidateJsonTask extends TaskCommand {
       'Validates JSON files against their schemas, yielding any errors';
 
   final inBl = '   ';
-  final inRs = '     ';
 
   Future<bool> _validateSharedIaC() async {
-    final blockCloser =
-        logger.printBlock("Validating ${'shared'.green()}", inBl);
+    final closer = logger.printFixed("🧐 ${'shared'.green()} schema", inBl);
     final schemaPath = '.dfat/schemas/iac.shared.schema.json';
     final sharedSchema = Utils.readSchemaFile(schemaPath);
     final sharedFile =
@@ -37,21 +34,23 @@ class ValidateJsonTask extends TaskCommand {
     final sharedJson =
         Utils.readFile(file: sharedFile, parser: FileParsers.jsonParser);
     final sharedErrors = sharedSchema.validateWithErrors(sharedJson);
-    final result = sharedErrors.isEmpty;
+
+    final result = closer(sharedErrors.isEmpty);
     if (!result) {
       for (var error in sharedErrors) {
         logger.printFailed(
-            '$sharedFileName → ${error.message} @ ${error.instancePath}', inRs);
+            '${path.relative(sharedFileName).bold()} → '
+            '${error.message.underline()} @ '
+            '${error.instancePath?.yellow()}',
+            inBl);
       }
-    } else {
-      logger.printFixed(path.relative(sharedFile.path), inRs)(result);
+      logger.printLine();
     }
-    return blockCloser(result);
+
+    return result;
   }
 
   Future<bool> _validateLambdaIaC() async {
-    final blockCloser =
-        logger.printBlock("Validating ${'lambdas'.green()}", inBl);
     final schemaPath = '.dfat/schemas/iac.lambda.schema.json';
     final lambdaSchema = Utils.readSchemaFile(schemaPath);
     final Map<String, List<ValidationError>> allErrors = {};
@@ -66,26 +65,64 @@ class ValidateJsonTask extends TaskCommand {
 
     final result = allErrors.entries.every((e) => e.value.isEmpty);
     for (var error in allErrors.entries) {
+      final lambdaName = path.relative(error.key);
+      logger.printFixed(
+          "🧐 ${lambdaName.green()} schema", inBl)(error.value.isEmpty);
       if (error.value.isNotEmpty) {
-        final closer = logger.printBlock(error.key, inBl);
         for (var e in error.value) {
-          logger.printFailed("${e.message} → ${e.instancePath}", inRs);
+          logger.printFailed(
+              '${'$lambdaName/iac.json'.bold()} → '
+              '${e.message.underline()} @ '
+              '${e.instancePath?.yellow()}',
+              inBl);
         }
-        closer(false);
-      } else {
-        logger.printFixed(path.relative(error.key), inRs)(result);
+        logger.printLine();
       }
     }
 
-    return blockCloser(result);
+    return result;
+  }
+
+  Future<bool> _validateAPIRoutes() async {
+    final closer =
+        logger.printFixed("🚏 x-check ${'api routes'.green()}", inBl);
+    final Map<String, List<String>> routesMap = {};
+    await Utils.findFiles(subPath: 'lambdas', matcher: RegExps.fileIaCJson)
+        .listen((file) {
+      final fileName = path.relative(file.path);
+      final json = Utils.readFile(file: file, parser: FileParsers.jsonParser);
+      final routes = (json["routes"] as List<dynamic>)
+          .map((e) => Map<String, String>.from(e));
+      for (var route in routes) {
+        final key = route.values.join(' ');
+        routesMap[key] = routesMap[key] ?? List.empty(growable: true);
+        routesMap[key]!.add(fileName);
+      }
+    }).asFuture();
+
+    // Any route list greater than one means a conflict
+    final errorMap =
+        Map.fromEntries(routesMap.entries.where((e) => e.value.length > 1));
+    final result = closer(errorMap.isEmpty);
+    if (!result) {
+      for (var error in errorMap.entries) {
+        final routeName = path.relative(error.key);
+        logger.printFailed(
+            '${routeName.bold()} → '
+            '${error.value.map((e) => e.yellow()).join(' ↔ ')}',
+            inBl + inBl);
+      }
+      logger.printLine();
+    }
+
+    return result;
   }
 
   @override
   Future<bool> run() async {
     final resultShared = await _validateSharedIaC();
-    logger.printLine();
     final resultLambdas = await _validateLambdaIaC();
-
-    return (resultShared && resultLambdas);
+    final resultRoutes = await _validateAPIRoutes();
+    return (resultShared && resultLambdas && resultRoutes);
   }
 }

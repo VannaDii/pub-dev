@@ -7,11 +7,6 @@ import 'log_pipe.dart';
 typedef MatchedClosure = T Function<T>(T result);
 
 class Logger {
-  final _ansiPattern = RegExp([
-    '[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:[a-zA-Z\\d]*(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)',
-    '(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-ntqry=><~]))'
-  ].join('|'));
-
   final _padding = "....................................................";
   _getPad(int length) {
     return length > _padding.length ? '' : _padding.substring(length);
@@ -22,15 +17,15 @@ class Logger {
   }
 
   void printFailed([String? reason = '', String indent = '']) {
-    printRaw("$indent🔴 $reason\n");
+    printLine("$indent🔴 ${reason ?? ''}".trimRight());
   }
 
   void printWarn([String? reason = '', String indent = '']) {
-    printRaw("$indent🟡 $reason\n");
+    printLine("$indent🟡 ${reason ?? ''}".trimRight());
   }
 
   void printInfo([String? reason = '', String indent = '']) {
-    printRaw("$indent🔵 $reason\n");
+    printLine("$indent🔵 ${reason ?? ''}".trimRight());
   }
 
   void printCached() {
@@ -59,7 +54,7 @@ class Logger {
 
   bool Function(bool success, [String? reason]) printFixed(String message,
       [String indent = '']) {
-    final visLen = message.replaceAll(_ansiPattern, '').length;
+    final visLen = message.strip().length;
     printRaw("$indent$message${_getPad(visLen + indent.length)}");
     return (bool success, [String? reason]) {
       if (success) {

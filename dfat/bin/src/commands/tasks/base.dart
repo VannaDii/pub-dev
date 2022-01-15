@@ -7,14 +7,14 @@ import 'package:args/command_runner.dart';
 import 'package:path/path.dart' show basename;
 
 import '../base.dart';
-import '../../assets/all.dart';
 import '../../utils.dart';
-import '../../logger.dart';
+import '../../assets/all.dart';
 
 export '../base.dart';
 export '../../assets/all.dart';
 export '../../utils.dart';
 export '../../logger.dart';
+export 'package:tint/tint.dart';
 
 /// A task command meant to be sequenced by other commands
 abstract class TaskCommand extends Command<bool> {
@@ -33,19 +33,32 @@ abstract class TaskCommand extends Command<bool> {
   String? get userDir =>
       Platform.environment['HOME'] ?? Platform.environment['USERPROFILE'];
 
+  /// Get the root directory from the `root` arg, or [Directory.current] if not present.
+  String get rootDir =>
+      args.containsKey('root') ? args['root'] : Directory.current.path;
+
+  /// Get the target directory from the `target` arg, or [rootDir] if not present.
+  String get targetDir => args.containsKey('target') ? args['target'] : rootDir;
+
   @override
   final DfatCommand parent;
 
+  /// Gets the arguments available to this task from the parent command.
   Map<String, dynamic> get args => _args;
   Map<String, dynamic> _args = const {};
 
-  FutureOr<bool>? runWith([Map<String, dynamic> args = const {}]) {
-    _args = args;
+  /// Runs this task with the given [args], or the [parent] args if none are provided.
+  FutureOr<bool>? runWith([Map<String, dynamic>? args]) {
+    final pArgs = parent.argResults!;
+    _args = args ??
+        Map<String, dynamic>.fromEntries(pArgs.options
+            .map<MapEntry<String, dynamic>>((e) => MapEntry(e, pArgs[e])));
     return run();
   }
 }
 
 /// Describes a task's execution requirements
+@immutable
 class TaskRequirements {
   const TaskRequirements({this.tools = const [], this.files = const []});
 

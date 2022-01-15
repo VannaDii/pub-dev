@@ -2,10 +2,9 @@ import 'dart:io';
 
 import 'package:path/path.dart' as path;
 
-import 'base.dart';
-import '../logger.dart';
+import 'tasks/all.dart';
 
-class InstallCommand extends DfatRepairCommand {
+class InstallCommand extends DfatCommand {
   @override
   final name = "install";
 
@@ -28,19 +27,14 @@ class InstallCommand extends DfatRepairCommand {
   }
 
   @override
-  bool run() {
+  Future<bool> run() async {
     logger.header("Install");
-
-    bool result = true;
-    final args = argResults!;
-    final String rootDir = getFinalDir(args['root']);
-
-    if (result) result = writeDockerFiles(rootDir);
-    if (result) result = writeSchemaFiles(rootDir);
-    if (result) result = updateSchemaReferences(rootDir);
-
+    useSequence([
+      InstallDfatFilesTask(this, logger),
+      UpdateSchemasTask(this, logger),
+    ]);
+    final result = await runSequence();
     logger.footer("Install");
-
     return result;
   }
 }

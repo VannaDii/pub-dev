@@ -27,13 +27,11 @@ class DockerRunTask extends TaskCommand {
 
   @override
   Future<bool> run() async {
-    final blockCloser = logger.header('Docker Run');
     final rootDir = Directory.current.path;
     final imageName = "${path.basename(rootDir)}-builder";
 
     bool hasImage = Utils.dockerImageExists(imageName);
-    logger.printFixed(
-        "🚢 Using docker image ${imageName.green()}", inRs)(hasImage);
+    logger.printFixed("🐳 Running in ${imageName.green()}".bold())(hasImage);
 
     final args = [
       'run',
@@ -53,6 +51,6 @@ class DockerRunTask extends TaskCommand {
         workingDirectory: rootDir, mode: ProcessStartMode.inheritStdio);
     final result = await process.exitCode == 0;
 
-    return blockCloser(result);
+    return result;
   }
 }

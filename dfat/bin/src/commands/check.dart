@@ -4,7 +4,7 @@ import 'package:path/path.dart' as path;
 
 import 'tasks/all.dart';
 
-class CheckCommand extends DfatRepairCommand {
+class CheckCommand extends DfatCommand {
   @override
   final name = "check";
 
@@ -13,10 +13,6 @@ class CheckCommand extends DfatRepairCommand {
 
   @override
   String get category => 'General';
-
-  @override
-  List<TaskCommand> get sequence =>
-      [CheckToolsTask(this, logger), CheckFSTask(this, logger)];
 
   CheckCommand(Logger logger) : super(logger: logger, tools: []) {
     var workDir = Directory.current.path;
@@ -36,14 +32,27 @@ class CheckCommand extends DfatRepairCommand {
       );
   }
 
+  final String inBl = '   ';
+
   @override
   Future<bool> run() async {
+    final blockCloser = logger.header('Checks');
+    useSequence([CheckToolsTask(this, logger), CheckFSTask(this, logger)]);
+
     final args = argResults!;
     final bool useFix = args['fix'];
 
     bool result = await runSequence({
       CheckFSTask.taskName: {'fix': useFix}
     });
-    return result;
+
+    if (!result) {
+      logger.printWarn(
+          'Some errors can be fixed automatically using the '
+          '${'dfat check --fix'.bold()}.',
+          inBl);
+    }
+
+    return blockCloser(result);
   }
 }

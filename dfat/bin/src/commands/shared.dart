@@ -1,10 +1,8 @@
 import 'dart:io';
 
-import 'package:tint/tint.dart';
 import 'package:path/path.dart' as path;
 
-import 'base.dart';
-import '../logger.dart';
+import 'tasks/all.dart';
 
 class SharedCommand extends DfatCommand {
   @override
@@ -29,40 +27,31 @@ class SharedCommand extends DfatCommand {
     );
   }
 
-  bool _buildRunnerClean(String rootDir) {
-    final dirName = path.basename(rootDir);
-    logger.printFixed('   🏃 Runner clean ${dirName.green()}');
-
-    final args = ['run', 'build_runner', 'clean'];
-    final result = Process.runSync('dart', args, workingDirectory: rootDir);
-
-    return handleProcessResult(result, logger, '    ');
-  }
-
-  bool _buildRunnerBuild(String rootDir) {
-    final dirName = path.basename(rootDir);
-    logger.printFixed('   🏃 Runner build ${dirName.green()}');
-
-    final args = ['run', 'build_runner', 'clean'];
-    final result = Process.runSync('dart', args, workingDirectory: rootDir);
-
-    return handleProcessResult(result, logger, '    ');
-  }
-
   @override
-  bool run() {
+  Future<bool> run() async {
     logger.header("Shared");
 
-    var result = true;
     final args = argResults!;
-    final rootDir = getFinalDir(args['root']);
-    final sharedDir = pathFromRoot(KnownPaths.shared, rootDir);
+    final rootDir = Utils.getFinalDir(args['root']);
+    final sharedDir = Utils.pathFromRoot(KnownPaths.shared, rootDir);
     final isNoCacheSet = Platform.environment.containsKey('NO_CACHE');
+    useSequence([
+      CleanDirTask(this, logger),
+      PubGetTask(this, logger),
+      ...(isNoCacheSet
+          ? [
+              BuildRunnerCleanTask(this, logger),
+              BuildRunnerBuildTask(this, logger)
+            ]
+          : [BuildRunnerBuildTask(this, logger)])
+    ]);
 
-    if (result) result = cleanDir(sharedDir, logger, '   ');
-    if (result) result = pubGet(sharedDir, logger, '   ');
-    if (result && isNoCacheSet) result = _buildRunnerClean(sharedDir);
-    if (result) result = _buildRunnerBuild(sharedDir);
+    final result = await runSequence({
+      PubGetTask.taskName: {'target': sharedDir},
+      CleanDirTask.taskName: {'target': sharedDir},
+      BuildRunnerCleanTask.taskName: {'target': sharedDir},
+      BuildRunnerBuildTask.taskName: {'target': sharedDir},
+    });
 
     logger.footer("Shared");
 
