@@ -8,7 +8,6 @@ on:
 jobs:
   geography:
     name: 🌍 Geography
-    needs: changes
     if: ${{ github.ref_type == 'tag' && endsWith(github.ref_name, '-geography') }}
     runs-on: ubuntu-latest
 
@@ -23,7 +22,6 @@ jobs:
 
   cobertura:
     name: ⛱ Cobertura
-    needs: changes
     if: ${{ github.ref_type == 'tag' && endsWith(github.ref_name, '-cobertura') }}
     runs-on: ubuntu-latest
 
@@ -38,7 +36,6 @@ jobs:
 
   dfat:
     name: 🤖 dfat
-    needs: changes
     if: ${{ github.ref_type == 'tag' && endsWith(github.ref_name, '-dfat') }}
     runs-on: ubuntu-latest
 
