@@ -1,9 +1,11 @@
+import 'dart:collection';
 import 'dart:io';
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:json_schema2/json_schema2.dart';
+import 'package:yaml/yaml.dart';
 import 'package:path/path.dart' as path;
+import 'package:json_schema2/json_schema2.dart';
 
 import 'enums.dart';
 import 'logger.dart';
@@ -192,6 +194,7 @@ class Utils {
     return true;
   }
 
+  /// Gets the value of [key] from the `iac.json` file in the [targetDir].
   static String? getIaCValue(String targetDir, String key) {
     final targetFile = File(path.join(targetDir, 'iac.json'));
     if (!targetFile.existsSync()) {
@@ -201,6 +204,34 @@ class Utils {
     final jsonData = targetFile.readAsStringSync();
     final Map<String, dynamic> iacMap = jsonDecode(jsonData);
     return iacMap.containsKey(key) ? iacMap[key] : null;
+  }
+
+  /// Gets the value of [key] from the `pubspec.yaml` file in the [targetDir].
+  static String? getPubSpecValue(String targetDir, String key) {
+    final targetFile = File(path.join(targetDir, 'pubspec.yaml'));
+    if (!targetFile.existsSync()) {
+      throw FileSystemException('File not found', targetFile.path);
+    }
+
+    final yamlPath = Queue<String>.from(key.split('.'));
+    final pubspec = loadYaml(targetFile.readAsStringSync());
+
+    var node = pubspec;
+    while (yamlPath.isNotEmpty) {
+      dynamic part = yamlPath.removeFirst();
+      if (RegExps.numberTest.hasMatch(part)) {
+        part = int.parse(part);
+      }
+      try {
+        final next = node[part];
+        node = next;
+      } catch (_) {
+        node = null;
+        break;
+      }
+    }
+
+    return node;
   }
 }
 
@@ -221,4 +252,10 @@ class FileParsers {
 class RegExps {
   /// The pattern `^.*/iac.json$`
   static final RegExp fileIaCJson = RegExp(r'^.*/iac.json$');
+
+  /// The pattern `^.*/pubspec.yaml$`
+  static final RegExp filePubSpecYaml = RegExp(r'^.*/pubspec.yaml$');
+
+  /// The pattern `^.*/pubspec.yaml$`
+  static final RegExp numberTest = RegExp(r'^\d+$');
 }

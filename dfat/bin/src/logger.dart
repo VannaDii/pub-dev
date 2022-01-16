@@ -6,6 +6,8 @@ import 'log_pipe.dart';
 
 typedef MatchedClosure = T Function<T>(T result);
 
+typedef SuccessClosure = bool Function(bool success, [String? reason]);
+
 class Logger {
   final _padding = "....................................................";
   _getPad(int length) {
@@ -52,8 +54,7 @@ class Logger {
     printRaw("🏁 Finished ${(tag ?? '').green()}\n");
   }
 
-  bool Function(bool success, [String? reason]) printFixed(String message,
-      [String indent = '']) {
+  SuccessClosure printFixed(String message, [String indent = '']) {
     final visLen = message.strip().length;
     printRaw("$indent$message${_getPad(visLen + indent.length)}");
     return (bool success, [String? reason]) {
@@ -80,14 +81,14 @@ class Logger {
         message.trim().split('\n').map((s) => s.trim()).join('\n$indent'));
   }
 
-  bool Function(bool success) printBlock(String message, [String indent = '']) {
+  SuccessClosure printBlock(String message, [String indent = '']) {
     print("$indent${message.trim()} =>");
-    return (bool success) {
+    return (bool success, [String? reason]) {
       printFixed("$indent${message.trim()}");
       if (success) {
         printDone();
       } else {
-        printFailed();
+        printFailed(reason, indent);
       }
       return success;
     };

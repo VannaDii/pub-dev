@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:path/path.dart' as path;
 
+import 'all.dart';
 import 'tasks/all.dart';
 
 class SharedCommand extends DfatCommand {
@@ -38,6 +39,7 @@ class SharedCommand extends DfatCommand {
     useSequence([
       CleanDirTask(this, logger),
       PubGetTask(this, logger),
+      DartTestTask(this, logger),
       ...(isNoCacheSet
           ? [
               BuildRunnerCleanTask(this, logger),
@@ -49,6 +51,7 @@ class SharedCommand extends DfatCommand {
     final result = await runSequence({
       PubGetTask.taskName: {'target': sharedDir},
       CleanDirTask.taskName: {'target': sharedDir},
+      DartTestTask.taskName: {'target': sharedDir},
       BuildRunnerCleanTask.taskName: {'target': sharedDir},
       BuildRunnerBuildTask.taskName: {'target': sharedDir},
     });

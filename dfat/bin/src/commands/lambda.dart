@@ -45,6 +45,7 @@ class LambdaCommand extends DfatCommand {
     useSequence([
       CleanDirTask(this, logger),
       PubGetTask(this, logger),
+      DartTestTask(this, logger),
       DartCompileTask(this, logger),
       ZipArchiveTask(this, logger)
     ]);
@@ -61,6 +62,7 @@ class LambdaCommand extends DfatCommand {
       result = await runSequence({
         CleanDirTask.taskName: {'target': lambdaDir, 'indent': subInd},
         PubGetTask.taskName: {'target': lambdaDir, 'indent': subInd},
+        DartTestTask.taskName: {'target': lambdaDir, 'indent': subInd},
         DartCompileTask.taskName: {'target': lambdaDir, 'indent': subInd},
         ZipArchiveTask.taskName: {
           'input': zipInput,

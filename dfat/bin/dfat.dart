@@ -9,6 +9,7 @@ void main(List<String> args) async {
     final runner = CommandRunner<bool>("dfat",
         "Operations and utilities for the DFAT (Dart, Flutter, AWS, Terraform) solution templates.",
         usageLineLength: 120)
+      ..addCommand(TestCommand(logger))
       ..addCommand(BuildCommand(logger))
       ..addCommand(CheckCommand(logger))
       ..addCommand(SharedCommand(logger))

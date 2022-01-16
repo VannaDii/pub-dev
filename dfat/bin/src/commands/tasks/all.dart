@@ -5,6 +5,7 @@ export 'check_fs.dart';
 export 'check_tools.dart';
 export 'clean_dir.dart';
 export 'dart_compile.dart';
+export 'dart_test.dart';
 export 'docker_build.dart';
 export 'docker_run.dart';
 export 'install_dfat_files.dart';
