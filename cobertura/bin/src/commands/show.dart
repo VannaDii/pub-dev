@@ -19,8 +19,6 @@ class ShowCommand extends Command {
   @override
   final description = "Writes a console formatted report from LCOV to stdout";
 
-  bool _noColor = false;
-
   String _wH(String message) {
     if (_noColor) return message;
     return message.bold().brightWhite();
@@ -59,12 +57,38 @@ class ShowCommand extends Command {
         defaultsTo: relative(join(coverageDir, 'lcov.info'), from: workDir),
         help: "The input file to display.",
       )
-      ..addFlag("no-color",
-          abbr: 'c',
-          negatable: false,
-          defaultsTo: false,
-          help: "Disable colorization of console output.");
+      ..addFlag(
+        "no-color",
+        abbr: 'c',
+        negatable: false,
+        defaultsTo: false,
+        help: "Disable colorization of console output.",
+      )
+      ..addFlag(
+        "value-only",
+        abbr: 'v',
+        negatable: false,
+        defaultsTo: false,
+        help: "Calculates and prints the total coverage value only. "
+            "Overrides with badge-only.",
+      )
+      ..addFlag(
+        "badge-only",
+        abbr: 'b',
+        negatable: false,
+        defaultsTo: false,
+        help: "Calculates and prints the total coverage value only as a badge. "
+            "Conflicts with value-only.",
+      );
   }
+
+  String get _input => argResults?['input'];
+
+  bool get _noColor => argResults?['no-color'];
+
+  bool get _valueOnly => argResults?['value-only'];
+
+  bool get _badgeOnly => argResults?['badge-only'];
 
   String _pad(Object value, [int amount = 8, PadStyle where = PadStyle.right]) {
     var stringValue = value is String ? value : value.toString();
@@ -131,7 +155,7 @@ class ShowCommand extends Command {
     print(_dD(''.padRight(col0len + (8 * 4.25).round(), '-')));
   }
 
-  void _printBadge(Iterable<Record> records) {
+  Future<void> _printBadge(Iterable<Record> records) async {
     if (_noColor) return;
 
     var value = (_avg<Record>(records, (p, c) => p + c.coverage) * 100).round();
@@ -140,20 +164,26 @@ class ShowCommand extends Command {
         : value < 70
             ? BadgeTheme.yellow
             : BadgeTheme.green;
-    var badge =
-        Badge(label: 'covered', message: value.toString(), theme: theme);
+    var badge = Badge(label: 'covered', message: '$value%', theme: theme);
 
     var badger = Badge.inline([badge]);
 
     print(badger);
+    await stdout.flush();
+  }
+
+  Future<void> _printTotalValue(Iterable<Record> records) async {
+    if (_noColor) return;
+
+    var value = (_avg<Record>(records, (p, c) => p + c.coverage) * 100).round();
+
+    print(value);
+    await stdout.flush();
   }
 
   @override
-  void run() {
-    var args = argResults!;
-    _noColor = (args['no-color'] == true);
-
-    var inputFilePath = normalize(absolute(args['input']));
+  void run() async {
+    var inputFilePath = normalize(absolute(_input));
     var results = parseLcov(filePath: inputFilePath);
     var records = results.records;
     var rootPath = _root(records.map((p) => p.file));
@@ -161,6 +191,16 @@ class ShowCommand extends Command {
       records = records
           .map((r) => r.update(file: relative(r.file, from: rootPath)))
           .toList();
+    }
+
+    if (_valueOnly) {
+      await _printTotalValue(records);
+      exit(0);
+    }
+
+    if (_badgeOnly) {
+      await _printBadge(records);
+      exit(0);
     }
 
     var col0len = records.fold<int>(0, (p, c) => max(p, c.file.length)) + 4;

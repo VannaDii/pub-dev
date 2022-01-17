@@ -1,3 +1,9 @@
+## 1.0.3
+
+- Adds to `show`
+  - `--value-only` - print total coverage percent and exit
+  - `--badge-only` - print total coverage badge and exit
+
 ## 1.0.2
 
 - Adds example.md
