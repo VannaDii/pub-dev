@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:tint/tint.dart';
 import 'package:path/path.dart' as path;
 
 import 'base.dart';

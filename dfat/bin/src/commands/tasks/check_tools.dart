@@ -1,5 +1,3 @@
-import 'package:tint/tint.dart';
-
 import 'base.dart';
 
 class CheckToolsTask extends TaskCommand {

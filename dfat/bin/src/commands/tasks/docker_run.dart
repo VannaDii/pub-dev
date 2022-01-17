@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:tint/tint.dart';
 import 'package:path/path.dart' as path;
 
 import 'base.dart';
@@ -31,7 +30,7 @@ class DockerRunTask extends TaskCommand {
     final imageName = "${path.basename(rootDir)}-builder";
 
     bool hasImage = Utils.dockerImageExists(imageName);
-    logger.printFixed("🐳 Running in ${imageName.green()}".bold())(hasImage);
+    logger.printFixed("\n🐳 Running in ${imageName.green()}".bold())(hasImage);
 
     final args = [
       'run',

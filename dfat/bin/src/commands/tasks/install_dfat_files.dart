@@ -43,7 +43,7 @@ class InstallDfatFilesTask extends TaskCommand {
     final closer = logger.printFixed('📝 Writing docker files', inRs);
 
     try {
-      Assets.dockerAmznL2.writeTo();
+      Assets.dockerAmznL2.writeTo(noClobber: true);
       Assets.dockerRunScript.writeTo(chmod: '+x');
     } on FileSystemException catch (e) {
       result = false;
