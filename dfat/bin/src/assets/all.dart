@@ -38,10 +38,15 @@ class AssetString {
     return AssetString._privateConstructor(content, targetPath);
   }
 
-  /// Write the asset content to the specified [file], or the [targetPath] if null.
-  bool writeTo({File? file, String? chmod}) {
+  /// Write the asset content to the specified [file], or the [targetPath] if
+  /// null, optionally setting permissions specified in [chmod]. If the file
+  /// exists and [noClobber] is `true`, specified permissions will still be set
+  /// but the file won't be overwritten.
+  bool writeTo({File? file, String? chmod, bool noClobber = false}) {
     final safeFile = file ?? File(targetPath);
-    safeFile.writeAsStringSync(_contents);
+    if (!noClobber || !safeFile.existsSync()) {
+      safeFile.writeAsStringSync(_contents);
+    }
     if (chmod != null) {
       Utils.chmod(chmod, safeFile.path);
     }
