@@ -15,11 +15,6 @@ class DockerCommand extends DfatCommand {
   @override
   String get category => 'Granular';
 
-  @override
-  List<TaskCommand> get sequence =>
-      _sequence ?? [DockerBuildTask(this, logger), DockerRunTask(this, logger)];
-  List<TaskCommand>? _sequence;
-
   DockerCommand(Logger logger)
       : super(logger: logger, tools: Utils.isInDocker ? [] : ['docker']) {
     var workDir = Directory.current.path;
@@ -53,6 +48,12 @@ class DockerCommand extends DfatCommand {
   }
 
   @override
+  List<TaskCommand> revealTasks() => [
+        DockerBuildTask(this, logger),
+        DockerRunTask(this, logger),
+      ];
+
+  @override
   Future<bool> run() async {
     final args = argResults!;
     final bool useForce = args['force'];
@@ -61,14 +62,15 @@ class DockerCommand extends DfatCommand {
     final String imageNameFallback = "${path.basename(rootDir)}-builder";
     final String imageName = args['name'] ?? imageNameFallback;
 
-    _sequence = [];
+    var _sequence = <TaskCommand>[];
     bool hasImage = Utils.dockerImageExists(imageName);
     if (!hasImage || buildOnly || useForce) {
-      _sequence!.add(DockerBuildTask(this, logger));
+      _sequence.add(DockerBuildTask(this, logger));
     }
     if (!buildOnly) {
-      _sequence!.add(DockerRunTask(this, logger));
+      _sequence.add(DockerRunTask(this, logger));
     }
+    useSequence(_sequence);
     bool result = await runSequence({
       DockerRunTask.taskName: {'name': imageName},
       DockerBuildTask.taskName: {'name': imageName},

@@ -14,8 +14,8 @@ class Logger {
     return length > _padding.length ? '' : _padding.substring(length);
   }
 
-  void printDone() {
-    printRaw("✅\n");
+  void printDone([String message = '']) {
+    printRaw("✅${message.isEmpty ? '' : ' $message'}\n");
   }
 
   void printFailed([String? reason = '', String indent = '']) {
@@ -77,8 +77,9 @@ class Logger {
 
   void printPassThru(String message, [String indent = '']) {
     if (message.isEmpty) return;
+    final lfp = RegExp(r'\n|\r');
     print(indent +
-        message.trim().split('\n').map((s) => s.trim()).join('\n$indent'));
+        message.trim().split(lfp).map((s) => s.trim()).join('\n$indent'));
   }
 
   SuccessClosure printBlock(String message, [String indent = '']) {

@@ -6,7 +6,18 @@ import 'base.dart';
 
 class DartTestTask extends TaskCommand {
   DartTestTask(DfatCommand parent, Logger logger)
-      : super(parent, logger, TaskRequirements());
+      : super(
+            parent,
+            logger,
+            TaskRequirements(
+              tools: [
+                'dart',
+                'collect_coverage',
+                'format_coverage',
+                'cobertura',
+                'genhtml'
+              ],
+            ));
 
   static String taskName = 'dart-test';
 
@@ -17,6 +28,95 @@ class DartTestTask extends TaskCommand {
   String get description => 'Uses `dart run` to run tests.';
 
   final inRs = '   ';
+
+  bool _runTests(bool useCoverage, String dirPath, String relOutPath) {
+    final usesCover = useCoverage && Utils.isCommand('collect_coverage');
+
+    final List<String> dartArgs = [
+      'run',
+      'test',
+      '--chain-stack-traces',
+      ...(usesCover ? ['--coverage=coverage'] : []),
+    ];
+    final tRes = Process.runSync('dart', dartArgs, workingDirectory: dirPath);
+
+    return Utils.handleProcessResult(tRes, logger, inRs + inRs);
+  }
+
+  bool _formatLcov(
+    bool useCoverage,
+    String baseName,
+    String ind,
+    String dirPath,
+  ) {
+    final usesCover = useCoverage && Utils.isCommand('format_coverage');
+
+    // Early bail-out if there's nothing we can do here
+    if (!usesCover) return true;
+
+    logger.printFixed('🧪 Formatting ${baseName.green()} coverage', ind);
+    final List<String> formatArgs = [
+      '--packages=.packages',
+      '--base-directory=${path.normalize(dirPath)}',
+      '--report-on=lib',
+      '--lcov',
+      '-o',
+      'coverage/lcov.info',
+      '-i',
+      'coverage',
+    ];
+    final fRes = Process.runSync(
+      'format_coverage',
+      formatArgs,
+      workingDirectory: dirPath,
+    );
+    return Utils.handleProcessResult(
+      fRes,
+      logger,
+      inRs + inRs,
+      null,
+      _makeBadge(dirPath).trim(),
+    );
+  }
+
+  bool _formatHtml(
+      bool useCoverage, String baseName, String ind, String dirPath) {
+    // Early bail-out if there's nothing we can do here
+    final hasGenHtml = Utils.isCommand('genhtml');
+    if (hasGenHtml) {
+      logger.printFixed('🧪 Marking up ${baseName.green()} coverage', ind);
+      final List<String> markupArgs = [
+        '-o',
+        './coverage/report',
+        './coverage/lcov.info',
+      ];
+      final gRes =
+          Process.runSync('genhtml', markupArgs, workingDirectory: dirPath);
+      return Utils.handleProcessResult(
+        gRes,
+        logger,
+        inRs + inRs,
+        null,
+        './$baseName/coverage/report/index.html',
+      );
+    }
+    return true;
+  }
+
+  String _makeBadge(String dirPath) {
+    final List<String> badgeArgs = [
+      'pub',
+      'global',
+      'run',
+      'cobertura',
+      'show',
+      '-b',
+      '-i',
+      './coverage/lcov.info',
+    ];
+    final bRes = Process.runSync('dart', badgeArgs, workingDirectory: dirPath);
+    return bRes.stdout;
+  }
 
   @override
   Future<bool> run() async {
@@ -44,23 +144,10 @@ class DartTestTask extends TaskCommand {
     final useCoverage = args['coverage'] ?? true;
     final relOutPath = '.dist/$outputName';
 
-    final usesCover = useCoverage &&
-        (Utils.getPubSpecValue(targetDir, 'dev_dependencies.coverage') ??
-                Utils.getPubSpecValue(targetDir, 'dependencies.coverage')) !=
-            null;
+    bool result = _runTests(useCoverage, dirPath, relOutPath);
+    if (result) result = _formatLcov(useCoverage, baseName, ind, dirPath);
+    if (result) result = _formatHtml(useCoverage, baseName, ind, dirPath);
 
-    final List<String> dartArgs = [
-      'run',
-      'test',
-      '--chain-stack-traces',
-      ...(usesCover ? ['--coverage="coverage"'] : []),
-    ];
-    final pRes = Process.runSync('dart', dartArgs, workingDirectory: dirPath);
-
-    return Utils.handleProcessResult(pRes, logger, '          ', (code) {
-      final outputFile = File(relOutPath);
-      final success = code == 0 && outputFile.existsSync();
-      if (success) Utils.chmod('+x', relOutPath);
-    });
+    return result;
   }
 }

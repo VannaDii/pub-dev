@@ -35,6 +35,12 @@ class CheckCommand extends DfatCommand {
   final String inBl = '   ';
 
   @override
+  List<TaskCommand> revealTasks() => [
+        CheckToolsTask(this, logger),
+        CheckFSTask(this, logger),
+      ];
+
+  @override
   Future<bool> run() async {
     final blockCloser = logger.header('Checks');
     useSequence([CheckToolsTask(this, logger), CheckFSTask(this, logger)]);

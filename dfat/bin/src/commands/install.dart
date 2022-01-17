@@ -27,6 +27,12 @@ class InstallCommand extends DfatCommand {
   }
 
   @override
+  List<TaskCommand> revealTasks() => [
+        InstallDfatFilesTask(this, logger),
+        UpdateSchemasTask(this, logger),
+      ];
+
+  @override
   Future<bool> run() async {
     logger.header("Install");
     useSequence([

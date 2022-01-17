@@ -159,9 +159,10 @@ class Utils {
     Logger logger, [
     String indent = '',
     ProcessFinalizer? finalizer,
+    String message = '',
   ]) {
     if (result.exitCode == 0) {
-      logger.printDone();
+      logger.printDone(message);
     } else {
       logger.printFailed('code ${result.exitCode}');
 

@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'dart:convert';
 
-import 'package:tint/tint.dart';
 import 'package:path/path.dart' as path;
 import 'package:collection/collection.dart';
 
@@ -17,6 +16,9 @@ class AggregateCommand extends DfatCommand {
 
   @override
   String get category => 'Granular';
+
+  @override
+  List<TaskCommand> revealTasks() => [];
 
   final _lambdaZipMatcher =
       RegExp(r"^.*/\.dist/.*\.zip$", caseSensitive: false, dotAll: true);

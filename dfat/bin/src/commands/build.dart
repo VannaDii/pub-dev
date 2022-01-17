@@ -15,15 +15,18 @@ class BuildCommand extends DfatCommand {
   String get category => 'General';
 
   @override
-  ArgParser get argParser => ArgParser(allowTrailingOptions: true);
+  ArgParser get argParser => ArgParser.allowAnything(); // Pass-thru to sequence
+
+  @override
+  List<TaskCommand> revealTasks() => [];
 
   BuildCommand(Logger logger) : super(logger: logger, tools: []);
 
   @override
   Future<bool> run() async {
     final runner = super.runner!;
-    final dockerSeq = ['docker'];
-    final buildSeq = ['check', 'validate', 'shared', 'lambda', 'aggregate'];
+    final dockerSeq = ['check', 'validate', 'shared', 'docker', 'aggregate'];
+    final buildSeq = ['check', 'lambda'];
     final execSeq = (Utils.isInDocker ? buildSeq : dockerSeq);
 
     final baseArgs = (argResults?.arguments ?? []).where((a) => a != name);

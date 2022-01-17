@@ -30,7 +30,7 @@ class DartCompileTask extends TaskCommand {
         '💪 Compiling ${baseName.green()} → ${outputName?.green()}', ind);
 
     if (!Directory(distPath).existsSync()) Directory(distPath).createSync();
-    final dartArgs = ['compile', 'exe', 'main.dart', '-o', relOutPath];
+    final dartArgs = ['compile', 'exe', 'lib/main.dart', '-o', relOutPath];
     final pRes = Process.runSync('dart', dartArgs, workingDirectory: dirPath);
 
     return Utils.handleProcessResult(pRes, logger, '          ', (code) {

@@ -1,5 +1,4 @@
 import 'package:args/command_runner.dart';
-import 'package:meta/meta.dart';
 
 import 'tasks/base.dart';
 export '../enums.dart';
@@ -9,16 +8,19 @@ typedef ArgsProvider = Map<String, dynamic>? Function(String taskName);
 abstract class DfatCommand extends Command<bool> {
   DfatCommand({required this.tools, required this.logger});
 
+  /// Private storage for the sequence
+  List<TaskCommand> _sequence = [];
+
   /// A logger instance
   final Logger logger;
 
   /// The external tools (commands and exes) required by the command
   final List<String> tools;
 
-  /// The sequence of tasks run by this command
-  @nonVirtual
-  List<TaskCommand> get sequence => _sequence;
-  List<TaskCommand> _sequence = [];
+  /// Reveals all tasks potentially used by the command.
+  List<TaskCommand> revealTasks();
+
+  /// Sets the sequence of tasks run by this command
   void useSequence(List<TaskCommand> sequence) {
     _sequence = sequence;
   }
@@ -28,12 +30,14 @@ abstract class DfatCommand extends Command<bool> {
       (runner?.commands.values ?? []).whereType<DfatCommand>().toList();
 
   /// All [tools] from this commands [sequence]
-  List<String> get allTools =>
-      [...tools, ...sequence.map((e) => e.requirements.tools).expand((e) => e)];
+  List<String> get allTools => [
+        ...tools,
+        ...revealTasks().map((e) => e.requirements.tools).expand((e) => e)
+      ];
 
   /// All [TaskRequirements.files] from this commands [sequence]
   List<FileRequirement> get allFsPaths =>
-      [...sequence.map((e) => e.requirements.files).expand((e) => e)];
+      [...revealTasks().map((e) => e.requirements.files).expand((e) => e)];
 
   /// A sorted, distinct list of [allTools] from [allCommands]
   List<String> get globalTools =>
@@ -50,7 +54,7 @@ abstract class DfatCommand extends Command<bool> {
       [Map<String, Map<String, dynamic>> args = const {}]) async {
     bool result = true;
     final _def = <String, dynamic>{};
-    for (var task in sequence) {
+    for (var task in _sequence) {
       if (!result) {
         break;
       } else {
@@ -65,7 +69,7 @@ abstract class DfatCommand extends Command<bool> {
   Future<bool> runSequenceSame(ArgsProvider provider) async {
     bool result = true;
     final _def = <String, dynamic>{};
-    for (var task in sequence) {
+    for (var task in _sequence) {
       if (!result) {
         break;
       } else {

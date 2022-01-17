@@ -1,7 +1,6 @@
 import 'dart:collection';
 import 'dart:io';
 
-import 'package:args/args.dart';
 import 'package:path/path.dart' as path;
 
 import 'tasks/all.dart';
@@ -29,7 +28,7 @@ class TestCommand extends DfatCommand {
       )
       ..addOption('style',
           abbr: 's',
-          allowed: ['gcov', 'lcov', 'cobertura'],
+          allowed: ['gcov', 'lcov'],
           defaultsTo: 'gcov',
           help: "If coverage is used, determines the output type.")
       ..addFlag(
@@ -39,6 +38,9 @@ class TestCommand extends DfatCommand {
         help: "Indicates if code coverage should be calculated or not.",
       );
   }
+
+  @override
+  List<TaskCommand> revealTasks() => [DartTestTask(this, logger)];
 
   @override
   Future<bool> run() async {

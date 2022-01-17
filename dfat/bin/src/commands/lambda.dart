@@ -26,6 +26,15 @@ class LambdaCommand extends DfatCommand {
   }
 
   @override
+  List<TaskCommand> revealTasks() => [
+        CleanDirTask(this, logger),
+        PubGetTask(this, logger),
+        DartTestTask(this, logger),
+        DartCompileTask(this, logger),
+        ZipArchiveTask(this, logger)
+      ];
+
+  @override
   Future<bool> run() async {
     final footer = logger.header("Lambdas");
 

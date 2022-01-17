@@ -27,6 +27,9 @@ class ValidateCommand extends DfatCommand {
   }
 
   @override
+  List<TaskCommand> revealTasks() => [ValidateJsonTask(this, logger)];
+
+  @override
   Future<bool> run() async {
     final footer = logger.header("Validate");
     useSequence([ValidateJsonTask(this, logger)]);
