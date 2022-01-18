@@ -154,6 +154,7 @@ class Utils {
     return path.normalize(finalPath);
   }
 
+  /// Handles the child process results and outputs
   static bool handleProcessResult(
     ProcessResult result,
     Logger logger, [
@@ -233,6 +234,43 @@ class Utils {
     }
 
     return node;
+  }
+
+  /// Checks the OS-reported CPU architecture and returns the appropriate
+  /// internal [CpuArch] value.
+  static CpuArch getCPUArch() {
+    String procType = '';
+    if (Platform.isMacOS) {
+      final result =
+          Process.runSync('sysctl', ['-in', 'sysctl.proc_translated']);
+      var isCompat = (int.tryParse(result.stdout.toString().trim()) ?? 0) == 1;
+      if (isCompat) {
+        return CpuArch.arm64v8;
+      }
+    } else if (Platform.isLinux || Platform.isMacOS && isCommand('uname')) {
+      final result = Process.runSync(
+        'uname',
+        ['-m'],
+        runInShell: true,
+        includeParentEnvironment: false,
+      );
+      procType = result.stdout.toString().trim().toLowerCase();
+    } else if (Platform.isWindows) {
+      // See: https://superuser.com/a/1441469/386643
+      procType = Platform.environment['PROCESSOR_ARCHITECTURE']!.toLowerCase();
+    }
+    print('Got CPU type $procType');
+    switch (procType) {
+      case 'x86':
+      case 'i386':
+      case 'amd64':
+      case 'x86_64':
+        return Platform.isWindows ? CpuArch.windowsAmd64 : CpuArch.amd64;
+      case 'arm64':
+      case 'aarch64':
+      default:
+        return CpuArch.arm64v8;
+    }
   }
 }
 
