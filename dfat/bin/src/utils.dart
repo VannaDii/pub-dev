@@ -259,7 +259,7 @@ class Utils {
       // See: https://superuser.com/a/1441469/386643
       procType = Platform.environment['PROCESSOR_ARCHITECTURE']!.toLowerCase();
     }
-    print('Got CPU type $procType');
+
     switch (procType) {
       case 'x86':
       case 'i386':
