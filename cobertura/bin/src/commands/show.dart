@@ -144,9 +144,17 @@ class ShowCommand extends Command {
     }
   }
 
+  double _calcTotal(Iterable<Record> records) {
+    final hits = records.fold<int>(0, (v, r) => v + r.lines.hit);
+    final found = records.fold<int>(0, (v, r) => v + r.lines.found);
+    final total = hits / found;
+    return total;
+  }
+
   void _printTotal(int col0len, List<Record> records) {
+    final total = _calcTotal(records);
     print(
-        "${_wH(_pad('Total', col0len))}${_pad(records.fold<int>(0, (p, c) => p + c.statements))}${_pad(records.fold<int>(0, (p, c) => p + c.misses))}${_wS((_avg<Record>(records, (p, c) => p + c.coverage) * 100), (v) => _pad("${v.toStringAsFixed(2)}%", 10))}${_pad(records.fold<double>(0, (p, c) => p + c.gap))}");
+        "${_wH(_pad('Total', col0len))}${_pad(records.fold<int>(0, (p, c) => p + c.statements))}${_pad(records.fold<int>(0, (p, c) => p + c.misses))}${_wS((total * 100), (v) => _pad("${v.toStringAsFixed(2)}%", 10))}${_pad(records.fold<double>(0, (p, c) => p + c.gap))}");
   }
 
   void _printDivider(int col0len) {
@@ -158,24 +166,24 @@ class ShowCommand extends Command {
   Future<void> _printBadge(Iterable<Record> records) async {
     if (_noColor) return;
 
-    var value = (_avg<Record>(records, (p, c) => p + c.coverage) * 100).round();
-    var theme = value <= 20
+    final total = _calcTotal(records);
+    final value = (total * 100).round();
+    final theme = value <= 20
         ? BadgeTheme.red
         : value < 70
             ? BadgeTheme.yellow
             : BadgeTheme.green;
-    var badge = Badge(label: 'covered', message: '$value%', theme: theme);
+    final badge = Badge(label: 'covered', message: '$value%', theme: theme);
 
-    var badger = Badge.inline([badge]);
+    final badger = Badge.inline([badge]);
 
     print(badger);
     await stdout.flush();
   }
 
   Future<void> _printTotalValue(Iterable<Record> records) async {
-    if (_noColor) return;
-
-    var value = (_avg<Record>(records, (p, c) => p + c.coverage) * 100).round();
+    final total = _calcTotal(records);
+    final value = (total * 100).round();
 
     print(value);
     await stdout.flush();
