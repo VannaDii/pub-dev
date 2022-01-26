@@ -1,7 +1,3 @@
-import 'dart:io';
-
-import 'package:path/path.dart' as path;
-
 import 'tasks/all.dart';
 
 class CheckCommand extends DfatCommand {
@@ -15,21 +11,12 @@ class CheckCommand extends DfatCommand {
   String get category => 'General';
 
   CheckCommand(Logger logger) : super(logger: logger, tools: []) {
-    var workDir = Directory.current.path;
-
-    argParser
-      ..addOption(
-        'root',
-        abbr: 'r',
-        defaultsTo: path.relative(workDir, from: workDir),
-        help: "The root path to process. Should be your workspace root.",
-      )
-      ..addFlag(
-        'fix',
-        negatable: false,
-        defaultsTo: false,
-        help: "When set, creates missing folders.",
-      );
+    argParser.addFlag(
+      'fix',
+      negatable: false,
+      defaultsTo: false,
+      help: "When set, creates missing folders.",
+    );
   }
 
   final String inBl = '   ';
@@ -42,8 +29,11 @@ class CheckCommand extends DfatCommand {
 
   @override
   Future<bool> run() async {
-    final blockCloser = logger.header('Checks');
-    useSequence([CheckToolsTask(this, logger), CheckFSTask(this, logger)]);
+    final blockLogger = logger.headerBlock('Checks');
+    useSequence([
+      CheckToolsTask(this, blockLogger),
+      CheckFSTask(this, blockLogger),
+    ]);
 
     final args = argResults!;
     final bool useFix = args['fix'];
@@ -59,6 +49,6 @@ class CheckCommand extends DfatCommand {
           inBl);
     }
 
-    return blockCloser(result);
+    return blockLogger.close(result);
   }
 }

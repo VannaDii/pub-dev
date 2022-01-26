@@ -8,14 +8,48 @@ typedef MatchedClosure = T Function<T>(T result);
 
 typedef SuccessClosure = bool Function(bool success, [String? reason]);
 
+class BlockLogger extends Logger {
+  BlockLogger(this.message);
+
+  String? memo;
+  int _linesPrinted = 0;
+
+  final String message;
+
+  bool close(bool result) {
+    if (result) {
+      for (var i = -1; i < _linesPrinted; i++) {
+        stdout.write('\x1B[0K\x1B[1A\x1B[0K');
+      }
+    }
+    return super.printFixed(message)(result, memo);
+  }
+
+  @override
+  String useMemo(String message) {
+    memo = message;
+    return memo!;
+  }
+
+  @override
+  void printLine([String message = '']) {
+    _linesPrinted++;
+    super.printLine(message);
+  }
+}
+
 class Logger {
   final _padding = "....................................................";
   _getPad(int length) {
     return length > _padding.length ? '' : _padding.substring(length);
   }
 
-  void printDone([String message = '']) {
-    printRaw("✅${message.isEmpty ? '' : ' $message'}\n");
+  String useMemo(String message) {
+    throw UnimplementedError('only supported in BlockLogger');
+  }
+
+  void printDone([String? message = '']) {
+    printLine("✅${message == null || message.isEmpty ? '' : ' $message'}");
   }
 
   void printFailed([String? reason = '', String indent = '']) {
@@ -31,23 +65,29 @@ class Logger {
   }
 
   void printCached() {
-    printRaw("🪣 (cached)\n");
+    printLine("🪣 (cached)");
   }
 
   void printSkipped([String? reason = '']) {
-    printRaw("🔪 (skipped) $reason\n");
+    printLine("🔪 (skipped) $reason");
   }
 
   void printEnd([String? tag]) {
-    printRaw("$tag\n");
+    printLine("$tag");
   }
 
   MatchedClosure header([String? tag]) {
-    printRaw("\n🤖 Processing ${(tag ?? '').green()}\n");
+    printRaw("🤖 Processing ${(tag ?? '').green()}\n");
     return <T>(result) {
       footer(tag);
       return result;
     };
+  }
+
+  BlockLogger headerBlock([String? tag]) {
+    final message = "🤖 Processing ${(tag ?? '').green()}";
+    printRaw("$message\n");
+    return BlockLogger(message);
   }
 
   void footer([String? tag]) {
@@ -59,7 +99,7 @@ class Logger {
     printRaw("$indent$message${_getPad(visLen + indent.length)}");
     return (bool success, [String? reason]) {
       if (success) {
-        printDone();
+        printDone(reason);
       } else {
         printFailed(reason);
       }
@@ -68,7 +108,7 @@ class Logger {
   }
 
   void printLine([String message = '']) {
-    stdout.write("$message\n");
+    printRaw("$message\n");
   }
 
   void printRaw(String message) {
@@ -78,12 +118,13 @@ class Logger {
   void printPassThru(String message, [String indent = '']) {
     if (message.isEmpty) return;
     final lfp = RegExp(r'\n|\r');
-    print(indent +
+    printLine(indent +
         message.trim().split(lfp).map((s) => s.trim()).join('\n$indent'));
   }
 
   SuccessClosure printBlock(String message, [String indent = '']) {
-    print("$indent${message.trim()} =>");
+    final baseMessage = "$indent${message.trim()}";
+    printLine("$baseMessage =>");
     return (bool success, [String? reason]) {
       printFixed("$indent${message.trim()}");
       if (success) {
@@ -93,6 +134,12 @@ class Logger {
       }
       return success;
     };
+  }
+
+  BlockLogger collapsibleBlock(String message, [String indent = '']) {
+    final baseMessage = "$indent${message.trim()}";
+    printLine("$baseMessage =>");
+    return BlockLogger(baseMessage);
   }
 
   LogPipe getPipe([String indent = '']) {

@@ -9,8 +9,8 @@ class DockerCommand extends DfatCommand {
   final name = "docker";
 
   @override
-  final description =
-      "Runs a build in a DFAT docker image, building the image first if needed.";
+  final description = "Runs a build in a DFAT docker image,"
+      "building the image first if needed.";
 
   @override
   String get category => 'Granular';
@@ -22,16 +22,10 @@ class DockerCommand extends DfatCommand {
 
     argParser
       ..addOption(
-        'root',
-        abbr: 'r',
-        defaultsTo: path.relative(workDir, from: workDir),
-        help: "The root path to process. Should be your workspace root.",
-      )
-      ..addOption(
         'name',
         abbr: 'n',
-        help:
-            "The name of the docker builder image. Defaults to your workspace root directory name ($imageName).",
+        help: "The name of the docker builder image. Defaults to your workspace"
+            "root directory name ($imageName).",
       )
       ..addFlag(
         'build-only',
@@ -58,7 +52,6 @@ class DockerCommand extends DfatCommand {
     final args = argResults!;
     final bool useForce = args['force'];
     final bool buildOnly = args['build-only'];
-    final String rootDir = Utils.getFinalDir(args['root']);
     final String imageNameFallback = "${path.basename(rootDir)}-builder";
     final String imageName = args['name'] ?? imageNameFallback;
 

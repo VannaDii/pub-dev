@@ -1,3 +1,6 @@
+import 'dart:io';
+import 'package:path/path.dart' as path;
+
 import 'package:args/command_runner.dart';
 
 import 'tasks/base.dart';
@@ -6,7 +9,20 @@ export '../enums.dart';
 typedef ArgsProvider = Map<String, dynamic>? Function(String taskName);
 
 abstract class DfatCommand extends Command<bool> {
-  DfatCommand({required this.tools, required this.logger});
+  DfatCommand({required this.tools, required this.logger}) {
+    var workDir = Directory.current.path;
+    if (!argParser.allowsAnything) {
+      argParser.addOption(
+        'root',
+        abbr: 'r',
+        defaultsTo: path.relative(workDir, from: workDir),
+        help: "The root path to process. Should be your workspace root.",
+      );
+    }
+  }
+
+  /// Gets the normalized active root directory for the command
+  String get rootDir => Utils.getFinalDir(argResults!['root']);
 
   /// Private storage for the sequence
   List<TaskCommand> _sequence = [];

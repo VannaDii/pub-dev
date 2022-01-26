@@ -1,7 +1,3 @@
-import 'dart:io';
-
-import 'package:path/path.dart' as path;
-
 import 'tasks/all.dart';
 
 class InstallCommand extends DfatCommand {
@@ -15,16 +11,7 @@ class InstallCommand extends DfatCommand {
   @override
   String get category => 'General';
 
-  InstallCommand(Logger logger) : super(logger: logger, tools: []) {
-    var workDir = Directory.current.path;
-
-    argParser.addOption(
-      'root',
-      abbr: 'r',
-      defaultsTo: path.relative(workDir, from: workDir),
-      help: "The root path to process. Should be your workspace root.",
-    );
-  }
+  InstallCommand(Logger logger) : super(logger: logger, tools: []);
 
   @override
   List<TaskCommand> revealTasks() => [
@@ -34,13 +21,13 @@ class InstallCommand extends DfatCommand {
 
   @override
   Future<bool> run() async {
-    logger.header("Install");
+    final blockLogger = logger.headerBlock("Install");
     useSequence([
-      InstallDfatFilesTask(this, logger),
-      UpdateSchemasTask(this, logger),
+      InstallDfatFilesTask(this, blockLogger),
+      UpdateSchemasTask(this, blockLogger),
     ]);
     final result = await runSequence();
-    logger.footer("Install");
-    return result;
+
+    return blockLogger.close(result);
   }
 }

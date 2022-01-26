@@ -17,15 +17,7 @@ class TestCommand extends DfatCommand {
   String get category => 'General';
 
   TestCommand(Logger logger) : super(logger: logger, tools: []) {
-    var workDir = Directory.current.path;
-
     argParser
-      ..addOption(
-        'root',
-        abbr: 'r',
-        defaultsTo: path.relative(workDir, from: workDir),
-        help: "The root path to process. Should be your workspace root.",
-      )
       ..addOption('style',
           abbr: 's',
           allowed: ['gcov', 'lcov'],
@@ -44,7 +36,7 @@ class TestCommand extends DfatCommand {
 
   @override
   Future<bool> run() async {
-    final closer = logger.header("Test");
+    final blockLogger = logger.headerBlock("Test");
     final covStyle = argResults!['style'];
     final wantsCoverage = argResults!['coverage'];
     final targets = Queue<String>.from(
@@ -55,7 +47,7 @@ class TestCommand extends DfatCommand {
                     e.parent.parent.path.endsWith('lambdas'))
                 .map((e) => e.parent.path)
                 .toList()));
-    useSequence(targets.map((e) => DartTestTask(this, logger)).toList());
+    useSequence(targets.map((e) => DartTestTask(this, blockLogger)).toList());
     final result = await runSequenceSame((taskName) {
       return {
         'style': covStyle,
@@ -63,6 +55,7 @@ class TestCommand extends DfatCommand {
         'coverage': wantsCoverage,
       };
     });
-    return closer(result);
+
+    return blockLogger.close(result);
   }
 }

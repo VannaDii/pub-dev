@@ -1,7 +1,5 @@
 import 'dart:io';
 
-import 'package:path/path.dart' as path;
-
 import 'tasks/all.dart';
 
 class SharedCommand extends DfatCommand {
@@ -17,15 +15,16 @@ class SharedCommand extends DfatCommand {
   final String pti = '        - ';
 
   SharedCommand(Logger logger) : super(logger: logger, tools: ['dart']) {
-    var workDir = Directory.current.path;
-
-    argParser.addOption(
-      'root',
-      abbr: 'r',
-      defaultsTo: path.relative(workDir, from: workDir),
-      help: "The root path to process. Should be your workspace root.",
+    argParser.addFlag(
+      'test',
+      abbr: 't',
+      negatable: false,
+      defaultsTo: false,
+      help: "Just run the tests in shared",
     );
   }
+
+  bool get testOnly => argResults!['test'];
 
   @override
   List<TaskCommand> revealTasks() => [
@@ -38,23 +37,24 @@ class SharedCommand extends DfatCommand {
 
   @override
   Future<bool> run() async {
-    logger.header("Shared");
+    final blockLogger = logger.headerBlock("Shared");
 
-    final args = argResults!;
-    final rootDir = Utils.getFinalDir(args['root']);
     final sharedDir = Utils.pathFromRoot(KnownPaths.shared, rootDir);
     final isNoCacheSet = Platform.environment.containsKey('NO_CACHE');
-    useSequence([
-      CleanDirTask(this, logger),
-      PubGetTask(this, logger),
+    final testSequence = [DartTestTask(this, blockLogger)];
+    final fullSequence = [
+      CleanDirTask(this, blockLogger),
+      PubGetTask(this, blockLogger),
       ...(isNoCacheSet
           ? [
-              BuildRunnerCleanTask(this, logger),
-              BuildRunnerBuildTask(this, logger)
+              BuildRunnerCleanTask(this, blockLogger),
+              BuildRunnerBuildTask(this, blockLogger)
             ]
-          : [BuildRunnerBuildTask(this, logger)]),
-      DartTestTask(this, logger),
-    ]);
+          : [BuildRunnerBuildTask(this, blockLogger)]),
+      ...testSequence
+    ];
+
+    useSequence(testOnly ? testSequence : fullSequence);
 
     final result = await runSequence({
       PubGetTask.taskName: {'target': sharedDir},
@@ -64,8 +64,6 @@ class SharedCommand extends DfatCommand {
       BuildRunnerBuildTask.taskName: {'target': sharedDir},
     });
 
-    logger.footer("Shared");
-
-    return result;
+    return blockLogger.close(result);
   }
 }

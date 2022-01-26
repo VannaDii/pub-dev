@@ -26,14 +26,14 @@ class DockerBuildTask extends TaskCommand {
 
   @override
   Future<bool> run() async {
-    final blockCloser = logger.header('Docker Build');
+    final blockLogger = logger.headerBlock('Docker Build');
 
     final String imageName = args['name'];
     final rootDir = Directory.current.path;
     final dfatDir = Utils.pathFromRoot(KnownPaths.dfat);
     final dockerDir = path.relative(dfatDir);
 
-    logger.printBlock("🧱 Building ${imageName.green()} image", inRs);
+    blockLogger.printBlock("🧱 Building ${imageName.green()} image", inRs);
     final dockerArgs = [
       'build',
       '-q',
@@ -53,19 +53,12 @@ class DockerBuildTask extends TaskCommand {
     final result =
         await Process.start('docker', dockerArgs, workingDirectory: dockerDir)
             .then((p) {
-      p.stdout.pipe(logger.getPipeOut(pti));
-      p.stderr.pipe(logger.getPipeErr(pti));
+      p.stdout.pipe(blockLogger.getPipeOut(pti));
+      p.stderr.pipe(blockLogger.getPipeErr(pti));
       return p;
     });
 
     final exitCode = await result.exitCode;
-    logger.printFixed("   🧱 Building ${imageName.green()} image");
-    if (exitCode == 0) {
-      logger.printDone();
-    } else {
-      logger.printFailed();
-    }
-
-    return blockCloser(exitCode == 0);
+    return blockLogger.close(exitCode == 0);
   }
 }

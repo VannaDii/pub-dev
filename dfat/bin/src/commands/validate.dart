@@ -1,7 +1,3 @@
-import 'dart:io';
-
-import 'package:path/path.dart' as path;
-
 import 'tasks/all.dart';
 
 class ValidateCommand extends DfatCommand {
@@ -15,25 +11,16 @@ class ValidateCommand extends DfatCommand {
   @override
   String get category => 'General';
 
-  ValidateCommand(Logger logger) : super(logger: logger, tools: []) {
-    var workDir = Directory.current.path;
-
-    argParser.addOption(
-      'root',
-      abbr: 'r',
-      defaultsTo: path.relative(workDir, from: workDir),
-      help: "The root path to process. Should be your workspace root.",
-    );
-  }
+  ValidateCommand(Logger logger) : super(logger: logger, tools: []);
 
   @override
   List<TaskCommand> revealTasks() => [ValidateJsonTask(this, logger)];
 
   @override
   Future<bool> run() async {
-    final footer = logger.header("Validate");
-    useSequence([ValidateJsonTask(this, logger)]);
+    final blockLogger = logger.headerBlock("Validate");
+    useSequence([ValidateJsonTask(this, blockLogger)]);
     final result = await runSequence();
-    return footer(result);
+    return blockLogger.close(result);
   }
 }

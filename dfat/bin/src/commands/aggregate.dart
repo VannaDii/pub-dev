@@ -20,26 +20,16 @@ class AggregateCommand extends DfatCommand {
   @override
   List<TaskCommand> revealTasks() => [];
 
-  final _lambdaZipMatcher =
-      RegExp(r"^.*/\.dist/.*\.zip$", caseSensitive: false, dotAll: true);
-
   AggregateCommand(Logger logger) : super(logger: logger, tools: ['git']) {
     var workDir = Directory.current.path;
     var distDir = path.join(workDir, '.dist');
 
-    argParser
-      ..addOption(
-        'root',
-        abbr: 'r',
-        defaultsTo: path.relative(workDir, from: workDir),
-        help: "The root path to process. Should be your workspace root.",
-      )
-      ..addOption(
-        'dist',
-        abbr: 'd',
-        defaultsTo: path.relative(distDir, from: workDir),
-        help: "The output path for distribution aggregation.",
-      );
+    argParser.addOption(
+      'dist',
+      abbr: 'd',
+      defaultsTo: path.relative(distDir, from: workDir),
+      help: "The output path for distribution aggregation.",
+    );
   }
 
   Map<String, dynamic>? _getNamedProvider(
@@ -132,10 +122,9 @@ class AggregateCommand extends DfatCommand {
 
   @override
   Future<bool> run() async {
-    logger.header("Aggregate");
+    final blockLogger = logger.headerBlock("Aggregate");
 
     final args = argResults!;
-    final String rootDir = Utils.getFinalDir(args['root']);
     final String distDir = Utils.getFinalDir(args['dist']);
     final String iacDir = Utils.pathFromRoot(KnownPaths.iac, rootDir);
 
@@ -146,15 +135,16 @@ class AggregateCommand extends DfatCommand {
     Directory(distDir).createSync(recursive: true);
 
     final zips =
-        await Utils.findFiles(subPath: 'lambdas', matcher: _lambdaZipMatcher)
+        await Utils.findFiles(subPath: 'lambdas', matcher: RegExps.lambdaZips)
             .toList();
-    logger.printLine(
+    blockLogger.printLine(
         "   📥 Received ${zips.map((e) => path.basename(e.path).green()).join(', ')}");
 
     for (var zipFile in zips) {
-      logger.printFixed("   🚀 Copying ${path.basename(zipFile.path).green()}");
+      blockLogger
+          .printFixed("   🚀 Copying ${path.basename(zipFile.path).green()}");
       zipFile.copySync(path.join(distDir, path.basename(zipFile.path)));
-      logger.printDone();
+      blockLogger.printDone();
     }
 
     final iacFiles =
@@ -173,7 +163,7 @@ class AggregateCommand extends DfatCommand {
       ...sharedIaC,
       "lambda_configs": <String, dynamic>{},
     };
-    logger.printFixed("   🔩 Merging IaC definitions");
+    blockLogger.printFixed("   🔩 Merging IaC definitions");
     for (var jsonFile in iacFiles) {
       final isLambda = jsonFile.path.contains('/lambdas/');
       if (!isLambda) continue; // We're only here for lambda configs
@@ -192,9 +182,9 @@ class AggregateCommand extends DfatCommand {
           .writeAsStringSync(jsonEncode(tfVarsMap));
     }
 
-    logger.printDone();
+    blockLogger.printDone();
 
-    final gitCloser = logger.printFixed("   📝 Noting IaC Hash");
+    final gitCloser = blockLogger.printFixed("   📝 Noting IaC Hash");
     final gitHash = Utils.getGitHash(rootDir);
     final gitResult = gitHash != null;
     if (gitResult) {
@@ -202,8 +192,6 @@ class AggregateCommand extends DfatCommand {
     }
     gitCloser(gitResult);
 
-    logger.footer("Aggregate");
-
-    return true;
+    return blockLogger.close(true);
   }
 }

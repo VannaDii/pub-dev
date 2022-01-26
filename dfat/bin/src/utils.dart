@@ -290,11 +290,18 @@ class FileParsers {
 /// Well known regular expressions
 class RegExps {
   /// The pattern `^.*/iac.json$`
-  static final RegExp fileIaCJson = RegExp(r'^.*/iac.json$');
+  static final fileIaCJson = RegExp(r'^.*/iac.json$');
 
   /// The pattern `^.*/pubspec.yaml$`
-  static final RegExp filePubSpecYaml = RegExp(r'^.*/pubspec.yaml$');
+  static final filePubSpecYaml = RegExp(r'^.*/pubspec.yaml$');
 
   /// The pattern `^.*/pubspec.yaml$`
-  static final RegExp numberTest = RegExp(r'^\d+$');
+  static final numberTest = RegExp(r'^\d+$');
+
+  /// The patterns `^.*/\.dist/.*\.zip$`
+  static final lambdaZips = RegExp(
+    r"^.*/\.dist/.*\.zip$",
+    caseSensitive: false,
+    dotAll: true,
+  );
 }

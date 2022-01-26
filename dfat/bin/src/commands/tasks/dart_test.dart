@@ -29,7 +29,7 @@ class DartTestTask extends TaskCommand {
 
   final inRs = '   ';
 
-  bool _runTests(bool useCoverage, String dirPath, String relOutPath) {
+  bool _runTests(bool useCoverage, String dirPath, String indent) {
     final usesCover = useCoverage && Utils.isCommand('collect_coverage');
 
     final List<String> dartArgs = [
@@ -40,7 +40,7 @@ class DartTestTask extends TaskCommand {
     ];
     final tRes = Process.runSync('dart', dartArgs, workingDirectory: dirPath);
 
-    return Utils.handleProcessResult(tRes, logger, inRs + inRs);
+    return Utils.handleProcessResult(tRes, logger, indent);
   }
 
   bool _formatLcov(
@@ -74,8 +74,6 @@ class DartTestTask extends TaskCommand {
       fRes,
       logger,
       inRs + inRs,
-      null,
-      _makeBadge(dirPath).trim(),
     );
   }
 
@@ -96,7 +94,10 @@ class DartTestTask extends TaskCommand {
         gRes,
         logger,
         inRs + inRs,
-        null,
+        (code) {
+          logger.useMemo("${_makeBadge(dirPath).trim()} → "
+              "./$baseName/coverage/report/index.html");
+        },
         './$baseName/coverage/report/index.html',
       );
     }
@@ -123,11 +124,12 @@ class DartTestTask extends TaskCommand {
     final dirPath = targetDir;
     final ind = args['indent'] ?? inRs;
     final baseName = path.basename(dirPath);
+    final useCoverage = args['coverage'] ?? true;
     logger.printFixed('🧪 Testing ${baseName.green()}', ind);
 
     final hasTestDir = Directory(path.join(targetDir, 'test')).existsSync();
     if (!hasTestDir) {
-      logger.printSkipped('missing test directory');
+      logger.printSkipped(logger.useMemo('missing test directory'));
       return true;
     }
 
@@ -136,15 +138,11 @@ class DartTestTask extends TaskCommand {
                 Utils.getPubSpecValue(targetDir, 'dependencies.test')) !=
             null;
     if (!usesTests) {
-      logger.printSkipped('missing test in pubspec');
+      logger.printSkipped(logger.useMemo('missing test in pubspec'));
       return true;
     }
 
-    final outputName = Utils.getIaCValue(dirPath, 'handler');
-    final useCoverage = args['coverage'] ?? true;
-    final relOutPath = '.dist/$outputName';
-
-    bool result = _runTests(useCoverage, dirPath, relOutPath);
+    bool result = _runTests(useCoverage, dirPath, ind + inRs + ' ');
     if (result) result = _formatLcov(useCoverage, baseName, ind, dirPath);
     if (result) result = _formatHtml(useCoverage, baseName, ind, dirPath);
 

@@ -30,7 +30,7 @@ class DockerRunTask extends TaskCommand {
     final imageName = "${path.basename(rootDir)}-builder";
 
     bool hasImage = Utils.dockerImageExists(imageName);
-    logger.printFixed("\n🐳 Running in ${imageName.green()}".bold())(hasImage);
+    logger.printFixed("🐳 Running in ${imageName.green()}")(hasImage);
 
     final args = [
       'run',
