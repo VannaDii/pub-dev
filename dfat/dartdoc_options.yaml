@@ -1,4 +1,0 @@
-dartdoc:
-  ignore:
-    - no-documentable-libraries
-    - no-library-level-docs

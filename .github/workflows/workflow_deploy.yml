@@ -35,18 +35,3 @@ jobs:
         with:
           creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
           package_path: cobertura
-
-  dfat:
-    name: 🤖 dfat
-    if: ${{ github.ref_type == 'tag' && endsWith(github.ref_name, '-dfat') }}
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - uses: dart-lang/setup-dart@v1
-
-      - name: 🚀 Publish dfat
-        uses: RatakondalaArun/pub.dev-cd@v1.0.0
-        with:
-          creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
-          package_path: dfat

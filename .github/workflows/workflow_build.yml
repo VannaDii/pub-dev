@@ -53,18 +53,3 @@ jobs:
       - name: 👷 Build Cobertura
         working-directory: cobertura
         run: make all
-
-  dfat:
-    name: 🤖 dfat
-    needs: changes
-    if: ${{ needs.changes.outputs.dfat == 'true' }}
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - uses: dart-lang/setup-dart@v1
-      - uses: hrishikesh-kadam/setup-lcov@v1
-
-      - name: 👷 Build dfat
-        working-directory: dfat
-        run: make all
