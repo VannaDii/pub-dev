@@ -28,6 +28,38 @@ abstract class GeoCoords extends GeoObject {
   List<Object?> get props => [longitude, latitude];
 }
 
+/// The base class for all `geography` data types addressable by the `longitude`
+/// and `latitude` system
+@immutable
+class GeoCodedIdentity extends GeoObject {
+  const GeoCodedIdentity({this.iso2, this.iso3, this.id});
+
+  /// The unique identifier for this data, like `1`
+  final int? id;
+
+  /// The three-digit ISO code for this country, like `AFG` for `Afghanistan`
+  final String? iso3;
+
+  /// The two-digit ISO code for this country, like `AF` for `Afghanistan`
+  final String? iso2;
+
+  /// Indicates if this instance is considered valid, having one or more attributes defined
+  bool get isValid => (id != null ||
+      (iso2 != null && iso2!.isNotEmpty) ||
+      (iso3 != null && iso3!.isNotEmpty));
+
+  /// Determines if the specified [country] matches this instance
+  bool isMatch(Country country) {
+    return country.id == id || country.iso2 == iso2 || country.iso3 == iso3;
+  }
+
+  @override
+  List<Object?> get props => [iso2, iso3, id];
+
+  @override
+  bool? get stringify => true;
+}
+
 /// The base class for all `geography` data types having a name and id, and
 /// addressable by the `longitude` and `latitude` system
 @immutable

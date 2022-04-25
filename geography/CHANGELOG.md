@@ -1,3 +1,8 @@
+## 1.1.4
+
+- Adds `timezonesFor` method for `Earth`
+
+
 ## 1.1.3
 
 - Adds `nameQualified` and `emoji` extensions for `GeoLocationNode`

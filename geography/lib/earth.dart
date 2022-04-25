@@ -26,7 +26,7 @@ class Earth {
   ///
   /// Returns: A combination pf [City], [Region], and [Country], where the name matches [value], as [GeoCoords]
   Iterable<GeoLocationNode> search(String value) {
-    var valueLowered = value.toLowerCase();
+    final valueLowered = value.toLowerCase();
     return [
       ...countries.where((c) => c.name.toLowerCase().contains(valueLowered)),
       ...countries.map((c) => c.search(valueLowered)).expand((v) => v)
@@ -55,9 +55,34 @@ class Earth {
   ///
   /// Returns: A [City] when possible, otherwise a [Region] or a [Country], whichever is more specific.
   GeoLocationNode? findClosest(GeoCoords target) {
-    var country = countries.findClosestTo(target);
+    final country = countries.findClosestTo(target);
     if (country == null) return null;
 
     return country.findClosest(target);
+  }
+
+  /// Finds the [Timezone]s for the [Country] identified by the [target].
+  /// Throws an [ArgumentError], if the [target] is invalid.
+  ///
+  /// Returns: A [List] of [Timezone]s for the [Country] identified by the
+  /// [target] or an empty list if a valid [target] doesn't match any [Country]
+  List<Timezone> timezonesFor(GeoCodedIdentity target) {
+    if (!target.isValid) {
+      throw ArgumentError.value(
+        target,
+        'target',
+        'A valid GeoCodedIdentity must be provided.',
+      );
+    }
+
+    late final List<Timezone> zones;
+    final matches = countries.where((c) => target.isMatch(c));
+    if (matches.isNotEmpty) {
+      zones = List<Timezone>.from(matches.first.timezones, growable: false);
+      zones.sort((a, b) => a.gmtOffset.compareTo(b.gmtOffset));
+    } else {
+      zones = [];
+    }
+    return zones;
   }
 }

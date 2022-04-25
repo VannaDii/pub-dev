@@ -24,8 +24,9 @@ generate:
 	dart run :composer
 
 all: tests
-	dart fix --apply
-	dart format . >/dev/null
+	dart fix --apply >>/dev/null
+	dart format . >>/dev/null
+	dart analyze --fatal-infos
 
 clean:
 	rm -rf .dart_tool doc .packages pubspec.lock

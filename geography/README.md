@@ -100,6 +100,58 @@ main() {
 
 ---
 
+### Get timezones for a particular country
+
+```dart
+import 'package:geography/earth.dart';
+
+main() {
+  var geoId = GeoCodedIdentity(iso2: 'US');
+  var timezones = Earth().timezonesFor(geoId);
+
+  for (var zone in timezones) {
+    print('> ${zone.gmtOffsetName} => ${zone.zoneName}');
+  }
+
+  /**
+   * Prints:
+   *
+   * > UTC-10:00 => America/Adak
+   * > UTC-10:00 => Pacific/Honolulu
+   * > UTC-09:00 => America/Anchorage
+   * > UTC-09:00 => America/Juneau
+   * > UTC-09:00 => America/Metlakatla
+   * > UTC-09:00 => America/Nome
+   * > UTC-09:00 => America/Sitka
+   * > UTC-09:00 => America/Yakutat
+   * > UTC-08:00 => America/Los_Angeles
+   * > UTC-07:00 => America/Boise
+   * > UTC-07:00 => America/Denver
+   * > UTC-07:00 => America/Phoenix
+   * > UTC-06:00 => America/Chicago
+   * > UTC-06:00 => America/Indiana/Knox
+   * > UTC-06:00 => America/Indiana/Tell_City
+   * > UTC-06:00 => America/Menominee
+   * > UTC-06:00 => America/North_Dakota/Beulah
+   * > UTC-06:00 => America/North_Dakota/Center
+   * > UTC-06:00 => America/North_Dakota/New_Salem
+   * > UTC-05:00 => America/Detroit
+   * > UTC-05:00 => America/Indiana/Indianapolis
+   * > UTC-05:00 => America/Indiana/Marengo
+   * > UTC-05:00 => America/Indiana/Petersburg
+   * > UTC-05:00 => America/Indiana/Vevay
+   * > UTC-05:00 => America/Indiana/Vincennes
+   * > UTC-05:00 => America/Indiana/Winamac
+   * > UTC-05:00 => America/Kentucky/Louisville
+   * > UTC-05:00 => America/Kentucky/Monticello
+   * > UTC-05:00 => America/New_York
+   * Exited
+   */
+}
+```
+
+---
+
 ## Getting started
 
 Start by installing this package via:

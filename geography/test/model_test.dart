@@ -73,5 +73,22 @@ void main() {
         expect(inst, equals(country));
       }
     });
+
+    test('GeoCodedIdentity Props And Stringify Works As Expected', () {
+      final id1 = GeoCodedIdentity();
+      expect(id1.isValid, isFalse);
+
+      final id2 = GeoCodedIdentity(iso2: 'US');
+      expect(id2.isValid, isTrue);
+
+      final id3 = GeoCodedIdentity(iso2: 'XX');
+      expect(id3.isValid, isTrue);
+
+      expect(id1, isNot(equals(id2)));
+      expect(id2, isNot(equals(id3)));
+      expect(id3, isNot(equals(id1)));
+      expect(id2.toString(), contains('US'));
+      expect(id3.toString(), contains('XX'));
+    });
   });
 }

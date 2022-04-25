@@ -78,5 +78,25 @@ void main() {
       expect(usa?.nameQualified, equals(usa?.name));
       expect(usa?.nameQualified, equals("United States"));
     });
+
+    test('Earth Gets Country Timezones As Expected', () {
+      final timezones = Earth().timezonesFor(GeoCodedIdentity(iso2: 'US'));
+      expect(timezones, isNotNull);
+      expect(timezones, isNotEmpty);
+      expect(timezones, hasLength(29));
+    });
+
+    test('Earth Gets Empty Timezones With Unmatchable Target', () {
+      final timezones = Earth().timezonesFor(GeoCodedIdentity(iso2: 'XX'));
+      expect(timezones, isNotNull);
+      expect(timezones, isEmpty);
+    });
+
+    test('Earth Throws For Timezones With Invalid Target', () {
+      expect(
+        () => Earth().timezonesFor(GeoCodedIdentity()),
+        throwsA(isA<ArgumentError>()),
+      );
+    });
   });
 }
