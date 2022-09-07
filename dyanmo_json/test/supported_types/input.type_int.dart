@@ -2,15 +2,15 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 
 part 'input.type_int.g.dart';
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClass {
   final int value;
 
-  @JsonKey(defaultValue: 42)
+  @DynamoKey(defaultValue: 42)
   int withDefault;
 
   SimpleClass(
@@ -24,11 +24,11 @@ class SimpleClass {
   Map<String, Object?> toJson() => _$SimpleClassToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullable {
   final int? value;
 
-  @JsonKey(defaultValue: 42)
+  @DynamoKey(defaultValue: 42)
   int? withDefault;
 
   SimpleClassNullable(

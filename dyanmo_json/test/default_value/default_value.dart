@@ -4,7 +4,7 @@
 
 // ignore_for_file: annotate_overrides
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 
 import 'default_value_interface.dart' as dvi hide Greek;
 import 'default_value_interface.dart'
@@ -22,46 +22,46 @@ const _intValue = 42;
 dvi.DefaultValue fromJson(Map<String, dynamic> json) =>
     _$DefaultValueFromJson(json);
 
-@JsonSerializable()
+@DynamoJson()
 class DefaultValue implements dvi.DefaultValue {
-  @JsonKey(defaultValue: true)
+  @DynamoKey(defaultValue: true)
   bool fieldBool;
 
-  @JsonKey(defaultValue: 'string', includeIfNull: false)
+  @DynamoKey(defaultValue: 'string', includeIfNull: false)
   String fieldString;
 
-  @JsonKey(defaultValue: _intValue)
+  @DynamoKey(defaultValue: _intValue)
   int fieldInt;
 
-  @JsonKey(defaultValue: 3.14)
+  @DynamoKey(defaultValue: 3.14)
   double fieldDouble;
 
-  @JsonKey(defaultValue: [])
+  @DynamoKey(defaultValue: [])
   List fieldListEmpty;
 
-  @JsonKey(defaultValue: <int>{})
+  @DynamoKey(defaultValue: <int>{})
   Set fieldSetEmpty;
 
-  @JsonKey(defaultValue: {})
+  @DynamoKey(defaultValue: {})
   Map fieldMapEmpty;
 
-  @JsonKey(defaultValue: [1, 2, 3])
+  @DynamoKey(defaultValue: [1, 2, 3])
   List<int> fieldListSimple;
 
-  @JsonKey(defaultValue: {'entry1', 'entry2'})
+  @DynamoKey(defaultValue: {'entry1', 'entry2'})
   Set<String> fieldSetSimple;
 
-  @JsonKey(defaultValue: {'answer': 42})
+  @DynamoKey(defaultValue: {'answer': 42})
   Map<String, int> fieldMapSimple;
 
-  @JsonKey(defaultValue: {
+  @DynamoKey(defaultValue: {
     'root': ['child']
   })
   Map<String, List<String>> fieldMapListString;
 
   Duration durationField;
 
-  @JsonKey(defaultValue: Greek.beta)
+  @DynamoKey(defaultValue: Greek.beta)
   Greek fieldEnum;
 
   ConstClass constClass;
@@ -69,7 +69,7 @@ class DefaultValue implements dvi.DefaultValue {
   @ConstClassConverter()
   ConstClass valueFromConverter;
 
-  @JsonKey(fromJson: constClassFromJson, toJson: constClassToJson)
+  @DynamoKey(fromDynamoJson: constClassFromJson, toDynamoJson: constClassToJson)
   ConstClass valueFromFunction;
 
   DefaultValue(

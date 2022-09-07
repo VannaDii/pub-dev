@@ -83,11 +83,10 @@ class _TestBuilder implements Builder {
 }
 
 const _configReplacements = {
-  'any_map': Replacement.addJsonSerializableKey('anyMap', true),
-  'checked': Replacement.addJsonSerializableKey('checked', true),
-  'explicit_to_json':
-      Replacement.addJsonSerializableKey('explicitToJson', true),
-  'exclude_null': Replacement.addJsonSerializableKey('includeIfNull', false),
+  'any_map': Replacement.addDynamoJsonKey('anyMap', true),
+  'checked': Replacement.addDynamoJsonKey('checked', true),
+  'explicit_to_json': Replacement.addDynamoJsonKey('explicitToJson', true),
+  'exclude_null': Replacement.addDynamoJsonKey('includeIfNull', false),
 };
 
 const _kitchenSinkReplacements = {

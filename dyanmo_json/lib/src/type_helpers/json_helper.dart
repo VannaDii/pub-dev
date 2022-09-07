@@ -6,10 +6,10 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/nullability_suffix.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:collection/collection.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:source_gen/source_gen.dart';
 import 'package:source_helper/source_helper.dart';
 
+import '../../json_annotation.dart';
 import '../default_container.dart';
 import '../type_helper.dart';
 import '../utils.dart';
@@ -273,7 +273,7 @@ ClassConfig? _annotation(ClassConfig config, InterfaceType source) {
   if (source.isEnum) {
     return null;
   }
-  final annotations = const TypeChecker.fromRuntime(JsonSerializable)
+  final annotations = const TypeChecker.fromRuntime(DynamoJson)
       .annotationsOfExact(source.element2, throwOnUnresolved: false)
       .toList();
 

@@ -4,9 +4,9 @@
 
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/nullability_suffix.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:source_helper/source_helper.dart';
 
+import '../json_annotation.dart';
 import 'constants.dart';
 import 'helper_core.dart';
 import 'type_helpers/generic_factory_helper.dart';
@@ -42,7 +42,8 @@ abstract class EncodeHelper implements HelperCore {
 
     final buffer = StringBuffer();
 
-    final functionName = '${prefix}ToJson${genericClassArgumentsImpl(true)}';
+    final functionName =
+        '${prefix}ToDynamoJson${genericClassArgumentsImpl(true)}';
     buffer.write('Map<String, dynamic> '
         '$functionName($targetClassReference $_toJsonParamName');
 
@@ -154,7 +155,7 @@ abstract class EncodeHelper implements HelperCore {
           .toString();
     } on UnsupportedTypeError catch (e) // ignore: avoid_catching_errors
     {
-      throw createInvalidGenerationError('toJson', field, e);
+      throw createInvalidGenerationError('toDynamoJson', field, e);
     }
   }
 
@@ -169,8 +170,8 @@ abstract class EncodeHelper implements HelperCore {
 
   /// Returns `true` if [field] has a user-defined encoder.
   ///
-  /// This can be either a `toJson` function in [JsonKey] or a [JsonConverter]
-  /// annotation.
+  /// This can be either a `toDynamoJson` function in [DynamoKey] or a
+  /// [DynamoConverter] annotation.
   bool _fieldHasCustomEncoder(FieldElement field) {
     final helperContext = getHelperContext(field);
     return helperContext.serializeConvertData != null ||

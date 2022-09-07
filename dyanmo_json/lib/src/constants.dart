@@ -9,8 +9,8 @@ const generatedLocalVarName = 'val';
 const toJsonMapHelperName = 'writeNotNull';
 
 const converterOrKeyInstructions = r'''
-* Use `JsonConverter`
+* Use `DynamoConverter`
   https://pub.dev/documentation/json_annotation/latest/json_annotation/JsonConverter-class.html
-* Use `JsonKey` fields `fromJson` and `toJson`
+* Use `DynamoKey` fields `fromDynamoJson` and `toDynamoJson`
   https://pub.dev/documentation/json_annotation/latest/json_annotation/JsonKey/fromJson.html
   https://pub.dev/documentation/json_annotation/latest/json_annotation/JsonKey/toJson.html''';

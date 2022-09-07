@@ -1,6 +1,6 @@
 // ignore_for_file: annotate_overrides
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 
 import 'default_value_interface.dart';
 import 'default_value_interface.dart' as dvi hide Greek;
@@ -10,7 +10,7 @@ part 'implicit_default_value.g.dart';
 dvi.DefaultValue fromJson(Map<String, dynamic> json) =>
     _$DefaultValueImplicitFromJson(json);
 
-@JsonSerializable()
+@DynamoJson()
 class DefaultValueImplicit implements dvi.DefaultValue {
   final bool fieldBool;
 
@@ -43,7 +43,7 @@ class DefaultValueImplicit implements dvi.DefaultValue {
   @ConstClassConverter()
   ConstClass valueFromConverter;
 
-  @JsonKey(fromJson: constClassFromJson, toJson: constClassToJson)
+  @DynamoKey(fromDynamoJson: constClassFromJson, toDynamoJson: constClassToJson)
   ConstClass valueFromFunction;
 
   DefaultValueImplicit({

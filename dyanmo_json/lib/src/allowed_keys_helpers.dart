@@ -3,8 +3,8 @@
 // BSD-style license that can be found in the LICENSE file.
 
 /// Helper function used in generated `fromJson` code when
-/// `JsonSerializable.disallowUnrecognizedKeys` is true for an annotated type or
-/// `JsonKey.required` is `true` for any annotated fields.
+/// `DynamoJson.disallowUnrecognizedKeys` is true for an annotated type or
+/// `DynamoKey.required` is `true` for any annotated fields.
 ///
 /// Should not be used directly.
 void $checkKeys(

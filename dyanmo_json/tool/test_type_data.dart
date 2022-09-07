@@ -2,8 +2,7 @@ import 'shared.dart';
 
 const customEnumType = 'EnumType';
 
-const _annotationImport =
-    "import 'package:json_annotation/json_annotation.dart';";
+const _annotationImport = "import 'package:dynamo_json/json_annotation.dart';";
 
 class TestTypeData {
   final String? defaultExpression;
@@ -21,7 +20,7 @@ class TestTypeData {
             altJsonExpression ?? jsonExpression ?? defaultExpression;
 
   String libContent(String source, String type) {
-    const classAnnotationSplit = '@JsonSerializable()';
+    const classAnnotationSplit = '@DynamoJson()';
 
     final split = source.split(classAnnotationSplit);
 
@@ -200,7 +199,7 @@ final _altValue = $altJsonExpression;
   }
 
   static const _defaultSource = r'''
-  @JsonKey(defaultValue: 42)
+  @DynamoKey(defaultValue: 42)
   dynamic withDefault;
 
 ''';

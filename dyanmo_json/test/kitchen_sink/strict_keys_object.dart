@@ -2,16 +2,16 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 
 part 'strict_keys_object.g.dart';
 
-@JsonSerializable(disallowUnrecognizedKeys: true, anyMap: true)
+@DynamoJson(disallowUnrecognizedKeys: true, anyMap: true)
 class StrictKeysObject {
-  @JsonKey(required: true)
+  @DynamoKey(required: true)
   final int value;
 
-  @JsonKey(name: 'custom_field', required: true)
+  @DynamoKey(name: 'custom_field', required: true)
   final String customField;
 
   StrictKeysObject(this.value, this.customField);

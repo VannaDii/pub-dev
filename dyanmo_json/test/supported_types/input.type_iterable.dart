@@ -2,16 +2,16 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 import 'enum_type.dart';
 
 part 'input.type_iterable.g.dart';
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClass {
   final Iterable value;
 
-  @JsonKey(defaultValue: [42, true, false, null])
+  @DynamoKey(defaultValue: [42, true, false, null])
   Iterable withDefault;
 
   SimpleClass(
@@ -25,11 +25,11 @@ class SimpleClass {
   Map<String, Object?> toJson() => _$SimpleClassToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullable {
   final Iterable? value;
 
-  @JsonKey(defaultValue: [42, true, false, null])
+  @DynamoKey(defaultValue: [42, true, false, null])
   Iterable? withDefault;
 
   SimpleClassNullable(
@@ -43,7 +43,7 @@ class SimpleClassNullable {
   Map<String, Object?> toJson() => _$SimpleClassNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfBigInt {
   final Iterable<BigInt> value;
 
@@ -57,7 +57,7 @@ class SimpleClassOfBigInt {
   Map<String, Object?> toJson() => _$SimpleClassOfBigIntToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfBigInt {
   final Iterable<BigInt>? value;
 
@@ -71,7 +71,7 @@ class SimpleClassNullableOfBigInt {
   Map<String, Object?> toJson() => _$SimpleClassNullableOfBigIntToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfBigIntNullable {
   final Iterable<BigInt?> value;
 
@@ -85,7 +85,7 @@ class SimpleClassOfBigIntNullable {
   Map<String, Object?> toJson() => _$SimpleClassOfBigIntNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfBigIntNullable {
   final Iterable<BigInt?>? value;
 
@@ -101,7 +101,7 @@ class SimpleClassNullableOfBigIntNullable {
       _$SimpleClassNullableOfBigIntNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfBool {
   final Iterable<bool> value;
 
@@ -115,7 +115,7 @@ class SimpleClassOfBool {
   Map<String, Object?> toJson() => _$SimpleClassOfBoolToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfBool {
   final Iterable<bool>? value;
 
@@ -129,7 +129,7 @@ class SimpleClassNullableOfBool {
   Map<String, Object?> toJson() => _$SimpleClassNullableOfBoolToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfBoolNullable {
   final Iterable<bool?> value;
 
@@ -143,7 +143,7 @@ class SimpleClassOfBoolNullable {
   Map<String, Object?> toJson() => _$SimpleClassOfBoolNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfBoolNullable {
   final Iterable<bool?>? value;
 
@@ -159,7 +159,7 @@ class SimpleClassNullableOfBoolNullable {
       _$SimpleClassNullableOfBoolNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfDateTime {
   final Iterable<DateTime> value;
 
@@ -173,7 +173,7 @@ class SimpleClassOfDateTime {
   Map<String, Object?> toJson() => _$SimpleClassOfDateTimeToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfDateTime {
   final Iterable<DateTime>? value;
 
@@ -187,7 +187,7 @@ class SimpleClassNullableOfDateTime {
   Map<String, Object?> toJson() => _$SimpleClassNullableOfDateTimeToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfDateTimeNullable {
   final Iterable<DateTime?> value;
 
@@ -201,7 +201,7 @@ class SimpleClassOfDateTimeNullable {
   Map<String, Object?> toJson() => _$SimpleClassOfDateTimeNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfDateTimeNullable {
   final Iterable<DateTime?>? value;
 
@@ -217,7 +217,7 @@ class SimpleClassNullableOfDateTimeNullable {
       _$SimpleClassNullableOfDateTimeNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfDouble {
   final Iterable<double> value;
 
@@ -231,7 +231,7 @@ class SimpleClassOfDouble {
   Map<String, Object?> toJson() => _$SimpleClassOfDoubleToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfDouble {
   final Iterable<double>? value;
 
@@ -245,7 +245,7 @@ class SimpleClassNullableOfDouble {
   Map<String, Object?> toJson() => _$SimpleClassNullableOfDoubleToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfDoubleNullable {
   final Iterable<double?> value;
 
@@ -259,7 +259,7 @@ class SimpleClassOfDoubleNullable {
   Map<String, Object?> toJson() => _$SimpleClassOfDoubleNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfDoubleNullable {
   final Iterable<double?>? value;
 
@@ -275,7 +275,7 @@ class SimpleClassNullableOfDoubleNullable {
       _$SimpleClassNullableOfDoubleNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfDuration {
   final Iterable<Duration> value;
 
@@ -289,7 +289,7 @@ class SimpleClassOfDuration {
   Map<String, Object?> toJson() => _$SimpleClassOfDurationToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfDuration {
   final Iterable<Duration>? value;
 
@@ -303,7 +303,7 @@ class SimpleClassNullableOfDuration {
   Map<String, Object?> toJson() => _$SimpleClassNullableOfDurationToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfDurationNullable {
   final Iterable<Duration?> value;
 
@@ -317,7 +317,7 @@ class SimpleClassOfDurationNullable {
   Map<String, Object?> toJson() => _$SimpleClassOfDurationNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfDurationNullable {
   final Iterable<Duration?>? value;
 
@@ -333,7 +333,7 @@ class SimpleClassNullableOfDurationNullable {
       _$SimpleClassNullableOfDurationNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfDynamic {
   final Iterable<dynamic> value;
 
@@ -347,7 +347,7 @@ class SimpleClassOfDynamic {
   Map<String, Object?> toJson() => _$SimpleClassOfDynamicToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfDynamic {
   final Iterable<dynamic>? value;
 
@@ -361,7 +361,7 @@ class SimpleClassNullableOfDynamic {
   Map<String, Object?> toJson() => _$SimpleClassNullableOfDynamicToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfEnumType {
   final Iterable<EnumType> value;
 
@@ -375,7 +375,7 @@ class SimpleClassOfEnumType {
   Map<String, Object?> toJson() => _$SimpleClassOfEnumTypeToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfEnumType {
   final Iterable<EnumType>? value;
 
@@ -389,7 +389,7 @@ class SimpleClassNullableOfEnumType {
   Map<String, Object?> toJson() => _$SimpleClassNullableOfEnumTypeToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfEnumTypeNullable {
   final Iterable<EnumType?> value;
 
@@ -403,7 +403,7 @@ class SimpleClassOfEnumTypeNullable {
   Map<String, Object?> toJson() => _$SimpleClassOfEnumTypeNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfEnumTypeNullable {
   final Iterable<EnumType?>? value;
 
@@ -419,7 +419,7 @@ class SimpleClassNullableOfEnumTypeNullable {
       _$SimpleClassNullableOfEnumTypeNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfInt {
   final Iterable<int> value;
 
@@ -433,7 +433,7 @@ class SimpleClassOfInt {
   Map<String, Object?> toJson() => _$SimpleClassOfIntToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfInt {
   final Iterable<int>? value;
 
@@ -447,7 +447,7 @@ class SimpleClassNullableOfInt {
   Map<String, Object?> toJson() => _$SimpleClassNullableOfIntToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfIntNullable {
   final Iterable<int?> value;
 
@@ -461,7 +461,7 @@ class SimpleClassOfIntNullable {
   Map<String, Object?> toJson() => _$SimpleClassOfIntNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfIntNullable {
   final Iterable<int?>? value;
 
@@ -477,7 +477,7 @@ class SimpleClassNullableOfIntNullable {
       _$SimpleClassNullableOfIntNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfNum {
   final Iterable<num> value;
 
@@ -491,7 +491,7 @@ class SimpleClassOfNum {
   Map<String, Object?> toJson() => _$SimpleClassOfNumToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfNum {
   final Iterable<num>? value;
 
@@ -505,7 +505,7 @@ class SimpleClassNullableOfNum {
   Map<String, Object?> toJson() => _$SimpleClassNullableOfNumToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfNumNullable {
   final Iterable<num?> value;
 
@@ -519,7 +519,7 @@ class SimpleClassOfNumNullable {
   Map<String, Object?> toJson() => _$SimpleClassOfNumNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfNumNullable {
   final Iterable<num?>? value;
 
@@ -535,7 +535,7 @@ class SimpleClassNullableOfNumNullable {
       _$SimpleClassNullableOfNumNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfObject {
   final Iterable<Object> value;
 
@@ -549,7 +549,7 @@ class SimpleClassOfObject {
   Map<String, Object?> toJson() => _$SimpleClassOfObjectToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfObject {
   final Iterable<Object>? value;
 
@@ -563,7 +563,7 @@ class SimpleClassNullableOfObject {
   Map<String, Object?> toJson() => _$SimpleClassNullableOfObjectToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfObjectNullable {
   final Iterable<Object?> value;
 
@@ -577,7 +577,7 @@ class SimpleClassOfObjectNullable {
   Map<String, Object?> toJson() => _$SimpleClassOfObjectNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfObjectNullable {
   final Iterable<Object?>? value;
 
@@ -593,7 +593,7 @@ class SimpleClassNullableOfObjectNullable {
       _$SimpleClassNullableOfObjectNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfString {
   final Iterable<String> value;
 
@@ -607,7 +607,7 @@ class SimpleClassOfString {
   Map<String, Object?> toJson() => _$SimpleClassOfStringToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfString {
   final Iterable<String>? value;
 
@@ -621,7 +621,7 @@ class SimpleClassNullableOfString {
   Map<String, Object?> toJson() => _$SimpleClassNullableOfStringToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfStringNullable {
   final Iterable<String?> value;
 
@@ -635,7 +635,7 @@ class SimpleClassOfStringNullable {
   Map<String, Object?> toJson() => _$SimpleClassOfStringNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfStringNullable {
   final Iterable<String?>? value;
 
@@ -651,7 +651,7 @@ class SimpleClassNullableOfStringNullable {
       _$SimpleClassNullableOfStringNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfUri {
   final Iterable<Uri> value;
 
@@ -665,7 +665,7 @@ class SimpleClassOfUri {
   Map<String, Object?> toJson() => _$SimpleClassOfUriToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfUri {
   final Iterable<Uri>? value;
 
@@ -679,7 +679,7 @@ class SimpleClassNullableOfUri {
   Map<String, Object?> toJson() => _$SimpleClassNullableOfUriToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassOfUriNullable {
   final Iterable<Uri?> value;
 
@@ -693,7 +693,7 @@ class SimpleClassOfUriNullable {
   Map<String, Object?> toJson() => _$SimpleClassOfUriNullableToJson(this);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class SimpleClassNullableOfUriNullable {
   final Iterable<Uri?>? value;
 

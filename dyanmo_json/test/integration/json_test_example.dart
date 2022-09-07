@@ -5,19 +5,19 @@
 // ignore_for_file: hash_and_equals
 import 'dart:collection';
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 
 import '../test_utils.dart';
 import 'json_test_common.dart';
 
 part 'json_test_example.g.dart';
 
-@JsonSerializable()
+@DynamoJson()
 class Person {
   final String firstName, lastName;
   final String? middleName;
   final DateTime? dateOfBirth;
-  @JsonKey(name: '\$house')
+  @DynamoKey(name: '\$house')
   final Category house;
 
   Order? order;
@@ -45,10 +45,10 @@ class Person {
       deepEquals(houseMap, other.houseMap);
 }
 
-@JsonSerializable(constructor: 'custom')
+@DynamoJson(constructor: 'custom')
 class Order {
   /// Used to test that `disallowNullValues: true` forces `includeIfNull: false`
-  @JsonKey(disallowNullValue: true)
+  @DynamoKey(disallowNullValue: true)
   int? count;
   bool? isRushed;
 
@@ -61,14 +61,14 @@ class Order {
 
   Uri? homepage;
 
-  @JsonKey(
+  @DynamoKey(
     name: 'status_code',
     defaultValue: StatusCode.success,
     unknownEnumValue: StatusCode.unknown,
   )
   StatusCode? statusCode;
 
-  @JsonKey(ignore: true)
+  @DynamoKey(ignore: true)
   String get platformValue => platform!.description;
 
   set platformValue(String value) {
@@ -78,7 +78,7 @@ class Order {
   // Ignored getter without value set in ctor
   int get price => items!.fold(0, (total, item) => item.price! + total);
 
-  @JsonKey(ignore: true)
+  @DynamoKey(ignore: true)
   bool? shouldBeCached;
 
   Order.custom(this.category, [Iterable<Item>? items])
@@ -98,15 +98,15 @@ class Order {
       deepEquals(altPlatforms, other.altPlatforms);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class Item extends ItemCore {
-  @JsonKey(includeIfNull: false, name: 'item-number')
+  @DynamoKey(includeIfNull: false, name: 'item-number')
   int? itemNumber;
   List<DateTime>? saleDates;
   List<int>? rates;
 
   // Regression test for https://github.com/google/json_serializable.dart/issues/896
-  @JsonKey(fromJson: _fromJsonGeoPoint, toJson: _toJsonGeoPoint)
+  @DynamoKey(fromDynamoJson: _fromJsonGeoPoint, toDynamoJson: _toJsonGeoPoint)
   GeoPoint? geoPoint;
 
   Item([int? price]) : super(price);
@@ -144,7 +144,7 @@ class GeoPoint {
   GeoPoint(this.latitude, this.longitude);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class Numbers {
   List<int>? ints;
   List<num>? nums;
@@ -152,10 +152,11 @@ class Numbers {
 
   List<double>? nnDoubles;
 
-  @JsonKey(fromJson: durationFromInt, toJson: durationToInt)
+  @DynamoKey(fromDynamoJson: durationFromInt, toDynamoJson: durationToInt)
   Duration? duration;
 
-  @JsonKey(fromJson: dateTimeFromEpochUs, toJson: dateTimeToEpochUs)
+  @DynamoKey(
+      fromDynamoJson: dateTimeFromEpochUs, toDynamoJson: dateTimeToEpochUs)
   DateTime? date;
 
   Numbers();
@@ -176,7 +177,7 @@ class Numbers {
       deepEquals(date, other.date);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class MapKeyVariety {
   Map<int, int>? intIntMap;
   Map<Uri, int>? uriIntMap;
@@ -199,18 +200,18 @@ class MapKeyVariety {
       deepEquals(other.bigIntMap, bigIntMap);
 }
 
-@JsonSerializable(createToJson: false)
+@DynamoJson(createToJson: false)
 class UnknownEnumValue {
-  @JsonKey(unknownEnumValue: Category.notDiscoveredYet)
+  @DynamoKey(unknownEnumValue: Category.notDiscoveredYet)
   late Category enumValue;
 
-  @JsonKey(unknownEnumValue: Category.notDiscoveredYet)
+  @DynamoKey(unknownEnumValue: Category.notDiscoveredYet)
   late Iterable<Category> enumIterable;
 
-  @JsonKey(unknownEnumValue: Category.notDiscoveredYet)
+  @DynamoKey(unknownEnumValue: Category.notDiscoveredYet)
   late List<Category> enumList;
 
-  @JsonKey(unknownEnumValue: Category.notDiscoveredYet)
+  @DynamoKey(unknownEnumValue: Category.notDiscoveredYet)
   late Set<Category> enumSet;
 
   UnknownEnumValue();
@@ -219,7 +220,7 @@ class UnknownEnumValue {
       _$UnknownEnumValueFromJson(json);
 }
 
-@JsonSerializable(constructor: '_')
+@DynamoJson(constructor: '_')
 class PrivateConstructor {
   static int _id = 0;
 

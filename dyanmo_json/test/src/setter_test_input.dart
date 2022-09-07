@@ -1,40 +1,42 @@
-part of '_json_serializable_test_input.dart';
+part of '_dynamo_json_test_input.dart';
 
 @ShouldGenerate(
   r'''
-JustSetter _$JustSetterFromJson(Map<String, dynamic> json) => JustSetter();
+JustSetter _$JustSetterFromDynamoJson(Map<String, dynamic> json) =>
+    JustSetter();
 
-Map<String, dynamic> _$JustSetterToJson(JustSetter instance) =>
+Map<String, dynamic> _$JustSetterToDynamoJson(JustSetter instance) =>
     <String, dynamic>{};
 ''',
   expectedLogItems: ['Setters are ignored: JustSetter.someSetter'],
 )
-@JsonSerializable()
+@DynamoJson()
 class JustSetter {
   set someSetter(Object name) {}
 }
 
 @ShouldGenerate(
   r'''
-JustSetterNoToJson _$JustSetterNoToJsonFromJson(Map<String, dynamic> json) =>
+JustSetterNoToJson _$JustSetterNoToJsonFromDynamoJson(
+        Map<String, dynamic> json) =>
     JustSetterNoToJson();
 ''',
   expectedLogItems: ['Setters are ignored: JustSetterNoToJson.someSetter'],
 )
-@JsonSerializable(createToJson: false)
+@DynamoJson(createToJson: false)
 class JustSetterNoToJson {
   set someSetter(Object name) {}
 }
 
 @ShouldGenerate(
   r'''
-Map<String, dynamic> _$JustSetterNoFromJsonToJson(
+Map<String, dynamic> _$JustSetterNoFromJsonToDynamoJson(
         JustSetterNoFromJson instance) =>
     <String, dynamic>{};
 ''',
   expectedLogItems: ['Setters are ignored: JustSetterNoFromJson.someSetter'],
 )
-@JsonSerializable(createFactory: false)
+@DynamoJson(createFactory: false)
 class JustSetterNoFromJson {
   set someSetter(Object name) {}
 }

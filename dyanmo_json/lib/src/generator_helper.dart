@@ -44,7 +44,7 @@ class GeneratorHelper extends HelperCore with EncodeHelper, DecodeHelper {
     if (config.genericArgumentFactories && element.typeParameters.isEmpty) {
       log.warning(
         'The class `${element.displayName}` is annotated '
-        'with `JsonSerializable` field `genericArgumentFactories: true`. '
+        'with `DynamoJson` field `genericArgumentFactories: true`. '
         '`genericArgumentFactories: true` only affects classes with type '
         'parameters. For classes without type parameters, the option is '
         'ignored.',

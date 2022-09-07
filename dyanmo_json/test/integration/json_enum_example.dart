@@ -1,22 +1,22 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 
 part 'json_enum_example.g.dart';
 
-@JsonEnum(alwaysCreate: true)
+@DynamoEnum(alwaysCreate: true)
 enum StandAloneEnum {
-  @JsonValue('a')
+  @DynamoValue('a')
   alpha,
-  @JsonValue('b')
+  @DynamoValue('b')
   beta,
-  @JsonValue('g')
+  @DynamoValue('g')
   gamma,
-  @JsonValue('d')
+  @DynamoValue('d')
   delta,
 }
 
 Iterable<String> get standAloneEnumValues => _$StandAloneEnumEnumMap.values;
 
-@JsonEnum(alwaysCreate: true, fieldRename: FieldRename.kebab)
+@DynamoEnum(alwaysCreate: true, fieldRename: FieldRename.kebab)
 enum DayType {
   noGood,
   rotten,
@@ -25,7 +25,7 @@ enum DayType {
 
 Iterable<String> get dayTypeEnumValues => _$DayTypeEnumMap.values;
 
-@JsonSerializable(
+@DynamoJson(
   createToJson: false,
 )
 class Issue559Regression {
@@ -36,10 +36,10 @@ class Issue559Regression {
   factory Issue559Regression.fromJson(Map<String, dynamic> json) =>
       _$Issue559RegressionFromJson(json);
 
-  @JsonKey(
+  @DynamoKey(
     disallowNullValue: true,
     required: true,
-    unknownEnumValue: JsonKey.nullForUndefinedEnumValue,
+    unknownEnumValue: DynamoKey.nullForUndefinedEnumValue,
   )
   final Issue559RegressionEnum? status;
 }
@@ -56,7 +56,7 @@ enum Issue1145RegressionEnum {
   gamma,
 }
 
-@JsonSerializable(
+@DynamoJson(
   createFactory: false,
 )
 class Issue1145RegressionA {
@@ -69,7 +69,7 @@ class Issue1145RegressionA {
   final Map<Issue1145RegressionEnum, bool> status;
 }
 
-@JsonSerializable(
+@DynamoJson(
   createFactory: false,
 )
 class Issue1145RegressionB {

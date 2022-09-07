@@ -2,11 +2,11 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 
 part 'generic_argument_factories_nullable.g.dart';
 
-@JsonSerializable(genericArgumentFactories: true)
+@DynamoJson(genericArgumentFactories: true)
 class GenericClassWithHelpersNullable<T, S> {
   final T? value;
 
@@ -34,7 +34,7 @@ class GenericClassWithHelpersNullable<T, S> {
       _$GenericClassWithHelpersNullableToJson(this, toJsonT, toJsonS);
 }
 
-@JsonSerializable()
+@DynamoJson()
 class ConcreteClassNullable {
   final GenericClassWithHelpersNullable<int, String> value;
 

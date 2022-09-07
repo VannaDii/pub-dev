@@ -2,16 +2,16 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 
-class GenericConverter<T> implements JsonConverter<T, Map<String, dynamic>> {
+class GenericConverter<T> implements DynamoConverter<T, Map<String, dynamic>> {
   const GenericConverter();
 
   @override
-  T fromJson(Map<String, dynamic> json) => null as T;
+  T fromDynamoJson(Map<String, dynamic> json) => null as T;
 
   @override
-  Map<String, dynamic> toJson(T object) => {};
+  Map<String, dynamic> toDynamoJson(T object) => {};
 }
 
 class TrivialNumber {
@@ -20,39 +20,39 @@ class TrivialNumber {
   TrivialNumber(this.value);
 }
 
-class TrivialNumberConverter implements JsonConverter<TrivialNumber, int?> {
+class TrivialNumberConverter implements DynamoConverter<TrivialNumber, int?> {
   static const instance = TrivialNumberConverter();
 
   const TrivialNumberConverter();
 
   @override
-  TrivialNumber fromJson(int? json) => TrivialNumber(json);
+  TrivialNumber fromDynamoJson(int? json) => TrivialNumber(json);
 
   @override
-  int? toJson(TrivialNumber? object) => object?.value;
+  int? toDynamoJson(TrivialNumber? object) => object?.value;
 }
 
-class BigIntStringConverter implements JsonConverter<BigInt, String> {
+class BigIntStringConverter implements DynamoConverter<BigInt, String> {
   const BigIntStringConverter();
 
   @override
-  BigInt fromJson(String json) => BigInt.parse(json);
+  BigInt fromDynamoJson(String json) => BigInt.parse(json);
 
   @override
-  String toJson(BigInt object) => object.toString();
+  String toDynamoJson(BigInt object) => object.toString();
 }
 
 const durationConverter = DurationMillisecondConverter();
 
-class DurationMillisecondConverter implements JsonConverter<Duration?, int?> {
+class DurationMillisecondConverter implements DynamoConverter<Duration?, int?> {
   const DurationMillisecondConverter();
 
   @override
-  Duration? fromJson(int? json) =>
+  Duration? fromDynamoJson(int? json) =>
       json == null ? null : Duration(milliseconds: json);
 
   @override
-  int? toJson(Duration? object) => object?.inMilliseconds;
+  int? toDynamoJson(Duration? object) => object?.inMilliseconds;
 }
 
 class TrivialString {
@@ -63,24 +63,25 @@ class TrivialString {
 
 const trivialStringConverter = TrivialStringConverter();
 
-class TrivialStringConverter implements JsonConverter<TrivialString?, String?> {
+class TrivialStringConverter
+    implements DynamoConverter<TrivialString?, String?> {
   const TrivialStringConverter();
 
   @override
-  TrivialString? fromJson(String? json) =>
+  TrivialString? fromDynamoJson(String? json) =>
       json == null ? null : TrivialString(json);
 
   @override
-  String? toJson(TrivialString? object) => object?.value;
+  String? toDynamoJson(TrivialString? object) => object?.value;
 }
 
-class EpochDateTimeConverter implements JsonConverter<DateTime?, int?> {
+class EpochDateTimeConverter implements DynamoConverter<DateTime?, int?> {
   const EpochDateTimeConverter();
 
   @override
-  DateTime? fromJson(int? json) =>
+  DateTime? fromDynamoJson(int? json) =>
       json == null ? null : DateTime.fromMillisecondsSinceEpoch(json);
 
   @override
-  int? toJson(DateTime? object) => object?.millisecondsSinceEpoch;
+  int? toDynamoJson(DateTime? object) => object?.millisecondsSinceEpoch;
 }

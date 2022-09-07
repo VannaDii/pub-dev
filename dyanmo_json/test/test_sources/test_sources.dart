@@ -1,6 +1,6 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 
-@JsonSerializable()
+@DynamoJson()
 class ConfigurationImplicitDefaults {
   ConfigurationImplicitDefaults();
   ConfigurationImplicitDefaults.something();
@@ -9,7 +9,7 @@ class ConfigurationImplicitDefaults {
 }
 
 // #CHANGE WHEN UPDATING json_annotation
-@JsonSerializable(
+@DynamoJson(
   anyMap: false,
   checked: false,
   constructor: '',
@@ -27,14 +27,14 @@ class ConfigurationExplicitDefaults {
   int? field;
 }
 
-@JsonSerializable(createFactory: false)
+@DynamoJson(createFactory: false)
 class IncludeIfNullAll {
-  @JsonKey(includeIfNull: true)
+  @DynamoKey(includeIfNull: true)
   int? number;
   String? str;
 }
 
-@JsonSerializable(createToJson: false)
+@DynamoJson(createToJson: false)
 class FromJsonOptionalParameters {
   final ChildWithFromJson child;
 
@@ -43,43 +43,43 @@ class FromJsonOptionalParameters {
 
 class ChildWithFromJson {
   //ignore: avoid_unused_constructor_parameters
-  ChildWithFromJson.fromJson(json, {initValue = false});
+  ChildWithFromJson.fromDynamoJson(json, {initValue = false});
 }
 
-@JsonSerializable()
+@DynamoJson()
 class ParentObject {
   int? number;
   String? str;
   ChildObject? child;
 }
 
-@JsonSerializable()
+@DynamoJson()
 class ChildObject {
   int? number;
   String? str;
 }
 
-@JsonSerializable()
+@DynamoJson()
 class ParentObjectWithChildren {
   int? number;
   String? str;
   List<ChildObject>? children;
 }
 
-@JsonSerializable()
+@DynamoJson()
 class ParentObjectWithDynamicChildren {
   int? number;
   String? str;
   late List<dynamic> children;
 }
 
-@JsonSerializable(createFactory: false, explicitToJson: true)
+@DynamoJson(createFactory: false, explicitToJson: true)
 class TrivialNestedNullable {
   TrivialNestedNullable? child;
   int? otherField;
 }
 
-@JsonSerializable(createFactory: false, explicitToJson: true)
+@DynamoJson(createFactory: false, explicitToJson: true)
 class TrivialNestedNonNullable {
   late TrivialNestedNonNullable child;
   int? otherField;

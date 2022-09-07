@@ -35,10 +35,10 @@ class TypeHelperCtx
   ClassConfig get config => _helperCore.config;
 
   @override
-  ConvertData? get serializeConvertData => _pairFromContext.toJson;
+  ConvertData? get serializeConvertData => _pairFromContext.toDynamoJson;
 
   @override
-  ConvertData? get deserializeConvertData => _pairFromContext.fromJson;
+  ConvertData? get deserializeConvertData => _pairFromContext.fromDynamoJson;
 
   late final _pairFromContext = _ConvertPair(fieldElement);
 
@@ -94,9 +94,9 @@ class TypeHelperCtx
 class _ConvertPair {
   static final _expando = Expando<_ConvertPair>();
 
-  final ConvertData? fromJson, toJson;
+  final ConvertData? fromDynamoJson, toDynamoJson;
 
-  _ConvertPair._(this.fromJson, this.toJson);
+  _ConvertPair._(this.fromDynamoJson, this.toDynamoJson);
 
   factory _ConvertPair(FieldElement element) {
     var pair = _expando[element];
@@ -106,9 +106,9 @@ class _ConvertPair {
       if (obj.isNull) {
         pair = _ConvertPair._(null, null);
       } else {
-        final toJson = _convertData(obj.objectValue, element, false);
-        final fromJson = _convertData(obj.objectValue, element, true);
-        pair = _ConvertPair._(fromJson, toJson);
+        final toDynamoJson = _convertData(obj.objectValue, element, false);
+        final fromDynamoJson = _convertData(obj.objectValue, element, true);
+        pair = _ConvertPair._(fromDynamoJson, toDynamoJson);
       }
       _expando[element] = pair;
     }
@@ -117,7 +117,7 @@ class _ConvertPair {
 }
 
 ConvertData? _convertData(DartObject obj, FieldElement element, bool isFrom) {
-  final paramName = isFrom ? 'fromJson' : 'toJson';
+  final paramName = isFrom ? 'fromDynamoJson' : 'toDynamoJson';
   final objectValue = obj.getField(paramName);
 
   if (objectValue == null || objectValue.isNull) {

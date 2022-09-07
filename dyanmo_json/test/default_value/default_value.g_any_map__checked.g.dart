@@ -64,7 +64,7 @@ DefaultValue _$DefaultValueFromJson(Map json) => $checkedCreate(
               'valueFromConverter',
               (v) => v == null
                   ? const ConstClass('value')
-                  : const ConstClassConverter().fromJson(v as String)),
+                  : const ConstClassConverter().fromDynamoJson(v as String)),
           valueFromFunction: $checkedConvert(
               'valueFromFunction',
               (v) => v == null
@@ -92,7 +92,7 @@ Map<String, dynamic> _$DefaultValueToJson(DefaultValue instance) =>
       'fieldEnum': _$GreekEnumMap[instance.fieldEnum]!,
       'constClass': instance.constClass,
       'valueFromConverter':
-          const ConstClassConverter().toJson(instance.valueFromConverter),
+          const ConstClassConverter().toDynamoJson(instance.valueFromConverter),
       'valueFromFunction': constClassToJson(instance.valueFromFunction),
     };
 

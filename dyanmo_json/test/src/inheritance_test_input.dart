@@ -1,14 +1,14 @@
-part of '_json_serializable_test_input.dart';
+part of '_dynamo_json_test_input.dart';
 
 @ShouldGenerate(r'''
-SubType _$SubTypeFromJson(Map<String, dynamic> json) => SubType(
+SubType _$SubTypeFromDynamoJson(Map<String, dynamic> json) => SubType(
       json['subTypeViaCtor'] as int,
       json['super-final-field'] as int,
     )
       ..superReadWriteField = json['superReadWriteField'] as int?
       ..subTypeReadWrite = json['subTypeReadWrite'] as int;
 
-Map<String, dynamic> _$SubTypeToJson(SubType instance) {
+Map<String, dynamic> _$SubTypeToDynamoJson(SubType instance) {
   final val = <String, dynamic>{
     'super-final-field': instance.superFinalField,
   };
@@ -25,7 +25,7 @@ Map<String, dynamic> _$SubTypeToJson(SubType instance) {
   return val;
 }
 ''')
-@JsonSerializable()
+@DynamoJson()
 class SubType extends SuperType {
   late final int subTypeViaCtor;
   late int subTypeReadWrite;
@@ -36,10 +36,10 @@ class SubType extends SuperType {
 // NOTE: `SuperType` is intentionally after `SubType` in the source file to
 // validate field ordering semantics.
 class SuperType {
-  @JsonKey(name: 'super-final-field')
+  @DynamoKey(name: 'super-final-field')
   final int? superFinalField;
 
-  @JsonKey(includeIfNull: false)
+  @DynamoKey(includeIfNull: false)
   int? superReadWriteField;
 
   SuperType(this.superFinalField);
@@ -53,7 +53,7 @@ class SuperType {
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$SubTypeWithAnnotatedFieldOverrideExtendsToJson(
+Map<String, dynamic> _$SubTypeWithAnnotatedFieldOverrideExtendsToDynamoJson(
     SubTypeWithAnnotatedFieldOverrideExtends instance) {
   final val = <String, dynamic>{
     'super-final-field': instance.superFinalField,
@@ -70,7 +70,7 @@ Map<String, dynamic> _$SubTypeWithAnnotatedFieldOverrideExtendsToJson(
   return val;
 }
 ''')
-@JsonSerializable(createFactory: false)
+@DynamoJson(createFactory: false)
 class SubTypeWithAnnotatedFieldOverrideExtends extends SuperType {
   SubTypeWithAnnotatedFieldOverrideExtends(int superTypeViaCtor)
       : super(superTypeViaCtor);
@@ -78,7 +78,7 @@ class SubTypeWithAnnotatedFieldOverrideExtends extends SuperType {
 
 @ShouldGenerate(r'''
 Map<String, dynamic>
-    _$SubTypeWithAnnotatedFieldOverrideExtendsWithOverridesToJson(
+    _$SubTypeWithAnnotatedFieldOverrideExtendsWithOverridesToDynamoJson(
             SubTypeWithAnnotatedFieldOverrideExtendsWithOverrides instance) =>
         <String, dynamic>{
           'priceHalf': instance.priceHalf,
@@ -86,13 +86,13 @@ Map<String, dynamic>
           'super-final-field': instance.superFinalField,
         };
 ''')
-@JsonSerializable(createFactory: false)
+@DynamoJson(createFactory: false)
 class SubTypeWithAnnotatedFieldOverrideExtendsWithOverrides extends SuperType {
   SubTypeWithAnnotatedFieldOverrideExtendsWithOverrides(int superTypeViaCtor)
       : super(superTypeViaCtor);
 
   /// The annotation applied here overrides the annotation in [SuperType].
-  @JsonKey(includeIfNull: true)
+  @DynamoKey(includeIfNull: true)
   @override
   int? get superReadWriteField => super.superReadWriteField;
 
@@ -108,20 +108,20 @@ class SubTypeWithAnnotatedFieldOverrideExtendsWithOverrides extends SuperType {
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$SubTypeWithAnnotatedFieldOverrideImplementsToJson(
+Map<String, dynamic> _$SubTypeWithAnnotatedFieldOverrideImplementsToDynamoJson(
         SubTypeWithAnnotatedFieldOverrideImplements instance) =>
     <String, dynamic>{
       'superReadWriteField': instance.superReadWriteField,
       'superFinalField': instance.superFinalField,
     };
 ''')
-@JsonSerializable(createFactory: false)
+@DynamoJson(createFactory: false)
 class SubTypeWithAnnotatedFieldOverrideImplements implements SuperType {
   // Note the order of fields in the output is determined by this class
   @override
   int? superReadWriteField;
 
-  @JsonKey(ignore: true)
+  @DynamoKey(ignore: true)
   @override
   int get priceHalf => 42;
 

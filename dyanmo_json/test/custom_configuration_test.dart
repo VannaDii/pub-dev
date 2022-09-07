@@ -139,10 +139,10 @@ void _registerTests(DynamoJson generator) {
           const DynamoJson(), 'TrivialNestedNullable');
 
       const expected = r'''
-Map<String, dynamic> _$TrivialNestedNullableToJson(
+Map<String, dynamic> _$TrivialNestedNullableToDynamoJson(
         TrivialNestedNullable instance) =>
     <String, dynamic>{
-      'child': instance.child?.toJson(),
+      'child': instance.child?.toDynamoJson(),
       'otherField': instance.otherField,
     };
 ''';
@@ -154,10 +154,10 @@ Map<String, dynamic> _$TrivialNestedNullableToJson(
           const DynamoJson(), 'TrivialNestedNonNullable');
 
       const expected = r'''
-Map<String, dynamic> _$TrivialNestedNonNullableToJson(
+Map<String, dynamic> _$TrivialNestedNonNullableToDynamoJson(
         TrivialNestedNonNullable instance) =>
     <String, dynamic>{
-      'child': instance.child.toJson(),
+      'child': instance.child.toDynamoJson(),
       'otherField': instance.otherField,
     };
 ''';
@@ -171,7 +171,7 @@ Map<String, dynamic> _$TrivialNestedNonNullableToJson(
         () async {
       final output = await runForElementNamed('FromJsonOptionalParameters');
 
-      expect(output, contains('ChildWithFromJson.fromJson'));
+      expect(output, contains('ChildWithFromJson.fromDynamoJson'));
     });
 
     test('class with child json-able object', () async {
@@ -179,7 +179,7 @@ Map<String, dynamic> _$TrivialNestedNonNullableToJson(
 
       expect(
           output,
-          contains("ChildObject.fromJson(json['child'] "
+          contains("ChildObject.fromDynamoJson(json['child'] "
               'as Map<String, dynamic>)'));
     });
 
@@ -187,14 +187,15 @@ Map<String, dynamic> _$TrivialNestedNonNullableToJson(
       final output = await _runForElementNamed(
           const DynamoJson(anyMap: true), 'ParentObject');
 
-      expect(output, contains("ChildObject.fromJson(json['child'] as Map)"));
+      expect(
+          output, contains("ChildObject.fromDynamoJson(json['child'] as Map)"));
     });
 
     test('class with child list of json-able objects', () async {
       final output = await runForElementNamed('ParentObjectWithChildren');
 
       expect(output, contains('.toList()'));
-      expect(output, contains('ChildObject.fromJson'));
+      expect(output, contains('ChildObject.fromDynamoJson'));
     });
 
     test('class with child list of dynamic objects is left alone', () async {

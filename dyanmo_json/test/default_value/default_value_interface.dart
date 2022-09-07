@@ -2,7 +2,7 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 
 abstract class DefaultValue {
   bool get fieldBool;
@@ -59,12 +59,12 @@ ConstClass constClassFromJson(String json) => ConstClass(json);
 
 String constClassToJson(ConstClass object) => object.field;
 
-class ConstClassConverter extends JsonConverter<ConstClass, String> {
+class ConstClassConverter extends DynamoConverter<ConstClass, String> {
   const ConstClassConverter();
 
   @override
-  ConstClass fromJson(String json) => ConstClass(json);
+  ConstClass fromDynamoJson(String json) => ConstClass(json);
 
   @override
-  String toJson(ConstClass object) => object.field;
+  String toDynamoJson(ConstClass object) => object.field;
 }

@@ -3,7 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 // ignore_for_file: annotate_overrides, hash_and_equals
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 
 import 'json_converters.dart';
 import 'kitchen_sink_interface.dart' as k;
@@ -88,7 +88,7 @@ Object? _valueAccessor(Map json, String key) {
   return json[key];
 }
 
-@JsonSerializable()
+@DynamoJson()
 class KitchenSink implements k.KitchenSink {
   // NOTE: exposing these as Iterable, but storing the values as List
   // to make the equality test work trivially.
@@ -98,7 +98,7 @@ class KitchenSink implements k.KitchenSink {
   final Iterable<int> _intIterable;
   final Iterable<DateTime> _dateTimeIterable;
 
-  @JsonKey(name: 'no-42')
+  @DynamoKey(name: 'no-42')
   final int? ctorValidatedNo42;
 
   KitchenSink({
@@ -128,7 +128,7 @@ class KitchenSink implements k.KitchenSink {
 
   BigInt? bigInt;
 
-  @JsonKey(readValue: _valueAccessor)
+  @DynamoKey(readValue: _valueAccessor)
   Iterable? get iterable => _iterable;
 
   Iterable<dynamic> get dynamicIterable => _dynamicIterable;
@@ -144,7 +144,7 @@ class KitchenSink implements k.KitchenSink {
   Set<DateTime> dateTimeSet = _defaultSet();
 
   // Added a one-off annotation on a property (not a field)
-  @JsonKey(name: 'datetime-iterable')
+  @DynamoKey(name: 'datetime-iterable')
   Iterable<DateTime> get dateTimeIterable => _dateTimeIterable;
 
   List list = _defaultList();
@@ -166,7 +166,7 @@ class KitchenSink implements k.KitchenSink {
   // Handle fields with names that collide with helper names
   Map<String, bool> val = _defaultMap();
   bool? writeNotNull;
-  @JsonKey(name: k.trickyKeyName, readValue: _trickyValueAccessor)
+  @DynamoKey(name: k.trickyKeyName, readValue: _trickyValueAccessor)
   String? string;
 
   SimpleObject simpleObject = _defaultSimpleObject();
@@ -195,7 +195,7 @@ class KitchenSink implements k.KitchenSink {
   }
 }
 
-@JsonSerializable(converters: [
+@DynamoJson(converters: [
   // referencing a top-level field should work
   durationConverter,
   // referencing via a const constructor should work
@@ -246,7 +246,7 @@ class JsonConverterTestClass implements k.JsonConverterTestClass {
   Set<TrivialNumber?> nullableNumberSillySet;
 }
 
-@JsonSerializable()
+@DynamoJson()
 @GenericConverter()
 class JsonConverterGeneric<S, T, U> {
   S item;

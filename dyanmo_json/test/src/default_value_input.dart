@@ -2,16 +2,16 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-part of '_json_serializable_test_input.dart';
+part of '_dynamo_json_test_input.dart';
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `field` field. '
+  'Error with `@DynamoKey` on the `field` field. '
   '`defaultValue` is `Symbol`, it must be a literal.',
   element: 'field',
 )
-@JsonSerializable()
+@DynamoJson()
 class DefaultWithSymbol {
-  @JsonKey(defaultValue: #symbol)
+  @DynamoKey(defaultValue: #symbol)
   late Object field;
 
   DefaultWithSymbol();
@@ -20,39 +20,39 @@ class DefaultWithSymbol {
 int _function() => 42;
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `field` field. '
+  'Error with `@DynamoKey` on the `field` field. '
   '`defaultValue` is `Function`, it must be a literal.',
   element: 'field',
 )
-@JsonSerializable()
+@DynamoJson()
 class DefaultWithFunction {
-  @JsonKey(defaultValue: _function)
+  @DynamoKey(defaultValue: _function)
   Object? field;
 
   DefaultWithFunction();
 }
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `field` field. '
+  'Error with `@DynamoKey` on the `field` field. '
   '`defaultValue` is `Type`, it must be a literal.',
   element: 'field',
 )
-@JsonSerializable()
+@DynamoJson()
 class DefaultWithType {
-  @JsonKey(defaultValue: Object)
+  @DynamoKey(defaultValue: Object)
   late Object field;
 
   DefaultWithType();
 }
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `field` field. '
+  'Error with `@DynamoKey` on the `field` field. '
   '`defaultValue` is `Duration`, it must be a literal.',
   element: 'field',
 )
-@JsonSerializable()
+@DynamoJson()
 class DefaultWithConstObject {
-  @JsonKey(defaultValue: Duration())
+  @DynamoKey(defaultValue: Duration())
   late Object field;
 
   DefaultWithConstObject();
@@ -61,26 +61,26 @@ class DefaultWithConstObject {
 enum Enum { value }
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `field` field. '
+  'Error with `@DynamoKey` on the `field` field. '
   '`defaultValue` is `List > Enum`, it must be a literal.',
   element: 'field',
 )
-@JsonSerializable()
+@DynamoJson()
 class DefaultWithNestedEnum {
-  @JsonKey(defaultValue: [Enum.value])
+  @DynamoKey(defaultValue: [Enum.value])
   late Object field;
 
   DefaultWithNestedEnum();
 }
 
 @ShouldThrow(
-  '`JsonKey.nullForUndefinedEnumValue` cannot be used with '
-  '`JsonKey.defaultValue`.',
+  '`DynamoKey.nullForUndefinedEnumValue` cannot be used with '
+  '`DynamoKey.defaultValue`.',
   element: 'enumValue',
 )
-@JsonSerializable()
+@DynamoJson()
 class BadEnumDefaultValue {
-  @JsonKey(defaultValue: JsonKey.nullForUndefinedEnumValue)
+  @DynamoKey(defaultValue: DynamoKey.nullForUndefinedEnumValue)
   Enum? enumValue;
 
   BadEnumDefaultValue();
@@ -88,7 +88,7 @@ class BadEnumDefaultValue {
 
 @ShouldGenerate(
   r'''
-DefaultWithToJsonClass _$DefaultWithToJsonClassFromJson(
+DefaultWithToJsonClass _$DefaultWithToJsonClassFromDynamoJson(
         Map<String, dynamic> json) =>
     DefaultWithToJsonClass()
       ..fieldDefaultValueToJson = json['fieldDefaultValueToJson'] == null
@@ -97,9 +97,9 @@ DefaultWithToJsonClass _$DefaultWithToJsonClassFromJson(
               json['fieldDefaultValueToJson'] as String);
 ''',
 )
-@JsonSerializable(createToJson: false)
+@DynamoJson(createToJson: false)
 class DefaultWithToJsonClass {
-  @JsonKey(defaultValue: 7, fromJson: _fromJson)
+  @DynamoKey(defaultValue: 7, fromDynamoJson: _fromJson)
   late int fieldDefaultValueToJson;
 
   DefaultWithToJsonClass();
@@ -110,7 +110,8 @@ class DefaultWithToJsonClass {
 @ShouldGenerate(
   r'''
 DefaultWithDisallowNullRequiredClass
-    _$DefaultWithDisallowNullRequiredClassFromJson(Map<String, dynamic> json) {
+    _$DefaultWithDisallowNullRequiredClassFromDynamoJson(
+        Map<String, dynamic> json) {
   $checkKeys(
     json,
     requiredKeys: const ['theField'],
@@ -125,9 +126,9 @@ DefaultWithDisallowNullRequiredClass
         '`disallowNullValue` and `required` are set to `true`.',
   ],
 )
-@JsonSerializable(createToJson: false)
+@DynamoJson(createToJson: false)
 class DefaultWithDisallowNullRequiredClass {
-  @JsonKey(defaultValue: 7, disallowNullValue: true, required: true)
+  @DynamoKey(defaultValue: 7, disallowNullValue: true, required: true)
   int? theField;
 
   DefaultWithDisallowNullRequiredClass();
@@ -136,7 +137,7 @@ class DefaultWithDisallowNullRequiredClass {
 @ShouldGenerate(
   r'''
 CtorDefaultValueAndJsonKeyDefaultValue
-    _$CtorDefaultValueAndJsonKeyDefaultValueFromJson(
+    _$CtorDefaultValueAndJsonKeyDefaultValueFromDynamoJson(
             Map<String, dynamic> json) =>
         CtorDefaultValueAndJsonKeyDefaultValue(
           json['theField'] as int? ?? 7,
@@ -148,9 +149,9 @@ CtorDefaultValueAndJsonKeyDefaultValue
         'values in JSON decoding.',
   ],
 )
-@JsonSerializable(createToJson: false)
+@DynamoJson(createToJson: false)
 class CtorDefaultValueAndJsonKeyDefaultValue {
-  @JsonKey(defaultValue: 7)
+  @DynamoKey(defaultValue: 7)
   final int theField;
 
   CtorDefaultValueAndJsonKeyDefaultValue([this.theField = 6]);
@@ -158,7 +159,7 @@ class CtorDefaultValueAndJsonKeyDefaultValue {
 
 @ShouldGenerate(
   r'''
-SameCtorAndJsonKeyDefaultValue _$SameCtorAndJsonKeyDefaultValueFromJson(
+SameCtorAndJsonKeyDefaultValue _$SameCtorAndJsonKeyDefaultValueFromDynamoJson(
         Map<String, dynamic> json) =>
     SameCtorAndJsonKeyDefaultValue(
       json['theField'] as int? ?? 3,
@@ -169,16 +170,16 @@ SameCtorAndJsonKeyDefaultValue _$SameCtorAndJsonKeyDefaultValueFromJson(
         'in the constructor and in the `JsonKey.defaultValue`.',
   ],
 )
-@JsonSerializable(createToJson: false)
+@DynamoJson(createToJson: false)
 class SameCtorAndJsonKeyDefaultValue {
-  @JsonKey(defaultValue: 3)
+  @DynamoKey(defaultValue: 3)
   final int theField;
 
   SameCtorAndJsonKeyDefaultValue([this.theField = 3]);
 }
 
 @ShouldGenerate(r'''
-DefaultDoubleConstants _$DefaultDoubleConstantsFromJson(
+DefaultDoubleConstants _$DefaultDoubleConstantsFromDynamoJson(
         Map<String, dynamic> json) =>
     DefaultDoubleConstants()
       ..defaultNan = (json['defaultNan'] as num?)?.toDouble() ?? double.nan
@@ -192,20 +193,20 @@ DefaultDoubleConstants _$DefaultDoubleConstantsFromJson(
       ..defaultMaxFinite = (json['defaultMaxFinite'] as num?)?.toDouble() ??
           1.7976931348623157e+308;
 ''')
-@JsonSerializable(createToJson: false)
+@DynamoJson(createToJson: false)
 class DefaultDoubleConstants {
-  @JsonKey(defaultValue: double.nan)
+  @DynamoKey(defaultValue: double.nan)
   late double defaultNan;
-  @JsonKey(defaultValue: double.negativeInfinity)
+  @DynamoKey(defaultValue: double.negativeInfinity)
   late double defaultNegativeInfinity;
-  @JsonKey(defaultValue: double.infinity)
+  @DynamoKey(defaultValue: double.infinity)
   late double defaultInfinity;
 
   // Since these values can be represented as number literals, there is no
   // special handling. Including them here for completeness, though.
-  @JsonKey(defaultValue: double.minPositive)
+  @DynamoKey(defaultValue: double.minPositive)
   late double defaultMinPositive;
-  @JsonKey(defaultValue: double.maxFinite)
+  @DynamoKey(defaultValue: double.maxFinite)
   late double defaultMaxFinite;
 
   DefaultDoubleConstants();

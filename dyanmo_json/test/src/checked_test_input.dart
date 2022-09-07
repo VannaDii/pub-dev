@@ -1,7 +1,7 @@
-part of '_json_serializable_test_input.dart';
+part of '_dynamo_json_test_input.dart';
 
 @ShouldGenerate(r'''
-WithANonCtorGetterChecked _$WithANonCtorGetterCheckedFromJson(
+WithANonCtorGetterChecked _$WithANonCtorGetterCheckedFromDynamoJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
       'WithANonCtorGetterChecked',
@@ -21,13 +21,13 @@ WithANonCtorGetterChecked _$WithANonCtorGetterCheckedFromJson(
       },
     );
 ''')
-@JsonSerializable(
+@DynamoJson(
   disallowUnrecognizedKeys: true,
   createToJson: false,
   checked: true,
 )
 class WithANonCtorGetterChecked {
-  @JsonKey(required: true, disallowNullValue: true)
+  @DynamoKey(required: true, disallowNullValue: true)
   final List<String> items;
 
   int get length => items.length;
@@ -36,7 +36,8 @@ class WithANonCtorGetterChecked {
 }
 
 @ShouldGenerate(r'''
-WithANonCtorGetter _$WithANonCtorGetterFromJson(Map<String, dynamic> json) {
+WithANonCtorGetter _$WithANonCtorGetterFromDynamoJson(
+    Map<String, dynamic> json) {
   $checkKeys(
     json,
     allowedKeys: const ['items'],
@@ -48,9 +49,9 @@ WithANonCtorGetter _$WithANonCtorGetterFromJson(Map<String, dynamic> json) {
   );
 }
 ''')
-@JsonSerializable(disallowUnrecognizedKeys: true, createToJson: false)
+@DynamoJson(disallowUnrecognizedKeys: true, createToJson: false)
 class WithANonCtorGetter {
-  @JsonKey(required: true, disallowNullValue: true)
+  @DynamoKey(required: true, disallowNullValue: true)
   final List<String> items;
 
   int get length => items.length;

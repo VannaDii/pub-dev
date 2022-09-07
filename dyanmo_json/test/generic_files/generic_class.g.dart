@@ -40,13 +40,13 @@ GenericClassWithConverter<T, S>
           ..fieldDynamic = json['fieldDynamic']
           ..fieldInt = json['fieldInt'] as int?
           ..fieldT = _$JsonConverterFromJson<Map<String, dynamic>, T>(
-              json['fieldT'], _SimpleConverter<T?>().fromJson)
+              json['fieldT'], _SimpleConverter<T?>().fromDynamoJson)
           ..fieldS = _$JsonConverterFromJson<Map<String, dynamic>, S>(
-              json['fieldS'], _SimpleConverter<S?>().fromJson)
+              json['fieldS'], _SimpleConverter<S?>().fromDynamoJson)
           ..duration = const _DurationMillisecondConverter.named()
-              .fromJson(json['duration'] as int?)
+              .fromDynamoJson(json['duration'] as int?)
           ..listDuration = const _DurationListMillisecondConverter()
-              .fromJson(json['listDuration'] as int?);
+              .fromDynamoJson(json['listDuration'] as int?);
 
 Map<String, dynamic> _$GenericClassWithConverterToJson<T extends num, S>(
         GenericClassWithConverter<T, S> instance) =>
@@ -55,13 +55,13 @@ Map<String, dynamic> _$GenericClassWithConverterToJson<T extends num, S>(
       'fieldDynamic': instance.fieldDynamic,
       'fieldInt': instance.fieldInt,
       'fieldT': _$JsonConverterToJson<Map<String, dynamic>, T>(
-          instance.fieldT, _SimpleConverter<T?>().toJson),
+          instance.fieldT, _SimpleConverter<T?>().toDynamoJson),
       'fieldS': _$JsonConverterToJson<Map<String, dynamic>, S>(
-          instance.fieldS, _SimpleConverter<S?>().toJson),
-      'duration':
-          const _DurationMillisecondConverter.named().toJson(instance.duration),
+          instance.fieldS, _SimpleConverter<S?>().toDynamoJson),
+      'duration': const _DurationMillisecondConverter.named()
+          .toDynamoJson(instance.duration),
       'listDuration': const _DurationListMillisecondConverter()
-          .toJson(instance.listDuration),
+          .toDynamoJson(instance.listDuration),
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
@@ -96,7 +96,7 @@ Issue1047ParentClass<T> _$Issue1047ParentClassFromJson<T>(
 ) =>
     Issue1047ParentClass<T>(
       edges: (json['edges'] as List<dynamic>)
-          .map((e) => Issue1047Class<T>.fromJson(
+          .map((e) => Issue1047Class<T>.fromDynamoJson(
               e as Map<String, dynamic>, (value) => fromJsonT(value)))
           .toList(),
     );
@@ -107,7 +107,7 @@ Map<String, dynamic> _$Issue1047ParentClassToJson<T>(
 ) =>
     <String, dynamic>{
       'edges': instance.edges
-          .map((e) => e.toJson(
+          .map((e) => e.toDynamoJson(
                 (value) => toJsonT(value),
               ))
           .toList(),

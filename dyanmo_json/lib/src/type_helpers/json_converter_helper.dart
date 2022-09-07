@@ -6,17 +6,17 @@ import 'package:analyzer/dart/constant/value.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:collection/collection.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:source_gen/source_gen.dart';
 import 'package:source_helper/source_helper.dart';
 
+import '../../json_annotation.dart';
 import '../lambda_result.dart';
 import '../shared_checkers.dart';
 import '../type_helper.dart';
 import '../utils.dart';
 
 /// A [TypeHelper] that supports classes annotated with implementations of
-/// [JsonConverter].
+/// [DynamoConverter].
 class JsonConverterHelper extends TypeHelper<TypeHelperContextWithConfig> {
   const JsonConverterHelper();
 
@@ -33,7 +33,7 @@ class JsonConverterHelper extends TypeHelper<TypeHelperContextWithConfig> {
     }
 
     if (!converter.fieldType.isNullableType && targetType.isNullableType) {
-      const converterToJsonName = r'_$JsonConverterToJson';
+      const converterToJsonName = r'_$JsonConverterToDynamoJson';
       context.addMember('''
 Json? $converterToJsonName<Json, Value>(
   Value? value,
@@ -46,11 +46,11 @@ Json? $converterToJsonName<Json, Value>(
         name: converterToJsonName,
         targetType: targetType,
         expression: expression,
-        callback: '${converter.accessString}.toJson',
+        callback: '${converter.accessString}.toDynamoJson',
       );
     }
 
-    return LambdaResult(expression, '${converter.accessString}.toJson');
+    return LambdaResult(expression, '${converter.accessString}.toDynamoJson');
   }
 
   @override
@@ -68,7 +68,7 @@ Json? $converterToJsonName<Json, Value>(
     final asContent = asStatement(converter.jsonType);
 
     if (!converter.jsonType.isNullableType && targetType.isNullableType) {
-      const converterFromJsonName = r'_$JsonConverterFromJson';
+      const converterFromJsonName = r'_$JsonConverterFromDynamoJson';
       context.addMember('''
 Value? $converterFromJsonName<Json, Value>(
   Object? json,
@@ -295,7 +295,7 @@ _ConverterMatch? _compatibleMatch(
     assert(converterClassElement.typeParameters.isNotEmpty);
     if (converterClassElement.typeParameters.length > 1) {
       throw InvalidGenerationSourceError(
-          '`JsonConverter` implementations can have no more than one type '
+          '`DynamoConverter` implementations can have no more than one type '
           'argument. `${converterClassElement.name}` has '
           '${converterClassElement.typeParameters.length}.',
           element: converterClassElement);
@@ -313,4 +313,4 @@ _ConverterMatch? _compatibleMatch(
   return null;
 }
 
-const _jsonConverterChecker = TypeChecker.fromRuntime(JsonConverter);
+const _jsonConverterChecker = TypeChecker.fromRuntime(DynamoConverter);

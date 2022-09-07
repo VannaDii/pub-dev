@@ -48,9 +48,9 @@ class Replacement {
 
   const Replacement(this.existing, this.replacement);
 
-  const Replacement.addJsonSerializableKey(String key, bool value)
-      : existing = '@JsonSerializable(',
-        replacement = '@JsonSerializable(\n  $key: $value,';
+  const Replacement.addDynamoJsonKey(String key, bool value)
+      : existing = '@DynamoJson(',
+        replacement = '@DynamoJson(\n  $key: $value,';
 
   static String generate(
     String inputContent,

@@ -1,8 +1,8 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 
 part 'field_map_example.g.dart';
 
-@JsonSerializable(createFieldMap: true, fieldRename: FieldRename.kebab)
+@DynamoJson(createFieldMap: true, fieldRename: FieldRename.kebab)
 class Model {
   Model({
     required this.firstName,
@@ -14,10 +14,10 @@ class Model {
 
   final String firstName;
 
-  @JsonKey(name: 'LAST_NAME')
+  @DynamoKey(name: 'LAST_NAME')
   final String lastName;
 
-  @JsonKey(ignore: true)
+  @DynamoKey(ignore: true)
   final String? ignoredName;
 
   String get fullName => '$firstName $lastName';
@@ -27,7 +27,7 @@ class Model {
 
 const modelFieldMap = _$ModelFieldMap;
 
-@JsonSerializable(
+@DynamoJson(
   createFieldMap: true,
   fieldRename: FieldRename.kebab,
   createFactory: false,

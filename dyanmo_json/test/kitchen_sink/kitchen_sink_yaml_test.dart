@@ -1,4 +1,4 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 import 'package:test/test.dart';
 import 'package:yaml/yaml.dart';
 

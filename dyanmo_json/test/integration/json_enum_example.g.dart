@@ -16,7 +16,7 @@ Issue559Regression _$Issue559RegressionFromJson(Map<String, dynamic> json) {
   );
   return Issue559Regression(
     status: $enumDecodeNullable(_$Issue559RegressionEnumEnumMap, json['status'],
-        unknownValue: JsonKey.nullForUndefinedEnumValue),
+        unknownValue: DynamoKey.nullForUndefinedEnumValue),
   );
 }
 

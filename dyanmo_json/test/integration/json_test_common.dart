@@ -4,9 +4,9 @@
 
 import 'dart:collection';
 
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
 
-@JsonEnum(fieldRename: FieldRename.kebab)
+@DynamoEnum(fieldRename: FieldRename.kebab)
 enum Category {
   top,
   bottom,
@@ -15,19 +15,19 @@ enum Category {
   up,
   down,
   // NOTE: this should override the kebab bits below!
-  @JsonValue('not_discovered_yet')
+  @DynamoValue('not_discovered_yet')
   notDiscoveredYet
 }
 
 enum StatusCode {
-  @JsonValue(200)
+  @DynamoValue(200)
   success,
-  @JsonValue(404)
+  @DynamoValue(404)
   notFound,
 
   // Intentionally using a non-int value to validate heterogeneous
   // type-inference.
-  @JsonValue('500')
+  @DynamoValue('500')
   weird,
 
   unknown,

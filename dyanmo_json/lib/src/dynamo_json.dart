@@ -121,7 +121,7 @@ class DynamoJson {
   /// Example of `explicitToJson: true`
   ///
   /// ```dart
-  /// Map<String, dynamic> toJson() => {'child': child?.toJson()};
+  /// Map<String, dynamic> toJson() => {'child': child?.toDynamoJson()};
   /// ```
   final bool? explicitToJson;
 

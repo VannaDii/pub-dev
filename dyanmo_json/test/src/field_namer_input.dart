@@ -1,77 +1,78 @@
-part of '_json_serializable_test_input.dart';
+part of '_dynamo_json_test_input.dart';
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$FieldNamerNoneToJson(FieldNamerNone instance) =>
+Map<String, dynamic> _$FieldNamerNoneToDynamoJson(FieldNamerNone instance) =>
     <String, dynamic>{
       'theField': instance.theField,
       'NAME_OVERRIDE': instance.nameOverride,
     };
 ''')
-@JsonSerializable(fieldRename: FieldRename.none, createFactory: false)
+@DynamoJson(fieldRename: FieldRename.none, createFactory: false)
 class FieldNamerNone {
   late String theField;
 
-  @JsonKey(name: 'NAME_OVERRIDE')
+  @DynamoKey(name: 'NAME_OVERRIDE')
   late String nameOverride;
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$FieldNamerKebabToJson(FieldNamerKebab instance) =>
+Map<String, dynamic> _$FieldNamerKebabToDynamoJson(FieldNamerKebab instance) =>
     <String, dynamic>{
       'the-field': instance.theField,
       'NAME_OVERRIDE': instance.nameOverride,
     };
 ''')
-@JsonSerializable(fieldRename: FieldRename.kebab, createFactory: false)
+@DynamoJson(fieldRename: FieldRename.kebab, createFactory: false)
 class FieldNamerKebab {
   late String theField;
 
-  @JsonKey(name: 'NAME_OVERRIDE')
+  @DynamoKey(name: 'NAME_OVERRIDE')
   late String nameOverride;
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$FieldNamerPascalToJson(FieldNamerPascal instance) =>
+Map<String, dynamic> _$FieldNamerPascalToDynamoJson(
+        FieldNamerPascal instance) =>
     <String, dynamic>{
       'TheField': instance.theField,
       'NAME_OVERRIDE': instance.nameOverride,
     };
 ''')
-@JsonSerializable(fieldRename: FieldRename.pascal, createFactory: false)
+@DynamoJson(fieldRename: FieldRename.pascal, createFactory: false)
 class FieldNamerPascal {
   late String theField;
 
-  @JsonKey(name: 'NAME_OVERRIDE')
+  @DynamoKey(name: 'NAME_OVERRIDE')
   late String nameOverride;
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$FieldNamerSnakeToJson(FieldNamerSnake instance) =>
+Map<String, dynamic> _$FieldNamerSnakeToDynamoJson(FieldNamerSnake instance) =>
     <String, dynamic>{
       'the_field': instance.theField,
       'NAME_OVERRIDE': instance.nameOverride,
     };
 ''')
-@JsonSerializable(fieldRename: FieldRename.snake, createFactory: false)
+@DynamoJson(fieldRename: FieldRename.snake, createFactory: false)
 class FieldNamerSnake {
   late String theField;
 
-  @JsonKey(name: 'NAME_OVERRIDE')
+  @DynamoKey(name: 'NAME_OVERRIDE')
   late String nameOverride;
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$FieldNamerScreamingSnakeToJson(
+Map<String, dynamic> _$FieldNamerScreamingSnakeToDynamoJson(
         FieldNamerScreamingSnake instance) =>
     <String, dynamic>{
       'THE_FIELD': instance.theField,
       'nameOverride': instance.nameOverride,
     };
 ''')
-@JsonSerializable(fieldRename: FieldRename.screamingSnake, createFactory: false)
+@DynamoJson(fieldRename: FieldRename.screamingSnake, createFactory: false)
 class FieldNamerScreamingSnake {
   late String theField;
 
-  @JsonKey(name: 'nameOverride')
+  @DynamoKey(name: 'nameOverride')
   late String nameOverride;
 }

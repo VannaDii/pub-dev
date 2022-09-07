@@ -2,24 +2,24 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-part of '_json_serializable_test_input.dart';
+part of '_dynamo_json_test_input.dart';
 
 @ShouldThrow(
   '''
-Could not generate `fromJson` code for `result` because of type `TResult` (type parameter).
+Could not generate `fromDynamoJson` code for `result` because of type `TResult` (type parameter).
 To support type parameters (generic types) you can:
 $converterOrKeyInstructions
-* Set `JsonSerializable.genericArgumentFactories` to `true`
+* Set `DynamoJson.genericArgumentFactories` to `true`
   https://pub.dev/documentation/json_annotation/latest/json_annotation/JsonSerializable/genericArgumentFactories.html''',
   element: 'result',
 )
-@JsonSerializable()
+@DynamoJson()
 class Issue713<TResult> {
   List<TResult>? result;
 }
 
 @ShouldGenerate(r'''
-GenericClass<T, S> _$GenericClassFromJson<T extends num, S>(
+GenericClass<T, S> _$GenericClassFromDynamoJson<T extends num, S>(
         Map<String, dynamic> json) =>
     GenericClass<T, S>()
       ..fieldObject = _dataFromJson(json['fieldObject'])
@@ -28,7 +28,7 @@ GenericClass<T, S> _$GenericClassFromJson<T extends num, S>(
       ..fieldT = _dataFromJson(json['fieldT'])
       ..fieldS = _dataFromJson(json['fieldS']);
 
-Map<String, dynamic> _$GenericClassToJson<T extends num, S>(
+Map<String, dynamic> _$GenericClassToDynamoJson<T extends num, S>(
         GenericClass<T, S> instance) =>
     <String, dynamic>{
       'fieldObject': _dataToJson(instance.fieldObject),
@@ -38,21 +38,21 @@ Map<String, dynamic> _$GenericClassToJson<T extends num, S>(
       'fieldS': _dataToJson(instance.fieldS),
     };
 ''')
-@JsonSerializable()
+@DynamoJson()
 class GenericClass<T extends num, S> {
-  @JsonKey(fromJson: _dataFromJson, toJson: _dataToJson)
+  @DynamoKey(fromDynamoJson: _dataFromJson, toDynamoJson: _dataToJson)
   late Object fieldObject;
 
-  @JsonKey(fromJson: _dataFromJson, toJson: _dataToJson)
+  @DynamoKey(fromDynamoJson: _dataFromJson, toDynamoJson: _dataToJson)
   dynamic fieldDynamic;
 
-  @JsonKey(fromJson: _dataFromJson, toJson: _dataToJson)
+  @DynamoKey(fromDynamoJson: _dataFromJson, toDynamoJson: _dataToJson)
   late int fieldInt;
 
-  @JsonKey(fromJson: _dataFromJson, toJson: _dataToJson)
+  @DynamoKey(fromDynamoJson: _dataFromJson, toDynamoJson: _dataToJson)
   late T fieldT;
 
-  @JsonKey(fromJson: _dataFromJson, toJson: _dataToJson)
+  @DynamoKey(fromDynamoJson: _dataFromJson, toDynamoJson: _dataToJson)
   late S fieldS;
 
   GenericClass();
@@ -65,21 +65,22 @@ Object _dataToJson<T extends num>(T input) => throw UnimplementedError();
 @ShouldGenerate(
   r'''
 GenericArgumentFactoriesFlagWithoutGenericType
-    _$GenericArgumentFactoriesFlagWithoutGenericTypeFromJson(
+    _$GenericArgumentFactoriesFlagWithoutGenericTypeFromDynamoJson(
             Map<String, dynamic> json) =>
         GenericArgumentFactoriesFlagWithoutGenericType();
 
-Map<String, dynamic> _$GenericArgumentFactoriesFlagWithoutGenericTypeToJson(
-        GenericArgumentFactoriesFlagWithoutGenericType instance) =>
-    <String, dynamic>{};
+Map<String, dynamic>
+    _$GenericArgumentFactoriesFlagWithoutGenericTypeToDynamoJson(
+            GenericArgumentFactoriesFlagWithoutGenericType instance) =>
+        <String, dynamic>{};
 ''',
   expectedLogItems: [
     'The class `GenericArgumentFactoriesFlagWithoutGenericType` is annotated '
-        'with `JsonSerializable` field `genericArgumentFactories: true`. '
+        'with `DynamoJson` field `genericArgumentFactories: true`. '
         '`genericArgumentFactories: true` only affects classes with type '
         'parameters. For classes without type parameters, the option is '
         'ignored.',
   ],
 )
-@JsonSerializable(genericArgumentFactories: true)
+@DynamoJson(genericArgumentFactories: true)
 class GenericArgumentFactoriesFlagWithoutGenericType {}

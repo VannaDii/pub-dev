@@ -6,10 +6,10 @@ import 'package:analyzer/dart/constant/value.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:build/build.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:source_gen/source_gen.dart';
 import 'package:source_helper/source_helper.dart';
 
+import '../json_annotation.dart';
 import 'dynamo_literal_generator.dart';
 import 'shared_checkers.dart';
 import 'type_helpers/config_types.dart';
@@ -162,7 +162,7 @@ KeyConfig _from(FieldElement element, ClassConfig classAnnotation) {
       if (_nullAsUnknownChecker.isExactlyType(annotationType)) {
         throw InvalidGenerationSourceError(
           '`$jsonKeyNullForUndefinedEnumValueFieldName` cannot be used with '
-          '`JsonKey.defaultValue`.',
+          '`DynamoKey.defaultValue`.',
           element: element,
         );
       }
@@ -289,4 +289,4 @@ const jsonKeyNullForUndefinedEnumValueFieldName =
     'DynamoKey.nullForUndefinedEnumValue';
 
 final _nullAsUnknownChecker =
-    TypeChecker.fromRuntime(JsonKey.nullForUndefinedEnumValue.runtimeType);
+    TypeChecker.fromRuntime(DynamoKey.nullForUndefinedEnumValue.runtimeType);
