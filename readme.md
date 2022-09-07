@@ -10,13 +10,11 @@ If you find them useful, enjoy them!
 
 ## Packages
 
-- [Geography](./geography)
+### [Geography](./geography)
+¯\\_(ツ)_/¯ Because I'm too cheap to pay for a geocoding service, and I only needed City-level resolution.
 
-  - ¯\\_(ツ)_/¯ Because I'm too cheap to pay for a geocoding service, and I only needed City-level resolution.
+### [Cobertura](./cobertura)
+Easy way to quickly view `LCOV` results in the console (with or without colorization) and convert `LCOV` to `Cobertura` for GitHub and Azure.
 
-- [Cobertura](./cobertura)
-
-  - Easy way to quickly view `LCOV` results in the console (with or without colorization) and convert `LCOV` to `Cobertura` for GitHub and Azure.
-
-- [dfat](./dfat)
-  - The `dfat` CLI, is now [`endaft`](https://github.com/endaft)
+### [dynamo_json](./dynamo_json)
+Just like `json_annotations` and `json_serializable` but specifically for DynamoDB JSON.

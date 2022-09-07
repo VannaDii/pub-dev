@@ -16,12 +16,13 @@ jobs:
     outputs:
       geography: ${{ steps.filter.outputs.geography }}
       cobertura: ${{ steps.filter.outputs.cobertura }}
-      dfat: ${{ steps.filter.outputs.dfat }}
+      dynamo_json: ${{ steps.filter.outputs.dynamo_json }}
     steps:
       - uses: actions/checkout@v2
       - uses: dorny/paths-filter@v2
         id: filter
         with:
+          list-files: "none"
           filters: .github/build_path_filters.yaml
 
   geography:
@@ -52,4 +53,19 @@ jobs:
 
       - name: 👷 Build Cobertura
         working-directory: cobertura
+        run: make all
+
+  dynamo_json:
+    name: 📇 dynamo_json
+    needs: changes
+    if: ${{ needs.changes.outputs.dynamo_json == 'true' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dart-lang/setup-dart@v1
+      - uses: hrishikesh-kadam/setup-lcov@v1
+
+      - name: 👷 Build dynamo_json
+        working-directory: dynamo_json
         run: make all

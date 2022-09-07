@@ -2,3 +2,5 @@ geography:
   - "geography/**"
 cobertura:
   - "cobertura/**"
+dynamo_json:
+  - "dynamo_json/**"
