@@ -5,20 +5,20 @@
 import 'package:analyzer/dart/constant/value.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:source_gen/source_gen.dart';
 
-import 'json_literal_generator.dart';
+import '../../json_annotation.dart';
+import 'dynamo_literal_generator.dart';
 import 'utils.dart';
 
 String constMapName(DartType targetType) =>
-    '_\$${targetType.element!.name}EnumMap';
+    '_\$${targetType.element2!.name}EnumMap';
 
 String? enumValueMapFromType(
   DartType targetType, {
   bool nullWithNoAnnotation = false,
 }) {
-  final annotation = _jsonEnumChecker.firstAnnotationOf(targetType.element!);
+  final annotation = _jsonEnumChecker.firstAnnotationOf(targetType.element2!);
   final jsonEnum = _fromAnnotation(annotation);
 
   final enumFields = iterateEnumFields(targetType);
@@ -29,7 +29,7 @@ String? enumValueMapFromType(
 
   MapEntry<FieldElement, dynamic> _generateEntry(FieldElement fe) {
     final annotation =
-        const TypeChecker.fromRuntime(JsonValue).firstAnnotationOfExact(fe);
+        const TypeChecker.fromRuntime(DynamoValue).firstAnnotationOfExact(fe);
 
     dynamic fieldValue;
     if (annotation == null) {
@@ -44,7 +44,7 @@ String? enumValueMapFromType(
       } else {
         final targetTypeCode = typeToCode(targetType);
         throw InvalidGenerationSourceError(
-            'The `JsonValue` annotation on `$targetTypeCode.${fe.name}` does '
+            'The `DynamoValue` annotation on `$targetTypeCode.${fe.name}` does '
             'not have a value of type String, int, or null.',
             element: fe);
       }
@@ -59,21 +59,21 @@ String? enumValueMapFromType(
       Map<FieldElement, dynamic>.fromEntries(enumFields.map(_generateEntry));
 
   final items = enumMap.entries
-      .map((e) => '  ${targetType.element!.name}.${e.key.name}: '
+      .map((e) => '  ${targetType.element2!.name}.${e.key.name}: '
           '${jsonLiteralAsDart(e.value)},')
       .join();
 
   return 'const ${constMapName(targetType)} = {\n$items\n};';
 }
 
-const _jsonEnumChecker = TypeChecker.fromRuntime(JsonEnum);
+const _jsonEnumChecker = TypeChecker.fromRuntime(DynamoEnum);
 
-JsonEnum _fromAnnotation(DartObject? dartObject) {
+DynamoEnum _fromAnnotation(DartObject? dartObject) {
   if (dartObject == null) {
-    return const JsonEnum();
+    return const DynamoEnum();
   }
   final reader = ConstantReader(dartObject);
-  return JsonEnum(
+  return DynamoEnum(
       alwaysCreate: reader.read('alwaysCreate').literalValue as bool,
       fieldRename: enumValueForDartObject(
         reader.read('fieldRename').objectValue,

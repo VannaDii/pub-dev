@@ -10,14 +10,14 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:source_gen/source_gen.dart';
 import 'package:source_helper/source_helper.dart';
 
-import 'json_literal_generator.dart';
+import 'dynamo_literal_generator.dart';
 import 'shared_checkers.dart';
 import 'type_helpers/config_types.dart';
 import 'utils.dart';
 
 final _jsonKeyExpando = Expando<Map<ClassConfig, KeyConfig>>();
 
-KeyConfig jsonKeyForField(FieldElement field, ClassConfig classAnnotation) =>
+KeyConfig dynamoKeyForField(FieldElement field, ClassConfig classAnnotation) =>
     (_jsonKeyExpando[field] ??= Map.identity())[classAnnotation] ??=
         _from(field, classAnnotation);
 
@@ -25,12 +25,12 @@ KeyConfig _from(FieldElement element, ClassConfig classAnnotation) {
   // If an annotation exists on `element` the source is a 'real' field.
   // If the result is `null`, check the getter – it is a property.
   // TODO: setters: github.com/google/json_serializable.dart/issues/24
-  final obj = jsonKeyAnnotation(element);
+  final obj = dynamoKeyAnnotation(element);
 
   final ctorParamDefault = classAnnotation.ctorParamDefaults[element.name];
 
   if (obj.isNull) {
-    return _populateJsonKey(
+    return _populateDynamoKey(
       classAnnotation,
       element,
       defaultValue: ctorParamDefault,
@@ -61,7 +61,7 @@ KeyConfig _from(FieldElement element, ClassConfig classAnnotation) {
       // TODO: Support calling function for the default value?
       badType = 'Function';
     } else if (!reader.isLiteral) {
-      badType = dartObject.type!.element!.name;
+      badType = dartObject.type!.element2!.name;
     }
 
     if (badType != null) {
@@ -114,7 +114,7 @@ KeyConfig _from(FieldElement element, ClassConfig classAnnotation) {
     throwUnsupported(
       element,
       'The provided value is not supported: $badType. '
-      'This may be an error in package:json_serializable. '
+      'This may be an error in package:dynamo_json. '
       'Please rerun your build with `--verbose` and file an issue.',
     );
   }
@@ -173,7 +173,7 @@ KeyConfig _from(FieldElement element, ClassConfig classAnnotation) {
       final enumValueName = enumValueForDartObject<String>(
           annotationValue.objectValue, enumValueNames, (n) => n);
 
-      return '${annotationType.element!.name}'
+      return '${annotationType.element2!.name}'
           '.$enumValueName';
     } else {
       final defaultValueLiteral = annotationValue.isNull
@@ -216,7 +216,7 @@ KeyConfig _from(FieldElement element, ClassConfig classAnnotation) {
         readValue.objectValue.toFunctionValue()!.qualifiedName;
   }
 
-  return _populateJsonKey(
+  return _populateDynamoKey(
     classAnnotation,
     element,
     defaultValue: defaultValue ?? ctorParamDefault,
@@ -230,7 +230,7 @@ KeyConfig _from(FieldElement element, ClassConfig classAnnotation) {
   );
 }
 
-KeyConfig _populateJsonKey(
+KeyConfig _populateDynamoKey(
   ClassConfig classAnnotation,
   FieldElement element, {
   required String? defaultValue,
@@ -247,7 +247,8 @@ KeyConfig _populateJsonKey(
       throwUnsupported(
           element,
           'Cannot set both `disallowNullValue` and `includeIfNull` to `true`. '
-          'This leads to incompatible `toJson` and `fromJson` behavior.');
+          'This leads to incompatible `toDynamoJson` and `fromDynamoJson` '
+          'behavior.');
     }
   }
 
@@ -279,13 +280,13 @@ bool _includeIfNull(
 bool _interfaceTypesEqual(DartType a, DartType b) {
   if (a is InterfaceType && b is InterfaceType) {
     // Handle nullability case. Pretty sure this is fine for enums.
-    return a.element == b.element;
+    return a.element2 == b.element2;
   }
   return a == b;
 }
 
 const jsonKeyNullForUndefinedEnumValueFieldName =
-    'JsonKey.nullForUndefinedEnumValue';
+    'DynamoKey.nullForUndefinedEnumValue';
 
 final _nullAsUnknownChecker =
     TypeChecker.fromRuntime(JsonKey.nullForUndefinedEnumValue.runtimeType);

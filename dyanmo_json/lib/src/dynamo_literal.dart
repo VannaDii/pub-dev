@@ -18,7 +18,7 @@ import 'package:meta/meta_meta.dart';
 /// Map get glossaryData => _$glossaryDataJsonLiteral;
 /// ```
 @Target({TargetKind.getter})
-class JsonLiteral {
+class DynamoLiteral {
   /// The relative path from the Dart file with the annotation to the file
   /// containing the source JSON.
   final String path;
@@ -26,6 +26,6 @@ class JsonLiteral {
   /// `true` if the JSON literal should be written as a constant.
   final bool asConst;
 
-  /// Creates a new [JsonLiteral] instance.
-  const JsonLiteral(this.path, {this.asConst = false});
+  /// Creates a new [DynamoLiteral] instance.
+  const DynamoLiteral(this.path, {this.asConst = false});
 }

@@ -48,7 +48,7 @@ abstract class EncodeHelper implements HelperCore {
 
     if (config.genericArgumentFactories) {
       for (var arg in element.typeParameters) {
-        final helperName = toJsonForType(
+        final helperName = toDynamoJsonForType(
           arg.instantiate(nullabilitySuffix: NullabilitySuffix.none),
         );
         buffer.write(',Object? Function(${arg.name} value) $helperName');
@@ -161,7 +161,7 @@ abstract class EncodeHelper implements HelperCore {
   /// Returns `true` if the field can be written to JSON 'naively' – meaning
   /// we can avoid checking for `null`.
   bool _writeJsonValueNaive(FieldElement field) {
-    final jsonKey = jsonKeyFor(field);
+    final jsonKey = dynamoKeyFor(field);
 
     return jsonKey.includeIfNull ||
         (!field.type.isNullableType && !_fieldHasCustomEncoder(field));

@@ -5,30 +5,30 @@
 import 'package:analyzer/dart/constant/value.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:source_gen/source_gen.dart';
 import 'package:source_helper/source_helper.dart';
 
+import '../../json_annotation.dart';
 import 'type_helpers/config_types.dart';
 
-const _jsonKeyChecker = TypeChecker.fromRuntime(JsonKey);
+const _jsonKeyChecker = TypeChecker.fromRuntime(DynamoKey);
 
-DartObject? _jsonKeyAnnotation(FieldElement element) =>
+DartObject? _dynamoKeyAnnotation(FieldElement element) =>
     _jsonKeyChecker.firstAnnotationOf(element) ??
     (element.getter == null
         ? null
         : _jsonKeyChecker.firstAnnotationOf(element.getter!));
 
-ConstantReader jsonKeyAnnotation(FieldElement element) =>
-    ConstantReader(_jsonKeyAnnotation(element));
+ConstantReader dynamoKeyAnnotation(FieldElement element) =>
+    ConstantReader(_dynamoKeyAnnotation(element));
 
-/// Returns `true` if [element] is annotated with [JsonKey].
-bool hasJsonKeyAnnotation(FieldElement element) =>
-    _jsonKeyAnnotation(element) != null;
+/// Returns `true` if [element] is annotated with [DynamoKey].
+bool hasDynamoKeyAnnotation(FieldElement element) =>
+    _dynamoKeyAnnotation(element) != null;
 
 Never throwUnsupported(FieldElement element, String message) =>
     throw InvalidGenerationSourceError(
-      'Error with `@JsonKey` on the `${element.name}` field. $message',
+      'Error with `@DynamoKey` on the `${element.name}` field. $message',
       element: element,
     );
 
@@ -47,10 +47,10 @@ T enumValueForDartObject<T>(
 ) =>
     items[source.getField('index')!.toIntValue()!];
 
-/// Return an instance of [JsonSerializable] corresponding to a the provided
+/// Return an instance of [DynamoJson] corresponding to a the provided
 /// [reader].
 // #CHANGE WHEN UPDATING json_annotation
-JsonSerializable _valueForAnnotation(ConstantReader reader) => JsonSerializable(
+DynamoJson _valueForAnnotation(ConstantReader reader) => DynamoJson(
       anyMap: reader.read('anyMap').literalValue as bool?,
       checked: reader.read('checked').literalValue as bool?,
       constructor: reader.read('constructor').literalValue as String?,
@@ -67,19 +67,19 @@ JsonSerializable _valueForAnnotation(ConstantReader reader) => JsonSerializable(
       includeIfNull: reader.read('includeIfNull').literalValue as bool?,
     );
 
-/// Returns a [ClassConfig] with values from the [JsonSerializable]
+/// Returns a [ClassConfig] with values from the [DynamoJson]
 /// instance represented by [reader].
 ///
-/// For fields that are not defined in [JsonSerializable] or `null` in [reader],
+/// For fields that are not defined in [DynamoJson] or `null` in [reader],
 /// use the values in [config].
 ///
-/// Note: if [JsonSerializable.genericArgumentFactories] is `false` for [reader]
+/// Note: if [DynamoJson.genericArgumentFactories] is `false` for [reader]
 /// and `true` for [config], the corresponding field in the return value will
 /// only be `true` if [classElement] has type parameters.
 ClassConfig mergeConfig(
   ClassConfig config,
   ConstantReader reader, {
-  required ClassElement classElement,
+  required InterfaceElement classElement,
 }) {
   final annotation = _valueForAnnotation(reader);
   assert(config.ctorParamDefaults.isEmpty);
@@ -118,7 +118,7 @@ ClassConfig mergeConfig(
 }
 
 ConstructorElement? _constructorByNameOrNull(
-  ClassElement classElement,
+  InterfaceElement classElement,
   String name,
 ) {
   try {
@@ -129,7 +129,8 @@ ConstructorElement? _constructorByNameOrNull(
   }
 }
 
-ConstructorElement constructorByName(ClassElement classElement, String name) {
+ConstructorElement constructorByName(
+    InterfaceElement classElement, String name) {
   final className = classElement.name;
 
   ConstructorElement? ctor;
@@ -160,15 +161,16 @@ ConstructorElement constructorByName(ClassElement classElement, String name) {
 ///
 /// Otherwise, `null`.
 Iterable<FieldElement>? iterateEnumFields(DartType targetType) {
-  if (targetType is InterfaceType && targetType.element.isEnum) {
-    return targetType.element.fields.where((element) => element.isEnumConstant);
+  if (targetType is InterfaceType && targetType.element2 is EnumElement) {
+    return targetType.element2.fields
+        .where((element) => element.isEnumConstant);
   }
   return null;
 }
 
 extension DartTypeExtension on DartType {
   DartType promoteNonNullable() =>
-      element?.library?.typeSystem.promoteToNonNull(this) ?? this;
+      element2?.library?.typeSystem.promoteToNonNull(this) ?? this;
 }
 
 String ifNullOrElse(String test, String ifNull, String ifNotNull) =>
@@ -206,7 +208,7 @@ String typeToCode(
     return 'dynamic';
   } else if (type is InterfaceType) {
     return [
-      type.element.name,
+      type.element2.name,
       if (type.typeArguments.isNotEmpty)
         '<${type.typeArguments.map(typeToCode).join(', ')}>',
       (type.isNullableType || forceNullable) ? '?' : '',
@@ -228,7 +230,7 @@ extension ExecutableElementExtension on ExecutableElement {
     }
 
     if (this is MethodElement) {
-      return '${enclosingElement.name}.$name';
+      return '${enclosingElement3.name}.$name';
     }
 
     throw UnsupportedError(

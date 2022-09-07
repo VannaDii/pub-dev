@@ -6,13 +6,13 @@ import 'package:meta/meta_meta.dart';
 
 import 'allowed_keys_helpers.dart';
 import 'checked_helpers.dart';
+import 'dynamo_converter.dart';
+import 'dynamo_key.dart';
 import 'enum_helpers.dart';
-import 'json_converter.dart';
-import 'json_key.dart';
 
-part 'json_serializable.g.dart';
+part 'dynamo_json.g.dart';
 
-/// Values for the automatic field renaming behavior for [JsonSerializable].
+/// Values for the automatic field renaming behavior for [DynamoJson].
 enum FieldRename {
   /// Use the field name without changes.
   none,
@@ -32,13 +32,13 @@ enum FieldRename {
 }
 
 /// An annotation used to specify a class to generate code for.
-@JsonSerializable(
+@DynamoJson(
   checked: true,
   disallowUnrecognizedKeys: true,
   fieldRename: FieldRename.snake,
 )
 @Target({TargetKind.classType})
-class JsonSerializable {
+class DynamoJson {
   /// If `true`, [Map] types are *not* assumed to be [Map<String, dynamic>]
   /// – which is the default type of [Map] instances return by JSON decode in
   /// `dart:convert`.
@@ -133,8 +133,8 @@ class JsonSerializable {
   ///
   /// See [FieldRename] for details on the other options.
   ///
-  /// Note: the value for [JsonKey.name] takes precedence over this option for
-  /// fields annotated with [JsonKey].
+  /// Note: the value for [DynamoKey.name] takes precedence over this option for
+  /// fields annotated with [DynamoKey].
   final FieldRename? fieldRename;
 
   /// When `true` on classes with type parameters (generic types), extra
@@ -182,7 +182,7 @@ class JsonSerializable {
   ///    echoed.
   final bool? genericArgumentFactories;
 
-  /// When `true`, only fields annotated with [JsonKey] will have code
+  /// When `true`, only fields annotated with [DynamoKey] will have code
   /// generated.
   ///
   /// It will have the same effect as if those fields had been annotated with
@@ -199,7 +199,7 @@ class JsonSerializable {
   /// `includeIfNull`, that value takes precedent.
   final bool? includeIfNull;
 
-  /// A list of [JsonConverter] to apply to this class.
+  /// A list of [DynamoConverter] to apply to this class.
   ///
   /// Writing:
   ///
@@ -217,7 +217,7 @@ class JsonSerializable {
   /// ```
   ///
   /// The main difference is that this allows reusing a custom
-  /// [JsonSerializable] over multiple classes:
+  /// [DynamoJson] over multiple classes:
   ///
   /// ```dart
   /// const myCustomAnnotation = JsonSerializable(
@@ -230,11 +230,11 @@ class JsonSerializable {
   /// @myCustomAnnotation
   /// class Another {...}
   /// ```
-  @JsonKey(ignore: true)
-  final List<JsonConverter>? converters;
+  @DynamoKey(ignore: true)
+  final List<DynamoConverter>? converters;
 
-  /// Creates a new [JsonSerializable] instance.
-  const JsonSerializable({
+  /// Creates a new [DynamoJson] instance.
+  const DynamoJson({
     @Deprecated('Has no effect') bool? nullable,
     this.anyMap,
     this.checked,
@@ -251,13 +251,13 @@ class JsonSerializable {
     this.genericArgumentFactories,
   });
 
-  factory JsonSerializable.fromJson(Map<String, dynamic> json) =>
+  factory DynamoJson.fromJson(Map<String, dynamic> json) =>
       _$JsonSerializableFromJson(json);
 
-  /// An instance of [JsonSerializable] with all fields set to their default
+  /// An instance of [DynamoJson] with all fields set to their default
   /// values.
   @Deprecated('Was only ever included to support builder infrastructure.')
-  static const defaults = JsonSerializable(
+  static const defaults = DynamoJson(
     anyMap: false,
     checked: false,
     constructor: '',
@@ -271,13 +271,13 @@ class JsonSerializable {
     genericArgumentFactories: false,
   );
 
-  /// Returns a new [JsonSerializable] instance with fields equal to the
+  /// Returns a new [DynamoJson] instance with fields equal to the
   /// corresponding values in `this`, if not `null`.
   ///
   /// Otherwise, the returned value has the default value as defined in
   /// [defaults].
   @Deprecated('Was only ever included to support builder infrastructure.')
-  JsonSerializable withDefaults() => JsonSerializable(
+  DynamoJson withDefaults() => DynamoJson(
         anyMap: anyMap ?? defaults.anyMap,
         checked: checked ?? defaults.checked,
         constructor: constructor ?? defaults.constructor,

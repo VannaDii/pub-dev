@@ -7,7 +7,6 @@ import 'dart:io';
 
 import 'package:dynamo_json/src/check_dependencies.dart';
 import 'package:path/path.dart' as p;
-import 'package:pub_semver/pub_semver.dart';
 import 'package:pubspec_parse/pubspec_parse.dart';
 import 'package:test/test.dart';
 import 'package:test_descriptor/test_descriptor.dart' as d;
@@ -16,15 +15,6 @@ import 'package:test_process/test_process.dart';
 import 'test_utils.dart';
 
 void main() {
-  test('validate pubspec constraint', () {
-    final annotationConstraint =
-        _jsonSerialPubspec.dependencies['json_annotation'] as HostedDependency;
-    final versionRange = annotationConstraint.version as VersionRange;
-
-    expect(versionRange.includeMin, isTrue);
-    expect(versionRange.min, requiredJsonAnnotationMinVersion);
-  });
-
   test(
     'missing dependency in production code',
     () => _structurePackage(
@@ -119,12 +109,12 @@ Future<void> _structurePackage({
   final pubspec = loudEncode(
     {
       'name': '_test_pkg',
-      'environment': {'sdk': '>=2.14.0 <3.0.0'},
+      'environment': {'sdk': '>=2.18.0 <3.0.0'},
       'dependencies': dependencies,
       'dev_dependencies': {
         ...devDependencies,
         'build_runner': 'any',
-        'json_serializable': {'path': p.current},
+        'dynamo_json': {'path': p.current},
       },
       'dependency_overrides': _jsonSerialPathDependencyOverrides,
     },
@@ -172,7 +162,7 @@ class SomeClass{}
   }
 
   expect(lines.toString(), contains('''
-[WARNING] json_serializable:json_serializable on $sourceDirectory/sample.dart:
+[WARNING] dynamo_json:dynamo_json on $sourceDirectory/sample.dart:
 $message'''));
 
   await proc.shouldExit(0);

@@ -4,23 +4,23 @@
 
 import 'package:meta/meta_meta.dart';
 
-import 'json_serializable.dart';
-import 'json_value.dart';
+import 'dynamo_json.dart';
+import 'dynamo_value.dart';
 
 /// Allows configuration of how `enum` elements are treated as JSON.
 @Target({TargetKind.enumType})
-class JsonEnum {
-  const JsonEnum({
+class DynamoEnum {
+  const DynamoEnum({
     this.alwaysCreate = false,
     this.fieldRename = FieldRename.none,
   });
 
   /// If `true`, `_$[enum name]EnumMap` is generated for in library containing
   /// the `enum`, even if the `enum` is not used as a field in a class annotated
-  /// with [JsonSerializable].
+  /// with [DynamoJson].
   ///
   /// The default, `false`, means no extra helpers are generated for this `enum`
-  /// unless it is used by a class annotated with [JsonSerializable].
+  /// unless it is used by a class annotated with [DynamoJson].
   final bool alwaysCreate;
 
   /// Defines the naming strategy when converting enum entry names to JSON
@@ -31,7 +31,7 @@ class JsonEnum {
   ///
   /// See [FieldRename] for details on the other options.
   ///
-  /// Note: the value for [JsonValue.value] takes precedence over this option
-  /// for entries annotated with [JsonValue].
+  /// Note: the value for [DynamoValue.value] takes precedence over this option
+  /// for entries annotated with [DynamoValue].
   final FieldRename fieldRename;
 }

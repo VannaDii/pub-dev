@@ -6,8 +6,8 @@ import 'package:analyzer/dart/element/type.dart';
 import 'package:source_gen/source_gen.dart';
 import 'package:source_helper/source_helper.dart';
 
+import '../dynamo_key_utils.dart';
 import '../enum_utils.dart';
-import '../json_key_utils.dart';
 import '../type_helper.dart';
 
 final simpleExpression = RegExp('^[a-zA-Z_]+\$');
@@ -49,14 +49,14 @@ class EnumHelper extends TypeHelper<TypeHelperContextWithConfig> {
       return null;
     }
 
-    final jsonKey = jsonKeyForField(context.fieldElement, context.config);
+    final jsonKey = dynamoKeyForField(context.fieldElement, context.config);
 
     if (!targetType.isNullableType &&
         jsonKey.unknownEnumValue == jsonKeyNullForUndefinedEnumValueFieldName) {
       // If the target is not nullable,
       throw InvalidGenerationSourceError(
         '`$jsonKeyNullForUndefinedEnumValueFieldName` cannot be used with '
-        '`JsonKey.unknownEnumValue` unless the field is nullable.',
+        '`DynamoKey.unknownEnumValue` unless the field is nullable.',
         element: context.fieldElement,
       );
     }

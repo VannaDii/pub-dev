@@ -7,8 +7,8 @@ import 'dart:io';
 
 import 'package:build/build.dart';
 import 'package:dynamo_json/builder.dart';
-import 'package:dynamo_json/src/json_serializable_generator.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:dynamo_json/json_annotation.dart';
+import 'package:dynamo_json/src/dynamo_json_generator.dart';
 import 'package:test/test.dart';
 import 'package:yaml/yaml.dart';
 
@@ -21,13 +21,13 @@ void main() {
   });
 
   test('empty', () async {
-    final builder = jsonSerializable(BuilderOptions.empty);
+    final builder = dynamoSerializable(BuilderOptions.empty);
     expect(builder, isNotNull);
   });
 
   test('valid default config', () async {
     final builder =
-        jsonSerializable(BuilderOptions(generatorConfigDefaultJson));
+        dynamoSerializable(BuilderOptions(generatorConfigDefaultJson));
     expect(builder, isNotNull);
   });
 
@@ -42,15 +42,15 @@ void main() {
     }
 
     final builder =
-        jsonSerializable(BuilderOptions(generatorConfigNonDefaultJson));
+        dynamoSerializable(BuilderOptions(generatorConfigNonDefaultJson));
     expect(builder, isNotNull);
   });
 
   test('config is null-protected when passed to JsonSerializableGenerator', () {
     final nullValueMap = Map.fromEntries(
         generatorConfigDefaultJson.entries.map((e) => MapEntry(e.key, null)));
-    final config = JsonSerializable.fromJson(nullValueMap);
-    final generator = JsonSerializableGenerator(config: config);
+    final config = DynamoJson.fromJson(nullValueMap);
+    final generator = DynamoJsonGenerator(config: config);
     expect(generator.config.toJson(), generatorConfigDefaultJson);
   });
 
@@ -68,7 +68,7 @@ void main() {
       'targets',
       r'$default',
       'builders',
-      'json_serializable',
+      'dynamo_json',
       'options'
     ]) {
       yaml = yaml[key] as YamlMap;
@@ -84,11 +84,11 @@ void main() {
     );
 
     expect(
-      JsonSerializable.fromJson(configMap).toJson(),
+      DynamoJson.fromJson(configMap).toJson(),
       generatorConfigDefaultJson,
     );
 
-    final builder = jsonSerializable(BuilderOptions(configMap));
+    final builder = dynamoSerializable(BuilderOptions(configMap));
     expect(builder, isNotNull);
   });
 
@@ -96,13 +96,14 @@ void main() {
     final matcher = isA<StateError>().having(
       (v) => v.message,
       'message',
-      'Could not parse the options provided for `json_serializable`.\n'
+      'Could not parse the options provided for `dynamo_json`.\n'
           'Unrecognized keys: [unsupported]; '
           'supported keys: [${_invalidConfig.keys.join(', ')}]',
     );
 
     expect(
-        () => jsonSerializable(const BuilderOptions({'unsupported': 'config'})),
+        () =>
+            dynamoSerializable(const BuilderOptions({'unsupported': 'config'})),
         throwsA(matcher));
   });
 
@@ -139,12 +140,12 @@ void main() {
           (v) => v.message,
           'message',
           '''
-Could not parse the options provided for `json_serializable`.
+Could not parse the options provided for `dynamo_json`.
 There is a problem with "${entry.key}".
 $lastLine''',
         );
         expect(
-            () => jsonSerializable(BuilderOptions(config)), throwsA(matcher));
+            () => dynamoSerializable(BuilderOptions(config)), throwsA(matcher));
       });
     }
   });

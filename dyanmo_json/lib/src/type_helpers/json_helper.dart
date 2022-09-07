@@ -18,9 +18,9 @@ import 'generic_factory_helper.dart';
 
 const _helperLambdaParam = 'value';
 
-/// Supports types that have `fromJson` constructors and/or `toJson` functions.
-class JsonHelper extends TypeHelper<TypeHelperContextWithConfig> {
-  const JsonHelper();
+/// Supports types that have `fromDynamoJson` constructors and/or `toDynamoJson` functions.
+class DynamoHelper extends TypeHelper<TypeHelperContextWithConfig> {
+  const DynamoHelper();
 
   /// Simply returns the [expression] provided.
   ///
@@ -40,7 +40,7 @@ class JsonHelper extends TypeHelper<TypeHelperContextWithConfig> {
 
     final toJsonArgs = <String>[];
 
-    var toJson = _toJsonMethod(interfaceType);
+    var toJson = _toDynamoJsonMethod(interfaceType);
 
     if (toJson != null) {
       // Using the `declaration` here so we get the original definition –
@@ -60,7 +60,7 @@ class JsonHelper extends TypeHelper<TypeHelperContextWithConfig> {
 
     if (context.config.explicitToJson || toJsonArgs.isNotEmpty) {
       return '$expression${interfaceType.isNullableType ? '?' : ''}'
-          '.toJson(${toJsonArgs.map((a) => '$a, ').join()} )';
+          '.toDynamoJson(${toJsonArgs.map((a) => '$a, ').join()} )';
     }
     return expression;
   }
@@ -76,10 +76,10 @@ class JsonHelper extends TypeHelper<TypeHelperContextWithConfig> {
       return null;
     }
 
-    final classElement = targetType.element;
+    final classElement = targetType.element2;
 
     final fromJsonCtor = classElement.constructors
-        .singleWhereOrNull((ce) => ce.name == 'fromJson');
+        .singleWhereOrNull((ce) => ce.name == 'fromDynamoJson');
 
     var output = expression;
     if (fromJsonCtor != null) {
@@ -89,8 +89,8 @@ class JsonHelper extends TypeHelper<TypeHelperContextWithConfig> {
 
       if (positionalParams.isEmpty) {
         throw InvalidGenerationSourceError(
-          'Expecting a `fromJson` constructor with exactly one positional '
-          'parameter. Found a constructor with 0 parameters.',
+          'Expecting a `fromDynamoJson` constructor with exactly one '
+          'positional parameter. Found a constructor with 0 parameters.',
           element: fromJsonCtor,
         );
       }
@@ -130,7 +130,8 @@ class JsonHelper extends TypeHelper<TypeHelperContextWithConfig> {
 
     // TODO: the type could be imported from a library with a prefix!
     // https://github.com/google/json_serializable.dart/issues/19
-    output = '${typeToCode(targetType.promoteNonNullable())}.fromJson($output)';
+    output = '${typeToCode(targetType.promoteNonNullable())}.fromDynamoJson'
+        '($output)';
 
     return DefaultContainer(expression, output);
   }
@@ -152,7 +153,7 @@ List<String> _helperParams(
 
   for (var helperArg in rest) {
     final typeParamIndex =
-        type.element.typeParameters.indexOf(helperArg.element);
+        type.element2.typeParameters.indexOf(helperArg.element2);
 
     // TODO: throw here if `typeParamIndex` is -1 ?
     final typeArg = type.typeArguments[typeParamIndex];
@@ -174,7 +175,7 @@ TypeParameterType _decodeHelper(
       type.normalParameterTypes.length == 1) {
     final funcReturnType = type.returnType;
 
-    if (param.name == fromJsonForName(funcReturnType.element!.name!)) {
+    if (param.name == fromDynamoJsonForName(funcReturnType.element2!.name!)) {
       final funcParamType = type.normalParameterTypes.single;
 
       if ((funcParamType.isDartCoreObject && funcParamType.isNullableType) ||
@@ -185,10 +186,10 @@ TypeParameterType _decodeHelper(
   }
 
   throw InvalidGenerationSourceError(
-    'Expecting a `fromJson` constructor with exactly one positional '
+    'Expecting a `fromDynamoJson` constructor with exactly one positional '
     'parameter. '
     'The only extra parameters allowed are functions of the form '
-    '`T Function(Object?) ${fromJsonForName('T')}` where `T` is a type '
+    '`T Function(Object?) ${fromDynamoJsonForName('T')}` where `T` is a type '
     'parameter of the target type.',
     element: targetElement,
   );
@@ -205,7 +206,7 @@ TypeParameterType _encodeHelper(
       type.normalParameterTypes.length == 1) {
     final funcParamType = type.normalParameterTypes.single;
 
-    if (param.name == toJsonForName(funcParamType.element!.name!)) {
+    if (param.name == toDynamoJsonForName(funcParamType.element2!.name!)) {
       if (funcParamType is TypeParameterType) {
         return funcParamType;
       }
@@ -213,17 +214,17 @@ TypeParameterType _encodeHelper(
   }
 
   throw InvalidGenerationSourceError(
-    'Expecting a `toJson` function with no required parameters. '
+    'Expecting a `toDynamoJson` function with no required parameters. '
     'The only extra parameters allowed are functions of the form '
-    '`Object Function(T) toJsonT` where `T` is a type parameter of the target '
-    ' type.',
+    '`Object Function(T) toDynamoJsonT` where `T` is a type parameter of the '
+    'target type.',
     element: targetElement,
   );
 }
 
 bool _canSerialize(ClassConfig config, DartType type) {
   if (type is InterfaceType) {
-    final toJsonMethod = _toJsonMethod(type);
+    final toJsonMethod = _toDynamoJsonMethod(type);
 
     if (toJsonMethod != null) {
       return true;
@@ -245,7 +246,7 @@ InterfaceType? _instantiate(
   InterfaceType classType,
 ) {
   final argTypes = ctorParamType.typeArguments.map((arg) {
-    final typeParamIndex = classType.element.typeParameters.indexWhere(
+    final typeParamIndex = classType.element2.typeParameters.indexWhere(
         // TODO: not 100% sure `nullabilitySuffix` is right
         (e) => e.instantiate(nullabilitySuffix: arg.nullabilitySuffix) == arg);
     if (typeParamIndex >= 0) {
@@ -261,7 +262,7 @@ InterfaceType? _instantiate(
     return null;
   }
 
-  return ctorParamType.element.instantiate(
+  return ctorParamType.element2.instantiate(
     typeArguments: argTypes.cast<DartType>(),
     // TODO: not 100% sure nullabilitySuffix is right... Works for now
     nullabilitySuffix: NullabilitySuffix.none,
@@ -273,7 +274,7 @@ ClassConfig? _annotation(ClassConfig config, InterfaceType source) {
     return null;
   }
   final annotations = const TypeChecker.fromRuntime(JsonSerializable)
-      .annotationsOfExact(source.element, throwOnUnresolved: false)
+      .annotationsOfExact(source.element2, throwOnUnresolved: false)
       .toList();
 
   if (annotations.isEmpty) {
@@ -283,10 +284,10 @@ ClassConfig? _annotation(ClassConfig config, InterfaceType source) {
   return mergeConfig(
     config,
     ConstantReader(annotations.single),
-    classElement: source.element,
+    classElement: source.element2,
   );
 }
 
-MethodElement? _toJsonMethod(DartType type) => type.typeImplementations
-    .map((dt) => dt is InterfaceType ? dt.getMethod('toJson') : null)
+MethodElement? _toDynamoJsonMethod(DartType type) => type.typeImplementations
+    .map((dt) => dt is InterfaceType ? dt.getMethod('toDynamoJson') : null)
     .firstWhereOrNull((me) => me != null);

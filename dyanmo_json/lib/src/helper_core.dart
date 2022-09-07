@@ -9,7 +9,7 @@ import 'package:source_gen/source_gen.dart';
 import 'package:source_helper/source_helper.dart';
 
 import 'constants.dart';
-import 'json_key_utils.dart';
+import 'dynamo_key_utils.dart';
 import 'type_helper.dart';
 import 'type_helper_ctx.dart';
 import 'type_helpers/config_types.dart';
@@ -31,7 +31,7 @@ abstract class HelperCore {
       '${element.name}${genericClassArgumentsImpl(false)}';
 
   @protected
-  String nameAccess(FieldElement field) => jsonKeyFor(field).name;
+  String nameAccess(FieldElement field) => dynamoKeyFor(field).name;
 
   @protected
   String safeNameAccess(FieldElement field) =>
@@ -49,7 +49,8 @@ abstract class HelperCore {
       genericClassArguments(element, withConstraints);
 
   @protected
-  KeyConfig jsonKeyFor(FieldElement field) => jsonKeyForField(field, config);
+  KeyConfig dynamoKeyFor(FieldElement field) =>
+      dynamoKeyForField(field, config);
 
   @protected
   TypeHelperCtx getHelperContext(FieldElement field) =>
@@ -72,13 +73,13 @@ InvalidGenerationSourceError createInvalidGenerationError(
     todo = '''
 To support type parameters (generic types) you can:
 $converterOrKeyInstructions
-* Set `JsonSerializable.genericArgumentFactories` to `true`
+* Set `DynamoJson.genericArgumentFactories` to `true`
   https://pub.dev/documentation/json_annotation/latest/json_annotation/JsonSerializable/genericArgumentFactories.html''';
   } else if (field.type != error.type) {
     message = '$message because of type `${typeToCode(error.type)}`';
   } else {
     todo = '''
-To support the type `${error.type.element!.name}` you can:
+To support the type `${error.type.element2!.name}` you can:
 $converterOrKeyInstructions''';
   }
 

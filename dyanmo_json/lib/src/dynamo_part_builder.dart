@@ -3,13 +3,13 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:build/build.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:source_gen/source_gen.dart';
 
+import '../json_annotation.dart';
 import 'check_dependencies.dart';
-import 'json_enum_generator.dart';
-import 'json_literal_generator.dart';
-import 'json_serializable_generator.dart';
+import 'dynamo_enum_generator.dart';
+import 'dynamo_json_generator.dart';
+import 'dynamo_literal_generator.dart';
 import 'settings.dart';
 
 /// Returns a [Builder] for use within a `package:build_runner`
@@ -17,21 +17,21 @@ import 'settings.dart';
 ///
 /// [formatOutput] is called to format the generated code. If not provided,
 /// the default Dart code formatter is used.
-Builder jsonPartBuilder({
+Builder dynamoPartBuilder({
   String Function(String code)? formatOutput,
-  JsonSerializable? config,
+  DynamoJson? config,
 }) {
   final settings = Settings(config: config);
 
   return SharedPartBuilder(
     [
       _UnifiedGenerator([
-        JsonSerializableGenerator.fromSettings(settings),
-        const JsonEnumGenerator(),
+        DynamoJsonGenerator.fromSettings(settings),
+        const DynamoEnumGenerator(),
       ]),
-      const JsonLiteralGenerator(),
+      const DynamoLiteralGenerator(),
     ],
-    'json_serializable',
+    'dynamo_json',
     formatOutput: formatOutput,
   );
 }
@@ -72,7 +72,7 @@ class _UnifiedGenerator extends Generator {
   }
 
   @override
-  String toString() => 'JsonSerializableGenerator';
+  String toString() => 'DynamoJsonGenerator';
 }
 
 // Borrowed from `package:source_gen`

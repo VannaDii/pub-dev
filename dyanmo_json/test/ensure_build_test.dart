@@ -10,7 +10,7 @@ import 'package:test/test.dart';
 void main() {
   test(
     'ensure_build',
-    () => expectBuildClean(packageRelativeDirectory: 'json_serializable'),
+    () => expectBuildClean(packageRelativeDirectory: 'dynamo_json'),
     timeout: const Timeout.factor(2),
   );
 }

@@ -4,13 +4,13 @@
 
 import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:source_gen/source_gen.dart';
 
+import '../json_annotation.dart';
 import 'enum_utils.dart';
 
-class JsonEnumGenerator extends GeneratorForAnnotation<JsonEnum> {
-  const JsonEnumGenerator();
+class DynamoEnumGenerator extends GeneratorForAnnotation<DynamoEnum> {
+  const DynamoEnumGenerator();
 
   @override
   List<String> generateForAnnotatedElement(
@@ -18,9 +18,9 @@ class JsonEnumGenerator extends GeneratorForAnnotation<JsonEnum> {
     ConstantReader annotation,
     BuildStep buildStep,
   ) {
-    if (element is! ClassElement || !element.isEnum) {
+    if (element is! ClassElement || element is! EnumElement) {
       throw InvalidGenerationSourceError(
-        '`@JsonEnum` can only be used on enum elements.',
+        '`@DynamoEnum` can only be used on enum elements.',
         element: element,
       );
     }

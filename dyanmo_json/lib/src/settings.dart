@@ -2,8 +2,7 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'package:json_annotation/json_annotation.dart';
-
+import '../json_annotation.dart';
 import 'type_helper.dart';
 import 'type_helpers/big_int_helper.dart';
 import 'type_helpers/config_types.dart';
@@ -31,7 +30,7 @@ class Settings {
     BigIntHelper(),
     DateTimeHelper(),
     DurationHelper(),
-    JsonHelper(),
+    DynamoHelper(),
     UriHelper(),
   ];
 
@@ -48,10 +47,10 @@ class Settings {
   /// Creates an instance of [Settings].
   ///
   /// If [typeHelpers] is not provided, the built-in helpers are used:
-  /// [BigIntHelper], [DateTimeHelper], [DurationHelper], [JsonHelper], and
+  /// [BigIntHelper], [DateTimeHelper], [DurationHelper], [DynamoHelper], and
   /// [UriHelper].
   Settings({
-    JsonSerializable? config,
+    DynamoJson? config,
     List<TypeHelper>? typeHelpers,
   })  : config = config != null
             ? ClassConfig.fromJsonSerializable(config)
@@ -62,11 +61,11 @@ class Settings {
   ///
   /// [typeHelpers] provides a set of [TypeHelper] that will be used along with
   /// the built-in helpers:
-  /// [BigIntHelper], [DateTimeHelper], [DurationHelper], [JsonHelper], and
+  /// [BigIntHelper], [DateTimeHelper], [DurationHelper], [DynamoHelper], and
   /// [UriHelper].
   factory Settings.withDefaultHelpers(
     Iterable<TypeHelper> typeHelpers, {
-    JsonSerializable? config,
+    DynamoJson? config,
   }) =>
       Settings(
         config: config,

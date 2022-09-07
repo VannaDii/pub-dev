@@ -27,7 +27,7 @@ class _FieldSet implements Comparable<_FieldSet> {
     // Prefer the field that's annotated with `JsonKey`, if any.
     // If not, use the class field.
     final fieldHasJsonKey =
-        fields.firstWhere(hasJsonKeyAnnotation, orElse: () => fields.first);
+        fields.firstWhere(hasDynamoKeyAnnotation, orElse: () => fields.first);
 
     return _FieldSet._(fieldHasJsonKey, sortField);
   }
@@ -37,20 +37,20 @@ class _FieldSet implements Comparable<_FieldSet> {
 
   static int _sortByLocation(FieldElement a, FieldElement b) {
     final checkerA =
-        TypeChecker.fromStatic((a.enclosingElement as ClassElement).thisType);
+        TypeChecker.fromStatic((a.enclosingElement3 as ClassElement).thisType);
 
-    if (!checkerA.isExactly(b.enclosingElement)) {
+    if (!checkerA.isExactly(b.enclosingElement3)) {
       // in this case, you want to prioritize the enclosingElement that is more
       // "super".
 
-      if (checkerA.isAssignableFrom(b.enclosingElement)) {
+      if (checkerA.isAssignableFrom(b.enclosingElement3)) {
         return -1;
       }
 
-      final checkerB =
-          TypeChecker.fromStatic((b.enclosingElement as ClassElement).thisType);
+      final checkerB = TypeChecker.fromStatic(
+          (b.enclosingElement3 as ClassElement).thisType);
 
-      if (checkerB.isAssignableFrom(a.enclosingElement)) {
+      if (checkerB.isAssignableFrom(a.enclosingElement3)) {
         return 1;
       }
     }
@@ -82,7 +82,7 @@ Iterable<FieldElement> createSortedFieldSet(ClassElement element) {
 
   for (final v in manager.getInheritedConcreteMap2(element).values) {
     assert(v is! FieldElement);
-    if (_dartCoreObjectChecker.isExactly(v.enclosingElement)) {
+    if (_dartCoreObjectChecker.isExactly(v.enclosingElement3)) {
       continue;
     }
 

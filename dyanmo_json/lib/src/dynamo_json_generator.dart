@@ -4,9 +4,9 @@
 
 import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:source_gen/source_gen.dart';
 
+import '../../json_annotation.dart';
 import 'generator_helper.dart';
 import 'settings.dart';
 import 'type_helper.dart';
@@ -16,39 +16,38 @@ import 'type_helpers/duration_helper.dart';
 import 'type_helpers/json_helper.dart';
 import 'type_helpers/uri_helper.dart';
 
-class JsonSerializableGenerator
-    extends GeneratorForAnnotation<JsonSerializable> {
+class DynamoJsonGenerator extends GeneratorForAnnotation<DynamoJson> {
   final Settings _settings;
 
-  JsonSerializable get config => _settings.config.toJsonSerializable();
+  DynamoJson get config => _settings.config.toDynamoJson();
 
-  JsonSerializableGenerator.fromSettings(this._settings);
+  DynamoJsonGenerator.fromSettings(this._settings);
 
-  /// Creates an instance of [JsonSerializableGenerator].
+  /// Creates an instance of [DynamoJsonGenerator].
   ///
   /// If [typeHelpers] is not provided, the built-in helpers are used:
-  /// [BigIntHelper], [DateTimeHelper], [DurationHelper], [JsonHelper], and
+  /// [BigIntHelper], [DateTimeHelper], [DurationHelper], [DynamoHelper], and
   /// [UriHelper].
-  factory JsonSerializableGenerator({
-    JsonSerializable? config,
+  factory DynamoJsonGenerator({
+    DynamoJson? config,
     List<TypeHelper>? typeHelpers,
   }) =>
-      JsonSerializableGenerator.fromSettings(Settings(
+      DynamoJsonGenerator.fromSettings(Settings(
         config: config,
         typeHelpers: typeHelpers,
       ));
 
-  /// Creates an instance of [JsonSerializableGenerator].
+  /// Creates an instance of [DynamoJsonGenerator].
   ///
   /// [typeHelpers] provides a set of [TypeHelper] that will be used along with
   /// the built-in helpers:
-  /// [BigIntHelper], [DateTimeHelper], [DurationHelper], [JsonHelper], and
+  /// [BigIntHelper], [DateTimeHelper], [DurationHelper], [DynamoHelper], and
   /// [UriHelper].
-  factory JsonSerializableGenerator.withDefaultHelpers(
+  factory DynamoJsonGenerator.withDefaultHelpers(
     Iterable<TypeHelper> typeHelpers, {
-    JsonSerializable? config,
+    DynamoJson? config,
   }) =>
-      JsonSerializableGenerator(
+      DynamoJsonGenerator(
         config: config,
         typeHelpers: List.unmodifiable(
           typeHelpers.followedBy(Settings.defaultHelpers),
@@ -69,9 +68,9 @@ class JsonSerializableGenerator
       );
     }
 
-    if (element is! ClassElement || element.isEnum) {
+    if (element is! ClassElement || element is EnumElement) {
       throw InvalidGenerationSourceError(
-        '`@JsonSerializable` can only be used on classes.',
+        '`@DynamoJson` can only be used on classes.',
         element: element,
       );
     }

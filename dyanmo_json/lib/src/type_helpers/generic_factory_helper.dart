@@ -19,7 +19,7 @@ class GenericFactoryHelper extends TypeHelper<TypeHelperContextWithConfig> {
   ) {
     if (context.config.genericArgumentFactories &&
         targetType is TypeParameterType) {
-      final toJsonFunc = toJsonForType(targetType);
+      final toJsonFunc = toDynamoJsonForType(targetType);
       if (targetType.isNullableType) {
         context.addMember(_toJsonHelper);
         return '$_toJsonHelperName($expression, $toJsonFunc)';
@@ -40,7 +40,7 @@ class GenericFactoryHelper extends TypeHelper<TypeHelperContextWithConfig> {
   ) {
     if (context.config.genericArgumentFactories &&
         targetType is TypeParameterType) {
-      final fromJsonFunc = fromJsonForType(targetType);
+      final fromJsonFunc = fromDynamoJsonForType(targetType);
 
       if (targetType.isNullableType) {
         context.addMember(_fromJsonHelper);
@@ -74,12 +74,13 @@ Object? $_toJsonHelperName<T>(
     input == null ? null : toJson(input);
 ''';
 
-String toJsonForType(TypeParameterType type) =>
-    toJsonForName(type.getDisplayString(withNullability: false));
+String toDynamoJsonForType(TypeParameterType type) =>
+    toDynamoJsonForName(type.getDisplayString(withNullability: false));
 
-String toJsonForName(String genericType) => 'toJson$genericType';
+String toDynamoJsonForName(String genericType) => 'toDynamoJson$genericType';
 
-String fromJsonForType(TypeParameterType type) =>
-    fromJsonForName(type.getDisplayString(withNullability: false));
+String fromDynamoJsonForType(TypeParameterType type) =>
+    fromDynamoJsonForName(type.getDisplayString(withNullability: false));
 
-String fromJsonForName(String genericType) => 'fromJson$genericType';
+String fromDynamoJsonForName(String genericType) =>
+    'fromDynamoJson$genericType';

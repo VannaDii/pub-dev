@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'json_serializable.dart';
+part of 'dynamo_json.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-JsonSerializable _$JsonSerializableFromJson(Map<String, dynamic> json) =>
+DynamoJson _$JsonSerializableFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
       'JsonSerializable',
       json,
@@ -28,7 +28,7 @@ JsonSerializable _$JsonSerializableFromJson(Map<String, dynamic> json) =>
             'include_if_null'
           ],
         );
-        final val = JsonSerializable(
+        final val = DynamoJson(
           anyMap: $checkedConvert('any_map', (v) => v as bool?),
           checked: $checkedConvert('checked', (v) => v as bool?),
           constructor: $checkedConvert('constructor', (v) => v as String?),
@@ -64,7 +64,7 @@ JsonSerializable _$JsonSerializableFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$JsonSerializableToJson(JsonSerializable instance) =>
+Map<String, dynamic> _$JsonSerializableToJson(DynamoJson instance) =>
     <String, dynamic>{
       'any_map': instance.anyMap,
       'checked': instance.checked,

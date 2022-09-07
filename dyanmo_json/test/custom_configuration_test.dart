@@ -7,11 +7,11 @@ import 'dart:async';
 
 import 'package:analyzer/dart/element/type.dart';
 import 'package:build/experiments.dart';
+import 'package:dynamo_json/json_annotation.dart';
 import 'package:dynamo_json/json_serializable.dart';
 import 'package:dynamo_json/src/constants.dart';
 import 'package:dynamo_json/src/type_helper.dart';
 import 'package:dynamo_json/src/type_helpers/config_types.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:path/path.dart' as p;
 import 'package:source_gen/source_gen.dart';
 import 'package:source_gen_test/source_gen_test.dart';
@@ -32,14 +32,14 @@ Future<void> main() async {
   );
 
   group('without wrappers', () {
-    _registerTests(ClassConfig.defaults.toJsonSerializable());
+    _registerTests(ClassConfig.defaults.toDynamoJson());
   });
 
   group('configuration', () {
     Future<void> runWithConfigAndLogger(
-        JsonSerializable? config, String className) async {
+        DynamoJson? config, String className) async {
       await generateForElement(
-          JsonSerializableGenerator(
+          DynamoJsonGenerator(
               config: config, typeHelpers: const [_ConfigLogger()]),
           _libraryReader,
           className);
@@ -58,7 +58,7 @@ Future<void> main() async {
 
           test(testDescription, () async {
             await runWithConfigAndLogger(
-                nullConfig ? null : const JsonSerializable(), className);
+                nullConfig ? null : const DynamoJson(), className);
 
             expect(_ConfigLogger.configurations, hasLength(2));
             expect(
@@ -76,7 +76,7 @@ Future<void> main() async {
         'values in config override unconfigured (default) values in annotation',
         () async {
       await runWithConfigAndLogger(
-          JsonSerializable.fromJson(generatorConfigNonDefaultJson),
+          DynamoJson.fromJson(generatorConfigNonDefaultJson),
           'ConfigurationImplicitDefaults');
 
       expect(_ConfigLogger.configurations, isEmpty,
@@ -88,15 +88,15 @@ Future<void> main() async {
           Map<String, dynamic>.from(generatorConfigNonDefaultJson);
       configMap['create_to_json'] = true;
 
-      await runWithConfigAndLogger(JsonSerializable.fromJson(configMap),
-          'ConfigurationImplicitDefaults');
+      await runWithConfigAndLogger(
+          DynamoJson.fromJson(configMap), 'ConfigurationImplicitDefaults');
     });
 
     test(
       'explicit values in annotation override corresponding settings in config',
       () async {
         await runWithConfigAndLogger(
-            JsonSerializable.fromJson(generatorConfigNonDefaultJson),
+            DynamoJson.fromJson(generatorConfigNonDefaultJson),
             'ConfigurationExplicitDefaults');
 
         expect(_ConfigLogger.configurations, hasLength(2));
@@ -124,19 +124,19 @@ Future<void> main() async {
   });
 }
 
-Future<String> _runForElementNamed(JsonSerializable config, String name) async {
-  final generator = JsonSerializableGenerator(config: config);
+Future<String> _runForElementNamed(DynamoJson config, String name) async {
+  final generator = DynamoJsonGenerator(config: config);
   return generateForElement(generator, _libraryReader, name);
 }
 
-void _registerTests(JsonSerializable generator) {
+void _registerTests(DynamoJson generator) {
   Future<String> runForElementNamed(String name) =>
       _runForElementNamed(generator, name);
 
   group('explicit toJson', () {
     test('nullable', () async {
       final output = await _runForElementNamed(
-          const JsonSerializable(), 'TrivialNestedNullable');
+          const DynamoJson(), 'TrivialNestedNullable');
 
       const expected = r'''
 Map<String, dynamic> _$TrivialNestedNullableToJson(
@@ -151,7 +151,7 @@ Map<String, dynamic> _$TrivialNestedNullableToJson(
     });
     test('non-nullable', () async {
       final output = await _runForElementNamed(
-          const JsonSerializable(), 'TrivialNestedNonNullable');
+          const DynamoJson(), 'TrivialNestedNonNullable');
 
       const expected = r'''
 Map<String, dynamic> _$TrivialNestedNonNullableToJson(
@@ -185,7 +185,7 @@ Map<String, dynamic> _$TrivialNestedNonNullableToJson(
 
     test('class with child json-able object - anyMap', () async {
       final output = await _runForElementNamed(
-          const JsonSerializable(anyMap: true), 'ParentObject');
+          const DynamoJson(anyMap: true), 'ParentObject');
 
       expect(output, contains("ChildObject.fromJson(json['child'] as Map)"));
     });
@@ -218,7 +218,7 @@ Map<String, dynamic> _$TrivialNestedNonNullableToJson(
 }
 
 class _ConfigLogger implements TypeHelper<TypeHelperContextWithConfig> {
-  static final configurations = <JsonSerializable>[];
+  static final configurations = <DynamoJson>[];
 
   const _ConfigLogger();
 
@@ -229,14 +229,14 @@ class _ConfigLogger implements TypeHelper<TypeHelperContextWithConfig> {
     TypeHelperContextWithConfig context,
     bool defaultProvided,
   ) {
-    configurations.add(context.config.toJsonSerializable());
+    configurations.add(context.config.toDynamoJson());
     return null;
   }
 
   @override
   Object? serialize(DartType targetType, String expression,
       TypeHelperContextWithConfig context) {
-    configurations.add(context.config.toJsonSerializable());
+    configurations.add(context.config.toDynamoJson());
     return null;
   }
 }

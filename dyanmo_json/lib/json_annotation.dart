@@ -3,19 +3,19 @@
 // BSD-style license that can be found in the LICENSE file.
 
 /// Provides annotation classes to use with
-/// [json_serializable](https://pub.dev/packages/json_serializable).
+/// [dynamo_json](https://pub.dev/packages/dynamo_json).
 ///
 /// Also contains helper functions and classes – prefixed with `$` used by
-/// `json_serializable` when the `use_wrappers` or `checked` options are
+/// `dynamo_json` when the `use_wrappers` or `checked` options are
 /// enabled.
-library json_annotation;
+library dynamo_json;
 
 export 'src/allowed_keys_helpers.dart';
 export 'src/checked_helpers.dart';
+export 'src/dynamo_converter.dart';
+export 'src/dynamo_enum.dart';
+export 'src/dynamo_json.dart';
+export 'src/dynamo_key.dart';
+export 'src/dynamo_literal.dart';
+export 'src/dynamo_value.dart';
 export 'src/enum_helpers.dart';
-export 'src/json_converter.dart';
-export 'src/json_enum.dart';
-export 'src/json_key.dart';
-export 'src/json_literal.dart';
-export 'src/json_serializable.dart';
-export 'src/json_value.dart';

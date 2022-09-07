@@ -10,14 +10,14 @@
 /// such as [String], [int], or [Map<String, dynamic>].
 ///
 ///
-/// [JsonConverter]s can be placed either on the class:
+/// [DynamoConverter]s can be placed either on the class:
 ///
 /// ```dart
-/// class MyConverter extends JsonConverter<Value, JSON> {
+/// class MyConverter extends DynamoConverter<Value, JSON> {
 ///   // TODO
 /// }
 ///
-/// @JsonSerializable()
+/// @DynamoJson()
 /// @MyJsonConverter()
 /// class Example {}
 /// ```
@@ -25,7 +25,7 @@
 /// or on a property:
 ///
 /// ```dart
-/// @JsonSerializable()
+/// @DynamoJson()
 /// @MyJsonConverter()
 /// class Example {
 ///   @MyJsonConverter()
@@ -36,12 +36,12 @@
 /// Or finally, passed to the annotation:
 ///
 ///```dart
-/// @JsonSerializable(converters: [MyConverter()])
+/// @DynamoJson(converters: [MyConverter()])
 /// class Example {}
 /// ```
-abstract class JsonConverter<T, S> {
-  const JsonConverter();
+abstract class DynamoConverter<T, S> {
+  const DynamoConverter();
 
-  T fromJson(S json);
-  S toJson(T object);
+  T fromDynamoJson(S json);
+  S toDynamoJson(T object);
 }

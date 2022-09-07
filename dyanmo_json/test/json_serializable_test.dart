@@ -12,12 +12,12 @@ Future<void> main() async {
   initializeBuildLogTracking();
   final jsonSerializableTestReader = await initializeLibraryReaderForDirectory(
     p.join('test', 'src'),
-    '_json_serializable_test_input.dart',
+    '_dynamo_json_test_input.dart',
   );
 
   testAnnotatedElements(
     jsonSerializableTestReader,
-    JsonSerializableGenerator(),
+    DynamoJsonGenerator(),
     expectedAnnotatedTests: _expectedAnnotatedTests,
   );
 
@@ -28,7 +28,7 @@ Future<void> main() async {
 
   testAnnotatedElements(
     jsonEnumTestReader,
-    const JsonEnumGenerator(),
+    const DynamoEnumGenerator(),
     expectedAnnotatedTests: {'UnsupportedClass'},
   );
 }

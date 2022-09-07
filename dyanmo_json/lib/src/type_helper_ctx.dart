@@ -102,7 +102,7 @@ class _ConvertPair {
     var pair = _expando[element];
 
     if (pair == null) {
-      final obj = jsonKeyAnnotation(element);
+      final obj = dynamoKeyAnnotation(element);
       if (obj.isNull) {
         pair = _ConvertPair._(null, null);
       } else {
@@ -138,7 +138,7 @@ ConvertData? _convertData(DartObject obj, FieldElement element, bool isFrom) {
   final argType = executableElement.parameters.first.type;
   if (isFrom) {
     final hasDefaultValue =
-        !jsonKeyAnnotation(element).read('defaultValue').isNull;
+        !dynamoKeyAnnotation(element).read('defaultValue').isNull;
 
     final returnType = executableElement.returnType;
 

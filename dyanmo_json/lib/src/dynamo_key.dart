@@ -5,11 +5,11 @@
 import 'package:meta/meta_meta.dart';
 
 import 'allowed_keys_helpers.dart';
-import 'json_serializable.dart';
+import 'dynamo_json.dart';
 
 /// An annotation used to specify how a field is serialized.
 @Target({TargetKind.field, TargetKind.getter})
-class JsonKey {
+class DynamoKey {
   /// The value to use if the source JSON does not contain this key or if the
   /// value is `null`.
   final Object? defaultValue;
@@ -34,9 +34,10 @@ class JsonKey {
   /// a JSON literal to a value compatible with the type of the annotated field.
   ///
   /// When creating a class that supports both `toJson` and `fromJson`
-  /// (the default), you should also set [toJson] if you set [fromJson].
-  /// Values returned by [toJson] should "round-trip" through [fromJson].
-  final Function? fromJson;
+  /// (the default), you should also set [toDynamoJson] if you set
+  /// [fromDynamoJson]. Values returned by [toDynamoJson] should "round-trip"
+  /// through [fromDynamoJson].
+  final Function? fromDynamoJson;
 
   /// `true` if the generator should ignore this field completely.
   ///
@@ -51,7 +52,7 @@ class JsonKey {
   /// output, even if the value is `null`.
   ///
   /// The default value, `null`, indicates that the behavior should be
-  /// acquired from the [JsonSerializable.includeIfNull] annotation on the
+  /// acquired from the [DynamoJson.includeIfNull] annotation on the
   /// enclosing class.
   ///
   /// If [disallowNullValue] is `true`, this value is treated as `false` to
@@ -98,9 +99,10 @@ class JsonKey {
   /// with the field being serialized that returns a JSON-compatible value.
   ///
   /// When creating a class that supports both `toJson` and `fromJson`
-  /// (the default), you should also set [fromJson] if you set [toJson].
-  /// Values returned by [toJson] should "round-trip" through [fromJson].
-  final Function? toJson;
+  /// (the default), you should also set [fromDynamoJson] if you set
+  /// [toDynamoJson]. Values returned by [toDynamoJson] should "round-trip"
+  /// through [fromDynamoJson].
+  final Function? toDynamoJson;
 
   /// The value to use for an enum field when the value provided is not in the
   /// source enum.
@@ -108,24 +110,24 @@ class JsonKey {
   /// Valid only on enum fields with a compatible enum value.
   ///
   /// If you want to use the value `null` when encountering an unknown value,
-  /// use the value of [JsonKey.nullForUndefinedEnumValue] instead. This is only
-  /// valid on a nullable enum field.
+  /// use the value of [DynamoKey.nullForUndefinedEnumValue] instead.
+  /// This is only valid on a nullable enum field.
   final Enum? unknownEnumValue;
 
-  /// Creates a new [JsonKey] instance.
+  /// Creates a new [DynamoKey] instance.
   ///
   /// Only required when the default behavior is not desired.
-  const JsonKey({
+  const DynamoKey({
     @Deprecated('Has no effect') bool? nullable,
     this.defaultValue,
     this.disallowNullValue,
-    this.fromJson,
+    this.fromDynamoJson,
     this.ignore,
     this.includeIfNull,
     this.name,
     this.readValue,
     this.required,
-    this.toJson,
+    this.toDynamoJson,
     this.unknownEnumValue,
   });
 

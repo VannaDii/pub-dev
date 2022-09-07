@@ -3,9 +3,10 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:analyzer/dart/constant/value.dart';
-import 'package:json_annotation/json_annotation.dart';
 
-/// Represents values from [JsonKey] when merged with local configuration.
+import '../../json_annotation.dart';
+
+/// Represents values from [DynamoKey] when merged with local configuration.
 class KeyConfig {
   final String? defaultValue;
 
@@ -35,7 +36,7 @@ class KeyConfig {
   });
 }
 
-/// Represents values from [JsonSerializable] when merged with local
+/// Represents values from [DynamoJson] when merged with local
 /// configuration.
 ///
 /// Values are all known, so types are non-nullable.
@@ -72,7 +73,7 @@ class ClassConfig {
     this.ctorParamDefaults = const {},
   });
 
-  factory ClassConfig.fromJsonSerializable(JsonSerializable config) =>
+  factory ClassConfig.fromJsonSerializable(DynamoJson config) =>
       // #CHANGE WHEN UPDATING json_annotation
       ClassConfig(
         checked: config.checked ?? ClassConfig.defaults.checked,
@@ -97,7 +98,7 @@ class ClassConfig {
         // TODO typeConverters = []
       );
 
-  /// An instance of [JsonSerializable] with all fields set to their default
+  /// An instance of [DynamoJson] with all fields set to their default
   /// values.
   static const defaults = ClassConfig(
     anyMap: false,
@@ -114,7 +115,7 @@ class ClassConfig {
     includeIfNull: true,
   );
 
-  JsonSerializable toJsonSerializable() => JsonSerializable(
+  DynamoJson toDynamoJson() => DynamoJson(
         checked: checked,
         anyMap: anyMap,
         constructor: constructor,

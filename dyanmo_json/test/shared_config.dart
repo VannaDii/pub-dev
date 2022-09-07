@@ -8,12 +8,12 @@ import 'package:dynamo_json/src/type_helpers/config_types.dart';
 final jsonSerializableFields = generatorConfigDefaultJson.keys.toList();
 
 final generatorConfigDefaultJson = Map<String, dynamic>.unmodifiable(
-  ClassConfig.defaults.toJsonSerializable().toJson(),
+  ClassConfig.defaults.toDynamoJson().toJson(),
 );
 
 // #CHANGE WHEN UPDATING json_annotation
 final generatorConfigNonDefaultJson =
-    Map<String, dynamic>.unmodifiable(const JsonSerializable(
+    Map<String, dynamic>.unmodifiable(const DynamoJson(
   anyMap: true,
   checked: true,
   constructor: 'something',
