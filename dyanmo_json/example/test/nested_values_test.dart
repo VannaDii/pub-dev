@@ -7,7 +7,7 @@ import 'dart:convert';
 import 'package:example/nested_values_example.dart';
 import 'package:test/test.dart';
 
-import '../../test/shared_test.dart';
+import '../../test/test_utils.dart';
 
 void main() {
   test('NestedValueExample', () {
