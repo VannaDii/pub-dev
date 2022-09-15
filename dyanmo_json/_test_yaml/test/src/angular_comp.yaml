@@ -1,0 +1,13 @@
+weights:
+  all_packages: 42
+  none:
+  root_package: null
+builders:
+  scss_builder:
+    target: "scss_builder"
+    import: "package:angular_components/builder.dart"
+    builder_factories: ["scssBuilder"]
+    build_to: cache
+    build_extensions:
+      .scss: [".scss.css"]
+      .sass: [".scss.css"]
