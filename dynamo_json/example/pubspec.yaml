@@ -1,0 +1,30 @@
+name: example
+publish_to: none
+
+environment:
+  sdk: '>=2.17.0 <3.0.0'
+
+dependencies:
+  dynamo_annotation: any
+
+dev_dependencies:
+  # Used by tests. Not required to use `dynamo_serializable`.
+  _dynamo_serial_shared_test:
+    path: ../shared_test
+  build_runner: ^2.0.0
+
+  # Used by tests. Not required to use `dynamo_serializable`.
+  build_verify: ^3.0.0
+
+  dynamo_serializable: any
+
+  # Not required to use `dynamo_serializable`.
+  lints: ^2.0.0
+  path: ^1.8.0
+  test: ^1.16.0
+
+dependency_overrides:
+  dynamo_annotation:
+    path: ../dynamo_annotation
+  dynamo_serializable:
+    path: ../dynamo_serializable
