@@ -149,14 +149,14 @@ class Issue980ParentClass {
 class Issue1047ParentClass<T> {
   Issue1047ParentClass({required this.edges});
 
-  factory Issue1047ParentClass.fromJson(
-          Map<String, dynamic> json, T Function(Object? json) fromJsonT) =>
-      _$Issue1047ParentClassFromJson<T>(json, fromJsonT);
+  factory Issue1047ParentClass.fromJson(Map<String, dynamic> json,
+          T Function(Object? json) fromDynamoJsonT) =>
+      _$Issue1047ParentClassFromJson<T>(json, fromDynamoJsonT);
 
   final List<Issue1047Class<T>> edges;
 
-  Map<String, dynamic> toJson(Object? Function(T value) toJsonT) =>
-      _$Issue1047ParentClassToJson(this, toJsonT);
+  Map<String, dynamic> toJson(Object? Function(T value) toDynamoJsonT) =>
+      _$Issue1047ParentClassToJson(this, toDynamoJsonT);
 }
 
 @DynamoSerializable(genericArgumentFactories: true)
@@ -167,12 +167,12 @@ class Issue1047Class<T> {
 
   factory Issue1047Class.fromJson(
     Map<String, dynamic> json,
-    T Function(Object? json) fromJsonT,
+    T Function(Object? json) fromDynamoJsonT,
   ) =>
-      _$Issue1047ClassFromJson<T>(json, fromJsonT);
+      _$Issue1047ClassFromJson<T>(json, fromDynamoJsonT);
 
   final T node;
 
-  Map<String, dynamic> toJson(Object? Function(T value) toJsonT) =>
-      _$Issue1047ClassToJson(this, toJsonT);
+  Map<String, dynamic> toJson(Object? Function(T value) toDynamoJsonT) =>
+      _$Issue1047ClassToJson(this, toDynamoJsonT);
 }

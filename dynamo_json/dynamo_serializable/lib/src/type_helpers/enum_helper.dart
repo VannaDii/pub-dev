@@ -57,7 +57,7 @@ class EnumHelper extends TypeHelper<TypeHelperContextWithConfig> {
       // If the target is not nullable,
       throw InvalidGenerationSourceError(
         '`$dynamoKeyNullForUndefinedEnumValueFieldName` cannot be used with '
-        '`JsonKey.unknownEnumValue` unless the field is nullable.',
+        '`DynamoKey.unknownEnumValue` unless the field is nullable.',
         element: context.fieldElement,
       );
     }

@@ -2,7 +2,7 @@ part of '_json_serializable_test_input.dart';
 
 @ShouldGenerate(
   r'''
-UnknownEnumValue _$UnknownEnumValueFromJson(Map<String, dynamic> json) =>
+UnknownEnumValue _$UnknownEnumValueFromDynamoJson(Map<String, dynamic> json) =>
     UnknownEnumValue()
       ..value = $enumDecodeNullable(
               _$UnknownEnumValueItemsEnumMap, json['value'],
@@ -32,7 +32,7 @@ class UnknownEnumValue {
 enum UnknownEnumValueItems { v0, v1, v2, vUnknown, vNull }
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `value` field. `unknownEnumValue` has type '
+  'Error with `@DynamoKey` on the `value` field. `unknownEnumValue` has type '
   '`int`, but the provided unknownEnumValue is of type '
   '`WrongEnumType`.',
 )
@@ -43,7 +43,7 @@ class UnknownEnumValueListWrongType {
 }
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `value` field. `unknownEnumValue` has type '
+  'Error with `@DynamoKey` on the `value` field. `unknownEnumValue` has type '
   '`UnknownEnumValueItems`, but the provided unknownEnumValue is of type '
   '`WrongEnumType`.',
 )
@@ -56,7 +56,7 @@ class UnknownEnumValueListWrongEnumType {
 enum WrongEnumType { otherValue }
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `value` field. `unknownEnumValue` has type '
+  'Error with `@DynamoKey` on the `value` field. `unknownEnumValue` has type '
   '`UnknownEnumValueItems`, but the provided unknownEnumValue is of type '
   '`WrongEnumType`.',
 )
@@ -67,7 +67,7 @@ class UnknownEnumValueWrongEnumType {
 }
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `value` field. `unknownEnumValue` can only be '
+  'Error with `@DynamoKey` on the `value` field. `unknownEnumValue` can only be '
   'set on fields of type enum or on Iterable, List, or Set instances of an '
   'enum type.',
 )

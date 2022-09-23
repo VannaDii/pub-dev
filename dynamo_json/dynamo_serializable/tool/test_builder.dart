@@ -85,8 +85,8 @@ class _TestBuilder implements Builder {
 const _configReplacements = {
   'any_map': Replacement.addJsonSerializableKey('anyMap', true),
   'checked': Replacement.addJsonSerializableKey('checked', true),
-  'explicit_to_json':
-      Replacement.addJsonSerializableKey('explicitToJson', true),
+  'explicit_to_dynamo_json':
+      Replacement.addJsonSerializableKey('explicitToDynamoJson', true),
   'exclude_null': Replacement.addJsonSerializableKey('includeIfNull', false),
 };
 
@@ -121,10 +121,10 @@ const _kitchenSinkReplacements = {
       'bool get excludeNull => true;',
     ),
   ],
-  'explicit_to_json': [
+  'explicit_to_dynamo_json': [
     Replacement(
-      'bool get explicitToJson => false;',
-      'bool get explicitToJson => true;',
+      'bool get explicitToDynamoJson => false;',
+      'bool get explicitToDynamoJson => true;',
     ),
   ],
   'non_nullable': [
@@ -171,7 +171,7 @@ const _fileConfigurationMap = <String, Set<Set<String>>>{
     {'any_map', 'checked'},
     {'any_map'},
     {'exclude_null'},
-    {'explicit_to_json'},
+    {'explicit_to_dynamo_json'},
   },
   'default_value': {
     {'any_map', 'checked'},

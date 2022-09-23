@@ -46,11 +46,11 @@ class ConstClass {
 
   const ConstClass(this.field);
 
-  factory ConstClass.fromJson(Map<String, dynamic> json) => ConstClass(
+  factory ConstClass.fromDynamoJson(Map<String, dynamic> json) => ConstClass(
         json['field'] as String,
       );
 
-  Map<String, dynamic> toJson() => <String, dynamic>{
+  Map<String, dynamic> toDynamoJson() => <String, dynamic>{
         'field': field,
       };
 }

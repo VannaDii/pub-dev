@@ -23,7 +23,7 @@ import 'src/dynamo_part_builder.dart';
 /// Not meant to be invoked by hand-authored code.
 Builder dynamoSerializable(BuilderOptions options) {
   try {
-    final config = DynamoSerializable.fromDynamoJson(options.config);
+    final config = DynamoSerializable.fromJson(options.config);
     return dynamoPartBuilder(config: config);
   } on CheckedFromJsonException catch (e) {
     final lines = <String>[

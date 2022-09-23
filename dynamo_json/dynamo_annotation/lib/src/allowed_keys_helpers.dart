@@ -2,9 +2,9 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-/// Helper function used in generated `fromJson` code when
+/// Helper function used in generated `fromDynamoJson` code when
 /// `JsonSerializable.disallowUnrecognizedKeys` is true for an annotated type or
-/// `JsonKey.required` is `true` for any annotated fields.
+/// `DynamoKey.required` is `true` for any annotated fields.
 ///
 /// Should not be used directly.
 void $checkKeys(

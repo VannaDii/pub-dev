@@ -67,8 +67,8 @@ class DefaultValueImplicit implements dvi.DefaultValue {
     this.valueFromFunction = const ConstClass('value'),
   });
 
-  factory DefaultValueImplicit.fromJson(Map<String, dynamic> json) =>
+  factory DefaultValueImplicit.fromDynamoJson(Map<String, dynamic> json) =>
       _$DefaultValueImplicitFromJson(json);
 
-  Map<String, dynamic> toJson() => _$DefaultValueImplicitToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$DefaultValueImplicitToJson(this);
 }

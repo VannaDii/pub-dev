@@ -8,22 +8,22 @@ part of 'tuple_example.dart';
 
 Tuple<T, S> _$TupleFromDynamoJson<T, S>(
   Map<String, dynamic> json,
-  T Function(Object? json) fromJsonT,
+  T Function(Object? json) fromDynamoJsonT,
   S Function(Object? json) fromJsonS,
 ) =>
     Tuple<T, S>(
-      fromJsonT(json['value1']),
+      fromDynamoJsonT(json['value1']),
       fromJsonS(json['value2']),
     );
 
 Map<String, dynamic> _$TupleToDynamoJson<T, S>(
   Tuple<T, S> instance,
-  Object? Function(T value) toJsonT,
-  Object? Function(S value) toJsonS,
+  Object? Function(T value) toDynamoJsonT,
+  Object? Function(S value) toDynamoJsonS,
 ) =>
     <String, dynamic>{
-      'value1': toJsonT(instance.value1),
-      'value2': toJsonS(instance.value2),
+      'value1': toDynamoJsonT(instance.value1),
+      'value2': toDynamoJsonS(instance.value2),
     };
 
 ConcreteClass _$ConcreteClassFromDynamoJson(Map<String, dynamic> json) =>

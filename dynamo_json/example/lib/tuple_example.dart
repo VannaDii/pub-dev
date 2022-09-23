@@ -16,16 +16,16 @@ class Tuple<T, S> {
 
   factory Tuple.fromDynamoJson(
     Map<String, dynamic> json,
-    T Function(Object? json) fromJsonT,
+    T Function(Object? json) fromDynamoJsonT,
     S Function(Object? json) fromJsonS,
   ) =>
-      _$TupleFromDynamoJson(json, fromJsonT, fromJsonS);
+      _$TupleFromDynamoJson(json, fromDynamoJsonT, fromJsonS);
 
   Map<String, dynamic> toDynamoJson(
-    Object Function(T value) toJsonT,
-    Object Function(S value) toJsonS,
+    Object Function(T value) toDynamoJsonT,
+    Object Function(S value) toDynamoJsonS,
   ) =>
-      _$TupleToDynamoJson(this, toJsonT, toJsonS);
+      _$TupleToDynamoJson(this, toDynamoJsonT, toDynamoJsonS);
 }
 
 @DynamoSerializable()

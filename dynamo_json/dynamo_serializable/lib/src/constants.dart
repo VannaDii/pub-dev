@@ -6,11 +6,11 @@
 const closureArg = 'e';
 
 const generatedLocalVarName = 'val';
-const toJsonMapHelperName = 'writeNotNull';
+const toDynamoJsonMapHelperName = 'writeNotNull';
 
 const converterOrKeyInstructions = r'''
 * Use `DynamoConverter`
-  https://pub.dev/documentation/json_annotation/latest/json_annotation/JsonConverter-class.html
-* Use `DynamoKey` fields `fromJson` and `toJson`
-  https://pub.dev/documentation/json_annotation/latest/json_annotation/JsonKey/fromJson.html
-  https://pub.dev/documentation/json_annotation/latest/json_annotation/JsonKey/toJson.html''';
+  https://pub.dev/documentation/dynamo_annotation/latest/dynamo_annotation/DynamoConverter-class.html
+* Use `DynamoKey` fields `fromDynamoJson` and `toDynamoJson`
+  https://pub.dev/documentation/dynamo_annotation/latest/dynamo_annotation/DynamoKey/fromDynamoJson.html
+  https://pub.dev/documentation/dynamo_annotation/latest/dynamo_annotation/DynamoKey/toDynamoJson.html''';

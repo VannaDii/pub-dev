@@ -1,14 +1,14 @@
 part of '_json_serializable_test_input.dart';
 
 @ShouldGenerate(r'''
-SubType _$SubTypeFromJson(Map<String, dynamic> json) => SubType(
+SubType _$SubTypeFromDynamoJson(Map<String, dynamic> json) => SubType(
       json['subTypeViaCtor'] as int,
       json['super-final-field'] as int,
     )
       ..superReadWriteField = json['superReadWriteField'] as int?
       ..subTypeReadWrite = json['subTypeReadWrite'] as int;
 
-Map<String, dynamic> _$SubTypeToJson(SubType instance) {
+Map<String, dynamic> _$SubTypeToDynamoJson(SubType instance) {
   final val = <String, dynamic>{
     'super-final-field': instance.superFinalField,
   };
@@ -53,7 +53,7 @@ class SuperType {
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$SubTypeWithAnnotatedFieldOverrideExtendsToJson(
+Map<String, dynamic> _$SubTypeWithAnnotatedFieldOverrideExtendsToDynamoJson(
     SubTypeWithAnnotatedFieldOverrideExtends instance) {
   final val = <String, dynamic>{
     'super-final-field': instance.superFinalField,
@@ -77,7 +77,7 @@ class SubTypeWithAnnotatedFieldOverrideExtends extends SuperType {
 
 @ShouldGenerate(r'''
 Map<String, dynamic>
-    _$SubTypeWithAnnotatedFieldOverrideExtendsWithOverridesToJson(
+    _$SubTypeWithAnnotatedFieldOverrideExtendsWithOverridesToDynamoJson(
             SubTypeWithAnnotatedFieldOverrideExtendsWithOverrides instance) =>
         <String, dynamic>{
           'priceHalf': instance.priceHalf,
@@ -107,7 +107,7 @@ class SubTypeWithAnnotatedFieldOverrideExtendsWithOverrides extends SuperType {
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$SubTypeWithAnnotatedFieldOverrideImplementsToJson(
+Map<String, dynamic> _$SubTypeWithAnnotatedFieldOverrideImplementsToDynamoJson(
         SubTypeWithAnnotatedFieldOverrideImplements instance) =>
     <String, dynamic>{
       'superReadWriteField': instance.superReadWriteField,
@@ -124,7 +124,7 @@ class SubTypeWithAnnotatedFieldOverrideImplements implements SuperType {
   @override
   int get priceHalf => 42;
 
-  /// Since the relationship is `implements` no [JsonKey] values from
+  /// Since the relationship is `implements` no [DynamoKey] values from
   /// [SuperType] are honored.
   @override
   int get superFinalField => 42;

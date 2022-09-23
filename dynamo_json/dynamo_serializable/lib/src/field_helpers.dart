@@ -24,12 +24,12 @@ class _FieldSet implements Comparable<_FieldSet> {
     // Prefer the class field over the inherited field when sorting.
     final sortField = fields.first;
 
-    // Prefer the field that's annotated with `JsonKey`, if any.
+    // Prefer the field that's annotated with `DynamoKey`, if any.
     // If not, use the class field.
-    final fieldHasJsonKey =
+    final fieldHasDynamoKey =
         fields.firstWhere(hasDynamoKeyAnnotation, orElse: () => fields.first);
 
-    return _FieldSet._(fieldHasJsonKey, sortField);
+    return _FieldSet._(fieldHasDynamoKey, sortField);
   }
 
   @override

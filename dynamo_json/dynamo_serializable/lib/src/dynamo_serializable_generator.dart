@@ -71,7 +71,7 @@ class DynamoSerializableGenerator
 
     if (element is! ClassElement || element is EnumElement) {
       throw InvalidGenerationSourceError(
-        '`@JsonSerializable` can only be used on classes.',
+        '`@DynamoSerializable` can only be used on classes.',
         element: element,
       );
     }

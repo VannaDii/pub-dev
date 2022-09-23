@@ -31,7 +31,7 @@ abstract class DecodeHelper implements HelperCore {
 
     final mapType = config.anyMap ? 'Map' : 'Map<String, dynamic>';
     buffer.write('$targetClassReference '
-        '${prefix}FromJson${genericClassArgumentsImpl(true)}'
+        '${prefix}FromDynamoJson${genericClassArgumentsImpl(true)}'
         '($mapType json');
 
     if (config.genericArgumentFactories) {
@@ -98,7 +98,7 @@ abstract class DecodeHelper implements HelperCore {
             _deserializeForField(fieldValue, checkedProperty: true),
           );
 
-        final readValueFunc = jsonKeyFor(fieldValue).readValueFunctionName;
+        final readValueFunc = dynamoKeyFor(fieldValue).readValueFunctionName;
         if (readValueFunc != null) {
           sectionBuffer.writeln(',readValue: $readValueFunc,');
         }
@@ -169,7 +169,7 @@ abstract class DecodeHelper implements HelperCore {
     }
 
     final requiredKeys =
-        accessibleFields.where((fe) => jsonKeyFor(fe).required).toList();
+        accessibleFields.where((fe) => dynamoKeyFor(fe).required).toList();
     if (requiredKeys.isNotEmpty) {
       final requiredKeyLiteral = constantList(requiredKeys);
 
@@ -177,7 +177,7 @@ abstract class DecodeHelper implements HelperCore {
     }
 
     final disallowNullKeys = accessibleFields
-        .where((fe) => jsonKeyFor(fe).disallowNullValue)
+        .where((fe) => dynamoKeyFor(fe).disallowNullValue)
         .toList();
     if (disallowNullKeys.isNotEmpty) {
       final disallowNullKeyLiteral = constantList(disallowNullKeys);
@@ -200,7 +200,7 @@ abstract class DecodeHelper implements HelperCore {
     final jsonKeyName = safeNameAccess(field);
     final targetType = ctorParam?.type ?? field.type;
     final contextHelper = getHelperContext(field);
-    final jsonKey = jsonKeyFor(field);
+    final jsonKey = dynamoKeyFor(field);
     final defaultValue = jsonKey.defaultValue;
     final readValueFunc = jsonKey.readValueFunctionName;
 
@@ -235,7 +235,7 @@ abstract class DecodeHelper implements HelperCore {
       }
     } on UnsupportedTypeError catch (e) // ignore: avoid_catching_errors
     {
-      throw createInvalidGenerationError('fromJson', field, e);
+      throw createInvalidGenerationError('fromDynamoJson', field, e);
     }
 
     if (defaultValue != null) {

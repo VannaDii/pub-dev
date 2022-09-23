@@ -18,7 +18,7 @@ import 'generic_factory_helper.dart';
 
 const _helperLambdaParam = 'value';
 
-/// Supports types that have `fromJson` constructors and/or `toJson` functions.
+/// Supports types that have `fromDynamoJson` constructors and/or `toDynamoJson` functions.
 class DynamoJsonHelper extends TypeHelper<TypeHelperContextWithConfig> {
   const DynamoJsonHelper();
 
@@ -59,7 +59,7 @@ class DynamoJsonHelper extends TypeHelper<TypeHelperContextWithConfig> {
       );
     }
 
-    if (context.config.explicitToJson || toDynamoJsonArgs.isNotEmpty) {
+    if (context.config.explicitToDynamoJson || toDynamoJsonArgs.isNotEmpty) {
       return '$expression${interfaceType.isNullableType ? '?' : ''}'
           '.toDynamoJson(${toDynamoJsonArgs.map((a) => '$a, ').join()} )';
     }
@@ -231,7 +231,7 @@ bool _canSerialize(ClassConfig config, DartType type) {
       return true;
     }
 
-    if (_annotation(config, type)?.createToJson == true) {
+    if (_annotation(config, type)?.createToDynamoJson == true) {
       // TODO: consider logging that we're assuming a user will wire up the
       // generated mixin at some point...
       return true;

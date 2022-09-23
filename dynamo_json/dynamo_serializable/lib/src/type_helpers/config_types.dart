@@ -44,10 +44,10 @@ class ClassConfig {
   final bool checked;
   final String constructor;
   final bool createFactory;
-  final bool createToJson;
+  final bool createToDynamoJson;
   final bool createFieldMap;
   final bool disallowUnrecognizedKeys;
-  final bool explicitToJson;
+  final bool explicitToDynamoJson;
   final FieldRename fieldRename;
   final bool genericArgumentFactories;
   final bool ignoreUnannotated;
@@ -60,10 +60,10 @@ class ClassConfig {
     required this.checked,
     required this.constructor,
     required this.createFactory,
-    required this.createToJson,
+    required this.createToDynamoJson,
     required this.createFieldMap,
     required this.disallowUnrecognizedKeys,
-    required this.explicitToJson,
+    required this.explicitToDynamoJson,
     required this.fieldRename,
     required this.genericArgumentFactories,
     required this.ignoreUnannotated,
@@ -82,12 +82,12 @@ class ClassConfig {
             config.createFieldMap ?? ClassConfig.defaults.createFieldMap,
         createFactory:
             config.createFactory ?? ClassConfig.defaults.createFactory,
-        createToJson:
-            config.createToDynamoJson ?? ClassConfig.defaults.createToJson,
+        createToDynamoJson: config.createToDynamoJson ??
+            ClassConfig.defaults.createToDynamoJson,
         ignoreUnannotated:
             config.ignoreUnannotated ?? ClassConfig.defaults.ignoreUnannotated,
-        explicitToJson:
-            config.explicitToDynamoJson ?? ClassConfig.defaults.explicitToJson,
+        explicitToDynamoJson: config.explicitToDynamoJson ??
+            ClassConfig.defaults.explicitToDynamoJson,
         includeIfNull:
             config.includeIfNull ?? ClassConfig.defaults.includeIfNull,
         genericArgumentFactories: config.genericArgumentFactories ??
@@ -105,10 +105,10 @@ class ClassConfig {
     checked: false,
     constructor: '',
     createFactory: true,
-    createToJson: true,
+    createToDynamoJson: true,
     createFieldMap: false,
     disallowUnrecognizedKeys: false,
-    explicitToJson: false,
+    explicitToDynamoJson: false,
     fieldRename: FieldRename.none,
     genericArgumentFactories: false,
     ignoreUnannotated: false,
@@ -120,10 +120,10 @@ class ClassConfig {
         anyMap: anyMap,
         constructor: constructor,
         createFactory: createFactory,
-        createToDynamoJson: createToJson,
+        createToDynamoJson: createToDynamoJson,
         createFieldMap: createFieldMap,
         ignoreUnannotated: ignoreUnannotated,
-        explicitToDynamoJson: explicitToJson,
+        explicitToDynamoJson: explicitToDynamoJson,
         includeIfNull: includeIfNull,
         genericArgumentFactories: genericArgumentFactories,
         fieldRename: fieldRename,

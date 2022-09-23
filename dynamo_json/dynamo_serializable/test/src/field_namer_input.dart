@@ -1,7 +1,7 @@
 part of '_json_serializable_test_input.dart';
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$FieldNamerNoneToJson(FieldNamerNone instance) =>
+Map<String, dynamic> _$FieldNamerNoneToDynamoJson(FieldNamerNone instance) =>
     <String, dynamic>{
       'theField': instance.theField,
       'NAME_OVERRIDE': instance.nameOverride,
@@ -16,7 +16,7 @@ class FieldNamerNone {
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$FieldNamerKebabToJson(FieldNamerKebab instance) =>
+Map<String, dynamic> _$FieldNamerKebabToDynamoJson(FieldNamerKebab instance) =>
     <String, dynamic>{
       'the-field': instance.theField,
       'NAME_OVERRIDE': instance.nameOverride,
@@ -31,7 +31,8 @@ class FieldNamerKebab {
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$FieldNamerPascalToJson(FieldNamerPascal instance) =>
+Map<String, dynamic> _$FieldNamerPascalToDynamoJson(
+        FieldNamerPascal instance) =>
     <String, dynamic>{
       'TheField': instance.theField,
       'NAME_OVERRIDE': instance.nameOverride,
@@ -46,7 +47,7 @@ class FieldNamerPascal {
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$FieldNamerSnakeToJson(FieldNamerSnake instance) =>
+Map<String, dynamic> _$FieldNamerSnakeToDynamoJson(FieldNamerSnake instance) =>
     <String, dynamic>{
       'the_field': instance.theField,
       'NAME_OVERRIDE': instance.nameOverride,
@@ -61,7 +62,7 @@ class FieldNamerSnake {
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$FieldNamerScreamingSnakeToJson(
+Map<String, dynamic> _$FieldNamerScreamingSnakeToDynamoJson(
         FieldNamerScreamingSnake instance) =>
     <String, dynamic>{
       'THE_FIELD': instance.theField,

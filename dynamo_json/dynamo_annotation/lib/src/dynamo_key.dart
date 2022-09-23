@@ -21,7 +21,7 @@ class DynamoKey {
   /// associated key.
   ///
   /// If [disallowNullValue] is `true`, [includeIfNull] will be treated as
-  /// `false` to ensure compatibility between `toJson` and `fromJson`.
+  /// `false` to ensure compatibility between `toDynamoJson` and `fromDynamoJson`.
   ///
   /// If both [includeIfNull] and [disallowNullValue] are set to `true` on the
   /// same field, an exception will be thrown during code generation.
@@ -33,7 +33,7 @@ class DynamoKey {
   /// Must be a top-level or static [Function] that takes one argument mapping
   /// a JSON literal to a value compatible with the type of the annotated field.
   ///
-  /// When creating a class that supports both `toJson` and `fromJson`
+  /// When creating a class that supports both `toDynamoJson` and `fromDynamoJson`
   /// (the default), you should also set [toDynamoJson] if you set
   /// [fromDynamoJson]. Values returned by [toDynamoJson] should "round-trip"
   /// through [fromDynamoJson].
@@ -56,7 +56,7 @@ class DynamoKey {
   /// enclosing class.
   ///
   /// If [disallowNullValue] is `true`, this value is treated as `false` to
-  /// ensure compatibility between `toJson` and `fromJson`.
+  /// ensure compatibility between `toDynamoJson` and `fromDynamoJson`.
   ///
   /// If both [includeIfNull] and [disallowNullValue] are set to `true` on the
   /// same field, an exception will be thrown during code generation.
@@ -83,7 +83,7 @@ class DynamoKey {
   /// expect the function provided here to return a [String].
   final Object? Function(Map, String)? readValue;
 
-  /// When `true`, generated code for `fromJson` will verify that the source
+  /// When `true`, generated code for `fromDynamoJson` will verify that the source
   /// JSON map contains the associated key.
   ///
   /// If the key does not exist, a [MissingRequiredKeysException] exception is
@@ -98,7 +98,7 @@ class DynamoKey {
   /// Must be a top-level or static [Function] with one parameter compatible
   /// with the field being serialized that returns a JSON-compatible value.
   ///
-  /// When creating a class that supports both `toJson` and `fromJson`
+  /// When creating a class that supports both `toDynamoJson` and `fromDynamoJson`
   /// (the default), you should also set [fromDynamoJson] if you set
   /// [toDynamoJson]. Values returned by [toDynamoJson] should "round-trip"
   /// through [fromDynamoJson].

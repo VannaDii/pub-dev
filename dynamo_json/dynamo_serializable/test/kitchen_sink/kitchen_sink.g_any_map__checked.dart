@@ -39,7 +39,7 @@ class _Factory implements k.KitchenSinkFactory<dynamic, dynamic> {
 
   bool get excludeNull => false;
 
-  bool get explicitToJson => false;
+  bool get explicitToDynamoJson => false;
 
   k.KitchenSink ctor({
     int? ctorValidatedNo42,

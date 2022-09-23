@@ -44,7 +44,7 @@ class GeneratorHelper extends HelperCore with EncodeHelper, DecodeHelper {
     if (config.genericArgumentFactories && element.typeParameters.isEmpty) {
       log.warning(
         'The class `${element.displayName}` is annotated '
-        'with `JsonSerializable` field `genericArgumentFactories: true`. '
+        'with `DynamoSerializable` field `genericArgumentFactories: true`. '
         '`genericArgumentFactories: true` only affects classes with type '
         'parameters. For classes without type parameters, the option is '
         'ignored.',
@@ -68,7 +68,7 @@ class GeneratorHelper extends HelperCore with EncodeHelper, DecodeHelper {
           unavailableReasons[field.name] =
               'Setter-only properties are not supported.';
           log.warning('Setters are ignored: ${element.name}.${field.name}');
-        } else if (jsonKeyFor(field).ignore) {
+        } else if (dynamoKeyFor(field).ignore) {
           unavailableReasons[field.name] =
               'It is assigned to an ignored field.';
         } else {
@@ -112,7 +112,7 @@ class GeneratorHelper extends HelperCore with EncodeHelper, DecodeHelper {
       yield createFieldMap(accessibleFieldSet);
     }
 
-    if (config.createToJson) {
+    if (config.createToDynamoJson) {
       yield* createToDynamoJson(accessibleFieldSet);
     }
 

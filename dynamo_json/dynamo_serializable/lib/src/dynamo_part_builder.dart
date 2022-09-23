@@ -31,7 +31,7 @@ Builder dynamoPartBuilder({
       ]),
       const DynamoLiteralGenerator(),
     ],
-    'json_serializable',
+    'dynamo_serializable',
     formatOutput: formatOutput,
   );
 }
@@ -39,8 +39,8 @@ Builder dynamoPartBuilder({
 /// Allows exposing separate [GeneratorForAnnotation] instances as one
 /// generator.
 ///
-/// We want duplicate items to be merged if folks use both `@JsonEnum` and
-/// `@JsonSerializable` so we don't get duplicate enum helper functions.
+/// We want duplicate items to be merged if folks use both `@DynamoEnum` and
+/// `@DynamoSerializable` so we don't get duplicate enum helper functions.
 ///
 /// This can only be done if the output is merged into one generator.
 ///

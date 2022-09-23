@@ -114,7 +114,7 @@ KeyConfig _from(FieldElement element, ClassConfig classAnnotation) {
     throwUnsupported(
       element,
       'The provided value is not supported: $badType. '
-      'This may be an error in package:json_serializable. '
+      'This may be an error in package:dynamo_serializable. '
       'Please rerun your build with `--verbose` and file an issue.',
     );
   }
@@ -162,7 +162,7 @@ KeyConfig _from(FieldElement element, ClassConfig classAnnotation) {
       if (_nullAsUnknownChecker.isExactlyType(annotationType)) {
         throw InvalidGenerationSourceError(
           '`$dynamoKeyNullForUndefinedEnumValueFieldName` cannot be used with '
-          '`JsonKey.defaultValue`.',
+          '`DynamoKey.defaultValue`.',
           element: element,
         );
       }
@@ -197,12 +197,12 @@ KeyConfig _from(FieldElement element, ClassConfig classAnnotation) {
     if (defaultValue == ctorParamDefault) {
       log.info(
         'The default value `$defaultValue` for `${element.name}` is defined '
-        'twice in the constructor and in the `JsonKey.defaultValue`.',
+        'twice in the constructor and in the `DynamoKey.defaultValue`.',
       );
     } else {
       log.warning(
         'The constructor parameter for `${element.name}` has a default value '
-        '`$ctorParamDefault`, but the `JsonKey.defaultValue` value '
+        '`$ctorParamDefault`, but the `DynamoKey.defaultValue` value '
         '`$defaultValue` will be used for missing or `null` values in JSON '
         'decoding.',
       );
@@ -248,7 +248,8 @@ KeyConfig _populateDynamoKey(
       throwUnsupported(
           element,
           'Cannot set both `disallowNullValue` and `includeIfNull` to `true`. '
-          'This leads to incompatible `toJson` and `fromJson` behavior.');
+          'This leads to incompatible `toDynamoJson` and `fromDynamoJson` '
+          'behavior.');
     }
   }
 

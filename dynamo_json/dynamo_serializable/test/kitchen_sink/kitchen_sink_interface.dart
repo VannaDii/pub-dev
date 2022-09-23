@@ -20,7 +20,7 @@ abstract class KitchenSinkFactory<K, V> {
 
   bool get excludeNull;
 
-  bool get explicitToJson;
+  bool get explicitToDynamoJson;
 
   KitchenSink ctor({
     int ctorValidatedNo42,

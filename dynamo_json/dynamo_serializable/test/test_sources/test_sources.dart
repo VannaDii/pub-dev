@@ -43,7 +43,7 @@ class FromJsonOptionalParameters {
 
 class ChildWithFromJson {
   //ignore: avoid_unused_constructor_parameters
-  ChildWithFromJson.fromJson(json, {initValue = false});
+  ChildWithFromJson.fromDynamoJson(json, {initValue = false});
 }
 
 @DynamoSerializable()

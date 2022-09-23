@@ -93,7 +93,7 @@ T $checkedConvert<T>(
   }
 }
 
-/// Exception thrown if there is a runtime exception in `fromJson`
+/// Exception thrown if there is a runtime exception in `fromDynamoJson`
 /// code generated when `JsonSerializableGenerator.checked` is `true`
 class CheckedFromJsonException implements Exception {
   /// The [Error] or [Exception] that triggered this exception.

@@ -1,13 +1,13 @@
 part of '_json_serializable_test_input.dart';
 
 @ShouldGenerate(r'''
-MapKeyVariety _$MapKeyVarietyFromJson(Map<String, dynamic> json) =>
+MapKeyVariety _$MapKeyVarietyFromDynamoJson(Map<String, dynamic> json) =>
     MapKeyVariety()
       ..intIntMap = (json['intIntMap'] as Map<String, dynamic>).map(
         (k, e) => MapEntry(int.parse(k), e as int),
       );
 
-Map<String, dynamic> _$MapKeyVarietyToJson(MapKeyVariety instance) =>
+Map<String, dynamic> _$MapKeyVarietyToDynamoJson(MapKeyVariety instance) =>
     <String, dynamic>{
       'intIntMap': instance.intIntMap.map((k, e) => MapEntry(k.toString(), e)),
     };
@@ -19,7 +19,7 @@ class MapKeyVariety {
 
 @ShouldThrow(
   r'''
-Could not generate `fromJson` code for `value` because of type `Object?`.
+Could not generate `fromDynamoJson` code for `value` because of type `Object?`.
 Map keys must be one of: Object, dynamic, enum, String, BigInt, DateTime, int, Uri.''',
 )
 @DynamoSerializable()
@@ -29,7 +29,7 @@ class MapKeyNoNullableObject {
 
 @ShouldThrow(
   r'''
-Could not generate `fromJson` code for `value` because of type `String?`.
+Could not generate `fromDynamoJson` code for `value` because of type `String?`.
 Map keys must be one of: Object, dynamic, enum, String, BigInt, DateTime, int, Uri.''',
 )
 @DynamoSerializable()
@@ -38,7 +38,7 @@ class MapKeyNoNullableString {
 }
 
 @ShouldThrow(r'''
-Could not generate `fromJson` code for `value` because of type `int?`.
+Could not generate `fromDynamoJson` code for `value` because of type `int?`.
 Map keys must be one of: Object, dynamic, enum, String, BigInt, DateTime, int, Uri.''')
 @DynamoSerializable()
 class MapKeyNoNullableInt {

@@ -94,8 +94,8 @@ class DefaultValue implements dvi.DefaultValue {
     this.valueFromFunction = const ConstClass('value'),
   });
 
-  factory DefaultValue.fromJson(Map<String, dynamic> json) =>
+  factory DefaultValue.fromDynamoJson(Map<String, dynamic> json) =>
       _$DefaultValueFromJson(json);
 
-  Map<String, dynamic> toJson() => _$DefaultValueToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$DefaultValueToJson(this);
 }

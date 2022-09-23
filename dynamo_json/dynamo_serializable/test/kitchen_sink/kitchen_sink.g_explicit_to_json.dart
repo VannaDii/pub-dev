@@ -29,7 +29,7 @@ const k.KitchenSinkFactory factory = _Factory();
 class _Factory implements k.KitchenSinkFactory<String, dynamic> {
   const _Factory();
 
-  String get description => 'explicit_to_json';
+  String get description => 'explicit_to_dynamo_json';
 
   bool get anyMap => false;
 
@@ -39,7 +39,7 @@ class _Factory implements k.KitchenSinkFactory<String, dynamic> {
 
   bool get excludeNull => false;
 
-  bool get explicitToJson => true;
+  bool get explicitToDynamoJson => true;
 
   k.KitchenSink ctor({
     int? ctorValidatedNo42,

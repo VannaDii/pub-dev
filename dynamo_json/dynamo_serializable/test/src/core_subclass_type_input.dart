@@ -2,7 +2,7 @@ part of '_json_serializable_test_input.dart';
 
 @ShouldThrow(
   '''
-Could not generate `fromJson` code for `mapView`.
+Could not generate `fromDynamoJson` code for `mapView`.
 To support the type `MapView` you can:
 $converterOrKeyInstructions''',
   element: 'mapView',
@@ -14,7 +14,7 @@ class UnsupportedMapField {
 
 @ShouldThrow(
   '''
-Could not generate `fromJson` code for `listView`.
+Could not generate `fromDynamoJson` code for `listView`.
 To support the type `UnmodifiableListView` you can:
 $converterOrKeyInstructions''',
   element: 'listView',
@@ -26,7 +26,7 @@ class UnsupportedListField {
 
 @ShouldThrow(
   '''
-Could not generate `fromJson` code for `customSet`.
+Could not generate `fromDynamoJson` code for `customSet`.
 To support the type `CustomSet` you can:
 $converterOrKeyInstructions''',
   element: 'customSet',
@@ -40,7 +40,7 @@ abstract class CustomSet implements Set {}
 
 @ShouldThrow(
   '''
-Could not generate `fromJson` code for `customDuration`.
+Could not generate `fromDynamoJson` code for `customDuration`.
 To support the type `CustomDuration` you can:
 $converterOrKeyInstructions''',
   element: 'customDuration',
@@ -54,7 +54,7 @@ abstract class CustomDuration implements Duration {}
 
 @ShouldThrow(
   '''
-Could not generate `fromJson` code for `customUri`.
+Could not generate `fromDynamoJson` code for `customUri`.
 To support the type `CustomUri` you can:
 $converterOrKeyInstructions''',
   element: 'customUri',
@@ -68,7 +68,7 @@ abstract class CustomUri implements Uri {}
 
 @ShouldThrow(
   '''
-Could not generate `fromJson` code for `customDateTime`.
+Could not generate `fromDynamoJson` code for `customDateTime`.
 To support the type `CustomDateTime` you can:
 $converterOrKeyInstructions''',
   element: 'customDateTime',

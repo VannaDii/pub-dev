@@ -28,7 +28,7 @@ bool hasDynamoKeyAnnotation(FieldElement element) =>
 
 Never throwUnsupported(FieldElement element, String message) =>
     throw InvalidGenerationSourceError(
-      'Error with `@JsonKey` on the `${element.name}` field. $message',
+      'Error with `@DynamoKey` on the `${element.name}` field. $message',
       element: element,
     );
 
@@ -56,11 +56,13 @@ DynamoSerializable _valueForAnnotation(ConstantReader reader) =>
       checked: reader.read('checked').literalValue as bool?,
       constructor: reader.read('constructor').literalValue as String?,
       createFactory: reader.read('createFactory').literalValue as bool?,
-      createToDynamoJson: reader.read('createToJson').literalValue as bool?,
+      createToDynamoJson:
+          reader.read('createToDynamoJson').literalValue as bool?,
       createFieldMap: reader.read('createFieldMap').literalValue as bool?,
       disallowUnrecognizedKeys:
           reader.read('disallowUnrecognizedKeys').literalValue as bool?,
-      explicitToDynamoJson: reader.read('explicitToJson').literalValue as bool?,
+      explicitToDynamoJson:
+          reader.read('explicitToDynamoJson').literalValue as bool?,
       fieldRename: _fromDartObject(reader.read('fieldRename')),
       genericArgumentFactories:
           reader.read('genericArgumentFactories').literalValue as bool?,
@@ -102,11 +104,13 @@ ClassConfig mergeConfig(
     checked: annotation.checked ?? config.checked,
     constructor: constructor,
     createFactory: annotation.createFactory ?? config.createFactory,
-    createToJson: annotation.createToDynamoJson ?? config.createToJson,
+    createToDynamoJson:
+        annotation.createToDynamoJson ?? config.createToDynamoJson,
     createFieldMap: annotation.createFieldMap ?? config.createFieldMap,
     disallowUnrecognizedKeys:
         annotation.disallowUnrecognizedKeys ?? config.disallowUnrecognizedKeys,
-    explicitToJson: annotation.explicitToDynamoJson ?? config.explicitToJson,
+    explicitToDynamoJson:
+        annotation.explicitToDynamoJson ?? config.explicitToDynamoJson,
     fieldRename: annotation.fieldRename ?? config.fieldRename,
     genericArgumentFactories: annotation.genericArgumentFactories ??
         (classElement.typeParameters.isNotEmpty &&

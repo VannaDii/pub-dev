@@ -15,7 +15,7 @@ Object _toObject(Object input) => throw UnimplementedError();
 String _toStringFromObject(Object? input) => throw UnimplementedError();
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `field` field. The `fromJson` function '
+  'Error with `@DynamoKey` on the `field` field. The `fromDynamoJson` function '
   '`_toInt` return type `int` is not compatible with field type `String`.',
   element: 'field',
 )
@@ -26,7 +26,7 @@ class BadFromFuncReturnType {
 }
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `field` field. The `fromJson` function '
+  'Error with `@DynamoKey` on the `field` field. The `fromDynamoJson` function '
   '`_twoArgFunction` must have one positional parameter.',
   element: 'field',
 )
@@ -38,12 +38,12 @@ class InvalidFromFunc2Args {
 
 @ShouldGenerate(
   r'''
-ValidToFromFuncClassStatic _$ValidToFromFuncClassStaticFromJson(
+ValidToFromFuncClassStatic _$ValidToFromFuncClassStaticFromDynamoJson(
         Map<String, dynamic> json) =>
     ValidToFromFuncClassStatic()
       ..field = ValidToFromFuncClassStatic._staticFunc(json['field'] as String);
 
-Map<String, dynamic> _$ValidToFromFuncClassStaticToJson(
+Map<String, dynamic> _$ValidToFromFuncClassStaticToDynamoJson(
         ValidToFromFuncClassStatic instance) =>
     <String, dynamic>{
       'field': ValidToFromFuncClassStatic._staticFunc(instance.field),
@@ -59,7 +59,7 @@ class ValidToFromFuncClassStatic {
 }
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `field` field. The `toJson` function `_toInt` '
+  'Error with `@DynamoKey` on the `field` field. The `toDynamoJson` function `_toInt` '
   'argument type `bool` is not compatible with field type `String`.',
   element: 'field',
 )
@@ -70,7 +70,7 @@ class BadToFuncReturnType {
 }
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `values` field. The `fromJson` function '
+  'Error with `@DynamoKey` on the `values` field. The `fromDynamoJson` function '
   '`_fromList` return type `List<int>?` is not compatible with field type '
   '`List<int>`.',
   element: 'values',
@@ -87,7 +87,7 @@ class Reproduce869NullableGenericType {
 @ShouldGenerate(
   r'''
 Reproduce869NullableGenericTypeWithDefault
-    _$Reproduce869NullableGenericTypeWithDefaultFromJson(
+    _$Reproduce869NullableGenericTypeWithDefaultFromDynamoJson(
             Map<String, dynamic> json) =>
         Reproduce869NullableGenericTypeWithDefault()
           ..values =
@@ -96,7 +96,7 @@ Reproduce869NullableGenericTypeWithDefault
               ? []
               : _fromList(json['valuesNullable'] as List?);
 
-Map<String, dynamic> _$Reproduce869NullableGenericTypeWithDefaultToJson(
+Map<String, dynamic> _$Reproduce869NullableGenericTypeWithDefaultToDynamoJson(
         Reproduce869NullableGenericTypeWithDefault instance) =>
     <String, dynamic>{
       'values': _toList(instance.values),
@@ -128,7 +128,7 @@ List<List>? _toList(List<int>? pairs) =>
     pairs?.map((it) => [it]).toList(growable: false);
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `field` field. The `toJson` function '
+  'Error with `@DynamoKey` on the `field` field. The `toDynamoJson` function '
   '`_twoArgFunction` must have one positional parameter.',
   element: 'field',
 )
@@ -172,7 +172,7 @@ class TypedConvertMethods {
 
 @ShouldGenerate(
   r'''
-Map<String, dynamic> _$ToJsonNullableFalseIncludeIfNullFalseToJson(
+Map<String, dynamic> _$ToJsonNullableFalseIncludeIfNullFalseToDynamoJson(
     ToJsonNullableFalseIncludeIfNullFalse instance) {
   final val = <String, dynamic>{};
 
@@ -201,7 +201,7 @@ String _fromDynamicIterable(Iterable input) => 'null';
 
 @ShouldGenerate(
   r'''
-FromDynamicCollection _$FromDynamicCollectionFromJson(
+FromDynamicCollection _$FromDynamicCollectionFromDynamoJson(
         Map<String, dynamic> json) =>
     FromDynamicCollection()
       ..mapField = _fromDynamicMap(json['mapField'] as Map)
@@ -227,7 +227,7 @@ String _fromNullableDynamicIterable(Iterable? input) => 'null';
 
 @ShouldGenerate(
   r'''
-FromNullableDynamicCollection _$FromNullableDynamicCollectionFromJson(
+FromNullableDynamicCollection _$FromNullableDynamicCollectionFromDynamoJson(
         Map<String, dynamic> json) =>
     FromNullableDynamicCollection()
       ..mapField = _fromNullableDynamicMap(json['mapField'] as Map?)
@@ -249,7 +249,7 @@ class FromNullableDynamicCollection {
 String _noArgs() => throw UnimplementedError();
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `field` field. The `fromJson` function '
+  'Error with `@DynamoKey` on the `field` field. The `fromDynamoJson` function '
   '`_noArgs` must have one positional parameter.',
   element: 'field',
 )
@@ -262,7 +262,7 @@ class BadNoArgs {
 String? _twoArgs(a, b) => null;
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `field` field. The `fromJson` function '
+  'Error with `@DynamoKey` on the `field` field. The `fromDynamoJson` function '
   '`_twoArgs` must have one positional parameter.',
   element: 'field',
 )
@@ -275,7 +275,7 @@ class BadTwoRequiredPositional {
 String? _oneNamed({a}) => null;
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `field` field. The `fromJson` function '
+  'Error with `@DynamoKey` on the `field` field. The `fromDynamoJson` function '
   '`_oneNamed` must have one positional parameter.',
   element: 'field',
 )
@@ -314,12 +314,14 @@ class OkayOnlyOptionalPositional {
 
 @ShouldGenerate(
   r'''
-_BetterPrivateNames _$BetterPrivateNamesFromJson(Map<String, dynamic> json) =>
+_BetterPrivateNames _$BetterPrivateNamesFromDynamoJson(
+        Map<String, dynamic> json) =>
     _BetterPrivateNames(
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$BetterPrivateNamesToJson(_BetterPrivateNames instance) =>
+Map<String, dynamic> _$BetterPrivateNamesToDynamoJson(
+        _BetterPrivateNames instance) =>
     <String, dynamic>{
       'name': instance.name,
     };

@@ -9,9 +9,11 @@ environment:
 
 dependencies:
   meta: ^1.4.0
+  json_annotation: any
 
 dev_dependencies:
   lints: ^2.0.0
+  json_serializable: any
 # When changing JsonSerializable class.
 #  build_runner: ^2.0.0
 #  json_serializable: any

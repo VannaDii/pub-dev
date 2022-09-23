@@ -9,8 +9,8 @@ import '../lambda_result.dart';
 import '../shared_checkers.dart';
 import '../type_helper.dart';
 
-/// Information used by [ConvertHelper] when handling `JsonKey`-annotated
-/// fields with `toJson` or `fromJson` values set.
+/// Information used by [ConvertHelper] when handling `DynamoKey`-annotated
+/// fields with `toDynamoJson` or `fromDynamoJson` values set.
 class ConvertData {
   final String name;
   final DartType paramType;
@@ -24,7 +24,8 @@ abstract class TypeHelperContextWithConvert extends TypeHelperContext {
   ConvertData? get deserializeConvertData;
 }
 
-/// Handles `JsonKey`-annotated fields with `toJson` or `fromJson` values set.
+/// Handles `DynamoKey`-annotated fields with `toDynamoJson` or `fromDynamoJson`
+/// values set.
 class ConvertHelper extends TypeHelper<TypeHelperContextWithConvert> {
   const ConvertHelper();
 
@@ -34,14 +35,14 @@ class ConvertHelper extends TypeHelper<TypeHelperContextWithConvert> {
     String expression,
     TypeHelperContextWithConvert context,
   ) {
-    final toJsonData = context.serializeConvertData;
-    if (toJsonData == null) {
+    final toDynamoJsonData = context.serializeConvertData;
+    if (toDynamoJsonData == null) {
       return null;
     }
 
-    assert(toJsonData.paramType is TypeParameterType ||
-        targetType.isAssignableTo(toJsonData.paramType));
-    return LambdaResult(expression, toJsonData.name);
+    assert(toDynamoJsonData.paramType is TypeParameterType ||
+        targetType.isAssignableTo(toDynamoJsonData.paramType));
+    return LambdaResult(expression, toDynamoJsonData.name);
   }
 
   @override

@@ -49,9 +49,9 @@ void main() {
   test('config is null-protected when passed to JsonSerializableGenerator', () {
     final nullValueMap = Map.fromEntries(
         generatorConfigDefaultJson.entries.map((e) => MapEntry(e.key, null)));
-    final config = DynamoSerializable.fromDynamoJson(nullValueMap);
+    final config = DynamoSerializable.fromJson(nullValueMap);
     final generator = DynamoSerializableGenerator(config: config);
-    expect(generator.config.toDynamoJson(), generatorConfigDefaultJson);
+    expect(generator.config.toJson(), generatorConfigDefaultJson);
   });
 
   test('readme config', () async {
@@ -68,7 +68,7 @@ void main() {
       'targets',
       r'$default',
       'builders',
-      'json_serializable',
+      'dynamo_serializable',
       'options'
     ]) {
       yaml = yaml[key] as YamlMap;
@@ -84,7 +84,7 @@ void main() {
     );
 
     expect(
-      DynamoSerializable.fromDynamoJson(configMap).toDynamoJson(),
+      DynamoSerializable.fromJson(configMap).toJson(),
       generatorConfigDefaultJson,
     );
 
@@ -96,7 +96,7 @@ void main() {
     final matcher = isA<StateError>().having(
       (v) => v.message,
       'message',
-      'Could not parse the options provided for `json_serializable`.\n'
+      'Could not parse the options provided for `dynamo_serializable`.\n'
           'Unrecognized keys: [unsupported]; '
           'supported keys: [${_invalidConfig.keys.join(', ')}]',
     );
@@ -127,7 +127,7 @@ void main() {
             lastLine = "type 'int' is not a subtype of type 'String?' in type "
                 'cast';
             break;
-          case 'create_to_json':
+          case 'create_to_dynamo_json':
             lastLine = "type 'int' is not a subtype of type 'bool?' in type "
                 'cast';
             break;
@@ -140,7 +140,7 @@ void main() {
           (v) => v.message,
           'message',
           '''
-Could not parse the options provided for `json_serializable`.
+Could not parse the options provided for `dynamo_serializable`.
 There is a problem with "${entry.key}".
 $lastLine''',
         );
@@ -158,9 +158,9 @@ const _invalidConfig = {
   'constructor': 42,
   'create_factory': 42,
   'create_field_map': 42,
-  'create_to_json': 42,
+  'create_to_dynamo_json': 42,
   'disallow_unrecognized_keys': 42,
-  'explicit_to_json': 42,
+  'explicit_to_dynamo_json': 42,
   'field_rename': 42,
   'generic_argument_factories': 42,
   'ignore_unannotated': 42,

@@ -59,7 +59,8 @@ DefaultValue _$DefaultValueFromJson(Map json) => $checkedCreate(
               'constClass',
               (v) => v == null
                   ? const ConstClass('value')
-                  : ConstClass.fromJson(Map<String, dynamic>.from(v as Map))),
+                  : ConstClass.fromDynamoJson(
+                      Map<String, dynamic>.from(v as Map))),
           valueFromConverter: $checkedConvert(
               'valueFromConverter',
               (v) => v == null

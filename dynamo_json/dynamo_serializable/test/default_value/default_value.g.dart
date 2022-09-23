@@ -41,7 +41,8 @@ DefaultValue _$DefaultValueFromJson(Map<String, dynamic> json) => DefaultValue(
           : Duration(microseconds: json['durationField'] as int),
       constClass: json['constClass'] == null
           ? const ConstClass('value')
-          : ConstClass.fromJson(json['constClass'] as Map<String, dynamic>),
+          : ConstClass.fromDynamoJson(
+              json['constClass'] as Map<String, dynamic>),
       valueFromConverter: json['valueFromConverter'] == null
           ? const ConstClass('value')
           : const ConstClassConverter()

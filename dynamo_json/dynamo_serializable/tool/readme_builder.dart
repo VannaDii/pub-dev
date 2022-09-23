@@ -34,7 +34,7 @@ class _ReadmeBuilder extends Builder {
 
     final jsonAnnotationVersion = await buildStep.jsonAnnotationVersion();
     final jsonAnnotationBaseUri =
-        'https://pub.dev/documentation/json_annotation/$jsonAnnotationVersion/json_annotation';
+        'https://pub.dev/documentation/dynamo_annotation/$jsonAnnotationVersion/dynamo_annotation';
 
     String jsonAnnotationUri(String className, [String? member]) =>
         member == null

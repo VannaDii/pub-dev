@@ -31,7 +31,7 @@ abstract class HelperCore {
       '${element.name}${genericClassArgumentsImpl(false)}';
 
   @protected
-  String nameAccess(FieldElement field) => jsonKeyFor(field).name;
+  String nameAccess(FieldElement field) => dynamoKeyFor(field).name;
 
   @protected
   String safeNameAccess(FieldElement field) =>
@@ -49,7 +49,8 @@ abstract class HelperCore {
       genericClassArguments(element, withConstraints);
 
   @protected
-  KeyConfig jsonKeyFor(FieldElement field) => dynamoKeyForField(field, config);
+  KeyConfig dynamoKeyFor(FieldElement field) =>
+      dynamoKeyForField(field, config);
 
   @protected
   TypeHelperCtx getHelperContext(FieldElement field) =>
@@ -72,8 +73,8 @@ InvalidGenerationSourceError createInvalidGenerationError(
     todo = '''
 To support type parameters (generic types) you can:
 $converterOrKeyInstructions
-* Set `JsonSerializable.genericArgumentFactories` to `true`
-  https://pub.dev/documentation/json_annotation/latest/json_annotation/JsonSerializable/genericArgumentFactories.html''';
+* Set `DynamoSerializable.genericArgumentFactories` to `true`
+  https://pub.dev/documentation/dynamo_annotation/latest/dynamo_annotation/DynamoSerializable/genericArgumentFactories.html''';
   } else if (field.type != error.type) {
     message = '$message because of type `${typeToCode(error.type)}`';
   } else {

@@ -186,18 +186,18 @@ void main() {
       int encodeDuration(Duration value) => value.inMilliseconds;
 
       final encodedJson = loudEncode(
-        instance.toJson(encodeDateTime, encodeDuration),
+        instance.toDynamoJson(encodeDateTime, encodeDuration),
       );
 
       final decoded =
-          GenericClassWithHelpersNullable<DateTime, Duration>.fromJson(
+          GenericClassWithHelpersNullable<DateTime, Duration>.fromDynamoJson(
         jsonDecode(encodedJson) as Map<String, dynamic>,
         (value) => DateTime.parse(value as String),
         (value) => Duration(milliseconds: value as int),
       );
 
       final encodedJson2 = loudEncode(
-        decoded.toJson(encodeDateTime, encodeDuration),
+        decoded.toDynamoJson(encodeDateTime, encodeDuration),
       );
 
       expect(encodedJson2, encodedJson);
@@ -217,103 +217,21 @@ void main() {
       int encodeDuration(Duration value) => value.inMilliseconds;
 
       final encodedJson = loudEncode(
-        instance.toJson(encodeDateTime, encodeDuration),
+        instance.toDynamoJson(encodeDateTime, encodeDuration),
       );
 
       final decoded =
-          GenericClassWithHelpersNullable<DateTime, Duration>.fromJson(
+          GenericClassWithHelpersNullable<DateTime, Duration>.fromDynamoJson(
         jsonDecode(encodedJson) as Map<String, dynamic>,
         (value) => DateTime.parse(value as String),
         (value) => Duration(milliseconds: value as int),
       );
 
       final encodedJson2 = loudEncode(
-        decoded.toJson(encodeDateTime, encodeDuration),
+        decoded.toDynamoJson(encodeDateTime, encodeDuration),
       );
 
       expect(encodedJson2, encodedJson);
-    });
-
-    group('argument factories', () {
-      test('round trip decode/decode', () {
-        const inputJson = r'''
-{
- "value": {
-  "value": 5,
-  "list": [
-   5
-  ],
-  "someSet": [
-   "string"
-  ]
- },
- "value2": {
-  "value": 3.14,
-  "list": [
-   3.14
-  ],
-  "someSet": [
-   "2"
-  ]
- },
- "value3": {
-  "value": 3.14,
-  "list": [
-   3.14
-  ],
-  "someSet": [
-   "2"
-  ]
- }
-}''';
-
-        final instance = ConcreteClass.fromJson(
-          jsonDecode(inputJson) as Map<String, dynamic>,
-        );
-
-        expect(loudEncode(instance), inputJson);
-      });
-
-      test('round trip decode/decode with null', () {
-        const inputJson = r'''
-{
- "value": {
-  "value": 5,
-  "list": [
-   5
-  ],
-  "someSet": [
-   "string"
-  ]
- },
- "value2": {
-  "value": 3.14,
-  "list": [
-   3.14
-  ],
-  "someSet": [
-   "2"
-  ]
- },
- "value3": {
-  "value": null,
-  "list": [
-   3.14,
-   null
-  ],
-  "someSet": [
-   "2",
-   null
-  ]
- }
-}''';
-
-        final instance = ConcreteClassNullable.fromJson(
-          jsonDecode(inputJson) as Map<String, dynamic>,
-        );
-
-        expect(loudEncode(instance), inputJson);
-      });
     });
   });
 

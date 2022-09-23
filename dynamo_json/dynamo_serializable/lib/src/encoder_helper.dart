@@ -40,7 +40,7 @@ abstract class EncodeHelper implements HelperCore {
 
   Iterable<String> createToDynamoJson(
       Set<FieldElement> accessibleFields) sync* {
-    assert(config.createToJson);
+    assert(config.createToDynamoJson);
 
     final buffer = StringBuffer();
 
@@ -106,22 +106,22 @@ abstract class EncodeHelper implements HelperCore {
 
     for (final field in fields) {
       var safeFieldAccess = _fieldAccess(field);
-      final safeJsonKeyString = safeNameAccess(field);
+      final safeDynamoKeyString = safeNameAccess(field);
 
       // If `fieldName` collides with one of the local helpers, prefix
       // access with `this.`.
       if (safeFieldAccess == generatedLocalVarName ||
-          safeFieldAccess == toJsonMapHelperName) {
+          safeFieldAccess == toDynamoJsonMapHelperName) {
         safeFieldAccess = 'this.$safeFieldAccess';
       }
 
       final expression = _serializeField(field, safeFieldAccess);
       if (_writeDynamoJsonValueNaive(field)) {
         if (directWrite) {
-          buffer.writeln('      $safeJsonKeyString: $expression,');
+          buffer.writeln('      $safeDynamoKeyString: $expression,');
         } else {
           buffer.writeln(
-              '    $generatedLocalVarName[$safeJsonKeyString] = $expression;');
+              '    $generatedLocalVarName[$safeDynamoKeyString] = $expression;');
         }
       } else {
         if (directWrite) {
@@ -133,7 +133,7 @@ abstract class EncodeHelper implements HelperCore {
             // write the helper to be used by all following null-excluding
             // fields
             ..writeln('''
-    void $toJsonMapHelperName(String key, dynamic value) {
+    void $toDynamoJsonMapHelperName(String key, dynamic value) {
       if (value != null) {
         $generatedLocalVarName[key] = value;
       }
@@ -142,7 +142,7 @@ abstract class EncodeHelper implements HelperCore {
           directWrite = false;
         }
         buffer.writeln(
-            '    $toJsonMapHelperName($safeJsonKeyString, $expression);');
+            '    $toDynamoJsonMapHelperName($safeDynamoKeyString, $expression);');
       }
     }
 
@@ -165,7 +165,7 @@ abstract class EncodeHelper implements HelperCore {
   /// Returns `true` if the field can be written to Dynamo JSON 'naively' –
   /// meaning we can avoid checking for `null`.
   bool _writeDynamoJsonValueNaive(FieldElement field) {
-    final jsonKey = jsonKeyFor(field);
+    final jsonKey = dynamoKeyFor(field);
 
     return jsonKey.includeIfNull ||
         (!field.type.isNullableType && !_fieldHasCustomEncoder(field));

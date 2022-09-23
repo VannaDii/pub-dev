@@ -18,8 +18,8 @@ import 'test_utils.dart';
 
 void main() {
   test('validate pubspec constraint', () {
-    final annotationConstraint =
-        _jsonSerialPubspec.dependencies['json_annotation'] as HostedDependency;
+    final annotationConstraint = _dynamoSerialPubspec
+        .dependencies['dynamo_annotation'] as HostedDependency;
     final versionRange = annotationConstraint.version as VersionRange;
 
     expect(versionRange.includeMin, isTrue);
@@ -39,7 +39,7 @@ void main() {
     () => _structurePackage(
       sourceDirectory: 'example',
       message:
-          'You are missing a required dependency on json_annotation with a '
+          'You are missing a required dependency on dynamo_annotation with a '
           'lower bound of at least "$_annotationLowerBound".',
     ),
   );
@@ -48,7 +48,7 @@ void main() {
     'dev dependency with a production usage',
     () => _structurePackage(
       sourceDirectory: 'lib',
-      devDependencies: {'json_annotation': _annotationLowerBound},
+      devDependencies: {'dynamo_annotation': _annotationLowerBound},
       message: _missingProductionDep,
     ),
   );
@@ -57,9 +57,9 @@ void main() {
     'dependency with `null` constraint',
     () => _structurePackage(
       sourceDirectory: 'lib',
-      dependencies: {'json_annotation': null},
+      dependencies: {'dynamo_annotation': null},
       message:
-          'The version constraint "any" on json_annotation allows versions '
+          'The version constraint "any" on dynamo_annotation allows versions '
           'before $_annotationLowerBound which is not allowed.',
     ),
   );
@@ -68,9 +68,9 @@ void main() {
     'dependency with "any" constraint',
     () => _structurePackage(
       sourceDirectory: 'lib',
-      dependencies: {'json_annotation': 'any'},
+      dependencies: {'dynamo_annotation': 'any'},
       message:
-          'The version constraint "any" on json_annotation allows versions '
+          'The version constraint "any" on dynamo_annotation allows versions '
           'before $_annotationLowerBound which is not allowed.',
     ),
   );
@@ -79,15 +79,15 @@ void main() {
     'dependency with too low version range',
     () => _structurePackage(
       sourceDirectory: 'lib',
-      dependencies: {'json_annotation': '^4.0.0'},
+      dependencies: {'dynamo_annotation': '^4.0.0'},
       message:
-          'The version constraint "^4.0.0" on json_annotation allows versions '
+          'The version constraint "^4.0.0" on dynamo_annotation allows versions '
           'before $_annotationLowerBound which is not allowed.',
     ),
   );
 }
 
-final _jsonSerialPubspec = Pubspec.parse(
+final _dynamoSerialPubspec = Pubspec.parse(
   File('pubspec.yaml').readAsStringSync(),
   sourceUrl: Uri.file('pubspec.yaml'),
 );
@@ -98,8 +98,8 @@ String _fixPath(String path) {
   return p.canonicalize(p.join(p.current, path));
 }
 
-final _jsonSerialPathDependencyOverrides = {
-  for (var entry in _jsonSerialPubspec.dependencyOverrides.entries)
+final _dynamoSerialPathDependencyOverrides = {
+  for (var entry in _dynamoSerialPubspec.dependencyOverrides.entries)
     if (entry.value is PathDependency)
       entry.key: {'path': _fixPath((entry.value as PathDependency).path)}
 };
@@ -107,7 +107,7 @@ final _jsonSerialPathDependencyOverrides = {
 final _annotationLowerBound = requiredDynamoAnnotationMinVersion.toString();
 
 final _missingProductionDep =
-    'You are missing a required dependency on json_annotation in the '
+    'You are missing a required dependency on dynamo_annotation in the '
     '"dependencies" section of your pubspec with a lower bound of at least '
     '"$_annotationLowerBound".';
 
@@ -125,15 +125,15 @@ Future<void> _structurePackage({
       'dev_dependencies': {
         ...devDependencies,
         'build_runner': 'any',
-        'json_serializable': {'path': p.current},
+        'dynamo_serializable': {'path': p.current},
       },
-      'dependency_overrides': _jsonSerialPathDependencyOverrides,
+      'dependency_overrides': _dynamoSerialPathDependencyOverrides,
     },
   );
 
   await d.file('pubspec.yaml', pubspec).create();
 
-  /// A file in the lib directory without JsonSerializable should do nothing!
+  /// A file in the lib directory without DynamoSerializable should do nothing!
   await d.dir(
     'lib',
     [
@@ -173,7 +173,7 @@ class SomeClass{}
   }
 
   expect(lines.toString(), contains('''
-[WARNING] json_serializable:json_serializable on $sourceDirectory/sample.dart:
+[WARNING] dynamo_serializable:dynamo_serializable on $sourceDirectory/sample.dart:
 $message'''));
 
   await proc.shouldExit(0);

@@ -10,24 +10,24 @@ part of 'generic_argument_factories.dart';
 
 GenericClassWithHelpers<T, S> _$GenericClassWithHelpersFromJson<T, S>(
   Map<String, dynamic> json,
-  T Function(Object? json) fromJsonT,
+  T Function(Object? json) fromDynamoJsonT,
   S Function(Object? json) fromJsonS,
 ) =>
     GenericClassWithHelpers<T, S>(
-      fromJsonT(json['value']),
-      (json['list'] as List<dynamic>).map(fromJsonT).toList(),
+      fromDynamoJsonT(json['value']),
+      (json['list'] as List<dynamic>).map(fromDynamoJsonT).toList(),
       (json['someSet'] as List<dynamic>).map(fromJsonS).toSet(),
     );
 
 Map<String, dynamic> _$GenericClassWithHelpersToJson<T, S>(
   GenericClassWithHelpers<T, S> instance,
-  Object? Function(T value) toJsonT,
-  Object? Function(S value) toJsonS,
+  Object? Function(T value) toDynamoJsonT,
+  Object? Function(S value) toDynamoJsonS,
 ) =>
     <String, dynamic>{
-      'value': toJsonT(instance.value),
-      'list': instance.list.map(toJsonT).toList(),
-      'someSet': instance.someSet.map(toJsonS).toList(),
+      'value': toDynamoJsonT(instance.value),
+      'list': instance.list.map(toDynamoJsonT).toList(),
+      'someSet': instance.someSet.map(toDynamoJsonS).toList(),
     };
 
 ConcreteClass _$ConcreteClassFromJson(Map<String, dynamic> json) =>

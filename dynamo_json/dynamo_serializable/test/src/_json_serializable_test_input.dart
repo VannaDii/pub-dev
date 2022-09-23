@@ -20,24 +20,26 @@ part 'setter_test_input.dart';
 part 'to_from_json_test_input.dart';
 part 'unknown_enum_value_test_input.dart';
 
-@ShouldThrow('`@JsonSerializable` can only be used on classes.')
+@ShouldThrow('`@DynamoSerializable` can only be used on classes.')
 @DynamoSerializable() // ignore: invalid_annotation_target
 const theAnswer = 42;
 
-@ShouldThrow('`@JsonSerializable` can only be used on classes.')
+@ShouldThrow('`@DynamoSerializable` can only be used on classes.')
 @DynamoSerializable() // ignore: invalid_annotation_target
 enum UnsupportedEnum { not, valid }
 
-@ShouldThrow('`@JsonSerializable` can only be used on classes.')
+@ShouldThrow('`@DynamoSerializable` can only be used on classes.')
 @DynamoSerializable() // ignore: invalid_annotation_target
 Object annotatedMethod() => throw UnimplementedError();
 
 @ShouldGenerate(
   r'''
-OnlyStaticMembers _$OnlyStaticMembersFromJson(Map<String, dynamic> json) =>
+OnlyStaticMembers _$OnlyStaticMembersFromDynamoJson(
+        Map<String, dynamic> json) =>
     OnlyStaticMembers();
 
-Map<String, dynamic> _$OnlyStaticMembersToJson(OnlyStaticMembers instance) =>
+Map<String, dynamic> _$OnlyStaticMembersToDynamoJson(
+        OnlyStaticMembers instance) =>
     <String, dynamic>{};
 ''',
 )
@@ -51,7 +53,8 @@ class OnlyStaticMembers {
 }
 
 @ShouldGenerate(r'''
-GeneralTestClass1 _$GeneralTestClass1FromJson(Map<String, dynamic> json) =>
+GeneralTestClass1 _$GeneralTestClass1FromDynamoJson(
+        Map<String, dynamic> json) =>
     GeneralTestClass1()
       ..firstName = json['firstName'] as String
       ..lastName = json['lastName'] as String
@@ -62,7 +65,8 @@ GeneralTestClass1 _$GeneralTestClass1FromJson(Map<String, dynamic> json) =>
       ..listOfInts =
           (json['listOfInts'] as List<dynamic>).map((e) => e as int).toList();
 
-Map<String, dynamic> _$GeneralTestClass1ToJson(GeneralTestClass1 instance) =>
+Map<String, dynamic> _$GeneralTestClass1ToDynamoJson(
+        GeneralTestClass1 instance) =>
     <String, dynamic>{
       'firstName': instance.firstName,
       'lastName': instance.lastName,
@@ -87,14 +91,16 @@ class GeneralTestClass1 {
 }
 
 @ShouldGenerate(r'''
-GeneralTestClass2 _$GeneralTestClass2FromJson(Map<String, dynamic> json) =>
+GeneralTestClass2 _$GeneralTestClass2FromDynamoJson(
+        Map<String, dynamic> json) =>
     GeneralTestClass2(
       json['height'] as int,
       json['firstName'] as String,
       json['lastName'] as String?,
     )..dateOfBirth = DateTime.parse(json['dateOfBirth'] as String);
 
-Map<String, dynamic> _$GeneralTestClass2ToJson(GeneralTestClass2 instance) =>
+Map<String, dynamic> _$GeneralTestClass2ToDynamoJson(
+        GeneralTestClass2 instance) =>
     <String, dynamic>{
       'firstName': instance.firstName,
       'lastName': instance.lastName,
@@ -116,11 +122,12 @@ class GeneralTestClass2 {
 }
 
 @ShouldGenerate(r'''
-FinalFields _$FinalFieldsFromJson(Map<String, dynamic> json) => FinalFields(
+FinalFields _$FinalFieldsFromDynamoJson(Map<String, dynamic> json) =>
+    FinalFields(
       json['a'] as int,
     );
 
-Map<String, dynamic> _$FinalFieldsToJson(FinalFields instance) =>
+Map<String, dynamic> _$FinalFieldsToDynamoJson(FinalFields instance) =>
     <String, dynamic>{
       'a': instance.a,
     };
@@ -136,11 +143,11 @@ class FinalFields {
 
 @ShouldGenerate(
   r'''
-FinalFieldsNotSetInCtor _$FinalFieldsNotSetInCtorFromJson(
+FinalFieldsNotSetInCtor _$FinalFieldsNotSetInCtorFromDynamoJson(
         Map<String, dynamic> json) =>
     FinalFieldsNotSetInCtor();
 
-Map<String, dynamic> _$FinalFieldsNotSetInCtorToJson(
+Map<String, dynamic> _$FinalFieldsNotSetInCtorToDynamoJson(
         FinalFieldsNotSetInCtor instance) =>
     <String, dynamic>{};
 ''',
@@ -153,11 +160,11 @@ class FinalFieldsNotSetInCtor {
 }
 
 @ShouldGenerate(r'''
-SetSupport _$SetSupportFromJson(Map<String, dynamic> json) => SetSupport(
+SetSupport _$SetSupportFromDynamoJson(Map<String, dynamic> json) => SetSupport(
       (json['values'] as List<dynamic>).map((e) => e as int).toSet(),
     );
 
-Map<String, dynamic> _$SetSupportToJson(SetSupport instance) =>
+Map<String, dynamic> _$SetSupportToDynamoJson(SetSupport instance) =>
     <String, dynamic>{
       'values': instance.values.toList(),
     };
@@ -171,7 +178,7 @@ class SetSupport {
 
 @ShouldThrow(
   '''
-Could not generate `toJson` code for `watch`.
+Could not generate `toDynamoJson` code for `watch`.
 To support the type `Stopwatch` you can:
 $converterOrKeyInstructions''',
 )
@@ -182,7 +189,7 @@ class NoSerializeFieldType {
 
 @ShouldThrow(
   '''
-Could not generate `fromJson` code for `watch`.
+Could not generate `fromDynamoJson` code for `watch`.
 To support the type `Stopwatch` you can:
 $converterOrKeyInstructions''',
 )
@@ -193,7 +200,7 @@ class NoDeserializeFieldType {
 
 @ShouldThrow(
   '''
-Could not generate `toJson` code for `durationDateTimeMap` because of type `Duration`.
+Could not generate `toDynamoJson` code for `durationDateTimeMap` because of type `Duration`.
 Map keys must be one of: Object, dynamic, enum, String, BigInt, DateTime, int, Uri.''',
 )
 @DynamoSerializable(createFactory: false)
@@ -203,7 +210,7 @@ class NoSerializeBadKey {
 
 @ShouldThrow(
   '''
-Could not generate `fromJson` code for `durationDateTimeMap` because of type `Duration`.
+Could not generate `fromDynamoJson` code for `durationDateTimeMap` because of type `Duration`.
 Map keys must be one of: Object, dynamic, enum, String, BigInt, DateTime, int, Uri.''',
 )
 @DynamoSerializable(createToDynamoJson: false)
@@ -213,7 +220,7 @@ class NoDeserializeBadKey {
 
 @ShouldGenerate(
   r'''
-Map<String, dynamic> _$IncludeIfNullOverrideToJson(
+Map<String, dynamic> _$IncludeIfNullOverrideToDynamoJson(
     IncludeIfNullOverride instance) {
   final val = <String, dynamic>{
     'number': instance.number,
@@ -246,7 +253,7 @@ class NoCtorClass {
   late final int member;
 
   //ignore: avoid_unused_constructor_parameters
-  factory NoCtorClass.fromJson(Map<String, dynamic> json) =>
+  factory NoCtorClass.fromDynamoJson(Map<String, dynamic> json) =>
       throw UnimplementedError();
 }
 
@@ -286,7 +293,8 @@ class DupeKeys {
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$IgnoredFieldClassToJson(IgnoredFieldClass instance) =>
+Map<String, dynamic> _$IgnoredFieldClassToDynamoJson(
+        IgnoredFieldClass instance) =>
     <String, dynamic>{
       'ignoredFalseField': instance.ignoredFalseField,
       'ignoredNullField': instance.ignoredNullField,
@@ -330,9 +338,9 @@ class PrivateFieldCtorClass {
 }
 
 @ShouldThrow(
-  'Error with `@JsonKey` on the `field` field. '
+  'Error with `@DynamoKey` on the `field` field. '
   'Cannot set both `disallowNullValue` and `includeIfNull` to `true`. '
-  'This leads to incompatible `toJson` and `fromJson` behavior.',
+  'This leads to incompatible `toDynamoJson` and `fromDynamoJson` behavior.',
   element: 'field',
 )
 @DynamoSerializable()
@@ -342,7 +350,7 @@ class IncludeIfNullDisallowNullClass {
 }
 
 @ShouldThrow(
-  'The `JsonValue` annotation on `BadEnum.value` does not have a value '
+  'The `DynamoValue` annotation on `BadEnum.value` does not have a value '
   'of type String, int, or null.',
   element: 'value',
 )
@@ -382,15 +390,17 @@ enum GoodEnum {
 }
 
 @ShouldGenerate(r'''
-FieldWithFromJsonCtorAndTypeParams _$FieldWithFromJsonCtorAndTypeParamsFromJson(
-        Map<String, dynamic> json) =>
-    FieldWithFromJsonCtorAndTypeParams()
-      ..customOrders = json['customOrders'] == null
-          ? null
-          : MyList<GeneralTestClass2, int>.fromJson((json['customOrders']
-                  as List<dynamic>)
-              .map((e) => GeneralTestClass2.fromJson(e as Map<String, dynamic>))
-              .toList());
+FieldWithFromJsonCtorAndTypeParams
+    _$FieldWithFromJsonCtorAndTypeParamsFromDynamoJson(
+            Map<String, dynamic> json) =>
+        FieldWithFromJsonCtorAndTypeParams()
+          ..customOrders = json['customOrders'] == null
+              ? null
+              : MyList<GeneralTestClass2, int>.fromDynamoJson(
+                  (json['customOrders'] as List<dynamic>)
+                      .map((e) => GeneralTestClass2.fromDynamoJson(
+                          e as Map<String, dynamic>))
+                      .toList());
 ''')
 @DynamoSerializable(createToDynamoJson: false)
 class FieldWithFromJsonCtorAndTypeParams {
@@ -402,7 +412,7 @@ class MyList<T, Q> extends ListBase<T> {
 
   MyList(Iterable<T> source) : _data = source.toList();
 
-  factory MyList.fromJson(List<T> items) => MyList(items);
+  factory MyList.fromDynamoJson(List<T> items) => MyList(items);
 
   @override
   int get length => _data.length;
@@ -426,13 +436,13 @@ mixin _PropInMixinI448RegressionMixin {
 }
 
 @ShouldGenerate(r'''
-PropInMixinI448Regression _$PropInMixinI448RegressionFromJson(
+PropInMixinI448Regression _$PropInMixinI448RegressionFromDynamoJson(
         Map<String, dynamic> json) =>
     PropInMixinI448Regression()
       ..nullable = json['nullable'] as int
       ..notNullable = json['notNullable'] as int;
 
-Map<String, dynamic> _$PropInMixinI448RegressionToJson(
+Map<String, dynamic> _$PropInMixinI448RegressionToDynamoJson(
         PropInMixinI448Regression instance) =>
     <String, dynamic>{
       'nullable': instance.nullable,
@@ -447,10 +457,12 @@ class PropInMixinI448Regression with _PropInMixinI448RegressionMixin {
 
 @ShouldGenerate(
   r'''
-IgnoreUnannotated _$IgnoreUnannotatedFromJson(Map<String, dynamic> json) =>
+IgnoreUnannotated _$IgnoreUnannotatedFromDynamoJson(
+        Map<String, dynamic> json) =>
     IgnoreUnannotated()..annotated = json['annotated'] as int;
 
-Map<String, dynamic> _$IgnoreUnannotatedToJson(IgnoreUnannotated instance) =>
+Map<String, dynamic> _$IgnoreUnannotatedToDynamoJson(
+        IgnoreUnannotated instance) =>
     <String, dynamic>{
       'annotated': instance.annotated,
     };
@@ -466,10 +478,12 @@ class IgnoreUnannotated {
 
 @ShouldGenerate(
   r'''
-SubclassedJsonKey _$SubclassedJsonKeyFromJson(Map<String, dynamic> json) =>
+SubclassedJsonKey _$SubclassedJsonKeyFromDynamoJson(
+        Map<String, dynamic> json) =>
     SubclassedJsonKey()..annotatedWithSubclass = json['bob'] as int;
 
-Map<String, dynamic> _$SubclassedJsonKeyToJson(SubclassedJsonKey instance) =>
+Map<String, dynamic> _$SubclassedJsonKeyToDynamoJson(
+        SubclassedJsonKey instance) =>
     <String, dynamic>{
       'bob': instance.annotatedWithSubclass,
     };
@@ -487,11 +501,11 @@ class MyJsonKey extends DynamoKey {
 
 @ShouldGenerate(
   r'''
-OverrideGetterExampleI613 _$OverrideGetterExampleI613FromJson(
+OverrideGetterExampleI613 _$OverrideGetterExampleI613FromDynamoJson(
         Map<String, dynamic> json) =>
     OverrideGetterExampleI613()..id = json['id'] as String;
 
-Map<String, dynamic> _$OverrideGetterExampleI613ToJson(
+Map<String, dynamic> _$OverrideGetterExampleI613ToDynamoJson(
         OverrideGetterExampleI613 instance) =>
     <String, dynamic>{
       'id': instance.id,
@@ -511,9 +525,9 @@ class OverrideGetterExampleI613Super {
 }
 
 @ShouldThrow(
-  'Expecting a `fromJson` constructor with exactly one positional parameter. '
+  'Expecting a `fromDynamoJson` constructor with exactly one positional parameter. '
   'Found a constructor with 0 parameters.',
-  element: 'fromJson',
+  element: 'fromDynamoJson',
 )
 @DynamoSerializable()
 class InvalidChildClassFromJson {
@@ -521,15 +535,15 @@ class InvalidChildClassFromJson {
 }
 
 class NoParamFromJsonCtor {
-  NoParamFromJsonCtor.fromJson();
+  NoParamFromJsonCtor.fromDynamoJson();
 }
 
 @ShouldThrow(
-  'Expecting a `fromJson` constructor with exactly one positional parameter. '
+  'Expecting a `fromDynamoJson` constructor with exactly one positional parameter. '
   'The only extra parameters allowed are functions of the form '
-  '`T Function(Object?) fromJsonT` '
+  '`T Function(Object?) fromDynamoJsonT` '
   'where `T` is a type parameter of the target type.',
-  element: 'fromJson',
+  element: 'fromDynamoJson',
 )
 @DynamoSerializable()
 class InvalidChildClassFromJson2 {
@@ -538,17 +552,17 @@ class InvalidChildClassFromJson2 {
 
 class ExtraParamFromJsonCtor {
   // ignore: avoid_unused_constructor_parameters
-  ExtraParamFromJsonCtor.fromJson(Map<String, dynamic> json, int oops);
+  ExtraParamFromJsonCtor.fromDynamoJson(Map<String, dynamic> json, int oops);
 
-  Map<String, dynamic> toJson() => throw UnimplementedError();
+  Map<String, dynamic> toDynamoJson() => throw UnimplementedError();
 }
 
 @ShouldThrow(
-  'Expecting a `toJson` function with no required parameters. '
+  'Expecting a `toDynamoJson` function with no required parameters. '
   'The only extra parameters allowed are functions of the form '
-  '`Object Function(T) toJsonT` where `T` is a type parameter of the target '
-  ' type.',
-  element: 'toJson',
+  '`Object Function(T) toDynamoJsonT` where `T` is a type parameter of the '
+  'target type.',
+  element: 'toDynamoJson',
 )
 @DynamoSerializable()
 class InvalidChildClassFromJson3 {
@@ -557,13 +571,13 @@ class InvalidChildClassFromJson3 {
 
 class ExtraParamToJson {
   // ignore: avoid_unused_constructor_parameters
-  ExtraParamToJson.fromJson(Map<String, dynamic> json);
+  ExtraParamToJson.fromDynamoJson(Map<String, dynamic> json);
 
-  Map<String, dynamic> toJson(int bob) => throw UnimplementedError();
+  Map<String, dynamic> toDynamoJson(int bob) => throw UnimplementedError();
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$Issue1038RegressionTestToJson(
+Map<String, dynamic> _$Issue1038RegressionTestToDynamoJson(
         Issue1038RegressionTest instance) =>
     <String, dynamic>{
       'id': instance.id,

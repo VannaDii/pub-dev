@@ -5,23 +5,23 @@
 part of '_json_serializable_test_input.dart';
 
 @ShouldGenerate(r'''
-JsonConverterNamedCtor<E> _$JsonConverterNamedCtorFromJson<E>(
+JsonConverterNamedCtor<E> _$JsonConverterNamedCtorFromDynamoJson<E>(
         Map<String, dynamic> json) =>
     JsonConverterNamedCtor<E>()
       ..value = const _DurationMillisecondConverter.named()
-          .fromJson(json['value'] as int)
-      ..genericValue =
-          _GenericConverter<E>.named().fromJson(json['genericValue'] as int)
+          .fromDynamoJson(json['value'] as int)
+      ..genericValue = _GenericConverter<E>.named()
+          .fromDynamoJson(json['genericValue'] as int)
       ..keyAnnotationFirst =
           JsonConverterNamedCtor._fromJson(json['keyAnnotationFirst'] as int);
 
-Map<String, dynamic> _$JsonConverterNamedCtorToJson<E>(
+Map<String, dynamic> _$JsonConverterNamedCtorToDynamoJson<E>(
         JsonConverterNamedCtor<E> instance) =>
     <String, dynamic>{
-      'value':
-          const _DurationMillisecondConverter.named().toJson(instance.value),
+      'value': const _DurationMillisecondConverter.named()
+          .toDynamoJson(instance.value),
       'genericValue':
-          _GenericConverter<E>.named().toJson(instance.genericValue),
+          _GenericConverter<E>.named().toDynamoJson(instance.genericValue),
       'keyAnnotationFirst':
           JsonConverterNamedCtor._toJson(instance.keyAnnotationFirst),
     };
@@ -43,28 +43,29 @@ class JsonConverterNamedCtor<E> {
 }
 
 @ShouldGenerate(r'''
-JsonConvertOnField<E> _$JsonConvertOnFieldFromJson<E>(
+JsonConvertOnField<E> _$JsonConvertOnFieldFromDynamoJson<E>(
         Map<String, dynamic> json) =>
     JsonConvertOnField<E>()
       ..annotatedField = const _DurationMillisecondConverter()
-          .fromJson(json['annotatedField'] as int)
+          .fromDynamoJson(json['annotatedField'] as int)
       ..annotatedWithNamedCtor = const _DurationMillisecondConverter.named()
-          .fromJson(json['annotatedWithNamedCtor'] as int)
-      ..classAnnotatedWithField =
-          _durationConverter.fromJson(json['classAnnotatedWithField'] as int)
+          .fromDynamoJson(json['annotatedWithNamedCtor'] as int)
+      ..classAnnotatedWithField = _durationConverter
+          .fromDynamoJson(json['classAnnotatedWithField'] as int)
       ..genericValue =
-          _GenericConverter<E>().fromJson(json['genericValue'] as int);
+          _GenericConverter<E>().fromDynamoJson(json['genericValue'] as int);
 
-Map<String, dynamic> _$JsonConvertOnFieldToJson<E>(
+Map<String, dynamic> _$JsonConvertOnFieldToDynamoJson<E>(
         JsonConvertOnField<E> instance) =>
     <String, dynamic>{
-      'annotatedField':
-          const _DurationMillisecondConverter().toJson(instance.annotatedField),
+      'annotatedField': const _DurationMillisecondConverter()
+          .toDynamoJson(instance.annotatedField),
       'annotatedWithNamedCtor': const _DurationMillisecondConverter.named()
-          .toJson(instance.annotatedWithNamedCtor),
+          .toDynamoJson(instance.annotatedWithNamedCtor),
       'classAnnotatedWithField':
-          _durationConverter.toJson(instance.classAnnotatedWithField),
-      'genericValue': _GenericConverter<E>().toJson(instance.genericValue),
+          _durationConverter.toDynamoJson(instance.classAnnotatedWithField),
+      'genericValue':
+          _GenericConverter<E>().toDynamoJson(instance.genericValue),
     };
 ''')
 @DynamoSerializable()
@@ -95,7 +96,7 @@ class _GenericConverter<T> implements DynamoConverter<T, int> {
 }
 
 @ShouldThrow(
-  '`JsonConverter` implementations can have no more than one type argument. '
+  '`DynamoConverter` implementations can have no more than one type argument. '
   '`_BadConverter` has 2.',
   element: '_BadConverter',
 )
@@ -163,11 +164,11 @@ class _ConverterWithCtorParams implements DynamoConverter<Duration, int> {
 }
 
 @ShouldGenerate(r'''
-Map<String, dynamic> _$JsonConverterOnGetterToJson(
+Map<String, dynamic> _$JsonConverterOnGetterToDynamoJson(
         JsonConverterOnGetter instance) =>
     <String, dynamic>{
-      'annotatedGetter':
-          const _NeedsConversionConverter().toJson(instance.annotatedGetter),
+      'annotatedGetter': const _NeedsConversionConverter()
+          .toDynamoJson(instance.annotatedGetter),
     };
 ''')
 @DynamoSerializable(createFactory: false)
@@ -192,7 +193,7 @@ class _NeedsConversionConverter
 
 @ShouldThrow(
   '''
-Could not generate `fromJson` code for `value`.
+Could not generate `fromDynamoJson` code for `value`.
 To support the type `NeedsConversion` you can:
 $converterOrKeyInstructions''',
 )

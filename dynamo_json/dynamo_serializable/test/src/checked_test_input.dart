@@ -1,7 +1,7 @@
 part of '_json_serializable_test_input.dart';
 
 @ShouldGenerate(r'''
-WithANonCtorGetterChecked _$WithANonCtorGetterCheckedFromJson(
+WithANonCtorGetterChecked _$WithANonCtorGetterCheckedFromDynamoJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
       'WithANonCtorGetterChecked',
@@ -36,7 +36,8 @@ class WithANonCtorGetterChecked {
 }
 
 @ShouldGenerate(r'''
-WithANonCtorGetter _$WithANonCtorGetterFromJson(Map<String, dynamic> json) {
+WithANonCtorGetter _$WithANonCtorGetterFromDynamoJson(
+    Map<String, dynamic> json) {
   $checkKeys(
     json,
     allowedKeys: const ['items'],

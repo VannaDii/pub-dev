@@ -2,13 +2,14 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+import 'package:json_annotation/json_annotation.dart' as json_annotation;
 import 'package:meta/meta_meta.dart';
 
 import 'allowed_keys_helpers.dart';
 import 'checked_helpers.dart';
-import 'enum_helpers.dart';
 import 'dynamo_converter.dart';
 import 'dynamo_key.dart';
+import 'enum_helpers.dart';
 
 part 'dynamo_serializable.g.dart';
 
@@ -32,10 +33,10 @@ enum FieldRename {
 }
 
 /// An annotation used to specify a class to generate code for.
-@DynamoSerializable(
+@json_annotation.JsonSerializable(
   checked: true,
   disallowUnrecognizedKeys: true,
-  fieldRename: FieldRename.snake,
+  fieldRename: json_annotation.FieldRename.snake,
 )
 @Target({TargetKind.classType})
 class DynamoSerializable {
@@ -49,14 +50,14 @@ class DynamoSerializable {
   /// *Note: in many cases the key values are still assumed to be [String]*.
   final bool? anyMap;
 
-  /// If `true`, generated `fromJson` functions include extra checks to validate
+  /// If `true`, generated `fromDynamoJson` functions include extra checks to validate
   /// proper deserialization of types.
   ///
   /// If an exception is thrown during deserialization, a
   /// [CheckedFromJsonException] is thrown.
   final bool? checked;
 
-  /// Specifies a named constructor to target when creating the `fromJson`
+  /// Specifies a named constructor to target when creating the `fromDynamoJson`
   /// function.
   ///
   /// If the value is not set or an empty [String], the default constructor
@@ -93,7 +94,7 @@ class DynamoSerializable {
   /// ```dart
   /// @DynamoSerializable()
   /// class Example {
-  ///   Map<String, dynamic> toJson() => _$ExampleToJson(this);
+  ///   Map<String, dynamic> toDynamoJson() => _$ExampleToDynamoJson(this);
   /// }
   /// ```
   final bool? createToDynamoJson;
@@ -105,20 +106,20 @@ class DynamoSerializable {
   /// be thrown.
   final bool? disallowUnrecognizedKeys;
 
-  /// If `true`, generated `toJson` methods will explicitly call `toJson` on
+  /// If `true`, generated `toDynamoJson` methods will explicitly call `toDynamoJson` on
   /// nested objects.
   ///
-  /// When using JSON encoding support in `dart:convert`, `toJson` is
+  /// When using JSON encoding support in `dart:convert`, `toDynamoJson` is
   /// automatically called on objects, so the default behavior
-  /// (`explicitToJson: false`) is to omit the `toJson` call.
+  /// (`explicitToDynamoJson: false`) is to omit the `toDynamoJson` call.
   ///
-  /// Example of `explicitToJson: false` (default)
+  /// Example of `explicitToDynamoJson: false` (default)
   ///
   /// ```dart
   /// Map<String, dynamic> toJson() => {'child': child};
   /// ```
   ///
-  /// Example of `explicitToJson: true`
+  /// Example of `explicitToDynamoJson: true`
   ///
   /// ```dart
   /// Map<String, dynamic> toJson() => {'child': child?.toJson()};
@@ -138,7 +139,7 @@ class DynamoSerializable {
   final FieldRename? fieldRename;
 
   /// When `true` on classes with type parameters (generic types), extra
-  /// "helper" parameters will be generated for `fromJson` and/or `toJson` to
+  /// "helper" parameters will be generated for `fromDynamoJson` and/or `toDynamoJson` to
   /// support serializing values of those types.
   ///
   /// For example, the generated code for
@@ -156,20 +157,20 @@ class DynamoSerializable {
   /// ```dart
   /// Response<T> _$ResponseFromJson<T>(
   ///   Map<String, dynamic> json,
-  ///   T Function(Object json) fromJsonT,
+  ///   T Function(Object json) fromDynamoJsonT,
   /// ) {
   ///   return Response<T>()
   ///     ..status = json['status'] as int
-  ///     ..value = fromJsonT(json['value']);
+  ///     ..value = fromDynamoJsonT(json['value']);
   /// }
   ///
   /// Map<String, dynamic> _$ResponseToJson<T>(
   ///   Response<T> instance,
-  ///   Object Function(T value) toJsonT,
+  ///   Object Function(T value) toDynamoJsonT,
   /// ) =>
   ///     <String, dynamic>{
   ///       'status': instance.status,
-  ///       'value': toJsonT(instance.value),
+  ///       'value': toDynamoJsonT(instance.value),
   ///     };
   /// ```
   ///
@@ -195,7 +196,7 @@ class DynamoSerializable {
   /// If `true` (the default), all fields are written to JSON, even if they are
   /// `null`.
   ///
-  /// If a field is annotated with `JsonKey` with a non-`null` value for
+  /// If a field is annotated with `DynamoKey` with a non-`null` value for
   /// `includeIfNull`, that value takes precedent.
   final bool? includeIfNull;
 
@@ -251,7 +252,7 @@ class DynamoSerializable {
     this.genericArgumentFactories,
   });
 
-  factory DynamoSerializable.fromDynamoJson(Map<String, dynamic> json) =>
+  factory DynamoSerializable.fromJson(Map<String, dynamic> json) =>
       _$JsonSerializableFromJson(json);
 
   /// An instance of [DynamoSerializable] with all fields set to their default
@@ -294,5 +295,5 @@ class DynamoSerializable {
             genericArgumentFactories ?? defaults.genericArgumentFactories,
       );
 
-  Map<String, dynamic> toDynamoJson() => _$JsonSerializableToJson(this);
+  Map<String, dynamic> toJson() => _$JsonSerializableToJson(this);
 }
