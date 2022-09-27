@@ -5,10 +5,10 @@
 part of 'json_test_example.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
-Person _$PersonFromJson(Map<String, dynamic> json) => Person(
+Person _$PersonFromDynamoJson(Map<String, dynamic> json) => Person(
       json['firstName'] as String,
       json['lastName'] as String,
       $enumDecode(_$CategoryEnumMap, json[r'$house']),
@@ -19,11 +19,11 @@ Person _$PersonFromJson(Map<String, dynamic> json) => Person(
     )
       ..order = json['order'] == null
           ? null
-          : Order.fromJson(json['order'] as Map<String, dynamic>)
+          : Order.fromDynamoJson(json['order'] as Map<String, dynamic>)
       ..customOrders = json['customOrders'] == null
           ? null
           : MyList<Order>.fromJson((json['customOrders'] as List<dynamic>)
-              .map((e) => Order.fromJson(e as Map<String, dynamic>))
+              .map((e) => Order.fromDynamoJson(e as Map<String, dynamic>))
               .toList())
       ..houseMap = (json['houseMap'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, $enumDecode(_$CategoryEnumMap, e)),
@@ -32,7 +32,7 @@ Person _$PersonFromJson(Map<String, dynamic> json) => Person(
         (k, e) => MapEntry($enumDecode(_$CategoryEnumMap, k), e as int),
       );
 
-Map<String, dynamic> _$PersonToJson(Person instance) => <String, dynamic>{
+Map<String, dynamic> _$PersonToDynamoJson(Person instance) => <String, dynamic>{
       'firstName': instance.firstName,
       'lastName': instance.lastName,
       'middleName': instance.middleName,
@@ -56,7 +56,7 @@ const _$CategoryEnumMap = {
   Category.notDiscoveredYet: 'not_discovered_yet',
 };
 
-Order _$OrderFromJson(Map<String, dynamic> json) {
+Order _$OrderFromDynamoJson(Map<String, dynamic> json) {
   $checkKeys(
     json,
     disallowNullValues: const ['count'],
@@ -64,7 +64,7 @@ Order _$OrderFromJson(Map<String, dynamic> json) {
   return Order.custom(
     $enumDecodeNullable(_$CategoryEnumMap, json['category']),
     (json['items'] as List<dynamic>?)
-        ?.map((e) => Item.fromJson(e as Map<String, dynamic>)),
+        ?.map((e) => Item.fromDynamoJson(e as Map<String, dynamic>)),
   )
     ..count = json['count'] as int?
     ..isRushed = json['isRushed'] as bool?
@@ -84,7 +84,7 @@ Order _$OrderFromJson(Map<String, dynamic> json) {
         StatusCode.success;
 }
 
-Map<String, dynamic> _$OrderToJson(Order instance) {
+Map<String, dynamic> _$OrderToDynamoJson(Order instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -112,7 +112,7 @@ const _$StatusCodeEnumMap = {
   StatusCode.unknown: 'unknown',
 };
 
-Item _$ItemFromJson(Map<String, dynamic> json) => Item(
+Item _$ItemFromDynamoJson(Map<String, dynamic> json) => Item(
       json['price'] as int?,
     )
       ..itemNumber = json['item-number'] as int?
@@ -120,9 +120,10 @@ Item _$ItemFromJson(Map<String, dynamic> json) => Item(
           ?.map((e) => DateTime.parse(e as String))
           .toList()
       ..rates = (json['rates'] as List<dynamic>?)?.map((e) => e as int).toList()
-      ..geoPoint = _fromJsonGeoPoint(json['geoPoint'] as Map<String, dynamic>?);
+      ..geoPoint =
+          _fromDynamoJsonGeoPoint(json['geoPoint'] as Map<String, dynamic>?);
 
-Map<String, dynamic> _$ItemToJson(Item instance) {
+Map<String, dynamic> _$ItemToDynamoJson(Item instance) {
   final val = <String, dynamic>{
     'price': instance.price,
   };
@@ -137,11 +138,11 @@ Map<String, dynamic> _$ItemToJson(Item instance) {
   val['saleDates'] =
       instance.saleDates?.map((e) => e.toIso8601String()).toList();
   val['rates'] = instance.rates;
-  val['geoPoint'] = _toJsonGeoPoint(instance.geoPoint);
+  val['geoPoint'] = _toDynamoJsonGeoPoint(instance.geoPoint);
   return val;
 }
 
-Numbers _$NumbersFromJson(Map<String, dynamic> json) => Numbers()
+Numbers _$NumbersFromDynamoJson(Map<String, dynamic> json) => Numbers()
   ..ints = (json['ints'] as List<dynamic>?)?.map((e) => e as int).toList()
   ..nums = (json['nums'] as List<dynamic>?)?.map((e) => e as num).toList()
   ..doubles = (json['doubles'] as List<dynamic>?)
@@ -153,7 +154,8 @@ Numbers _$NumbersFromJson(Map<String, dynamic> json) => Numbers()
   ..duration = durationFromInt(json['duration'] as int?)
   ..date = dateTimeFromEpochUs(json['date'] as int?);
 
-Map<String, dynamic> _$NumbersToJson(Numbers instance) => <String, dynamic>{
+Map<String, dynamic> _$NumbersToDynamoJson(Numbers instance) =>
+    <String, dynamic>{
       'ints': instance.ints,
       'nums': instance.nums,
       'doubles': instance.doubles,
@@ -162,7 +164,7 @@ Map<String, dynamic> _$NumbersToJson(Numbers instance) => <String, dynamic>{
       'date': dateTimeToEpochUs(instance.date),
     };
 
-MapKeyVariety _$MapKeyVarietyFromJson(Map<String, dynamic> json) =>
+MapKeyVariety _$MapKeyVarietyFromDynamoJson(Map<String, dynamic> json) =>
     MapKeyVariety()
       ..intIntMap = (json['intIntMap'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(int.parse(k), e as int),
@@ -177,7 +179,7 @@ MapKeyVariety _$MapKeyVarietyFromJson(Map<String, dynamic> json) =>
         (k, e) => MapEntry(BigInt.parse(k), e as int),
       );
 
-Map<String, dynamic> _$MapKeyVarietyToJson(MapKeyVariety instance) =>
+Map<String, dynamic> _$MapKeyVarietyToDynamoJson(MapKeyVariety instance) =>
     <String, dynamic>{
       'intIntMap': instance.intIntMap?.map((k, e) => MapEntry(k.toString(), e)),
       'uriIntMap': instance.uriIntMap?.map((k, e) => MapEntry(k.toString(), e)),
@@ -186,7 +188,7 @@ Map<String, dynamic> _$MapKeyVarietyToJson(MapKeyVariety instance) =>
       'bigIntMap': instance.bigIntMap?.map((k, e) => MapEntry(k.toString(), e)),
     };
 
-UnknownEnumValue _$UnknownEnumValueFromJson(Map<String, dynamic> json) =>
+UnknownEnumValue _$UnknownEnumValueFromDynamoJson(Map<String, dynamic> json) =>
     UnknownEnumValue()
       ..enumValue = $enumDecode(_$CategoryEnumMap, json['enumValue'],
           unknownValue: Category.notDiscoveredYet)
@@ -202,13 +204,15 @@ UnknownEnumValue _$UnknownEnumValueFromJson(Map<String, dynamic> json) =>
               unknownValue: Category.notDiscoveredYet))
           .toSet();
 
-PrivateConstructor _$PrivateConstructorFromJson(Map<String, dynamic> json) =>
+PrivateConstructor _$PrivateConstructorFromDynamoJson(
+        Map<String, dynamic> json) =>
     PrivateConstructor._(
       json['id'] as int,
       json['value'] as String,
     );
 
-Map<String, dynamic> _$PrivateConstructorToJson(PrivateConstructor instance) =>
+Map<String, dynamic> _$PrivateConstructorToDynamoJson(
+        PrivateConstructor instance) =>
     <String, dynamic>{
       'id': instance.id,
       'value': instance.value,

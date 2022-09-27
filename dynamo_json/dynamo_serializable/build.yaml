@@ -9,7 +9,7 @@ targets:
           # Only for the JSON literal output file
           - text_direction_code_point_in_literal
 
-      json_serializable:
+      dynamo_serializable:
         generate_for:
         - example/*
         - test/default_value/*
@@ -19,18 +19,18 @@ targets:
         - test/literal/*
         - test/supported_types/*
 
-      json_serializable|_test_builder:
+      dynamo_serializable|_test_builder:
         generate_for:
         - test/default_value/default_value.dart
         - test/generic_files/generic_class.dart
         - test/integration/json_test_example.dart
         - test/kitchen_sink/kitchen_sink.dart
 
-      json_serializable|_type_builder:
+      dynamo_serializable|_type_builder:
         generate_for:
         - test/supported_types/input.dart
 
-      json_serializable|_type_test_builder:
+      dynamo_serializable|_type_test_builder:
         generate_for:
         - test/supported_types/type_test.dart
 
@@ -44,9 +44,9 @@ builders:
       - .g_any_map.dart
       - .g_any_map__checked.dart
       - .g_exclude_null.dart
-      - .g_explicit_to_json.dart
+      - .g_explicit_to_dynamo_json.dart
     build_to: source
-    runs_before: ["json_serializable"]
+    runs_before: ["dynamo_serializable"]
 
   _type_builder:
     import: 'tool/test_type_builder.dart'
@@ -69,7 +69,7 @@ builders:
       - .type_string.dart
       - .type_uri.dart
     build_to: source
-    runs_before: ["json_serializable"]
+    runs_before: ["dynamo_serializable"]
 
   _type_test_builder:
     import: 'tool/test_type_builder.dart'
@@ -92,7 +92,7 @@ builders:
       - .string_test.dart
       - .uri_test.dart
     build_to: source
-    runs_before: ["json_serializable"]
+    runs_before: ["dynamo_serializable"]
 
   _readme_builder:
     import: "tool/readme_builder.dart"
@@ -102,10 +102,10 @@ builders:
     auto_apply: root_package
     required_inputs: ['.dart']
 
-  json_serializable:
-    import: "package:json_serializable/builder.dart"
-    builder_factories: ["jsonSerializable"]
-    build_extensions: {".dart": ["json_serializable.g.part"]}
+  dynamo_serializable:
+    import: "package:dynamo_serializable/builder.dart"
+    builder_factories: ["dynamoSerializable"]
+    build_extensions: {".dart": ["dynamo_serializable.g.part"]}
     auto_apply: dependents
     build_to: cache
     applies_builders: ["source_gen|combining_builder"]

@@ -16,6 +16,9 @@ import 'package:test_process/test_process.dart';
 
 import 'test_utils.dart';
 
+const otherDeps = {'json_serializable': 'any'};
+const otherDepsDev = {'json_annotation': 'any'};
+
 void main() {
   test('validate pubspec constraint', () {
     final annotationConstraint = _dynamoSerialPubspec
@@ -38,9 +41,8 @@ void main() {
     'missing dependency in example code',
     () => _structurePackage(
       sourceDirectory: 'example',
-      message:
-          'You are missing a required dependency on dynamo_annotation with a '
-          'lower bound of at least "$_annotationLowerBound".',
+      message: 'You are missing a required dependency on dynamo_annotation '
+          'with a lower bound of at least "$_annotationLowerBound".',
     ),
   );
 
@@ -58,9 +60,8 @@ void main() {
     () => _structurePackage(
       sourceDirectory: 'lib',
       dependencies: {'dynamo_annotation': null},
-      message:
-          'The version constraint "any" on dynamo_annotation allows versions '
-          'before $_annotationLowerBound which is not allowed.',
+      message: 'The version constraint "any" on dynamo_annotation allows '
+          'versions before $_annotationLowerBound which is not allowed.',
     ),
   );
 
@@ -69,9 +70,8 @@ void main() {
     () => _structurePackage(
       sourceDirectory: 'lib',
       dependencies: {'dynamo_annotation': 'any'},
-      message:
-          'The version constraint "any" on dynamo_annotation allows versions '
-          'before $_annotationLowerBound which is not allowed.',
+      message: 'The version constraint "any" on dynamo_annotation allows '
+          'versions before $_annotationLowerBound which is not allowed.',
     ),
   );
 
@@ -80,9 +80,8 @@ void main() {
     () => _structurePackage(
       sourceDirectory: 'lib',
       dependencies: {'dynamo_annotation': '^4.0.0'},
-      message:
-          'The version constraint "^4.0.0" on dynamo_annotation allows versions '
-          'before $_annotationLowerBound which is not allowed.',
+      message: 'The version constraint "^4.0.0" on dynamo_annotation allows '
+          'versions before $_annotationLowerBound which is not allowed.',
     ),
   );
 }
@@ -120,9 +119,10 @@ Future<void> _structurePackage({
   final pubspec = loudEncode(
     {
       'name': '_test_pkg',
-      'environment': {'sdk': '>=2.14.0 <3.0.0'},
-      'dependencies': dependencies,
+      'environment': {'sdk': '>=2.18.0 <3.0.0'},
+      'dependencies': {...otherDeps, ...dependencies},
       'dev_dependencies': {
+        ...otherDepsDev,
         ...devDependencies,
         'build_runner': 'any',
         'dynamo_serializable': {'path': p.current},
@@ -173,7 +173,7 @@ class SomeClass{}
   }
 
   expect(lines.toString(), contains('''
-[WARNING] dynamo_serializable:dynamo_serializable on $sourceDirectory/sample.dart:
+[WARNING] dynamo_serializable on $sourceDirectory/sample.dart:
 $message'''));
 
   await proc.shouldExit(0);

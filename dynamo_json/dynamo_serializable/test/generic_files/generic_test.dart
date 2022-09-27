@@ -236,12 +236,14 @@ void main() {
   });
 
   test('issue 980 regression test', () {
+    var instance = Issue980ParentClass([
+      Issue980GenericClass(45),
+      Issue980GenericClass(42),
+    ]);
     roundTripObject(
-      Issue980ParentClass([
-        Issue980GenericClass(45),
-        Issue980GenericClass(42),
-      ]),
-      Issue980ParentClass.fromJson,
+      instance,
+      (Issue980ParentClass o) => o.toDynamoJson(),
+      Issue980ParentClass.fromDynamoJson,
     );
   });
 
@@ -265,12 +267,12 @@ void _roundTrip<T>({
 }) {
   final json = jsonEncode(sourceJson);
 
-  final instance2 = Issue1047ParentClass<T>.fromJson(
+  final instance2 = Issue1047ParentClass<T>.fromDynamoJson(
     jsonDecode(json) as Map<String, dynamic>,
     genericDecode,
   );
 
-  final json2 = jsonEncode(instance2.toJson(genericEncode));
+  final json2 = jsonEncode(instance2.toDynamoJson(genericEncode));
 
   expect(json2, json);
 }

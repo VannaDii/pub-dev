@@ -5,14 +5,14 @@
 part of 'simple_object.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
-SimpleObject _$SimpleObjectFromJson(Map json) => SimpleObject(
+SimpleObject _$SimpleObjectFromDynamoJson(Map json) => SimpleObject(
       json['value'] as int,
     );
 
-Map<String, dynamic> _$SimpleObjectToJson(SimpleObject instance) =>
+Map<String, dynamic> _$SimpleObjectToDynamoJson(SimpleObject instance) =>
     <String, dynamic>{
       'value': instance.value,
     };

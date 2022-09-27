@@ -106,23 +106,23 @@ class DynamoSerializable {
   /// be thrown.
   final bool? disallowUnrecognizedKeys;
 
-  /// If `true`, generated `toDynamoJson` methods will explicitly call `toDynamoJson` on
-  /// nested objects.
+  /// If `true`, generated `toDynamoJson` methods will explicitly call
+  /// `toDynamoJson` on nested objects.
   ///
   /// When using JSON encoding support in `dart:convert`, `toDynamoJson` is
   /// automatically called on objects, so the default behavior
   /// (`explicitToDynamoJson: false`) is to omit the `toDynamoJson` call.
   ///
-  /// Example of `explicitToDynamoJson: false` (default)
+  /// Example of `explicitToDynamoJson: false`
   ///
   /// ```dart
-  /// Map<String, dynamic> toJson() => {'child': child};
+  /// Map<String, dynamic> toDynamoJson() => {'child': child};
   /// ```
   ///
-  /// Example of `explicitToDynamoJson: true`
+  /// Example of `explicitToDynamoJson: true` (default)
   ///
   /// ```dart
-  /// Map<String, dynamic> toJson() => {'child': child?.toJson()};
+  /// Map<String, dynamic> toDynamoJson() => {'child': child?.toDynamoJson()};
   /// ```
   final bool? explicitToDynamoJson;
 
@@ -265,7 +265,7 @@ class DynamoSerializable {
     createFactory: true,
     createToDynamoJson: true,
     disallowUnrecognizedKeys: false,
-    explicitToDynamoJson: false,
+    explicitToDynamoJson: true,
     fieldRename: FieldRename.none,
     ignoreUnannotated: false,
     includeIfNull: true,

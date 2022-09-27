@@ -30,9 +30,10 @@ class Person {
   Person(this.firstName, this.lastName, this.house,
       {this.middleName, this.dateOfBirth});
 
-  factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
+  factory Person.fromDynamoJson(Map<String, dynamic> json) =>
+      _$PersonFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$PersonToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$PersonToDynamoJson(this);
 
   @override
   bool operator ==(Object other) =>
@@ -85,9 +86,10 @@ class Order {
       : items = UnmodifiableListView<Item>(
             List<Item>.unmodifiable(items ?? const <Item>[]));
 
-  factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
+  factory Order.fromDynamoJson(Map<String, dynamic> json) =>
+      _$OrderFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$OrderToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$OrderToDynamoJson(this);
 
   @override
   bool operator ==(Object other) =>
@@ -106,14 +108,17 @@ class Item extends ItemCore {
   List<int>? rates;
 
   // Regression test for https://github.com/google/json_serializable.dart/issues/896
-  @DynamoKey(fromDynamoJson: _fromJsonGeoPoint, toDynamoJson: _toJsonGeoPoint)
+  @DynamoKey(
+      fromDynamoJson: _fromDynamoJsonGeoPoint,
+      toDynamoJson: _toDynamoJsonGeoPoint)
   GeoPoint? geoPoint;
 
   Item([super.price]);
 
-  factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
+  factory Item.fromDynamoJson(Map<String, dynamic> json) =>
+      _$ItemFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$ItemToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$ItemToDynamoJson(this);
 
   @override
   bool operator ==(Object other) =>
@@ -123,7 +128,7 @@ class Item extends ItemCore {
       deepEquals(saleDates, other.saleDates);
 }
 
-GeoPoint? _fromJsonGeoPoint(Map<String, dynamic>? json) {
+GeoPoint? _fromDynamoJsonGeoPoint(Map<String, dynamic>? json) {
   if (json != null) {
     return GeoPoint(json['latitude'], json['longitude']);
   } else {
@@ -131,7 +136,7 @@ GeoPoint? _fromJsonGeoPoint(Map<String, dynamic>? json) {
   }
 }
 
-Map<String, dynamic>? _toJsonGeoPoint(GeoPoint? geoPoint) {
+Map<String, dynamic>? _toDynamoJsonGeoPoint(GeoPoint? geoPoint) {
   if (geoPoint == null) {
     return null;
   }
@@ -161,10 +166,10 @@ class Numbers {
 
   Numbers();
 
-  factory Numbers.fromJson(Map<String, dynamic> json) =>
-      _$NumbersFromJson(json);
+  factory Numbers.fromDynamoJson(Map<String, dynamic> json) =>
+      _$NumbersFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$NumbersToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$NumbersToDynamoJson(this);
 
   @override
   bool operator ==(Object other) =>
@@ -186,10 +191,10 @@ class MapKeyVariety {
 
   MapKeyVariety();
 
-  factory MapKeyVariety.fromJson(Map<String, dynamic> json) =>
-      _$MapKeyVarietyFromJson(json);
+  factory MapKeyVariety.fromDynamoJson(Map<String, dynamic> json) =>
+      _$MapKeyVarietyFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$MapKeyVarietyToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$MapKeyVarietyToDynamoJson(this);
 
   @override
   bool operator ==(Object other) =>
@@ -216,8 +221,8 @@ class UnknownEnumValue {
 
   UnknownEnumValue();
 
-  factory UnknownEnumValue.fromJson(Map<String, dynamic> json) =>
-      _$UnknownEnumValueFromJson(json);
+  factory UnknownEnumValue.fromDynamoJson(Map<String, dynamic> json) =>
+      _$UnknownEnumValueFromDynamoJson(json);
 }
 
 @DynamoSerializable(constructor: '_')
@@ -231,10 +236,10 @@ class PrivateConstructor {
 
   PrivateConstructor(this.value) : id = _id++;
 
-  factory PrivateConstructor.fromJson(Map<String, dynamic> json) =>
-      _$PrivateConstructorFromJson(json);
+  factory PrivateConstructor.fromDynamoJson(Map<String, dynamic> json) =>
+      _$PrivateConstructorFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$PrivateConstructorToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$PrivateConstructorToDynamoJson(this);
 
   @override
   bool operator ==(Object other) =>

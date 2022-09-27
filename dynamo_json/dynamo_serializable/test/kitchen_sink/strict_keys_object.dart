@@ -16,8 +16,8 @@ class StrictKeysObject {
 
   StrictKeysObject(this.value, this.customField);
 
-  factory StrictKeysObject.fromJson(Map json) =>
-      _$StrictKeysObjectFromJson(json);
+  factory StrictKeysObject.fromDynamoJson(Map json) =>
+      _$StrictKeysObjectFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$StrictKeysObjectToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$StrictKeysObjectToDynamoJson(this);
 }

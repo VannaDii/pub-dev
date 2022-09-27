@@ -5,10 +5,10 @@
 part of 'strict_keys_object.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
-StrictKeysObject _$StrictKeysObjectFromJson(Map json) {
+StrictKeysObject _$StrictKeysObjectFromDynamoJson(Map json) {
   $checkKeys(
     json,
     allowedKeys: const ['value', 'custom_field'],
@@ -20,7 +20,8 @@ StrictKeysObject _$StrictKeysObjectFromJson(Map json) {
   );
 }
 
-Map<String, dynamic> _$StrictKeysObjectToJson(StrictKeysObject instance) =>
+Map<String, dynamic> _$StrictKeysObjectToDynamoJson(
+        StrictKeysObject instance) =>
     <String, dynamic>{
       'value': instance.value,
       'custom_field': instance.customField,

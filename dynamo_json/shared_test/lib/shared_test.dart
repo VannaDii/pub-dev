@@ -39,10 +39,11 @@ String loudEncode(Object? object) {
 
 T roundTripObject<T>(
   T object,
+  Map<String, dynamic> Function(T object) serialize,
   T Function(Map<String, dynamic> json) factory, {
   bool skipObjectEquals = false,
 }) {
-  final data = loudEncode(object);
+  final data = loudEncode(serialize(object));
 
   final object2 = factory(json.decode(data) as Map<String, dynamic>);
 
@@ -50,7 +51,7 @@ T roundTripObject<T>(
     expect(object2, equals(object));
   }
 
-  final json2 = loudEncode(object2);
+  final json2 = loudEncode(serialize(object2));
 
   expect(json2, equals(data));
   return object2;

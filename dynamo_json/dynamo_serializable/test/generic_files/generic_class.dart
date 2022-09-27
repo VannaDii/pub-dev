@@ -132,10 +132,11 @@ class Issue980ParentClass {
 
   Issue980ParentClass(this.list);
 
-  factory Issue980ParentClass.fromJson(Map<String, dynamic> json) =>
-      _$Issue980ParentClassFromJson(json);
+  factory Issue980ParentClass.fromDynamoJson(Map<String, dynamic> json) =>
+      _$Issue980ParentClassFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$Issue980ParentClassToJson(this);
+  Map<String, dynamic> toDynamoJson() =>
+      _$Issue980ParentClassToDynamoJson(this);
 
   @override
   bool operator ==(Object other) =>
@@ -149,14 +150,14 @@ class Issue980ParentClass {
 class Issue1047ParentClass<T> {
   Issue1047ParentClass({required this.edges});
 
-  factory Issue1047ParentClass.fromJson(Map<String, dynamic> json,
+  factory Issue1047ParentClass.fromDynamoJson(Map<String, dynamic> json,
           T Function(Object? json) fromDynamoJsonT) =>
-      _$Issue1047ParentClassFromJson<T>(json, fromDynamoJsonT);
+      _$Issue1047ParentClassFromDynamoJson<T>(json, fromDynamoJsonT);
 
   final List<Issue1047Class<T>> edges;
 
-  Map<String, dynamic> toJson(Object? Function(T value) toDynamoJsonT) =>
-      _$Issue1047ParentClassToJson(this, toDynamoJsonT);
+  Map<String, dynamic> toDynamoJson(Object? Function(T value) toDynamoJsonT) =>
+      _$Issue1047ParentClassToDynamoJson(this, toDynamoJsonT);
 }
 
 @DynamoSerializable(genericArgumentFactories: true)
@@ -165,14 +166,14 @@ class Issue1047Class<T> {
     required this.node,
   });
 
-  factory Issue1047Class.fromJson(
+  factory Issue1047Class.fromDynamoJson(
     Map<String, dynamic> json,
     T Function(Object? json) fromDynamoJsonT,
   ) =>
-      _$Issue1047ClassFromJson<T>(json, fromDynamoJsonT);
+      _$Issue1047ClassFromDynamoJson<T>(json, fromDynamoJsonT);
 
   final T node;
 
-  Map<String, dynamic> toJson(Object? Function(T value) toDynamoJsonT) =>
-      _$Issue1047ClassToJson(this, toDynamoJsonT);
+  Map<String, dynamic> toDynamoJson(Object? Function(T value) toDynamoJsonT) =>
+      _$Issue1047ClassToDynamoJson(this, toDynamoJsonT);
 }

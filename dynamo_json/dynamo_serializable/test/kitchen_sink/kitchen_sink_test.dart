@@ -34,7 +34,7 @@ void main() {
 
   test('required keys', () {
     expect(
-        () => StrictKeysObject.fromJson({}),
+        () => StrictKeysObject.fromDynamoJson({}),
         throwsA(_isMissingKeyException(
             'Required keys are missing: value, custom_field.')));
   });
@@ -74,28 +74,32 @@ void _nonNullableTests(KitchenSinkFactory factory) {
     } else {
       matcher = isTypeError;
     }
-    expect(() => factory.fromJson(<String, dynamic>{}), throwsA(matcher));
+    expect(() => factory.fromDynamoJson(<String, dynamic>{}), throwsA(matcher));
   });
 
   test('nullable values are not allowed in non-nullable version', () {
     final instance = factory.jsonConverterFromJson(_jsonConverterValidValues);
-    final json = instance.toJson();
+    final json = instance.toDynamoJson();
     expect(json, _jsonConverterValidValues);
     expect(json.values, everyElement(isNotNull));
 
     final instance2 = factory.jsonConverterFromJson(json);
-    expect(instance2.toJson(), json);
+    expect(instance2.toDynamoJson(), json);
   });
 }
 
 void _nullableTests(KitchenSinkFactory factory) {
   void roundTripSink(KitchenSink p) {
-    roundTripObject(p, factory.fromJson);
+    roundTripObject(
+      p,
+      (KitchenSink o) => o.toDynamoJson(),
+      factory.fromDynamoJson,
+    );
   }
 
   test('nullable values are allowed in the nullable version', () {
     final instance = factory.jsonConverterCtor();
-    final json = instance.toJson();
+    final json = instance.toDynamoJson();
 
     expect(json, const {
       'duration': 0,
@@ -115,12 +119,12 @@ void _nullableTests(KitchenSinkFactory factory) {
     expect(json.keys, unorderedEquals(_jsonConverterValidValues.keys));
 
     final instance2 = factory.jsonConverterFromJson(json);
-    expect(instance2.toJson(), json);
+    expect(instance2.toDynamoJson(), json);
   });
 
   test('Fields with `!includeIfNull` should not be included when null', () {
     final item = factory.ctor();
-    final encoded = item.toJson();
+    final encoded = item.toDynamoJson();
 
     if (factory.excludeNull) {
       expect(encoded.keys, orderedEquals(_nonNullableFields));
@@ -174,9 +178,9 @@ void _nullableTests(KitchenSinkFactory factory) {
 
 void _sharedTests(KitchenSinkFactory factory) {
   test('other names', () {
-    final originalName = factory.fromJson(validValues);
+    final originalName = factory.fromDynamoJson(validValues);
 
-    final aliasName = factory.fromJson(
+    final aliasName = factory.fromDynamoJson(
       <String, dynamic>{
         ...validValues,
         'theIterable': validValues['iterable'],
@@ -191,7 +195,11 @@ void _sharedTests(KitchenSinkFactory factory) {
 
   test('empty', () {
     final item = factory.ctor();
-    roundTripObject(item, factory.fromJson);
+    roundTripObject(
+      item,
+      (KitchenSink o) => o.toDynamoJson(),
+      factory.fromDynamoJson,
+    );
   });
 
   test('JsonConverters with nullable JSON keys handle `null` JSON values', () {
@@ -212,7 +220,11 @@ void _sharedTests(KitchenSinkFactory factory) {
       ..dateTimeList = <DateTime>[now, now]
       ..objectDateTimeMap = <Object, DateTime>{'value': now};
 
-    roundTripObject(item, factory.fromJson);
+    roundTripObject(
+      item,
+      (KitchenSink o) => o.toDynamoJson(),
+      factory.fromDynamoJson,
+    );
   });
 
   test('complex nested type - not null', () {
@@ -230,7 +242,11 @@ void _sharedTests(KitchenSinkFactory factory) {
           }
         }
       ];
-    roundTripObject(item, factory.fromJson);
+    roundTripObject(
+      item,
+      (KitchenSink o) => o.toDynamoJson(),
+      factory.fromDynamoJson,
+    );
   });
 
   test('round trip valid, empty values', () {
@@ -247,13 +263,17 @@ void _sharedTests(KitchenSinkFactory factory) {
       return MapEntry(e.key, value);
     }));
 
-    final validInstance = factory.fromJson(values);
+    final validInstance = factory.fromDynamoJson(values);
 
-    roundTripObject(validInstance, factory.fromJson);
+    roundTripObject(
+      validInstance,
+      (KitchenSink o) => o.toDynamoJson(),
+      factory.fromDynamoJson,
+    );
   });
 
   test('JSON keys should be defined in field/property order', () {
-    final json = factory.ctor().toJson();
+    final json = factory.ctor().toDynamoJson();
     if (factory.excludeNull) {
       expect(json.keys, _nonNullableFields);
     } else {
@@ -262,8 +282,12 @@ void _sharedTests(KitchenSinkFactory factory) {
   });
 
   test('valid values round-trip - json', () {
-    final validInstance = factory.fromJson(validValues);
-    roundTripObject(validInstance, factory.fromJson);
+    final validInstance = factory.fromDynamoJson(validValues);
+    roundTripObject(
+      validInstance,
+      (KitchenSink o) => o.toDynamoJson(),
+      factory.fromDynamoJson,
+    );
   });
 }
 

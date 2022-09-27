@@ -5,10 +5,10 @@
 part of 'kitchen_sink.g_any_map.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
-KitchenSink _$KitchenSinkFromJson(Map json) => KitchenSink(
+KitchenSink _$KitchenSinkFromDynamoJson(Map json) => KitchenSink(
       ctorValidatedNo42: json['no-42'] as int?,
       iterable: _valueAccessor(json, 'iterable') as List<dynamic>?,
       dynamicIterable: json['dynamicIterable'] as List<dynamic>?,
@@ -41,10 +41,10 @@ KitchenSink _$KitchenSinkFromJson(Map json) => KitchenSink(
       ..dateTimeList = (json['dateTimeList'] as List<dynamic>)
           .map((e) => DateTime.parse(e as String))
           .toList()
-      ..nullableSimpleObjectList =
-          (json['nullableSimpleObjectList'] as List<dynamic>)
-              .map((e) => e == null ? null : SimpleObject.fromJson(e as Map))
-              .toList()
+      ..nullableSimpleObjectList = (json['nullableSimpleObjectList']
+              as List<dynamic>)
+          .map((e) => e == null ? null : SimpleObject.fromDynamoJson(e as Map))
+          .toList()
       ..map = json['map'] as Map
       ..stringStringMap =
           Map<String, String>.from(json['stringStringMap'] as Map)
@@ -53,8 +53,8 @@ KitchenSink _$KitchenSinkFromJson(Map json) => KitchenSink(
         (k, e) => MapEntry(k as Object, DateTime.parse(e as String)),
       )
       ..nullableSimpleObjectMap = (json['nullableSimpleObjectMap'] as Map).map(
-        (k, e) => MapEntry(
-            k as String, e == null ? null : SimpleObject.fromJson(e as Map)),
+        (k, e) => MapEntry(k as String,
+            e == null ? null : SimpleObject.fromDynamoJson(e as Map)),
       )
       ..crazyComplex = (json['crazyComplex'] as List<dynamic>)
           .map((e) => (e as Map?)?.map(
@@ -74,12 +74,12 @@ KitchenSink _$KitchenSinkFromJson(Map json) => KitchenSink(
       ..val = Map<String, bool>.from(json['val'] as Map)
       ..writeNotNull = json['writeNotNull'] as bool?
       ..string = KitchenSink._trickyValueAccessor(json, r'$string') as String?
-      ..simpleObject = SimpleObject.fromJson(json['simpleObject'] as Map)
+      ..simpleObject = SimpleObject.fromDynamoJson(json['simpleObject'] as Map)
       ..strictKeysObject =
-          StrictKeysObject.fromJson(json['strictKeysObject'] as Map)
+          StrictKeysObject.fromDynamoJson(json['strictKeysObject'] as Map)
       ..validatedPropertyNo42 = json['validatedPropertyNo42'] as int?;
 
-Map<String, dynamic> _$KitchenSinkToJson(KitchenSink instance) =>
+Map<String, dynamic> _$KitchenSinkToDynamoJson(KitchenSink instance) =>
     <String, dynamic>{
       'no-42': instance.ctorValidatedNo42,
       'dateTime': instance.dateTime?.toIso8601String(),
@@ -126,7 +126,7 @@ Map<String, dynamic> _$KitchenSinkToJson(KitchenSink instance) =>
       'validatedPropertyNo42': instance.validatedPropertyNo42,
     };
 
-JsonConverterTestClass _$JsonConverterTestClassFromJson(Map json) =>
+JsonConverterTestClass _$JsonConverterTestClassFromDynamoJson(Map json) =>
     JsonConverterTestClass(
       const DurationMillisecondConverter()
           .fromDynamoJson(json['duration'] as int?),
@@ -139,12 +139,12 @@ JsonConverterTestClass _$JsonConverterTestClassFromJson(Map json) =>
         (k, e) => MapEntry(k as String,
             const BigIntStringConverter().fromDynamoJson(e as String)),
       ),
-      _$JsonConverterFromJson<String, BigInt>(
+      _$DynamoConverterFromDynamoJson<String, BigInt>(
           json['nullableBigInt'], const BigIntStringConverter().fromDynamoJson),
       (json['nullableBigIntMap'] as Map).map(
         (k, e) => MapEntry(
             k as String,
-            _$JsonConverterFromJson<String, BigInt>(
+            _$DynamoConverterFromDynamoJson<String, BigInt>(
                 e, const BigIntStringConverter().fromDynamoJson)),
       ),
       TrivialNumberConverter.instance
@@ -161,7 +161,7 @@ JsonConverterTestClass _$JsonConverterTestClassFromJson(Map json) =>
           .toSet(),
     );
 
-Map<String, dynamic> _$JsonConverterTestClassToJson(
+Map<String, dynamic> _$JsonConverterTestClassToDynamoJson(
         JsonConverterTestClass instance) =>
     <String, dynamic>{
       'duration':
@@ -172,11 +172,11 @@ Map<String, dynamic> _$JsonConverterTestClassToJson(
       'bigInt': const BigIntStringConverter().toDynamoJson(instance.bigInt),
       'bigIntMap': instance.bigIntMap.map(
           (k, e) => MapEntry(k, const BigIntStringConverter().toDynamoJson(e))),
-      'nullableBigInt': _$JsonConverterToJson<String, BigInt>(
+      'nullableBigInt': _$DynamoConverterToDynamoJson<String, BigInt>(
           instance.nullableBigInt, const BigIntStringConverter().toDynamoJson),
       'nullableBigIntMap': instance.nullableBigIntMap.map((k, e) => MapEntry(
           k,
-          _$JsonConverterToJson<String, BigInt>(
+          _$DynamoConverterToDynamoJson<String, BigInt>(
               e, const BigIntStringConverter().toDynamoJson))),
       'numberSilly':
           TrivialNumberConverter.instance.toDynamoJson(instance.numberSilly),
@@ -187,28 +187,28 @@ Map<String, dynamic> _$JsonConverterTestClassToJson(
           const EpochDateTimeConverter().toDynamoJson(instance.dateTime),
       'trivialString':
           trivialStringConverter.toDynamoJson(instance.trivialString),
-      'nullableNumberSilly': _$JsonConverterToJson<int?, TrivialNumber>(
+      'nullableNumberSilly': _$DynamoConverterToDynamoJson<int?, TrivialNumber>(
           instance.nullableNumberSilly,
           TrivialNumberConverter.instance.toDynamoJson),
       'nullableNumberSillySet': instance.nullableNumberSillySet
-          .map((e) => _$JsonConverterToJson<int?, TrivialNumber>(
+          .map((e) => _$DynamoConverterToDynamoJson<int?, TrivialNumber>(
               e, TrivialNumberConverter.instance.toDynamoJson))
           .toList(),
     };
 
-Value? _$JsonConverterFromJson<Json, Value>(
+Value? _$DynamoConverterFromDynamoJson<Json, Value>(
   Object? json,
-  Value? Function(Json json) fromJson,
+  Value? Function(Json json) fromDynamoJson,
 ) =>
-    json == null ? null : fromJson(json as Json);
+    json == null ? null : fromDynamoJson(json as Json);
 
-Json? _$JsonConverterToJson<Json, Value>(
+Json? _$DynamoConverterToDynamoJson<Json, Value>(
   Value? value,
-  Json? Function(Value value) toJson,
+  Json? Function(Value value) toDynamoJson,
 ) =>
-    value == null ? null : toJson(value);
+    value == null ? null : toDynamoJson(value);
 
-JsonConverterGeneric<S, T, U> _$JsonConverterGenericFromJson<S, T, U>(
+JsonConverterGeneric<S, T, U> _$JsonConverterGenericFromDynamoJson<S, T, U>(
         Map json) =>
     JsonConverterGeneric<S, T, U>(
       GenericConverter<S>()
@@ -223,7 +223,7 @@ JsonConverterGeneric<S, T, U> _$JsonConverterGenericFromJson<S, T, U>(
       ),
     );
 
-Map<String, dynamic> _$JsonConverterGenericToJson<S, T, U>(
+Map<String, dynamic> _$JsonConverterGenericToDynamoJson<S, T, U>(
         JsonConverterGeneric<S, T, U> instance) =>
     <String, dynamic>{
       'item': GenericConverter<S>().toDynamoJson(instance.item),

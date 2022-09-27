@@ -31,7 +31,7 @@ abstract class KitchenSinkFactory<K, V> {
     Iterable<DateTime> dateTimeIterable,
   });
 
-  KitchenSink fromJson(Map<K, V> json);
+  KitchenSink fromDynamoJson(Map<String, V> json);
 
   JsonConverterTestClass jsonConverterCtor();
 
@@ -44,7 +44,7 @@ abstract class KitchenSinkFactory<K, V> {
 abstract class JsonConverterTestClass {
   TrivialNumber? nullableNumberSilly;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toDynamoJson();
 }
 
 abstract class KitchenSink {
@@ -120,7 +120,7 @@ abstract class KitchenSink {
 
   int? validatedPropertyNo42;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toDynamoJson();
 }
 
 // TODO: finish this...

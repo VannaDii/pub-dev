@@ -76,7 +76,8 @@ Json? _$JsonConverterToJson<Json, Value>(
 ) =>
     value == null ? null : toJson(value);
 
-Issue980ParentClass _$Issue980ParentClassFromJson(Map<String, dynamic> json) =>
+Issue980ParentClass _$Issue980ParentClassFromDynamoJson(
+        Map<String, dynamic> json) =>
     Issue980ParentClass(
       (json['list'] as List<dynamic>)
           .map((e) =>
@@ -84,36 +85,36 @@ Issue980ParentClass _$Issue980ParentClassFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$Issue980ParentClassToJson(
+Map<String, dynamic> _$Issue980ParentClassToDynamoJson(
         Issue980ParentClass instance) =>
     <String, dynamic>{
       'list': instance.list,
     };
 
-Issue1047ParentClass<T> _$Issue1047ParentClassFromJson<T>(
+Issue1047ParentClass<T> _$Issue1047ParentClassFromDynamoJson<T>(
   Map<String, dynamic> json,
   T Function(Object? json) fromDynamoJsonT,
 ) =>
     Issue1047ParentClass<T>(
       edges: (json['edges'] as List<dynamic>)
-          .map((e) => Issue1047Class<T>.fromJson(
+          .map((e) => Issue1047Class<T>.fromDynamoJson(
               e as Map<String, dynamic>, (value) => fromDynamoJsonT(value)))
           .toList(),
     );
 
-Map<String, dynamic> _$Issue1047ParentClassToJson<T>(
+Map<String, dynamic> _$Issue1047ParentClassToDynamoJson<T>(
   Issue1047ParentClass<T> instance,
   Object? Function(T value) toDynamoJsonT,
 ) =>
     <String, dynamic>{
       'edges': instance.edges
-          .map((e) => e.toJson(
+          .map((e) => e.toDynamoJson(
                 (value) => toDynamoJsonT(value),
               ))
           .toList(),
     };
 
-Issue1047Class<T> _$Issue1047ClassFromJson<T>(
+Issue1047Class<T> _$Issue1047ClassFromDynamoJson<T>(
   Map<String, dynamic> json,
   T Function(Object? json) fromDynamoJsonT,
 ) =>
@@ -121,7 +122,7 @@ Issue1047Class<T> _$Issue1047ClassFromJson<T>(
       node: fromDynamoJsonT(json['node']),
     );
 
-Map<String, dynamic> _$Issue1047ClassToJson<T>(
+Map<String, dynamic> _$Issue1047ClassToDynamoJson<T>(
   Issue1047Class<T> instance,
   Object? Function(T value) toDynamoJsonT,
 ) =>

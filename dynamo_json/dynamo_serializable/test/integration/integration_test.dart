@@ -17,7 +17,11 @@ Matcher _throwsArgumentError(matcher) =>
 void main() {
   group('Person', () {
     void roundTripPerson(Person p) {
-      roundTripObject(p, Person.fromJson);
+      roundTripObject(
+        p,
+        (Person o) => o.toDynamoJson(),
+        Person.fromDynamoJson,
+      );
     }
 
     test('now', () {
@@ -31,7 +35,7 @@ void main() {
     });
 
     test('empty json', () {
-      final person = Person.fromJson({
+      final person = Person.fromDynamoJson({
         'firstName': 'a',
         'lastName': 'b',
         '\$house': 'top',
@@ -51,7 +55,11 @@ void main() {
 
   group('Order', () {
     void roundTripOrder(Order p) {
-      roundTripObject(p, Order.fromJson);
+      roundTripObject(
+        p,
+        (Order o) => o.toDynamoJson(),
+        Order.fromDynamoJson,
+      );
     }
 
     test('null', () {
@@ -78,7 +86,7 @@ void main() {
     });
 
     test('almost empty json', () {
-      final order = Order.fromJson({'category': 'not_discovered_yet'});
+      final order = Order.fromDynamoJson({'category': 'not_discovered_yet'});
       expect(order.items, isEmpty);
       expect(order.category, Category.notDiscoveredYet);
       expect(
@@ -91,7 +99,7 @@ void main() {
 
     test('required, but missing enum value fails', () {
       expect(
-          () => Person.fromJson({
+          () => Person.fromDynamoJson({
                 'firstName': 'a',
                 'lastName': 'b',
               }),
@@ -101,7 +109,7 @@ void main() {
 
     test('mismatched enum value fails', () {
       expect(
-          () => Order.fromJson({'category': 'weird'}),
+          () => Order.fromDynamoJson({'category': 'weird'}),
           _throwsArgumentError('`weird` is not one of the supported values: '
               'top, bottom, strange, charmed, up, down, not_discovered_yet'));
     });
@@ -132,7 +140,7 @@ void main() {
     });
 
     test('statusCode', () {
-      final order = Order.fromJson(
+      final order = Order.fromDynamoJson(
         {'category': 'not_discovered_yet', 'status_code': 404},
       );
       expect(order.statusCode, StatusCode.notFound);
@@ -140,7 +148,7 @@ void main() {
     });
 
     test('statusCode "500" - weird', () {
-      final order = Order.fromJson(
+      final order = Order.fromDynamoJson(
         {'category': 'not_discovered_yet', 'status_code': '500'},
       );
       expect(order.statusCode, StatusCode.weird);
@@ -148,7 +156,7 @@ void main() {
     });
 
     test('statusCode `500` - unknown', () {
-      final order = Order.fromJson(
+      final order = Order.fromDynamoJson(
         {'category': 'not_discovered_yet', 'status_code': 500},
       );
       expect(order.statusCode, StatusCode.unknown);
@@ -166,12 +174,12 @@ void main() {
           milliseconds: 23,
           microseconds: 12,
         );
-      expect(order.toJson()['duration'], equals(190473023012));
+      expect(order.toDynamoJson()['duration'], equals(190473023012));
       roundTripOrder(order);
     });
 
     test('duration fromJson', () {
-      final order = Order.fromJson({
+      final order = Order.fromDynamoJson({
         'category': 'not_discovered_yet',
         'duration': 190473023012,
       });
@@ -191,16 +199,20 @@ void main() {
 
   group('Item', () {
     void roundTripItem(Item p) {
-      roundTripObject(p, Item.fromJson);
+      roundTripObject(
+        p,
+        (Item o) => o.toDynamoJson(),
+        Item.fromDynamoJson,
+      );
     }
 
     test('empty json', () {
-      final item = Item.fromJson({});
+      final item = Item.fromDynamoJson({});
       expect(item.saleDates, isNull);
       roundTripItem(item);
 
       expect(
-        item.toJson().keys,
+        item.toDynamoJson().keys,
         orderedEquals([
           'price',
           'saleDates',
@@ -212,12 +224,12 @@ void main() {
     });
 
     test('set itemNumber - with custom JSON key', () {
-      final item = Item.fromJson({'item-number': 42});
+      final item = Item.fromDynamoJson({'item-number': 42});
       expect(item.itemNumber, 42);
       roundTripItem(item);
 
       expect(
-        item.toJson().keys,
+        item.toDynamoJson().keys,
         orderedEquals([
           'price',
           'item-number',
@@ -232,7 +244,11 @@ void main() {
 
   group('Numbers', () {
     void roundTripNumber(Numbers p) {
-      roundTripObject(p, Numbers.fromJson);
+      roundTripObject(
+        p,
+        (Numbers o) => o.toDynamoJson(),
+        Numbers.fromDynamoJson,
+      );
     }
 
     test('simple', () {
@@ -248,7 +264,7 @@ void main() {
     test('custom DateTime', () {
       final instance = Numbers()
         ..date = DateTime.fromMillisecondsSinceEpoch(42);
-      final json = instance.toJson();
+      final json = instance.toDynamoJson();
       expect(json, containsPair('date', 42000));
     });
 
@@ -258,7 +274,7 @@ void main() {
         'nnDoubles': [0, 0.0]
       };
 
-      roundTripNumber(Numbers.fromJson(value));
+      roundTripNumber(Numbers.fromDynamoJson(value));
     });
 
     test('does not support doubles as ints', () {
@@ -266,7 +282,7 @@ void main() {
         'ints': [3.14, 0],
       };
 
-      expect(() => Numbers.fromJson(value), throwsTypeError);
+      expect(() => Numbers.fromDynamoJson(value), throwsTypeError);
     });
   });
 
@@ -277,11 +293,15 @@ void main() {
       ..intIntMap = {3: 3}
       ..uriIntMap = {Uri.parse('https://example.com'): 4};
 
-    roundTripObject(instance, MapKeyVariety.fromJson);
+    roundTripObject(
+      instance,
+      (MapKeyVariety o) => o.toDynamoJson(),
+      MapKeyVariety.fromDynamoJson,
+    );
   });
 
   test('UnknownEnumValue', () {
-    final instance = UnknownEnumValue.fromJson({
+    final instance = UnknownEnumValue.fromDynamoJson({
       'enumValue': 'nope',
       'enumIterable': ['nope'],
       'enumList': ['nope'],
@@ -297,7 +317,11 @@ void main() {
   test('PrivateConstructor', () {
     final value = PrivateConstructor('test');
 
-    roundTripObject(value, PrivateConstructor.fromJson);
+    roundTripObject(
+      value,
+      (PrivateConstructor o) => o.toDynamoJson(),
+      PrivateConstructor.fromDynamoJson,
+    );
   });
 
   test('enum helpers', () {

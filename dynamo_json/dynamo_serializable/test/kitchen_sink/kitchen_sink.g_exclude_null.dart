@@ -58,8 +58,8 @@ class _Factory implements k.KitchenSinkFactory<String, dynamic> {
         dateTimeIterable: dateTimeIterable,
       );
 
-  k.KitchenSink fromJson(Map<String, dynamic> json) =>
-      KitchenSink.fromJson(json);
+  k.KitchenSink fromDynamoJson(Map<String, dynamic> json) =>
+      KitchenSink.fromDynamoJson(json);
 
   k.JsonConverterTestClass jsonConverterCtor() => JsonConverterTestClass(
         const Duration(),
@@ -77,7 +77,7 @@ class _Factory implements k.KitchenSinkFactory<String, dynamic> {
       );
 
   k.JsonConverterTestClass jsonConverterFromJson(Map<String, dynamic> json) =>
-      JsonConverterTestClass.fromJson(json);
+      JsonConverterTestClass.fromDynamoJson(json);
 }
 
 Object? _valueAccessor(Map json, String key) {
@@ -121,10 +121,10 @@ class KitchenSink implements k.KitchenSink {
     }
   }
 
-  factory KitchenSink.fromJson(Map<String, dynamic> json) =>
-      _$KitchenSinkFromJson(json);
+  factory KitchenSink.fromDynamoJson(Map<String, dynamic> json) =>
+      _$KitchenSinkFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$KitchenSinkToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$KitchenSinkToDynamoJson(this);
 
   DateTime? dateTime;
 
@@ -223,10 +223,11 @@ class JsonConverterTestClass implements k.JsonConverterTestClass {
     this.nullableNumberSillySet,
   );
 
-  factory JsonConverterTestClass.fromJson(Map<String, dynamic> json) =>
-      _$JsonConverterTestClassFromJson(json);
+  factory JsonConverterTestClass.fromDynamoJson(Map<String, dynamic> json) =>
+      _$JsonConverterTestClassFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$JsonConverterTestClassToJson(this);
+  Map<String, dynamic> toDynamoJson() =>
+      _$JsonConverterTestClassToDynamoJson(this);
 
   Duration? duration;
   List<Duration?> durationList;
@@ -263,8 +264,9 @@ class JsonConverterGeneric<S, T, U> {
     this.itemMap,
   );
 
-  factory JsonConverterGeneric.fromJson(Map<String, dynamic> json) =>
-      _$JsonConverterGenericFromJson(json);
+  factory JsonConverterGeneric.fromDynamoJson(Map<String, dynamic> json) =>
+      _$JsonConverterGenericFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$JsonConverterGenericToJson(this);
+  Map<String, dynamic> toDynamoJson() =>
+      _$JsonConverterGenericToDynamoJson(this);
 }

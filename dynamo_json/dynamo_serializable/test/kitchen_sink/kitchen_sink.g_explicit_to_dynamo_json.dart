@@ -10,7 +10,7 @@ import 'kitchen_sink_interface.dart' as k;
 import 'simple_object.dart';
 import 'strict_keys_object.dart';
 
-part 'kitchen_sink.g_any_map.g.dart';
+part 'kitchen_sink.g_explicit_to_dynamo_json.g.dart';
 
 // NOTE: these methods are replaced in the `non_nullable` cases to return
 // non-null values.
@@ -26,12 +26,12 @@ StrictKeysObject _defaultStrictKeysObject() => StrictKeysObject(42, 'value');
 
 const k.KitchenSinkFactory factory = _Factory();
 
-class _Factory implements k.KitchenSinkFactory<dynamic, dynamic> {
+class _Factory implements k.KitchenSinkFactory<String, dynamic> {
   const _Factory();
 
-  String get description => 'any_map';
+  String get description => 'explicit_to_dynamo_json';
 
-  bool get anyMap => true;
+  bool get anyMap => false;
 
   bool get checked => false;
 
@@ -39,7 +39,7 @@ class _Factory implements k.KitchenSinkFactory<dynamic, dynamic> {
 
   bool get excludeNull => false;
 
-  bool get explicitToDynamoJson => false;
+  bool get explicitToDynamoJson => true;
 
   k.KitchenSink ctor({
     int? ctorValidatedNo42,
@@ -89,7 +89,7 @@ Object? _valueAccessor(Map json, String key) {
 }
 
 @DynamoSerializable(
-  anyMap: true,
+  explicitToDynamoJson: true,
 )
 class KitchenSink implements k.KitchenSink {
   // NOTE: exposing these as Iterable, but storing the values as List
@@ -197,7 +197,7 @@ class KitchenSink implements k.KitchenSink {
   }
 }
 
-@DynamoSerializable(anyMap: true, converters: [
+@DynamoSerializable(explicitToDynamoJson: true, converters: [
   // referencing a top-level field should work
   durationConverter,
   // referencing via a const constructor should work
@@ -250,7 +250,7 @@ class JsonConverterTestClass implements k.JsonConverterTestClass {
 }
 
 @DynamoSerializable(
-  anyMap: true,
+  explicitToDynamoJson: true,
 )
 @GenericConverter()
 class JsonConverterGeneric<S, T, U> {

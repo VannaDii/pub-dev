@@ -12,7 +12,8 @@ class SimpleObject {
 
   SimpleObject(this.value);
 
-  factory SimpleObject.fromJson(Map json) => _$SimpleObjectFromJson(json);
+  factory SimpleObject.fromDynamoJson(Map json) =>
+      _$SimpleObjectFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$SimpleObjectToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$SimpleObjectToDynamoJson(this);
 }
