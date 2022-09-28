@@ -40,8 +40,6 @@ abstract class EncodeHelper implements HelperCore {
 
   Iterable<String> createToDynamoJson(
       Set<FieldElement> accessibleFields) sync* {
-    assert(config.createToDynamoJson);
-
     final buffer = StringBuffer();
 
     final functionName =

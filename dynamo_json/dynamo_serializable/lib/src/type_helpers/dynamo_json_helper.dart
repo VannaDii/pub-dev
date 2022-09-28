@@ -59,11 +59,8 @@ class DynamoJsonHelper extends TypeHelper<TypeHelperContextWithConfig> {
       );
     }
 
-    if (context.config.explicitToDynamoJson || toDynamoJsonArgs.isNotEmpty) {
-      return '$expression${interfaceType.isNullableType ? '?' : ''}'
-          '.toDynamoJson(${toDynamoJsonArgs.map((a) => '$a, ').join()} )';
-    }
-    return expression;
+    return '$expression${interfaceType.isNullableType ? '?' : ''}'
+        '.toDynamoJson(${toDynamoJsonArgs.map((a) => '$a, ').join()} )';
   }
 
   @override
@@ -228,12 +225,6 @@ bool _canSerialize(ClassConfig config, DartType type) {
     final toDynamoJsonMethod = _toDynamoJsonMethod(type);
 
     if (toDynamoJsonMethod != null) {
-      return true;
-    }
-
-    if (_annotation(config, type)?.createToDynamoJson == true) {
-      // TODO: consider logging that we're assuming a user will wire up the
-      // generated mixin at some point...
       return true;
     }
   }

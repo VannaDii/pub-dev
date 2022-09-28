@@ -18,8 +18,8 @@ class SimpleClass {
     this.withDefault,
   );
 
-  factory SimpleClass.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassFromJson(json);
+  factory SimpleClass.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassToJson(this);
+  Map<String, Object?> toDynamoJson() => _$SimpleClassToDynamoJson(this);
 }

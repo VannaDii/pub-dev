@@ -10,7 +10,8 @@ class Model {
     this.ignoredName,
   });
 
-  factory Model.fromJson(Map<String, Object?> json) => _$ModelFromJson(json);
+  factory Model.fromDynamoJson(Map<String, Object?> json) =>
+      _$ModelFromDynamoJson(json);
 
   final String firstName;
 
@@ -22,7 +23,7 @@ class Model {
 
   String get fullName => '$firstName $lastName';
 
-  Map<String, Object?> toJson() => _$ModelToJson(this);
+  Map<String, Object?> toDynamoJson() => _$ModelToDynamoJson(this);
 }
 
 const modelFieldMap = _$ModelFieldMap;
@@ -37,7 +38,7 @@ class _PrivateModel {
 
   final String fullName;
 
-  Map<String, Object?> toJson() => _$PrivateModelToJson(this);
+  Map<String, Object?> toDynamoJson() => _$PrivateModelToDynamoJson(this);
 }
 
 const privateModelFieldMap = _$PrivateModelFieldMap;

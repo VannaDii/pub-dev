@@ -17,10 +17,12 @@ class Person {
 
   Person({required this.firstName, required this.lastName, this.dateOfBirth});
 
-  /// Connect the generated [_$PersonFromJson] function to the `fromDynamoJson`
-  /// factory.
-  factory Person.fromJson(Map<String, dynamic> json) => _$PersonFromJson(json);
+  /// Connect the generated [_$PersonFromDynamoJson] function to the
+  /// `fromDynamoJson` factory.
+  factory Person.fromJson(Map<String, dynamic> json) =>
+      _$PersonFromDynamoJson(json);
 
-  /// Connect the generated [_$PersonToJson] function to the `toDynamoJson` method.
-  Map<String, dynamic> toJson() => _$PersonToJson(this);
+  /// Connect the generated [_$PersonToDynamoJson] function to the
+  /// `toDynamoJson` method.
+  Map<String, dynamic> toJson() => _$PersonToDynamoJson(this);
 }

@@ -5,10 +5,10 @@
 part of 'field_map_example.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
-Model _$ModelFromJson(Map<String, dynamic> json) => Model(
+Model _$ModelFromDynamoJson(Map<String, dynamic> json) => Model(
       firstName: json['first-name'] as String,
       lastName: json['LAST_NAME'] as String,
     );
@@ -18,7 +18,7 @@ const _$ModelFieldMap = <String, String>{
   'lastName': 'LAST_NAME',
 };
 
-Map<String, dynamic> _$ModelToJson(Model instance) => <String, dynamic>{
+Map<String, dynamic> _$ModelToDynamoJson(Model instance) => <String, dynamic>{
       'first-name': instance.firstName,
       'LAST_NAME': instance.lastName,
     };
@@ -27,7 +27,7 @@ const _$PrivateModelFieldMap = <String, String>{
   'fullName': 'full-name',
 };
 
-Map<String, dynamic> _$PrivateModelToJson(_PrivateModel instance) =>
+Map<String, dynamic> _$PrivateModelToDynamoJson(_PrivateModel instance) =>
     <String, dynamic>{
       'full-name': instance.fullName,
     };

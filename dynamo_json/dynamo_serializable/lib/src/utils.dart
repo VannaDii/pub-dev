@@ -104,13 +104,9 @@ ClassConfig mergeConfig(
     checked: annotation.checked ?? config.checked,
     constructor: constructor,
     createFactory: annotation.createFactory ?? config.createFactory,
-    createToDynamoJson:
-        annotation.createToDynamoJson ?? config.createToDynamoJson,
     createFieldMap: annotation.createFieldMap ?? config.createFieldMap,
     disallowUnrecognizedKeys:
         annotation.disallowUnrecognizedKeys ?? config.disallowUnrecognizedKeys,
-    explicitToDynamoJson:
-        annotation.explicitToDynamoJson ?? config.explicitToDynamoJson,
     fieldRename: annotation.fieldRename ?? config.fieldRename,
     genericArgumentFactories: annotation.genericArgumentFactories ??
         (classElement.typeParameters.isNotEmpty &&

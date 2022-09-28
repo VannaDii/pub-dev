@@ -5,15 +5,16 @@
 part of 'input.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
-SimpleClass _$SimpleClassFromJson(Map<String, dynamic> json) => SimpleClass(
+SimpleClass _$SimpleClassFromDynamoJson(Map<String, dynamic> json) =>
+    SimpleClass(
       json['value'],
       json['withDefault'] ?? 42,
     );
 
-Map<String, dynamic> _$SimpleClassToJson(SimpleClass instance) =>
+Map<String, dynamic> _$SimpleClassToDynamoJson(SimpleClass instance) =>
     <String, dynamic>{
       'value': instance.value,
       'withDefault': instance.withDefault,

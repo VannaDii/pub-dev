@@ -7,8 +7,8 @@ import 'default_value_interface.dart' as dvi hide Greek;
 
 part 'implicit_default_value.g.dart';
 
-dvi.DefaultValue fromJson(Map<String, dynamic> json) =>
-    _$DefaultValueImplicitFromJson(json);
+dvi.DefaultValue fromDynamoJson(Map<String, dynamic> json) =>
+    _$DefaultValueImplicitFromDynamoJson(json);
 
 @DynamoSerializable()
 class DefaultValueImplicit implements dvi.DefaultValue {
@@ -43,7 +43,9 @@ class DefaultValueImplicit implements dvi.DefaultValue {
   @ConstClassConverter()
   ConstClass valueFromConverter;
 
-  @DynamoKey(fromDynamoJson: constClassFromJson, toDynamoJson: constClassToJson)
+  @DynamoKey(
+      fromDynamoJson: constClassFromDynamoJson,
+      toDynamoJson: constClassToDynamoJson)
   ConstClass valueFromFunction;
 
   DefaultValueImplicit({
@@ -68,7 +70,8 @@ class DefaultValueImplicit implements dvi.DefaultValue {
   });
 
   factory DefaultValueImplicit.fromDynamoJson(Map<String, dynamic> json) =>
-      _$DefaultValueImplicitFromJson(json);
+      _$DefaultValueImplicitFromDynamoJson(json);
 
-  Map<String, dynamic> toDynamoJson() => _$DefaultValueImplicitToJson(this);
+  Map<String, dynamic> toDynamoJson() =>
+      _$DefaultValueImplicitToDynamoJson(this);
 }

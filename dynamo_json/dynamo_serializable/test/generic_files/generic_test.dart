@@ -16,7 +16,7 @@ void main() {
     GenericClass<T, S> roundTripGenericClass<T extends num, S>(
         GenericClass<T, S> p) {
       final outputJson = loudEncode(p);
-      final p2 = GenericClass<T, S>.fromJson(
+      final p2 = GenericClass<T, S>.fromDynamoJson(
           jsonDecode(outputJson) as Map<String, dynamic>);
       final outputJson2 = loudEncode(p2);
       expect(outputJson2, outputJson);
@@ -69,17 +69,18 @@ void main() {
       int encodeDuration(Duration value) => value.inMilliseconds;
 
       final encodedJson = loudEncode(
-        instance.toJson(encodeDateTime, encodeDuration),
+        instance.toDynamoJson(encodeDateTime, encodeDuration),
       );
 
-      final decoded = GenericClassWithHelpers<DateTime, Duration>.fromJson(
+      final decoded =
+          GenericClassWithHelpers<DateTime, Duration>.fromDynamoJson(
         jsonDecode(encodedJson) as Map<String, dynamic>,
         (value) => DateTime.parse(value as String),
         (value) => Duration(milliseconds: value as int),
       );
 
       final encodedJson2 = loudEncode(
-        decoded.toJson(encodeDateTime, encodeDuration),
+        decoded.toDynamoJson(encodeDateTime, encodeDuration),
       );
 
       expect(encodedJson2, encodedJson);
@@ -118,7 +119,7 @@ void main() {
  }
 }''';
 
-        final instance = ConcreteClass.fromJson(
+        final instance = ConcreteClass.fromDynamoJson(
           jsonDecode(inputJson) as Map<String, dynamic>,
         );
 
@@ -159,7 +160,7 @@ void main() {
  }
 }''';
 
-        final instance = ConcreteClass.fromJson(
+        final instance = ConcreteClass.fromDynamoJson(
           jsonDecode(inputJson) as Map<String, dynamic>,
         );
 

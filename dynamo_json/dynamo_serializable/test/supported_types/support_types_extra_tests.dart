@@ -18,7 +18,7 @@ void main() {
       }
     };
 
-    final object = SimpleClassOfStringToDouble.fromJson(value);
+    final object = SimpleClassOfStringToDouble.fromDynamoJson(value);
     final encoded = loudEncode(object);
 
     expect(
@@ -32,7 +32,7 @@ void main() {
       }),
     );
 
-    final object2 = SimpleClassOfStringToDouble.fromJson(
+    final object2 = SimpleClassOfStringToDouble.fromDynamoJson(
       jsonDecode(encoded) as Map<String, Object?>,
     );
     expect(loudEncode(object2), encoded);
@@ -45,12 +45,12 @@ void main() {
       }
     };
 
-    final object = SimpleClassOfStringToInt.fromJson(value);
+    final object = SimpleClassOfStringToInt.fromDynamoJson(value);
     final encoded = loudEncode(object);
 
     expect(encoded, loudEncode(value));
 
-    final object2 = SimpleClassOfStringToInt.fromJson(
+    final object2 = SimpleClassOfStringToInt.fromDynamoJson(
       jsonDecode(encoded) as Map<String, Object?>,
     );
     expect(loudEncode(object2), encoded);
@@ -64,12 +64,12 @@ void main() {
       }
     };
 
-    final object = SimpleClassOfStringToNum.fromJson(value);
+    final object = SimpleClassOfStringToNum.fromDynamoJson(value);
     final encoded = loudEncode(object);
 
     expect(encoded, loudEncode(value));
 
-    final object2 = SimpleClassOfStringToNum.fromJson(
+    final object2 = SimpleClassOfStringToNum.fromDynamoJson(
       jsonDecode(encoded) as Map<String, Object?>,
     );
     expect(loudEncode(object2), encoded);

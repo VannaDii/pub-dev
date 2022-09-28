@@ -15,36 +15,36 @@ import 'input.dart';
 void main() {
   group('non-nullable', () {
     test('round trip', () {
-      final object = SimpleClass.fromJson(_defaultInput);
+      final object = SimpleClass.fromDynamoJson(_defaultInput);
       final encoded = loudEncode(object);
 
       expect(encoded, loudEncode(_defaultOutput));
 
-      final object2 = SimpleClass.fromJson(
+      final object2 = SimpleClass.fromDynamoJson(
         jsonDecode(encoded) as Map<String, Object?>,
       );
       expect(loudEncode(object2), encoded);
     });
 
     test('round trip null', () {
-      final object = SimpleClass.fromJson({});
+      final object = SimpleClass.fromDynamoJson({});
       final encoded = loudEncode(object);
 
       expect(encoded, loudEncode(_nullableDefaultOutput));
-      final object2 = SimpleClass.fromJson(
+      final object2 = SimpleClass.fromDynamoJson(
         jsonDecode(encoded) as Map<String, Object?>,
       );
       expect(loudEncode(object2), encoded);
     });
 
     test('round trip alternate values', () {
-      final object = SimpleClass.fromJson(_nonDefaultJson);
+      final object = SimpleClass.fromDynamoJson(_nonDefaultJson);
       final encoded = loudEncode(object);
 
       expect(encoded, loudEncode(_nonDefaultJson));
       expect(encoded, isNot(loudEncode(_defaultOutput)));
 
-      final object2 = SimpleClass.fromJson(
+      final object2 = SimpleClass.fromDynamoJson(
         jsonDecode(encoded) as Map<String, Object?>,
       );
       expect(loudEncode(object2), encoded);

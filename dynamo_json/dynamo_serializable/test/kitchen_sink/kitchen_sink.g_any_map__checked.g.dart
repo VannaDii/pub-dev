@@ -156,13 +156,16 @@ Map<String, dynamic> _$KitchenSinkToDynamoJson(KitchenSink instance) =>
       'intList': instance.intList,
       'dateTimeList':
           instance.dateTimeList.map((e) => e.toIso8601String()).toList(),
-      'nullableSimpleObjectList': instance.nullableSimpleObjectList,
+      'nullableSimpleObjectList': instance.nullableSimpleObjectList
+          .map((e) => e?.toDynamoJson())
+          .toList(),
       'map': instance.map,
       'stringStringMap': instance.stringStringMap,
       'dynamicIntMap': instance.dynamicIntMap,
       'objectDateTimeMap': instance.objectDateTimeMap
           .map((k, e) => MapEntry(k, e.toIso8601String())),
-      'nullableSimpleObjectMap': instance.nullableSimpleObjectMap,
+      'nullableSimpleObjectMap': instance.nullableSimpleObjectMap
+          .map((k, e) => MapEntry(k, e?.toDynamoJson())),
       'crazyComplex': instance.crazyComplex
           .map((e) => e?.map((k, e) => MapEntry(
               k,
@@ -175,8 +178,8 @@ Map<String, dynamic> _$KitchenSinkToDynamoJson(KitchenSink instance) =>
       'val': instance.val,
       'writeNotNull': instance.writeNotNull,
       r'$string': instance.string,
-      'simpleObject': instance.simpleObject,
-      'strictKeysObject': instance.strictKeysObject,
+      'simpleObject': instance.simpleObject.toDynamoJson(),
+      'strictKeysObject': instance.strictKeysObject.toDynamoJson(),
       'validatedPropertyNo42': instance.validatedPropertyNo42,
     };
 

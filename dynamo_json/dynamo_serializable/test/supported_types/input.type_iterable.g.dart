@@ -5,313 +5,322 @@
 part of 'input.type_iterable.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
-SimpleClass _$SimpleClassFromJson(Map<String, dynamic> json) => SimpleClass(
+SimpleClass _$SimpleClassFromDynamoJson(Map<String, dynamic> json) =>
+    SimpleClass(
       json['value'] as List<dynamic>,
       json['withDefault'] as List<dynamic>? ?? [42, true, false, null],
     );
 
-Map<String, dynamic> _$SimpleClassToJson(SimpleClass instance) =>
+Map<String, dynamic> _$SimpleClassToDynamoJson(SimpleClass instance) =>
     <String, dynamic>{
       'value': instance.value.toList(),
       'withDefault': instance.withDefault.toList(),
     };
 
-SimpleClassNullable _$SimpleClassNullableFromJson(Map<String, dynamic> json) =>
+SimpleClassNullable _$SimpleClassNullableFromDynamoJson(
+        Map<String, dynamic> json) =>
     SimpleClassNullable(
       json['value'] as List<dynamic>?,
       json['withDefault'] as List<dynamic>? ?? [42, true, false, null],
     );
 
-Map<String, dynamic> _$SimpleClassNullableToJson(
+Map<String, dynamic> _$SimpleClassNullableToDynamoJson(
         SimpleClassNullable instance) =>
     <String, dynamic>{
       'value': instance.value?.toList(),
       'withDefault': instance.withDefault?.toList(),
     };
 
-SimpleClassOfBigInt _$SimpleClassOfBigIntFromJson(Map<String, dynamic> json) =>
+SimpleClassOfBigInt _$SimpleClassOfBigIntFromDynamoJson(
+        Map<String, dynamic> json) =>
     SimpleClassOfBigInt(
       (json['value'] as List<dynamic>).map((e) => BigInt.parse(e as String)),
     );
 
-Map<String, dynamic> _$SimpleClassOfBigIntToJson(
+Map<String, dynamic> _$SimpleClassOfBigIntToDynamoJson(
         SimpleClassOfBigInt instance) =>
     <String, dynamic>{
       'value': instance.value.map((e) => e.toString()).toList(),
     };
 
-SimpleClassNullableOfBigInt _$SimpleClassNullableOfBigIntFromJson(
+SimpleClassNullableOfBigInt _$SimpleClassNullableOfBigIntFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassNullableOfBigInt(
       (json['value'] as List<dynamic>?)?.map((e) => BigInt.parse(e as String)),
     );
 
-Map<String, dynamic> _$SimpleClassNullableOfBigIntToJson(
+Map<String, dynamic> _$SimpleClassNullableOfBigIntToDynamoJson(
         SimpleClassNullableOfBigInt instance) =>
     <String, dynamic>{
       'value': instance.value?.map((e) => e.toString()).toList(),
     };
 
-SimpleClassOfBigIntNullable _$SimpleClassOfBigIntNullableFromJson(
+SimpleClassOfBigIntNullable _$SimpleClassOfBigIntNullableFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfBigIntNullable(
       (json['value'] as List<dynamic>)
           .map((e) => e == null ? null : BigInt.parse(e as String)),
     );
 
-Map<String, dynamic> _$SimpleClassOfBigIntNullableToJson(
+Map<String, dynamic> _$SimpleClassOfBigIntNullableToDynamoJson(
         SimpleClassOfBigIntNullable instance) =>
     <String, dynamic>{
       'value': instance.value.map((e) => e?.toString()).toList(),
     };
 
 SimpleClassNullableOfBigIntNullable
-    _$SimpleClassNullableOfBigIntNullableFromJson(Map<String, dynamic> json) =>
+    _$SimpleClassNullableOfBigIntNullableFromDynamoJson(
+            Map<String, dynamic> json) =>
         SimpleClassNullableOfBigIntNullable(
           (json['value'] as List<dynamic>?)
               ?.map((e) => e == null ? null : BigInt.parse(e as String)),
         );
 
-Map<String, dynamic> _$SimpleClassNullableOfBigIntNullableToJson(
+Map<String, dynamic> _$SimpleClassNullableOfBigIntNullableToDynamoJson(
         SimpleClassNullableOfBigIntNullable instance) =>
     <String, dynamic>{
       'value': instance.value?.map((e) => e?.toString()).toList(),
     };
 
-SimpleClassOfBool _$SimpleClassOfBoolFromJson(Map<String, dynamic> json) =>
+SimpleClassOfBool _$SimpleClassOfBoolFromDynamoJson(
+        Map<String, dynamic> json) =>
     SimpleClassOfBool(
       (json['value'] as List<dynamic>).map((e) => e as bool),
     );
 
-Map<String, dynamic> _$SimpleClassOfBoolToJson(SimpleClassOfBool instance) =>
+Map<String, dynamic> _$SimpleClassOfBoolToDynamoJson(
+        SimpleClassOfBool instance) =>
     <String, dynamic>{
       'value': instance.value.toList(),
     };
 
-SimpleClassNullableOfBool _$SimpleClassNullableOfBoolFromJson(
+SimpleClassNullableOfBool _$SimpleClassNullableOfBoolFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassNullableOfBool(
       (json['value'] as List<dynamic>?)?.map((e) => e as bool),
     );
 
-Map<String, dynamic> _$SimpleClassNullableOfBoolToJson(
+Map<String, dynamic> _$SimpleClassNullableOfBoolToDynamoJson(
         SimpleClassNullableOfBool instance) =>
     <String, dynamic>{
       'value': instance.value?.toList(),
     };
 
-SimpleClassOfBoolNullable _$SimpleClassOfBoolNullableFromJson(
+SimpleClassOfBoolNullable _$SimpleClassOfBoolNullableFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfBoolNullable(
       (json['value'] as List<dynamic>).map((e) => e as bool?),
     );
 
-Map<String, dynamic> _$SimpleClassOfBoolNullableToJson(
+Map<String, dynamic> _$SimpleClassOfBoolNullableToDynamoJson(
         SimpleClassOfBoolNullable instance) =>
     <String, dynamic>{
       'value': instance.value.toList(),
     };
 
-SimpleClassNullableOfBoolNullable _$SimpleClassNullableOfBoolNullableFromJson(
-        Map<String, dynamic> json) =>
-    SimpleClassNullableOfBoolNullable(
-      (json['value'] as List<dynamic>?)?.map((e) => e as bool?),
-    );
+SimpleClassNullableOfBoolNullable
+    _$SimpleClassNullableOfBoolNullableFromDynamoJson(
+            Map<String, dynamic> json) =>
+        SimpleClassNullableOfBoolNullable(
+          (json['value'] as List<dynamic>?)?.map((e) => e as bool?),
+        );
 
-Map<String, dynamic> _$SimpleClassNullableOfBoolNullableToJson(
+Map<String, dynamic> _$SimpleClassNullableOfBoolNullableToDynamoJson(
         SimpleClassNullableOfBoolNullable instance) =>
     <String, dynamic>{
       'value': instance.value?.toList(),
     };
 
-SimpleClassOfDateTime _$SimpleClassOfDateTimeFromJson(
+SimpleClassOfDateTime _$SimpleClassOfDateTimeFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfDateTime(
       (json['value'] as List<dynamic>).map((e) => DateTime.parse(e as String)),
     );
 
-Map<String, dynamic> _$SimpleClassOfDateTimeToJson(
+Map<String, dynamic> _$SimpleClassOfDateTimeToDynamoJson(
         SimpleClassOfDateTime instance) =>
     <String, dynamic>{
       'value': instance.value.map((e) => e.toIso8601String()).toList(),
     };
 
-SimpleClassNullableOfDateTime _$SimpleClassNullableOfDateTimeFromJson(
+SimpleClassNullableOfDateTime _$SimpleClassNullableOfDateTimeFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassNullableOfDateTime(
       (json['value'] as List<dynamic>?)
           ?.map((e) => DateTime.parse(e as String)),
     );
 
-Map<String, dynamic> _$SimpleClassNullableOfDateTimeToJson(
+Map<String, dynamic> _$SimpleClassNullableOfDateTimeToDynamoJson(
         SimpleClassNullableOfDateTime instance) =>
     <String, dynamic>{
       'value': instance.value?.map((e) => e.toIso8601String()).toList(),
     };
 
-SimpleClassOfDateTimeNullable _$SimpleClassOfDateTimeNullableFromJson(
+SimpleClassOfDateTimeNullable _$SimpleClassOfDateTimeNullableFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfDateTimeNullable(
       (json['value'] as List<dynamic>)
           .map((e) => e == null ? null : DateTime.parse(e as String)),
     );
 
-Map<String, dynamic> _$SimpleClassOfDateTimeNullableToJson(
+Map<String, dynamic> _$SimpleClassOfDateTimeNullableToDynamoJson(
         SimpleClassOfDateTimeNullable instance) =>
     <String, dynamic>{
       'value': instance.value.map((e) => e?.toIso8601String()).toList(),
     };
 
 SimpleClassNullableOfDateTimeNullable
-    _$SimpleClassNullableOfDateTimeNullableFromJson(
+    _$SimpleClassNullableOfDateTimeNullableFromDynamoJson(
             Map<String, dynamic> json) =>
         SimpleClassNullableOfDateTimeNullable(
           (json['value'] as List<dynamic>?)
               ?.map((e) => e == null ? null : DateTime.parse(e as String)),
         );
 
-Map<String, dynamic> _$SimpleClassNullableOfDateTimeNullableToJson(
+Map<String, dynamic> _$SimpleClassNullableOfDateTimeNullableToDynamoJson(
         SimpleClassNullableOfDateTimeNullable instance) =>
     <String, dynamic>{
       'value': instance.value?.map((e) => e?.toIso8601String()).toList(),
     };
 
-SimpleClassOfDouble _$SimpleClassOfDoubleFromJson(Map<String, dynamic> json) =>
+SimpleClassOfDouble _$SimpleClassOfDoubleFromDynamoJson(
+        Map<String, dynamic> json) =>
     SimpleClassOfDouble(
       (json['value'] as List<dynamic>).map((e) => (e as num).toDouble()),
     );
 
-Map<String, dynamic> _$SimpleClassOfDoubleToJson(
+Map<String, dynamic> _$SimpleClassOfDoubleToDynamoJson(
         SimpleClassOfDouble instance) =>
     <String, dynamic>{
       'value': instance.value.toList(),
     };
 
-SimpleClassNullableOfDouble _$SimpleClassNullableOfDoubleFromJson(
+SimpleClassNullableOfDouble _$SimpleClassNullableOfDoubleFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassNullableOfDouble(
       (json['value'] as List<dynamic>?)?.map((e) => (e as num).toDouble()),
     );
 
-Map<String, dynamic> _$SimpleClassNullableOfDoubleToJson(
+Map<String, dynamic> _$SimpleClassNullableOfDoubleToDynamoJson(
         SimpleClassNullableOfDouble instance) =>
     <String, dynamic>{
       'value': instance.value?.toList(),
     };
 
-SimpleClassOfDoubleNullable _$SimpleClassOfDoubleNullableFromJson(
+SimpleClassOfDoubleNullable _$SimpleClassOfDoubleNullableFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfDoubleNullable(
       (json['value'] as List<dynamic>).map((e) => (e as num?)?.toDouble()),
     );
 
-Map<String, dynamic> _$SimpleClassOfDoubleNullableToJson(
+Map<String, dynamic> _$SimpleClassOfDoubleNullableToDynamoJson(
         SimpleClassOfDoubleNullable instance) =>
     <String, dynamic>{
       'value': instance.value.toList(),
     };
 
 SimpleClassNullableOfDoubleNullable
-    _$SimpleClassNullableOfDoubleNullableFromJson(Map<String, dynamic> json) =>
+    _$SimpleClassNullableOfDoubleNullableFromDynamoJson(
+            Map<String, dynamic> json) =>
         SimpleClassNullableOfDoubleNullable(
           (json['value'] as List<dynamic>?)
               ?.map((e) => (e as num?)?.toDouble()),
         );
 
-Map<String, dynamic> _$SimpleClassNullableOfDoubleNullableToJson(
+Map<String, dynamic> _$SimpleClassNullableOfDoubleNullableToDynamoJson(
         SimpleClassNullableOfDoubleNullable instance) =>
     <String, dynamic>{
       'value': instance.value?.toList(),
     };
 
-SimpleClassOfDuration _$SimpleClassOfDurationFromJson(
+SimpleClassOfDuration _$SimpleClassOfDurationFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfDuration(
       (json['value'] as List<dynamic>)
           .map((e) => Duration(microseconds: e as int)),
     );
 
-Map<String, dynamic> _$SimpleClassOfDurationToJson(
+Map<String, dynamic> _$SimpleClassOfDurationToDynamoJson(
         SimpleClassOfDuration instance) =>
     <String, dynamic>{
       'value': instance.value.map((e) => e.inMicroseconds).toList(),
     };
 
-SimpleClassNullableOfDuration _$SimpleClassNullableOfDurationFromJson(
+SimpleClassNullableOfDuration _$SimpleClassNullableOfDurationFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassNullableOfDuration(
       (json['value'] as List<dynamic>?)
           ?.map((e) => Duration(microseconds: e as int)),
     );
 
-Map<String, dynamic> _$SimpleClassNullableOfDurationToJson(
+Map<String, dynamic> _$SimpleClassNullableOfDurationToDynamoJson(
         SimpleClassNullableOfDuration instance) =>
     <String, dynamic>{
       'value': instance.value?.map((e) => e.inMicroseconds).toList(),
     };
 
-SimpleClassOfDurationNullable _$SimpleClassOfDurationNullableFromJson(
+SimpleClassOfDurationNullable _$SimpleClassOfDurationNullableFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfDurationNullable(
       (json['value'] as List<dynamic>)
           .map((e) => e == null ? null : Duration(microseconds: e as int)),
     );
 
-Map<String, dynamic> _$SimpleClassOfDurationNullableToJson(
+Map<String, dynamic> _$SimpleClassOfDurationNullableToDynamoJson(
         SimpleClassOfDurationNullable instance) =>
     <String, dynamic>{
       'value': instance.value.map((e) => e?.inMicroseconds).toList(),
     };
 
 SimpleClassNullableOfDurationNullable
-    _$SimpleClassNullableOfDurationNullableFromJson(
+    _$SimpleClassNullableOfDurationNullableFromDynamoJson(
             Map<String, dynamic> json) =>
         SimpleClassNullableOfDurationNullable(
           (json['value'] as List<dynamic>?)
               ?.map((e) => e == null ? null : Duration(microseconds: e as int)),
         );
 
-Map<String, dynamic> _$SimpleClassNullableOfDurationNullableToJson(
+Map<String, dynamic> _$SimpleClassNullableOfDurationNullableToDynamoJson(
         SimpleClassNullableOfDurationNullable instance) =>
     <String, dynamic>{
       'value': instance.value?.map((e) => e?.inMicroseconds).toList(),
     };
 
-SimpleClassOfDynamic _$SimpleClassOfDynamicFromJson(
+SimpleClassOfDynamic _$SimpleClassOfDynamicFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfDynamic(
       json['value'] as List<dynamic>,
     );
 
-Map<String, dynamic> _$SimpleClassOfDynamicToJson(
+Map<String, dynamic> _$SimpleClassOfDynamicToDynamoJson(
         SimpleClassOfDynamic instance) =>
     <String, dynamic>{
       'value': instance.value.toList(),
     };
 
-SimpleClassNullableOfDynamic _$SimpleClassNullableOfDynamicFromJson(
+SimpleClassNullableOfDynamic _$SimpleClassNullableOfDynamicFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassNullableOfDynamic(
       json['value'] as List<dynamic>?,
     );
 
-Map<String, dynamic> _$SimpleClassNullableOfDynamicToJson(
+Map<String, dynamic> _$SimpleClassNullableOfDynamicToDynamoJson(
         SimpleClassNullableOfDynamic instance) =>
     <String, dynamic>{
       'value': instance.value?.toList(),
     };
 
-SimpleClassOfEnumType _$SimpleClassOfEnumTypeFromJson(
+SimpleClassOfEnumType _$SimpleClassOfEnumTypeFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfEnumType(
       (json['value'] as List<dynamic>)
           .map((e) => $enumDecode(_$EnumTypeEnumMap, e)),
     );
 
-Map<String, dynamic> _$SimpleClassOfEnumTypeToJson(
+Map<String, dynamic> _$SimpleClassOfEnumTypeToDynamoJson(
         SimpleClassOfEnumType instance) =>
     <String, dynamic>{
       'value': instance.value.map((e) => _$EnumTypeEnumMap[e]!).toList(),
@@ -324,275 +333,285 @@ const _$EnumTypeEnumMap = {
   EnumType.delta: 'delta',
 };
 
-SimpleClassNullableOfEnumType _$SimpleClassNullableOfEnumTypeFromJson(
+SimpleClassNullableOfEnumType _$SimpleClassNullableOfEnumTypeFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassNullableOfEnumType(
       (json['value'] as List<dynamic>?)
           ?.map((e) => $enumDecode(_$EnumTypeEnumMap, e)),
     );
 
-Map<String, dynamic> _$SimpleClassNullableOfEnumTypeToJson(
+Map<String, dynamic> _$SimpleClassNullableOfEnumTypeToDynamoJson(
         SimpleClassNullableOfEnumType instance) =>
     <String, dynamic>{
       'value': instance.value?.map((e) => _$EnumTypeEnumMap[e]!).toList(),
     };
 
-SimpleClassOfEnumTypeNullable _$SimpleClassOfEnumTypeNullableFromJson(
+SimpleClassOfEnumTypeNullable _$SimpleClassOfEnumTypeNullableFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfEnumTypeNullable(
       (json['value'] as List<dynamic>)
           .map((e) => $enumDecodeNullable(_$EnumTypeEnumMap, e)),
     );
 
-Map<String, dynamic> _$SimpleClassOfEnumTypeNullableToJson(
+Map<String, dynamic> _$SimpleClassOfEnumTypeNullableToDynamoJson(
         SimpleClassOfEnumTypeNullable instance) =>
     <String, dynamic>{
       'value': instance.value.map((e) => _$EnumTypeEnumMap[e]).toList(),
     };
 
 SimpleClassNullableOfEnumTypeNullable
-    _$SimpleClassNullableOfEnumTypeNullableFromJson(
+    _$SimpleClassNullableOfEnumTypeNullableFromDynamoJson(
             Map<String, dynamic> json) =>
         SimpleClassNullableOfEnumTypeNullable(
           (json['value'] as List<dynamic>?)
               ?.map((e) => $enumDecodeNullable(_$EnumTypeEnumMap, e)),
         );
 
-Map<String, dynamic> _$SimpleClassNullableOfEnumTypeNullableToJson(
+Map<String, dynamic> _$SimpleClassNullableOfEnumTypeNullableToDynamoJson(
         SimpleClassNullableOfEnumTypeNullable instance) =>
     <String, dynamic>{
       'value': instance.value?.map((e) => _$EnumTypeEnumMap[e]).toList(),
     };
 
-SimpleClassOfInt _$SimpleClassOfIntFromJson(Map<String, dynamic> json) =>
+SimpleClassOfInt _$SimpleClassOfIntFromDynamoJson(Map<String, dynamic> json) =>
     SimpleClassOfInt(
       (json['value'] as List<dynamic>).map((e) => e as int),
     );
 
-Map<String, dynamic> _$SimpleClassOfIntToJson(SimpleClassOfInt instance) =>
+Map<String, dynamic> _$SimpleClassOfIntToDynamoJson(
+        SimpleClassOfInt instance) =>
     <String, dynamic>{
       'value': instance.value.toList(),
     };
 
-SimpleClassNullableOfInt _$SimpleClassNullableOfIntFromJson(
+SimpleClassNullableOfInt _$SimpleClassNullableOfIntFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassNullableOfInt(
       (json['value'] as List<dynamic>?)?.map((e) => e as int),
     );
 
-Map<String, dynamic> _$SimpleClassNullableOfIntToJson(
+Map<String, dynamic> _$SimpleClassNullableOfIntToDynamoJson(
         SimpleClassNullableOfInt instance) =>
     <String, dynamic>{
       'value': instance.value?.toList(),
     };
 
-SimpleClassOfIntNullable _$SimpleClassOfIntNullableFromJson(
+SimpleClassOfIntNullable _$SimpleClassOfIntNullableFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfIntNullable(
       (json['value'] as List<dynamic>).map((e) => e as int?),
     );
 
-Map<String, dynamic> _$SimpleClassOfIntNullableToJson(
+Map<String, dynamic> _$SimpleClassOfIntNullableToDynamoJson(
         SimpleClassOfIntNullable instance) =>
     <String, dynamic>{
       'value': instance.value.toList(),
     };
 
-SimpleClassNullableOfIntNullable _$SimpleClassNullableOfIntNullableFromJson(
-        Map<String, dynamic> json) =>
-    SimpleClassNullableOfIntNullable(
-      (json['value'] as List<dynamic>?)?.map((e) => e as int?),
-    );
+SimpleClassNullableOfIntNullable
+    _$SimpleClassNullableOfIntNullableFromDynamoJson(
+            Map<String, dynamic> json) =>
+        SimpleClassNullableOfIntNullable(
+          (json['value'] as List<dynamic>?)?.map((e) => e as int?),
+        );
 
-Map<String, dynamic> _$SimpleClassNullableOfIntNullableToJson(
+Map<String, dynamic> _$SimpleClassNullableOfIntNullableToDynamoJson(
         SimpleClassNullableOfIntNullable instance) =>
     <String, dynamic>{
       'value': instance.value?.toList(),
     };
 
-SimpleClassOfNum _$SimpleClassOfNumFromJson(Map<String, dynamic> json) =>
+SimpleClassOfNum _$SimpleClassOfNumFromDynamoJson(Map<String, dynamic> json) =>
     SimpleClassOfNum(
       (json['value'] as List<dynamic>).map((e) => e as num),
     );
 
-Map<String, dynamic> _$SimpleClassOfNumToJson(SimpleClassOfNum instance) =>
+Map<String, dynamic> _$SimpleClassOfNumToDynamoJson(
+        SimpleClassOfNum instance) =>
     <String, dynamic>{
       'value': instance.value.toList(),
     };
 
-SimpleClassNullableOfNum _$SimpleClassNullableOfNumFromJson(
+SimpleClassNullableOfNum _$SimpleClassNullableOfNumFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassNullableOfNum(
       (json['value'] as List<dynamic>?)?.map((e) => e as num),
     );
 
-Map<String, dynamic> _$SimpleClassNullableOfNumToJson(
+Map<String, dynamic> _$SimpleClassNullableOfNumToDynamoJson(
         SimpleClassNullableOfNum instance) =>
     <String, dynamic>{
       'value': instance.value?.toList(),
     };
 
-SimpleClassOfNumNullable _$SimpleClassOfNumNullableFromJson(
+SimpleClassOfNumNullable _$SimpleClassOfNumNullableFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfNumNullable(
       (json['value'] as List<dynamic>).map((e) => e as num?),
     );
 
-Map<String, dynamic> _$SimpleClassOfNumNullableToJson(
+Map<String, dynamic> _$SimpleClassOfNumNullableToDynamoJson(
         SimpleClassOfNumNullable instance) =>
     <String, dynamic>{
       'value': instance.value.toList(),
     };
 
-SimpleClassNullableOfNumNullable _$SimpleClassNullableOfNumNullableFromJson(
-        Map<String, dynamic> json) =>
-    SimpleClassNullableOfNumNullable(
-      (json['value'] as List<dynamic>?)?.map((e) => e as num?),
-    );
+SimpleClassNullableOfNumNullable
+    _$SimpleClassNullableOfNumNullableFromDynamoJson(
+            Map<String, dynamic> json) =>
+        SimpleClassNullableOfNumNullable(
+          (json['value'] as List<dynamic>?)?.map((e) => e as num?),
+        );
 
-Map<String, dynamic> _$SimpleClassNullableOfNumNullableToJson(
+Map<String, dynamic> _$SimpleClassNullableOfNumNullableToDynamoJson(
         SimpleClassNullableOfNumNullable instance) =>
     <String, dynamic>{
       'value': instance.value?.toList(),
     };
 
-SimpleClassOfObject _$SimpleClassOfObjectFromJson(Map<String, dynamic> json) =>
+SimpleClassOfObject _$SimpleClassOfObjectFromDynamoJson(
+        Map<String, dynamic> json) =>
     SimpleClassOfObject(
       (json['value'] as List<dynamic>).map((e) => e as Object),
     );
 
-Map<String, dynamic> _$SimpleClassOfObjectToJson(
+Map<String, dynamic> _$SimpleClassOfObjectToDynamoJson(
         SimpleClassOfObject instance) =>
     <String, dynamic>{
       'value': instance.value.toList(),
     };
 
-SimpleClassNullableOfObject _$SimpleClassNullableOfObjectFromJson(
+SimpleClassNullableOfObject _$SimpleClassNullableOfObjectFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassNullableOfObject(
       (json['value'] as List<dynamic>?)?.map((e) => e as Object),
     );
 
-Map<String, dynamic> _$SimpleClassNullableOfObjectToJson(
+Map<String, dynamic> _$SimpleClassNullableOfObjectToDynamoJson(
         SimpleClassNullableOfObject instance) =>
     <String, dynamic>{
       'value': instance.value?.toList(),
     };
 
-SimpleClassOfObjectNullable _$SimpleClassOfObjectNullableFromJson(
+SimpleClassOfObjectNullable _$SimpleClassOfObjectNullableFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfObjectNullable(
       json['value'] as List<dynamic>,
     );
 
-Map<String, dynamic> _$SimpleClassOfObjectNullableToJson(
+Map<String, dynamic> _$SimpleClassOfObjectNullableToDynamoJson(
         SimpleClassOfObjectNullable instance) =>
     <String, dynamic>{
       'value': instance.value.toList(),
     };
 
 SimpleClassNullableOfObjectNullable
-    _$SimpleClassNullableOfObjectNullableFromJson(Map<String, dynamic> json) =>
+    _$SimpleClassNullableOfObjectNullableFromDynamoJson(
+            Map<String, dynamic> json) =>
         SimpleClassNullableOfObjectNullable(
           json['value'] as List<dynamic>?,
         );
 
-Map<String, dynamic> _$SimpleClassNullableOfObjectNullableToJson(
+Map<String, dynamic> _$SimpleClassNullableOfObjectNullableToDynamoJson(
         SimpleClassNullableOfObjectNullable instance) =>
     <String, dynamic>{
       'value': instance.value?.toList(),
     };
 
-SimpleClassOfString _$SimpleClassOfStringFromJson(Map<String, dynamic> json) =>
+SimpleClassOfString _$SimpleClassOfStringFromDynamoJson(
+        Map<String, dynamic> json) =>
     SimpleClassOfString(
       (json['value'] as List<dynamic>).map((e) => e as String),
     );
 
-Map<String, dynamic> _$SimpleClassOfStringToJson(
+Map<String, dynamic> _$SimpleClassOfStringToDynamoJson(
         SimpleClassOfString instance) =>
     <String, dynamic>{
       'value': instance.value.toList(),
     };
 
-SimpleClassNullableOfString _$SimpleClassNullableOfStringFromJson(
+SimpleClassNullableOfString _$SimpleClassNullableOfStringFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassNullableOfString(
       (json['value'] as List<dynamic>?)?.map((e) => e as String),
     );
 
-Map<String, dynamic> _$SimpleClassNullableOfStringToJson(
+Map<String, dynamic> _$SimpleClassNullableOfStringToDynamoJson(
         SimpleClassNullableOfString instance) =>
     <String, dynamic>{
       'value': instance.value?.toList(),
     };
 
-SimpleClassOfStringNullable _$SimpleClassOfStringNullableFromJson(
+SimpleClassOfStringNullable _$SimpleClassOfStringNullableFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfStringNullable(
       (json['value'] as List<dynamic>).map((e) => e as String?),
     );
 
-Map<String, dynamic> _$SimpleClassOfStringNullableToJson(
+Map<String, dynamic> _$SimpleClassOfStringNullableToDynamoJson(
         SimpleClassOfStringNullable instance) =>
     <String, dynamic>{
       'value': instance.value.toList(),
     };
 
 SimpleClassNullableOfStringNullable
-    _$SimpleClassNullableOfStringNullableFromJson(Map<String, dynamic> json) =>
+    _$SimpleClassNullableOfStringNullableFromDynamoJson(
+            Map<String, dynamic> json) =>
         SimpleClassNullableOfStringNullable(
           (json['value'] as List<dynamic>?)?.map((e) => e as String?),
         );
 
-Map<String, dynamic> _$SimpleClassNullableOfStringNullableToJson(
+Map<String, dynamic> _$SimpleClassNullableOfStringNullableToDynamoJson(
         SimpleClassNullableOfStringNullable instance) =>
     <String, dynamic>{
       'value': instance.value?.toList(),
     };
 
-SimpleClassOfUri _$SimpleClassOfUriFromJson(Map<String, dynamic> json) =>
+SimpleClassOfUri _$SimpleClassOfUriFromDynamoJson(Map<String, dynamic> json) =>
     SimpleClassOfUri(
       (json['value'] as List<dynamic>).map((e) => Uri.parse(e as String)),
     );
 
-Map<String, dynamic> _$SimpleClassOfUriToJson(SimpleClassOfUri instance) =>
+Map<String, dynamic> _$SimpleClassOfUriToDynamoJson(
+        SimpleClassOfUri instance) =>
     <String, dynamic>{
       'value': instance.value.map((e) => e.toString()).toList(),
     };
 
-SimpleClassNullableOfUri _$SimpleClassNullableOfUriFromJson(
+SimpleClassNullableOfUri _$SimpleClassNullableOfUriFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassNullableOfUri(
       (json['value'] as List<dynamic>?)?.map((e) => Uri.parse(e as String)),
     );
 
-Map<String, dynamic> _$SimpleClassNullableOfUriToJson(
+Map<String, dynamic> _$SimpleClassNullableOfUriToDynamoJson(
         SimpleClassNullableOfUri instance) =>
     <String, dynamic>{
       'value': instance.value?.map((e) => e.toString()).toList(),
     };
 
-SimpleClassOfUriNullable _$SimpleClassOfUriNullableFromJson(
+SimpleClassOfUriNullable _$SimpleClassOfUriNullableFromDynamoJson(
         Map<String, dynamic> json) =>
     SimpleClassOfUriNullable(
       (json['value'] as List<dynamic>)
           .map((e) => e == null ? null : Uri.parse(e as String)),
     );
 
-Map<String, dynamic> _$SimpleClassOfUriNullableToJson(
+Map<String, dynamic> _$SimpleClassOfUriNullableToDynamoJson(
         SimpleClassOfUriNullable instance) =>
     <String, dynamic>{
       'value': instance.value.map((e) => e?.toString()).toList(),
     };
 
-SimpleClassNullableOfUriNullable _$SimpleClassNullableOfUriNullableFromJson(
-        Map<String, dynamic> json) =>
-    SimpleClassNullableOfUriNullable(
-      (json['value'] as List<dynamic>?)
-          ?.map((e) => e == null ? null : Uri.parse(e as String)),
-    );
+SimpleClassNullableOfUriNullable
+    _$SimpleClassNullableOfUriNullableFromDynamoJson(
+            Map<String, dynamic> json) =>
+        SimpleClassNullableOfUriNullable(
+          (json['value'] as List<dynamic>?)
+              ?.map((e) => e == null ? null : Uri.parse(e as String)),
+        );
 
-Map<String, dynamic> _$SimpleClassNullableOfUriNullableToJson(
+Map<String, dynamic> _$SimpleClassNullableOfUriNullableToDynamoJson(
         SimpleClassNullableOfUriNullable instance) =>
     <String, dynamic>{
       'value': instance.value?.map((e) => e?.toString()).toList(),

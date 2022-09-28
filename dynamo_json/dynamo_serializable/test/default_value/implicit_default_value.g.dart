@@ -5,10 +5,10 @@
 part of 'implicit_default_value.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
-DefaultValueImplicit _$DefaultValueImplicitFromJson(
+DefaultValueImplicit _$DefaultValueImplicitFromDynamoJson(
         Map<String, dynamic> json) =>
     DefaultValueImplicit(
       fieldBool: json['fieldBool'] as bool? ?? true,
@@ -54,10 +54,10 @@ DefaultValueImplicit _$DefaultValueImplicitFromJson(
               .fromDynamoJson(json['valueFromConverter'] as String),
       valueFromFunction: json['valueFromFunction'] == null
           ? const ConstClass('value')
-          : constClassFromJson(json['valueFromFunction'] as String),
+          : constClassFromDynamoJson(json['valueFromFunction'] as String),
     );
 
-Map<String, dynamic> _$DefaultValueImplicitToJson(
+Map<String, dynamic> _$DefaultValueImplicitToDynamoJson(
         DefaultValueImplicit instance) =>
     <String, dynamic>{
       'fieldBool': instance.fieldBool,
@@ -73,10 +73,10 @@ Map<String, dynamic> _$DefaultValueImplicitToJson(
       'fieldMapListString': instance.fieldMapListString,
       'durationField': instance.durationField.inMicroseconds,
       'fieldEnum': _$GreekEnumMap[instance.fieldEnum]!,
-      'constClass': instance.constClass,
+      'constClass': instance.constClass.toDynamoJson(),
       'valueFromConverter':
           const ConstClassConverter().toDynamoJson(instance.valueFromConverter),
-      'valueFromFunction': constClassToJson(instance.valueFromFunction),
+      'valueFromFunction': constClassToDynamoJson(instance.valueFromFunction),
     };
 
 const _$GreekEnumMap = {

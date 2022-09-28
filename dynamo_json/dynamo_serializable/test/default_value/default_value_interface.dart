@@ -55,9 +55,9 @@ class ConstClass {
       };
 }
 
-ConstClass constClassFromJson(String json) => ConstClass(json);
+ConstClass constClassFromDynamoJson(String json) => ConstClass(json);
 
-String constClassToJson(ConstClass object) => object.field;
+String constClassToDynamoJson(ConstClass object) => object.field;
 
 class ConstClassConverter extends DynamoConverter<ConstClass, String> {
   const ConstClassConverter();

@@ -118,13 +118,15 @@ Map<String, dynamic> _$KitchenSinkToDynamoJson(KitchenSink instance) {
   val['intList'] = instance.intList;
   val['dateTimeList'] =
       instance.dateTimeList.map((e) => e.toIso8601String()).toList();
-  val['nullableSimpleObjectList'] = instance.nullableSimpleObjectList;
+  val['nullableSimpleObjectList'] =
+      instance.nullableSimpleObjectList.map((e) => e?.toDynamoJson()).toList();
   val['map'] = instance.map;
   val['stringStringMap'] = instance.stringStringMap;
   val['dynamicIntMap'] = instance.dynamicIntMap;
   val['objectDateTimeMap'] = instance.objectDateTimeMap
       .map((k, e) => MapEntry(k, e.toIso8601String()));
-  val['nullableSimpleObjectMap'] = instance.nullableSimpleObjectMap;
+  val['nullableSimpleObjectMap'] = instance.nullableSimpleObjectMap
+      .map((k, e) => MapEntry(k, e?.toDynamoJson()));
   val['crazyComplex'] = instance.crazyComplex
       .map((e) => e?.map((k, e) => MapEntry(
           k,
@@ -137,8 +139,8 @@ Map<String, dynamic> _$KitchenSinkToDynamoJson(KitchenSink instance) {
   val['val'] = instance.val;
   writeNotNull('writeNotNull', instance.writeNotNull);
   writeNotNull(r'$string', instance.string);
-  val['simpleObject'] = instance.simpleObject;
-  val['strictKeysObject'] = instance.strictKeysObject;
+  val['simpleObject'] = instance.simpleObject.toDynamoJson();
+  val['strictKeysObject'] = instance.strictKeysObject.toDynamoJson();
   writeNotNull('validatedPropertyNo42', instance.validatedPropertyNo42);
   return val;
 }

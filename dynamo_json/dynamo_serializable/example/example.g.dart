@@ -8,7 +8,7 @@ part of 'example.dart';
 // DynamoSerializableGenerator
 // **************************************************************************
 
-Person _$PersonFromJson(Map<String, dynamic> json) => Person(
+Person _$PersonFromDynamoJson(Map<String, dynamic> json) => Person(
       firstName: json['firstName'] as String,
       lastName: json['lastName'] as String,
       dateOfBirth: json['dateOfBirth'] == null
@@ -16,7 +16,7 @@ Person _$PersonFromJson(Map<String, dynamic> json) => Person(
           : DateTime.parse(json['dateOfBirth'] as String),
     );
 
-Map<String, dynamic> _$PersonToJson(Person instance) => <String, dynamic>{
+Map<String, dynamic> _$PersonToDynamoJson(Person instance) => <String, dynamic>{
       'firstName': instance.firstName,
       'lastName': instance.lastName,
       'dateOfBirth': instance.dateOfBirth?.toIso8601String(),

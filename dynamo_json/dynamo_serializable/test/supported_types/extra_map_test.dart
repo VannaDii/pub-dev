@@ -24,12 +24,12 @@ void main() {
     },
   }) {
     test(input, () {
-      final object = SimpleClassOfStringToStringNullable.fromJson(input);
+      final object = SimpleClassOfStringToStringNullable.fromDynamoJson(input);
       final encoded = loudEncode(object);
 
       expect(encoded, loudEncode(input));
 
-      final object2 = SimpleClassOfStringToStringNullable.fromJson(
+      final object2 = SimpleClassOfStringToStringNullable.fromDynamoJson(
         jsonDecode(encoded) as Map<String, Object?>,
       );
       expect(loudEncode(object2), encoded);

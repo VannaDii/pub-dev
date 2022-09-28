@@ -19,10 +19,10 @@ class SimpleClass {
     this.withDefault,
   );
 
-  factory SimpleClass.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassFromJson(json);
+  factory SimpleClass.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassToJson(this);
+  Map<String, Object?> toDynamoJson() => _$SimpleClassToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -37,10 +37,11 @@ class SimpleClassNullable {
     this.withDefault,
   );
 
-  factory SimpleClassNullable.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassNullableFromJson(json);
+  factory SimpleClassNullable.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -51,10 +52,12 @@ class SimpleClassOfBigIntToBigInt {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToBigInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToBigIntFromJson(json);
+  factory SimpleClassOfBigIntToBigInt.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfBigIntToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfBigIntToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -65,12 +68,12 @@ class SimpleClassNullableOfBigIntToBigInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToBigInt.fromJson(
+  factory SimpleClassNullableOfBigIntToBigInt.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToBigIntFromJson(json);
+      _$SimpleClassNullableOfBigIntToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -81,10 +84,12 @@ class SimpleClassOfDateTimeToBigInt {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToBigInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToBigIntFromJson(json);
+  factory SimpleClassOfDateTimeToBigInt.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDateTimeToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDateTimeToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -95,12 +100,12 @@ class SimpleClassNullableOfDateTimeToBigInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToBigInt.fromJson(
+  factory SimpleClassNullableOfDateTimeToBigInt.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToBigIntFromJson(json);
+      _$SimpleClassNullableOfDateTimeToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -111,10 +116,12 @@ class SimpleClassOfDynamicToBigInt {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToBigInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToBigIntFromJson(json);
+  factory SimpleClassOfDynamicToBigInt.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDynamicToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDynamicToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -125,12 +132,12 @@ class SimpleClassNullableOfDynamicToBigInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToBigInt.fromJson(
+  factory SimpleClassNullableOfDynamicToBigInt.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToBigIntFromJson(json);
+      _$SimpleClassNullableOfDynamicToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -141,10 +148,12 @@ class SimpleClassOfEnumTypeToBigInt {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToBigInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToBigIntFromJson(json);
+  factory SimpleClassOfEnumTypeToBigInt.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfEnumTypeToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfEnumTypeToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -155,12 +164,12 @@ class SimpleClassNullableOfEnumTypeToBigInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToBigInt.fromJson(
+  factory SimpleClassNullableOfEnumTypeToBigInt.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToBigIntFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -171,10 +180,11 @@ class SimpleClassOfIntToBigInt {
     this.value,
   );
 
-  factory SimpleClassOfIntToBigInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToBigIntFromJson(json);
+  factory SimpleClassOfIntToBigInt.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfIntToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -185,12 +195,12 @@ class SimpleClassNullableOfIntToBigInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToBigInt.fromJson(
+  factory SimpleClassNullableOfIntToBigInt.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToBigIntFromJson(json);
+      _$SimpleClassNullableOfIntToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -201,10 +211,12 @@ class SimpleClassOfObjectToBigInt {
     this.value,
   );
 
-  factory SimpleClassOfObjectToBigInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToBigIntFromJson(json);
+  factory SimpleClassOfObjectToBigInt.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfObjectToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfObjectToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -215,12 +227,12 @@ class SimpleClassNullableOfObjectToBigInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToBigInt.fromJson(
+  factory SimpleClassNullableOfObjectToBigInt.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToBigIntFromJson(json);
+      _$SimpleClassNullableOfObjectToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -231,10 +243,12 @@ class SimpleClassOfStringToBigInt {
     this.value,
   );
 
-  factory SimpleClassOfStringToBigInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfStringToBigIntFromJson(json);
+  factory SimpleClassOfStringToBigInt.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfStringToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfStringToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -245,12 +259,12 @@ class SimpleClassNullableOfStringToBigInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToBigInt.fromJson(
+  factory SimpleClassNullableOfStringToBigInt.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToBigIntFromJson(json);
+      _$SimpleClassNullableOfStringToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -261,10 +275,11 @@ class SimpleClassOfUriToBigInt {
     this.value,
   );
 
-  factory SimpleClassOfUriToBigInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToBigIntFromJson(json);
+  factory SimpleClassOfUriToBigInt.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfUriToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -275,12 +290,12 @@ class SimpleClassNullableOfUriToBigInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToBigInt.fromJson(
+  factory SimpleClassNullableOfUriToBigInt.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToBigIntFromJson(json);
+      _$SimpleClassNullableOfUriToBigIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToBigIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToBigIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -291,12 +306,12 @@ class SimpleClassOfBigIntToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToBigIntNullable.fromJson(
+  factory SimpleClassOfBigIntToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToBigIntNullableFromJson(json);
+      _$SimpleClassOfBigIntToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfBigIntToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -307,12 +322,12 @@ class SimpleClassNullableOfBigIntToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToBigIntNullable.fromJson(
+  factory SimpleClassNullableOfBigIntToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToBigIntNullableFromJson(json);
+      _$SimpleClassNullableOfBigIntToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -323,12 +338,12 @@ class SimpleClassOfDateTimeToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToBigIntNullable.fromJson(
+  factory SimpleClassOfDateTimeToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToBigIntNullableFromJson(json);
+      _$SimpleClassOfDateTimeToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDateTimeToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -339,12 +354,12 @@ class SimpleClassNullableOfDateTimeToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToBigIntNullable.fromJson(
+  factory SimpleClassNullableOfDateTimeToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToBigIntNullableFromJson(json);
+      _$SimpleClassNullableOfDateTimeToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -355,12 +370,12 @@ class SimpleClassOfDynamicToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToBigIntNullable.fromJson(
+  factory SimpleClassOfDynamicToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToBigIntNullableFromJson(json);
+      _$SimpleClassOfDynamicToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDynamicToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -371,12 +386,12 @@ class SimpleClassNullableOfDynamicToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToBigIntNullable.fromJson(
+  factory SimpleClassNullableOfDynamicToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToBigIntNullableFromJson(json);
+      _$SimpleClassNullableOfDynamicToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -387,12 +402,12 @@ class SimpleClassOfEnumTypeToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToBigIntNullable.fromJson(
+  factory SimpleClassOfEnumTypeToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToBigIntNullableFromJson(json);
+      _$SimpleClassOfEnumTypeToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfEnumTypeToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -403,12 +418,12 @@ class SimpleClassNullableOfEnumTypeToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToBigIntNullable.fromJson(
+  factory SimpleClassNullableOfEnumTypeToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToBigIntNullableFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -419,12 +434,12 @@ class SimpleClassOfIntToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfIntToBigIntNullable.fromJson(
+  factory SimpleClassOfIntToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfIntToBigIntNullableFromJson(json);
+      _$SimpleClassOfIntToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfIntToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -435,12 +450,12 @@ class SimpleClassNullableOfIntToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToBigIntNullable.fromJson(
+  factory SimpleClassNullableOfIntToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToBigIntNullableFromJson(json);
+      _$SimpleClassNullableOfIntToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -451,12 +466,12 @@ class SimpleClassOfObjectToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfObjectToBigIntNullable.fromJson(
+  factory SimpleClassOfObjectToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToBigIntNullableFromJson(json);
+      _$SimpleClassOfObjectToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfObjectToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -467,12 +482,12 @@ class SimpleClassNullableOfObjectToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToBigIntNullable.fromJson(
+  factory SimpleClassNullableOfObjectToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToBigIntNullableFromJson(json);
+      _$SimpleClassNullableOfObjectToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -483,12 +498,12 @@ class SimpleClassOfStringToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfStringToBigIntNullable.fromJson(
+  factory SimpleClassOfStringToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfStringToBigIntNullableFromJson(json);
+      _$SimpleClassOfStringToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfStringToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -499,12 +514,12 @@ class SimpleClassNullableOfStringToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToBigIntNullable.fromJson(
+  factory SimpleClassNullableOfStringToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToBigIntNullableFromJson(json);
+      _$SimpleClassNullableOfStringToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -515,12 +530,12 @@ class SimpleClassOfUriToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfUriToBigIntNullable.fromJson(
+  factory SimpleClassOfUriToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfUriToBigIntNullableFromJson(json);
+      _$SimpleClassOfUriToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfUriToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -531,12 +546,12 @@ class SimpleClassNullableOfUriToBigIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToBigIntNullable.fromJson(
+  factory SimpleClassNullableOfUriToBigIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToBigIntNullableFromJson(json);
+      _$SimpleClassNullableOfUriToBigIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToBigIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToBigIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -547,10 +562,11 @@ class SimpleClassOfBigIntToBool {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToBool.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToBoolFromJson(json);
+  factory SimpleClassOfBigIntToBool.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfBigIntToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfBigIntToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -561,12 +577,12 @@ class SimpleClassNullableOfBigIntToBool {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToBool.fromJson(
+  factory SimpleClassNullableOfBigIntToBool.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToBoolFromJson(json);
+      _$SimpleClassNullableOfBigIntToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -577,10 +593,12 @@ class SimpleClassOfDateTimeToBool {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToBool.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToBoolFromJson(json);
+  factory SimpleClassOfDateTimeToBool.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDateTimeToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDateTimeToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -591,12 +609,12 @@ class SimpleClassNullableOfDateTimeToBool {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToBool.fromJson(
+  factory SimpleClassNullableOfDateTimeToBool.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToBoolFromJson(json);
+      _$SimpleClassNullableOfDateTimeToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -607,10 +625,12 @@ class SimpleClassOfDynamicToBool {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToBool.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToBoolFromJson(json);
+  factory SimpleClassOfDynamicToBool.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDynamicToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDynamicToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -621,12 +641,12 @@ class SimpleClassNullableOfDynamicToBool {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToBool.fromJson(
+  factory SimpleClassNullableOfDynamicToBool.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToBoolFromJson(json);
+      _$SimpleClassNullableOfDynamicToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -637,10 +657,12 @@ class SimpleClassOfEnumTypeToBool {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToBool.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToBoolFromJson(json);
+  factory SimpleClassOfEnumTypeToBool.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfEnumTypeToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfEnumTypeToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -651,12 +673,12 @@ class SimpleClassNullableOfEnumTypeToBool {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToBool.fromJson(
+  factory SimpleClassNullableOfEnumTypeToBool.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToBoolFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -667,10 +689,11 @@ class SimpleClassOfIntToBool {
     this.value,
   );
 
-  factory SimpleClassOfIntToBool.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToBoolFromJson(json);
+  factory SimpleClassOfIntToBool.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfIntToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -681,10 +704,12 @@ class SimpleClassNullableOfIntToBool {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToBool.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToBoolFromJson(json);
+  factory SimpleClassNullableOfIntToBool.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassNullableOfIntToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassNullableOfIntToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -695,10 +720,11 @@ class SimpleClassOfObjectToBool {
     this.value,
   );
 
-  factory SimpleClassOfObjectToBool.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToBoolFromJson(json);
+  factory SimpleClassOfObjectToBool.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfObjectToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfObjectToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -709,12 +735,12 @@ class SimpleClassNullableOfObjectToBool {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToBool.fromJson(
+  factory SimpleClassNullableOfObjectToBool.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToBoolFromJson(json);
+      _$SimpleClassNullableOfObjectToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -725,10 +751,11 @@ class SimpleClassOfStringToBool {
     this.value,
   );
 
-  factory SimpleClassOfStringToBool.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfStringToBoolFromJson(json);
+  factory SimpleClassOfStringToBool.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfStringToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfStringToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -739,12 +766,12 @@ class SimpleClassNullableOfStringToBool {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToBool.fromJson(
+  factory SimpleClassNullableOfStringToBool.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToBoolFromJson(json);
+      _$SimpleClassNullableOfStringToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -755,10 +782,11 @@ class SimpleClassOfUriToBool {
     this.value,
   );
 
-  factory SimpleClassOfUriToBool.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToBoolFromJson(json);
+  factory SimpleClassOfUriToBool.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfUriToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -769,10 +797,12 @@ class SimpleClassNullableOfUriToBool {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToBool.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToBoolFromJson(json);
+  factory SimpleClassNullableOfUriToBool.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassNullableOfUriToBoolFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassNullableOfUriToBoolToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToBoolToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -783,12 +813,12 @@ class SimpleClassOfBigIntToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToBoolNullable.fromJson(
+  factory SimpleClassOfBigIntToBoolNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToBoolNullableFromJson(json);
+      _$SimpleClassOfBigIntToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfBigIntToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -799,12 +829,12 @@ class SimpleClassNullableOfBigIntToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToBoolNullable.fromJson(
+  factory SimpleClassNullableOfBigIntToBoolNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToBoolNullableFromJson(json);
+      _$SimpleClassNullableOfBigIntToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -815,12 +845,12 @@ class SimpleClassOfDateTimeToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToBoolNullable.fromJson(
+  factory SimpleClassOfDateTimeToBoolNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToBoolNullableFromJson(json);
+      _$SimpleClassOfDateTimeToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDateTimeToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -831,12 +861,12 @@ class SimpleClassNullableOfDateTimeToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToBoolNullable.fromJson(
+  factory SimpleClassNullableOfDateTimeToBoolNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToBoolNullableFromJson(json);
+      _$SimpleClassNullableOfDateTimeToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -847,12 +877,12 @@ class SimpleClassOfDynamicToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToBoolNullable.fromJson(
+  factory SimpleClassOfDynamicToBoolNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToBoolNullableFromJson(json);
+      _$SimpleClassOfDynamicToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDynamicToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -863,12 +893,12 @@ class SimpleClassNullableOfDynamicToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToBoolNullable.fromJson(
+  factory SimpleClassNullableOfDynamicToBoolNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToBoolNullableFromJson(json);
+      _$SimpleClassNullableOfDynamicToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -879,12 +909,12 @@ class SimpleClassOfEnumTypeToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToBoolNullable.fromJson(
+  factory SimpleClassOfEnumTypeToBoolNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToBoolNullableFromJson(json);
+      _$SimpleClassOfEnumTypeToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfEnumTypeToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -895,12 +925,12 @@ class SimpleClassNullableOfEnumTypeToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToBoolNullable.fromJson(
+  factory SimpleClassNullableOfEnumTypeToBoolNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToBoolNullableFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -911,10 +941,12 @@ class SimpleClassOfIntToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassOfIntToBoolNullable.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToBoolNullableFromJson(json);
+  factory SimpleClassOfIntToBoolNullable.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfIntToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -925,12 +957,12 @@ class SimpleClassNullableOfIntToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToBoolNullable.fromJson(
+  factory SimpleClassNullableOfIntToBoolNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToBoolNullableFromJson(json);
+      _$SimpleClassNullableOfIntToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -941,12 +973,12 @@ class SimpleClassOfObjectToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassOfObjectToBoolNullable.fromJson(
+  factory SimpleClassOfObjectToBoolNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToBoolNullableFromJson(json);
+      _$SimpleClassOfObjectToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfObjectToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -957,12 +989,12 @@ class SimpleClassNullableOfObjectToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToBoolNullable.fromJson(
+  factory SimpleClassNullableOfObjectToBoolNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToBoolNullableFromJson(json);
+      _$SimpleClassNullableOfObjectToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -973,12 +1005,12 @@ class SimpleClassOfStringToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassOfStringToBoolNullable.fromJson(
+  factory SimpleClassOfStringToBoolNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfStringToBoolNullableFromJson(json);
+      _$SimpleClassOfStringToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfStringToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -989,12 +1021,12 @@ class SimpleClassNullableOfStringToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToBoolNullable.fromJson(
+  factory SimpleClassNullableOfStringToBoolNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToBoolNullableFromJson(json);
+      _$SimpleClassNullableOfStringToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1005,10 +1037,12 @@ class SimpleClassOfUriToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassOfUriToBoolNullable.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToBoolNullableFromJson(json);
+  factory SimpleClassOfUriToBoolNullable.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfUriToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1019,12 +1053,12 @@ class SimpleClassNullableOfUriToBoolNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToBoolNullable.fromJson(
+  factory SimpleClassNullableOfUriToBoolNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToBoolNullableFromJson(json);
+      _$SimpleClassNullableOfUriToBoolNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToBoolNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToBoolNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1035,10 +1069,12 @@ class SimpleClassOfBigIntToDateTime {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToDateTime.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToDateTimeFromJson(json);
+  factory SimpleClassOfBigIntToDateTime.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfBigIntToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfBigIntToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1049,12 +1085,12 @@ class SimpleClassNullableOfBigIntToDateTime {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToDateTime.fromJson(
+  factory SimpleClassNullableOfBigIntToDateTime.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToDateTimeFromJson(json);
+      _$SimpleClassNullableOfBigIntToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1065,11 +1101,12 @@ class SimpleClassOfDateTimeToDateTime {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToDateTime.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToDateTimeFromJson(json);
+  factory SimpleClassOfDateTimeToDateTime.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDateTimeToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDateTimeToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1080,12 +1117,12 @@ class SimpleClassNullableOfDateTimeToDateTime {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToDateTime.fromJson(
+  factory SimpleClassNullableOfDateTimeToDateTime.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToDateTimeFromJson(json);
+      _$SimpleClassNullableOfDateTimeToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1096,10 +1133,12 @@ class SimpleClassOfDynamicToDateTime {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToDateTime.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToDateTimeFromJson(json);
+  factory SimpleClassOfDynamicToDateTime.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDynamicToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDynamicToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1110,12 +1149,12 @@ class SimpleClassNullableOfDynamicToDateTime {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToDateTime.fromJson(
+  factory SimpleClassNullableOfDynamicToDateTime.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToDateTimeFromJson(json);
+      _$SimpleClassNullableOfDynamicToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1126,11 +1165,12 @@ class SimpleClassOfEnumTypeToDateTime {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToDateTime.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToDateTimeFromJson(json);
+  factory SimpleClassOfEnumTypeToDateTime.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfEnumTypeToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfEnumTypeToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1141,12 +1181,12 @@ class SimpleClassNullableOfEnumTypeToDateTime {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToDateTime.fromJson(
+  factory SimpleClassNullableOfEnumTypeToDateTime.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToDateTimeFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1157,10 +1197,12 @@ class SimpleClassOfIntToDateTime {
     this.value,
   );
 
-  factory SimpleClassOfIntToDateTime.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToDateTimeFromJson(json);
+  factory SimpleClassOfIntToDateTime.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfIntToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1171,12 +1213,12 @@ class SimpleClassNullableOfIntToDateTime {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToDateTime.fromJson(
+  factory SimpleClassNullableOfIntToDateTime.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToDateTimeFromJson(json);
+      _$SimpleClassNullableOfIntToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1187,10 +1229,12 @@ class SimpleClassOfObjectToDateTime {
     this.value,
   );
 
-  factory SimpleClassOfObjectToDateTime.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToDateTimeFromJson(json);
+  factory SimpleClassOfObjectToDateTime.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfObjectToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfObjectToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1201,12 +1245,12 @@ class SimpleClassNullableOfObjectToDateTime {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToDateTime.fromJson(
+  factory SimpleClassNullableOfObjectToDateTime.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToDateTimeFromJson(json);
+      _$SimpleClassNullableOfObjectToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1217,10 +1261,12 @@ class SimpleClassOfStringToDateTime {
     this.value,
   );
 
-  factory SimpleClassOfStringToDateTime.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfStringToDateTimeFromJson(json);
+  factory SimpleClassOfStringToDateTime.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfStringToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfStringToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1231,12 +1277,12 @@ class SimpleClassNullableOfStringToDateTime {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToDateTime.fromJson(
+  factory SimpleClassNullableOfStringToDateTime.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToDateTimeFromJson(json);
+      _$SimpleClassNullableOfStringToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1247,10 +1293,12 @@ class SimpleClassOfUriToDateTime {
     this.value,
   );
 
-  factory SimpleClassOfUriToDateTime.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToDateTimeFromJson(json);
+  factory SimpleClassOfUriToDateTime.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfUriToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1261,12 +1309,12 @@ class SimpleClassNullableOfUriToDateTime {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToDateTime.fromJson(
+  factory SimpleClassNullableOfUriToDateTime.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToDateTimeFromJson(json);
+      _$SimpleClassNullableOfUriToDateTimeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToDateTimeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToDateTimeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1277,12 +1325,12 @@ class SimpleClassOfBigIntToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToDateTimeNullable.fromJson(
+  factory SimpleClassOfBigIntToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToDateTimeNullableFromJson(json);
+      _$SimpleClassOfBigIntToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfBigIntToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1293,12 +1341,12 @@ class SimpleClassNullableOfBigIntToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToDateTimeNullable.fromJson(
+  factory SimpleClassNullableOfBigIntToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToDateTimeNullableFromJson(json);
+      _$SimpleClassNullableOfBigIntToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1309,12 +1357,12 @@ class SimpleClassOfDateTimeToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToDateTimeNullable.fromJson(
+  factory SimpleClassOfDateTimeToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToDateTimeNullableFromJson(json);
+      _$SimpleClassOfDateTimeToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDateTimeToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1325,12 +1373,12 @@ class SimpleClassNullableOfDateTimeToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToDateTimeNullable.fromJson(
+  factory SimpleClassNullableOfDateTimeToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToDateTimeNullableFromJson(json);
+      _$SimpleClassNullableOfDateTimeToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1341,12 +1389,12 @@ class SimpleClassOfDynamicToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToDateTimeNullable.fromJson(
+  factory SimpleClassOfDynamicToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToDateTimeNullableFromJson(json);
+      _$SimpleClassOfDynamicToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDynamicToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1357,12 +1405,12 @@ class SimpleClassNullableOfDynamicToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToDateTimeNullable.fromJson(
+  factory SimpleClassNullableOfDynamicToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToDateTimeNullableFromJson(json);
+      _$SimpleClassNullableOfDynamicToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1373,12 +1421,12 @@ class SimpleClassOfEnumTypeToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToDateTimeNullable.fromJson(
+  factory SimpleClassOfEnumTypeToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToDateTimeNullableFromJson(json);
+      _$SimpleClassOfEnumTypeToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfEnumTypeToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1389,12 +1437,12 @@ class SimpleClassNullableOfEnumTypeToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToDateTimeNullable.fromJson(
+  factory SimpleClassNullableOfEnumTypeToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToDateTimeNullableFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1405,12 +1453,12 @@ class SimpleClassOfIntToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassOfIntToDateTimeNullable.fromJson(
+  factory SimpleClassOfIntToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfIntToDateTimeNullableFromJson(json);
+      _$SimpleClassOfIntToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfIntToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1421,12 +1469,12 @@ class SimpleClassNullableOfIntToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToDateTimeNullable.fromJson(
+  factory SimpleClassNullableOfIntToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToDateTimeNullableFromJson(json);
+      _$SimpleClassNullableOfIntToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1437,12 +1485,12 @@ class SimpleClassOfObjectToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassOfObjectToDateTimeNullable.fromJson(
+  factory SimpleClassOfObjectToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToDateTimeNullableFromJson(json);
+      _$SimpleClassOfObjectToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfObjectToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1453,12 +1501,12 @@ class SimpleClassNullableOfObjectToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToDateTimeNullable.fromJson(
+  factory SimpleClassNullableOfObjectToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToDateTimeNullableFromJson(json);
+      _$SimpleClassNullableOfObjectToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1469,12 +1517,12 @@ class SimpleClassOfStringToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassOfStringToDateTimeNullable.fromJson(
+  factory SimpleClassOfStringToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfStringToDateTimeNullableFromJson(json);
+      _$SimpleClassOfStringToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfStringToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1485,12 +1533,12 @@ class SimpleClassNullableOfStringToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToDateTimeNullable.fromJson(
+  factory SimpleClassNullableOfStringToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToDateTimeNullableFromJson(json);
+      _$SimpleClassNullableOfStringToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1501,12 +1549,12 @@ class SimpleClassOfUriToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassOfUriToDateTimeNullable.fromJson(
+  factory SimpleClassOfUriToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfUriToDateTimeNullableFromJson(json);
+      _$SimpleClassOfUriToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfUriToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1517,12 +1565,12 @@ class SimpleClassNullableOfUriToDateTimeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToDateTimeNullable.fromJson(
+  factory SimpleClassNullableOfUriToDateTimeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToDateTimeNullableFromJson(json);
+      _$SimpleClassNullableOfUriToDateTimeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToDateTimeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToDateTimeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1533,10 +1581,12 @@ class SimpleClassOfBigIntToDouble {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToDouble.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToDoubleFromJson(json);
+  factory SimpleClassOfBigIntToDouble.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfBigIntToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfBigIntToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1547,12 +1597,12 @@ class SimpleClassNullableOfBigIntToDouble {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToDouble.fromJson(
+  factory SimpleClassNullableOfBigIntToDouble.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToDoubleFromJson(json);
+      _$SimpleClassNullableOfBigIntToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1563,10 +1613,12 @@ class SimpleClassOfDateTimeToDouble {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToDouble.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToDoubleFromJson(json);
+  factory SimpleClassOfDateTimeToDouble.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDateTimeToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDateTimeToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1577,12 +1629,12 @@ class SimpleClassNullableOfDateTimeToDouble {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToDouble.fromJson(
+  factory SimpleClassNullableOfDateTimeToDouble.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToDoubleFromJson(json);
+      _$SimpleClassNullableOfDateTimeToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1593,10 +1645,12 @@ class SimpleClassOfDynamicToDouble {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToDouble.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToDoubleFromJson(json);
+  factory SimpleClassOfDynamicToDouble.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDynamicToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDynamicToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1607,12 +1661,12 @@ class SimpleClassNullableOfDynamicToDouble {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToDouble.fromJson(
+  factory SimpleClassNullableOfDynamicToDouble.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToDoubleFromJson(json);
+      _$SimpleClassNullableOfDynamicToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1623,10 +1677,12 @@ class SimpleClassOfEnumTypeToDouble {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToDouble.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToDoubleFromJson(json);
+  factory SimpleClassOfEnumTypeToDouble.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfEnumTypeToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfEnumTypeToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1637,12 +1693,12 @@ class SimpleClassNullableOfEnumTypeToDouble {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToDouble.fromJson(
+  factory SimpleClassNullableOfEnumTypeToDouble.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToDoubleFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1653,10 +1709,11 @@ class SimpleClassOfIntToDouble {
     this.value,
   );
 
-  factory SimpleClassOfIntToDouble.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToDoubleFromJson(json);
+  factory SimpleClassOfIntToDouble.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfIntToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1667,12 +1724,12 @@ class SimpleClassNullableOfIntToDouble {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToDouble.fromJson(
+  factory SimpleClassNullableOfIntToDouble.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToDoubleFromJson(json);
+      _$SimpleClassNullableOfIntToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1683,10 +1740,12 @@ class SimpleClassOfObjectToDouble {
     this.value,
   );
 
-  factory SimpleClassOfObjectToDouble.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToDoubleFromJson(json);
+  factory SimpleClassOfObjectToDouble.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfObjectToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfObjectToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1697,12 +1756,12 @@ class SimpleClassNullableOfObjectToDouble {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToDouble.fromJson(
+  factory SimpleClassNullableOfObjectToDouble.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToDoubleFromJson(json);
+      _$SimpleClassNullableOfObjectToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1713,10 +1772,12 @@ class SimpleClassOfStringToDouble {
     this.value,
   );
 
-  factory SimpleClassOfStringToDouble.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfStringToDoubleFromJson(json);
+  factory SimpleClassOfStringToDouble.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfStringToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfStringToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1727,12 +1788,12 @@ class SimpleClassNullableOfStringToDouble {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToDouble.fromJson(
+  factory SimpleClassNullableOfStringToDouble.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToDoubleFromJson(json);
+      _$SimpleClassNullableOfStringToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1743,10 +1804,11 @@ class SimpleClassOfUriToDouble {
     this.value,
   );
 
-  factory SimpleClassOfUriToDouble.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToDoubleFromJson(json);
+  factory SimpleClassOfUriToDouble.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfUriToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1757,12 +1819,12 @@ class SimpleClassNullableOfUriToDouble {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToDouble.fromJson(
+  factory SimpleClassNullableOfUriToDouble.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToDoubleFromJson(json);
+      _$SimpleClassNullableOfUriToDoubleFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToDoubleToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToDoubleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1773,12 +1835,12 @@ class SimpleClassOfBigIntToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToDoubleNullable.fromJson(
+  factory SimpleClassOfBigIntToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToDoubleNullableFromJson(json);
+      _$SimpleClassOfBigIntToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfBigIntToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1789,12 +1851,12 @@ class SimpleClassNullableOfBigIntToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToDoubleNullable.fromJson(
+  factory SimpleClassNullableOfBigIntToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToDoubleNullableFromJson(json);
+      _$SimpleClassNullableOfBigIntToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1805,12 +1867,12 @@ class SimpleClassOfDateTimeToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToDoubleNullable.fromJson(
+  factory SimpleClassOfDateTimeToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToDoubleNullableFromJson(json);
+      _$SimpleClassOfDateTimeToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDateTimeToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1821,12 +1883,12 @@ class SimpleClassNullableOfDateTimeToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToDoubleNullable.fromJson(
+  factory SimpleClassNullableOfDateTimeToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToDoubleNullableFromJson(json);
+      _$SimpleClassNullableOfDateTimeToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1837,12 +1899,12 @@ class SimpleClassOfDynamicToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToDoubleNullable.fromJson(
+  factory SimpleClassOfDynamicToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToDoubleNullableFromJson(json);
+      _$SimpleClassOfDynamicToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDynamicToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1853,12 +1915,12 @@ class SimpleClassNullableOfDynamicToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToDoubleNullable.fromJson(
+  factory SimpleClassNullableOfDynamicToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToDoubleNullableFromJson(json);
+      _$SimpleClassNullableOfDynamicToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1869,12 +1931,12 @@ class SimpleClassOfEnumTypeToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToDoubleNullable.fromJson(
+  factory SimpleClassOfEnumTypeToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToDoubleNullableFromJson(json);
+      _$SimpleClassOfEnumTypeToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfEnumTypeToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1885,12 +1947,12 @@ class SimpleClassNullableOfEnumTypeToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToDoubleNullable.fromJson(
+  factory SimpleClassNullableOfEnumTypeToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToDoubleNullableFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1901,12 +1963,12 @@ class SimpleClassOfIntToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassOfIntToDoubleNullable.fromJson(
+  factory SimpleClassOfIntToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfIntToDoubleNullableFromJson(json);
+      _$SimpleClassOfIntToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfIntToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1917,12 +1979,12 @@ class SimpleClassNullableOfIntToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToDoubleNullable.fromJson(
+  factory SimpleClassNullableOfIntToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToDoubleNullableFromJson(json);
+      _$SimpleClassNullableOfIntToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1933,12 +1995,12 @@ class SimpleClassOfObjectToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassOfObjectToDoubleNullable.fromJson(
+  factory SimpleClassOfObjectToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToDoubleNullableFromJson(json);
+      _$SimpleClassOfObjectToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfObjectToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1949,12 +2011,12 @@ class SimpleClassNullableOfObjectToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToDoubleNullable.fromJson(
+  factory SimpleClassNullableOfObjectToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToDoubleNullableFromJson(json);
+      _$SimpleClassNullableOfObjectToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1965,12 +2027,12 @@ class SimpleClassOfStringToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassOfStringToDoubleNullable.fromJson(
+  factory SimpleClassOfStringToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfStringToDoubleNullableFromJson(json);
+      _$SimpleClassOfStringToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfStringToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1981,12 +2043,12 @@ class SimpleClassNullableOfStringToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToDoubleNullable.fromJson(
+  factory SimpleClassNullableOfStringToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToDoubleNullableFromJson(json);
+      _$SimpleClassNullableOfStringToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -1997,12 +2059,12 @@ class SimpleClassOfUriToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassOfUriToDoubleNullable.fromJson(
+  factory SimpleClassOfUriToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfUriToDoubleNullableFromJson(json);
+      _$SimpleClassOfUriToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfUriToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2013,12 +2075,12 @@ class SimpleClassNullableOfUriToDoubleNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToDoubleNullable.fromJson(
+  factory SimpleClassNullableOfUriToDoubleNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToDoubleNullableFromJson(json);
+      _$SimpleClassNullableOfUriToDoubleNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToDoubleNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToDoubleNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2029,10 +2091,12 @@ class SimpleClassOfBigIntToDuration {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToDuration.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToDurationFromJson(json);
+  factory SimpleClassOfBigIntToDuration.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfBigIntToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfBigIntToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2043,12 +2107,12 @@ class SimpleClassNullableOfBigIntToDuration {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToDuration.fromJson(
+  factory SimpleClassNullableOfBigIntToDuration.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToDurationFromJson(json);
+      _$SimpleClassNullableOfBigIntToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2059,11 +2123,12 @@ class SimpleClassOfDateTimeToDuration {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToDuration.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToDurationFromJson(json);
+  factory SimpleClassOfDateTimeToDuration.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDateTimeToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDateTimeToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2074,12 +2139,12 @@ class SimpleClassNullableOfDateTimeToDuration {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToDuration.fromJson(
+  factory SimpleClassNullableOfDateTimeToDuration.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToDurationFromJson(json);
+      _$SimpleClassNullableOfDateTimeToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2090,10 +2155,12 @@ class SimpleClassOfDynamicToDuration {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToDuration.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToDurationFromJson(json);
+  factory SimpleClassOfDynamicToDuration.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDynamicToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDynamicToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2104,12 +2171,12 @@ class SimpleClassNullableOfDynamicToDuration {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToDuration.fromJson(
+  factory SimpleClassNullableOfDynamicToDuration.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToDurationFromJson(json);
+      _$SimpleClassNullableOfDynamicToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2120,11 +2187,12 @@ class SimpleClassOfEnumTypeToDuration {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToDuration.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToDurationFromJson(json);
+  factory SimpleClassOfEnumTypeToDuration.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfEnumTypeToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfEnumTypeToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2135,12 +2203,12 @@ class SimpleClassNullableOfEnumTypeToDuration {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToDuration.fromJson(
+  factory SimpleClassNullableOfEnumTypeToDuration.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToDurationFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2151,10 +2219,12 @@ class SimpleClassOfIntToDuration {
     this.value,
   );
 
-  factory SimpleClassOfIntToDuration.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToDurationFromJson(json);
+  factory SimpleClassOfIntToDuration.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfIntToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2165,12 +2235,12 @@ class SimpleClassNullableOfIntToDuration {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToDuration.fromJson(
+  factory SimpleClassNullableOfIntToDuration.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToDurationFromJson(json);
+      _$SimpleClassNullableOfIntToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2181,10 +2251,12 @@ class SimpleClassOfObjectToDuration {
     this.value,
   );
 
-  factory SimpleClassOfObjectToDuration.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToDurationFromJson(json);
+  factory SimpleClassOfObjectToDuration.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfObjectToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfObjectToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2195,12 +2267,12 @@ class SimpleClassNullableOfObjectToDuration {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToDuration.fromJson(
+  factory SimpleClassNullableOfObjectToDuration.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToDurationFromJson(json);
+      _$SimpleClassNullableOfObjectToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2211,10 +2283,12 @@ class SimpleClassOfStringToDuration {
     this.value,
   );
 
-  factory SimpleClassOfStringToDuration.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfStringToDurationFromJson(json);
+  factory SimpleClassOfStringToDuration.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfStringToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfStringToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2225,12 +2299,12 @@ class SimpleClassNullableOfStringToDuration {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToDuration.fromJson(
+  factory SimpleClassNullableOfStringToDuration.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToDurationFromJson(json);
+      _$SimpleClassNullableOfStringToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2241,10 +2315,12 @@ class SimpleClassOfUriToDuration {
     this.value,
   );
 
-  factory SimpleClassOfUriToDuration.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToDurationFromJson(json);
+  factory SimpleClassOfUriToDuration.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfUriToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2255,12 +2331,12 @@ class SimpleClassNullableOfUriToDuration {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToDuration.fromJson(
+  factory SimpleClassNullableOfUriToDuration.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToDurationFromJson(json);
+      _$SimpleClassNullableOfUriToDurationFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToDurationToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToDurationToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2271,12 +2347,12 @@ class SimpleClassOfBigIntToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToDurationNullable.fromJson(
+  factory SimpleClassOfBigIntToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToDurationNullableFromJson(json);
+      _$SimpleClassOfBigIntToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfBigIntToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2287,12 +2363,12 @@ class SimpleClassNullableOfBigIntToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToDurationNullable.fromJson(
+  factory SimpleClassNullableOfBigIntToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToDurationNullableFromJson(json);
+      _$SimpleClassNullableOfBigIntToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2303,12 +2379,12 @@ class SimpleClassOfDateTimeToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToDurationNullable.fromJson(
+  factory SimpleClassOfDateTimeToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToDurationNullableFromJson(json);
+      _$SimpleClassOfDateTimeToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDateTimeToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2319,12 +2395,12 @@ class SimpleClassNullableOfDateTimeToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToDurationNullable.fromJson(
+  factory SimpleClassNullableOfDateTimeToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToDurationNullableFromJson(json);
+      _$SimpleClassNullableOfDateTimeToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2335,12 +2411,12 @@ class SimpleClassOfDynamicToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToDurationNullable.fromJson(
+  factory SimpleClassOfDynamicToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToDurationNullableFromJson(json);
+      _$SimpleClassOfDynamicToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDynamicToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2351,12 +2427,12 @@ class SimpleClassNullableOfDynamicToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToDurationNullable.fromJson(
+  factory SimpleClassNullableOfDynamicToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToDurationNullableFromJson(json);
+      _$SimpleClassNullableOfDynamicToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2367,12 +2443,12 @@ class SimpleClassOfEnumTypeToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToDurationNullable.fromJson(
+  factory SimpleClassOfEnumTypeToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToDurationNullableFromJson(json);
+      _$SimpleClassOfEnumTypeToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfEnumTypeToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2383,12 +2459,12 @@ class SimpleClassNullableOfEnumTypeToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToDurationNullable.fromJson(
+  factory SimpleClassNullableOfEnumTypeToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToDurationNullableFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2399,12 +2475,12 @@ class SimpleClassOfIntToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassOfIntToDurationNullable.fromJson(
+  factory SimpleClassOfIntToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfIntToDurationNullableFromJson(json);
+      _$SimpleClassOfIntToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfIntToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2415,12 +2491,12 @@ class SimpleClassNullableOfIntToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToDurationNullable.fromJson(
+  factory SimpleClassNullableOfIntToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToDurationNullableFromJson(json);
+      _$SimpleClassNullableOfIntToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2431,12 +2507,12 @@ class SimpleClassOfObjectToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassOfObjectToDurationNullable.fromJson(
+  factory SimpleClassOfObjectToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToDurationNullableFromJson(json);
+      _$SimpleClassOfObjectToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfObjectToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2447,12 +2523,12 @@ class SimpleClassNullableOfObjectToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToDurationNullable.fromJson(
+  factory SimpleClassNullableOfObjectToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToDurationNullableFromJson(json);
+      _$SimpleClassNullableOfObjectToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2463,12 +2539,12 @@ class SimpleClassOfStringToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassOfStringToDurationNullable.fromJson(
+  factory SimpleClassOfStringToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfStringToDurationNullableFromJson(json);
+      _$SimpleClassOfStringToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfStringToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2479,12 +2555,12 @@ class SimpleClassNullableOfStringToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToDurationNullable.fromJson(
+  factory SimpleClassNullableOfStringToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToDurationNullableFromJson(json);
+      _$SimpleClassNullableOfStringToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2495,12 +2571,12 @@ class SimpleClassOfUriToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassOfUriToDurationNullable.fromJson(
+  factory SimpleClassOfUriToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfUriToDurationNullableFromJson(json);
+      _$SimpleClassOfUriToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfUriToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2511,12 +2587,12 @@ class SimpleClassNullableOfUriToDurationNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToDurationNullable.fromJson(
+  factory SimpleClassNullableOfUriToDurationNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToDurationNullableFromJson(json);
+      _$SimpleClassNullableOfUriToDurationNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToDurationNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToDurationNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2527,10 +2603,12 @@ class SimpleClassOfBigIntToDynamic {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToDynamic.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToDynamicFromJson(json);
+  factory SimpleClassOfBigIntToDynamic.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfBigIntToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfBigIntToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2541,12 +2619,12 @@ class SimpleClassNullableOfBigIntToDynamic {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToDynamic.fromJson(
+  factory SimpleClassNullableOfBigIntToDynamic.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToDynamicFromJson(json);
+      _$SimpleClassNullableOfBigIntToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2557,10 +2635,12 @@ class SimpleClassOfDateTimeToDynamic {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToDynamic.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToDynamicFromJson(json);
+  factory SimpleClassOfDateTimeToDynamic.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDateTimeToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDateTimeToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2571,12 +2651,12 @@ class SimpleClassNullableOfDateTimeToDynamic {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToDynamic.fromJson(
+  factory SimpleClassNullableOfDateTimeToDynamic.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToDynamicFromJson(json);
+      _$SimpleClassNullableOfDateTimeToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2587,10 +2667,12 @@ class SimpleClassOfDynamicToDynamic {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToDynamic.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToDynamicFromJson(json);
+  factory SimpleClassOfDynamicToDynamic.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDynamicToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDynamicToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2601,12 +2683,12 @@ class SimpleClassNullableOfDynamicToDynamic {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToDynamic.fromJson(
+  factory SimpleClassNullableOfDynamicToDynamic.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToDynamicFromJson(json);
+      _$SimpleClassNullableOfDynamicToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2617,10 +2699,12 @@ class SimpleClassOfEnumTypeToDynamic {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToDynamic.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToDynamicFromJson(json);
+  factory SimpleClassOfEnumTypeToDynamic.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfEnumTypeToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfEnumTypeToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2631,12 +2715,12 @@ class SimpleClassNullableOfEnumTypeToDynamic {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToDynamic.fromJson(
+  factory SimpleClassNullableOfEnumTypeToDynamic.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToDynamicFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2647,10 +2731,11 @@ class SimpleClassOfIntToDynamic {
     this.value,
   );
 
-  factory SimpleClassOfIntToDynamic.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToDynamicFromJson(json);
+  factory SimpleClassOfIntToDynamic.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfIntToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2661,12 +2746,12 @@ class SimpleClassNullableOfIntToDynamic {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToDynamic.fromJson(
+  factory SimpleClassNullableOfIntToDynamic.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToDynamicFromJson(json);
+      _$SimpleClassNullableOfIntToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2677,10 +2762,12 @@ class SimpleClassOfObjectToDynamic {
     this.value,
   );
 
-  factory SimpleClassOfObjectToDynamic.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToDynamicFromJson(json);
+  factory SimpleClassOfObjectToDynamic.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfObjectToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfObjectToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2691,12 +2778,12 @@ class SimpleClassNullableOfObjectToDynamic {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToDynamic.fromJson(
+  factory SimpleClassNullableOfObjectToDynamic.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToDynamicFromJson(json);
+      _$SimpleClassNullableOfObjectToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2707,10 +2794,12 @@ class SimpleClassOfStringToDynamic {
     this.value,
   );
 
-  factory SimpleClassOfStringToDynamic.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfStringToDynamicFromJson(json);
+  factory SimpleClassOfStringToDynamic.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfStringToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfStringToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2721,12 +2810,12 @@ class SimpleClassNullableOfStringToDynamic {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToDynamic.fromJson(
+  factory SimpleClassNullableOfStringToDynamic.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToDynamicFromJson(json);
+      _$SimpleClassNullableOfStringToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2737,10 +2826,11 @@ class SimpleClassOfUriToDynamic {
     this.value,
   );
 
-  factory SimpleClassOfUriToDynamic.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToDynamicFromJson(json);
+  factory SimpleClassOfUriToDynamic.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfUriToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2751,12 +2841,12 @@ class SimpleClassNullableOfUriToDynamic {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToDynamic.fromJson(
+  factory SimpleClassNullableOfUriToDynamic.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToDynamicFromJson(json);
+      _$SimpleClassNullableOfUriToDynamicFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToDynamicToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToDynamicToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2767,10 +2857,12 @@ class SimpleClassOfBigIntToEnumType {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToEnumType.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToEnumTypeFromJson(json);
+  factory SimpleClassOfBigIntToEnumType.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfBigIntToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfBigIntToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2781,12 +2873,12 @@ class SimpleClassNullableOfBigIntToEnumType {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToEnumType.fromJson(
+  factory SimpleClassNullableOfBigIntToEnumType.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToEnumTypeFromJson(json);
+      _$SimpleClassNullableOfBigIntToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2797,11 +2889,12 @@ class SimpleClassOfDateTimeToEnumType {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToEnumType.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToEnumTypeFromJson(json);
+  factory SimpleClassOfDateTimeToEnumType.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDateTimeToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDateTimeToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2812,12 +2905,12 @@ class SimpleClassNullableOfDateTimeToEnumType {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToEnumType.fromJson(
+  factory SimpleClassNullableOfDateTimeToEnumType.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToEnumTypeFromJson(json);
+      _$SimpleClassNullableOfDateTimeToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2828,10 +2921,12 @@ class SimpleClassOfDynamicToEnumType {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToEnumType.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToEnumTypeFromJson(json);
+  factory SimpleClassOfDynamicToEnumType.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDynamicToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDynamicToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2842,12 +2937,12 @@ class SimpleClassNullableOfDynamicToEnumType {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToEnumType.fromJson(
+  factory SimpleClassNullableOfDynamicToEnumType.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToEnumTypeFromJson(json);
+      _$SimpleClassNullableOfDynamicToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2858,11 +2953,12 @@ class SimpleClassOfEnumTypeToEnumType {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToEnumType.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToEnumTypeFromJson(json);
+  factory SimpleClassOfEnumTypeToEnumType.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfEnumTypeToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfEnumTypeToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2873,12 +2969,12 @@ class SimpleClassNullableOfEnumTypeToEnumType {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToEnumType.fromJson(
+  factory SimpleClassNullableOfEnumTypeToEnumType.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToEnumTypeFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2889,10 +2985,12 @@ class SimpleClassOfIntToEnumType {
     this.value,
   );
 
-  factory SimpleClassOfIntToEnumType.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToEnumTypeFromJson(json);
+  factory SimpleClassOfIntToEnumType.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfIntToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2903,12 +3001,12 @@ class SimpleClassNullableOfIntToEnumType {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToEnumType.fromJson(
+  factory SimpleClassNullableOfIntToEnumType.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToEnumTypeFromJson(json);
+      _$SimpleClassNullableOfIntToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2919,10 +3017,12 @@ class SimpleClassOfObjectToEnumType {
     this.value,
   );
 
-  factory SimpleClassOfObjectToEnumType.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToEnumTypeFromJson(json);
+  factory SimpleClassOfObjectToEnumType.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfObjectToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfObjectToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2933,12 +3033,12 @@ class SimpleClassNullableOfObjectToEnumType {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToEnumType.fromJson(
+  factory SimpleClassNullableOfObjectToEnumType.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToEnumTypeFromJson(json);
+      _$SimpleClassNullableOfObjectToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2949,10 +3049,12 @@ class SimpleClassOfStringToEnumType {
     this.value,
   );
 
-  factory SimpleClassOfStringToEnumType.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfStringToEnumTypeFromJson(json);
+  factory SimpleClassOfStringToEnumType.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfStringToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfStringToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2963,12 +3065,12 @@ class SimpleClassNullableOfStringToEnumType {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToEnumType.fromJson(
+  factory SimpleClassNullableOfStringToEnumType.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToEnumTypeFromJson(json);
+      _$SimpleClassNullableOfStringToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2979,10 +3081,12 @@ class SimpleClassOfUriToEnumType {
     this.value,
   );
 
-  factory SimpleClassOfUriToEnumType.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToEnumTypeFromJson(json);
+  factory SimpleClassOfUriToEnumType.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfUriToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -2993,12 +3097,12 @@ class SimpleClassNullableOfUriToEnumType {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToEnumType.fromJson(
+  factory SimpleClassNullableOfUriToEnumType.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToEnumTypeFromJson(json);
+      _$SimpleClassNullableOfUriToEnumTypeFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToEnumTypeToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToEnumTypeToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3009,12 +3113,12 @@ class SimpleClassOfBigIntToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToEnumTypeNullable.fromJson(
+  factory SimpleClassOfBigIntToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToEnumTypeNullableFromJson(json);
+      _$SimpleClassOfBigIntToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfBigIntToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3025,12 +3129,12 @@ class SimpleClassNullableOfBigIntToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToEnumTypeNullable.fromJson(
+  factory SimpleClassNullableOfBigIntToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToEnumTypeNullableFromJson(json);
+      _$SimpleClassNullableOfBigIntToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3041,12 +3145,12 @@ class SimpleClassOfDateTimeToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToEnumTypeNullable.fromJson(
+  factory SimpleClassOfDateTimeToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToEnumTypeNullableFromJson(json);
+      _$SimpleClassOfDateTimeToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDateTimeToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3057,12 +3161,12 @@ class SimpleClassNullableOfDateTimeToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToEnumTypeNullable.fromJson(
+  factory SimpleClassNullableOfDateTimeToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToEnumTypeNullableFromJson(json);
+      _$SimpleClassNullableOfDateTimeToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3073,12 +3177,12 @@ class SimpleClassOfDynamicToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToEnumTypeNullable.fromJson(
+  factory SimpleClassOfDynamicToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToEnumTypeNullableFromJson(json);
+      _$SimpleClassOfDynamicToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDynamicToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3089,12 +3193,12 @@ class SimpleClassNullableOfDynamicToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToEnumTypeNullable.fromJson(
+  factory SimpleClassNullableOfDynamicToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToEnumTypeNullableFromJson(json);
+      _$SimpleClassNullableOfDynamicToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3105,12 +3209,12 @@ class SimpleClassOfEnumTypeToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToEnumTypeNullable.fromJson(
+  factory SimpleClassOfEnumTypeToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToEnumTypeNullableFromJson(json);
+      _$SimpleClassOfEnumTypeToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfEnumTypeToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3121,12 +3225,12 @@ class SimpleClassNullableOfEnumTypeToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToEnumTypeNullable.fromJson(
+  factory SimpleClassNullableOfEnumTypeToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToEnumTypeNullableFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3137,12 +3241,12 @@ class SimpleClassOfIntToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassOfIntToEnumTypeNullable.fromJson(
+  factory SimpleClassOfIntToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfIntToEnumTypeNullableFromJson(json);
+      _$SimpleClassOfIntToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfIntToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3153,12 +3257,12 @@ class SimpleClassNullableOfIntToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToEnumTypeNullable.fromJson(
+  factory SimpleClassNullableOfIntToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToEnumTypeNullableFromJson(json);
+      _$SimpleClassNullableOfIntToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3169,12 +3273,12 @@ class SimpleClassOfObjectToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassOfObjectToEnumTypeNullable.fromJson(
+  factory SimpleClassOfObjectToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToEnumTypeNullableFromJson(json);
+      _$SimpleClassOfObjectToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfObjectToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3185,12 +3289,12 @@ class SimpleClassNullableOfObjectToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToEnumTypeNullable.fromJson(
+  factory SimpleClassNullableOfObjectToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToEnumTypeNullableFromJson(json);
+      _$SimpleClassNullableOfObjectToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3201,12 +3305,12 @@ class SimpleClassOfStringToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassOfStringToEnumTypeNullable.fromJson(
+  factory SimpleClassOfStringToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfStringToEnumTypeNullableFromJson(json);
+      _$SimpleClassOfStringToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfStringToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3217,12 +3321,12 @@ class SimpleClassNullableOfStringToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToEnumTypeNullable.fromJson(
+  factory SimpleClassNullableOfStringToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToEnumTypeNullableFromJson(json);
+      _$SimpleClassNullableOfStringToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3233,12 +3337,12 @@ class SimpleClassOfUriToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassOfUriToEnumTypeNullable.fromJson(
+  factory SimpleClassOfUriToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfUriToEnumTypeNullableFromJson(json);
+      _$SimpleClassOfUriToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfUriToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3249,12 +3353,12 @@ class SimpleClassNullableOfUriToEnumTypeNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToEnumTypeNullable.fromJson(
+  factory SimpleClassNullableOfUriToEnumTypeNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToEnumTypeNullableFromJson(json);
+      _$SimpleClassNullableOfUriToEnumTypeNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToEnumTypeNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToEnumTypeNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3265,10 +3369,11 @@ class SimpleClassOfBigIntToInt {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToIntFromJson(json);
+  factory SimpleClassOfBigIntToInt.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfBigIntToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfBigIntToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3279,12 +3384,12 @@ class SimpleClassNullableOfBigIntToInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToInt.fromJson(
+  factory SimpleClassNullableOfBigIntToInt.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToIntFromJson(json);
+      _$SimpleClassNullableOfBigIntToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3295,10 +3400,12 @@ class SimpleClassOfDateTimeToInt {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToIntFromJson(json);
+  factory SimpleClassOfDateTimeToInt.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDateTimeToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDateTimeToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3309,12 +3416,12 @@ class SimpleClassNullableOfDateTimeToInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToInt.fromJson(
+  factory SimpleClassNullableOfDateTimeToInt.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToIntFromJson(json);
+      _$SimpleClassNullableOfDateTimeToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3325,10 +3432,11 @@ class SimpleClassOfDynamicToInt {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToIntFromJson(json);
+  factory SimpleClassOfDynamicToInt.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfDynamicToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDynamicToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3339,12 +3447,12 @@ class SimpleClassNullableOfDynamicToInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToInt.fromJson(
+  factory SimpleClassNullableOfDynamicToInt.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToIntFromJson(json);
+      _$SimpleClassNullableOfDynamicToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3355,10 +3463,12 @@ class SimpleClassOfEnumTypeToInt {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToIntFromJson(json);
+  factory SimpleClassOfEnumTypeToInt.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfEnumTypeToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfEnumTypeToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3369,12 +3479,12 @@ class SimpleClassNullableOfEnumTypeToInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToInt.fromJson(
+  factory SimpleClassNullableOfEnumTypeToInt.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToIntFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3385,10 +3495,11 @@ class SimpleClassOfIntToInt {
     this.value,
   );
 
-  factory SimpleClassOfIntToInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToIntFromJson(json);
+  factory SimpleClassOfIntToInt.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfIntToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3399,10 +3510,12 @@ class SimpleClassNullableOfIntToInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToIntFromJson(json);
+  factory SimpleClassNullableOfIntToInt.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassNullableOfIntToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassNullableOfIntToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3413,10 +3526,11 @@ class SimpleClassOfObjectToInt {
     this.value,
   );
 
-  factory SimpleClassOfObjectToInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToIntFromJson(json);
+  factory SimpleClassOfObjectToInt.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfObjectToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfObjectToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3427,12 +3541,12 @@ class SimpleClassNullableOfObjectToInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToInt.fromJson(
+  factory SimpleClassNullableOfObjectToInt.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToIntFromJson(json);
+      _$SimpleClassNullableOfObjectToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3443,10 +3557,11 @@ class SimpleClassOfStringToInt {
     this.value,
   );
 
-  factory SimpleClassOfStringToInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfStringToIntFromJson(json);
+  factory SimpleClassOfStringToInt.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfStringToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfStringToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3457,12 +3572,12 @@ class SimpleClassNullableOfStringToInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToInt.fromJson(
+  factory SimpleClassNullableOfStringToInt.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToIntFromJson(json);
+      _$SimpleClassNullableOfStringToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3473,10 +3588,11 @@ class SimpleClassOfUriToInt {
     this.value,
   );
 
-  factory SimpleClassOfUriToInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToIntFromJson(json);
+  factory SimpleClassOfUriToInt.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfUriToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3487,10 +3603,12 @@ class SimpleClassNullableOfUriToInt {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToInt.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToIntFromJson(json);
+  factory SimpleClassNullableOfUriToInt.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassNullableOfUriToIntFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassNullableOfUriToIntToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToIntToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3501,12 +3619,12 @@ class SimpleClassOfBigIntToIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToIntNullable.fromJson(
+  factory SimpleClassOfBigIntToIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToIntNullableFromJson(json);
+      _$SimpleClassOfBigIntToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfBigIntToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3517,12 +3635,12 @@ class SimpleClassNullableOfBigIntToIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToIntNullable.fromJson(
+  factory SimpleClassNullableOfBigIntToIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToIntNullableFromJson(json);
+      _$SimpleClassNullableOfBigIntToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3533,12 +3651,12 @@ class SimpleClassOfDateTimeToIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToIntNullable.fromJson(
+  factory SimpleClassOfDateTimeToIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToIntNullableFromJson(json);
+      _$SimpleClassOfDateTimeToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDateTimeToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3549,12 +3667,12 @@ class SimpleClassNullableOfDateTimeToIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToIntNullable.fromJson(
+  factory SimpleClassNullableOfDateTimeToIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToIntNullableFromJson(json);
+      _$SimpleClassNullableOfDateTimeToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3565,12 +3683,12 @@ class SimpleClassOfDynamicToIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToIntNullable.fromJson(
+  factory SimpleClassOfDynamicToIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToIntNullableFromJson(json);
+      _$SimpleClassOfDynamicToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDynamicToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3581,12 +3699,12 @@ class SimpleClassNullableOfDynamicToIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToIntNullable.fromJson(
+  factory SimpleClassNullableOfDynamicToIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToIntNullableFromJson(json);
+      _$SimpleClassNullableOfDynamicToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3597,12 +3715,12 @@ class SimpleClassOfEnumTypeToIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToIntNullable.fromJson(
+  factory SimpleClassOfEnumTypeToIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToIntNullableFromJson(json);
+      _$SimpleClassOfEnumTypeToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfEnumTypeToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3613,12 +3731,12 @@ class SimpleClassNullableOfEnumTypeToIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToIntNullable.fromJson(
+  factory SimpleClassNullableOfEnumTypeToIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToIntNullableFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3629,10 +3747,12 @@ class SimpleClassOfIntToIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfIntToIntNullable.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToIntNullableFromJson(json);
+  factory SimpleClassOfIntToIntNullable.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfIntToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3643,12 +3763,12 @@ class SimpleClassNullableOfIntToIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToIntNullable.fromJson(
+  factory SimpleClassNullableOfIntToIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToIntNullableFromJson(json);
+      _$SimpleClassNullableOfIntToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3659,12 +3779,12 @@ class SimpleClassOfObjectToIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfObjectToIntNullable.fromJson(
+  factory SimpleClassOfObjectToIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToIntNullableFromJson(json);
+      _$SimpleClassOfObjectToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfObjectToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3675,12 +3795,12 @@ class SimpleClassNullableOfObjectToIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToIntNullable.fromJson(
+  factory SimpleClassNullableOfObjectToIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToIntNullableFromJson(json);
+      _$SimpleClassNullableOfObjectToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3691,12 +3811,12 @@ class SimpleClassOfStringToIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfStringToIntNullable.fromJson(
+  factory SimpleClassOfStringToIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfStringToIntNullableFromJson(json);
+      _$SimpleClassOfStringToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfStringToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3707,12 +3827,12 @@ class SimpleClassNullableOfStringToIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToIntNullable.fromJson(
+  factory SimpleClassNullableOfStringToIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToIntNullableFromJson(json);
+      _$SimpleClassNullableOfStringToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3723,10 +3843,12 @@ class SimpleClassOfUriToIntNullable {
     this.value,
   );
 
-  factory SimpleClassOfUriToIntNullable.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToIntNullableFromJson(json);
+  factory SimpleClassOfUriToIntNullable.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfUriToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3737,12 +3859,12 @@ class SimpleClassNullableOfUriToIntNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToIntNullable.fromJson(
+  factory SimpleClassNullableOfUriToIntNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToIntNullableFromJson(json);
+      _$SimpleClassNullableOfUriToIntNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToIntNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToIntNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3753,10 +3875,11 @@ class SimpleClassOfBigIntToNum {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToNum.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToNumFromJson(json);
+  factory SimpleClassOfBigIntToNum.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfBigIntToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfBigIntToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3767,12 +3890,12 @@ class SimpleClassNullableOfBigIntToNum {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToNum.fromJson(
+  factory SimpleClassNullableOfBigIntToNum.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToNumFromJson(json);
+      _$SimpleClassNullableOfBigIntToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3783,10 +3906,12 @@ class SimpleClassOfDateTimeToNum {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToNum.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToNumFromJson(json);
+  factory SimpleClassOfDateTimeToNum.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDateTimeToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDateTimeToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3797,12 +3922,12 @@ class SimpleClassNullableOfDateTimeToNum {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToNum.fromJson(
+  factory SimpleClassNullableOfDateTimeToNum.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToNumFromJson(json);
+      _$SimpleClassNullableOfDateTimeToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3813,10 +3938,11 @@ class SimpleClassOfDynamicToNum {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToNum.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToNumFromJson(json);
+  factory SimpleClassOfDynamicToNum.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfDynamicToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDynamicToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3827,12 +3953,12 @@ class SimpleClassNullableOfDynamicToNum {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToNum.fromJson(
+  factory SimpleClassNullableOfDynamicToNum.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToNumFromJson(json);
+      _$SimpleClassNullableOfDynamicToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3843,10 +3969,12 @@ class SimpleClassOfEnumTypeToNum {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToNum.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToNumFromJson(json);
+  factory SimpleClassOfEnumTypeToNum.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfEnumTypeToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfEnumTypeToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3857,12 +3985,12 @@ class SimpleClassNullableOfEnumTypeToNum {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToNum.fromJson(
+  factory SimpleClassNullableOfEnumTypeToNum.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToNumFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3873,10 +4001,11 @@ class SimpleClassOfIntToNum {
     this.value,
   );
 
-  factory SimpleClassOfIntToNum.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToNumFromJson(json);
+  factory SimpleClassOfIntToNum.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfIntToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3887,10 +4016,12 @@ class SimpleClassNullableOfIntToNum {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToNum.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToNumFromJson(json);
+  factory SimpleClassNullableOfIntToNum.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassNullableOfIntToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassNullableOfIntToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3901,10 +4032,11 @@ class SimpleClassOfObjectToNum {
     this.value,
   );
 
-  factory SimpleClassOfObjectToNum.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToNumFromJson(json);
+  factory SimpleClassOfObjectToNum.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfObjectToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfObjectToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3915,12 +4047,12 @@ class SimpleClassNullableOfObjectToNum {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToNum.fromJson(
+  factory SimpleClassNullableOfObjectToNum.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToNumFromJson(json);
+      _$SimpleClassNullableOfObjectToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3931,10 +4063,11 @@ class SimpleClassOfStringToNum {
     this.value,
   );
 
-  factory SimpleClassOfStringToNum.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfStringToNumFromJson(json);
+  factory SimpleClassOfStringToNum.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfStringToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfStringToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3945,12 +4078,12 @@ class SimpleClassNullableOfStringToNum {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToNum.fromJson(
+  factory SimpleClassNullableOfStringToNum.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToNumFromJson(json);
+      _$SimpleClassNullableOfStringToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3961,10 +4094,11 @@ class SimpleClassOfUriToNum {
     this.value,
   );
 
-  factory SimpleClassOfUriToNum.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToNumFromJson(json);
+  factory SimpleClassOfUriToNum.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfUriToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3975,10 +4109,12 @@ class SimpleClassNullableOfUriToNum {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToNum.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToNumFromJson(json);
+  factory SimpleClassNullableOfUriToNum.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassNullableOfUriToNumFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassNullableOfUriToNumToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToNumToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -3989,12 +4125,12 @@ class SimpleClassOfBigIntToNumNullable {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToNumNullable.fromJson(
+  factory SimpleClassOfBigIntToNumNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToNumNullableFromJson(json);
+      _$SimpleClassOfBigIntToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfBigIntToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4005,12 +4141,12 @@ class SimpleClassNullableOfBigIntToNumNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToNumNullable.fromJson(
+  factory SimpleClassNullableOfBigIntToNumNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToNumNullableFromJson(json);
+      _$SimpleClassNullableOfBigIntToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4021,12 +4157,12 @@ class SimpleClassOfDateTimeToNumNullable {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToNumNullable.fromJson(
+  factory SimpleClassOfDateTimeToNumNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToNumNullableFromJson(json);
+      _$SimpleClassOfDateTimeToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDateTimeToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4037,12 +4173,12 @@ class SimpleClassNullableOfDateTimeToNumNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToNumNullable.fromJson(
+  factory SimpleClassNullableOfDateTimeToNumNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToNumNullableFromJson(json);
+      _$SimpleClassNullableOfDateTimeToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4053,12 +4189,12 @@ class SimpleClassOfDynamicToNumNullable {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToNumNullable.fromJson(
+  factory SimpleClassOfDynamicToNumNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToNumNullableFromJson(json);
+      _$SimpleClassOfDynamicToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDynamicToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4069,12 +4205,12 @@ class SimpleClassNullableOfDynamicToNumNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToNumNullable.fromJson(
+  factory SimpleClassNullableOfDynamicToNumNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToNumNullableFromJson(json);
+      _$SimpleClassNullableOfDynamicToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4085,12 +4221,12 @@ class SimpleClassOfEnumTypeToNumNullable {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToNumNullable.fromJson(
+  factory SimpleClassOfEnumTypeToNumNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToNumNullableFromJson(json);
+      _$SimpleClassOfEnumTypeToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfEnumTypeToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4101,12 +4237,12 @@ class SimpleClassNullableOfEnumTypeToNumNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToNumNullable.fromJson(
+  factory SimpleClassNullableOfEnumTypeToNumNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToNumNullableFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4117,10 +4253,12 @@ class SimpleClassOfIntToNumNullable {
     this.value,
   );
 
-  factory SimpleClassOfIntToNumNullable.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToNumNullableFromJson(json);
+  factory SimpleClassOfIntToNumNullable.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfIntToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4131,12 +4269,12 @@ class SimpleClassNullableOfIntToNumNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToNumNullable.fromJson(
+  factory SimpleClassNullableOfIntToNumNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToNumNullableFromJson(json);
+      _$SimpleClassNullableOfIntToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4147,12 +4285,12 @@ class SimpleClassOfObjectToNumNullable {
     this.value,
   );
 
-  factory SimpleClassOfObjectToNumNullable.fromJson(
+  factory SimpleClassOfObjectToNumNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToNumNullableFromJson(json);
+      _$SimpleClassOfObjectToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfObjectToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4163,12 +4301,12 @@ class SimpleClassNullableOfObjectToNumNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToNumNullable.fromJson(
+  factory SimpleClassNullableOfObjectToNumNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToNumNullableFromJson(json);
+      _$SimpleClassNullableOfObjectToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4179,12 +4317,12 @@ class SimpleClassOfStringToNumNullable {
     this.value,
   );
 
-  factory SimpleClassOfStringToNumNullable.fromJson(
+  factory SimpleClassOfStringToNumNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfStringToNumNullableFromJson(json);
+      _$SimpleClassOfStringToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfStringToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4195,12 +4333,12 @@ class SimpleClassNullableOfStringToNumNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToNumNullable.fromJson(
+  factory SimpleClassNullableOfStringToNumNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToNumNullableFromJson(json);
+      _$SimpleClassNullableOfStringToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4211,10 +4349,12 @@ class SimpleClassOfUriToNumNullable {
     this.value,
   );
 
-  factory SimpleClassOfUriToNumNullable.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToNumNullableFromJson(json);
+  factory SimpleClassOfUriToNumNullable.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfUriToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4225,12 +4365,12 @@ class SimpleClassNullableOfUriToNumNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToNumNullable.fromJson(
+  factory SimpleClassNullableOfUriToNumNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToNumNullableFromJson(json);
+      _$SimpleClassNullableOfUriToNumNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToNumNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToNumNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4241,10 +4381,12 @@ class SimpleClassOfBigIntToObject {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToObject.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToObjectFromJson(json);
+  factory SimpleClassOfBigIntToObject.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfBigIntToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfBigIntToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4255,12 +4397,12 @@ class SimpleClassNullableOfBigIntToObject {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToObject.fromJson(
+  factory SimpleClassNullableOfBigIntToObject.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToObjectFromJson(json);
+      _$SimpleClassNullableOfBigIntToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4271,10 +4413,12 @@ class SimpleClassOfDateTimeToObject {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToObject.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToObjectFromJson(json);
+  factory SimpleClassOfDateTimeToObject.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDateTimeToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDateTimeToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4285,12 +4429,12 @@ class SimpleClassNullableOfDateTimeToObject {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToObject.fromJson(
+  factory SimpleClassNullableOfDateTimeToObject.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToObjectFromJson(json);
+      _$SimpleClassNullableOfDateTimeToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4301,10 +4445,12 @@ class SimpleClassOfDynamicToObject {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToObject.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToObjectFromJson(json);
+  factory SimpleClassOfDynamicToObject.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDynamicToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDynamicToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4315,12 +4461,12 @@ class SimpleClassNullableOfDynamicToObject {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToObject.fromJson(
+  factory SimpleClassNullableOfDynamicToObject.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToObjectFromJson(json);
+      _$SimpleClassNullableOfDynamicToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4331,10 +4477,12 @@ class SimpleClassOfEnumTypeToObject {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToObject.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToObjectFromJson(json);
+  factory SimpleClassOfEnumTypeToObject.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfEnumTypeToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfEnumTypeToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4345,12 +4493,12 @@ class SimpleClassNullableOfEnumTypeToObject {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToObject.fromJson(
+  factory SimpleClassNullableOfEnumTypeToObject.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToObjectFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4361,10 +4509,11 @@ class SimpleClassOfIntToObject {
     this.value,
   );
 
-  factory SimpleClassOfIntToObject.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToObjectFromJson(json);
+  factory SimpleClassOfIntToObject.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfIntToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4375,12 +4524,12 @@ class SimpleClassNullableOfIntToObject {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToObject.fromJson(
+  factory SimpleClassNullableOfIntToObject.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToObjectFromJson(json);
+      _$SimpleClassNullableOfIntToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4391,10 +4540,12 @@ class SimpleClassOfObjectToObject {
     this.value,
   );
 
-  factory SimpleClassOfObjectToObject.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToObjectFromJson(json);
+  factory SimpleClassOfObjectToObject.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfObjectToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfObjectToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4405,12 +4556,12 @@ class SimpleClassNullableOfObjectToObject {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToObject.fromJson(
+  factory SimpleClassNullableOfObjectToObject.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToObjectFromJson(json);
+      _$SimpleClassNullableOfObjectToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4421,10 +4572,12 @@ class SimpleClassOfStringToObject {
     this.value,
   );
 
-  factory SimpleClassOfStringToObject.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfStringToObjectFromJson(json);
+  factory SimpleClassOfStringToObject.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfStringToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfStringToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4435,12 +4588,12 @@ class SimpleClassNullableOfStringToObject {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToObject.fromJson(
+  factory SimpleClassNullableOfStringToObject.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToObjectFromJson(json);
+      _$SimpleClassNullableOfStringToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4451,10 +4604,11 @@ class SimpleClassOfUriToObject {
     this.value,
   );
 
-  factory SimpleClassOfUriToObject.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToObjectFromJson(json);
+  factory SimpleClassOfUriToObject.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfUriToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4465,12 +4619,12 @@ class SimpleClassNullableOfUriToObject {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToObject.fromJson(
+  factory SimpleClassNullableOfUriToObject.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToObjectFromJson(json);
+      _$SimpleClassNullableOfUriToObjectFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToObjectToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToObjectToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4481,12 +4635,12 @@ class SimpleClassOfBigIntToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToObjectNullable.fromJson(
+  factory SimpleClassOfBigIntToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToObjectNullableFromJson(json);
+      _$SimpleClassOfBigIntToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfBigIntToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4497,12 +4651,12 @@ class SimpleClassNullableOfBigIntToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToObjectNullable.fromJson(
+  factory SimpleClassNullableOfBigIntToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToObjectNullableFromJson(json);
+      _$SimpleClassNullableOfBigIntToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4513,12 +4667,12 @@ class SimpleClassOfDateTimeToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToObjectNullable.fromJson(
+  factory SimpleClassOfDateTimeToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToObjectNullableFromJson(json);
+      _$SimpleClassOfDateTimeToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDateTimeToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4529,12 +4683,12 @@ class SimpleClassNullableOfDateTimeToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToObjectNullable.fromJson(
+  factory SimpleClassNullableOfDateTimeToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToObjectNullableFromJson(json);
+      _$SimpleClassNullableOfDateTimeToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4545,12 +4699,12 @@ class SimpleClassOfDynamicToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToObjectNullable.fromJson(
+  factory SimpleClassOfDynamicToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToObjectNullableFromJson(json);
+      _$SimpleClassOfDynamicToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDynamicToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4561,12 +4715,12 @@ class SimpleClassNullableOfDynamicToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToObjectNullable.fromJson(
+  factory SimpleClassNullableOfDynamicToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToObjectNullableFromJson(json);
+      _$SimpleClassNullableOfDynamicToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4577,12 +4731,12 @@ class SimpleClassOfEnumTypeToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToObjectNullable.fromJson(
+  factory SimpleClassOfEnumTypeToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToObjectNullableFromJson(json);
+      _$SimpleClassOfEnumTypeToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfEnumTypeToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4593,12 +4747,12 @@ class SimpleClassNullableOfEnumTypeToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToObjectNullable.fromJson(
+  factory SimpleClassNullableOfEnumTypeToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToObjectNullableFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4609,12 +4763,12 @@ class SimpleClassOfIntToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassOfIntToObjectNullable.fromJson(
+  factory SimpleClassOfIntToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfIntToObjectNullableFromJson(json);
+      _$SimpleClassOfIntToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfIntToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4625,12 +4779,12 @@ class SimpleClassNullableOfIntToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToObjectNullable.fromJson(
+  factory SimpleClassNullableOfIntToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToObjectNullableFromJson(json);
+      _$SimpleClassNullableOfIntToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4641,12 +4795,12 @@ class SimpleClassOfObjectToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassOfObjectToObjectNullable.fromJson(
+  factory SimpleClassOfObjectToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToObjectNullableFromJson(json);
+      _$SimpleClassOfObjectToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfObjectToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4657,12 +4811,12 @@ class SimpleClassNullableOfObjectToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToObjectNullable.fromJson(
+  factory SimpleClassNullableOfObjectToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToObjectNullableFromJson(json);
+      _$SimpleClassNullableOfObjectToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4673,12 +4827,12 @@ class SimpleClassOfStringToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassOfStringToObjectNullable.fromJson(
+  factory SimpleClassOfStringToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfStringToObjectNullableFromJson(json);
+      _$SimpleClassOfStringToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfStringToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4689,12 +4843,12 @@ class SimpleClassNullableOfStringToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToObjectNullable.fromJson(
+  factory SimpleClassNullableOfStringToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToObjectNullableFromJson(json);
+      _$SimpleClassNullableOfStringToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4705,12 +4859,12 @@ class SimpleClassOfUriToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassOfUriToObjectNullable.fromJson(
+  factory SimpleClassOfUriToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfUriToObjectNullableFromJson(json);
+      _$SimpleClassOfUriToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfUriToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4721,12 +4875,12 @@ class SimpleClassNullableOfUriToObjectNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToObjectNullable.fromJson(
+  factory SimpleClassNullableOfUriToObjectNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToObjectNullableFromJson(json);
+      _$SimpleClassNullableOfUriToObjectNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToObjectNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToObjectNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4737,10 +4891,12 @@ class SimpleClassOfBigIntToString {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToString.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToStringFromJson(json);
+  factory SimpleClassOfBigIntToString.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfBigIntToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfBigIntToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4751,12 +4907,12 @@ class SimpleClassNullableOfBigIntToString {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToString.fromJson(
+  factory SimpleClassNullableOfBigIntToString.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToStringFromJson(json);
+      _$SimpleClassNullableOfBigIntToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4767,10 +4923,12 @@ class SimpleClassOfDateTimeToString {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToString.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToStringFromJson(json);
+  factory SimpleClassOfDateTimeToString.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDateTimeToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDateTimeToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4781,12 +4939,12 @@ class SimpleClassNullableOfDateTimeToString {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToString.fromJson(
+  factory SimpleClassNullableOfDateTimeToString.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToStringFromJson(json);
+      _$SimpleClassNullableOfDateTimeToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4797,10 +4955,12 @@ class SimpleClassOfDynamicToString {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToString.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToStringFromJson(json);
+  factory SimpleClassOfDynamicToString.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDynamicToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDynamicToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4811,12 +4971,12 @@ class SimpleClassNullableOfDynamicToString {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToString.fromJson(
+  factory SimpleClassNullableOfDynamicToString.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToStringFromJson(json);
+      _$SimpleClassNullableOfDynamicToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4827,10 +4987,12 @@ class SimpleClassOfEnumTypeToString {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToString.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToStringFromJson(json);
+  factory SimpleClassOfEnumTypeToString.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfEnumTypeToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfEnumTypeToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4841,12 +5003,12 @@ class SimpleClassNullableOfEnumTypeToString {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToString.fromJson(
+  factory SimpleClassNullableOfEnumTypeToString.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToStringFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4857,10 +5019,11 @@ class SimpleClassOfIntToString {
     this.value,
   );
 
-  factory SimpleClassOfIntToString.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToStringFromJson(json);
+  factory SimpleClassOfIntToString.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfIntToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4871,12 +5034,12 @@ class SimpleClassNullableOfIntToString {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToString.fromJson(
+  factory SimpleClassNullableOfIntToString.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToStringFromJson(json);
+      _$SimpleClassNullableOfIntToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4887,10 +5050,12 @@ class SimpleClassOfObjectToString {
     this.value,
   );
 
-  factory SimpleClassOfObjectToString.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToStringFromJson(json);
+  factory SimpleClassOfObjectToString.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfObjectToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfObjectToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4901,12 +5066,12 @@ class SimpleClassNullableOfObjectToString {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToString.fromJson(
+  factory SimpleClassNullableOfObjectToString.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToStringFromJson(json);
+      _$SimpleClassNullableOfObjectToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4917,10 +5082,12 @@ class SimpleClassOfStringToString {
     this.value,
   );
 
-  factory SimpleClassOfStringToString.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfStringToStringFromJson(json);
+  factory SimpleClassOfStringToString.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfStringToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfStringToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4931,12 +5098,12 @@ class SimpleClassNullableOfStringToString {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToString.fromJson(
+  factory SimpleClassNullableOfStringToString.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToStringFromJson(json);
+      _$SimpleClassNullableOfStringToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4947,10 +5114,11 @@ class SimpleClassOfUriToString {
     this.value,
   );
 
-  factory SimpleClassOfUriToString.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToStringFromJson(json);
+  factory SimpleClassOfUriToString.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfUriToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4961,12 +5129,12 @@ class SimpleClassNullableOfUriToString {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToString.fromJson(
+  factory SimpleClassNullableOfUriToString.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToStringFromJson(json);
+      _$SimpleClassNullableOfUriToStringFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToStringToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToStringToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4977,12 +5145,12 @@ class SimpleClassOfBigIntToStringNullable {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToStringNullable.fromJson(
+  factory SimpleClassOfBigIntToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToStringNullableFromJson(json);
+      _$SimpleClassOfBigIntToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfBigIntToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -4993,12 +5161,12 @@ class SimpleClassNullableOfBigIntToStringNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToStringNullable.fromJson(
+  factory SimpleClassNullableOfBigIntToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToStringNullableFromJson(json);
+      _$SimpleClassNullableOfBigIntToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5009,12 +5177,12 @@ class SimpleClassOfDateTimeToStringNullable {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToStringNullable.fromJson(
+  factory SimpleClassOfDateTimeToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToStringNullableFromJson(json);
+      _$SimpleClassOfDateTimeToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDateTimeToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5025,12 +5193,12 @@ class SimpleClassNullableOfDateTimeToStringNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToStringNullable.fromJson(
+  factory SimpleClassNullableOfDateTimeToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToStringNullableFromJson(json);
+      _$SimpleClassNullableOfDateTimeToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5041,12 +5209,12 @@ class SimpleClassOfDynamicToStringNullable {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToStringNullable.fromJson(
+  factory SimpleClassOfDynamicToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToStringNullableFromJson(json);
+      _$SimpleClassOfDynamicToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDynamicToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5057,12 +5225,12 @@ class SimpleClassNullableOfDynamicToStringNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToStringNullable.fromJson(
+  factory SimpleClassNullableOfDynamicToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToStringNullableFromJson(json);
+      _$SimpleClassNullableOfDynamicToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5073,12 +5241,12 @@ class SimpleClassOfEnumTypeToStringNullable {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToStringNullable.fromJson(
+  factory SimpleClassOfEnumTypeToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToStringNullableFromJson(json);
+      _$SimpleClassOfEnumTypeToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfEnumTypeToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5089,12 +5257,12 @@ class SimpleClassNullableOfEnumTypeToStringNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToStringNullable.fromJson(
+  factory SimpleClassNullableOfEnumTypeToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToStringNullableFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5105,12 +5273,12 @@ class SimpleClassOfIntToStringNullable {
     this.value,
   );
 
-  factory SimpleClassOfIntToStringNullable.fromJson(
+  factory SimpleClassOfIntToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfIntToStringNullableFromJson(json);
+      _$SimpleClassOfIntToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfIntToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5121,12 +5289,12 @@ class SimpleClassNullableOfIntToStringNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToStringNullable.fromJson(
+  factory SimpleClassNullableOfIntToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToStringNullableFromJson(json);
+      _$SimpleClassNullableOfIntToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5137,12 +5305,12 @@ class SimpleClassOfObjectToStringNullable {
     this.value,
   );
 
-  factory SimpleClassOfObjectToStringNullable.fromJson(
+  factory SimpleClassOfObjectToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToStringNullableFromJson(json);
+      _$SimpleClassOfObjectToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfObjectToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5153,12 +5321,12 @@ class SimpleClassNullableOfObjectToStringNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToStringNullable.fromJson(
+  factory SimpleClassNullableOfObjectToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToStringNullableFromJson(json);
+      _$SimpleClassNullableOfObjectToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5169,12 +5337,12 @@ class SimpleClassOfStringToStringNullable {
     this.value,
   );
 
-  factory SimpleClassOfStringToStringNullable.fromJson(
+  factory SimpleClassOfStringToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfStringToStringNullableFromJson(json);
+      _$SimpleClassOfStringToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfStringToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5185,12 +5353,12 @@ class SimpleClassNullableOfStringToStringNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToStringNullable.fromJson(
+  factory SimpleClassNullableOfStringToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToStringNullableFromJson(json);
+      _$SimpleClassNullableOfStringToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5201,12 +5369,12 @@ class SimpleClassOfUriToStringNullable {
     this.value,
   );
 
-  factory SimpleClassOfUriToStringNullable.fromJson(
+  factory SimpleClassOfUriToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfUriToStringNullableFromJson(json);
+      _$SimpleClassOfUriToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfUriToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5217,12 +5385,12 @@ class SimpleClassNullableOfUriToStringNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToStringNullable.fromJson(
+  factory SimpleClassNullableOfUriToStringNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToStringNullableFromJson(json);
+      _$SimpleClassNullableOfUriToStringNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToStringNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToStringNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5233,10 +5401,11 @@ class SimpleClassOfBigIntToUri {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToUri.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToUriFromJson(json);
+  factory SimpleClassOfBigIntToUri.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfBigIntToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfBigIntToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5247,12 +5416,12 @@ class SimpleClassNullableOfBigIntToUri {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToUri.fromJson(
+  factory SimpleClassNullableOfBigIntToUri.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToUriFromJson(json);
+      _$SimpleClassNullableOfBigIntToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5263,10 +5432,12 @@ class SimpleClassOfDateTimeToUri {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToUri.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToUriFromJson(json);
+  factory SimpleClassOfDateTimeToUri.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfDateTimeToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDateTimeToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5277,12 +5448,12 @@ class SimpleClassNullableOfDateTimeToUri {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToUri.fromJson(
+  factory SimpleClassNullableOfDateTimeToUri.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToUriFromJson(json);
+      _$SimpleClassNullableOfDateTimeToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5293,10 +5464,11 @@ class SimpleClassOfDynamicToUri {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToUri.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToUriFromJson(json);
+  factory SimpleClassOfDynamicToUri.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfDynamicToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfDynamicToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5307,12 +5479,12 @@ class SimpleClassNullableOfDynamicToUri {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToUri.fromJson(
+  factory SimpleClassNullableOfDynamicToUri.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToUriFromJson(json);
+      _$SimpleClassNullableOfDynamicToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5323,10 +5495,12 @@ class SimpleClassOfEnumTypeToUri {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToUri.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToUriFromJson(json);
+  factory SimpleClassOfEnumTypeToUri.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfEnumTypeToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfEnumTypeToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5337,12 +5511,12 @@ class SimpleClassNullableOfEnumTypeToUri {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToUri.fromJson(
+  factory SimpleClassNullableOfEnumTypeToUri.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToUriFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5353,10 +5527,11 @@ class SimpleClassOfIntToUri {
     this.value,
   );
 
-  factory SimpleClassOfIntToUri.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToUriFromJson(json);
+  factory SimpleClassOfIntToUri.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfIntToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5367,10 +5542,12 @@ class SimpleClassNullableOfIntToUri {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToUri.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToUriFromJson(json);
+  factory SimpleClassNullableOfIntToUri.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassNullableOfIntToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassNullableOfIntToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5381,10 +5558,11 @@ class SimpleClassOfObjectToUri {
     this.value,
   );
 
-  factory SimpleClassOfObjectToUri.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToUriFromJson(json);
+  factory SimpleClassOfObjectToUri.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfObjectToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfObjectToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5395,12 +5573,12 @@ class SimpleClassNullableOfObjectToUri {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToUri.fromJson(
+  factory SimpleClassNullableOfObjectToUri.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToUriFromJson(json);
+      _$SimpleClassNullableOfObjectToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5411,10 +5589,11 @@ class SimpleClassOfStringToUri {
     this.value,
   );
 
-  factory SimpleClassOfStringToUri.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfStringToUriFromJson(json);
+  factory SimpleClassOfStringToUri.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfStringToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfStringToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5425,12 +5604,12 @@ class SimpleClassNullableOfStringToUri {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToUri.fromJson(
+  factory SimpleClassNullableOfStringToUri.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToUriFromJson(json);
+      _$SimpleClassNullableOfStringToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5441,10 +5620,11 @@ class SimpleClassOfUriToUri {
     this.value,
   );
 
-  factory SimpleClassOfUriToUri.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToUriFromJson(json);
+  factory SimpleClassOfUriToUri.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassOfUriToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5455,10 +5635,12 @@ class SimpleClassNullableOfUriToUri {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToUri.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToUriFromJson(json);
+  factory SimpleClassNullableOfUriToUri.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassNullableOfUriToUriFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassNullableOfUriToUriToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToUriToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5469,12 +5651,12 @@ class SimpleClassOfBigIntToUriNullable {
     this.value,
   );
 
-  factory SimpleClassOfBigIntToUriNullable.fromJson(
+  factory SimpleClassOfBigIntToUriNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfBigIntToUriNullableFromJson(json);
+      _$SimpleClassOfBigIntToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfBigIntToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfBigIntToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5485,12 +5667,12 @@ class SimpleClassNullableOfBigIntToUriNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfBigIntToUriNullable.fromJson(
+  factory SimpleClassNullableOfBigIntToUriNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfBigIntToUriNullableFromJson(json);
+      _$SimpleClassNullableOfBigIntToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfBigIntToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfBigIntToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5501,12 +5683,12 @@ class SimpleClassOfDateTimeToUriNullable {
     this.value,
   );
 
-  factory SimpleClassOfDateTimeToUriNullable.fromJson(
+  factory SimpleClassOfDateTimeToUriNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDateTimeToUriNullableFromJson(json);
+      _$SimpleClassOfDateTimeToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDateTimeToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDateTimeToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5517,12 +5699,12 @@ class SimpleClassNullableOfDateTimeToUriNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDateTimeToUriNullable.fromJson(
+  factory SimpleClassNullableOfDateTimeToUriNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDateTimeToUriNullableFromJson(json);
+      _$SimpleClassNullableOfDateTimeToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDateTimeToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDateTimeToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5533,12 +5715,12 @@ class SimpleClassOfDynamicToUriNullable {
     this.value,
   );
 
-  factory SimpleClassOfDynamicToUriNullable.fromJson(
+  factory SimpleClassOfDynamicToUriNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfDynamicToUriNullableFromJson(json);
+      _$SimpleClassOfDynamicToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfDynamicToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfDynamicToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5549,12 +5731,12 @@ class SimpleClassNullableOfDynamicToUriNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfDynamicToUriNullable.fromJson(
+  factory SimpleClassNullableOfDynamicToUriNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfDynamicToUriNullableFromJson(json);
+      _$SimpleClassNullableOfDynamicToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfDynamicToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfDynamicToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5565,12 +5747,12 @@ class SimpleClassOfEnumTypeToUriNullable {
     this.value,
   );
 
-  factory SimpleClassOfEnumTypeToUriNullable.fromJson(
+  factory SimpleClassOfEnumTypeToUriNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfEnumTypeToUriNullableFromJson(json);
+      _$SimpleClassOfEnumTypeToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfEnumTypeToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfEnumTypeToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5581,12 +5763,12 @@ class SimpleClassNullableOfEnumTypeToUriNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfEnumTypeToUriNullable.fromJson(
+  factory SimpleClassNullableOfEnumTypeToUriNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfEnumTypeToUriNullableFromJson(json);
+      _$SimpleClassNullableOfEnumTypeToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfEnumTypeToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfEnumTypeToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5597,10 +5779,12 @@ class SimpleClassOfIntToUriNullable {
     this.value,
   );
 
-  factory SimpleClassOfIntToUriNullable.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfIntToUriNullableFromJson(json);
+  factory SimpleClassOfIntToUriNullable.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfIntToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfIntToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfIntToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5611,12 +5795,12 @@ class SimpleClassNullableOfIntToUriNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfIntToUriNullable.fromJson(
+  factory SimpleClassNullableOfIntToUriNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfIntToUriNullableFromJson(json);
+      _$SimpleClassNullableOfIntToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfIntToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfIntToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5627,12 +5811,12 @@ class SimpleClassOfObjectToUriNullable {
     this.value,
   );
 
-  factory SimpleClassOfObjectToUriNullable.fromJson(
+  factory SimpleClassOfObjectToUriNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfObjectToUriNullableFromJson(json);
+      _$SimpleClassOfObjectToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfObjectToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfObjectToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5643,12 +5827,12 @@ class SimpleClassNullableOfObjectToUriNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfObjectToUriNullable.fromJson(
+  factory SimpleClassNullableOfObjectToUriNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfObjectToUriNullableFromJson(json);
+      _$SimpleClassNullableOfObjectToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfObjectToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfObjectToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5659,12 +5843,12 @@ class SimpleClassOfStringToUriNullable {
     this.value,
   );
 
-  factory SimpleClassOfStringToUriNullable.fromJson(
+  factory SimpleClassOfStringToUriNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassOfStringToUriNullableFromJson(json);
+      _$SimpleClassOfStringToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassOfStringToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfStringToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5675,12 +5859,12 @@ class SimpleClassNullableOfStringToUriNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfStringToUriNullable.fromJson(
+  factory SimpleClassNullableOfStringToUriNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfStringToUriNullableFromJson(json);
+      _$SimpleClassNullableOfStringToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfStringToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfStringToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5691,10 +5875,12 @@ class SimpleClassOfUriToUriNullable {
     this.value,
   );
 
-  factory SimpleClassOfUriToUriNullable.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassOfUriToUriNullableFromJson(json);
+  factory SimpleClassOfUriToUriNullable.fromDynamoJson(
+          Map<String, Object?> json) =>
+      _$SimpleClassOfUriToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassOfUriToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassOfUriToUriNullableToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -5705,10 +5891,10 @@ class SimpleClassNullableOfUriToUriNullable {
     this.value,
   );
 
-  factory SimpleClassNullableOfUriToUriNullable.fromJson(
+  factory SimpleClassNullableOfUriToUriNullable.fromDynamoJson(
           Map<String, Object?> json) =>
-      _$SimpleClassNullableOfUriToUriNullableFromJson(json);
+      _$SimpleClassNullableOfUriToUriNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() =>
-      _$SimpleClassNullableOfUriToUriNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableOfUriToUriNullableToDynamoJson(this);
 }

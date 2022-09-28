@@ -33,8 +33,8 @@ class Issue559Regression {
     required this.status,
   });
 
-  factory Issue559Regression.fromJson(Map<String, dynamic> json) =>
-      _$Issue559RegressionFromJson(json);
+  factory Issue559Regression.fromDynamoJson(Map<String, dynamic> json) =>
+      _$Issue559RegressionFromDynamoJson(json);
 
   @DynamoKey(
     disallowNullValue: true,
@@ -64,7 +64,8 @@ class Issue1145RegressionA {
     required this.status,
   });
 
-  Map<String, dynamic> toJson() => _$Issue1145RegressionAToJson(this);
+  Map<String, dynamic> toDynamoJson() =>
+      _$Issue1145RegressionAToDynamoJson(this);
 
   final Map<Issue1145RegressionEnum, bool> status;
 }
@@ -77,7 +78,8 @@ class Issue1145RegressionB {
     required this.status,
   });
 
-  Map<String, dynamic> toJson() => _$Issue1145RegressionBToJson(this);
+  Map<String, dynamic> toDynamoJson() =>
+      _$Issue1145RegressionBToDynamoJson(this);
 
   final List<Issue1145RegressionEnum?> status;
 }

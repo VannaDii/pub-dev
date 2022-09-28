@@ -5,10 +5,10 @@
 part of 'default_value.g_any_map__checked.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
-DefaultValue _$DefaultValueFromJson(Map json) => $checkedCreate(
+DefaultValue _$DefaultValueFromDynamoJson(Map json) => $checkedCreate(
       'DefaultValue',
       json,
       ($checkedConvert) {
@@ -70,13 +70,13 @@ DefaultValue _$DefaultValueFromJson(Map json) => $checkedCreate(
               'valueFromFunction',
               (v) => v == null
                   ? const ConstClass('value')
-                  : constClassFromJson(v as String)),
+                  : constClassFromDynamoJson(v as String)),
         );
         return val;
       },
     );
 
-Map<String, dynamic> _$DefaultValueToJson(DefaultValue instance) =>
+Map<String, dynamic> _$DefaultValueToDynamoJson(DefaultValue instance) =>
     <String, dynamic>{
       'fieldBool': instance.fieldBool,
       'fieldString': instance.fieldString,
@@ -91,10 +91,10 @@ Map<String, dynamic> _$DefaultValueToJson(DefaultValue instance) =>
       'fieldMapListString': instance.fieldMapListString,
       'durationField': instance.durationField.inMicroseconds,
       'fieldEnum': _$GreekEnumMap[instance.fieldEnum]!,
-      'constClass': instance.constClass,
+      'constClass': instance.constClass.toDynamoJson(),
       'valueFromConverter':
           const ConstClassConverter().toDynamoJson(instance.valueFromConverter),
-      'valueFromFunction': constClassToJson(instance.valueFromFunction),
+      'valueFromFunction': constClassToDynamoJson(instance.valueFromFunction),
     };
 
 const _$GreekEnumMap = {

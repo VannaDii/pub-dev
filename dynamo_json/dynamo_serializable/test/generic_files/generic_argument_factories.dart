@@ -20,18 +20,18 @@ class GenericClassWithHelpers<T, S> {
     this.someSet,
   );
 
-  factory GenericClassWithHelpers.fromJson(
+  factory GenericClassWithHelpers.fromDynamoJson(
     Map<String, dynamic> json,
     T Function(Object? json) fromDynamoJsonT,
     S Function(Object? json) fromJsonS,
   ) =>
-      _$GenericClassWithHelpersFromJson(json, fromDynamoJsonT, fromJsonS);
+      _$GenericClassWithHelpersFromDynamoJson(json, fromDynamoJsonT, fromJsonS);
 
-  Map<String, dynamic> toJson(
+  Map<String, dynamic> toDynamoJson(
     Object? Function(T value) toDynamoJsonT,
     Object? Function(S value) toDynamoJsonS,
   ) =>
-      _$GenericClassWithHelpersToJson(this, toDynamoJsonT, toDynamoJsonS);
+      _$GenericClassWithHelpersToDynamoJson(this, toDynamoJsonT, toDynamoJsonS);
 }
 
 @DynamoSerializable()
@@ -45,8 +45,8 @@ class ConcreteClass {
 
   ConcreteClass(this.value, this.value2, this.value3);
 
-  factory ConcreteClass.fromJson(Map<String, dynamic> json) =>
-      _$ConcreteClassFromJson(json);
+  factory ConcreteClass.fromDynamoJson(Map<String, dynamic> json) =>
+      _$ConcreteClassFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$ConcreteClassToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$ConcreteClassToDynamoJson(this);
 }

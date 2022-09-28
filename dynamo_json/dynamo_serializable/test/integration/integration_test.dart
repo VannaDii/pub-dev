@@ -335,7 +335,8 @@ void main() {
     final cls =
         Issue1145RegressionA(status: {Issue1145RegressionEnum.gamma: true});
     // Due to issue 1145 this resulted in Map<String?, dynamic>
-    expect(cls.toJson()['status'], const TypeMatcher<Map<String, dynamic>>());
+    expect(cls.toDynamoJson()['status'],
+        const TypeMatcher<Map<String, dynamic>>());
   });
 
   test(
@@ -343,24 +344,24 @@ void main() {
       ' nullable entries', () {
     final cls = Issue1145RegressionB(status: [Issue1145RegressionEnum.gamma]);
     // Issue 1145 should not have affected nullable enums
-    expect(cls.toJson()['status'], const TypeMatcher<List<String?>>());
+    expect(cls.toDynamoJson()['status'], const TypeMatcher<List<String?>>());
   });
 
   test('unknown as null for enum', () {
     expect(
-      () => Issue559Regression.fromJson({}).status,
+      () => Issue559Regression.fromDynamoJson({}).status,
       throwsA(isA<MissingRequiredKeysException>()),
     );
     expect(
-      () => Issue559Regression.fromJson({'status': null}).status,
+      () => Issue559Regression.fromDynamoJson({'status': null}).status,
       throwsA(isA<DisallowedNullValueException>()),
     );
     expect(
-      Issue559Regression.fromJson({'status': 'gamma'}).status,
+      Issue559Regression.fromDynamoJson({'status': 'gamma'}).status,
       Issue559RegressionEnum.gamma,
     );
     expect(
-      Issue559Regression.fromJson({'status': 'bob'}).status,
+      Issue559Regression.fromDynamoJson({'status': 'bob'}).status,
       isNull,
     );
   });

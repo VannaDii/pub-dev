@@ -14,10 +14,10 @@ class SimpleClass {
     this.value,
   );
 
-  factory SimpleClass.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassFromJson(json);
+  factory SimpleClass.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassToJson(this);
+  Map<String, Object?> toDynamoJson() => _$SimpleClassToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -28,8 +28,9 @@ class SimpleClassNullable {
     this.value,
   );
 
-  factory SimpleClassNullable.fromJson(Map<String, Object?> json) =>
-      _$SimpleClassNullableFromJson(json);
+  factory SimpleClassNullable.fromDynamoJson(Map<String, Object?> json) =>
+      _$SimpleClassNullableFromDynamoJson(json);
 
-  Map<String, Object?> toJson() => _$SimpleClassNullableToJson(this);
+  Map<String, Object?> toDynamoJson() =>
+      _$SimpleClassNullableToDynamoJson(this);
 }

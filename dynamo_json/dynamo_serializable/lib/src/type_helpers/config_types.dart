@@ -44,10 +44,8 @@ class ClassConfig {
   final bool checked;
   final String constructor;
   final bool createFactory;
-  final bool createToDynamoJson;
   final bool createFieldMap;
   final bool disallowUnrecognizedKeys;
-  final bool explicitToDynamoJson;
   final FieldRename fieldRename;
   final bool genericArgumentFactories;
   final bool ignoreUnannotated;
@@ -60,10 +58,8 @@ class ClassConfig {
     required this.checked,
     required this.constructor,
     required this.createFactory,
-    required this.createToDynamoJson,
     required this.createFieldMap,
     required this.disallowUnrecognizedKeys,
-    required this.explicitToDynamoJson,
     required this.fieldRename,
     required this.genericArgumentFactories,
     required this.ignoreUnannotated,
@@ -82,12 +78,8 @@ class ClassConfig {
             config.createFieldMap ?? ClassConfig.defaults.createFieldMap,
         createFactory:
             config.createFactory ?? ClassConfig.defaults.createFactory,
-        createToDynamoJson: config.createToDynamoJson ??
-            ClassConfig.defaults.createToDynamoJson,
         ignoreUnannotated:
             config.ignoreUnannotated ?? ClassConfig.defaults.ignoreUnannotated,
-        explicitToDynamoJson: config.explicitToDynamoJson ??
-            ClassConfig.defaults.explicitToDynamoJson,
         includeIfNull:
             config.includeIfNull ?? ClassConfig.defaults.includeIfNull,
         genericArgumentFactories: config.genericArgumentFactories ??
@@ -105,10 +97,8 @@ class ClassConfig {
     checked: false,
     constructor: '',
     createFactory: true,
-    createToDynamoJson: true,
     createFieldMap: false,
     disallowUnrecognizedKeys: false,
-    explicitToDynamoJson: false,
     fieldRename: FieldRename.none,
     genericArgumentFactories: false,
     ignoreUnannotated: false,
@@ -120,10 +110,8 @@ class ClassConfig {
         anyMap: anyMap,
         constructor: constructor,
         createFactory: createFactory,
-        createToDynamoJson: createToDynamoJson,
         createFieldMap: createFieldMap,
         ignoreUnannotated: ignoreUnannotated,
-        explicitToDynamoJson: explicitToDynamoJson,
         includeIfNull: includeIfNull,
         genericArgumentFactories: genericArgumentFactories,
         fieldRename: fieldRename,

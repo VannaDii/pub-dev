@@ -12,15 +12,15 @@ import 'default_value_interface.dart'
         Greek,
         ConstClass,
         ConstClassConverter,
-        constClassFromJson,
-        constClassToJson;
+        constClassFromDynamoJson,
+        constClassToDynamoJson;
 
 part 'default_value.g.dart';
 
 const _intValue = 42;
 
-dvi.DefaultValue fromJson(Map<String, dynamic> json) =>
-    _$DefaultValueFromJson(json);
+dvi.DefaultValue fromDynamoJson(Map<String, dynamic> json) =>
+    _$DefaultValueFromDynamoJson(json);
 
 @DynamoSerializable()
 class DefaultValue implements dvi.DefaultValue {
@@ -69,7 +69,9 @@ class DefaultValue implements dvi.DefaultValue {
   @ConstClassConverter()
   ConstClass valueFromConverter;
 
-  @DynamoKey(fromDynamoJson: constClassFromJson, toDynamoJson: constClassToJson)
+  @DynamoKey(
+      fromDynamoJson: constClassFromDynamoJson,
+      toDynamoJson: constClassToDynamoJson)
   ConstClass valueFromFunction;
 
   DefaultValue(
@@ -92,7 +94,7 @@ class DefaultValue implements dvi.DefaultValue {
   });
 
   factory DefaultValue.fromDynamoJson(Map<String, dynamic> json) =>
-      _$DefaultValueFromJson(json);
+      _$DefaultValueFromDynamoJson(json);
 
-  Map<String, dynamic> toDynamoJson() => _$DefaultValueToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$DefaultValueToDynamoJson(this);
 }

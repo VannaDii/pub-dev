@@ -11,33 +11,38 @@ part 'generic_class.g.dart';
 
 @DynamoSerializable()
 class GenericClass<T extends num, S> {
-  @DynamoKey(fromDynamoJson: _dataFromJson, toDynamoJson: _dataToJson)
+  @DynamoKey(
+      fromDynamoJson: _dataFromDynamoJson, toDynamoJson: _dataToDynamoJson)
   Object? fieldObject;
 
-  @DynamoKey(fromDynamoJson: _dataFromJson, toDynamoJson: _dataToJson)
+  @DynamoKey(
+      fromDynamoJson: _dataFromDynamoJson, toDynamoJson: _dataToDynamoJson)
   dynamic fieldDynamic;
 
-  @DynamoKey(fromDynamoJson: _dataFromJson, toDynamoJson: _dataToJson)
+  @DynamoKey(
+      fromDynamoJson: _dataFromDynamoJson, toDynamoJson: _dataToDynamoJson)
   int? fieldInt;
 
-  @DynamoKey(fromDynamoJson: _dataFromJson, toDynamoJson: _dataToJson)
+  @DynamoKey(
+      fromDynamoJson: _dataFromDynamoJson, toDynamoJson: _dataToDynamoJson)
   T? fieldT;
 
-  @DynamoKey(fromDynamoJson: _dataFromJson, toDynamoJson: _dataToJson)
+  @DynamoKey(
+      fromDynamoJson: _dataFromDynamoJson, toDynamoJson: _dataToDynamoJson)
   S? fieldS;
 
   GenericClass();
 
-  factory GenericClass.fromJson(Map<String, dynamic> json) =>
-      _$GenericClassFromJson<T, S>(json);
+  factory GenericClass.fromDynamoJson(Map<String, dynamic> json) =>
+      _$GenericClassFromDynamoJson<T, S>(json);
 
-  Map<String, dynamic> toJson() => _$GenericClassToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$GenericClassToDynamoJson(this);
 
-  static T _dataFromJson<T, S, U>(Map<String, dynamic> input,
+  static T _dataFromDynamoJson<T, S, U>(Map<String, dynamic> input,
           [S? other1, U? other2]) =>
       input['value'] as T;
 
-  static Map<String, dynamic> _dataToJson<T, S, U>(T input,
+  static Map<String, dynamic> _dataToDynamoJson<T, S, U>(T input,
           [S? other1, U? other2]) =>
       {'value': input};
 }
@@ -67,10 +72,11 @@ class GenericClassWithConverter<T extends num, S> {
 
   GenericClassWithConverter();
 
-  factory GenericClassWithConverter.fromJson(Map<String, dynamic> json) =>
-      _$GenericClassWithConverterFromJson<T, S>(json);
+  factory GenericClassWithConverter.fromDynamoJson(Map<String, dynamic> json) =>
+      _$GenericClassWithConverterFromDynamoJson<T, S>(json);
 
-  Map<String, dynamic> toJson() => _$GenericClassWithConverterToJson(this);
+  Map<String, dynamic> toDynamoJson() =>
+      _$GenericClassWithConverterToDynamoJson(this);
 }
 
 class _SimpleConverter<T> implements DynamoConverter<T, Map<String, dynamic>> {

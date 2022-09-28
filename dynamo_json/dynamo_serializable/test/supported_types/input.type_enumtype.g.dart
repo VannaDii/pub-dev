@@ -5,16 +5,17 @@
 part of 'input.type_enumtype.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
-SimpleClass _$SimpleClassFromJson(Map<String, dynamic> json) => SimpleClass(
+SimpleClass _$SimpleClassFromDynamoJson(Map<String, dynamic> json) =>
+    SimpleClass(
       $enumDecode(_$EnumTypeEnumMap, json['value']),
       $enumDecodeNullable(_$EnumTypeEnumMap, json['withDefault']) ??
           EnumType.alpha,
     );
 
-Map<String, dynamic> _$SimpleClassToJson(SimpleClass instance) =>
+Map<String, dynamic> _$SimpleClassToDynamoJson(SimpleClass instance) =>
     <String, dynamic>{
       'value': _$EnumTypeEnumMap[instance.value]!,
       'withDefault': _$EnumTypeEnumMap[instance.withDefault]!,
@@ -27,14 +28,15 @@ const _$EnumTypeEnumMap = {
   EnumType.delta: 'delta',
 };
 
-SimpleClassNullable _$SimpleClassNullableFromJson(Map<String, dynamic> json) =>
+SimpleClassNullable _$SimpleClassNullableFromDynamoJson(
+        Map<String, dynamic> json) =>
     SimpleClassNullable(
       $enumDecodeNullable(_$EnumTypeEnumMap, json['value']),
       $enumDecodeNullable(_$EnumTypeEnumMap, json['withDefault']) ??
           EnumType.alpha,
     );
 
-Map<String, dynamic> _$SimpleClassNullableToJson(
+Map<String, dynamic> _$SimpleClassNullableToDynamoJson(
         SimpleClassNullable instance) =>
     <String, dynamic>{
       'value': _$EnumTypeEnumMap[instance.value],

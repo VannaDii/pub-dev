@@ -15,32 +15,36 @@ import 'input.type_object.dart';
 void main() {
   group('non-nullable', () {
     test('round trip', () {
-      final object = SimpleClass.fromJson(_defaultInput);
+      final object = SimpleClass.fromDynamoJson(_defaultInput);
       final encoded = loudEncode(object);
 
       expect(encoded, loudEncode(_defaultOutput));
 
-      final object2 = SimpleClass.fromJson(
+      final object2 = SimpleClass.fromDynamoJson(
         jsonDecode(encoded) as Map<String, Object?>,
       );
       expect(loudEncode(object2), encoded);
     });
 
     test('round trip null', () {
-      expect(
-        () => loudEncode(SimpleClass.fromJson({})),
-        throwsTypeError,
+      final object = SimpleClass.fromDynamoJson({});
+      final encoded = loudEncode(object);
+
+      expect(encoded, loudEncode(_nullableDefaultOutput));
+      final object2 = SimpleClass.fromDynamoJson(
+        jsonDecode(encoded) as Map<String, Object?>,
       );
+      expect(loudEncode(object2), encoded);
     });
 
     test('round trip alternate values', () {
-      final object = SimpleClass.fromJson(_nonDefaultJson);
+      final object = SimpleClass.fromDynamoJson(_nonDefaultJson);
       final encoded = loudEncode(object);
 
       expect(encoded, loudEncode(_nonDefaultJson));
       expect(encoded, isNot(loudEncode(_defaultOutput)));
 
-      final object2 = SimpleClass.fromJson(
+      final object2 = SimpleClass.fromDynamoJson(
         jsonDecode(encoded) as Map<String, Object?>,
       );
       expect(loudEncode(object2), encoded);
@@ -49,36 +53,36 @@ void main() {
 
   group('nullable', () {
     test('round trip', () {
-      final object = SimpleClassNullable.fromJson(_defaultInput);
+      final object = SimpleClassNullable.fromDynamoJson(_defaultInput);
       final encoded = loudEncode(object);
 
       expect(encoded, loudEncode(_defaultOutput));
 
-      final object2 = SimpleClassNullable.fromJson(
+      final object2 = SimpleClassNullable.fromDynamoJson(
         jsonDecode(encoded) as Map<String, Object?>,
       );
       expect(loudEncode(object2), encoded);
     });
 
     test('round trip null', () {
-      final object = SimpleClassNullable.fromJson({});
+      final object = SimpleClassNullable.fromDynamoJson({});
       final encoded = loudEncode(object);
 
       expect(encoded, loudEncode(_nullableDefaultOutput));
-      final object2 = SimpleClassNullable.fromJson(
+      final object2 = SimpleClassNullable.fromDynamoJson(
         jsonDecode(encoded) as Map<String, Object?>,
       );
       expect(loudEncode(object2), encoded);
     });
 
     test('round trip alternate values', () {
-      final object = SimpleClassNullable.fromJson(_nonDefaultJson);
+      final object = SimpleClassNullable.fromDynamoJson(_nonDefaultJson);
       final encoded = loudEncode(object);
 
       expect(encoded, loudEncode(_nonDefaultJson));
       expect(encoded, isNot(loudEncode(_defaultOutput)));
 
-      final object2 = SimpleClassNullable.fromJson(
+      final object2 = SimpleClassNullable.fromDynamoJson(
         jsonDecode(encoded) as Map<String, Object?>,
       );
       expect(loudEncode(object2), encoded);

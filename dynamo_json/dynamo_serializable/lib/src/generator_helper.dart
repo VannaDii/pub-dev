@@ -112,9 +112,7 @@ class GeneratorHelper extends HelperCore with EncodeHelper, DecodeHelper {
       yield createFieldMap(accessibleFieldSet);
     }
 
-    if (config.createToDynamoJson) {
-      yield* createToDynamoJson(accessibleFieldSet);
-    }
+    yield* createToDynamoJson(accessibleFieldSet);
 
     yield* _addedMembers;
   }

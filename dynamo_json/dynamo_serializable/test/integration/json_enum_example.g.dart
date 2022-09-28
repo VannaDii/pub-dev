@@ -5,10 +5,11 @@
 part of 'json_enum_example.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
-Issue559Regression _$Issue559RegressionFromJson(Map<String, dynamic> json) {
+Issue559Regression _$Issue559RegressionFromDynamoJson(
+    Map<String, dynamic> json) {
   $checkKeys(
     json,
     requiredKeys: const ['status'],
@@ -20,13 +21,27 @@ Issue559Regression _$Issue559RegressionFromJson(Map<String, dynamic> json) {
   );
 }
 
+Map<String, dynamic> _$Issue559RegressionToDynamoJson(
+    Issue559Regression instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('status', _$Issue559RegressionEnumEnumMap[instance.status]);
+  return val;
+}
+
 const _$Issue559RegressionEnumEnumMap = {
   Issue559RegressionEnum.alpha: 'alpha',
   Issue559RegressionEnum.beta: 'beta',
   Issue559RegressionEnum.gamma: 'gamma',
 };
 
-Map<String, dynamic> _$Issue1145RegressionAToJson(
+Map<String, dynamic> _$Issue1145RegressionAToDynamoJson(
         Issue1145RegressionA instance) =>
     <String, dynamic>{
       'status': instance.status
@@ -39,7 +54,7 @@ const _$Issue1145RegressionEnumEnumMap = {
   Issue1145RegressionEnum.gamma: 'gamma',
 };
 
-Map<String, dynamic> _$Issue1145RegressionBToJson(
+Map<String, dynamic> _$Issue1145RegressionBToDynamoJson(
         Issue1145RegressionB instance) =>
     <String, dynamic>{
       'status': instance.status
