@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:mirrors';
 
 import 'package:stack_trace/stack_trace.dart';
 import 'package:test/test.dart';
@@ -7,9 +8,16 @@ final throwsTypeError = throwsA(isTypeError);
 
 final isTypeError = isA<TypeError>();
 
+Map<String, dynamic> mapSerialize(Map<String, dynamic> o) => o;
+
 /// Prints out nested causes before throwing `JsonUnsupportedObjectError`.
-String loudEncode(Object? object) {
+String loudEncode<T>(T object) {
   try {
+    final json = reflect(object).invoke(#toDynamoJson, const []).reflectee
+        as Map<String, dynamic>;
+    return const JsonEncoder.withIndent(' ').convert(json);
+    // ignore: avoid_catching_errors, unused_catch_clause
+  } on NoSuchMethodError catch (e) {
     return const JsonEncoder.withIndent(' ').convert(object);
   } catch (e) {
     if (e is JsonUnsupportedObjectError) {
@@ -39,11 +47,10 @@ String loudEncode(Object? object) {
 
 T roundTripObject<T>(
   T object,
-  Map<String, dynamic> Function(T object) serialize,
   T Function(Map<String, dynamic> json) factory, {
   bool skipObjectEquals = false,
 }) {
-  final data = loudEncode(serialize(object));
+  final data = loudEncode(object);
 
   final object2 = factory(json.decode(data) as Map<String, dynamic>);
 
@@ -51,7 +58,7 @@ T roundTripObject<T>(
     expect(object2, equals(object));
   }
 
-  final json2 = loudEncode(serialize(object2));
+  final json2 = loudEncode(object2);
 
   expect(json2, equals(data));
   return object2;

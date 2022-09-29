@@ -88,43 +88,12 @@ class DynamoSerializable {
   /// such as [fieldRename].
   final bool? createFieldMap;
 
-  /// If `true` (the default), A top-level function is created that you can
-  /// reference from your class.
-  ///
-  /// ```dart
-  /// @DynamoSerializable()
-  /// class Example {
-  ///   Map<String, dynamic> toDynamoJson() => _$ExampleToDynamoJson(this);
-  /// }
-  /// ```
-  final bool? createToDynamoJson;
-
   /// If `false` (the default), then the generated `FromJson` function will
   /// ignore unrecognized keys in the provided JSON [Map].
   ///
   /// If `true`, unrecognized keys will cause an [UnrecognizedKeysException] to
   /// be thrown.
   final bool? disallowUnrecognizedKeys;
-
-  /// If `true`, generated `toDynamoJson` methods will explicitly call
-  /// `toDynamoJson` on nested objects.
-  ///
-  /// When using JSON encoding support in `dart:convert`, `toDynamoJson` is
-  /// automatically called on objects, so the default behavior
-  /// (`explicitToDynamoJson: false`) is to omit the `toDynamoJson` call.
-  ///
-  /// Example of `explicitToDynamoJson: false`
-  ///
-  /// ```dart
-  /// Map<String, dynamic> toDynamoJson() => {'child': child};
-  /// ```
-  ///
-  /// Example of `explicitToDynamoJson: true` (default)
-  ///
-  /// ```dart
-  /// Map<String, dynamic> toDynamoJson() => {'child': child?.toDynamoJson()};
-  /// ```
-  final bool? explicitToDynamoJson;
 
   /// Defines the automatic naming strategy when converting class field names
   /// into JSON map keys.
@@ -242,9 +211,7 @@ class DynamoSerializable {
     this.constructor,
     this.createFieldMap,
     this.createFactory,
-    this.createToDynamoJson,
     this.disallowUnrecognizedKeys,
-    this.explicitToDynamoJson,
     this.fieldRename,
     this.ignoreUnannotated,
     this.includeIfNull,
@@ -263,9 +230,7 @@ class DynamoSerializable {
     checked: false,
     constructor: '',
     createFactory: true,
-    createToDynamoJson: true,
     disallowUnrecognizedKeys: false,
-    explicitToDynamoJson: true,
     fieldRename: FieldRename.none,
     ignoreUnannotated: false,
     includeIfNull: true,
@@ -283,11 +248,8 @@ class DynamoSerializable {
         checked: checked ?? defaults.checked,
         constructor: constructor ?? defaults.constructor,
         createFactory: createFactory ?? defaults.createFactory,
-        createToDynamoJson: createToDynamoJson ?? defaults.createToDynamoJson,
         disallowUnrecognizedKeys:
             disallowUnrecognizedKeys ?? defaults.disallowUnrecognizedKeys,
-        explicitToDynamoJson:
-            explicitToDynamoJson ?? defaults.explicitToDynamoJson,
         fieldRename: fieldRename ?? defaults.fieldRename,
         ignoreUnannotated: ignoreUnannotated ?? defaults.ignoreUnannotated,
         includeIfNull: includeIfNull ?? defaults.includeIfNull,

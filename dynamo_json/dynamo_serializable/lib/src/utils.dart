@@ -56,13 +56,9 @@ DynamoSerializable _valueForAnnotation(ConstantReader reader) =>
       checked: reader.read('checked').literalValue as bool?,
       constructor: reader.read('constructor').literalValue as String?,
       createFactory: reader.read('createFactory').literalValue as bool?,
-      createToDynamoJson:
-          reader.read('createToDynamoJson').literalValue as bool?,
       createFieldMap: reader.read('createFieldMap').literalValue as bool?,
       disallowUnrecognizedKeys:
           reader.read('disallowUnrecognizedKeys').literalValue as bool?,
-      explicitToDynamoJson:
-          reader.read('explicitToDynamoJson').literalValue as bool?,
       fieldRename: _fromDartObject(reader.read('fieldRename')),
       genericArgumentFactories:
           reader.read('genericArgumentFactories').literalValue as bool?,

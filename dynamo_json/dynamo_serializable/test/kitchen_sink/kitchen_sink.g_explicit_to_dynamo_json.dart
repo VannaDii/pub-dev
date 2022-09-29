@@ -88,9 +88,7 @@ Object? _valueAccessor(Map json, String key) {
   return json[key];
 }
 
-@DynamoSerializable(
-  explicitToDynamoJson: true,
-)
+@DynamoSerializable()
 class KitchenSink implements k.KitchenSink {
   // NOTE: exposing these as Iterable, but storing the values as List
   // to make the equality test work trivially.
@@ -197,7 +195,7 @@ class KitchenSink implements k.KitchenSink {
   }
 }
 
-@DynamoSerializable(explicitToDynamoJson: true, converters: [
+@DynamoSerializable(converters: [
   // referencing a top-level field should work
   durationConverter,
   // referencing via a const constructor should work
@@ -249,9 +247,7 @@ class JsonConverterTestClass implements k.JsonConverterTestClass {
   Set<TrivialNumber?> nullableNumberSillySet;
 }
 
-@DynamoSerializable(
-  explicitToDynamoJson: true,
-)
+@DynamoSerializable()
 @GenericConverter()
 class JsonConverterGeneric<S, T, U> {
   S item;

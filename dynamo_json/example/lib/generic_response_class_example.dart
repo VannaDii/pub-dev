@@ -10,7 +10,7 @@ part 'generic_response_class_example.g.dart';
 // https://github.com/google/json_serializable.dart/issues/646
 // https://github.com/google/json_serializable.dart/issues/671
 
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class BaseResponse<T> {
   final int? status;
   final String? msg;
@@ -55,7 +55,7 @@ class BaseResponse<T> {
   }
 }
 
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class Article {
   final int id;
   final String title;
@@ -75,7 +75,7 @@ class Article {
       _$ArticleFromDynamoJson(json);
 }
 
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class User {
   final int? id;
   final String? email;
@@ -89,7 +89,7 @@ class User {
       _$UserFromDynamoJson(json);
 }
 
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class Comment {
   final String? content;
   final int? id;

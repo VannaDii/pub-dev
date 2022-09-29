@@ -90,11 +90,7 @@ void _nonNullableTests(KitchenSinkFactory factory) {
 
 void _nullableTests(KitchenSinkFactory factory) {
   void roundTripSink(KitchenSink p) {
-    roundTripObject(
-      p,
-      (KitchenSink o) => o.toDynamoJson(),
-      factory.fromDynamoJson,
-    );
+    roundTripObject(p, factory.fromDynamoJson);
   }
 
   test('nullable values are allowed in the nullable version', () {
@@ -195,11 +191,7 @@ void _sharedTests(KitchenSinkFactory factory) {
 
   test('empty', () {
     final item = factory.ctor();
-    roundTripObject(
-      item,
-      (KitchenSink o) => o.toDynamoJson(),
-      factory.fromDynamoJson,
-    );
+    roundTripObject(item, factory.fromDynamoJson);
   });
 
   test('JsonConverters with nullable JSON keys handle `null` JSON values', () {
@@ -220,11 +212,7 @@ void _sharedTests(KitchenSinkFactory factory) {
       ..dateTimeList = <DateTime>[now, now]
       ..objectDateTimeMap = <Object, DateTime>{'value': now};
 
-    roundTripObject(
-      item,
-      (KitchenSink o) => o.toDynamoJson(),
-      factory.fromDynamoJson,
-    );
+    roundTripObject(item, factory.fromDynamoJson);
   });
 
   test('complex nested type - not null', () {
@@ -242,11 +230,7 @@ void _sharedTests(KitchenSinkFactory factory) {
           }
         }
       ];
-    roundTripObject(
-      item,
-      (KitchenSink o) => o.toDynamoJson(),
-      factory.fromDynamoJson,
-    );
+    roundTripObject(item, factory.fromDynamoJson);
   });
 
   test('round trip valid, empty values', () {
@@ -265,11 +249,7 @@ void _sharedTests(KitchenSinkFactory factory) {
 
     final validInstance = factory.fromDynamoJson(values);
 
-    roundTripObject(
-      validInstance,
-      (KitchenSink o) => o.toDynamoJson(),
-      factory.fromDynamoJson,
-    );
+    roundTripObject(validInstance, factory.fromDynamoJson);
   });
 
   test('JSON keys should be defined in field/property order', () {
@@ -283,11 +263,7 @@ void _sharedTests(KitchenSinkFactory factory) {
 
   test('valid values round-trip - json', () {
     final validInstance = factory.fromDynamoJson(validValues);
-    roundTripObject(
-      validInstance,
-      (KitchenSink o) => o.toDynamoJson(),
-      factory.fromDynamoJson,
-    );
+    roundTripObject(validInstance, factory.fromDynamoJson);
   });
 }
 

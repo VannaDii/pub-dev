@@ -25,9 +25,7 @@ enum DayType {
 
 Iterable<String> get dayTypeEnumValues => _$DayTypeEnumMap.values;
 
-@DynamoSerializable(
-  createToDynamoJson: false,
-)
+@DynamoSerializable()
 class Issue559Regression {
   Issue559Regression({
     required this.status,

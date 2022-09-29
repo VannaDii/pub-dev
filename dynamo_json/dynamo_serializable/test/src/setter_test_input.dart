@@ -23,7 +23,7 @@ JustSetterNoToJson _$JustSetterNoToJsonFromDynamoJson(
 ''',
   expectedLogItems: ['Setters are ignored: JustSetterNoToJson.someSetter'],
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class JustSetterNoToJson {
   set someSetter(Object name) {}
 }

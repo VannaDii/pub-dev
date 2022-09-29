@@ -55,10 +55,10 @@ class Order {
 
   Order(this.date);
 
-  factory Order.fromJson(Map<String, dynamic> json) =>
+  factory Order.fromDynamoJson(Map<String, dynamic> json) =>
       _$OrderFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$OrderToDynamoJson(this);
+  Map<String, dynamic> toDynamoJson() => _$OrderToDynamoJson(this);
 
   static Duration? _durationFromMilliseconds(int? milliseconds) =>
       milliseconds == null ? null : Duration(milliseconds: milliseconds);
@@ -81,9 +81,10 @@ class Item {
 
   Item();
 
-  factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
+  factory Item.fromDynamoJson(Map<String, dynamic> json) =>
+      _$ItemFromDynamoJson(json);
 
-  Map<String, dynamic> toJson() => _$ItemToJson(this);
+  Map<String, dynamic> toDynamoJson() => _$ItemToDynamoJson(this);
 }
 
 @DynamoLiteral('data.json')

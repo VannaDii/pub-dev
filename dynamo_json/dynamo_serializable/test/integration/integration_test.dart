@@ -17,11 +17,7 @@ Matcher _throwsArgumentError(matcher) =>
 void main() {
   group('Person', () {
     void roundTripPerson(Person p) {
-      roundTripObject(
-        p,
-        (Person o) => o.toDynamoJson(),
-        Person.fromDynamoJson,
-      );
+      roundTripObject(p, Person.fromDynamoJson);
     }
 
     test('now', () {
@@ -55,11 +51,7 @@ void main() {
 
   group('Order', () {
     void roundTripOrder(Order p) {
-      roundTripObject(
-        p,
-        (Order o) => o.toDynamoJson(),
-        Order.fromDynamoJson,
-      );
+      roundTripObject(p, Order.fromDynamoJson);
     }
 
     test('null', () {
@@ -199,11 +191,7 @@ void main() {
 
   group('Item', () {
     void roundTripItem(Item p) {
-      roundTripObject(
-        p,
-        (Item o) => o.toDynamoJson(),
-        Item.fromDynamoJson,
-      );
+      roundTripObject(p, Item.fromDynamoJson);
     }
 
     test('empty json', () {
@@ -244,11 +232,7 @@ void main() {
 
   group('Numbers', () {
     void roundTripNumber(Numbers p) {
-      roundTripObject(
-        p,
-        (Numbers o) => o.toDynamoJson(),
-        Numbers.fromDynamoJson,
-      );
+      roundTripObject(p, Numbers.fromDynamoJson);
     }
 
     test('simple', () {
@@ -293,11 +277,7 @@ void main() {
       ..intIntMap = {3: 3}
       ..uriIntMap = {Uri.parse('https://example.com'): 4};
 
-    roundTripObject(
-      instance,
-      (MapKeyVariety o) => o.toDynamoJson(),
-      MapKeyVariety.fromDynamoJson,
-    );
+    roundTripObject(instance, MapKeyVariety.fromDynamoJson);
   });
 
   test('UnknownEnumValue', () {
@@ -317,11 +297,7 @@ void main() {
   test('PrivateConstructor', () {
     final value = PrivateConstructor('test');
 
-    roundTripObject(
-      value,
-      (PrivateConstructor o) => o.toDynamoJson(),
-      PrivateConstructor.fromDynamoJson,
-    );
+    roundTripObject(value, PrivateConstructor.fromDynamoJson);
   });
 
   test('enum helpers', () {

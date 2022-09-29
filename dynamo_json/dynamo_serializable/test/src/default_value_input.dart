@@ -97,7 +97,7 @@ DefaultWithToJsonClass _$DefaultWithToJsonClassFromDynamoJson(
               json['fieldDefaultValueToJson'] as String);
 ''',
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class DefaultWithToJsonClass {
   @DynamoKey(defaultValue: 7, fromDynamoJson: _fromDynamoJson)
   late int fieldDefaultValueToJson;
@@ -126,7 +126,7 @@ DefaultWithDisallowNullRequiredClass
         '`disallowNullValue` and `required` are set to `true`.',
   ],
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class DefaultWithDisallowNullRequiredClass {
   @DynamoKey(defaultValue: 7, disallowNullValue: true, required: true)
   int? theField;
@@ -149,7 +149,7 @@ CtorDefaultValueAndJsonKeyDefaultValue
         'values in JSON decoding.',
   ],
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class CtorDefaultValueAndJsonKeyDefaultValue {
   @DynamoKey(defaultValue: 7)
   final int theField;
@@ -170,7 +170,7 @@ SameCtorAndJsonKeyDefaultValue _$SameCtorAndJsonKeyDefaultValueFromDynamoJson(
         'in the constructor and in the `DynamoKey.defaultValue`.',
   ],
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class SameCtorAndJsonKeyDefaultValue {
   @DynamoKey(defaultValue: 3)
   final int theField;
@@ -193,7 +193,7 @@ DefaultDoubleConstants _$DefaultDoubleConstantsFromDynamoJson(
       ..defaultMaxFinite = (json['defaultMaxFinite'] as num?)?.toDouble() ??
           1.7976931348623157e+308;
 ''')
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class DefaultDoubleConstants {
   @DynamoKey(defaultValue: double.nan)
   late double defaultNan;

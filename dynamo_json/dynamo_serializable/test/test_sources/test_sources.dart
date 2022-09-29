@@ -14,10 +14,8 @@ class ConfigurationImplicitDefaults {
   checked: false,
   constructor: '',
   createFactory: true,
-  createToDynamoJson: true,
   createFieldMap: false,
   disallowUnrecognizedKeys: false,
-  explicitToDynamoJson: false,
   fieldRename: FieldRename.none,
   ignoreUnannotated: false,
   includeIfNull: true,
@@ -34,7 +32,7 @@ class IncludeIfNullAll {
   String? str;
 }
 
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class FromJsonOptionalParameters {
   final ChildWithFromJson child;
 
@@ -73,13 +71,13 @@ class ParentObjectWithDynamicChildren {
   late List<dynamic> children;
 }
 
-@DynamoSerializable(createFactory: false, explicitToDynamoJson: true)
+@DynamoSerializable(createFactory: false)
 class TrivialNestedNullable {
   TrivialNestedNullable? child;
   int? otherField;
 }
 
-@DynamoSerializable(createFactory: false, explicitToDynamoJson: true)
+@DynamoSerializable(createFactory: false)
 class TrivialNestedNonNullable {
   late TrivialNestedNonNullable child;
   int? otherField;

@@ -209,7 +209,7 @@ FromDynamicCollection _$FromDynamicCollectionFromDynamoJson(
       ..iterableField = _fromDynamicIterable(json['iterableField'] as List);
 ''',
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class FromDynamicCollection {
   @DynamoKey(fromDynamoJson: _fromDynamicMap)
   late String mapField;
@@ -236,7 +236,7 @@ FromNullableDynamicCollection _$FromNullableDynamicCollectionFromDynamoJson(
           _fromNullableDynamicIterable(json['iterableField'] as List?);
 ''',
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class FromNullableDynamicCollection {
   @DynamoKey(fromDynamoJson: _fromNullableDynamicMap)
   late String mapField;
@@ -253,7 +253,7 @@ String _noArgs() => throw UnimplementedError();
   '`_noArgs` must have one positional parameter.',
   element: 'field',
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class BadNoArgs {
   @DynamoKey(fromDynamoJson: _noArgs)
   String? field;
@@ -266,7 +266,7 @@ String? _twoArgs(a, b) => null;
   '`_twoArgs` must have one positional parameter.',
   element: 'field',
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class BadTwoRequiredPositional {
   @DynamoKey(fromDynamoJson: _twoArgs)
   String? field;
@@ -279,7 +279,7 @@ String? _oneNamed({a}) => null;
   '`_oneNamed` must have one positional parameter.',
   element: 'field',
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class BadOneNamed {
   @DynamoKey(fromDynamoJson: _oneNamed)
   String? field;
@@ -288,7 +288,7 @@ class BadOneNamed {
 String _oneNormalOnePositional(a, [b]) => throw UnimplementedError();
 
 @ShouldGenerate("_oneNormalOnePositional(json['field'])", contains: true)
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class OkayOneNormalOptionalPositional {
   @DynamoKey(fromDynamoJson: _oneNormalOnePositional)
   String? field;
@@ -297,7 +297,7 @@ class OkayOneNormalOptionalPositional {
 String _oneNormalOptionalNamed(a, {b}) => throw UnimplementedError();
 
 @ShouldGenerate("_oneNormalOptionalNamed(json['field'])", contains: true)
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class OkayOneNormalOptionalNamed {
   @DynamoKey(fromDynamoJson: _oneNormalOptionalNamed)
   String? field;
@@ -306,7 +306,7 @@ class OkayOneNormalOptionalNamed {
 String _onlyOptionalPositional([a, b]) => throw UnimplementedError();
 
 @ShouldGenerate("_onlyOptionalPositional(json['field'])", contains: true)
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class OkayOnlyOptionalPositional {
   @DynamoKey(fromDynamoJson: _onlyOptionalPositional)
   String? field;
@@ -327,7 +327,7 @@ Map<String, dynamic> _$BetterPrivateNamesToDynamoJson(
     };
 ''',
 )
-@DynamoSerializable(createFactory: true, createToDynamoJson: true)
+@DynamoSerializable(createFactory: true)
 // ignore: unused_element
 class _BetterPrivateNames {
   final String name;

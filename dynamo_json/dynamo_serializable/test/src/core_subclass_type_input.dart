@@ -7,7 +7,7 @@ To support the type `MapView` you can:
 $converterOrKeyInstructions''',
   element: 'mapView',
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class UnsupportedMapField {
   late MapView mapView;
 }
@@ -19,7 +19,7 @@ To support the type `UnmodifiableListView` you can:
 $converterOrKeyInstructions''',
   element: 'listView',
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class UnsupportedListField {
   late UnmodifiableListView listView;
 }
@@ -31,7 +31,7 @@ To support the type `CustomSet` you can:
 $converterOrKeyInstructions''',
   element: 'customSet',
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class UnsupportedSetField {
   late CustomSet customSet;
 }
@@ -45,7 +45,7 @@ To support the type `CustomDuration` you can:
 $converterOrKeyInstructions''',
   element: 'customDuration',
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class UnsupportedDurationField {
   late CustomDuration customDuration;
 }
@@ -59,7 +59,7 @@ To support the type `CustomUri` you can:
 $converterOrKeyInstructions''',
   element: 'customUri',
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class UnsupportedUriField {
   CustomUri? customUri;
 }
@@ -73,7 +73,7 @@ To support the type `CustomDateTime` you can:
 $converterOrKeyInstructions''',
   element: 'customDateTime',
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class UnsupportedDateTimeField {
   late CustomDateTime customDateTime;
 }

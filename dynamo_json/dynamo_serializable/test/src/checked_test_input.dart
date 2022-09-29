@@ -23,7 +23,6 @@ WithANonCtorGetterChecked _$WithANonCtorGetterCheckedFromDynamoJson(
 ''')
 @DynamoSerializable(
   disallowUnrecognizedKeys: true,
-  createToDynamoJson: false,
   checked: true,
 )
 class WithANonCtorGetterChecked {
@@ -49,7 +48,7 @@ WithANonCtorGetter _$WithANonCtorGetterFromDynamoJson(
   );
 }
 ''')
-@DynamoSerializable(disallowUnrecognizedKeys: true, createToDynamoJson: false)
+@DynamoSerializable(disallowUnrecognizedKeys: true)
 class WithANonCtorGetter {
   @DynamoKey(required: true, disallowNullValue: true)
   final List<String> items;

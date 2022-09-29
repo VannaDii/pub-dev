@@ -3,7 +3,7 @@
 part of 'json_converter_example.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
 DateTimeExample _$DateTimeExampleFromDynamoJson(Map<String, dynamic> json) =>

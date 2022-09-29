@@ -3,7 +3,7 @@
 part of 'example.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
 Person _$PersonFromDynamoJson(Map<String, dynamic> json) => Person(
@@ -15,7 +15,7 @@ Person _$PersonFromDynamoJson(Map<String, dynamic> json) => Person(
           ? null
           : DateTime.parse(json['last-order'] as String),
       orders: (json['orders'] as List<dynamic>?)
-          ?.map((e) => Order.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => Order.fromDynamoJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -34,7 +34,7 @@ Map<String, dynamic> _$PersonToDynamoJson(Person instance) {
   val['lastName'] = instance.lastName;
   val['date-of-birth'] = instance.dateOfBirth.toIso8601String();
   val['last-order'] = instance.lastOrder?.toIso8601String();
-  val['orders'] = instance.orders;
+  val['orders'] = instance.orders.map((e) => e.toDynamoJson()).toList();
   return val;
 }
 
@@ -46,7 +46,7 @@ Order _$OrderFromDynamoJson(Map<String, dynamic> json) => Order(
       ..isRushed = json['isRushed'] as bool?
       ..item = json['item'] == null
           ? null
-          : Item.fromJson(json['item'] as Map<String, dynamic>)
+          : Item.fromDynamoJson(json['item'] as Map<String, dynamic>)
       ..prepTime = Order._durationFromMilliseconds(json['prep-time'] as int?);
 
 Map<String, dynamic> _$OrderToDynamoJson(Order instance) {
@@ -61,25 +61,25 @@ Map<String, dynamic> _$OrderToDynamoJson(Order instance) {
   writeNotNull('count', instance.count);
   writeNotNull('itemNumber', instance.itemNumber);
   writeNotNull('isRushed', instance.isRushed);
-  writeNotNull('item', instance.item);
+  writeNotNull('item', instance.item?.toDynamoJson());
   writeNotNull('prep-time', Order._durationToMilliseconds(instance.prepTime));
   writeNotNull('date', Order._dateTimeToEpochUs(instance.date));
   return val;
 }
 
-Item _$ItemFromJson(Map<String, dynamic> json) => Item()
+Item _$ItemFromDynamoJson(Map<String, dynamic> json) => Item()
   ..count = json['count'] as int?
   ..itemNumber = json['itemNumber'] as int?
   ..isRushed = json['isRushed'] as bool?;
 
-Map<String, dynamic> _$ItemToJson(Item instance) => <String, dynamic>{
+Map<String, dynamic> _$ItemToDynamoJson(Item instance) => <String, dynamic>{
       'count': instance.count,
       'itemNumber': instance.itemNumber,
       'isRushed': instance.isRushed,
     };
 
 // **************************************************************************
-// JsonLiteralGenerator
+// DynamoLiteralGenerator
 // **************************************************************************
 
 final _$glossaryDataJsonLiteral = {

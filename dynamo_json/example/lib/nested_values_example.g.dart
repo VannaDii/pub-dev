@@ -3,7 +3,7 @@
 part of 'nested_values_example.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
 NestedValueExample _$NestedValueExampleFromDynamoJson(

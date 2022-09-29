@@ -4,6 +4,7 @@
 
 @TestOn('vm')
 @Tags(['presubmit-only'])
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dynamo_serializable/src/check_dependencies.dart';
@@ -116,20 +117,18 @@ Future<void> _structurePackage({
   Map<String, dynamic> dependencies = const {},
   Map<String, dynamic> devDependencies = const {},
 }) async {
-  final pubspec = loudEncode(
-    {
-      'name': '_test_pkg',
-      'environment': {'sdk': '>=2.18.0 <3.0.0'},
-      'dependencies': {...otherDeps, ...dependencies},
-      'dev_dependencies': {
-        ...otherDepsDev,
-        ...devDependencies,
-        'build_runner': 'any',
-        'dynamo_serializable': {'path': p.current},
-      },
-      'dependency_overrides': _dynamoSerialPathDependencyOverrides,
+  final pubspec = loudEncode(<String, dynamic>{
+    'name': '_test_pkg',
+    'environment': {'sdk': '>=2.18.0 <3.0.0'},
+    'dependencies': {...otherDeps, ...dependencies},
+    'dev_dependencies': {
+      ...otherDepsDev,
+      ...devDependencies,
+      'build_runner': 'any',
+      'dynamo_serializable': {'path': p.current},
     },
-  );
+    'dependency_overrides': _dynamoSerialPathDependencyOverrides,
+  });
 
   await d.file('pubspec.yaml', pubspec).create();
 

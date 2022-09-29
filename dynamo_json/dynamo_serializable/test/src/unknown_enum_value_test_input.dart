@@ -18,9 +18,7 @@ const _$UnknownEnumValueItemsEnumMap = {
 };
 ''',
 )
-@DynamoSerializable(
-  createToDynamoJson: false,
-)
+@DynamoSerializable()
 class UnknownEnumValue {
   @DynamoKey(
     defaultValue: UnknownEnumValueItems.vNull,

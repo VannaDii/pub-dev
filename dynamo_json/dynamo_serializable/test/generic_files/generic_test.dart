@@ -241,11 +241,7 @@ void main() {
       Issue980GenericClass(45),
       Issue980GenericClass(42),
     ]);
-    roundTripObject(
-      instance,
-      (Issue980ParentClass o) => o.toDynamoJson(),
-      Issue980ParentClass.fromDynamoJson,
-    );
+    roundTripObject(instance, Issue980ParentClass.fromDynamoJson);
   });
 
   test('issue 1047 regression', () {

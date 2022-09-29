@@ -3,17 +3,17 @@
 part of 'tuple_example.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// DynamoSerializableGenerator
 // **************************************************************************
 
 Tuple<T, S> _$TupleFromDynamoJson<T, S>(
   Map<String, dynamic> json,
   T Function(Object? json) fromDynamoJsonT,
-  S Function(Object? json) fromJsonS,
+  S Function(Object? json) fromDynamoJsonS,
 ) =>
     Tuple<T, S>(
       fromDynamoJsonT(json['value1']),
-      fromJsonS(json['value2']),
+      fromDynamoJsonS(json['value2']),
     );
 
 Map<String, dynamic> _$TupleToDynamoJson<T, S>(
@@ -29,13 +29,10 @@ Map<String, dynamic> _$TupleToDynamoJson<T, S>(
 ConcreteClass _$ConcreteClassFromDynamoJson(Map<String, dynamic> json) =>
     ConcreteClass(
       Tuple<int, DateTime>.fromDynamoJson(
-          json['tuple1'] as Map<String, dynamic>,
-          (value) => value as int,
-          (value) => DateTime.parse(value as String)),
+          json['tuple1'] as Map<String, dynamic>, (value) => value as int),
       Tuple<Duration, BigInt>.fromDynamoJson(
           json['tuple2'] as Map<String, dynamic>,
-          (value) => Duration(microseconds: value as int),
-          (value) => BigInt.parse(value as String)),
+          (value) => Duration(microseconds: value as int)),
     );
 
 Map<String, dynamic> _$ConcreteClassToDynamoJson(ConcreteClass instance) =>

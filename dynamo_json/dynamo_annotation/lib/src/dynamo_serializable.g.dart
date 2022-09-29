@@ -19,9 +19,7 @@ DynamoSerializable _$JsonSerializableFromJson(Map<String, dynamic> json) =>
             'constructor',
             'create_factory',
             'create_field_map',
-            'create_to_dynamo_json',
             'disallow_unrecognized_keys',
-            'explicit_to_dynamo_json',
             'field_rename',
             'generic_argument_factories',
             'ignore_unannotated',
@@ -35,12 +33,8 @@ DynamoSerializable _$JsonSerializableFromJson(Map<String, dynamic> json) =>
           createFieldMap:
               $checkedConvert('create_field_map', (v) => v as bool?),
           createFactory: $checkedConvert('create_factory', (v) => v as bool?),
-          createToDynamoJson:
-              $checkedConvert('create_to_dynamo_json', (v) => v as bool?),
           disallowUnrecognizedKeys:
               $checkedConvert('disallow_unrecognized_keys', (v) => v as bool?),
-          explicitToDynamoJson:
-              $checkedConvert('explicit_to_dynamo_json', (v) => v as bool?),
           fieldRename: $checkedConvert('field_rename',
               (v) => $enumDecodeNullable(_$FieldRenameEnumMap, v)),
           ignoreUnannotated:
@@ -72,9 +66,7 @@ Map<String, dynamic> _$JsonSerializableToJson(DynamoSerializable instance) =>
       'constructor': instance.constructor,
       'create_factory': instance.createFactory,
       'create_field_map': instance.createFieldMap,
-      'create_to_dynamo_json': instance.createToDynamoJson,
       'disallow_unrecognized_keys': instance.disallowUnrecognizedKeys,
-      'explicit_to_dynamo_json': instance.explicitToDynamoJson,
       'field_rename': _$FieldRenameEnumMap[instance.fieldRename],
       'generic_argument_factories': instance.genericArgumentFactories,
       'ignore_unannotated': instance.ignoreUnannotated,

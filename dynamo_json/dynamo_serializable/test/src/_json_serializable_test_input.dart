@@ -193,7 +193,7 @@ Could not generate `fromDynamoJson` code for `watch`.
 To support the type `Stopwatch` you can:
 $converterOrKeyInstructions''',
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class NoDeserializeFieldType {
   Stopwatch? watch;
 }
@@ -213,7 +213,7 @@ class NoSerializeBadKey {
 Could not generate `fromDynamoJson` code for `durationDateTimeMap` because of type `Duration`.
 Map keys must be one of: Object, dynamic, enum, String, BigInt, DateTime, int, Uri.''',
 )
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class NoDeserializeBadKey {
   late Map<Duration, DateTime> durationDateTimeMap;
 }
@@ -402,7 +402,7 @@ FieldWithFromJsonCtorAndTypeParams
                           e as Map<String, dynamic>))
                       .toList());
 ''')
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class FieldWithFromJsonCtorAndTypeParams {
   MyList<GeneralTestClass2, int>? customOrders;
 }
