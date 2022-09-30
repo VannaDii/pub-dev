@@ -68,6 +68,7 @@ const _expectedAnnotatedTests = {
   'GeneralTestClass1',
   'GeneralTestClass2',
   'GenericArgumentFactoriesFlagWithoutGenericType',
+  'Tuple',
   'GenericClass',
   'IgnoredFieldClass',
   'IgnoredFieldCtorClass',

@@ -20,6 +20,10 @@ class JustSetter {
 JustSetterNoToJson _$JustSetterNoToJsonFromDynamoJson(
         Map<String, dynamic> json) =>
     JustSetterNoToJson();
+
+Map<String, dynamic> _$JustSetterNoToJsonToDynamoJson(
+        JustSetterNoToJson instance) =>
+    <String, dynamic>{};
 ''',
   expectedLogItems: ['Setters are ignored: JustSetterNoToJson.someSetter'],
 )

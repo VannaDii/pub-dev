@@ -15,7 +15,7 @@ class BaseResponse<T> {
   final int? status;
   final String? msg;
 
-  @DynamoKey(fromDynamoJson: _dataFromJson)
+  @DynamoKey(fromDynamoJson: _dataFromJson, toDynamoJson: _dataToJson)
   final T? data;
 
   const BaseResponse({
@@ -26,6 +26,19 @@ class BaseResponse<T> {
 
   factory BaseResponse.fromDynamoJson(Map<String, dynamic> json) =>
       _$BaseResponseFromDynamoJson(json);
+
+  Map<String, dynamic> toDynamoJson() => _$BaseResponseToDynamoJson(this);
+
+  static Map<String, dynamic> _dataToJson<T>(T data) {
+    if (data is User) return data.toDynamoJson();
+    if (data is Article) return data.toDynamoJson();
+
+    throw ArgumentError.value(
+      data,
+      'data',
+      'Cannot convert the provided data.',
+    );
+  }
 
   /// Decodes [json] by "inspecting" its contents.
   static T _dataFromJson<T>(Object json) {
@@ -73,6 +86,8 @@ class Article {
 
   factory Article.fromDynamoJson(Map<String, dynamic> json) =>
       _$ArticleFromDynamoJson(json);
+
+  Map<String, dynamic> toDynamoJson() => _$ArticleToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -87,6 +102,8 @@ class User {
 
   factory User.fromDynamoJson(Map<String, dynamic> json) =>
       _$UserFromDynamoJson(json);
+
+  Map<String, dynamic> toDynamoJson() => _$UserToDynamoJson(this);
 }
 
 @DynamoSerializable()
@@ -101,4 +118,6 @@ class Comment {
 
   factory Comment.fromDynamoJson(Map<String, dynamic> json) =>
       _$CommentFromDynamoJson(json);
+
+  Map<String, dynamic> toDynamoJson() => _$CommentToDynamoJson(this);
 }

@@ -86,8 +86,7 @@ class BadEnumDefaultValue {
   BadEnumDefaultValue();
 }
 
-@ShouldGenerate(
-  r'''
+@ShouldGenerate(r'''
 DefaultWithToJsonClass _$DefaultWithToJsonClassFromDynamoJson(
         Map<String, dynamic> json) =>
     DefaultWithToJsonClass()
@@ -95,8 +94,13 @@ DefaultWithToJsonClass _$DefaultWithToJsonClassFromDynamoJson(
           ? 7
           : DefaultWithToJsonClass._fromDynamoJson(
               json['fieldDefaultValueToJson'] as String);
-''',
-)
+
+Map<String, dynamic> _$DefaultWithToJsonClassToDynamoJson(
+        DefaultWithToJsonClass instance) =>
+    <String, dynamic>{
+      'fieldDefaultValueToJson': instance.fieldDefaultValueToJson,
+    };
+''')
 @DynamoSerializable()
 class DefaultWithToJsonClass {
   @DynamoKey(defaultValue: 7, fromDynamoJson: _fromDynamoJson)
@@ -120,6 +124,20 @@ DefaultWithDisallowNullRequiredClass
   return DefaultWithDisallowNullRequiredClass()
     ..theField = json['theField'] as int? ?? 7;
 }
+
+Map<String, dynamic> _$DefaultWithDisallowNullRequiredClassToDynamoJson(
+    DefaultWithDisallowNullRequiredClass instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('theField', instance.theField);
+  return val;
+}
 ''',
   expectedLogItems: [
     'The `defaultValue` on field `theField` will have no effect because both '
@@ -142,6 +160,12 @@ CtorDefaultValueAndJsonKeyDefaultValue
         CtorDefaultValueAndJsonKeyDefaultValue(
           json['theField'] as int? ?? 7,
         );
+
+Map<String, dynamic> _$CtorDefaultValueAndJsonKeyDefaultValueToDynamoJson(
+        CtorDefaultValueAndJsonKeyDefaultValue instance) =>
+    <String, dynamic>{
+      'theField': instance.theField,
+    };
 ''',
   expectedLogItems: [
     'The constructor parameter for `theField` has a default value `6`, but the '
@@ -164,6 +188,12 @@ SameCtorAndJsonKeyDefaultValue _$SameCtorAndJsonKeyDefaultValueFromDynamoJson(
     SameCtorAndJsonKeyDefaultValue(
       json['theField'] as int? ?? 3,
     );
+
+Map<String, dynamic> _$SameCtorAndJsonKeyDefaultValueToDynamoJson(
+        SameCtorAndJsonKeyDefaultValue instance) =>
+    <String, dynamic>{
+      'theField': instance.theField,
+    };
 ''',
   expectedLogItems: [
     'The default value `3` for `theField` is defined twice '
@@ -192,6 +222,16 @@ DefaultDoubleConstants _$DefaultDoubleConstantsFromDynamoJson(
           (json['defaultMinPositive'] as num?)?.toDouble() ?? 5e-324
       ..defaultMaxFinite = (json['defaultMaxFinite'] as num?)?.toDouble() ??
           1.7976931348623157e+308;
+
+Map<String, dynamic> _$DefaultDoubleConstantsToDynamoJson(
+        DefaultDoubleConstants instance) =>
+    <String, dynamic>{
+      'defaultNan': instance.defaultNan,
+      'defaultNegativeInfinity': instance.defaultNegativeInfinity,
+      'defaultInfinity': instance.defaultInfinity,
+      'defaultMinPositive': instance.defaultMinPositive,
+      'defaultMaxFinite': instance.defaultMaxFinite,
+    };
 ''')
 @DynamoSerializable()
 class DefaultDoubleConstants {

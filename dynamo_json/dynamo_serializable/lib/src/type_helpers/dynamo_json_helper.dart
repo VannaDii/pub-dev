@@ -185,8 +185,7 @@ TypeParameterType _decodeHelper(
 
   throw InvalidGenerationSourceError(
     'Expecting a `fromDynamoJson` constructor with exactly one positional '
-    'parameter. '
-    'The only extra parameters allowed are functions of the form '
+    'parameter. The only extra parameters allowed are functions of the form '
     '`T Function(Object?) ${fromDynamoJsonForName('T')}` where `T` is a type '
     'parameter of the target type.',
     element: targetElement,

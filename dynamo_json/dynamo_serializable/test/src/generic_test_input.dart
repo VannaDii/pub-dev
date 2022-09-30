@@ -84,3 +84,49 @@ Map<String, dynamic>
 )
 @DynamoSerializable(genericArgumentFactories: true)
 class GenericArgumentFactoriesFlagWithoutGenericType {}
+
+@ShouldGenerate(r'''
+Tuple<T, S> _$TupleFromDynamoJson<T, S>(
+  Map<String, dynamic> json,
+  T Function(Object? json) fromDynamoJsonT,
+  S Function(Object? json) fromDynamoJsonS,
+) =>
+    Tuple<T, S>(
+      fromDynamoJsonT(json['value1']),
+      fromDynamoJsonS(json['value2']),
+    );
+
+Map<String, dynamic> _$TupleToDynamoJson<T, S>(
+  Tuple<T, S> instance,
+  Object? Function(T value) toDynamoJsonT,
+  Object? Function(S value) toDynamoJsonS,
+) =>
+    <String, dynamic>{
+      'value1': toDynamoJsonT(instance.value1),
+      'value2': toDynamoJsonS(instance.value2),
+    };
+''')
+@DynamoSerializable(genericArgumentFactories: true)
+class Tuple<T, S> {
+  final T value1;
+
+  final S value2;
+
+  Tuple(this.value1, this.value2);
+
+  factory Tuple.fromDynamoJson(
+    // ignore: avoid_unused_constructor_parameters
+    Map<String, dynamic> json,
+    // ignore: avoid_unused_constructor_parameters
+    T Function(Object? json) fromDynamoJsonT,
+    // ignore: avoid_unused_constructor_parameters
+    S Function(Object? json) fromJsonS,
+  ) =>
+      throw UnimplementedError('For generation testing only');
+
+  Map<String, dynamic> toDynamoJson(
+    Object Function(T value) toDynamoJsonT,
+    Object Function(S value) toDynamoJsonS,
+  ) =>
+      throw UnimplementedError('For generation testing only');
+}

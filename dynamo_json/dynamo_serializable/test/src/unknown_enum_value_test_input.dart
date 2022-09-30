@@ -1,13 +1,18 @@
 part of '_json_serializable_test_input.dart';
 
-@ShouldGenerate(
-  r'''
+@ShouldGenerate(r'''
 UnknownEnumValue _$UnknownEnumValueFromDynamoJson(Map<String, dynamic> json) =>
     UnknownEnumValue()
       ..value = $enumDecodeNullable(
               _$UnknownEnumValueItemsEnumMap, json['value'],
               unknownValue: UnknownEnumValueItems.vUnknown) ??
           UnknownEnumValueItems.vNull;
+
+Map<String, dynamic> _$UnknownEnumValueToDynamoJson(
+        UnknownEnumValue instance) =>
+    <String, dynamic>{
+      'value': _$UnknownEnumValueItemsEnumMap[instance.value],
+    };
 
 const _$UnknownEnumValueItemsEnumMap = {
   UnknownEnumValueItems.v0: 'v0',
@@ -16,8 +21,7 @@ const _$UnknownEnumValueItemsEnumMap = {
   UnknownEnumValueItems.vUnknown: 'vUnknown',
   UnknownEnumValueItems.vNull: 'vNull',
 };
-''',
-)
+''')
 @DynamoSerializable()
 class UnknownEnumValue {
   @DynamoKey(

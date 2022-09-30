@@ -207,6 +207,14 @@ FromDynamicCollection _$FromDynamicCollectionFromDynamoJson(
       ..mapField = _fromDynamicMap(json['mapField'] as Map)
       ..listField = _fromDynamicList(json['listField'] as List)
       ..iterableField = _fromDynamicIterable(json['iterableField'] as List);
+
+Map<String, dynamic> _$FromDynamicCollectionToDynamoJson(
+        FromDynamicCollection instance) =>
+    <String, dynamic>{
+      'mapField': instance.mapField,
+      'listField': instance.listField,
+      'iterableField': instance.iterableField,
+    };
 ''',
 )
 @DynamoSerializable()
@@ -234,6 +242,14 @@ FromNullableDynamicCollection _$FromNullableDynamicCollectionFromDynamoJson(
       ..listField = _fromNullableDynamicList(json['listField'] as List?)
       ..iterableField =
           _fromNullableDynamicIterable(json['iterableField'] as List?);
+
+Map<String, dynamic> _$FromNullableDynamicCollectionToDynamoJson(
+        FromNullableDynamicCollection instance) =>
+    <String, dynamic>{
+      'mapField': instance.mapField,
+      'listField': instance.listField,
+      'iterableField': instance.iterableField,
+    };
 ''',
 )
 @DynamoSerializable()

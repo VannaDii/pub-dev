@@ -119,6 +119,8 @@ class GeneralTestClass2 {
       :
         // ignore: prefer_initializing_formals
         firstName = firstName;
+
+  Map<String, dynamic> toDynamoJson() => throw UnimplementedError();
 }
 
 @ShouldGenerate(r'''
@@ -401,6 +403,13 @@ FieldWithFromJsonCtorAndTypeParams
                       .map((e) => GeneralTestClass2.fromDynamoJson(
                           e as Map<String, dynamic>))
                       .toList());
+
+Map<String, dynamic> _$FieldWithFromJsonCtorAndTypeParamsToDynamoJson(
+        FieldWithFromJsonCtorAndTypeParams instance) =>
+    <String, dynamic>{
+      'customOrders':
+          instance.customOrders?.map((e) => e.toDynamoJson()).toList(),
+    };
 ''')
 @DynamoSerializable()
 class FieldWithFromJsonCtorAndTypeParams {
@@ -539,8 +548,8 @@ class NoParamFromJsonCtor {
 }
 
 @ShouldThrow(
-  'Expecting a `fromDynamoJson` constructor with exactly one positional parameter. '
-  'The only extra parameters allowed are functions of the form '
+  'Expecting a `fromDynamoJson` constructor with exactly one positional '
+  'parameter. The only extra parameters allowed are functions of the form '
   '`T Function(Object?) fromDynamoJsonT` '
   'where `T` is a type parameter of the target type.',
   element: 'fromDynamoJson',

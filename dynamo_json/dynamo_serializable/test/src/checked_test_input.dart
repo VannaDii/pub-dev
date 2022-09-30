@@ -20,6 +20,12 @@ WithANonCtorGetterChecked _$WithANonCtorGetterCheckedFromDynamoJson(
         return val;
       },
     );
+
+Map<String, dynamic> _$WithANonCtorGetterCheckedToDynamoJson(
+        WithANonCtorGetterChecked instance) =>
+    <String, dynamic>{
+      'items': instance.items,
+    };
 ''')
 @DynamoSerializable(
   disallowUnrecognizedKeys: true,
@@ -47,6 +53,12 @@ WithANonCtorGetter _$WithANonCtorGetterFromDynamoJson(
     (json['items'] as List<dynamic>).map((e) => e as String).toList(),
   );
 }
+
+Map<String, dynamic> _$WithANonCtorGetterToDynamoJson(
+        WithANonCtorGetter instance) =>
+    <String, dynamic>{
+      'items': instance.items,
+    };
 ''')
 @DynamoSerializable(disallowUnrecognizedKeys: true)
 class WithANonCtorGetter {
