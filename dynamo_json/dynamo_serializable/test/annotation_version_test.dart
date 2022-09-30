@@ -4,7 +4,6 @@
 
 @TestOn('vm')
 @Tags(['presubmit-only'])
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:dynamo_serializable/src/check_dependencies.dart';

@@ -5,3 +5,4 @@ environment:
 
 dev_dependencies:
   lints: any
+  test: any

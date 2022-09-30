@@ -237,7 +237,7 @@ void main() {
   });
 
   test('issue 980 regression test', () {
-    var instance = Issue980ParentClass([
+    final instance = Issue980ParentClass([
       Issue980GenericClass(45),
       Issue980GenericClass(42),
     ]);
