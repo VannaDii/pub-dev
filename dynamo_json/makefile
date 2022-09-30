@@ -5,7 +5,7 @@ endif
 # Use the directory name for the distribution name
 lib_name=$(shell basename $$(pwd))
 
-deps: clean
+deps:
 	dart pub get -C dynamo_annotation
 	dart pub get -C dynamo_serializable
 	dart pub get -C shared_test
@@ -31,10 +31,6 @@ all: tests
 	dart fix --apply >>/dev/null
 	dart format . >>/dev/null
 	dart analyze --fatal-infos
-
-clean:
-	cd dynamo_annotation && rm -rf .dart_tool doc .packages pubspec.lock
-	cd dynamo_serializable && rm -rf .dart_tool doc .packages pubspec.lock
 
 docs:
 	cd dynamo_annotation && dart doc
