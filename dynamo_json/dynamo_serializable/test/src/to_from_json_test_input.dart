@@ -59,8 +59,8 @@ class ValidToFromFuncClassStatic {
 }
 
 @ShouldThrow(
-  'Error with `@DynamoKey` on the `field` field. The `toDynamoJson` function `_toInt` '
-  'argument type `bool` is not compatible with field type `String`.',
+  'Error with `@DynamoKey` on the `field` field. The `toDynamoJson` function '
+  '`_toInt` argument type `bool` is not compatible with field type `String`.',
   element: 'field',
 )
 @DynamoSerializable()
@@ -70,9 +70,9 @@ class BadToFuncReturnType {
 }
 
 @ShouldThrow(
-  'Error with `@DynamoKey` on the `values` field. The `fromDynamoJson` function '
-  '`_fromList` return type `List<int>?` is not compatible with field type '
-  '`List<int>`.',
+  'Error with `@DynamoKey` on the `values` field. The `fromDynamoJson` '
+  'function `_fromList` return type `List<int>?` is not compatible with field '
+  'type `List<int>`.',
   element: 'values',
 )
 @DynamoSerializable()

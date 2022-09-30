@@ -223,6 +223,8 @@ class UnknownEnumValue {
 
   factory UnknownEnumValue.fromDynamoJson(Map<String, dynamic> json) =>
       _$UnknownEnumValueFromDynamoJson(json);
+
+  Map<String, dynamic> toDynamoJson() => _$UnknownEnumValueToDynamoJson(this);
 }
 
 @DynamoSerializable(constructor: '_')

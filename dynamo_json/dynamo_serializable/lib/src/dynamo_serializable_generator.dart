@@ -42,8 +42,8 @@ class DynamoSerializableGenerator
   ///
   /// [typeHelpers] provides a set of [TypeHelper] that will be used along with
   /// the built-in helpers:
-  /// [BigIntHelper], [DateTimeHelper], [DurationHelper], [DynamoJsonHelper], and
-  /// [UriHelper].
+  /// [BigIntHelper], [DateTimeHelper], [DurationHelper], [DynamoJsonHelper],
+  /// and [UriHelper].
   factory DynamoSerializableGenerator.withDefaultHelpers(
     Iterable<TypeHelper> typeHelpers, {
     DynamoSerializable? config,

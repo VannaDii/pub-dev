@@ -534,8 +534,8 @@ class OverrideGetterExampleI613Super {
 }
 
 @ShouldThrow(
-  'Expecting a `fromDynamoJson` constructor with exactly one positional parameter. '
-  'Found a constructor with 0 parameters.',
+  'Expecting a `fromDynamoJson` constructor with exactly one positional '
+  'parameter. Found a constructor with 0 parameters.',
   element: 'fromDynamoJson',
 )
 @DynamoSerializable()

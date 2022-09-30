@@ -69,8 +69,8 @@ class UnknownEnumValueWrongEnumType {
 }
 
 @ShouldThrow(
-  'Error with `@DynamoKey` on the `value` field. `unknownEnumValue` can only be '
-  'set on fields of type enum or on Iterable, List, or Set instances of an '
+  'Error with `@DynamoKey` on the `value` field. `unknownEnumValue` can only '
+  'be set on fields of type enum or on Iterable, List, or Set instances of an '
   'enum type.',
 )
 @DynamoSerializable()

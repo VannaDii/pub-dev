@@ -48,8 +48,8 @@ class Settings {
   /// Creates an instance of [Settings].
   ///
   /// If [typeHelpers] is not provided, the built-in helpers are used:
-  /// [BigIntHelper], [DateTimeHelper], [DurationHelper], [DynamoJsonHelper], and
-  /// [UriHelper].
+  /// [BigIntHelper], [DateTimeHelper], [DurationHelper], [DynamoJsonHelper],
+  /// and [UriHelper].
   Settings({
     DynamoSerializable? config,
     List<TypeHelper>? typeHelpers,
@@ -62,8 +62,8 @@ class Settings {
   ///
   /// [typeHelpers] provides a set of [TypeHelper] that will be used along with
   /// the built-in helpers:
-  /// [BigIntHelper], [DateTimeHelper], [DurationHelper], [DynamoJsonHelper], and
-  /// [UriHelper].
+  /// [BigIntHelper], [DateTimeHelper], [DurationHelper], [DynamoJsonHelper],
+  /// and [UriHelper].
   factory Settings.withDefaultHelpers(
     Iterable<TypeHelper> typeHelpers, {
     DynamoSerializable? config,

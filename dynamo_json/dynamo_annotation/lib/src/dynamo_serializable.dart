@@ -50,8 +50,8 @@ class DynamoSerializable {
   /// *Note: in many cases the key values are still assumed to be [String]*.
   final bool? anyMap;
 
-  /// If `true`, generated `fromDynamoJson` functions include extra checks to validate
-  /// proper deserialization of types.
+  /// If `true`, generated `fromDynamoJson` functions include extra checks to
+  /// validate proper deserialization of types.
   ///
   /// If an exception is thrown during deserialization, a
   /// [CheckedFromJsonException] is thrown.
@@ -108,8 +108,8 @@ class DynamoSerializable {
   final FieldRename? fieldRename;
 
   /// When `true` on classes with type parameters (generic types), extra
-  /// "helper" parameters will be generated for `fromDynamoJson` and/or `toDynamoJson` to
-  /// support serializing values of those types.
+  /// "helper" parameters will be generated for `fromDynamoJson` and/or
+  /// `toDynamoJson` to support serializing values of those types.
   ///
   /// For example, the generated code for
   ///

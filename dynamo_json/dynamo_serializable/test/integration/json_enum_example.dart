@@ -34,6 +34,8 @@ class Issue559Regression {
   factory Issue559Regression.fromDynamoJson(Map<String, dynamic> json) =>
       _$Issue559RegressionFromDynamoJson(json);
 
+  Map<String, dynamic> toDynamoJson() => _$Issue559RegressionToDynamoJson(this);
+
   @DynamoKey(
     disallowNullValue: true,
     required: true,

@@ -119,7 +119,8 @@ abstract class EncodeHelper implements HelperCore {
           buffer.writeln('      $safeDynamoKeyString: $expression,');
         } else {
           buffer.writeln(
-              '    $generatedLocalVarName[$safeDynamoKeyString] = $expression;');
+            '    $generatedLocalVarName[$safeDynamoKeyString] = $expression;',
+          );
         }
       } else {
         if (directWrite) {
@@ -140,7 +141,8 @@ abstract class EncodeHelper implements HelperCore {
           directWrite = false;
         }
         buffer.writeln(
-            '    $toDynamoJsonMapHelperName($safeDynamoKeyString, $expression);');
+          '    $toDynamoJsonMapHelperName($safeDynamoKeyString, $expression);',
+        );
       }
     }
 

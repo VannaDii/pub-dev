@@ -8,12 +8,12 @@ environment:
   sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
+  json_annotation: ^4.6.0
   meta: ^1.4.0
-  json_annotation: any
 
 dev_dependencies:
+  json_serializable: ^4.6.0
   lints: ^2.0.0
-  json_serializable: any
-# When changing JsonSerializable class.
+# When changing DynamoSerializable class.
 #  build_runner: ^2.0.0
-#  json_serializable: any
+#  dynamo_serializable: any
