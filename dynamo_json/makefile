@@ -33,7 +33,9 @@ all: tests
 	dart analyze --fatal-infos
 
 clean:
-	rm -rf .dart_tool doc .packages pubspec.lock
+	cd dynamo_annotation && rm -rf .dart_tool doc .packages pubspec.lock
+	cd dynamo_serializable && rm -rf .dart_tool doc .packages pubspec.lock
 
 docs:
-	dartdoc
+	cd dynamo_annotation && dart doc
+	cd dynamo_serializable && dart doc
