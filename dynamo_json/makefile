@@ -6,6 +6,7 @@ endif
 lib_name=$(shell basename $$(pwd))
 
 deps:
+	dart pub get
 	dart pub get -C dynamo_annotation
 	dart pub get -C dynamo_serializable
 	dart pub get -C shared_test
