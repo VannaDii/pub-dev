@@ -8,6 +8,6 @@ See the [example] to understand how to configure your package.
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[example]: https://github.com/giocirque/pub-dev/dynamo_json/tree/master/example
+[example]: https://github.com/GioCirque/pub-dev/tree/main/dynamo_json/example
 [tracker]: https://github.com/giocirque/pub-dev/issues
 [dynamo_serializable]: https://pub.dev/packages/dynamo_serializable
