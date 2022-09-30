@@ -23,16 +23,16 @@ class GenericClassWithHelpersNullable<T, S> {
   factory GenericClassWithHelpersNullable.fromDynamoJson(
     Map<String, dynamic> json,
     T Function(Object? json) fromDynamoJsonT,
-    S Function(Object? json) fromJsonS,
+    S Function(Object? json) fromDynamoJsonS,
   ) =>
-      _$GenericClassWithHelpersNullableFromJson(
-          json, fromDynamoJsonT, fromJsonS);
+      _$GenericClassWithHelpersNullableFromDynamoJson(
+          json, fromDynamoJsonT, fromDynamoJsonS);
 
   Map<String, dynamic> toDynamoJson(
     Object? Function(T value) toDynamoJsonT,
     Object? Function(S value) toDynamoJsonS,
   ) =>
-      _$GenericClassWithHelpersNullableToJson(
+      _$GenericClassWithHelpersNullableToDynamoJson(
           this, toDynamoJsonT, toDynamoJsonS);
 }
 
@@ -48,7 +48,8 @@ class ConcreteClassNullable {
   ConcreteClassNullable(this.value, this.value2, this.value3);
 
   factory ConcreteClassNullable.fromDynamoJson(Map<String, dynamic> json) =>
-      _$ConcreteClassNullableFromJson(json);
+      _$ConcreteClassNullableFromDynamoJson(json);
 
-  Map<String, dynamic> toDynamoJson() => _$ConcreteClassNullableToJson(this);
+  Map<String, dynamic> toDynamoJson() =>
+      _$ConcreteClassNullableToDynamoJson(this);
 }

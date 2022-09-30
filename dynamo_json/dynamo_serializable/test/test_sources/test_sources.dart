@@ -42,6 +42,8 @@ class FromJsonOptionalParameters {
 class ChildWithFromJson {
   //ignore: avoid_unused_constructor_parameters
   ChildWithFromJson.fromDynamoJson(json, {initValue = false});
+
+  Map<String, dynamic> toDynamoJson() => {};
 }
 
 @DynamoSerializable()
@@ -55,6 +57,11 @@ class ParentObject {
 class ChildObject {
   int? number;
   String? str;
+
+  // ignore: avoid_unused_constructor_parameters
+  ChildObject.fromDynamoJson(Map<String, dynamic> json);
+
+  Map<String, dynamic> toDynamoJson() => {};
 }
 
 @DynamoSerializable()
@@ -71,14 +78,28 @@ class ParentObjectWithDynamicChildren {
   late List<dynamic> children;
 }
 
-@DynamoSerializable(createFactory: false)
+@DynamoSerializable()
 class TrivialNestedNullable {
   TrivialNestedNullable? child;
   int? otherField;
+
+  TrivialNestedNullable();
+
+  // ignore: avoid_unused_constructor_parameters
+  TrivialNestedNullable.fromDynamoJson(Map<String, dynamic> json);
+
+  Map<String, dynamic> toDynamoJson() => {};
 }
 
-@DynamoSerializable(createFactory: false)
+@DynamoSerializable()
 class TrivialNestedNonNullable {
   late TrivialNestedNonNullable child;
   int? otherField;
+
+  TrivialNestedNonNullable();
+
+  // ignore: avoid_unused_constructor_parameters
+  TrivialNestedNonNullable.fromDynamoJson(Map<String, dynamic> json);
+
+  Map<String, dynamic> toDynamoJson() => {};
 }

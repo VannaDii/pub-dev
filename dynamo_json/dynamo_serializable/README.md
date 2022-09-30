@@ -132,7 +132,7 @@ enum StatusCode {
 
 Out of the box, `json_serializable` supports many common types in the
 [dart:core](https://api.dart.dev/stable/dart-core/dart-core-library.html)
-library: 
+library:
 [`BigInt`], [`bool`], [`DateTime`], [`double`], [`Duration`], [`Enum`], [`int`],
 [`Iterable`], [`List`], [`Map`], [`num`], [`Object`], [`Set`], [`String`],
 [`Uri`]
@@ -171,7 +171,7 @@ configure code generation by setting values in `build.yaml`.
 targets:
   $default:
     builders:
-      json_serializable:
+      dynamo_serializable:
         options:
           # Options configure how source code is generated for every
           # `@JsonSerializable`-annotated class in the package.
@@ -182,9 +182,7 @@ targets:
           constructor: ""
           create_factory: true
           create_field_map: false
-          create_to_json: true
           disallow_unrecognized_keys: false
-          explicit_to_json: false
           field_rename: none
           generic_argument_factories: false
           ignore_unannotated: false

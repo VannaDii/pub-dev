@@ -26,17 +26,6 @@ void main() {
       expect(loudEncode(object2), encoded);
     });
 
-    test('round trip null', () {
-      final object = SimpleClass.fromDynamoJson({});
-      final encoded = loudEncode(object);
-
-      expect(encoded, loudEncode(_nullableDefaultOutput));
-      final object2 = SimpleClass.fromDynamoJson(
-        jsonDecode(encoded) as Map<String, Object?>,
-      );
-      expect(loudEncode(object2), encoded);
-    });
-
     test('round trip alternate values', () {
       final object = SimpleClass.fromDynamoJson(_nonDefaultJson);
       final encoded = loudEncode(object);

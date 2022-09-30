@@ -119,10 +119,10 @@ class Issue980GenericClass<T> {
 
   Issue980GenericClass(this.value);
 
-  factory Issue980GenericClass.fromJson(Map<String, dynamic> json) =>
+  factory Issue980GenericClass.fromDynamoJson(Map<String, dynamic> json) =>
       Issue980GenericClass(json['value'] as T);
 
-  Map<String, dynamic> toJson() => {'value': value};
+  Map<String, dynamic> toDynamoJson() => {'value': value};
 
   @override
   bool operator ==(Object other) =>

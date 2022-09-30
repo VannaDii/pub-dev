@@ -51,7 +51,7 @@ class Platform {
 
   const Platform._(this.description);
 
-  factory Platform.fromJson(String value) {
+  factory Platform.fromDynamoJson(String value) {
     switch (value) {
       case 'foo':
         return foo;
@@ -62,7 +62,7 @@ class Platform {
     }
   }
 
-  String toJson() => description;
+  String toDynamoJson() => description;
 }
 
 abstract class ItemCore {
@@ -76,7 +76,7 @@ class MyList<T> extends ListBase<T> {
 
   MyList(Iterable<T> source) : _data = source.toList();
 
-  factory MyList.fromJson(List<T> items) => MyList(items);
+  factory MyList.fromDynamoJson(List<T> items) => MyList(items);
 
   @override
   int get length => _data.length;

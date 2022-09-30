@@ -57,7 +57,7 @@ void main() {
   );
 
   test(
-    'dependency with `null` constraint',
+    'dependency with null constraint',
     () => _structurePackage(
       sourceDirectory: 'lib',
       dependencies: {'dynamo_annotation': null},

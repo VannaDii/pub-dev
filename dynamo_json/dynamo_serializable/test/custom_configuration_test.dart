@@ -73,26 +73,6 @@ Future<void> main() async {
     });
 
     test(
-        'values in config override un-configured (default) values in annotation',
-        () async {
-      await runWithConfigAndLogger(
-          DynamoSerializable.fromJson(generatorConfigNonDefaultJson),
-          'ConfigurationImplicitDefaults');
-
-      expect(_ConfigLogger.configurations, isEmpty,
-          reason: 'all generation is disabled');
-
-      // Create a configuration with just `create_to_dynamo_json` set to true
-      // so we can validate the configuration that is run with
-      final configMap =
-          Map<String, dynamic>.from(generatorConfigNonDefaultJson);
-      configMap['create_to_dynamo_json'] = true;
-
-      await runWithConfigAndLogger(DynamoSerializable.fromJson(configMap),
-          'ConfigurationImplicitDefaults');
-    });
-
-    test(
       'explicit values in annotation override corresponding settings in config',
       () async {
         await runWithConfigAndLogger(
@@ -139,7 +119,16 @@ void _registerTests(DynamoSerializable generator) {
       final output = await _runForElementNamed(
           const DynamoSerializable(), 'TrivialNestedNullable');
 
-      const expected = r'''
+      const expected =
+          r'''TrivialNestedNullable _$TrivialNestedNullableFromDynamoJson(
+        Map<String, dynamic> json) =>
+    TrivialNestedNullable()
+      ..child = json['child'] == null
+          ? null
+          : TrivialNestedNullable.fromDynamoJson(
+              json['child'] as Map<String, dynamic>)
+      ..otherField = json['otherField'] as int?;
+
 Map<String, dynamic> _$TrivialNestedNullableToDynamoJson(
         TrivialNestedNullable instance) =>
     <String, dynamic>{
@@ -154,7 +143,14 @@ Map<String, dynamic> _$TrivialNestedNullableToDynamoJson(
       final output = await _runForElementNamed(
           const DynamoSerializable(), 'TrivialNestedNonNullable');
 
-      const expected = r'''
+      const expected =
+          r'''TrivialNestedNonNullable _$TrivialNestedNonNullableFromDynamoJson(
+        Map<String, dynamic> json) =>
+    TrivialNestedNonNullable()
+      ..child = TrivialNestedNonNullable.fromDynamoJson(
+          json['child'] as Map<String, dynamic>)
+      ..otherField = json['otherField'] as int?;
+
 Map<String, dynamic> _$TrivialNestedNonNullableToDynamoJson(
         TrivialNestedNonNullable instance) =>
     <String, dynamic>{
@@ -188,8 +184,10 @@ Map<String, dynamic> _$TrivialNestedNonNullableToDynamoJson(
       final output = await _runForElementNamed(
           const DynamoSerializable(anyMap: true), 'ParentObject');
 
-      expect(
-          output, contains("ChildObject.fromDynamoJson(json['child'] as Map)"));
+      expect(output, contains(r'''
+      : ChildObject.fromDynamoJson(
+          Map<String, dynamic>.from(json['child'] as Map));
+'''));
     });
 
     test('class with child list of json-able objects', () async {

@@ -205,7 +205,7 @@ class MapKeyVariety {
       deepEquals(other.bigIntMap, bigIntMap);
 }
 
-@DynamoSerializable(createToDynamoJson: false)
+@DynamoSerializable()
 class UnknownEnumValue {
   @DynamoKey(unknownEnumValue: Category.notDiscoveredYet)
   late Category enumValue;

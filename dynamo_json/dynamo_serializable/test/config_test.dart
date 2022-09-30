@@ -127,10 +127,6 @@ void main() {
             lastLine = "type 'int' is not a subtype of type 'String?' in type "
                 'cast';
             break;
-          case 'create_to_dynamo_json':
-            lastLine = "type 'int' is not a subtype of type 'bool?' in type "
-                'cast';
-            break;
           default:
             lastLine =
                 "type 'int' is not a subtype of type 'bool?' in type cast";
@@ -158,9 +154,7 @@ const _invalidConfig = {
   'constructor': 42,
   'create_factory': 42,
   'create_field_map': 42,
-  'create_to_dynamo_json': 42,
   'disallow_unrecognized_keys': 42,
-  'explicit_to_dynamo_json': 42,
   'field_rename': 42,
   'generic_argument_factories': 42,
   'ignore_unannotated': 42,

@@ -23,9 +23,10 @@ class GenericClassWithHelpers<T, S> {
   factory GenericClassWithHelpers.fromDynamoJson(
     Map<String, dynamic> json,
     T Function(Object? json) fromDynamoJsonT,
-    S Function(Object? json) fromJsonS,
+    S Function(Object? json) fromDynamoJsonS,
   ) =>
-      _$GenericClassWithHelpersFromDynamoJson(json, fromDynamoJsonT, fromJsonS);
+      _$GenericClassWithHelpersFromDynamoJson(
+          json, fromDynamoJsonT, fromDynamoJsonS);
 
   Map<String, dynamic> toDynamoJson(
     Object? Function(T value) toDynamoJsonT,

@@ -12,9 +12,7 @@ import 'json_test_common.dart';
 
 part 'json_test_example.g_any_map.g.dart';
 
-@DynamoSerializable(
-  anyMap: true,
-)
+@DynamoSerializable(anyMap: true)
 class Person {
   final String firstName, lastName;
   final String? middleName;
@@ -213,7 +211,9 @@ class MapKeyVariety {
       deepEquals(other.bigIntMap, bigIntMap);
 }
 
-@DynamoSerializable(anyMap: true, createToDynamoJson: false)
+@DynamoSerializable(
+  anyMap: true,
+)
 class UnknownEnumValue {
   @DynamoKey(unknownEnumValue: Category.notDiscoveredYet)
   late Category enumValue;
