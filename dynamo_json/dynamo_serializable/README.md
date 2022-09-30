@@ -1,29 +1,29 @@
 <!-- This content is generated. See tool/readme/readme_template.md -->
-[![Pub Package](https://img.shields.io/pub/v/json_serializable.svg)](https://pub.dev/packages/json_serializable)
+[![Pub Package](https://img.shields.io/pub/v/dynamo_serializable.svg)](https://pub.dev/packages/dynamo_serializable)
 
 Provides [Dart Build System] builders for handling JSON.
 
 The builders generate code when they find members annotated with classes defined
-in [package:json_annotation].
+in [package:dynamo_annotation].
 
 - To generate to/from JSON code for a class, annotate it with
-  [`JsonSerializable`]. You can provide arguments to [`JsonSerializable`] to
+  [`DynamoSerializable`]. You can provide arguments to [`DynamoSerializable`] to
   configure the generated code. You can also customize individual fields by
-  annotating them with [`JsonKey`] and providing custom arguments. See the
+  annotating them with [`DynamoKey`] and providing custom arguments. See the
   table below for details on the [annotation values](#annotation-values).
 
 - To generate a Dart field with the contents of a file containing JSON, use the
-  [`JsonLiteral`] annotation.
+  [`DynamoLiteral`] annotation.
 
 ## Setup
 
 To configure your project for the latest released version of
-`json_serializable`, see the [example].
+`dynamo_serializable`, see the [example].
 
 ## Example
 
 Given a library `example.dart` with an `Person` class annotated with
-[`JsonSerializable`]:
+[`DynamoSerializable`]:
 
 ```dart
 import 'package:dynamo_annotation/dynamo_annotation.dart';
@@ -43,12 +43,12 @@ class Person {
 
   /// Connect the generated [_$PersonFromDynamoJson] function to the
   /// `fromDynamoJson` factory.
-  factory Person.fromJson(Map<String, dynamic> json) =>
+  factory Person.fromDynamoJson(Map<String, dynamic> json) =>
       _$PersonFromDynamoJson(json);
 
   /// Connect the generated [_$PersonToDynamoJson] function to the
   /// `toDynamoJson` method.
-  Map<String, dynamic> toJson() => _$PersonToDynamoJson(this);
+  Map<String, dynamic> toDynamoJson() => _$PersonToDynamoJson(this);
 }
 ```
 
@@ -84,29 +84,29 @@ directory.
 
 # Annotation values
 
-The only annotation required to use this package is [`JsonSerializable`]. When
-applied to a class (in a correctly configured package), `toJson` and `fromJson`
+The only annotation required to use this package is [`DynamoSerializable`]. When
+applied to a class (in a correctly configured package), `toDynamoJson` and `fromDynamoJson`
 code will be generated when you build. There are three ways to control how code
 is generated:
 
-1. Setting properties on [`JsonKey`] annotating the target field.
-1. Set properties on [`JsonSerializable`] annotating the target type.
+1. Setting properties on [`DynamoKey`] annotating the target field.
+1. Set properties on [`DynamoSerializable`] annotating the target type.
 1. Add configuration to `build.yaml` – [see below](#build-configuration).
 
-Every [`JsonSerializable`] field is configurable via `build.yaml`. If you find
+Every [`DynamoSerializable`] field is configurable via `build.yaml`. If you find
 you want all or most of your classes with the same configuration, it may be
 easier to specify values once in the YAML file. Values set explicitly on
-[`JsonSerializable`] take precedence over settings in `build.yaml`.
+[`DynamoSerializable`] take precedence over settings in `build.yaml`.
 
-There is some overlap between settings on [`JsonKey`] and
-[`JsonSerializable`]. In these cases, the property on [`JsonKey`] takes
-precedence over any value set on [`JsonSerializable`].
+There is some overlap between settings on [`DynamoKey`] and
+[`DynamoSerializable`]. In these cases, the property on [`DynamoKey`] takes
+precedence over any value set on [`DynamoSerializable`].
 
 <!-- TODO: add an example! -->
 
 ## Enums
 
-Annotate `enum` types with [`JsonEnum`] (new in `json_annotation` 4.2.0) to:
+Annotate `enum` types with [`DynamoEnum`] (new in `dynamo_annotation` 4.2.0) to:
 
 1. Specify the default rename logic for each enum value using `fieldRename`. For
    instance, use `fieldRename: FieldRename.kebab` to encode `enum` value
@@ -114,23 +114,23 @@ Annotate `enum` types with [`JsonEnum`] (new in `json_annotation` 4.2.0) to:
 1. Force the generation of the `enum` helpers, even if the `enum` is not
    referenced in code. This is an edge scenario, but useful for some.
 
-Annotate `enum` values with [`JsonValue`] to specify the encoded value to map
+Annotate `enum` values with [`DynamoValue`] to specify the encoded value to map
 to target `enum` entries. Values can be of type [`String`] or [`int`].
 
 <!-- TODO: hoist out to source code! -->
 
 ```dart
 enum StatusCode {
-  @JsonValue(200)
+  @DynamoValue(200)
   success,
-  @JsonValue('500')
+  @DynamoValue('500')
   weird,
 }
 ```
 
 # Supported types
 
-Out of the box, `json_serializable` supports many common types in the
+Out of the box, `dynamo_serializable` supports many common types in the
 [dart:core](https://api.dart.dev/stable/dart-core/dart-core-library.html)
 library:
 [`BigInt`], [`bool`], [`DateTime`], [`double`], [`Duration`], [`Enum`], [`int`],
@@ -149,18 +149,18 @@ For [`Map`], the key value must be one of
 If you want to use types that are not supported out-of-the-box or if you want to
 customize the encoding/decoding of any type, you have a few options.
 
-1. If you own/cotrol the desired type, add a `fromJson` constructor and/or a
-   `toJson()` function to the type. Note: while you can use `json_serializable`
+1. If you own/cotrol the desired type, add a `fromDynamoJson` constructor and/or a
+   `toDynamoJson()` function to the type. Note: while you can use `dynamo_serializable`
    for these types, you don't have to! The generator code only looks for these
    methods. It doesn't care how they were created.
-1. Use the [`JsonKey.toJson`] and [`JsonKey.fromJson`] properties to specify
+1. Use the [`DynamoKey.toDynamoJson`] and [`DynamoKey.fromDynamoJson`] properties to specify
    custom conversions on the annotated field. The functions specified must be
    top-level or static. See the documentation of these properties for details.
-1. Create an implementation of [`JsonConverter`] and annotate either the
-   corresponding field or the containing class. [`JsonConverter`] is convenient
+1. Create an implementation of [`DynamoConverter`] and annotate either the
+   corresponding field or the containing class. [`DynamoConverter`] is convenient
    if you want to use the same conversion logic on many fields. It also allows
    you to support a type within collections. Check out
-   [these examples](https://github.com/google/json_serializable.dart/blob/master/example/lib/json_converter_example.dart).
+   [these examples](https://github.com/GioCirque/pub-dev/blob/main/dynamo_json/example/lib/json_converter_example.dart).
 
 # Build configuration
 
@@ -174,7 +174,7 @@ targets:
       dynamo_serializable:
         options:
           # Options configure how source code is generated for every
-          # `@JsonSerializable`-annotated class in the package.
+          # `@DynamoSerializable`-annotated class in the package.
           #
           # The default value for each is listed.
           any_map: false
@@ -189,9 +189,9 @@ targets:
           include_if_null: true
 ```
 
-[example]: https://github.com/google/json_serializable.dart/tree/master/example
+[example]: https://github.com/GioCirque/pub-dev/tree/main/dynamo_json/example
 [dart build system]: https://github.com/dart-lang/build
-[package:json_annotation]: https://pub.dev/packages/json_annotation
+[package:dynamo_annotation]: https://pub.dev/packages/dynamo_annotation
 [`BigInt`]: https://api.dart.dev/stable/dart-core/BigInt-class.html
 [`bool`]: https://api.dart.dev/stable/dart-core/bool-class.html
 [`DateTime`]: https://api.dart.dev/stable/dart-core/DateTime-class.html
@@ -200,14 +200,14 @@ targets:
 [`Enum`]: https://api.dart.dev/stable/dart-core/Enum-class.html
 [`int`]: https://api.dart.dev/stable/dart-core/int-class.html
 [`Iterable`]: https://api.dart.dev/stable/dart-core/Iterable-class.html
-[`JsonConverter`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/JsonConverter-class.html
-[`JsonEnum`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/JsonEnum-class.html
-[`JsonKey.fromJson`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/JsonKey/fromJson.html
-[`JsonKey.toJson`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/JsonKey/toJson.html
-[`JsonKey`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/JsonKey-class.html
-[`JsonLiteral`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/JsonLiteral-class.html
-[`JsonSerializable`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/JsonSerializable-class.html
-[`JsonValue`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/JsonValue-class.html
+[`DynamoConverter`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/DynamoConverter-class.html
+[`DynamoEnum`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/DynamoEnum-class.html
+[`DynamoKey.fromDynamoJson`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/DynamoKey/fromDynamoJson.html
+[`DynamoKey.toDynamoJson`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/DynamoKey/toDynamoJson.html
+[`DynamoKey`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/DynamoKey-class.html
+[`DynamoLiteral`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/DynamoLiteral-class.html
+[`DynamoSerializable`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/DynamoSerializable-class.html
+[`DynamoValue`]: https://pub.dev/documentation/dynamo_annotation/4.6.0/dynamo_annotation/DynamoValue-class.html
 [`List`]: https://api.dart.dev/stable/dart-core/List-class.html
 [`Map`]: https://api.dart.dev/stable/dart-core/Map-class.html
 [`num`]: https://api.dart.dev/stable/dart-core/num-class.html
