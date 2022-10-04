@@ -5,6 +5,7 @@
 import 'package:analyzer/dart/constant/value.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
+import 'package:collection/collection.dart';
 import 'package:dynamo_annotation/dynamo_annotation.dart';
 import 'package:source_gen/source_gen.dart';
 import 'package:source_helper/source_helper.dart';
@@ -233,4 +234,70 @@ extension ExecutableElementExtension on ExecutableElement {
       'Not sure how to support typeof $runtimeType',
     );
   }
+}
+
+bool isDynamoStringField(FieldElement field) => isDynamoStringType(field.type);
+
+bool isDynamoStringType(DartType type) {
+  final typeName = type.element2?.displayName;
+  return type.isDartCoreString ||
+      type.isDynamic ||
+      type.isLikeDynamic ||
+      typeName == 'DateTime';
+}
+
+String dynamoTypeFor(FieldElement field) => dynamoTypeForType(field.type);
+
+String dynamoTypeForType(DartType type) {
+  final typeName = type.element2?.displayName;
+  final typeIsClass = type.element2?.kind == ElementKind.CLASS;
+
+  if (type.isDartCoreBool) {
+    return 'BOOL';
+  } else if (type.isDartCoreDouble ||
+      type.isDartCoreInt ||
+      type.isDartCoreNum ||
+      typeName == 'Duration') {
+    return 'N';
+  } else if (type.isDartCoreEnum) {
+    return 'ENUM';
+  } else if (type.isDartCoreIterable || type.isDartCoreList) {
+    return 'L';
+  } else if (type.isDartCoreNull) {
+    return 'NULL';
+  } else if (type.isDartCoreSet && type is ParameterizedType) {
+    if (type.typeArguments.first.isDartCoreNum) return 'NS';
+    return 'SS';
+  } else if (isDynamoStringType(type)) {
+    return 'S';
+  } else if (type.isDartCoreMap || type.isDartCoreObject || typeIsClass) {
+    return 'M';
+  }
+  return 'UNKNOWN';
+}
+
+bool typeHasMethod(DartType type, String methodName) =>
+    type.typeImplementations
+        .map((dt) => dt is InterfaceType ? dt.getMethod(methodName) : null)
+        .firstWhereOrNull((me) => me != null) !=
+    null;
+
+bool needsJsonEncode(DartType type) =>
+    (type.isDynamic || type.isLikeDynamic) &&
+    !typeHasMethod(type, 'toDynamoJson');
+
+bool needsJsonDecode(DartType type) =>
+    (type.isDynamic || type.isLikeDynamic) &&
+    !typeHasMethod(type, 'fromDynamoJson');
+
+String optToStringType(String dynamoType, FieldElement field) {
+  final type = field.type;
+  final typeName = type.element2?.name;
+  if (const ['S', 'SS'].contains(dynamoType) &&
+      !type.isDartCoreString &&
+      typeName != 'DateTime' &&
+      isDynamoStringField(field)) {
+    return '.toString()';
+  }
+  return '';
 }

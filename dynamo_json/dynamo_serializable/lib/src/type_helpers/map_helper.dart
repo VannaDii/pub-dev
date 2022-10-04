@@ -10,6 +10,7 @@ import '../constants.dart';
 import '../shared_checkers.dart';
 import '../type_helper.dart';
 import '../unsupported_type_error.dart';
+import '../utils.dart';
 import 'to_from_string.dart';
 
 const _keyParam = 'k';
@@ -31,6 +32,7 @@ class MapHelper extends TypeHelper<TypeHelperContextWithConfig> {
 
     final keyType = args[0];
     final valueType = args[1];
+    final dynamoType = dynamoTypeForType(valueType);
 
     _checkSafeKeyType(expression, keyType);
 
@@ -40,7 +42,8 @@ class MapHelper extends TypeHelper<TypeHelperContextWithConfig> {
             context.serialize(keyType, _keyParam);
 
     if (closureArg == subFieldValue && _keyParam == subKeyValue) {
-      return expression;
+      return '$expression.map(($_keyParam, $closureArg) => '
+          "MapEntry($_keyParam, {'$dynamoType': $closureArg}))";
     }
 
     final optionalQuestion = targetType.isNullableType ? '?' : '';
@@ -65,6 +68,7 @@ class MapHelper extends TypeHelper<TypeHelperContextWithConfig> {
     assert(typeArgs.length == 2);
     final keyArg = typeArgs.first;
     final valueArg = typeArgs.last;
+    final dynamoType = dynamoTypeForType(valueArg);
 
     _checkSafeKeyType(expression, keyArg);
 
@@ -95,7 +99,8 @@ class MapHelper extends TypeHelper<TypeHelperContextWithConfig> {
               valueArg.isSimpleJsonTypeNotDouble)) {
         // No mapping of the values or null check required!
         final valueString = valueArg.getDisplayString(withNullability: true);
-        return 'Map<String, $valueString>.from($expression as Map)';
+        return 'Map<String, $valueString>.from(($expression as Map).map((k, e)'
+            " => MapEntry(k, (e as Map)['$dynamoType']),),)";
       }
     }
 

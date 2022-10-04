@@ -12,6 +12,7 @@ library dynamo_annotation;
 
 export 'src/allowed_keys_helpers.dart';
 export 'src/checked_helpers.dart';
+export 'src/dynamo_attribute.dart';
 export 'src/dynamo_converter.dart';
 export 'src/dynamo_enum.dart';
 export 'src/dynamo_key.dart';

@@ -333,13 +333,13 @@ class OkayOnlyOptionalPositional {
 _BetterPrivateNames _$BetterPrivateNamesFromDynamoJson(
         Map<String, dynamic> json) =>
     _BetterPrivateNames(
-      name: json['name'] as String,
+      name: (json['name'] as Map<String, dynamic>)['S'] as String,
     );
 
 Map<String, dynamic> _$BetterPrivateNamesToDynamoJson(
         _BetterPrivateNames instance) =>
     <String, dynamic>{
-      'name': instance.name,
+      'name': {'S': instance.name},
     };
 ''',
 )

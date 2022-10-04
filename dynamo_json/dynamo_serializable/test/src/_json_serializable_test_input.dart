@@ -56,25 +56,28 @@ class OnlyStaticMembers {
 GeneralTestClass1 _$GeneralTestClass1FromDynamoJson(
         Map<String, dynamic> json) =>
     GeneralTestClass1()
-      ..firstName = json['firstName'] as String
-      ..lastName = json['lastName'] as String
-      ..height = json['h'] as int
-      ..dateOfBirth = DateTime.parse(json['dateOfBirth'] as String)
-      ..dynamicType = json['dynamicType']
-      ..varType = json['varType']
+      ..firstName = (json['firstName'] as Map<String, dynamic>)['S'] as String
+      ..lastName = (json['lastName'] as Map<String, dynamic>)['S'] as String
+      ..height = (json['h'] as Map<String, dynamic>)['N'] as int
+      ..dateOfBirth = DateTime.parse(
+          (json['dateOfBirth'] as Map<String, dynamic>)['S'] as String)
+      ..dynamicType = (json['dynamicType'] as Map<String, dynamic>)['UNKNOWN']
+      ..varType = (json['varType'] as Map<String, dynamic>)['UNKNOWN']
       ..listOfInts =
-          (json['listOfInts'] as List<dynamic>).map((e) => e as int).toList();
+          ((json['listOfInts'] as Map<String, dynamic>)['L'] as List<dynamic>)
+              .map((e) => e as int)
+              .toList();
 
 Map<String, dynamic> _$GeneralTestClass1ToDynamoJson(
         GeneralTestClass1 instance) =>
     <String, dynamic>{
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
-      'h': instance.height,
-      'dateOfBirth': instance.dateOfBirth.toIso8601String(),
-      'dynamicType': instance.dynamicType,
-      'varType': instance.varType,
-      'listOfInts': instance.listOfInts,
+      'firstName': {'S': instance.firstName},
+      'lastName': {'S': instance.lastName},
+      'h': {'N': instance.height},
+      'dateOfBirth': {'S': instance.dateOfBirth.toIso8601String()},
+      'dynamicType': {'UNKNOWN': instance.dynamicType},
+      'varType': {'UNKNOWN': instance.varType},
+      'listOfInts': {'L': instance.listOfInts},
     };
 ''')
 @DynamoSerializable()
@@ -94,18 +97,19 @@ class GeneralTestClass1 {
 GeneralTestClass2 _$GeneralTestClass2FromDynamoJson(
         Map<String, dynamic> json) =>
     GeneralTestClass2(
-      json['height'] as int,
-      json['firstName'] as String,
-      json['lastName'] as String?,
-    )..dateOfBirth = DateTime.parse(json['dateOfBirth'] as String);
+      (json['height'] as Map<String, dynamic>)['N'] as int,
+      (json['firstName'] as Map<String, dynamic>)['S'] as String,
+      (json['lastName'] as Map<String, dynamic>)['S'] as String?,
+    )..dateOfBirth = DateTime.parse(
+        (json['dateOfBirth'] as Map<String, dynamic>)['S'] as String);
 
 Map<String, dynamic> _$GeneralTestClass2ToDynamoJson(
         GeneralTestClass2 instance) =>
     <String, dynamic>{
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
-      'height': instance.height,
-      'dateOfBirth': instance.dateOfBirth.toIso8601String(),
+      'firstName': {'S': instance.firstName},
+      'lastName': {'S': instance.lastName},
+      'height': {'N': instance.height},
+      'dateOfBirth': {'S': instance.dateOfBirth.toIso8601String()},
     };
 ''')
 @DynamoSerializable()
@@ -225,16 +229,16 @@ class NoDeserializeBadKey {
 Map<String, dynamic> _$IncludeIfNullOverrideToDynamoJson(
     IncludeIfNullOverride instance) {
   final val = <String, dynamic>{
-    'number': instance.number,
+    'number': {'N': instance.number},
   };
 
-  void writeNotNull(String key, dynamic value) {
+  void writeNotNull(String key, String dynamoType, dynamic value) {
     if (value != null) {
-      val[key] = value;
+      val[key] = {dynamoType: value};
     }
   }
 
-  writeNotNull('str', instance.str);
+  writeNotNull('str', 'S', instance.str);
   return val;
 }
 ''',
@@ -298,8 +302,8 @@ class DupeKeys {
 Map<String, dynamic> _$IgnoredFieldClassToDynamoJson(
         IgnoredFieldClass instance) =>
     <String, dynamic>{
-      'ignoredFalseField': instance.ignoredFalseField,
-      'ignoredNullField': instance.ignoredNullField,
+      'ignoredFalseField': {'N': instance.ignoredFalseField},
+      'ignoredNullField': {'N': instance.ignoredNullField},
     };
 ''')
 @DynamoSerializable(createFactory: false)
@@ -468,12 +472,13 @@ class PropInMixinI448Regression with _PropInMixinI448RegressionMixin {
   r'''
 IgnoreUnannotated _$IgnoreUnannotatedFromDynamoJson(
         Map<String, dynamic> json) =>
-    IgnoreUnannotated()..annotated = json['annotated'] as int;
+    IgnoreUnannotated()
+      ..annotated = (json['annotated'] as Map<String, dynamic>)['N'] as int;
 
 Map<String, dynamic> _$IgnoreUnannotatedToDynamoJson(
         IgnoreUnannotated instance) =>
     <String, dynamic>{
-      'annotated': instance.annotated,
+      'annotated': {'N': instance.annotated},
     };
 ''',
 )

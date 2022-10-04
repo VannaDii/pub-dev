@@ -201,6 +201,7 @@ abstract class DecodeHelper implements HelperCore {
     final targetType = ctorParam?.type ?? field.type;
     final contextHelper = getHelperContext(field);
     final jsonKey = dynamoKeyFor(field);
+    final dynamoType = dynamoTypeFor(field);
     final defaultValue = jsonKey.defaultValue;
     final readValueFunc = jsonKey.readValueFunctionName;
 
@@ -229,7 +230,7 @@ abstract class DecodeHelper implements HelperCore {
 
         value = deserialize(
           readValueFunc == null
-              ? 'json[$jsonKeyName]'
+              ? "(json[$jsonKeyName] as Map<String, dynamic>)['$dynamoType']"
               : '$readValueFunc(json, $jsonKeyName)',
         );
       }

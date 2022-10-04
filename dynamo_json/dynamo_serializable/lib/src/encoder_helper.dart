@@ -12,6 +12,7 @@ import 'helper_core.dart';
 import 'type_helpers/dynamo_converter_helper.dart';
 import 'type_helpers/generic_factory_helper.dart';
 import 'unsupported_type_error.dart';
+import 'utils.dart';
 
 abstract class EncodeHelper implements HelperCore {
   String _fieldAccess(FieldElement field) =>
@@ -79,9 +80,14 @@ abstract class EncodeHelper implements HelperCore {
       ..writeln('=> <String, dynamic>{')
       ..writeAll(fields.map((field) {
         final access = _fieldAccess(field);
-        final value =
-            '${safeNameAccess(field)}: ${_serializeField(field, access)}';
-        return '        $value,\n';
+        final safeName = safeNameAccess(field);
+        final dynamoType = dynamoTypeFor(field);
+        final useJson = needsJsonEncode(field.type);
+        final expression = _serializeField(field, access);
+        final optToString = optToStringType(dynamoType, field);
+        final finalExpression =
+            useJson ? 'jsonEncode($expression)' : '$expression$optToString';
+        return "$safeName: {'$dynamoType':$finalExpression},\n";
       }))
       ..writeln('};');
   }
@@ -104,7 +110,9 @@ abstract class EncodeHelper implements HelperCore {
 
     for (final field in fields) {
       var safeFieldAccess = _fieldAccess(field);
+      final dynamoFieldType = dynamoTypeFor(field);
       final safeDynamoKeyString = safeNameAccess(field);
+      final optToString = optToStringType(dynamoFieldType, field);
 
       // If `fieldName` collides with one of the local helpers, prefix
       // access with `this.`.
@@ -114,12 +122,21 @@ abstract class EncodeHelper implements HelperCore {
       }
 
       final expression = _serializeField(field, safeFieldAccess);
+      final useJson = needsJsonEncode(field.type);
+      final finalExpression = useJson
+          ? 'jsonEncode("$expression$optToString")'
+          : '$expression$optToString';
+
       if (_writeDynamoJsonValueNaive(field)) {
         if (directWrite) {
-          buffer.writeln('      $safeDynamoKeyString: $expression,');
+          buffer.writeln(
+              // ignore: missing_whitespace_between_adjacent_strings
+              "      $safeDynamoKeyString: { '$dynamoFieldType': "
+              '$finalExpression },');
         } else {
           buffer.writeln(
-            '    $generatedLocalVarName[$safeDynamoKeyString] = $expression;',
+            '    $generatedLocalVarName[$safeDynamoKeyString] = '
+            "{ '$dynamoFieldType': $finalExpression };",
           );
         }
       } else {
@@ -132,16 +149,17 @@ abstract class EncodeHelper implements HelperCore {
             // write the helper to be used by all following null-excluding
             // fields
             ..writeln('''
-    void $toDynamoJsonMapHelperName(String key, dynamic value) {
+    void $toDynamoJsonMapHelperName(String key, String dynamoType, dynamic value) {
       if (value != null) {
-        $generatedLocalVarName[key] = value;
+        $generatedLocalVarName[key] = { dynamoType: value };
       }
     }
 ''');
           directWrite = false;
         }
         buffer.writeln(
-          '    $toDynamoJsonMapHelperName($safeDynamoKeyString, $expression);',
+          '    $toDynamoJsonMapHelperName($safeDynamoKeyString, '
+          '\'$dynamoFieldType\', $finalExpression);',
         );
       }
     }
