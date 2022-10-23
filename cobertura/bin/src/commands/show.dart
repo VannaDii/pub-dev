@@ -102,10 +102,6 @@ class ShowCommand extends Command {
     }
   }
 
-  num _avg<T>(Iterable<T> values, num Function(num, T) reducer) {
-    return values.fold<num>(0, reducer) / values.length;
-  }
-
   String? _root(Iterable<String> paths) {
     for (var i = 0; i < double.maxFinite; i++) {
       if (paths.firstWhereOrNull(
@@ -114,6 +110,7 @@ class ShowCommand extends Command {
         return paths.first.substring(0, i);
       }
     }
+    throw Exception('This should be impossible!');
   }
 
   void _printMeta(
