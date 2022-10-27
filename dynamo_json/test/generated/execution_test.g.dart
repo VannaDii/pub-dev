@@ -18,10 +18,29 @@ Map<String, dynamic> _$FullyDecoratedClassToDynamoJson(
         FullyDecoratedClass instance) =>
     {};
 
+/// Creates an instance of [SupportedSuperClass] from the values in [json]
+
+SupportedSuperClass _$SupportedSuperClassFromDynamoJson(
+        Map<String, dynamic> json) =>
+    SupportedSuperClass(
+      greatJob: FullyDecoratedClass.fromDynamoJson(
+          json['greatJob']['M'] as Map<String, dynamic>),
+    );
+
+/// Creates a [Map]<String,dynamic> from an instance of [SupportedSuperClass]
+
+Map<String, dynamic> _$SupportedSuperClassToDynamoJson(
+        SupportedSuperClass instance) =>
+    {
+      'greatJob': {'M': instance.greatJob.toDynamoJson()},
+    };
+
 /// Creates an instance of [SupportedClass] from the values in [json]
 
 SupportedClass _$SupportedClassFromDynamoJson(Map<String, dynamic> json) =>
     SupportedClass(
+      greatJob: FullyDecoratedClass.fromDynamoJson(
+          json['greatJob']['M'] as Map<String, dynamic>),
       goodJob: FullyDecoratedClass.fromDynamoJson(
           json['goodJob']['M'] as Map<String, dynamic>),
     );
@@ -29,6 +48,7 @@ SupportedClass _$SupportedClassFromDynamoJson(Map<String, dynamic> json) =>
 /// Creates a [Map]<String,dynamic> from an instance of [SupportedClass]
 
 Map<String, dynamic> _$SupportedClassToDynamoJson(SupportedClass instance) => {
+      'greatJob': {'M': instance.greatJob.toDynamoJson()},
       'goodJob': {'M': instance.goodJob.toDynamoJson()},
     };
 

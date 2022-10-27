@@ -17,14 +17,31 @@ class FullyDecoratedClass {
 }
 
 @DynamoJson()
-class SupportedClass {
+class SupportedSuperClass {
+  final FullyDecoratedClass greatJob;
+
+  SupportedSuperClass({required this.greatJob});
+
+  factory SupportedSuperClass.fromDynamoJson(Map<String, dynamic> json) =>
+      _$SupportedSuperClassFromDynamoJson(json);
+
+  Map<String, dynamic> toDynamoJson() =>
+      _$SupportedSuperClassToDynamoJson(this);
+}
+
+@DynamoJson()
+class SupportedClass extends SupportedSuperClass {
   final FullyDecoratedClass goodJob;
 
-  SupportedClass({required this.goodJob});
+  SupportedClass({
+    required FullyDecoratedClass greatJob,
+    required this.goodJob,
+  }) : super(greatJob: greatJob);
 
   factory SupportedClass.fromDynamoJson(Map<String, dynamic> json) =>
       _$SupportedClassFromDynamoJson(json);
 
+  @override
   Map<String, dynamic> toDynamoJson() => _$SupportedClassToDynamoJson(this);
 }
 
