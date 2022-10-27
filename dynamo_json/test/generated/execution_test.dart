@@ -1,24 +1,34 @@
 import "dart:convert";
 
 import 'package:dynamo_json/src/dynamo_json_annotation.dart';
+import 'package:equatable/equatable.dart';
 import 'package:test/test.dart';
 
 part 'execution_test.g.dart';
 
 @DynamoJson()
-class FullyDecoratedClass {
-  const FullyDecoratedClass();
+class FullyDecoratedClass<T> extends Equatable {
+  final T data;
+  late final bool hasData;
+
+  FullyDecoratedClass(this.data) {
+    hasData = true;
+  }
 
   factory FullyDecoratedClass.fromDynamoJson(Map<String, dynamic> json) =>
-      _$FullyDecoratedClassFromDynamoJson(json);
+      _$FullyDecoratedClassFromDynamoJson<T>(json);
 
   Map<String, dynamic> toDynamoJson() =>
       _$FullyDecoratedClassToDynamoJson(this);
+
+  @override
+  @DynamoIgnore()
+  List<Object?> get props => [];
 }
 
 @DynamoJson()
 class SupportedSuperClass {
-  final FullyDecoratedClass greatJob;
+  final FullyDecoratedClass<String> greatJob;
 
   SupportedSuperClass({required this.greatJob});
 
@@ -31,10 +41,10 @@ class SupportedSuperClass {
 
 @DynamoJson()
 class SupportedClass extends SupportedSuperClass {
-  final FullyDecoratedClass goodJob;
+  final FullyDecoratedClass<String> goodJob;
 
   SupportedClass({
-    required FullyDecoratedClass greatJob,
+    required FullyDecoratedClass<String> greatJob,
     required this.goodJob,
   }) : super(greatJob: greatJob);
 

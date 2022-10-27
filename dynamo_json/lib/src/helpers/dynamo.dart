@@ -77,6 +77,7 @@ enum DynamoType {
 
 class DartMeta {
   final DartType type;
+  final bool isLate;
   late final bool isGeneric;
   late final String baseName;
   late final String codeName;
@@ -87,6 +88,7 @@ class DartMeta {
 
   DartMeta._({
     required this.type,
+    this.isLate = false,
   }) {
     nullSuffix = nullSuffixFor(type);
     isNullable = nullSuffix.isNotEmpty;
@@ -99,29 +101,34 @@ class DartMeta {
         .map((e) => e.getDisplayString(
             withNullability: e.nullabilitySuffix != NullabilitySuffix.none))
         .toList();
-    baseName = type is ParameterizedType
-        ? type.getDisplayString(withNullability: false).split('<').first
-        : type.getDisplayString(withNullability: false);
+    baseName = baseNameForType(type);
     codeName = type is ParameterizedType
         ? type.getDisplayString(withNullability: true).split('<').first
         : type.getDisplayString(withNullability: true);
   }
 
   factory DartMeta.forType(DartType type) => DartMeta._(type: type);
+
+  factory DartMeta.forElement(FieldElement field) =>
+      DartMeta._(type: field.type, isLate: field.isLate);
 }
 
 class DynamoMeta extends DartMeta {
-  final DynamoType dynamoType;
+  late final DynamoType dynamoType;
 
   DynamoMeta._({
     required DartType type,
-    required this.dynamoType,
-  }) : super._(type: type);
+    bool isLate = false,
+  }) : super._(type: type, isLate: isLate) {
+    dynamoType = dynamoTypeFor(type);
+  }
 
   String get dynamoTypeName => dynamoType.name;
 
-  factory DynamoMeta.forType(DartType dartType, DynamoType type) =>
-      DynamoMeta._(type: dartType, dynamoType: type);
+  factory DynamoMeta.forType(DartType type) => DynamoMeta._(type: type);
+
+  factory DynamoMeta.forField(FieldElement field) =>
+      DynamoMeta._(type: field.type, isLate: field.isLate);
 
   /// Wraps an expression (ex: `instance.foo`) for use in a toJson call.
   String wrapTo(String expression) {
@@ -149,6 +156,8 @@ class DynamoMeta extends DartMeta {
       return wrapDecoratedFrom(expression);
     } else if (isDynamoUnknown) {
       return wrapJsonFrom(expression);
+    } else if (isLate) {
+      return wrapJsonFrom(expression);
     }
 
     final result = "$expression['$dynamoTypeName'] as $codeName";
@@ -165,16 +174,15 @@ class DynamoMeta extends DartMeta {
 
 /// Resolves [field].type to the appropriate DynamoDB type.
 DynamoMeta dynamoMetaFor(FieldElement field) {
-  var dynamoType = dynamoTypeFor(field.type);
-  return DynamoMeta.forType(field.type, dynamoType);
+  return DynamoMeta.forField(field);
 }
 
 /// Gets the [DynamoType] for a [DartType].
 ///
 /// See: https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_AttributeValue.html
 DynamoType dynamoTypeFor(DartType type) {
-  final meta = DartMeta.forType(type);
-  switch (meta.baseName) {
+  final baseName = baseNameForType(type);
+  switch (baseName) {
     case 'Binary':
       return DynamoType.B;
     case 'bool':

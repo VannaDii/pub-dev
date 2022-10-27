@@ -2,7 +2,12 @@ import 'package:collection/collection.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/nullability_suffix.dart';
 import 'package:analyzer/dart/element/type.dart';
+import 'package:dynamo_json/dynamo_json.dart';
+import 'package:source_gen/source_gen.dart';
 import 'package:source_helper/source_helper.dart';
+
+/// The [TypeChecker] for [DynamoIgnore].
+const _dynamoIgnoreChecker = TypeChecker.fromRuntime(DynamoIgnore);
 
 /// Maps [NullabilitySuffix] to the corresponding code character.
 const _nullSuffix = <NullabilitySuffix, String>{
@@ -36,6 +41,23 @@ ElementAnnotation? getAnnotationNamed(DartType type, String name) {
   return result;
 }
 
+/// Returns `true` if the [field] has a [DynamoIgnore] annotation,
+/// otherwise `false`
+bool isIgnored(FieldElement field) {
+  final annotation = _dynamoIgnoreChecker.firstAnnotationOf(field) ??
+      (field.getter == null
+          ? null
+          : _dynamoIgnoreChecker.firstAnnotationOf(field.getter!));
+  return annotation != null;
+}
+
+/// Gets the base name for the [type].
+///
+/// Base name is the type name without nullability indicators or type arguments.
+String baseNameForType(DartType type) => type is ParameterizedType
+    ? type.getDisplayString(withNullability: false).split('<').first
+    : type.getDisplayString(withNullability: false);
+
 /// Returns the [ExecutableElement] (either a [MethodElement],
 /// [ConstructorElement]) from the [type] matching the [name], or `null`.
 ExecutableElement? getMethodByName(DartType type, String name) {
@@ -55,4 +77,68 @@ Iterable<FieldElement>? iterateEnumFields(DartType enumType) {
     return enumType.element2.fields.where((element) => element.isEnumConstant);
   }
   return null;
+}
+
+/// Return the Dart code presentation for the given [type].
+///
+/// This function is intentionally limited, and does not support all possible
+/// types and locations of these files in code. Specifically, it supports
+/// only [InterfaceType]s, with optional type arguments that are also should
+/// be [InterfaceType]s.
+String typeToCode(
+  DartType type, {
+  bool forceNullable = false,
+}) {
+  if (type.isDynamic) {
+    return 'dynamic';
+  } else if (type is InterfaceType) {
+    return [
+      type.element2.name,
+      if (type.typeArguments.isNotEmpty)
+        '<${type.typeArguments.map(typeToCode).join(', ')}>',
+      (type.isNullableType || forceNullable) ? '?' : '',
+    ].join();
+  }
+
+  if (type is TypeParameterType) {
+    return type.getDisplayString(withNullability: false);
+  }
+  throw UnimplementedError('(${type.runtimeType}) $type');
+}
+
+/// Returns a [String] representing the type arguments that exist on
+/// [element].
+///
+/// If [withConstraints] is `null` or if [element] has no type arguments, an
+/// empty [String] is returned.
+///
+/// If [withConstraints] is true, any type constraints that exist on [element]
+/// are included.
+///
+/// For example, for class `class Sample<T as num, S>{...}`
+///
+/// For [withConstraints] = `false`:
+///
+/// ```
+/// "<T, S>"
+/// ```
+///
+/// For [withConstraints] = `true`:
+///
+/// ```
+/// "<T as num, S>"
+/// ```
+String genericClassArguments(ClassElement element, bool? withConstraints) {
+  if (withConstraints == null || element.typeParameters.isEmpty) {
+    return '';
+  }
+  final values = element.typeParameters.map((t) {
+    if (withConstraints && t.bound != null) {
+      final boundCode = typeToCode(t.bound!);
+      return '${t.name} extends $boundCode';
+    } else {
+      return t.name;
+    }
+  }).join(', ');
+  return '<$values>';
 }
