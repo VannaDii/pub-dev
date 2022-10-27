@@ -1,0 +1,16 @@
+targets:
+  $default:
+    builders:
+      dynamo_json:
+        generate_for:
+          - test/generated/*
+          - example/*
+
+builders:
+  dynamo_json:
+    import: "package:dynamo_json/builder.dart"
+    builder_factories: ["dynamoJsonBuilder"]
+    build_extensions: {".dart": [".dynamo_json.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
