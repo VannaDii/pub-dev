@@ -156,8 +156,6 @@ class DynamoMeta extends DartMeta {
       return wrapDecoratedFrom(expression);
     } else if (isDynamoUnknown) {
       return wrapJsonFrom(expression);
-    } else if (isLate) {
-      return wrapJsonFrom(expression);
     }
 
     final result = "$expression['$dynamoTypeName'] as $codeName";

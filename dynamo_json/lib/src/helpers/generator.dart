@@ -100,7 +100,8 @@ class GeneratorHelper {
     yield* _fields
         .where((f) => f.isLate)
         .map((f) => dynamoNotationFrom(f))
-        .whereNotNull();
+        .whereNotNull()
+        .map((e) => e.asLine(''));
   }
 
   /// Generates the DynamoDB JSON conversion code the [_element].
@@ -108,14 +109,12 @@ class GeneratorHelper {
     final name = _element.displayName;
     final typeArgs = genericClassArguments(_element, false);
     final codeName = '$name$typeArgs';
-    yield '/// Creates an instance of [$name] from the values in [json]'
-        .asLine();
+    yield '/// Creates an instance of [$name] from the values in [json]';
     yield '$codeName _\$${name}FromDynamoJson$typeArgs(Map<String, dynamic> json) => $codeName(';
     yield genFieldsFromJson()
         .join('\n')
         .asLine(')${genLateFieldsFromJson().join()};');
-    yield '/// Creates a [Map]<String,dynamic> from an instance of [$name]'
-        .asLine();
+    yield '/// Creates a [Map]<String,dynamic> from an instance of [$name]';
     yield 'Map<String, dynamic> _\$${name}ToDynamoJson$typeArgs($codeName instance) => {';
     yield genFieldsToJson().join('\n').asLine('};');
   }
