@@ -10,6 +10,7 @@ part 'execution_test.g.dart';
 class FullyDecoratedClass<T> extends Equatable {
   final T data;
   late final bool hasData;
+  late final bool needsMoreData;
 
   FullyDecoratedClass(this.data) {
     hasData = true;

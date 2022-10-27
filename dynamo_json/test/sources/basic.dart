@@ -28,9 +28,11 @@ SupportedTypesClass _$SupportedTypesClassFromDynamoJson(
       appointments: (json['appointments']['L'] as List<dynamic>)
           .map((e) => DateTime.parse(e['S'] as String))
           .toList(),
-    )..flags = (json['flags']['L'] as List<dynamic>)
-        .map((e) => e['BOOL'] as bool)
-        .toList();
+    )
+      ..flags = (json['flags']['L'] as List<dynamic>)
+          .map((e) => e['BOOL'] as bool)
+          .toList()
+      ..needsMoreData = json['needsMoreData']['BOOL'] as bool;
 
 /// Creates a [Map]<String,dynamic> from an instance of [SupportedTypesClass]
 
@@ -61,6 +63,7 @@ Map<String, dynamic> _$SupportedTypesClassToDynamoJson(
       'flags': {
         'L': instance.flags.map((e) => {'BOOL': e}).toList()
       },
+      'needsMoreData': {'BOOL': instance.needsMoreData},
     };
 ''')
 @DynamoJson()
@@ -76,7 +79,9 @@ class SupportedTypesClass extends Equatable {
   final List<String> strings;
   final List<int> numbers;
   final List<DateTime> appointments;
+
   late final List<bool> flags;
+  late final bool needsMoreData;
 
   SupportedTypesClass(
     this.number,

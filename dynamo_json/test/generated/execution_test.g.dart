@@ -12,7 +12,9 @@ FullyDecoratedClass<T> _$FullyDecoratedClassFromDynamoJson<T>(
         Map<String, dynamic> json) =>
     FullyDecoratedClass<T>(
       jsonDecode(json['data']['S'] as String) as T,
-    )..hasData = jsonDecode(json['hasData']['S'] as String) as bool;
+    )
+      ..hasData = json['hasData']['BOOL'] as bool
+      ..needsMoreData = json['needsMoreData']['BOOL'] as bool;
 
 /// Creates a [Map]<String,dynamic> from an instance of [FullyDecoratedClass]
 
@@ -21,6 +23,7 @@ Map<String, dynamic> _$FullyDecoratedClassToDynamoJson<T>(
     {
       'data': {'S': jsonEncode(instance.data)},
       'hasData': {'BOOL': instance.hasData},
+      'needsMoreData': {'BOOL': instance.needsMoreData},
     };
 
 /// Creates an instance of [SupportedSuperClass] from the values in [json]
