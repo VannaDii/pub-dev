@@ -3,6 +3,9 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:analyzer/dart/element/element.dart';
+import 'package:analyzer/src/dart/element/inheritance_manager3.dart' // ignore: implementation_imports
+    show
+        InheritanceManager3;
 import 'package:source_gen/source_gen.dart';
 
 class _FieldSet implements Comparable<_FieldSet> {
@@ -69,6 +72,21 @@ Iterable<FieldElement> createSortedFieldSet(ClassElement element) {
       .map((e) => MapEntry(e.name, e)));
 
   final inheritedFields = <String, FieldElement>{};
+  final manager = InheritanceManager3();
+
+  for (final v in manager.getInheritedConcreteMap2(element).values) {
+    assert(v is! FieldElement);
+    if (_dartCoreObjectChecker.isExactly(v.enclosingElement3)) {
+      continue;
+    }
+
+    if (v is PropertyAccessorElement && v.isGetter) {
+      assert(v.variable is FieldElement);
+      final variable = v.variable as FieldElement;
+      assert(!inheritedFields.containsKey(variable.name));
+      inheritedFields[variable.name] = variable;
+    }
+  }
 
   // Get the list of all fields for `element`
   final allFields =
@@ -81,3 +99,5 @@ Iterable<FieldElement> createSortedFieldSet(ClassElement element) {
 
   return fields.map((fs) => fs.field).toList();
 }
+
+const _dartCoreObjectChecker = TypeChecker.fromRuntime(Object);
