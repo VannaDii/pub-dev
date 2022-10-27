@@ -10,7 +10,7 @@ extension IterableExtensions on DynamoMeta {
   String wrapIterableTo(String expression) {
     final nullablePrefix = nullHandlerToOrEmpty(expression);
     final firstSub = typeArgs.first;
-    final subWrapper = DynamoMeta.forType(firstSub, dynamoTypeFor(firstSub));
+    final subWrapper = DynamoMeta.forType(firstSub);
     final result = "$nullablePrefix{'$dynamoTypeName': $expression$nullSuffix"
         ".map((e) => ${subWrapper.wrapTo('e${subWrapper.nullSuffix}')})"
         ".toList()}";
@@ -21,7 +21,7 @@ extension IterableExtensions on DynamoMeta {
   String wrapIterableFrom(String expression) {
     final nullablePrefix = nullHandlerFromOrEmpty(expression);
     final firstSub = typeArgs.first;
-    final subWrapper = DynamoMeta.forType(firstSub, dynamoTypeFor(firstSub));
+    final subWrapper = DynamoMeta.forType(firstSub);
     final result = "$nullablePrefix($expression['$dynamoTypeName'] as "
         "$baseName<dynamic>).map((e) => ${subWrapper.wrapFrom("e")}).toList()";
     return result;

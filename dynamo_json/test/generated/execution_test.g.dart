@@ -8,15 +8,20 @@ part of 'execution_test.dart';
 
 /// Creates an instance of [FullyDecoratedClass] from the values in [json]
 
-FullyDecoratedClass _$FullyDecoratedClassFromDynamoJson(
+FullyDecoratedClass<T> _$FullyDecoratedClassFromDynamoJson<T>(
         Map<String, dynamic> json) =>
-    FullyDecoratedClass();
+    FullyDecoratedClass<T>(
+      jsonDecode(json['data']['S'] as String) as T,
+    )..hasData = jsonDecode(json['hasData']['S'] as String) as bool;
 
 /// Creates a [Map]<String,dynamic> from an instance of [FullyDecoratedClass]
 
-Map<String, dynamic> _$FullyDecoratedClassToDynamoJson(
-        FullyDecoratedClass instance) =>
-    {};
+Map<String, dynamic> _$FullyDecoratedClassToDynamoJson<T>(
+        FullyDecoratedClass<T> instance) =>
+    {
+      'data': {'S': jsonEncode(instance.data)},
+      'hasData': {'BOOL': instance.hasData},
+    };
 
 /// Creates an instance of [SupportedSuperClass] from the values in [json]
 
@@ -86,7 +91,7 @@ SupportedTypesClass _$SupportedTypesClassFromDynamoJson(
       flags: (json['flags']['L'] as List<dynamic>)
           .map((e) => e['BOOL'] as bool)
           .toList(),
-    );
+    )..sumOfNumbers = int.parse(json['sumOfNumbers']['N'] as String);
 
 /// Creates a [Map]<String,dynamic> from an instance of [SupportedTypesClass]
 
@@ -124,4 +129,5 @@ Map<String, dynamic> _$SupportedTypesClassToDynamoJson(
       'flags': {
         'L': instance.flags.map((e) => {'BOOL': e}).toList()
       },
+      'sumOfNumbers': {'N': instance.sumOfNumbers.toString()},
     };

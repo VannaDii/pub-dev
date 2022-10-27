@@ -2,7 +2,7 @@ import 'package:dynamo_json/src/dynamo_json_annotation.dart';
 import 'package:test/test.dart';
 
 void main() {
-  group('Execution Tests', () {
+  group('Extension Tests', () {
     test('Test Discoverable Decorated Types', () {});
   });
 }

@@ -6,6 +6,8 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/src/dart/element/inheritance_manager3.dart' // ignore: implementation_imports
     show
         InheritanceManager3;
+import 'package:build/build.dart';
+import 'package:dynamo_json/src/utils.dart';
 import 'package:source_gen/source_gen.dart';
 
 class _FieldSet implements Comparable<_FieldSet> {
@@ -67,9 +69,8 @@ class _FieldSet implements Comparable<_FieldSet> {
 /// (super first) and then by their location in the source file.
 Iterable<FieldElement> createSortedFieldSet(ClassElement element) {
   // Get all of the fields that need to be assigned
-  final elementInstanceFields = Map.fromEntries(element.fields
-      .where((e) => !e.isStatic && !e.isLate && !e.isSynthetic)
-      .map((e) => MapEntry(e.name, e)));
+  final elementInstanceFields = Map.fromEntries(
+      element.fields.where((e) => !e.isStatic).map((e) => MapEntry(e.name, e)));
 
   final inheritedFields = <String, FieldElement>{};
   final manager = InheritanceManager3();
@@ -97,7 +98,33 @@ Iterable<FieldElement> createSortedFieldSet(ClassElement element) {
       .toList()
     ..sort();
 
-  return fields.map((fs) => fs.field).toList();
+  Map<String, String> unavailableReasons = {};
+  return fields
+      .map((fs) => fs.field)
+      .toList()
+      .fold<Map<String, FieldElement>>(
+        <String, FieldElement>{},
+        (map, field) {
+          if (!field.isPublic) {
+            unavailableReasons[field.name] =
+                'It is assigned to a private field.';
+          } else if (field.getter == null) {
+            assert(field.setter != null);
+            unavailableReasons[field.name] =
+                'Setter-only properties are not supported.';
+            log.warning('Setters are ignored: ${element.name}.${field.name}');
+          } else if (isIgnored(field)) {
+            unavailableReasons[field.name] =
+                'It is assigned to an ignored field.';
+          } else {
+            assert(!map.containsKey(field.name));
+            map[field.name] = field;
+          }
+          return map;
+        },
+      )
+      .values
+      .toSet();
 }
 
 const _dartCoreObjectChecker = TypeChecker.fromRuntime(Object);
