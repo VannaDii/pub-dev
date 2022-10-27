@@ -1,38 +1,11 @@
-ifndef VERBOSE
 .SILENT:
-endif
 
-# Use the directory name for the distribution name
-lib_name=$(shell basename $$(pwd))
+.PHONEY: all update
 
-deps:
-	dart pub get
-	dart pub get -C dynamo_annotation
-	dart pub get -C dynamo_serializable
-	dart pub get -C shared_test
-	dart pub get -C example
-	dart pub global activate coverage
-	dart pub global activate cobertura
+all: update
 
-tests: deps
-	cd dynamo_serializable && dart run test --coverage="coverage" --chain-stack-traces
-	cd dynamo_serializable && dart pub global run coverage:format_coverage --report-on=lib --lcov -o ./coverage/lcov.info -i ./coverage
-	cd dynamo_serializable && genhtml -o ./coverage/report ./coverage/lcov.info
-	cd dynamo_serializable && cobertura show -i ./coverage/lcov.info
-
-	cd example && dart run test --coverage="coverage" --chain-stack-traces
-	cd example && dart pub global run coverage:format_coverage --report-on=lib --lcov -o ./coverage/lcov.info -i ./coverage
-	cd example && genhtml -o ./coverage/report ./coverage/lcov.info
-	cd example && cobertura show -i ./coverage/lcov.info
-
-generate:
-	dart run :composer
-
-all: tests
-	dart fix --apply >>/dev/null
-	dart format . >>/dev/null
+update:
+	dart run build_runner build -d
+	dart fix --apply
+	dart format .
 	dart analyze --fatal-infos
-
-docs:
-	cd dynamo_annotation && dart doc
-	cd dynamo_serializable && dart doc
