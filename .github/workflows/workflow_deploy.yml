@@ -16,7 +16,7 @@ jobs:
       - uses: dart-lang/setup-dart@v1
 
       - name: 🚀 Publish geography
-        uses: RatakondalaArun/pub.dev-cd@v1
+        uses: RatakondalaArun/pub.dev-cd@v1.0.0
         with:
           creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
           package_path: geography
@@ -31,7 +31,7 @@ jobs:
       - uses: dart-lang/setup-dart@v1
 
       - name: 🚀 Publish cobertura
-        uses: RatakondalaArun/pub.dev-cd@v1
+        uses: RatakondalaArun/pub.dev-cd@v1.0.0
         with:
           creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
           package_path: cobertura
@@ -46,7 +46,7 @@ jobs:
       - uses: dart-lang/setup-dart@v1
 
       - name: 🚀 Publish DynamoJson
-        uses: RatakondalaArun/pub.dev-cd@v1
+        uses: RatakondalaArun/pub.dev-cd@v1.0.0
         with:
           creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
           package_path: dynamo_json
