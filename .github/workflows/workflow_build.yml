@@ -55,7 +55,7 @@ jobs:
         run: make all
 
   dynamo_json:
-    name: 📇 dynamo_json
+    name: 📇 DynamoJson
     needs: changes
     if: ${{ needs.changes.outputs.dynamo_json == 'true' }}
     runs-on: ubuntu-latest

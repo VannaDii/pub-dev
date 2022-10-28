@@ -1,20 +1,19 @@
-import 'dart:convert';
+import 'dart:convert'; // You'll need this if you use `dynamic` fields
 import 'package:dynamo_json/dynamo_json.dart';
 
 part 'example.g.dart';
 
 @DynamoJson()
 class Person {
-  /// The generated code assumes these values exist in JSON.
   final String firstName, lastName;
-
-  /// The generated code below handles if the corresponding JSON value doesn't
-  /// exist or is empty.
   final DateTime? dateOfBirth;
-
   final List<Person> relatives;
-
   final dynamic stateBucket;
+
+  // Explicitly ignore because it's explicitly set.
+  // In general, `late` fields are supported.
+  @DynamoIgnore()
+  late final bool hasState;
 
   Person({
     required this.firstName,
@@ -22,7 +21,9 @@ class Person {
     this.dateOfBirth,
     this.relatives = const [],
     this.stateBucket,
-  });
+  }) {
+    hasState = stateBucket != null;
+  }
 
   factory Person.fromDynamoJson(Map<String, dynamic> json) =>
       _$PersonFromDynamoJson(json);

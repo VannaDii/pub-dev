@@ -36,7 +36,7 @@ bool hasAnnotationNamed(DartType type, String name) =>
 /// Returns the [ElementAnnotation] named [name] from the [type], or null if
 /// it doesn't exist.
 ElementAnnotation? getAnnotationNamed(DartType type, String name) {
-  final result = type.element2?.metadata
+  final result = type.element?.metadata
       .firstWhereOrNull((e) => e.element?.displayName == name);
   return result;
 }
@@ -63,8 +63,7 @@ String baseNameForType(DartType type) => type is ParameterizedType
 ExecutableElement? getMethodByName(DartType type, String name) {
   final result = type.typeImplementations
       .map((dt) => dt is InterfaceType
-          ? dt.getMethod(name) ??
-              dt.lookUpConstructor(name, dt.element2.library)
+          ? dt.getMethod(name) ?? dt.lookUpConstructor(name, dt.element.library)
           : null)
       .firstWhereOrNull((me) => me != null);
   return result;
@@ -73,8 +72,8 @@ ExecutableElement? getMethodByName(DartType type, String name) {
 /// Returns the [FieldElement]s for a given [enumType], or `null` if
 /// [enumType] is not an [Enum].
 Iterable<FieldElement>? iterateEnumFields(DartType enumType) {
-  if (enumType is InterfaceType && enumType.element2 is EnumElement) {
-    return enumType.element2.fields.where((element) => element.isEnumConstant);
+  if (enumType is InterfaceType && enumType.element is EnumElement) {
+    return enumType.element.fields.where((element) => element.isEnumConstant);
   }
   return null;
 }
@@ -93,7 +92,7 @@ String typeToCode(
     return 'dynamic';
   } else if (type is InterfaceType) {
     return [
-      type.element2.name,
+      type.element.name,
       if (type.typeArguments.isNotEmpty)
         '<${type.typeArguments.map(typeToCode).join(', ')}>',
       (type.isNullableType || forceNullable) ? '?' : '',

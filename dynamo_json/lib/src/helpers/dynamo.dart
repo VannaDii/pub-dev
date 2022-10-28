@@ -142,7 +142,8 @@ class DynamoMeta extends DartMeta {
       return wrapJsonTo(expression);
     }
 
-    final result = "{ '$dynamoTypeName': $expression }";
+    final nullablePrefix = nullHandlerToOrEmpty(expression);
+    final result = "$nullablePrefix{ '$dynamoTypeName': $expression }";
     return result;
   }
 
@@ -158,7 +159,8 @@ class DynamoMeta extends DartMeta {
       return wrapJsonFrom(expression);
     }
 
-    final result = "$expression['$dynamoTypeName'] as $codeName";
+    final nullablePrefix = nullHandlerFromOrEmpty(expression);
+    final result = "$nullablePrefix$expression['$dynamoTypeName'] as $codeName";
     return result;
   }
 
