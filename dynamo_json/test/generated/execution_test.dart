@@ -70,8 +70,9 @@ class SupportedTypesClass {
   final List<String> strings;
   final List<int> numbers;
   final List<DateTime> appointments;
-  final List<bool> flags;
 
+  late final List<bool> flags;
+  @DynamoIgnore()
   late final int sumOfNumbers;
 
   SupportedTypesClass(
@@ -82,7 +83,6 @@ class SupportedTypesClass {
     required this.expiry,
     required this.hasData,
     required this.appointments,
-    required this.flags,
     required this.dateOfBirth,
     this.child,
     this.relatives,
@@ -108,9 +108,8 @@ void main() {
         strings: const ['foo', 'bar'],
         numbers: const [42, 40, 38],
         appointments: [DateTime.now(), DateTime.now().toUtc()],
-        flags: const [true, false, true, false],
         dateOfBirth: DateTime.now(),
-      );
+      )..flags = const [true, false, true, false];
 
       final jsonData1 = jsonEncode(instance1.toDynamoJson());
       expect(jsonData1, isNotEmpty);

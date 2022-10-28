@@ -91,10 +91,9 @@ SupportedTypesClass _$SupportedTypesClassFromDynamoJson(
       appointments: (json['appointments']['L'] as List<dynamic>)
           .map((e) => DateTime.parse(e['S'] as String))
           .toList(),
-      flags: (json['flags']['L'] as List<dynamic>)
-          .map((e) => e['BOOL'] as bool)
-          .toList(),
-    )..sumOfNumbers = int.parse(json['sumOfNumbers']['N'] as String);
+    )..flags = (json['flags']['L'] as List<dynamic>)
+        .map((e) => e['BOOL'] as bool)
+        .toList();
 
 /// Creates a [Map]<String,dynamic> from an instance of [SupportedTypesClass]
 
@@ -132,5 +131,4 @@ Map<String, dynamic> _$SupportedTypesClassToDynamoJson(
       'flags': {
         'L': instance.flags.map((e) => {'BOOL': e}).toList()
       },
-      'sumOfNumbers': {'N': instance.sumOfNumbers.toString()},
     };

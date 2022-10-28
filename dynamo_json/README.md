@@ -1,30 +1,71 @@
-[![Dart CI](https://github.com/giocirque/pub-dev/workflows/build/badge.svg)](https://github.com/giocirque/pub-dev/actions?query=workflow%3A%22build%22)
+# dynamo_json
 
-Provides [Dart Build System] builders for handling DynamoDB JSON.
+A [Dart] [build_runner] to generate `toDynamoJson` and `fromDynamoJson` support methods, similar to [json_serializable], specifically supporting the [DynamoDB] [attribute values][dynamo_attributes].
 
-## dynamo_serializable [![Pub Package](https://img.shields.io/pub/v/dynamo_serializable.svg)](https://pub.dev/packages/dynamo_serializable)
+## Installation
 
-- Package: <https://pub.dev/packages/dynamo_serializable>
-- [Source code](dynamo_serializable)
+Add `dynamo_json` to your `pubspec.yaml` as shown below or run `dart pub add dynamo_json`
 
-The core package providing Generators for DynamoDB-JSON-specific tasks.
+```yaml
+dependencies:
+  dynamo_json: ^0.0.1
+```
 
-Import it into your pubspec `dev_dependencies:` section.
+## Usage
 
-## dynamo_annotation [![Pub Package](https://img.shields.io/pub/v/dynamo_annotation.svg)](https://pub.dev/packages/json_annotation)
+Import it in your [Dart] code and use it with your objects like in the example below. You can see the [generated code example][example] if you like.
 
-- Package: <https://pub.dev/packages/dynamo_annotation>
-- [Source code](dynamo_annotation)
+```dart
+import 'dart:convert'; // You'll need this if you use `dynamic` fields
+import 'package:dynamo_json/dynamo_json.dart';
 
-The annotation package which only depends on `json_annotation`.
+part 'example.g.dart';
 
-Import it into your pubspec `dependencies:` section.
+@DynamoJson()
+class Person {
+  final String firstName, lastName;
+  final DateTime? dateOfBirth;
+  final List<Person> relatives;
+  final dynamic stateBucket;
 
-## example
+  // Explicitly ignore because it's explicitly set.
+  // In general, `late` fields are supported.
+  @DynamoIgnore()
+  late final bool hasState;
 
-- [Source code](example)
+  Person({
+    required this.firstName,
+    required this.lastName,
+    this.dateOfBirth,
+    this.relatives = const [],
+    this.stateBucket,
+  }) {
+    hasState = stateBucket != null;
+  }
 
-An example showing how to set up and use `dynamo_serializable` and
-`dynamo_annotation`.
+  factory Person.fromDynamoJson(Map<String, dynamic> json) =>
+      _$PersonFromDynamoJson(json);
 
-[dart build system]: https://github.com/dart-lang/build
+  Map<String, dynamic> toDynamoJson() => _$PersonToDynamoJson(this);
+}
+```
+
+### @DynamoJson()
+
+Can only be used on classes to indicate the need for (de)serialization support.
+
+### @DynamoIgnore()
+
+Can only be used on fields to indicate they should not be considered by the generated code.
+
+## Reference
+
+For details, see the [documentation].
+
+[dart]: https://dart.dev
+[documentation]: https://pub-dev.dicatania.me/dynamo_json/doc/api
+[build_runner]: https://pub.dev/packages/build_runner
+[json_serializable]: https://pub.dev/packages/json_serializable
+[dynamodb]: https://aws.amazon.com/dynamodb/
+[dynamo_attributes]: https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_AttributeValue.html
+[example]: ./example/

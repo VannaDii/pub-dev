@@ -1,8 +1,7 @@
 name: dynamo_json
-description: A code generator for DynamoDB JSON (de)serialization.
+description: A Dart `build_runner` to generate `toDynamoJson` and `fromDynamoJson` support methods, similar to `json_serializable`, specifically supporting the `DynamoDB` attribute values.`
 version: 0.0.1
 homepage: https://pub-dev.dicatania.me/dynamo_json/
-repository: https://github.com/GioCirque/pub-dev
 issue_tracker: https://github.com/GioCirque/pub-dev/issues
 
 environment:
