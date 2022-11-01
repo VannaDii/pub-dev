@@ -1,6 +1,6 @@
 name: dynamo_json
 description: A Dart `build_runner` to generate `toDynamoJson` and `fromDynamoJson` support methods, similar to `json_serializable`, specifically supporting the `DynamoDB` attribute values.`
-version: 0.0.1
+version: 0.0.2
 homepage: https://pub-dev.dicatania.me/dynamo_json/
 issue_tracker: https://github.com/GioCirque/pub-dev/issues
 
@@ -11,7 +11,7 @@ dependencies:
   analyzer: ^5.1.0
   build: ^2.3.1
   build_config: ^1.1.1
-  collection: ^1.17.0
+  collection: ^1.16.0
   equatable: ^2.0.5
   meta: ^1.8.0
   path: ^1.8.2
