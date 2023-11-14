@@ -1,6 +1,7 @@
 /// Access to known geographies in Venezuela and their metadata.
 ///
 /// NOTICE: This file is auto-generated and should not be changed manually.
+library;
 
 import '../base.dart';
 import 'venezuela_states.dart';

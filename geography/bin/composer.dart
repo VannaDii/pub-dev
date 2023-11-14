@@ -109,6 +109,7 @@ class ComposerV2 {
 /// Access to known $tag and their metadata.
 ///
 /// NOTICE: This file is auto-generated and should not be changed manually.
+library;
 
 import '${basePath}base.dart';${imports.toSet().where((e) => e.isNotEmpty).map((e) => "\nimport '$e';").join()}
 """;

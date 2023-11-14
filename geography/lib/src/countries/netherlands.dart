@@ -1,6 +1,7 @@
 /// Access to known geographies in Netherlands and their metadata.
 ///
 /// NOTICE: This file is auto-generated and should not be changed manually.
+library;
 
 import '../base.dart';
 import 'netherlands_states.dart';

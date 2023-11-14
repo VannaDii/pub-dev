@@ -67,9 +67,9 @@ abstract class GeoLocation extends GeoCoords {
   const GeoLocation({
     required this.id,
     required this.name,
-    required double latitude,
-    required double longitude,
-  }) : super(latitude: latitude, longitude: longitude);
+    required super.latitude,
+    required super.longitude,
+  });
 
   /// The unique identifier for this data, like `1`
   final int id;
@@ -86,12 +86,12 @@ abstract class GeoLocation extends GeoCoords {
 @JsonSerializable()
 class GeoLocationNode extends GeoLocation {
   const GeoLocationNode({
-    required int id,
-    required String name,
-    required double latitude,
-    required double longitude,
+    required super.id,
+    required super.name,
+    required super.latitude,
+    required super.longitude,
     this.parentId = -1,
-  }) : super(id: id, name: name, latitude: latitude, longitude: longitude);
+  });
 
   @JsonKey(defaultValue: -1)
   final int parentId;
@@ -128,17 +128,11 @@ class GeoLocationNode extends GeoLocation {
 @JsonSerializable()
 class City extends GeoLocationNode {
   const City(
-      {required int id,
-      required int parentId,
-      required String name,
-      required double longitude,
-      required double latitude})
-      : super(
-            id: id,
-            parentId: parentId,
-            name: name,
-            latitude: latitude,
-            longitude: longitude);
+      {required super.id,
+      required super.parentId,
+      required super.name,
+      required super.longitude,
+      required super.latitude});
 
   @override
   List<Object?> get props => [...super.props];
@@ -180,20 +174,15 @@ class City extends GeoLocationNode {
 @JsonSerializable()
 class Region extends GeoLocationNode {
   const Region({
-    required int id,
-    required int parentId,
-    required String name,
+    required super.id,
+    required super.parentId,
+    required super.name,
     required this.type,
     required this.stateCode,
     required this.cities,
-    required double longitude,
-    required double latitude,
-  }) : super(
-            id: id,
-            parentId: parentId,
-            name: name,
-            latitude: latitude,
-            longitude: longitude);
+    required super.longitude,
+    required super.latitude,
+  });
 
   /// If set, the type of region, otherwise `null`. When set, the value might
   /// look like: `province`, `municipality`, `autonomous region`, etc.
@@ -264,8 +253,8 @@ class Region extends GeoLocationNode {
 @JsonSerializable()
 class Country extends GeoLocationNode {
   const Country({
-    required int id,
-    required String name,
+    required super.id,
+    required super.name,
     required this.capital,
     required this.currency,
     required this.currencyName,
@@ -284,9 +273,9 @@ class Country extends GeoLocationNode {
     required this.timezones,
     required this.tld,
     required this.translations,
-    required double longitude,
-    required double latitude,
-  }) : super(id: id, name: name, latitude: latitude, longitude: longitude);
+    required super.longitude,
+    required super.latitude,
+  });
 
   /// The three-digit ISO code for this country, like `AFG` for `Afghanistan`
   final String? iso3;

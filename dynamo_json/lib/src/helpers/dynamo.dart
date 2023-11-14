@@ -118,8 +118,8 @@ class DynamoMeta extends DartMeta {
 
   DynamoMeta._({
     required DartType type,
-    bool isLate = false,
-  }) : super._(type: type, isLate: isLate) {
+    super.isLate,
+  }) : super._(type: type) {
     dynamoType = dynamoTypeFor(type);
   }
 

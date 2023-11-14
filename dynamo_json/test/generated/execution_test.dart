@@ -45,9 +45,9 @@ class SupportedClass extends SupportedSuperClass {
   final FullyDecoratedClass<String> goodJob;
 
   SupportedClass({
-    required FullyDecoratedClass<String> greatJob,
+    required super.greatJob,
     required this.goodJob,
-  }) : super(greatJob: greatJob);
+  });
 
   factory SupportedClass.fromDynamoJson(Map<String, dynamic> json) =>
       _$SupportedClassFromDynamoJson(json);

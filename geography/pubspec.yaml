@@ -10,9 +10,9 @@ environment:
 
 dependencies:
   http: ^1.1.0
-  meta: ^1.10.0
+  meta: ^1.11.0
   path: ^1.8.3
-  archive: ^3.4.0
+  archive: ^3.4.9
   latlong2: ^0.9.0
   diacritic: ^0.1.4
   equatable: ^2.0.5
@@ -20,9 +20,9 @@ dependencies:
   json_annotation: ^4.8.1
 
 dev_dependencies:
-  uuid: ^4.0.0
-  test: ^1.24.6
-  lints: ^2.1.1
-  coverage: ^1.6.3
+  uuid: ^4.2.1
+  test: ^1.24.9
+  lints: ^3.0.0
+  coverage: ^1.7.1
   build_runner: ^2.4.6
   json_serializable: ^6.7.1

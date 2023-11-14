@@ -1,6 +1,7 @@
 /// Access to known geographies in Nepal and their metadata.
 ///
 /// NOTICE: This file is auto-generated and should not be changed manually.
+library;
 
 import '../base.dart';
 import 'nepal_states.dart';

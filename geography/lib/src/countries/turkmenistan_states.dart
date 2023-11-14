@@ -1,6 +1,7 @@
 /// Access to known geographies in `Turkmenistan` and their metadata.
 ///
 /// NOTICE: This file is auto-generated and should not be changed manually.
+library;
 
 import '../base.dart';
 import 'turkmenistan_cities.dart';

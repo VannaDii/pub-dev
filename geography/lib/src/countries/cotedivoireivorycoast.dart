@@ -1,6 +1,7 @@
 /// Access to known geographies in Cote D'Ivoire (Ivory Coast) and their metadata.
 ///
 /// NOTICE: This file is auto-generated and should not be changed manually.
+library;
 
 import '../base.dart';
 import 'cotedivoireivorycoast_states.dart';

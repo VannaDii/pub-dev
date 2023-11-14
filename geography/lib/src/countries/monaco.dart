@@ -1,6 +1,7 @@
 /// Access to known geographies in Monaco and their metadata.
 ///
 /// NOTICE: This file is auto-generated and should not be changed manually.
+library;
 
 import '../base.dart';
 import 'monaco_states.dart';
