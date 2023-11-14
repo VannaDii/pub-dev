@@ -16,7 +16,7 @@ runner:
 
 tests: deps runner
 	dart run test --coverage="coverage" --chain-stack-traces
-	dart pub global run coverage:format_coverage --packages=.packages --report-on=lib --lcov -o ./coverage/lcov.info -i ./coverage
+	dart pub global run coverage:format_coverage --report-on=lib --lcov -o ./coverage/lcov.info -i ./coverage
 	genhtml -o ./coverage/report ./coverage/lcov.info
 	cobertura show -i ./coverage/lcov.info
 

@@ -1,764 +1,512 @@
-/// Access to known countries and their meta data.
+/// Access to known countries and their metadata.
 ///
 /// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 
-import 'aland_islands.dart' show alandIslands;
-export 'aland_islands.dart';
-
-import 'american_samoa.dart' show americanSamoa;
-export 'american_samoa.dart';
-
-import 'antarctica.dart' show antarctica;
-export 'antarctica.dart';
-
-import 'anguilla.dart' show anguilla;
-export 'anguilla.dart';
-
-import 'aruba.dart' show aruba;
-export 'aruba.dart';
-
-import 'bouvet_island.dart' show bouvetIsland;
-export 'bouvet_island.dart';
-
-import 'british_indian_ocean_territory.dart' show britishIndianOceanTerritory;
-export 'british_indian_ocean_territory.dart';
-
-import 'cayman_islands.dart' show caymanIslands;
-export 'cayman_islands.dart';
-
-import 'christmas_island.dart' show christmasIsland;
-export 'christmas_island.dart';
-
-import 'cocos_keeling_islands.dart' show cocosKeelingIslands;
-export 'cocos_keeling_islands.dart';
-
-import 'cook_islands.dart' show cookIslands;
-export 'cook_islands.dart';
-
-import 'falkland_islands.dart' show falklandIslands;
-export 'falkland_islands.dart';
-
-import 'faroe_islands.dart' show faroeIslands;
-export 'faroe_islands.dart';
-
-import 'french_polynesia.dart' show frenchPolynesia;
-export 'french_polynesia.dart';
-
-import 'french_southern_territories.dart' show frenchSouthernTerritories;
-export 'french_southern_territories.dart';
-
-import 'french_guiana.dart' show frenchGuiana;
-export 'french_guiana.dart';
-
-import 'gibraltar.dart' show gibraltar;
-export 'gibraltar.dart';
-
-import 'greenland.dart' show greenland;
-export 'greenland.dart';
-
-import 'guadeloupe.dart' show guadeloupe;
-export 'guadeloupe.dart';
-
-import 'guam.dart' show guam;
-export 'guam.dart';
-
-import 'guernsey_and_alderney.dart' show guernseyAandAlderney;
-export 'guernsey_and_alderney.dart';
-
-import 'heard_island_and_mcdonald_islands.dart'
-    show heardIslandAandMcDonaldIslands;
-export 'heard_island_and_mcdonald_islands.dart';
-
-import 'jersey.dart' show jersey;
-export 'jersey.dart';
-
-import 'macau_sdotadotrdot.dart' show macauSDotADotRDot;
-export 'macau_sdotadotrdot.dart';
-
-import 'man_isle_of_.dart' show manIsleOof;
-export 'man_isle_of_.dart';
-
-import 'martinique.dart' show martinique;
-export 'martinique.dart';
-
-import 'mayotte.dart' show mayotte;
-export 'mayotte.dart';
-
-import 'montserrat.dart' show montserrat;
-export 'montserrat.dart';
-
-import 'bonaire_sint_eustatius_and_saba.dart' show bonaireSintEustatiusAandSaba;
-export 'bonaire_sint_eustatius_and_saba.dart';
-
-import 'new_caledonia.dart' show newCaledonia;
-export 'new_caledonia.dart';
-
-import 'niue.dart' show niue;
-export 'niue.dart';
-
-import 'norfolk_island.dart' show norfolkIsland;
-export 'norfolk_island.dart';
-
-import 'northern_mariana_islands.dart' show northernMarianaIslands;
-export 'northern_mariana_islands.dart';
-
-import 'palestinian_territory_occupied.dart' show palestinianTerritoryOccupied;
-export 'palestinian_territory_occupied.dart';
-
-import 'puerto_rico.dart' show puertoRico;
-export 'puerto_rico.dart';
-
-import 'pitcairn_island.dart' show pitcairnIsland;
-export 'pitcairn_island.dart';
-
-import 'reunion.dart' show reunion;
-export 'reunion.dart';
-
-import 'saint_helena.dart' show saintHelena;
-export 'saint_helena.dart';
-
-import 'saint_pierre_and_miquelon.dart' show saintPierreAandMiquelon;
-export 'saint_pierre_and_miquelon.dart';
-
-import 'sainthypmartin_french_part_.dart' show saintHypMartinFrenchPpart;
-export 'sainthypmartin_french_part_.dart';
-
-import 'sainthypbarthelemy.dart' show saintHypBarthelemy;
-export 'sainthypbarthelemy.dart';
-
-import 'south_georgia.dart' show southGeorgia;
-export 'south_georgia.dart';
-
-import 'svalbard_and_jan_mayen_islands.dart' show svalbardAndJanMayenIslands;
-export 'svalbard_and_jan_mayen_islands.dart';
-
-import 'tokelau.dart' show tokelau;
-export 'tokelau.dart';
-
-import 'turks_and_caicos_islands.dart' show turksAndCaicosIslands;
-export 'turks_and_caicos_islands.dart';
-
-import 'united_states_minor_outlying_islands.dart'
-    show unitedStatesMinorOutlyingIslands;
-export 'united_states_minor_outlying_islands.dart';
-
-import 'virgin_islands_british_.dart' show virginIslandsBritish;
-export 'virgin_islands_british_.dart';
-
-import 'vatican_city_state_holy_see_.dart' show vaticanCityStateHolySee;
-export 'vatican_city_state_holy_see_.dart';
-
-import 'western_sahara.dart' show westernSahara;
-export 'western_sahara.dart';
-
-import 'virgin_islands_us_.dart' show virginIslandsUS;
-export 'virgin_islands_us_.dart';
-
-import 'wallis_and_futuna_islands.dart' show wallisAndFutunaIslands;
-export 'wallis_and_futuna_islands.dart';
-
-import 'sint_maarten_dutch_part_.dart' show sintMaartenDutchPpart;
-export 'sint_maarten_dutch_part_.dart';
-
-import 'curacao.dart' show curacao;
-export 'curacao.dart';
-
-import 'marshall_islands.dart' show marshallIslands;
-export 'marshall_islands.dart';
-
-import 'monaco.dart' show monaco;
-export 'monaco.dart';
-
-import 'kosovo.dart' show kosovo;
-export 'kosovo.dart';
-
-import 'bermuda.dart' show bermuda;
-export 'bermuda.dart';
-
-import 'sao_tome_and_principe.dart' show saoTomeAandPrincipe;
-export 'sao_tome_and_principe.dart';
-
-import 'hong_kong_sdotadotrdot.dart' show hongKongSDotADotRDot;
-export 'hong_kong_sdotadotrdot.dart';
-
-import 'singapore.dart' show singapore;
-export 'singapore.dart';
-
-import 'south_sudan.dart' show southSudan;
-export 'south_sudan.dart';
-
-import 'brunei.dart' show brunei;
-export 'brunei.dart';
-
-import 'tonga.dart' show tonga;
-export 'tonga.dart';
-
-import 'bahrain.dart' show bahrain;
-export 'bahrain.dart';
-
-import 'vanuatu.dart' show vanuatu;
-export 'vanuatu.dart';
-
-import 'grenada.dart' show grenada;
-export 'grenada.dart';
-
-import 'madagascar.dart' show madagascar;
-export 'madagascar.dart';
-
-import 'saint_vincent_and_the_grenadines.dart'
-    show saintVincentAndTheGrenadines;
-export 'saint_vincent_and_the_grenadines.dart';
-
-import 'rwanda.dart' show rwanda;
-export 'rwanda.dart';
-
-import 'eritrea.dart' show eritrea;
-export 'eritrea.dart';
-
-import 'djibouti.dart' show djibouti;
-export 'djibouti.dart';
-
-import 'andorra.dart' show andorra;
-export 'andorra.dart';
-
-import 'belize.dart' show belize;
-export 'belize.dart';
-
-import 'antigua_and_barbuda.dart' show antiguaAndBarbuda;
-export 'antigua_and_barbuda.dart';
-
-import 'tuvalu.dart' show tuvalu;
-export 'tuvalu.dart';
-
-import 'solomon_islands.dart' show solomonIslands;
-export 'solomon_islands.dart';
-
-import 'san_marino.dart' show sanMarino;
-export 'san_marino.dart';
-
-import 'barbados.dart' show barbados;
-export 'barbados.dart';
-
-import 'kiribati.dart' show kiribati;
-export 'kiribati.dart';
-
-import 'togo.dart' show togo;
-export 'togo.dart';
-
-import 'qatar.dart' show qatar;
-export 'qatar.dart';
-
-import 'swaziland.dart' show swaziland;
-export 'swaziland.dart';
-
-import 'nauru.dart' show nauru;
-export 'nauru.dart';
-
-import 'lesotho.dart' show lesotho;
-export 'lesotho.dart';
-
-import 'liechtenstein.dart' show liechtenstein;
-export 'liechtenstein.dart';
-
-import 'suriname.dart' show suriname;
-export 'suriname.dart';
-
-import 'kuwait.dart' show kuwait;
-export 'kuwait.dart';
-
-import 'guyana.dart' show guyana;
-export 'guyana.dart';
-
-import 'guineahypbissau.dart' show guineaHypBissau;
-export 'guineahypbissau.dart';
-
-import 'turkmenistan.dart' show turkmenistan;
-export 'turkmenistan.dart';
-
-import 'dominica.dart' show dominica;
-export 'dominica.dart';
-
-import 'lebanon.dart' show lebanon;
-export 'lebanon.dart';
-
-import 'equatorial_guinea.dart' show equatorialGuinea;
-export 'equatorial_guinea.dart';
-
-import 'congo.dart' show congo;
-export 'congo.dart';
-
-import 'saint_kitts_and_nevis.dart' show saintKittsAndNevis;
-export 'saint_kitts_and_nevis.dart';
-
-import 'samoa.dart' show samoa;
-export 'samoa.dart';
-
-import 'comoros.dart' show comoros;
-export 'comoros.dart';
-
-import 'mauritania.dart' show mauritania;
-export 'mauritania.dart';
-
-import 'gabon.dart' show gabon;
-export 'gabon.dart';
-
-import 'seychelles.dart' show seychelles;
-export 'seychelles.dart';
-
-import 'tajikistan.dart' show tajikistan;
-export 'tajikistan.dart';
-
-import 'united_arab_emirates.dart' show unitedArabEmirates;
-export 'united_arab_emirates.dart';
-
-import 'palau.dart' show palau;
-export 'palau.dart';
-
-import 'liberia.dart' show liberia;
-export 'liberia.dart';
-
-import 'micronesia.dart' show micronesia;
-export 'micronesia.dart';
-
-import 'sierra_leone.dart' show sierraLeone;
-export 'sierra_leone.dart';
-
-import 'burundi.dart' show burundi;
-export 'burundi.dart';
-
-import 'oman.dart' show oman;
-export 'oman.dart';
-
-import 'fiji_islands.dart' show fijiIslands;
-export 'fiji_islands.dart';
-
-import 'mozambique.dart' show mozambique;
-export 'mozambique.dart';
-
-import 'trinidad_and_tobago.dart' show trinidadAndTobago;
-export 'trinidad_and_tobago.dart';
-
-import 'benin.dart' show benin;
-export 'benin.dart';
-
-import 'kyrgyzstan.dart' show kyrgyzstan;
-export 'kyrgyzstan.dart';
-
-import 'niger.dart' show niger;
-export 'niger.dart';
-
-import 'bhutan.dart' show bhutan;
-export 'bhutan.dart';
-
-import 'mali.dart' show mali;
-export 'mali.dart';
-
-import 'cyprus.dart' show cyprus;
-export 'cyprus.dart';
-
-import 'iceland.dart' show iceland;
-export 'iceland.dart';
-
-import 'cape_verde.dart' show capeVerde;
-export 'cape_verde.dart';
-
-import 'gambia_the.dart' show gambiaThe;
-export 'gambia_the.dart';
-
-import 'east_timor.dart' show eastTimor;
-export 'east_timor.dart';
-
-import 'maldives.dart' show maldives;
-export 'maldives.dart';
-
-import 'namibia.dart' show namibia;
-export 'namibia.dart';
-
-import 'zambia.dart' show zambia;
-export 'zambia.dart';
-
-import 'botswana.dart' show botswana;
-export 'botswana.dart';
-
-import 'central_african_republic.dart' show centralAfricanRepublic;
-export 'central_african_republic.dart';
-
-import 'somalia.dart' show somalia;
-export 'somalia.dart';
-
-import 'montenegro.dart' show montenegro;
-export 'montenegro.dart';
-
-import 'mongolia.dart' show mongolia;
-export 'mongolia.dart';
-
-import 'angola.dart' show angola;
-export 'angola.dart';
-
-import 'israel.dart' show israel;
-export 'israel.dart';
-
-import 'north_korea.dart' show northKorea;
-export 'north_korea.dart';
-
-import 'taiwan.dart' show taiwan;
-export 'taiwan.dart';
-
-import 'jordan.dart' show jordan;
-export 'jordan.dart';
-
-import 'chad.dart' show chad;
-export 'chad.dart';
-
-import 'bahamas_the.dart' show bahamasThe;
-export 'bahamas_the.dart';
-
-import 'senegal.dart' show senegal;
-export 'senegal.dart';
-
-import 'nepal.dart' show nepal;
-export 'nepal.dart';
-
-import 'zimbabwe.dart' show zimbabwe;
-export 'zimbabwe.dart';
-
-import 'costa_rica.dart' show costaRica;
-export 'costa_rica.dart';
-
-import 'libya.dart' show libya;
-export 'libya.dart';
-
-import 'myanmar.dart' show myanmar;
-export 'myanmar.dart';
-
-import 'haiti.dart' show haiti;
-export 'haiti.dart';
-
-import 'sudan.dart' show sudan;
-export 'sudan.dart';
-
-import 'cameroon.dart' show cameroon;
-export 'cameroon.dart';
-
-import 'el_salvador.dart' show elSalvador;
-export 'el_salvador.dart';
-
-import 'laos.dart' show laos;
-export 'laos.dart';
-
-import 'iraq.dart' show iraq;
-export 'iraq.dart';
-
-import 'georgia.dart' show georgia;
-export 'georgia.dart';
-
-import 'ethiopia.dart' show ethiopia;
-export 'ethiopia.dart';
-
-import 'mauritius.dart' show mauritius;
-export 'mauritius.dart';
-
-import 'slovakia.dart' show slovakia;
-export 'slovakia.dart';
-
-import 'democratic_republic_of_the_congo.dart'
-    show democraticRepublicOofTtheCongo;
-export 'democratic_republic_of_the_congo.dart';
-
-import 'uzbekistan.dart' show uzbekistan;
-export 'uzbekistan.dart';
-
-import 'malawi.dart' show malawi;
-export 'malawi.dart';
-
-import 'ghana.dart' show ghana;
-export 'ghana.dart';
-
-import 'syria.dart' show syria;
-export 'syria.dart';
-
-import 'bolivia.dart' show bolivia;
-export 'bolivia.dart';
-
-import 'denmark.dart' show denmark;
-export 'denmark.dart';
-
-import 'papua_new_guinea.dart' show papuaNnewGuinea;
-export 'papua_new_guinea.dart';
-
-import 'luxembourg.dart' show luxembourg;
-export 'luxembourg.dart';
-
-import 'guinea.dart' show guinea;
-export 'guinea.dart';
-
-import 'belarus.dart' show belarus;
-export 'belarus.dart';
-
-import 'uruguay.dart' show uruguay;
-export 'uruguay.dart';
-
-import 'paraguay.dart' show paraguay;
-export 'paraguay.dart';
-
-import 'estonia.dart' show estonia;
-export 'estonia.dart';
-
-import 'cambodia.dart' show cambodia;
-export 'cambodia.dart';
-
-import 'nicaragua.dart' show nicaragua;
-export 'nicaragua.dart';
-
-import 'ecuador.dart' show ecuador;
-export 'ecuador.dart';
-
-import 'moldova.dart' show moldova;
-export 'moldova.dart';
-
-import 'new_zealand.dart' show newZealand;
-export 'new_zealand.dart';
-
-import 'cote_d_ivoire_ivory_coast_.dart' show coteDIvoireIvoryCoast;
-export 'cote_d_ivoire_ivory_coast_.dart';
-
-import 'south_africa.dart' show southAfrica;
-export 'south_africa.dart';
-
-import 'malaysia.dart' show malaysia;
-export 'malaysia.dart';
-
-import 'cuba.dart' show cuba;
-export 'cuba.dart';
-
-import 'bosnia_and_herzegovina.dart' show bosniaAandHerzegovina;
-export 'bosnia_and_herzegovina.dart';
-
 import 'afghanistan.dart' show afghanistan;
-export 'afghanistan.dart';
-
-import 'tunisia.dart' show tunisia;
-export 'tunisia.dart';
-
-import 'egypt.dart' show egypt;
-export 'egypt.dart';
-
-import 'armenia.dart' show armenia;
-export 'armenia.dart';
-
-import 'venezuela.dart' show venezuela;
-export 'venezuela.dart';
-
-import 'pakistan.dart' show pakistan;
-export 'pakistan.dart';
-
-import 'kazakhstan.dart' show kazakhstan;
-export 'kazakhstan.dart';
-
-import 'malta.dart' show malta;
-export 'malta.dart';
-
-import 'sri_lanka.dart' show sriLanka;
-export 'sri_lanka.dart';
-
-import 'south_korea.dart' show southKorea;
-export 'south_korea.dart';
-
-import 'burkina_faso.dart' show burkinaFaso;
-export 'burkina_faso.dart';
-
-import 'chile.dart' show chile;
-export 'chile.dart';
-
-import 'saint_lucia.dart' show saintLucia;
-export 'saint_lucia.dart';
-
-import 'kenya.dart' show kenya;
-export 'kenya.dart';
-
+import 'alandislands.dart' show alandIslands;
 import 'albania.dart' show albania;
-export 'albania.dart';
-
-import 'dominican_republic.dart' show dominicanRepublic;
-export 'dominican_republic.dart';
-
-import 'belgium.dart' show belgium;
-export 'belgium.dart';
-
-import 'yemen.dart' show yemen;
-export 'yemen.dart';
-
-import 'saudi_arabia.dart' show saudiArabia;
-export 'saudi_arabia.dart';
-
-import 'panama.dart' show panama;
-export 'panama.dart';
-
-import 'guatemala.dart' show guatemala;
-export 'guatemala.dart';
-
-import 'finland.dart' show finland;
-export 'finland.dart';
-
-import 'serbia.dart' show serbia;
-export 'serbia.dart';
-
-import 'lithuania.dart' show lithuania;
-export 'lithuania.dart';
-
-import 'tanzania.dart' show tanzania;
-export 'tanzania.dart';
-
-import 'honduras.dart' show honduras;
-export 'honduras.dart';
-
-import 'bangladesh.dart' show bangladesh;
-export 'bangladesh.dart';
-
-import 'ireland.dart' show ireland;
-export 'ireland.dart';
-
-import 'jamaica.dart' show jamaica;
-export 'jamaica.dart';
-
-import 'uganda.dart' show uganda;
-export 'uganda.dart';
-
-import 'peru.dart' show peru;
-export 'peru.dart';
-
-import 'croatia.dart' show croatia;
-export 'croatia.dart';
-
-import 'azerbaijan.dart' show azerbaijan;
-export 'azerbaijan.dart';
-
-import 'canada.dart' show canada;
-export 'canada.dart';
-
-import 'norway.dart' show norway;
-export 'norway.dart';
-
-import 'bulgaria.dart' show bulgaria;
-export 'bulgaria.dart';
-
-import 'latvia.dart' show latvia;
-export 'latvia.dart';
-
-import 'nigeria.dart' show nigeria;
-export 'nigeria.dart';
-
-import 'macedonia.dart' show macedonia;
-export 'macedonia.dart';
-
 import 'algeria.dart' show algeria;
-export 'algeria.dart';
-
-import 'morocco.dart' show morocco;
-export 'morocco.dart';
-
-import 'austria.dart' show austria;
-export 'austria.dart';
-
-import 'sweden.dart' show sweden;
-export 'sweden.dart';
-
+import 'americansamoa.dart' show americanSamoa;
+import 'andorra.dart' show andorra;
+import 'angola.dart' show angola;
+import 'anguilla.dart' show anguilla;
+import 'antarctica.dart' show antarctica;
+import 'antiguaandbarbuda.dart' show antiguaAndBarbuda;
 import 'argentina.dart' show argentina;
-export 'argentina.dart';
-
-import 'netherlands.dart' show netherlands;
-export 'netherlands.dart';
-
-import 'portugal.dart' show portugal;
-export 'portugal.dart';
-
-import 'vietnam.dart' show vietnam;
-export 'vietnam.dart';
-
-import 'indonesia.dart' show indonesia;
-export 'indonesia.dart';
-
+import 'armenia.dart' show armenia;
+import 'aruba.dart' show aruba;
 import 'australia.dart' show australia;
-export 'australia.dart';
-
-import 'iran.dart' show iran;
-export 'iran.dart';
-
-import 'colombia.dart' show colombia;
-export 'colombia.dart';
-
-import 'greece.dart' show greece;
-export 'greece.dart';
-
-import 'switzerland.dart' show switzerland;
-export 'switzerland.dart';
-
-import 'ukraine.dart' show ukraine;
-export 'ukraine.dart';
-
-import 'hungary.dart' show hungary;
-export 'hungary.dart';
-
-import 'china.dart' show china;
-export 'china.dart';
-
-import 'poland.dart' show poland;
-export 'poland.dart';
-
-import 'slovenia.dart' show slovenia;
-export 'slovenia.dart';
-
-import 'japan.dart' show japan;
-export 'japan.dart';
-
-import 'thailand.dart' show thailand;
-export 'thailand.dart';
-
-import 'turkey.dart' show turkey;
-export 'turkey.dart';
-
-import 'germany.dart' show germany;
-export 'germany.dart';
-
-import 'czech_republic.dart' show czechRepublic;
-export 'czech_republic.dart';
-
+import 'austria.dart' show austria;
+import 'azerbaijan.dart' show azerbaijan;
+import 'bahrain.dart' show bahrain;
+import 'bangladesh.dart' show bangladesh;
+import 'barbados.dart' show barbados;
+import 'belarus.dart' show belarus;
+import 'belgium.dart' show belgium;
+import 'belize.dart' show belize;
+import 'benin.dart' show benin;
+import 'bermuda.dart' show bermuda;
+import 'bhutan.dart' show bhutan;
+import 'bolivia.dart' show bolivia;
+import 'bonairesinteustatiusaandsaba.dart' show bonaireSintEustatiusAndSaba;
+import 'bosniaaandherzegovina.dart' show bosniaAndHerzegovina;
+import 'botswana.dart' show botswana;
+import 'bouvetisland.dart' show bouvetIsland;
 import 'brazil.dart' show brazil;
-export 'brazil.dart';
-
-import 'india.dart' show india;
-export 'india.dart';
-
-import 'spain.dart' show spain;
-export 'spain.dart';
-
-import 'mexico.dart' show mexico;
-export 'mexico.dart';
-
-import 'romania.dart' show romania;
-export 'romania.dart';
-
+import 'britishindianoceanterritory.dart' show britishIndianOceanTerritory;
+import 'brunei.dart' show brunei;
+import 'bulgaria.dart' show bulgaria;
+import 'burkinafaso.dart' show burkinaFaso;
+import 'burundi.dart' show burundi;
+import 'cambodia.dart' show cambodia;
+import 'cameroon.dart' show cameroon;
+import 'canada.dart' show canada;
+import 'capeverde.dart' show capeVerde;
+import 'caymanislands.dart' show caymanIslands;
+import 'centralafricanrepublic.dart' show centralAfricanRepublic;
+import 'chad.dart' show chad;
+import 'chile.dart' show chile;
+import 'china.dart' show china;
+import 'christmasisland.dart' show christmasIsland;
+import 'cocoskeelingislands.dart' show cocoskeelingIslands;
+import 'colombia.dart' show colombia;
+import 'comoros.dart' show comoros;
+import 'congo.dart' show congo;
+import 'cookislands.dart' show cookIslands;
+import 'costarica.dart' show costaRica;
+import 'cotedivoireivorycoast.dart' show coteDivoireivoryCoast;
+import 'croatia.dart' show croatia;
+import 'cuba.dart' show cuba;
+import 'curacao.dart' show curacao;
+import 'cyprus.dart' show cyprus;
+import 'czechrepublic.dart' show czechRepublic;
+import 'democraticrepublicooftthecongo.dart' show democraticRepublicOfTheCongo;
+import 'denmark.dart' show denmark;
+import 'djibouti.dart' show djibouti;
+import 'dominica.dart' show dominica;
+import 'dominicanrepublic.dart' show dominicanRepublic;
+import 'easttimor.dart' show eastTimor;
+import 'ecuador.dart' show ecuador;
+import 'egypt.dart' show egypt;
+import 'elsalvador.dart' show elSalvador;
+import 'equatorialguinea.dart' show equatorialGuinea;
+import 'eritrea.dart' show eritrea;
+import 'estonia.dart' show estonia;
+import 'ethiopia.dart' show ethiopia;
+import 'falklandislands.dart' show falklandIslands;
+import 'faroeislands.dart' show faroeIslands;
+import 'fijiislands.dart' show fijiIslands;
+import 'finland.dart' show finland;
 import 'france.dart' show france;
-export 'france.dart';
-
-import 'russia.dart' show russia;
-export 'russia.dart';
-
-import 'philippines.dart' show philippines;
-export 'philippines.dart';
-
-import 'united_kingdom.dart' show unitedKingdom;
-export 'united_kingdom.dart';
-
+import 'frenchguiana.dart' show frenchGuiana;
+import 'frenchpolynesia.dart' show frenchPolynesia;
+import 'frenchsouthernterritories.dart' show frenchSouthernTerritories;
+import 'gabon.dart' show gabon;
+import 'gambiathe.dart' show gambiaThe;
+import 'georgia.dart' show georgia;
+import 'germany.dart' show germany;
+import 'ghana.dart' show ghana;
+import 'gibraltar.dart' show gibraltar;
+import 'greece.dart' show greece;
+import 'greenland.dart' show greenland;
+import 'grenada.dart' show grenada;
+import 'guadeloupe.dart' show guadeloupe;
+import 'guam.dart' show guam;
+import 'guatemala.dart' show guatemala;
+import 'guernseyaandalderney.dart' show guernseyAndAlderney;
+import 'guinea.dart' show guinea;
+import 'guineahypbissau.dart' show guineaHypbissau;
+import 'guyana.dart' show guyana;
+import 'haiti.dart' show haiti;
+import 'heardislandaandmcdonaldislands.dart' show heardIslandAndMcdonaldIslands;
+import 'honduras.dart' show honduras;
+import 'hongkongsar.dart' show hongKongSar;
+import 'hungary.dart' show hungary;
+import 'iceland.dart' show iceland;
+import 'india.dart' show india;
+import 'indonesia.dart' show indonesia;
+import 'iran.dart' show iran;
+import 'iraq.dart' show iraq;
+import 'ireland.dart' show ireland;
+import 'israel.dart' show israel;
 import 'italy.dart' show italy;
+import 'jamaica.dart' show jamaica;
+import 'japan.dart' show japan;
+import 'jersey.dart' show jersey;
+import 'jordan.dart' show jordan;
+import 'kazakhstan.dart' show kazakhstan;
+import 'kenya.dart' show kenya;
+import 'kiribati.dart' show kiribati;
+import 'kosovo.dart' show kosovo;
+import 'kuwait.dart' show kuwait;
+import 'kyrgyzstan.dart' show kyrgyzstan;
+import 'laos.dart' show laos;
+import 'latvia.dart' show latvia;
+import 'lebanon.dart' show lebanon;
+import 'lesotho.dart' show lesotho;
+import 'liberia.dart' show liberia;
+import 'libya.dart' show libya;
+import 'liechtenstein.dart' show liechtenstein;
+import 'lithuania.dart' show lithuania;
+import 'luxembourg.dart' show luxembourg;
+import 'macausar.dart' show macauSar;
+import 'madagascar.dart' show madagascar;
+import 'malawi.dart' show malawi;
+import 'malaysia.dart' show malaysia;
+import 'maldives.dart' show maldives;
+import 'mali.dart' show mali;
+import 'malta.dart' show malta;
+import 'manisleoof.dart' show manisleOf;
+import 'marshallislands.dart' show marshallIslands;
+import 'martinique.dart' show martinique;
+import 'mauritania.dart' show mauritania;
+import 'mauritius.dart' show mauritius;
+import 'mayotte.dart' show mayotte;
+import 'mexico.dart' show mexico;
+import 'micronesia.dart' show micronesia;
+import 'moldova.dart' show moldova;
+import 'monaco.dart' show monaco;
+import 'mongolia.dart' show mongolia;
+import 'montenegro.dart' show montenegro;
+import 'montserrat.dart' show montserrat;
+import 'morocco.dart' show morocco;
+import 'mozambique.dart' show mozambique;
+import 'myanmar.dart' show myanmar;
+import 'namibia.dart' show namibia;
+import 'nauru.dart' show nauru;
+import 'nepal.dart' show nepal;
+import 'netherlands.dart' show netherlands;
+import 'newcaledonia.dart' show newCaledonia;
+import 'newzealand.dart' show newZealand;
+import 'nicaragua.dart' show nicaragua;
+import 'niger.dart' show niger;
+import 'nigeria.dart' show nigeria;
+import 'niue.dart' show niue;
+import 'norfolkisland.dart' show norfolkIsland;
+import 'northernmarianaislands.dart' show northernMarianaIslands;
+import 'northkorea.dart' show northKorea;
+import 'northmacedonia.dart' show northMacedonia;
+import 'norway.dart' show norway;
+import 'oman.dart' show oman;
+import 'pakistan.dart' show pakistan;
+import 'palau.dart' show palau;
+import 'palestinianterritoryoccupied.dart' show palestinianTerritoryOccupied;
+import 'panama.dart' show panama;
+import 'papuannewguinea.dart' show papuaNewGuinea;
+import 'paraguay.dart' show paraguay;
+import 'peru.dart' show peru;
+import 'philippines.dart' show philippines;
+import 'pitcairnisland.dart' show pitcairnIsland;
+import 'poland.dart' show poland;
+import 'portugal.dart' show portugal;
+import 'puertorico.dart' show puertoRico;
+import 'qatar.dart' show qatar;
+import 'reunion.dart' show reunion;
+import 'romania.dart' show romania;
+import 'russia.dart' show russia;
+import 'rwanda.dart' show rwanda;
+import 'sainthelena.dart' show saintHelena;
+import 'sainthypbarthelemy.dart' show saintHypbarthelemy;
+import 'sainthypmartinfrenchppart.dart' show saintHypmartinfrenchPart;
+import 'saintkittsandnevis.dart' show saintKittsAndNevis;
+import 'saintlucia.dart' show saintLucia;
+import 'saintpierreaandmiquelon.dart' show saintPierreAndMiquelon;
+import 'saintvincentandthegrenadines.dart' show saintVincentAndTheGrenadines;
+import 'samoa.dart' show samoa;
+import 'sanmarino.dart' show sanMarino;
+import 'saotomeaandprincipe.dart' show saoTomeAndPrincipe;
+import 'saudiarabia.dart' show saudiArabia;
+import 'senegal.dart' show senegal;
+import 'serbia.dart' show serbia;
+import 'seychelles.dart' show seychelles;
+import 'sierraleone.dart' show sierraLeone;
+import 'singapore.dart' show singapore;
+import 'sintmaartendutchppart.dart' show sintMaartendutchPart;
+import 'slovakia.dart' show slovakia;
+import 'slovenia.dart' show slovenia;
+import 'solomonislands.dart' show solomonIslands;
+import 'somalia.dart' show somalia;
+import 'southafrica.dart' show southAfrica;
+import 'southgeorgia.dart' show southGeorgia;
+import 'southkorea.dart' show southKorea;
+import 'southsudan.dart' show southSudan;
+import 'spain.dart' show spain;
+import 'srilanka.dart' show sriLanka;
+import 'sudan.dart' show sudan;
+import 'suriname.dart' show suriname;
+import 'svalbardandjanmayenislands.dart' show svalbardAndJanMayenIslands;
+import 'swaziland.dart' show swaziland;
+import 'sweden.dart' show sweden;
+import 'switzerland.dart' show switzerland;
+import 'syria.dart' show syria;
+import 'taiwan.dart' show taiwan;
+import 'tajikistan.dart' show tajikistan;
+import 'tanzania.dart' show tanzania;
+import 'thailand.dart' show thailand;
+import 'thebahamas.dart' show theBahamas;
+import 'togo.dart' show togo;
+import 'tokelau.dart' show tokelau;
+import 'tonga.dart' show tonga;
+import 'trinidadandtobago.dart' show trinidadAndTobago;
+import 'tunisia.dart' show tunisia;
+import 'turkey.dart' show turkey;
+import 'turkmenistan.dart' show turkmenistan;
+import 'turksandcaicosislands.dart' show turksAndCaicosIslands;
+import 'tuvalu.dart' show tuvalu;
+import 'uganda.dart' show uganda;
+import 'ukraine.dart' show ukraine;
+import 'unitedarabemirates.dart' show unitedArabEmirates;
+import 'unitedkingdom.dart' show unitedKingdom;
+import 'unitedstates.dart' show unitedStates;
+import 'unitedstatesminoroutlyingislands.dart' show unitedStatesMinorOutlyingIslands;
+import 'uruguay.dart' show uruguay;
+import 'uzbekistan.dart' show uzbekistan;
+import 'vanuatu.dart' show vanuatu;
+import 'vaticancitystateholysee.dart' show vaticanCityStateholySee;
+import 'venezuela.dart' show venezuela;
+import 'vietnam.dart' show vietnam;
+import 'virginislandsbritish.dart' show virginIslandsbritish;
+import 'virginislandsus.dart' show virginIslandsus;
+import 'wallisandfutunaislands.dart' show wallisAndFutunaIslands;
+import 'westernsahara.dart' show westernSahara;
+import 'yemen.dart' show yemen;
+import 'zambia.dart' show zambia;
+import 'zimbabwe.dart' show zimbabwe;
+
+export 'afghanistan.dart';
+export 'alandislands.dart';
+export 'albania.dart';
+export 'algeria.dart';
+export 'americansamoa.dart';
+export 'andorra.dart';
+export 'angola.dart';
+export 'anguilla.dart';
+export 'antarctica.dart';
+export 'antiguaandbarbuda.dart';
+export 'argentina.dart';
+export 'armenia.dart';
+export 'aruba.dart';
+export 'australia.dart';
+export 'austria.dart';
+export 'azerbaijan.dart';
+export 'thebahamas.dart';
+export 'bahrain.dart';
+export 'bangladesh.dart';
+export 'barbados.dart';
+export 'belarus.dart';
+export 'belgium.dart';
+export 'belize.dart';
+export 'benin.dart';
+export 'bermuda.dart';
+export 'bhutan.dart';
+export 'bolivia.dart';
+export 'bosniaaandherzegovina.dart';
+export 'botswana.dart';
+export 'bouvetisland.dart';
+export 'brazil.dart';
+export 'britishindianoceanterritory.dart';
+export 'brunei.dart';
+export 'bulgaria.dart';
+export 'burkinafaso.dart';
+export 'burundi.dart';
+export 'cambodia.dart';
+export 'cameroon.dart';
+export 'canada.dart';
+export 'capeverde.dart';
+export 'caymanislands.dart';
+export 'centralafricanrepublic.dart';
+export 'chad.dart';
+export 'chile.dart';
+export 'china.dart';
+export 'christmasisland.dart';
+export 'cocoskeelingislands.dart';
+export 'colombia.dart';
+export 'comoros.dart';
+export 'congo.dart';
+export 'democraticrepublicooftthecongo.dart';
+export 'cookislands.dart';
+export 'costarica.dart';
+export 'cotedivoireivorycoast.dart';
+export 'croatia.dart';
+export 'cuba.dart';
+export 'cyprus.dart';
+export 'czechrepublic.dart';
+export 'denmark.dart';
+export 'djibouti.dart';
+export 'dominica.dart';
+export 'dominicanrepublic.dart';
+export 'easttimor.dart';
+export 'ecuador.dart';
+export 'egypt.dart';
+export 'elsalvador.dart';
+export 'equatorialguinea.dart';
+export 'eritrea.dart';
+export 'estonia.dart';
+export 'ethiopia.dart';
+export 'falklandislands.dart';
+export 'faroeislands.dart';
+export 'fijiislands.dart';
+export 'finland.dart';
+export 'france.dart';
+export 'frenchguiana.dart';
+export 'frenchpolynesia.dart';
+export 'frenchsouthernterritories.dart';
+export 'gabon.dart';
+export 'gambiathe.dart';
+export 'georgia.dart';
+export 'germany.dart';
+export 'ghana.dart';
+export 'gibraltar.dart';
+export 'greece.dart';
+export 'greenland.dart';
+export 'grenada.dart';
+export 'guadeloupe.dart';
+export 'guam.dart';
+export 'guatemala.dart';
+export 'guernseyaandalderney.dart';
+export 'guinea.dart';
+export 'guineahypbissau.dart';
+export 'guyana.dart';
+export 'haiti.dart';
+export 'heardislandaandmcdonaldislands.dart';
+export 'honduras.dart';
+export 'hongkongsar.dart';
+export 'hungary.dart';
+export 'iceland.dart';
+export 'india.dart';
+export 'indonesia.dart';
+export 'iran.dart';
+export 'iraq.dart';
+export 'ireland.dart';
+export 'israel.dart';
 export 'italy.dart';
+export 'jamaica.dart';
+export 'japan.dart';
+export 'jersey.dart';
+export 'jordan.dart';
+export 'kazakhstan.dart';
+export 'kenya.dart';
+export 'kiribati.dart';
+export 'northkorea.dart';
+export 'southkorea.dart';
+export 'kuwait.dart';
+export 'kyrgyzstan.dart';
+export 'laos.dart';
+export 'latvia.dart';
+export 'lebanon.dart';
+export 'lesotho.dart';
+export 'liberia.dart';
+export 'libya.dart';
+export 'liechtenstein.dart';
+export 'lithuania.dart';
+export 'luxembourg.dart';
+export 'macausar.dart';
+export 'northmacedonia.dart';
+export 'madagascar.dart';
+export 'malawi.dart';
+export 'malaysia.dart';
+export 'maldives.dart';
+export 'mali.dart';
+export 'malta.dart';
+export 'manisleoof.dart';
+export 'marshallislands.dart';
+export 'martinique.dart';
+export 'mauritania.dart';
+export 'mauritius.dart';
+export 'mayotte.dart';
+export 'mexico.dart';
+export 'micronesia.dart';
+export 'moldova.dart';
+export 'monaco.dart';
+export 'mongolia.dart';
+export 'montenegro.dart';
+export 'montserrat.dart';
+export 'morocco.dart';
+export 'mozambique.dart';
+export 'myanmar.dart';
+export 'namibia.dart';
+export 'nauru.dart';
+export 'nepal.dart';
+export 'bonairesinteustatiusaandsaba.dart';
+export 'netherlands.dart';
+export 'newcaledonia.dart';
+export 'newzealand.dart';
+export 'nicaragua.dart';
+export 'niger.dart';
+export 'nigeria.dart';
+export 'niue.dart';
+export 'norfolkisland.dart';
+export 'northernmarianaislands.dart';
+export 'norway.dart';
+export 'oman.dart';
+export 'pakistan.dart';
+export 'palau.dart';
+export 'palestinianterritoryoccupied.dart';
+export 'panama.dart';
+export 'papuannewguinea.dart';
+export 'paraguay.dart';
+export 'peru.dart';
+export 'philippines.dart';
+export 'pitcairnisland.dart';
+export 'poland.dart';
+export 'portugal.dart';
+export 'puertorico.dart';
+export 'qatar.dart';
+export 'reunion.dart';
+export 'romania.dart';
+export 'russia.dart';
+export 'rwanda.dart';
+export 'sainthelena.dart';
+export 'saintkittsandnevis.dart';
+export 'saintlucia.dart';
+export 'saintpierreaandmiquelon.dart';
+export 'saintvincentandthegrenadines.dart';
+export 'sainthypbarthelemy.dart';
+export 'sainthypmartinfrenchppart.dart';
+export 'samoa.dart';
+export 'sanmarino.dart';
+export 'saotomeaandprincipe.dart';
+export 'saudiarabia.dart';
+export 'senegal.dart';
+export 'serbia.dart';
+export 'seychelles.dart';
+export 'sierraleone.dart';
+export 'singapore.dart';
+export 'slovakia.dart';
+export 'slovenia.dart';
+export 'solomonislands.dart';
+export 'somalia.dart';
+export 'southafrica.dart';
+export 'southgeorgia.dart';
+export 'southsudan.dart';
+export 'spain.dart';
+export 'srilanka.dart';
+export 'sudan.dart';
+export 'suriname.dart';
+export 'svalbardandjanmayenislands.dart';
+export 'swaziland.dart';
+export 'sweden.dart';
+export 'switzerland.dart';
+export 'syria.dart';
+export 'taiwan.dart';
+export 'tajikistan.dart';
+export 'tanzania.dart';
+export 'thailand.dart';
+export 'togo.dart';
+export 'tokelau.dart';
+export 'tonga.dart';
+export 'trinidadandtobago.dart';
+export 'tunisia.dart';
+export 'turkey.dart';
+export 'turkmenistan.dart';
+export 'turksandcaicosislands.dart';
+export 'tuvalu.dart';
+export 'uganda.dart';
+export 'ukraine.dart';
+export 'unitedarabemirates.dart';
+export 'unitedkingdom.dart';
+export 'unitedstates.dart';
+export 'unitedstatesminoroutlyingislands.dart';
+export 'uruguay.dart';
+export 'uzbekistan.dart';
+export 'vanuatu.dart';
+export 'vaticancitystateholysee.dart';
+export 'venezuela.dart';
+export 'vietnam.dart';
+export 'virginislandsbritish.dart';
+export 'virginislandsus.dart';
+export 'wallisandfutunaislands.dart';
+export 'westernsahara.dart';
+export 'yemen.dart';
+export 'zambia.dart';
+export 'zimbabwe.dart';
+export 'kosovo.dart';
+export 'curacao.dart';
+export 'sintmaartendutchppart.dart';
 
-import 'united_states.dart' show unitedStates;
-export 'united_states.dart';
-
-/// A map of all countries and their metadata
+/// A map of all countries and their metadata keyed by `id`
 const Map<int, Country> countries = {
   1: afghanistan,
   2: alandIslands,
@@ -776,7 +524,7 @@ const Map<int, Country> countries = {
   14: australia,
   15: austria,
   16: azerbaijan,
-  17: bahamasThe,
+  17: theBahamas,
   18: bahrain,
   19: bangladesh,
   20: barbados,
@@ -787,8 +535,7 @@ const Map<int, Country> countries = {
   25: bermuda,
   26: bhutan,
   27: bolivia,
-  155: bonaireSintEustatiusAandSaba,
-  28: bosniaAandHerzegovina,
+  28: bosniaAndHerzegovina,
   29: botswana,
   30: bouvetIsland,
   31: brazil,
@@ -807,19 +554,18 @@ const Map<int, Country> countries = {
   44: chile,
   45: china,
   46: christmasIsland,
-  47: cocosKeelingIslands,
+  47: cocoskeelingIslands,
   48: colombia,
   49: comoros,
   50: congo,
+  51: democraticRepublicOfTheCongo,
   52: cookIslands,
   53: costaRica,
-  54: coteDIvoireIvoryCoast,
+  54: coteDivoireivoryCoast,
   55: croatia,
   56: cuba,
-  249: curacao,
   57: cyprus,
   58: czechRepublic,
-  51: democraticRepublicOofTtheCongo,
   59: denmark,
   60: djibouti,
   61: dominica,
@@ -852,14 +598,14 @@ const Map<int, Country> countries = {
   88: guadeloupe,
   89: guam,
   90: guatemala,
-  91: guernseyAandAlderney,
+  91: guernseyAndAlderney,
   92: guinea,
-  93: guineaHypBissau,
+  93: guineaHypbissau,
   94: guyana,
   95: haiti,
-  96: heardIslandAandMcDonaldIslands,
+  96: heardIslandAndMcdonaldIslands,
   97: honduras,
-  98: hongKongSDotADotRDot,
+  98: hongKongSar,
   99: hungary,
   100: iceland,
   101: india,
@@ -876,7 +622,8 @@ const Map<int, Country> countries = {
   112: kazakhstan,
   113: kenya,
   114: kiribati,
-  248: kosovo,
+  115: northKorea,
+  116: southKorea,
   117: kuwait,
   118: kyrgyzstan,
   119: laos,
@@ -888,15 +635,15 @@ const Map<int, Country> countries = {
   125: liechtenstein,
   126: lithuania,
   127: luxembourg,
-  128: macauSDotADotRDot,
-  129: macedonia,
+  128: macauSar,
+  129: northMacedonia,
   130: madagascar,
   131: malawi,
   132: malaysia,
   133: maldives,
   134: mali,
   135: malta,
-  136: manIsleOof,
+  136: manisleOf,
   137: marshallIslands,
   138: martinique,
   139: mauritania,
@@ -915,6 +662,7 @@ const Map<int, Country> countries = {
   152: namibia,
   153: nauru,
   154: nepal,
+  155: bonaireSintEustatiusAndSaba,
   156: netherlands,
   157: newCaledonia,
   158: newZealand,
@@ -923,7 +671,6 @@ const Map<int, Country> countries = {
   161: nigeria,
   162: niue,
   163: norfolkIsland,
-  115: northKorea,
   164: northernMarianaIslands,
   165: norway,
   166: oman,
@@ -931,7 +678,7 @@ const Map<int, Country> countries = {
   168: palau,
   169: palestinianTerritoryOccupied,
   170: panama,
-  171: papuaNnewGuinea,
+  171: papuaNewGuinea,
   172: paraguay,
   173: peru,
   174: philippines,
@@ -945,29 +692,27 @@ const Map<int, Country> countries = {
   182: russia,
   183: rwanda,
   184: saintHelena,
-  189: saintHypBarthelemy,
-  190: saintHypMartinFrenchPpart,
   185: saintKittsAndNevis,
   186: saintLucia,
-  187: saintPierreAandMiquelon,
+  187: saintPierreAndMiquelon,
   188: saintVincentAndTheGrenadines,
+  189: saintHypbarthelemy,
+  190: saintHypmartinfrenchPart,
   191: samoa,
   192: sanMarino,
-  193: saoTomeAandPrincipe,
+  193: saoTomeAndPrincipe,
   194: saudiArabia,
   195: senegal,
   196: serbia,
   197: seychelles,
   198: sierraLeone,
   199: singapore,
-  250: sintMaartenDutchPpart,
   200: slovakia,
   201: slovenia,
   202: solomonIslands,
   203: somalia,
   204: southAfrica,
   205: southGeorgia,
-  116: southKorea,
   206: southSudan,
   207: spain,
   208: sriLanka,
@@ -1000,14 +745,17 @@ const Map<int, Country> countries = {
   235: uruguay,
   236: uzbekistan,
   237: vanuatu,
-  238: vaticanCityStateHolySee,
+  238: vaticanCityStateholySee,
   239: venezuela,
   240: vietnam,
-  241: virginIslandsBritish,
-  242: virginIslandsUS,
+  241: virginIslandsbritish,
+  242: virginIslandsus,
   243: wallisAndFutunaIslands,
   244: westernSahara,
   245: yemen,
   246: zambia,
-  247: zimbabwe
+  247: zimbabwe,
+  248: kosovo,
+  249: curacao,
+  250: sintMaartendutchPart
 };

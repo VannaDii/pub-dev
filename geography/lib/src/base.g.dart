@@ -69,12 +69,14 @@ Country _$CountryFromJson(Map<String, dynamic> json) => Country(
       name: json['name'] as String,
       capital: json['capital'] as String?,
       currency: json['currency'] as String?,
+      currencyName: json['currency_name'] as String,
       currencySymbol: json['currency_symbol'] as String,
       emoji: json['emoji'] as String?,
       emojiU: json['emojiU'] as String?,
       iso2: json['iso2'] as String?,
       iso3: json['iso3'] as String?,
       native: json['native'] as String?,
+      nationality: json['nationality'] as String?,
       numericCode: json['numeric_code'] as String,
       phoneCode: json['phone_code'] as String,
       region: json['region'] as String?,
@@ -82,8 +84,8 @@ Country _$CountryFromJson(Map<String, dynamic> json) => Country(
           .map((e) => Region.fromJson(e as Map<String, dynamic>))
           .toList(),
       subregion: json['subregion'] as String?,
-      timezones: (json['timezones'] as List<dynamic>)
-          .map((e) => Timezone.fromJson(e as Map<String, dynamic>))
+      timezones: (json['timezones'] as List<dynamic>?)
+          ?.map((e) => Timezone.fromJson(e as Map<String, dynamic>))
           .toList(),
       tld: json['tld'] as String?,
       translations: Map<String, String>.from(json['translations'] as Map),
@@ -104,10 +106,12 @@ Map<String, dynamic> _$CountryToJson(Country instance) => <String, dynamic>{
       'native': instance.native,
       'region': instance.region,
       'subregion': instance.subregion,
+      'nationality': instance.nationality,
       'emoji': instance.emoji,
       'emojiU': instance.emojiU,
       'numeric_code': instance.numericCode,
       'phone_code': instance.phoneCode,
+      'currency_name': instance.currencyName,
       'currency_symbol': instance.currencySymbol,
       'states': instance.states,
       'timezones': instance.timezones,

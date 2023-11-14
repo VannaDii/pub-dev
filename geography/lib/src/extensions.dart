@@ -3,8 +3,8 @@ import 'dart:math' as math;
 import 'package:collection/collection.dart';
 
 import 'base.dart';
-import 'countries/all_states.dart' as _all_states;
-import 'countries/all_countries.dart' as _all_countries;
+import 'countries/all_states.dart' as all_states;
+import 'countries/all_countries.dart' as all_countries;
 
 const double _kEquatorRadius = 6378137.0;
 
@@ -99,7 +99,7 @@ extension CityExtensions on City {
   /// The [Region] parenting this [City] instance.
   ///
   /// While this is an extension method, it acts against a dictionary by key.
-  Region get state => _all_states.states[parentId]!;
+  Region get state => all_states.states[parentId]!;
 }
 
 /// Extension methods for interacting with [Region] instances.
@@ -123,7 +123,7 @@ extension RegionExtensions on Region {
   /// The [Country] parenting this [Region] instance.
   ///
   /// While this is an extension method, it acts against a dictionary by key.
-  Country get country => _all_countries.countries[parentId]!;
+  Country get country => all_countries.countries[parentId]!;
 }
 
 /// Extension methods for interacting with [Country] instances.

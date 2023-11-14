@@ -8,7 +8,7 @@ class GeoLocation extends GeoCoords {
 }
 
 void main() {
-  var a = unitedStatesTexas.cities.findClosestTo(GeoLocation.austin)!;
+  var a = unitedStatesTexasState.cities.findClosestTo(GeoLocation.austin)!;
   var t = a.state; // Expected to be `Texas`
   var u = t.country; // Expected to be `United States`
   print("> ${u.name} @ ${u.latitude}° ${u.longitude}°");

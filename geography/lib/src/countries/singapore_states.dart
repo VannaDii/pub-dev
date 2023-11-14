@@ -1,61 +1,101 @@
-/// Access to known geographies in Singapore and their meta data.
+/// Access to known geographies in `Singapore` and their metadata.
 ///
 /// NOTICE: This file is auto-generated and should not be changed manually.
 
 import '../base.dart';
 import 'singapore_cities.dart';
 
-/// The 5 regions of `🇸🇬 Singapore`
-const Region singaporeCentralSingaporeCommunityDevelopmentCouncil = Region(
-    id: 4651,
-    parentId: 199,
-    longitude: 103.8143879,
-    latitude: 1.289514,
-    name: "Central Singapore Community Development Council",
-    type: null,
-    stateCode: "01",
-    cities: [singaporeCentralSingaporeCommunityDevelopmentCouncilSingapore]);
-const Region singaporeNorthEastCommunityDevelopmentCouncil = Region(
-    id: 4649,
-    parentId: 199,
-    longitude: -93.2468107,
-    latitude: 45.0118113,
-    name: "North East Community Development Council",
-    type: null,
-    stateCode: "02",
-    cities: []);
-const Region singaporeNorthWestCommunityDevelopmentCouncil = Region(
-    id: 4653,
-    parentId: 199,
-    longitude: -94.457336,
-    latitude: 39.107093,
-    name: "North West Community Development Council",
-    type: null,
-    stateCode: "03",
-    cities: [singaporeNorthWestCommunityDevelopmentCouncilWoodlands]);
-const Region singaporeSouthEastCommunityDevelopmentCouncil = Region(
-    id: 4650,
-    parentId: 199,
-    longitude: -76.5691237,
-    latitude: 39.286307,
-    name: "South East Community Development Council",
-    type: null,
-    stateCode: "04",
-    cities: []);
-const Region singaporeSouthWestCommunityDevelopmentCouncil = Region(
-    id: 4652,
-    parentId: 199,
-    longitude: -75.231058,
-    latitude: 39.925691,
-    name: "South West Community Development Council",
-    type: null,
-    stateCode: "05",
-    cities: []);
+/// The `Central Singapore` region in `Singapore`
+const Region singaporeCentralSingaporeDistrict = Region(
+  id: 4651,
+  parentId: 199,
+  longitude: 103.8535,
+  latitude: 1.2884,
+  name: "Central Singapore",
+  type: "district",
+  stateCode: "01",
+  cities: [
+    centralSingaporeDistrictBukitTimahCity,
+    centralSingaporeDistrictDowntownCoreCity,
+    centralSingaporeDistrictGeylangCity,
+    centralSingaporeDistrictKallangCity,
+    centralSingaporeDistrictMarineParadeCity,
+    centralSingaporeDistrictNovenaCity,
+    centralSingaporeDistrictOrchardRoadCity,
+    centralSingaporeDistrictOutramCity,
+    centralSingaporeDistrictRochorCity,
+    centralSingaporeDistrictSingaporeCity,
+    centralSingaporeDistrictTanjongPagarCity,
+    centralSingaporeDistrictToaPayohCity
+  ]);
 
-const singaporeStates = <int, Region>{
-  4651: singaporeCentralSingaporeCommunityDevelopmentCouncil,
-  4649: singaporeNorthEastCommunityDevelopmentCouncil,
-  4653: singaporeNorthWestCommunityDevelopmentCouncil,
-  4650: singaporeSouthEastCommunityDevelopmentCouncil,
-  4652: singaporeSouthWestCommunityDevelopmentCouncil
-};
+/// The `North East` region in `Singapore`
+const Region singaporeNorthEastDistrict = Region(
+  id: 4649,
+  parentId: 199,
+  longitude: 103.8972,
+  latitude: 1.3824,
+  name: "North East",
+  type: "district",
+  stateCode: "02",
+  cities: [
+    northEastDistrictAngMoKioCity,
+    northEastDistrictHougangCity,
+    northEastDistrictPunggolCity,
+    northEastDistrictSengkangCity,
+    northEastDistrictSerangoonCity
+  ]);
+
+/// The `North West` region in `Singapore`
+const Region singaporeNorthWestDistrict = Region(
+  id: 4653,
+  parentId: 199,
+  longitude: 103.8275,
+  latitude: 1.418,
+  name: "North West",
+  type: "district",
+  stateCode: "03",
+  cities: [
+    northWestDistrictSembawangCity,
+    northWestDistrictWoodlandsCity,
+    northWestDistrictYishunCity
+  ]);
+
+/// The `South East` region in `Singapore`
+const Region singaporeSouthEastDistrict = Region(
+  id: 4650,
+  parentId: 199,
+  longitude: 103.7004,
+  latitude: 1.3571,
+  name: "South East",
+  type: "district",
+  stateCode: "04",
+  cities: [
+    southEastDistrictBedokCity,
+    southEastDistrictPasirRisCity,
+    southEastDistrictTampinesCity
+  ]);
+
+/// The `South West` region in `Singapore`
+const Region singaporeSouthWestDistrict = Region(
+  id: 4652,
+  parentId: 199,
+  longitude: 103.9451,
+  latitude: 1.3571,
+  name: "South West",
+  type: "district",
+  stateCode: "05",
+  cities: [
+    southWestDistrictBukitBatokCity,
+    southWestDistrictBukitPanjangCity,
+    southWestDistrictJurongWestCity
+  ]);
+
+/// The 5 states of `Singapore` keyed by their id.
+const Map<int, Region> singaporeStates = <int, Region>{
+    4651: singaporeCentralSingaporeDistrict,
+    4649: singaporeNorthEastDistrict,
+    4653: singaporeNorthWestDistrict,
+    4650: singaporeSouthEastDistrict,
+    4652: singaporeSouthWestDistrict
+  };

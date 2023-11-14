@@ -78,7 +78,8 @@ class Earth {
     late final List<Timezone> zones;
     final matches = countries.where((c) => target.isMatch(c));
     if (matches.isNotEmpty) {
-      zones = List<Timezone>.from(matches.first.timezones, growable: false);
+      final matchZones = matches.first.timezones ?? [];
+      zones = List<Timezone>.from(matchZones, growable: false);
       zones.sort((a, b) => a.gmtOffset.compareTo(b.gmtOffset));
     } else {
       zones = [];

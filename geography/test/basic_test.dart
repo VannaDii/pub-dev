@@ -6,12 +6,13 @@ import 'shared.dart';
 void main() {
   group('Basic Tests', () {
     test('Calculates Distance Between Points As Expected', () {
-      var atx = unitedStatesTexas.cities.findClosestTo(TestCoords.austin)!;
+      var atx = unitedStatesTexasState.cities.findClosestTo(TestCoords.austin)!;
       expect(atx, isNotNull);
       expect(atx, isA<City>());
       expect(atx.name, equals("Austin"));
 
-      var sat = unitedStatesTexas.cities.findClosestTo(TestCoords.sanAntonio)!;
+      var sat =
+          unitedStatesTexasState.cities.findClosestTo(TestCoords.sanAntonio)!;
       expect(sat, isNotNull);
       expect(sat, isA<City>());
       expect(sat.name, equals("San Antonio"));
@@ -22,7 +23,7 @@ void main() {
     });
 
     test('Provide Qualified Names ("Co, St, Ct") As Expected', () {
-      var atx = unitedStatesTexas.cities.findClosestTo(TestCoords.austin)!;
+      var atx = unitedStatesTexasState.cities.findClosestTo(TestCoords.austin)!;
       expect(atx, isNotNull);
       expect(atx, isA<City>());
       expect(atx.name, equals("Austin"));
@@ -32,7 +33,7 @@ void main() {
     });
 
     test('Converts State Codes To Names As Expected', () {
-      var atx = unitedStatesTexas.cities.findClosestTo(TestCoords.austin)!;
+      var atx = unitedStatesTexasState.cities.findClosestTo(TestCoords.austin)!;
       expect(atx, isNotNull);
       expect(atx, isA<City>());
       expect(atx.name, equals("Austin"));

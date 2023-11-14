@@ -211,7 +211,13 @@ class Region extends GeoLocationNode {
   List<Object?> get props => [...super.props, type, stateCode, cities];
 
   /// Creates a new [Region] from JSON.
-  factory Region.fromJson(Map<String, dynamic> json) => _$RegionFromJson(json);
+  factory Region.fromJson(Map<String, dynamic> json) {
+    json['cities'] = (json['cities'] as List<dynamic>).map((e) {
+      e['parentId'] = json['id'] as int;
+      return e;
+    }).toList();
+    return _$RegionFromJson(json);
+  }
 
   @override
   Map<String, dynamic> toJson() => <String, dynamic>{
@@ -262,12 +268,14 @@ class Country extends GeoLocationNode {
     required String name,
     required this.capital,
     required this.currency,
+    required this.currencyName,
     required this.currencySymbol,
     required this.emoji,
     required this.emojiU,
     required this.iso2,
     required this.iso3,
     required this.native,
+    required this.nationality,
     required this.numericCode,
     required this.phoneCode,
     required this.region,
@@ -310,6 +318,9 @@ class Country extends GeoLocationNode {
   /// This country's subregion, like `Southern Asia` for `Afghanistan`
   final String? subregion;
 
+  /// This countries nationality, like `Czech` for `Czech Republic`
+  final String? nationality;
+
   /// This country's flag as an emoji, like `🇦🇫` for `Afghanistan`
   final String? emoji;
 
@@ -324,6 +335,10 @@ class Country extends GeoLocationNode {
   @JsonKey(name: 'phone_code')
   final String phoneCode;
 
+  /// The currency name for this country, like `Czech koruna for `Czech Republic`
+  @JsonKey(name: 'currency_name')
+  final String currencyName;
+
   /// The currency symbol for this country, like `؋` for `Afghanistan`
   @JsonKey(name: 'currency_symbol')
   final String currencySymbol;
@@ -332,7 +347,7 @@ class Country extends GeoLocationNode {
   final List<Region> states;
 
   /// A [List] of [Timezone] instances, representing the timezones used in this country
-  final List<Timezone> timezones;
+  final List<Timezone>? timezones;
 
   /// A map of two-digit ISO language codes, and translated names of this country
   ///
@@ -377,8 +392,13 @@ class Country extends GeoLocationNode {
       ];
 
   /// Creates a new [Country] from JSON.
-  factory Country.fromJson(Map<String, dynamic> json) =>
-      _$CountryFromJson(json);
+  factory Country.fromJson(Map<String, dynamic> json) {
+    json['states'] = (json['states'] as List<dynamic>).map((e) {
+      e['parentId'] = json['id'] as int;
+      return e;
+    }).toList();
+    return _$CountryFromJson(json);
+  }
 
   @override
   Map<String, dynamic> toJson() => <String, dynamic>{
