@@ -16,10 +16,12 @@ jobs:
       - uses: dart-lang/setup-dart@v1
 
       - name: 🚀 Publish geography
-        uses: RatakondalaArun/pub.dev-cd@v1.0.0
+        uses: k-paxian/dart-package-publisher@v1.6
         with:
-          creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
-          package_path: geography
+          accessToken: ''
+          refreshToken: ''
+          credentialJson: ${{secrets.PUB_DEV_CREDENTIALS}}
+          relativePath: geography
 
   cobertura:
     name: ⛱ Cobertura
@@ -31,10 +33,12 @@ jobs:
       - uses: dart-lang/setup-dart@v1
 
       - name: 🚀 Publish cobertura
-        uses: RatakondalaArun/pub.dev-cd@v1.0.0
+        uses: k-paxian/dart-package-publisher@v1.6
         with:
-          creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
-          package_path: cobertura
+          accessToken: ''
+          refreshToken: ''
+          credentialJson: ${{secrets.PUB_DEV_CREDENTIALS}}
+          relativePath: cobertura
 
   dynamo_json:
     name: 📇 DynamoJson
@@ -46,7 +50,9 @@ jobs:
       - uses: dart-lang/setup-dart@v1
 
       - name: 🚀 Publish DynamoJson
-        uses: RatakondalaArun/pub.dev-cd@v1.0.0
+        uses: k-paxian/dart-package-publisher@v1.6
         with:
-          creditionals: ${{secrets.PUB_DEV_CREDENTIALS}}
-          package_path: dynamo_json
+          accessToken: ''
+          refreshToken: ''
+          credentialJson: ${{secrets.PUB_DEV_CREDENTIALS}}
+          relativePath: dynamo_json
