@@ -1,3 +1,7 @@
+## 2.0.0
+
+- Major changes for new data package.
+
 ## 1.1.5
 
 - Downgrades `collections` for `flutter_localizations` compatibility
