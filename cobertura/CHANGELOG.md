@@ -1,3 +1,7 @@
+## 1.0.4
+
+- Removes rounding
+
 ## 1.0.3
 
 - Adds to `show`

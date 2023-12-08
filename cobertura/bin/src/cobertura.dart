@@ -135,15 +135,14 @@ void _writeCobertura({
 }) {
   var lineHits = results.records.fold<int>(0, (p, c) => p + c.lines.hit);
   var lineFinds = results.records.fold<int>(0, (p, c) => p + c.lines.found);
-  var lineRate = lineFinds > 0 ? (lineHits / lineFinds).round() : lineFinds;
+  var lineRate = lineFinds > 0 ? (lineHits / lineFinds) : lineFinds;
 
   var branchHits = results.records.fold<int>(0, (p, c) => p + c.branches.hit);
   var branchFinds =
       results.records.fold<int>(0, (p, c) => p + c.branches.found);
-  var branchRate =
-      branchFinds > 0 ? (branchHits / branchFinds).round() : branchFinds;
+  var branchRate = branchFinds > 0 ? (branchHits / branchFinds) : branchFinds;
 
-  var epochTimeStamp = (DateTime.now().millisecondsSinceEpoch / 1000).round();
+  var epochTimeStamp = (DateTime.now().millisecondsSinceEpoch / 1000);
 
   var builder = xml.XmlBuilder();
   builder
