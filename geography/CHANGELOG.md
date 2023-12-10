@@ -1,3 +1,7 @@
+## 2.0.1
+
+- Adjusts dependencies for better compatibility
+
 ## 2.0.0
 
 - Major changes for new data package.
