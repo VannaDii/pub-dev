@@ -1,3 +1,7 @@
+## 1.0.5
+
+- Removes rounding for source elements
+
 ## 1.0.4
 
 - Removes rounding
