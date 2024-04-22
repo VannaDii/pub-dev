@@ -178,10 +178,10 @@ void _writeCobertura({
               var className = path.basenameWithoutExtension(r.file);
 
               var classLineRate = r.lines.found > 0
-                  ? (r.lines.hit / r.lines.found).round()
+                  ? r.lines.hit / r.lines.found
                   : r.lines.found;
               var classBranchRate = r.branches.found > 0
-                  ? (r.branches.hit / r.branches.found).round()
+                  ? r.branches.hit / r.branches.found
                   : r.branches.found;
 
               builder.element("class", attributes: {
