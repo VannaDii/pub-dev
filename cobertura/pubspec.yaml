@@ -2,8 +2,8 @@ name: cobertura
 description: Converts LCOV to Cobertura format; the ideal format for GitHub and Azure DevOps.
 version: 1.0.4
 homepage: https://pub-dev.dicatania.me/cobertura/
-repository: https://github.com/VannaDi/pub-dev
-issue_tracker: https://github.com/VannaDi/pub-dev/issues
+repository: https://github.com/VannaDii/pub-dev
+issue_tracker: https://github.com/VannaDii/pub-dev/issues
 
 environment:
   sdk: '>=3.1.2 <4.0.0'
