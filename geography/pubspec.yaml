@@ -2,8 +2,8 @@ name: geography
 description: A library of geographical entities, their metadata, and relationships. Provides a basic, and an earth, library with methods for finding the nearest entity and measuring distances.
 version: 2.0.1
 homepage: https://pub-dev.dicatania.me/geography/
-repository: https://github.com/VannaDi/pub-dev
-issue_tracker: https://github.com/VannaDi/pub-dev/issues
+repository: https://github.com/VannaDii/pub-dev
+issue_tracker: https://github.com/VannaDii/pub-dev/issues
 
 environment:
   sdk: '>=3.1.2 <4.0.0'
